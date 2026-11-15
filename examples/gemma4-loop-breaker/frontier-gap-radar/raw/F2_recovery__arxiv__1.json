@@ -1,0 +1,163 @@
+{
+ "url": "http://export.arxiv.org/api/query?search_query=all%3Aself-debugging+AND+all%3Alarge+AND+all%3Alanguage+AND+all%3Amodel+AND+all%3Atest+AND+all%3Afeedback+AND+all%3Arepair&sortBy=relevance&max_results=25",
+ "records": [
+  {
+   "src": "arxiv",
+   "arxiv": "2304.05128",
+   "doi": null,
+   "title": "Teaching Large Language Models to Self-Debug",
+   "year": 2023,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large language models (LLMs) have achieved impressive performance on code generation. However, for complex programming tasks, generating the correct solution in one go becomes challenging, thus some prior works have designed program repair approaches to improve code generation performance. In this work, we propose Self-Debugging, which teaches a large language model to debug its predicted program via few-shot demonstrations. In particular, we demonstrate that Self-Debugging can teach the large language model to perform rubber duck debugging; i.e., without any human feedback on the code correctness or error messages, the model is able to identify its mistakes by investigating the execution results and explaining the generated code in natural language. Self-Debugging achieves the state-of-the-art performance on several code generation benchmarks, including the Spider dataset for text-to-SQL generation, TransCoder for C++-to-Python translation, and MBPP for text-to-Python generation. On the Spider benchmark where there are no unit tests to verify the correctness of predictions, Self-Debugging with code explanation consistently improves the baseline by 2-3%, and improves the prediction accuracy on problems of the hardest level by 9%. On TransCoder and MBPP where unit tests are available, Self-Debugging improves the baseline accuracy by up to 12%. Meanwhile, by leveraging feedback messages and reusing failed predictions, Self-Debugging notably improves sample efficiency, and can match or outperform baseline models that generate more than 10x candidate programs.",
+   "authors": [
+    "Xinyun Chen",
+    "Maxwell Lin",
+    "Nathanael Sch\u00e4rli",
+    "Denny Zhou"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2504.06939",
+   "doi": null,
+   "title": "FeedbackEval: A Benchmark for Evaluating Large Language Models in Feedback-Driven Code Repair Tasks",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "Code repair is a fundamental task in software development, facilitating efficient bug resolution and software maintenance. Although large language models (LLMs) have demonstrated considerable potential in automated code repair, their ability to comprehend and leverage diverse types of feedback, which is crucial for iterative self-correction in authentic debugging scenarios, remains insufficiently understood. To bridge this gap, we introduce FeedbackEval, a systematic benchmark constructed from three heterogeneous sources (HumanEval, CoderEval, and SWE-Bench-verified), to evaluate LLMs' feedback comprehension and code repair performance. We conduct a comprehensive empirical study on five state-of-the-art LLMs, including GPT-4o, Claude-3.5, Deepseek-R1, GLM-4, and Qwen2.5, to evaluate their behavior under both single-iteration and iterative code repair settings. Our results show that mixed feedback yields the highest repair success (63.6%), with LLM-Expert and test feedback providing strong targeted gains (62.9% and 57.9%, respectively), while minimal (53.1%) and compiler feedback (49.2%) offer moderate benefits and LLM-Skilled proves least effective (48.8%). Iterative feedback further enhances repair performance, though the marginal benefit diminishes after two or three iterations. Moreover, prompt structure is shown to be critical: structured reasoning (RR, CoT) and dynamic example selection deliver notable improvements, whereas removing semantic cues such as docstrings or role-play causes severe degradation. This work introduces a robust benchmark and delivers practical insights to advance the understanding and development of feedback-driven code repair using LLMs.",
+   "authors": [
+    "Dekun Dai",
+    "MingWei Liu",
+    "Anji Li",
+    "Jialun Cao",
+    "Yanlin Wang",
+    "Chong Wang",
+    "Xin Peng",
+    "Zibin Zheng"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2604.19305",
+   "doi": null,
+   "title": "DebugRepair: Enhancing LLM-Based Automated Program Repair via Self-Directed Debugging",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Automated Program Repair (APR) has benefited from the code understanding and generation capabilities of Large Language Models (LLMs). Existing feedback-based APR methods iteratively refine candidate patches using test execution feedback and have shown promising results. However, most rely on outcome-level failure symptoms, such as stack traces, which show how failures are observed but fail to expose the intermediate runtime states critical for root-cause analysis. As a result, LLMs often infer bug causes without sufficient runtime evidence, leading to incorrect patches. To address this limitation, we propose DebugRepair, a self-directed debugging framework for LLM-based APR. DebugRepair enhances patch refinement with intermediate runtime evidence collected through simulated debugging. It consists of three components: test semantic purification, simulated instrumentation, and debugging-driven conversational repair. Together, they reduce noisy test context, collect runtime traces through targeted debugging statements with rule-based fallback, and progressively refine candidate patches using prior attempts and newly observed runtime states. We evaluate DebugRepair on three benchmarks across Java and Python. Experiments show that DebugRepair achieves state-of-the-art performance against 15 approaches. With GPT-3.5, it correctly fixes 224 bugs on Defects4J, outperforming prior SOTA LLM-based methods by 26.2%. With DeepSeek-V3, it correctly fixes 295 Defects4J bugs, surpassing the second-best baseline by 59 bugs. Across five additional backbone LLMs, DebugRepair improves repair performance by 51.3% over vanilla settings. Ablation studies further confirm the effectiveness of all components.",
+   "authors": [
+    "Linhao Wu",
+    "Yifei Pei",
+    "Zhen Yang",
+    "Kainan Li",
+    "Zhonghang Lu",
+    "Hao Tan",
+    "Xiran Lyu",
+    "Jia Li"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2510.18327",
+   "doi": null,
+   "title": "InspectCoder: Dynamic Analysis-Enabled Self Repair through interactive LLM-Debugger Collaboration",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large Language Models (LLMs) frequently generate buggy code with complex logic errors that are challenging to diagnose. While existing LLM-based self-repair approaches conduct intensive static semantic analysis or reply on superficial execution logs, they miss the in-depth runtime behaviors that often expose bug root causes-lacking the interactive dynamic analysis capabilities that make human debugging effective. We present InspectCoder, the first agentic program repair system that empowers LLMs to actively conduct dynamic analysis via interactive debugger control. Our dual-agent framework enables strategic breakpoint placement, targeted state inspection, and incremental runtime experimentation within stateful debugger sessions. Unlike existing methods that follow fixed log collection procedures, InspectCoder adaptively inspects and perturbs relevant intermediate states at runtime, and leverages immediate process rewards from debugger feedback to guide multi-step reasoning, transforming LLM debugging paradigm from blind trial-and-error into systematic root cause diagnosis. We conduct comprehensive experiments on two challenging self-repair benchmarks: BigCodeBench-R and LiveCodeBench-R. InspectCoder achieves 5.10%-60.37% relative improvements in repair accuracy over the strongest baseline, while delivering 1.67x-2.24x superior bug-fix efficiency respectively. We also contribute InspectWare, an open-source middleware that abstracts debugger complexities and maintains stateful debugging sessions across mainstream Python testing frameworks. Our work provides actionable insight into the interactive LLM-debugger systems, demonstrating the significant potential of LLM-driven dynamic analysis for automated software engineering.",
+   "authors": [
+    "Yunkun Wang",
+    "Yue Zhang",
+    "Guochang Li",
+    "Chen Zhi",
+    "Binhua Li",
+    "Fei Huang",
+    "Yongbin Li",
+    "Shuiguang Deng"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2603.05553",
+   "doi": null,
+   "title": "EigenData: A Self-Evolving Multi-Agent Platform for Function-Calling Data Synthesis, Auditing, and Repair",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Function-calling agents -- large language models that invoke tools and APIs -- require high-quality, domain-specific training data spanning executable environments, backing databases, and diverse multi-turn trajectories. We introduce EigenData, an integrated, self-evolving platform that automates the full data lifecycle through a multi-agent architecture. A top-level orchestrator, EigenCore, coordinates three specialized sub-systems: DatabaseAgent for realistic domain database construction, CodingAgent for verified executable environment generation with iterative test-debug loops, and DataAgent for multi-turn trajectory synthesis with self-evolving prompt optimization. Cross-component feedback ensures consistency across all artifacts. We apply EigenData to audit and repair the Berkeley Function-Calling Leaderboard (BFCL-V3), identifying systematic errors in function schemas, implementations, and reference trajectories, automatically correcting them through coordinated schema refinement, code-level bug fixes, and trajectory modification, and introducing an outcome-aware evaluation protocol that assesses task success via database-state correctness rather than turn-level trajectory matching. We demonstrate that the repaired benchmark, coupled with outcome-aware metrics, produces model rankings substantially better correlated with human judgments of functional correctness.",
+   "authors": [
+    "Jiaao Chen",
+    "Jingyuan Qi",
+    "Mingye Gao",
+    "Wei-Chen Wang",
+    "Hanrui Wang",
+    "Di Jin"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2511.03925",
+   "doi": null,
+   "title": "Collaborative Agents for Automated Program Repair in Ruby",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "Automated Program Repair (APR) has advanced rapidly with Large Language Models (LLMs), but most existing methods remain computationally expensive, and focused on a small set of languages. Ruby, despite its widespread use in web development and the persistent challenges faced by its developers, has received little attention in APR research. In this paper, we introduce RAMP, a novel lightweight framework that formulates program repair as a feedback-driven, iterative process for Ruby. RAMP employs a team of collaborative agents that generate targeted tests, reflect on errors, and refine candidate fixes until a correct solution is found. Unlike prior approaches, RAMP is designed to avoid reliance on large multilingual repair databases or costly fine-tuning, instead operating directly on Ruby through lightweight prompting and test-driven feedback. Evaluation on the XCodeEval benchmark shows that RAMP achieves a pass@1 of 67% on Ruby, outper-forming prior approaches. RAMP converges quickly within five iterations, and ablation studies confirm that test generation and self-reflection are key drivers of its performance. Further analysis shows that RAMP is particularly effective at repairing wrong answers, compilation errors, and runtime errors. Our approach provides new insights into multi-agent repair strategies, and establishes a foundation for extending LLM-based debugging tools to under-studied languages.",
+   "authors": [
+    "Nikta Akbarpour",
+    "Mahdieh Sadat Benis",
+    "Fatemeh Hendijani Fard",
+    "Ali Ouni",
+    "Mohamed Aymen Saied"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2608.03392",
+   "doi": null,
+   "title": "Self-Evolving Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large language models are increasingly embedded in software engineering workflows as coding agents that can inspect repositories, invoke tools, execute tests, debug failures, and generate patches. Yet most existing coding agents remain largely static after deployment, even though software development is a dynamic, feedback-rich process in which repositories evolve, dependencies change, tests fail, and repair attempts leave reusable experience. This tension has motivated a growing body of work on self-evolving coding agents, where the agent improves its future behavior by persistently updating its framework, memory, skills and tools, components, workflow and topology, or environment and context from prior coding interactions. In this survey, we provide a structured synthesis of this emerging area. We first define the concept of self-evolving coding agents and distinguish it from conventional coding agents and general self-evolving agents. We then develop a taxonomy centered on the targets of evolution, complemented by two orthogonal perspectives: when evolution occurs and which code-specific signals drive it. We further examine the benchmarks used to measure the effect of evolution and related coding products. Across the literature, we find that executable feedback, repository-level context, and coding trajectories make software engineering a natural domain for agent self-evolution, but also introduce challenges in feedback reliability, benchmark overfitting, reversibility, system complexity, safety, cost, and generalization. By organizing existing work around these dimensions, this survey aims to clarify the conceptual boundaries of self-evolving coding agents and provide a foundation for designing more adaptive, reliable, and software-aware agentic systems.",
+   "authors": [
+    "Hao Zhou",
+    "Haichuan Hu",
+    "Tianyu Luo",
+    "Ye Shang",
+    "Chunrong Fang",
+    "Zhenyu Chen",
+    "Liang Xiao",
+    "Quanjun Zhang"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2608.13681",
+   "doi": null,
+   "title": "Fine-Tuning Qwen3-27B for C-to-Rust Code Translation: A Three-Stage Curriculum of Pretraining, Debugging-Aware SFT, and Task-Specific SFT",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Translating C code into safe, idiomatic Rust is a longstanding software-engineering goal because it can eliminate entire classes of memory-safety vulnerabilities while preserving the functional behavior of legacy systems. Large language models (LLMs) have shown promise for this task but typically underperform when applied off-the-shelf, since general-purpose pretraining rarely emphasizes idiomatic Rust generation, cross-language semantic equivalence, or the ability to reason about and repair compiler/runtime feedback. In this report we describe a three-stage fine-tuning curriculum applied to Qwen3-27B that is designed to progressively specialize the model for the C-to-Rust (C2Rust) translation task: (1) continued pretraining on Rust-centric corpora to strengthen the model's prior over idiomatic Rust syntax and standard-library usage; (2) supervised fine-tuning (SFT) on the microsoft/Verus_Training_Data dataset to instill debugging and self-repair behavior over Rust code; and (3) task-specific SFT on paired C/Rust solutions derived from LeetCode problems to teach direct semantic translation. We evaluate the resulting model using the agentic, static-analysis-guided verification framework of SACTOR, which performs structure-aware, two-phase (unidiomatic to idiomatic) translation with foreign-function-interface (FFI)-based end-to-end (E2E) testing. We report success rate, idiomaticity (Clippy lint counts, unsafe-code fraction), and failure-mode analyses, and compare our fine-tuned model against baseline Qwen3-27B and other LLMs evaluated under the same framework.",
+   "authors": [
+    "Pu Zhao",
+    "Changdi Yang",
+    "Yixiao Chen",
+    "Yi Gao",
+    "Yifan Cao",
+    "Haochen Zeng",
+    "Yanzhi Wang"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  }
+ ]
+}

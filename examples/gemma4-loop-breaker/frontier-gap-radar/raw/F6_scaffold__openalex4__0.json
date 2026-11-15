@@ -1,0 +1,224 @@
+{
+ "url": "https://api.openalex.org/works?search=SWE-agent+agent-computer+interfaces+enable+automated+software+engineering&filter=from_publication_date%3A2023-01-01&per-page=10",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4417525566",
+   "doi": "10.52202/085713-3239",
+   "title": "SWE-smith: Scaling Data for Software Engineering Agents",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 314,
+   "abstract": "Despite recent progress in Language Models (LMs) for software engineering, collecting training data remains a significant pain point. Existing datasets are small, with at most 1,000s of training instances from 11 or fewer GitHub repositories. The procedures to curate such datasets are often complex, necessitating hundreds of hours of human labor; companion execution environments also take up several terabytes of storage, severely limiting their scalability and usability. To address this pain point, we introduce SWE-smith, a novel pipeline for generating software engineering training data at scale. Given any Python codebase, SWE-smith constructs a corresponding execution environment, then automatically synthesizes 100s to 1,000s of task instances that break existing test(s) in the codebase. Using SWE-smith, we create a dataset of 50k instances sourced from 128 GitHub repositories, an order of magnitude larger than all previous works. We train SWE-agent-LM-32B, achieving 40.2% Pass@1 resolve rate on the SWE-bench Verified benchmark, state of the art among open source models. We open source SWE-smith (collection procedure, task instances, trajectories, models) to lower the barrier of entry for research in LM systems for automated software engineering. All assets available at https://swesmith.com.",
+   "authors": [
+    "John Yang",
+    "K. Lieret",
+    "Carlos Jimenez",
+    "Alexander Wettig",
+    "Kabir Khandpur",
+    "Yanzhe Zhang",
+    "Binyuan Hui",
+    "Ofir Press"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4405957747",
+   "doi": "10.48550/arxiv.2412.21139",
+   "title": "Training Software Engineering Agents and Verifiers with SWE-Gym",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 267,
+   "abstract": "We present SWE-Gym, the first environment for training real-world software engineering (SWE) agents. SWE-Gym contains 2,438 real-world Python task instances, each comprising a codebase with an executable runtime environment, unit tests, and a task specified in natural language. We use SWE-Gym to train language model based SWE agents, achieving up to 19% absolute gains in resolve rate on the popular SWE-Bench Verified and Lite test sets. We also experiment with inference-time scaling through verifiers trained on agent trajectories sampled from SWE-Gym. When combined with our fine-tuned SWE agents, we achieve 32.0% and 26.0% on SWE-Bench Verified and Lite, respectively, reflecting a new state-of-the-art for open-weight SWE agents. To facilitate further research, we publicly release SWE-Gym, models, and agent trajectories.",
+   "authors": [
+    "Jiayi Pan",
+    "Xingyao Wang",
+    "Graham Neubig",
+    "Navdeep Jaitly",
+    "Heng Ji",
+    "Alane Suhr",
+    "Yizhe Zhang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416364042",
+   "doi": "10.48550/arxiv.2511.13646",
+   "title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 118,
+   "abstract": "Large Language Models (LLMs) are reshaping almost all industries, including software engineering. In recent years, a number of LLM agents have been proposed to solve real-world software problems. Such software agents are typically equipped with a suite of coding tools and can autonomously decide the next actions to form complete trajectories to solve end-to-end software tasks. While promising, they typically require dedicated design and may still be suboptimal, since it can be extremely challenging and costly to exhaust the entire agent scaffold design space. Recognizing that software agents are inherently software themselves that can be further refined/modified, researchers have proposed a number of self-improving software agents recently, including the Darwin-G\u00f6del Machine (DGM). Meanwhile, such self-improving agents require costly offline training on specific benchmarks and may not generalize well across different LLMs or benchmarks. In this paper, we propose Live-SWE-agent, the first live software agent that can autonomously and continuously evolve itself on-the-fly during runtime when solving real-world software problems. More specifically, Live-SWE-agent starts with the most basic agent scaffold with only access to bash tools (e.g., mini-SWE-agent), and autonomously evolves its own scaffold implementation while solving real-world software problems. Our evaluation on the widely studied SWE-bench Verified benchmark shows that LIVE-SWE-AGENT can achieve an impressive solve rate of 77.4% without test-time scaling, outperforming all existing software agents, including the best proprietary solution. Moreover, Live-SWE-agent outperforms state-of-the-art manually crafted software agents on the recent SWE-Bench Pro benchmark, achieving the best-known solve rate of 45.8%.",
+   "authors": [
+    "Chunqiu Steven Xia",
+    "Zhe Wang",
+    "Yan Min Yang",
+    "Yuxiang Wei",
+    "Lingming Zhang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415252687",
+   "doi": "10.48550/arxiv.2509.16941",
+   "title": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 442,
+   "abstract": "We introduce SWE-Bench Pro, a substantially more challenging benchmark that builds upon the best practices of SWE-BENCH [25], but is explicitly designed to capture realistic, complex, enterprise-level problems beyond the scope of SWE-BENCH. SWE-BENCH PRO contains 1,865 problems sourced from a diverse set of 41 actively maintained repositories spanning business applications, B2B services, and developer tools. The benchmark is partitioned into a public set with open access to problems sourced from 11 repositories, a held-out set of 12 repositories and a commercial set of 18 proprietary repositories where we have formal partnership agreements with early-stage startups. Problems in the held-out and the commercial set are not publicly accessible, but we release results on the commercial set. Our benchmark features long-horizon tasks that may require hours to days for a professional software engineer to complete, often involving patches across multiple files and substantial code modifications. All tasks are human-verified and augmented with sufficient context to ensure resolvability. To better understand these limitations, we cluster the failure modes observed in the collected agent trajectories for a clearer characterization of the error patterns exhibited by current models. Overall, SWE-BENCH PRO provides a contamination-resistant testbed that more faithfully captures the complexity and diversity of real-world software development, advancing the pursuit of truly autonomous software engineering agents at a professional level.",
+   "authors": [
+    "Xiang Bo Deng",
+    "Jeff Da",
+    "Edwin Pan",
+    "Yun He",
+    "Charles Ide",
+    "Garg, Kanak",
+    "Niklas T. Lauffer",
+    "Park, Andrew"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411449940",
+   "doi": "10.1145/3715754",
+   "title": "Demystifying LLM-Based Software Engineering Agents",
+   "year": 2025,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 876,
+   "abstract": "Recent advancements in large language models (LLMs) have significantly advanced the automation of software development tasks, including code synthesis, program repair, and test generation. More recently, researchers and industry practitioners have developed various autonomous LLM agents to perform end-to-end software development tasks. These agents are equipped with the ability to use tools, run commands, observe feedback from the environment, and plan for future actions. However, the complexity of these agent-based approaches, together with the limited abilities of current LLMs, raises the following question: Do we really have to employ complex autonomous software agents? To attempt to answer this question, we build Agentless \u2013 an agentless approach to automatically resolve software development issues. Compared to the verbose and complex setup of agent-based approaches, Agentless employs a simplistic three-phase process of localization, repair, and patch validation, without letting the LLM decide future actions or operate with complex tools. Our results on the popular SWE-bench Lite benchmark show that surprisingly the simplistic Agentless is able to achieve both the highest performance (32.00%, 96 correct fixes) and low cost ($0.70) compared with all existing open-source software agents at the time of paper submission! Agentless also achieves more than 50% solve rate when using Claude 3.5 Sonnet on the new SWE-bench Verified benchmark. In fact, Agentless has already been adopted by OpenAI as the go-to approach to showcase the real-world coding performance of both GPT-4o and the new o1 models; more recently, Agentless has also been used by DeepSeek to evaluate their newest DeepSeek V3 and R1 models . Furthermore, we manually classified the problems in SWE-bench Lite and found problems with exact ground truth patches or insufficient/misleading issue descriptions. As such, we construct SWE-bench Lite- S by excluding such problematic issues to perform more rigorous evaluation and comparison. Our work highlights the currently overlooked potential of a simplistic, cost-effective technique in autonomous software development. We hope Agentless will help reset the baseline, starting point, and horizon for autonomous software agents, and inspire future work along this crucial direction. We have open-sourced Agentless at: https://github.com/OpenAutoCoder/Agentless",
+   "authors": [
+    "Chunqiu Steven Xia",
+    "Yinlin Deng",
+    "Soren Dunn",
+    "Lingming Zhang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7117543588",
+   "doi": "10.48550/arxiv.2512.21919",
+   "title": "SWE-RM: Execution-free Feedback For Software Engineering Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 31,
+   "abstract": "Execution-based feedback like unit testing is widely used in the development of coding agents through test-time scaling (TTS) and reinforcement learning (RL). This paradigm requires scalable and reliable collection of unit test cases to provide accurate feedback, and the resulting feedback is often sparse and cannot effectively distinguish between trajectories that are both successful or both unsuccessful. In contrast, execution-free feedback from reward models can provide more fine-grained signals without depending on unit test cases. Despite this potential, execution-free feedback for realistic software engineering (SWE) agents remains underexplored. Aiming to develop versatile reward models that are effective across TTS and RL, however, we observe that two verifiers with nearly identical TTS performance can nevertheless yield very different results in RL. Intuitively, TTS primarily reflects the model's ability to select the best trajectory, but this ability does not necessarily generalize to RL. To address this limitation, we identify two additional aspects that are crucial for RL training: classification accuracy and calibration. We then conduct comprehensive controlled experiments to investigate how to train a robust reward model that performs well across these metrics. In particular, we analyze the impact of various factors such as training data scale, policy mixtures, and data source composition. Guided by these investigations, we introduce SWE-RM, an accurate and robust reward model adopting a mixture-of-experts architecture with 30B total parameters and 3B activated during inference. SWE-RM substantially improves SWE agents on both TTS and RL performance. For example, it increases the accuracy of Qwen3-Coder-Flash from 51.6% to 62.0%, and Qwen3-Coder-Max from 67.0% to 74.6% on SWE-Bench Verified using TTS, achieving new state-of-the-art performance among open-source models.",
+   "authors": [
+    "KaShun Shum",
+    "Binyuan Hui",
+    "Jiawei Chen",
+    "Lei Zhang",
+    "X. W.",
+    "Jiaxi Yang",
+    "Yuzhen Huang",
+    "Junyang Lin"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414920507",
+   "doi": "10.1145/3744916.3787810",
+   "title": "SWE-Debate: Competitive Multi-Agent Debate for Software Issue Resolution",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 76,
+   "abstract": "Issue resolution has made remarkable progress thanks to the advanced reasoning capabilities of large language models (LLMs). Recently, agent-based frameworks such as SWE-agent have further advanced this progress by enabling autonomous, tool-using agents to tackle complex software engineering tasks. While existing agent-based issue resolution approaches are primarily based on agents' independent explorations, they often get stuck in local solutions and fail to identify issue patterns that span across different parts of the codebase. To address this limitation, we propose SWE-Debate, a competitive multi-agent debate framework that encourages diverse reasoning paths and achieves more consolidated issue localization. SWE-Debate first creates multiple fault propagation traces as localization proposals by traversing a code dependency graph. Then, it organizes a three-round debate among specialized agents, each embodying distinct reasoning perspectives along the fault propagation trace. This structured competition enables agents to collaboratively converge on a consolidated fix plan. Finally, this consolidated fix plan is integrated into an MCTS-based code modification agent for patch generation. Experiments on the SWE-bench benchmark show that SWE-Debate achieves new state-of-the-art results in open-source agent frameworks and outperforms baselines by a large margin.",
+   "authors": [
+    "H. Li",
+    "Yanan Shi",
+    "Shaoxin Lin",
+    "Xiaodong Gu",
+    "Heng Lian",
+    "Xin Wang",
+    "Yantao Jia",
+    "Tao Huang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7138004636",
+   "doi": "10.48550/arxiv.2603.15401",
+   "title": "SWE-Skills-Bench: Do Agent Skills Actually Help in Real-World Software Engineering?",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 106,
+   "abstract": "Agent skills, structured procedural knowledge packages injected at inference time, are increasingly used to augment LLM agents on software engineering tasks. However, their real utility in end-to-end development settings remains unclear, and no standard procedure tests an individual skill before installation. We present swe-skills-bench, a skill-centric, requirement-driven benchmark that measures how much individual agent skills improve performance on real-world software engineering (SWE) tasks. We start from 98 public SWE skills, each paired with a real GitHub repository pinned at a fixed commit. For each skill, we derive repository-specific requirements, create executable verifiers, and build a reproducible environment. Under each of four agent-model configurations, we run every task once without the skill and once with it, yielding 3,920 paired evaluations. For each requirement, we compute a paired delta, i.e., the change in outcome when the skill is added. We then aggregate these deltas across a skill's ten requirements into a per-skill utility profile, and use a statistical test to classify each skill as Golden (significantly helpful), Ineffective (no significant effect), or Harmful (significantly detrimental). Our results show that skills provide limited benefits: 92 of 98 skills have no statistically significant effect, and adding skills raises the average pass ratio only from 76.6% to 76.9%. The few helpful skills supply procedures that the agent would otherwise omit (gains of up to $+17.7$ points). In contrast, harmful skills anchor the agent on their own templates and override the task's explicit instructions (losses of up to -17.0 points). Our code is available at https://github.com/ControllableModel/SWE-Skills-Bench.",
+   "authors": [
+    "Tingxu Han",
+    "Yi Zhang",
+    "Wei Song",
+    "Chunrong Fang",
+    "Zhenyu Chen",
+    "Youcheng Sun",
+    "Lijie Hu"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7127725903",
+   "doi": "10.18653/2026.findings-emnlp.1937",
+   "title": "SWE-World: Building Software Engineering Agents in Docker-Free Environments",
+   "year": 2026,
+   "venue": "Findings of the Association for Computational Linguistics: EMNLP (Findings of EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 30,
+   "abstract": "Recent advances in large language models (LLMs) have enabled software engineering agents to solve complex code modification tasks.However, most existing approaches rely on execution feedback from Docker-based environments, which require dependency-complete setup, program execution, and test validation, making agent training costly and difficult to scale.We propose SWE-World, a Dockerfree framework that replaces containerized execution during downstream agent optimization with a learned surrogate environment.Trained on real agent-environment interaction traces, SWE-World predicts both step-level execution feedback and final test outcomes, preserving the standard agent-environment loop without repeatedly constructing or running Docker environments.This surrogate also enables test-time scaling (TTS) by scoring multiple candidate trajectories through simulated evaluation.Experiments on SWE-bench Verified show that SWE-World improves Qwen2.5-Coder-32B-Instructfrom 6.2% to 52.0% with Docker-free SFT, 55.0% with Docker-free RL, and 68.2% with TTS.The code is available at https: //github.com/RUCAIBox/SWE-World.",
+   "authors": [
+    "Shuang Sun",
+    "Huatong Song",
+    "Lisheng Huang",
+    "Jinhao Jiang",
+    "Ran Le",
+    "Zhihao Lv",
+    "Zongchao Chen",
+    "Yiwen Hu"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4404342086",
+   "doi": "10.48550/arxiv.2410.20285",
+   "title": "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 111,
+   "abstract": "Software engineers operating in complex and dynamic environments must continuously adapt to evolving requirements, learn iteratively from experience, and reconsider their approaches based on new insights. However, current large language model (LLM)-based software agents often follow linear, sequential processes that prevent backtracking and exploration of alternative solutions, limiting their ability to rethink their strategies when initial approaches prove ineffective. To address these challenges, we propose SWE-Search, a multi-agent framework that integrates Monte Carlo Tree Search (MCTS) with a self-improvement mechanism to enhance software agents' performance on repository-level software tasks. SWE-Search extends traditional MCTS by incorporating a hybrid value function that leverages LLMs for both numerical value estimation and qualitative evaluation. This enables self-feedback loops where agents iteratively refine their strategies based on both quantitative numerical evaluations and qualitative natural language assessments of pursued trajectories. The framework includes a SWE-Agent for adaptive exploration, a Value Agent for iterative feedback, and a Discriminator Agent that facilitates multi-agent debate for collaborative decision-making. Applied to the SWE-bench benchmark, our approach demonstrates a 23% relative improvement in performance across five models compared to standard open-source agents without MCTS. Our analysis reveals how performance scales with increased inference-time compute through deeper search, providing a pathway to improve software agents without requiring larger models or additional training data. This highlights the potential of self-evaluation driven search techniques in complex software engineering environments.",
+   "authors": [
+    "Antonis Antoniades",
+    "Albert \u00d6rwall",
+    "Kexun Zhang",
+    "Yuxi Xie",
+    "Anirudh Goyal",
+    "William Yang Wang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "SWE-agent agent-computer interfaces enable automated software engineering"
+  }
+ ]
+}

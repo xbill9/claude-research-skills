@@ -1,0 +1,530 @@
+{
+ "url": "https://api.openalex.org/works?search=agent-computer+interface+software+engineering+agent&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4417525566",
+   "doi": "10.52202/085713-3239",
+   "title": "SWE-smith: Scaling Data for Software Engineering Agents",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 314,
+   "abstract": "Despite recent progress in Language Models (LMs) for software engineering, collecting training data remains a significant pain point. Existing datasets are small, with at most 1,000s of training instances from 11 or fewer GitHub repositories. The procedures to curate such datasets are often complex, necessitating hundreds of hours of human labor; companion execution environments also take up several terabytes of storage, severely limiting their scalability and usability. To address this pain point, we introduce SWE-smith, a novel pipeline for generating software engineering training data at scale. Given any Python codebase, SWE-smith constructs a corresponding execution environment, then automatically synthesizes 100s to 1,000s of task instances that break existing test(s) in the codebase. Using SWE-smith, we create a dataset of 50k instances sourced from 128 GitHub repositories, an order of magnitude larger than all previous works. We train SWE-agent-LM-32B, achieving 40.2% Pass@1 resolve rate on the SWE-bench Verified benchmark, state of the art among open source models. We open source SWE-smith (collection procedure, task instances, trajectories, models) to lower the barrier of entry for research in LM systems for automated software engineering. All assets available at https://swesmith.com.",
+   "authors": [
+    "John Yang",
+    "K. Lieret",
+    "Carlos Jimenez",
+    "Alexander Wettig",
+    "Kabir Khandpur",
+    "Yanzhe Zhang",
+    "Binyuan Hui",
+    "Ofir Press"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4405957747",
+   "doi": "10.48550/arxiv.2412.21139",
+   "title": "Training Software Engineering Agents and Verifiers with SWE-Gym",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 267,
+   "abstract": "We present SWE-Gym, the first environment for training real-world software engineering (SWE) agents. SWE-Gym contains 2,438 real-world Python task instances, each comprising a codebase with an executable runtime environment, unit tests, and a task specified in natural language. We use SWE-Gym to train language model based SWE agents, achieving up to 19% absolute gains in resolve rate on the popular SWE-Bench Verified and Lite test sets. We also experiment with inference-time scaling through verifiers trained on agent trajectories sampled from SWE-Gym. When combined with our fine-tuned SWE agents, we achieve 32.0% and 26.0% on SWE-Bench Verified and Lite, respectively, reflecting a new state-of-the-art for open-weight SWE agents. To facilitate further research, we publicly release SWE-Gym, models, and agent trajectories.",
+   "authors": [
+    "Jiayi Pan",
+    "Xingyao Wang",
+    "Graham Neubig",
+    "Navdeep Jaitly",
+    "Heng Ji",
+    "Alane Suhr",
+    "Yizhe Zhang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411449940",
+   "doi": "10.1145/3715754",
+   "title": "Demystifying LLM-Based Software Engineering Agents",
+   "year": 2025,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 876,
+   "abstract": "Recent advancements in large language models (LLMs) have significantly advanced the automation of software development tasks, including code synthesis, program repair, and test generation. More recently, researchers and industry practitioners have developed various autonomous LLM agents to perform end-to-end software development tasks. These agents are equipped with the ability to use tools, run commands, observe feedback from the environment, and plan for future actions. However, the complexity of these agent-based approaches, together with the limited abilities of current LLMs, raises the following question: Do we really have to employ complex autonomous software agents? To attempt to answer this question, we build Agentless \u2013 an agentless approach to automatically resolve software development issues. Compared to the verbose and complex setup of agent-based approaches, Agentless employs a simplistic three-phase process of localization, repair, and patch validation, without letting the LLM decide future actions or operate with complex tools. Our results on the popular SWE-bench Lite benchmark show that surprisingly the simplistic Agentless is able to achieve both the highest performance (32.00%, 96 correct fixes) and low cost ($0.70) compared with all existing open-source software agents at the time of paper submission! Agentless also achieves more than 50% solve rate when using Claude 3.5 Sonnet on the new SWE-bench Verified benchmark. In fact, Agentless has already been adopted by OpenAI as the go-to approach to showcase the real-world coding performance of both GPT-4o and the new o1 models; more recently, Agentless has also been used by DeepSeek to evaluate their newest DeepSeek V3 and R1 models . Furthermore, we manually classified the problems in SWE-bench Lite and found problems with exact ground truth patches or insufficient/misleading issue descriptions. As such, we construct SWE-bench Lite- S by excluding such problematic issues to perform more rigorous evaluation and comparison. Our work highlights the currently overlooked potential of a simplistic, cost-effective technique in autonomous software development. We hope Agentless will help reset the baseline, starting point, and horizon for autonomous software agents, and inspire future work along this crucial direction. We have open-sourced Agentless at: https://github.com/OpenAutoCoder/Agentless",
+   "authors": [
+    "Chunqiu Steven Xia",
+    "Yinlin Deng",
+    "Soren Dunn",
+    "Lingming Zhang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416364042",
+   "doi": "10.48550/arxiv.2511.13646",
+   "title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 118,
+   "abstract": "Large Language Models (LLMs) are reshaping almost all industries, including software engineering. In recent years, a number of LLM agents have been proposed to solve real-world software problems. Such software agents are typically equipped with a suite of coding tools and can autonomously decide the next actions to form complete trajectories to solve end-to-end software tasks. While promising, they typically require dedicated design and may still be suboptimal, since it can be extremely challenging and costly to exhaust the entire agent scaffold design space. Recognizing that software agents are inherently software themselves that can be further refined/modified, researchers have proposed a number of self-improving software agents recently, including the Darwin-G\u00f6del Machine (DGM). Meanwhile, such self-improving agents require costly offline training on specific benchmarks and may not generalize well across different LLMs or benchmarks. In this paper, we propose Live-SWE-agent, the first live software agent that can autonomously and continuously evolve itself on-the-fly during runtime when solving real-world software problems. More specifically, Live-SWE-agent starts with the most basic agent scaffold with only access to bash tools (e.g., mini-SWE-agent), and autonomously evolves its own scaffold implementation while solving real-world software problems. Our evaluation on the widely studied SWE-bench Verified benchmark shows that LIVE-SWE-AGENT can achieve an impressive solve rate of 77.4% without test-time scaling, outperforming all existing software agents, including the best proprietary solution. Moreover, Live-SWE-agent outperforms state-of-the-art manually crafted software agents on the recent SWE-Bench Pro benchmark, achieving the best-known solve rate of 45.8%.",
+   "authors": [
+    "Chunqiu Steven Xia",
+    "Zhe Wang",
+    "Yan Min Yang",
+    "Yuxiang Wei",
+    "Lingming Zhang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415152078",
+   "doi": "10.48550/arxiv.2504.08696",
+   "title": "SeaView: Software Engineering Agent Visual Interface for Enhanced Workflow",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 13,
+   "abstract": "Auto-regressive LLM-based software engineering (SWE) agents, henceforth SWE agents, have made tremendous progress (>60% on SWE-Bench Verified) on real-world coding challenges including GitHub issue resolution. SWE agents use a combination of reasoning, environment interaction and self-reflection to resolve issues thereby generating \"trajectories\". Analysis of SWE agent trajectories is difficult, not only as they exceed LLM sequence length (sometimes, greater than 128k) but also because it involves a relatively prolonged interaction between an LLM and the environment managed by the agent. In case of an agent error, it can be hard to decipher, locate and understand its scope. Similarly, it can be hard to track improvements or regression over multiple runs or experiments. While a lot of research has gone into making these SWE agents reach state-of-the-art, much less focus has been put into creating tools to help analyze and visualize agent output. We propose a novel tool called SeaView: Software Engineering Agent Visual Interface for Enhanced Workflow, with a vision to assist SWE-agent researchers to visualize and inspect their experiments. SeaView's novel mechanisms help compare experimental runs with varying hyper-parameters or LLMs, and quickly get an understanding of LLM or environment related problems. Based on our user study, experienced researchers spend between 10 and 30 minutes to gather the information provided by SeaView, while researchers with little experience can spend between 30 minutes to 1 hour to diagnose their experiment.",
+   "authors": [
+    "Timothy Bula",
+    "Saurabh Pujar",
+    "Luca Buratti",
+    "Mihaela A. Bornea",
+    "Avirup Sil"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415068586",
+   "doi": "10.48550/arxiv.2506.11425",
+   "title": "Agent-RLVR: Training Software Engineering Agents via Guidance and Environment Rewards",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 60,
+   "abstract": "Reinforcement Learning from Verifiable Rewards (RLVR) has been widely adopted as the de facto method for enhancing the reasoning capabilities of large language models and has demonstrated notable success in verifiable domains like math and competitive programming tasks. However, the efficacy of RLVR diminishes significantly when applied to agentic environments. These settings, characterized by multi-step, complex problem solving, lead to high failure rates even for frontier LLMs, as the reward landscape is too sparse for effective model training via conventional RLVR. In this work, we introduce Agent-RLVR, a framework that makes RLVR effective in challenging agentic settings, with an initial focus on software engineering tasks. Inspired by human pedagogy, Agent-RLVR introduces agent guidance, a mechanism that actively steers the agent towards successful trajectories by leveraging diverse informational cues. These cues, ranging from high-level strategic plans to dynamic feedback on the agent's errors and environmental interactions, emulate a teacher's guidance, enabling the agent to navigate difficult solution spaces and promotes active self-improvement via additional environment exploration. In the Agent-RLVR training loop, agents first attempt to solve tasks to produce initial trajectories, which are then validated by unit tests and supplemented with agent guidance. Agents then reattempt with guidance, and the agent policy is updated with RLVR based on the rewards of these guided trajectories. Agent-RLVR elevates the pass@1 performance of Qwen-2.5-72B-Instruct from 9.4% to 22.4% on SWE-Bench Verified. We find that our guidance-augmented RLVR data is additionally useful for test-time reward model training, shown by further boosting pass@1 to 27.8%. Agent-RLVR lays the groundwork for training agents with RLVR in complex, real-world environments where conventional RL methods struggle.",
+   "authors": [
+    "Jeff Da",
+    "Clinton J. Wang",
+    "Xiang Bo Deng",
+    "Yuntao Ma",
+    "Nikhil Barhate",
+    "Sean M. Hendryx"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214744048",
+   "doi": "10.48550/arxiv.2609.32600",
+   "title": "CUA-SWE: When Computer-Use Agents Meet Visual Software Engineering",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Software development requires more than editing code: developers repeatedly run software, interact with its interfaces, visually inspect its behavior, and use these observations to decide what to change next and whether a change works. Existing coding agents and computer-use agents are largely studied in isolation, leaving this integrated development process underexplored. Diagnosing a runtime interaction failure requires agents to connect visual observations with the responsible code, then use the application again to verify the repair. We introduce CUA-SWE, a benchmark, environment, and evaluation pipeline for software engineering with computer use. Beyond studying how GUI feedback supports diagnosis and repair, we ask whether agents can complete software engineering tasks when required specification or operational information is available only through the running application's visual interface. CUA-SWE spans four software engineering domains and requires agents to modify code and configuration, execute commands, interact with running software, and inspect visual feedback within the same task. Each task includes deterministic, task-specific tests that verify whether the resulting software satisfies the requirements and preserves specified behavior. Our evaluation characterizes how frontier agents combine source-level execution with application screenshots and graphical interaction to produce verified software changes. We examine performance across domains and task information requirements, alongside the development behaviors associated with successful repairs. CUA-SWE provides a unified testbed for studying how agents use visual feedback and interaction to guide software engineering, with executable correctness criteria for the resulting software.",
+   "authors": [
+    "Prince Zizhuang Wang",
+    "Chenhao Liang",
+    "Zelong Xu",
+    "Aojie Yuan",
+    "Xiaolin Zhou",
+    "Haiyue Zhang",
+    "Yue Zhao",
+    "Xiyang Hu"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7166662544",
+   "doi": "10.48550/arxiv.2606.29472",
+   "title": "Agent-Computer Observation Interfaces Enable Dynamic Computer Use",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 5,
+   "abstract": "SWE-agent established the action interface as an underexplored design axis for software-engineering agents; we make the analogous case for the observation interface in computer-use (CU) agents. Current CU agents, closed and open-source alike, tie observation to action--one screenshot every 3-5 s, no audio--leaving them blind and deaf between screenshots to video, animations, transient UI events, meetings, and spoken instructions. We introduce the Agent-Computer Observation Interface (AOI), a model-agnostic perception layer that decouples continuous, adaptive observation from discrete actions through three gated components: inter-step keyframe capture, volume-gated audio transcription, and CU-model-generated visual narration that persists as text. Each produces almost nothing on static, silent content, reducing to the standard loop without degrading it. On DynaCU-Bench (100 dynamic browser tasks plus a 50-task static control), CU models from 7B to frontier scale gain +17 to +48 pp over their screenshot baselines with zero retraining, turning tasks that are near-impossible from periodic screenshots into largely solved ones. The gap is starkest on audio: on a spoken-content subset AOI agents solve every task, whereas streaming voice models hear accurately but cannot act on what they hear without the scaffold. The decomposition is as informative as the headline gain: keyframe selection turns out not to matter--the value comes from narrating captured frames into persistent text--and the interface is not a fixed bundle, since on a newer model (Gemini 3 Flash) the keyframe stream actively regresses through image-token dilution, so its components must be selected per model rather than shipped as one configuration.",
+   "authors": [
+    "Bojie Li",
+    "Noah Shi"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414920547",
+   "doi": "10.48550/arxiv.2507.23370",
+   "title": "Trae Agent: An LLM-based Agent for Software Engineering with Test-time Scaling",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 137,
+   "abstract": "Software issue resolution is a critical challenge in software engineering and has garnered increasing attention in recent years. With the rapid advancement of large language models (LLMs), substantial progress has been made in addressing real-world software engineering tasks. Recent studies have introduced ensemble reasoning techniques to enhance the performance of LLM-based issue resolution. However, existing prompting-based methods still face limitations in effectively exploring large ensemble spaces and lack the capacity for repository-level understanding, both of which constrain their overall effectiveness. In this paper, we propose Trae Agent, the first agent-based ensemble reasoning approach for repository-level issue resolution. Trae Agent formulates our goal as an optimal solution search problem and addresses two key challenges, i.e., large ensemble spaces and repository-level understanding, through modular agents for generation, pruning, and selection. We conduct extensive experiments using three leading LLMs on the widely-adopted SWE-bench benchmark, comparing Trae Agent against four state-of-the-art ensemble reasoning techniques. Experimental results demonstrate that Trae Agent consistently achieves superior performance, with an average improvement of 10.22% over all baselines in terms of Pass@1. Trae Agent has achieved first place on the SWE-bench Verified leaderboard, with a notable Pass@1 score of 75.20%. We are pleased to release Trae Agent as an open-source project to support the research community, with all resources available at https://github.com/bytedance/trae-agent.",
+   "authors": [
+    "Trae Research Team",
+    "Pengfei Gao",
+    "Zhao Tian",
+    "Xiangxin Meng",
+    "Wang, Xinchen",
+    "Ruida Hu",
+    "Xiao, Yuanan",
+    "Liu, Yizhou"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7140221948",
+   "doi": "10.48550/arxiv.2603.21489",
+   "title": "Effective Strategies for Asynchronous Software Engineering Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 23,
+   "abstract": "AI agents have become increasingly capable at isolated software engineering (SWE) tasks such as resolving issues on Github. Yet long-horizon tasks involving multiple interdependent subtasks still pose challenges both with respect to accuracy, and with respect to timely completion. A natural approach to solving these long-horizon tasks in a timely manner is asynchronous multi-agent collaboration, where multiple agents work on different parts of the task at the same time. But effective application of multi-agent systems has proven surprisingly difficult: concurrent edits by multiple agents interfere with each other, dependencies are difficult to synchronize, and combining partial progress into a coherent whole is challenging. On the other hand, human developers have long relied on mature collaboration infrastructure to manage these challenges in large software projects. Inspired by these collaboration primitives, we introduce Centralized Asynchronous Isolated Delegation (CAID), a structured multi-agent coordination paradigm grounded in three core SWE primitives: centralized task delegation, asynchronous execution, and isolated workspaces. CAID constructs dependency-aware task plans through a central manager, executes subtasks concurrently in isolated workspaces, and consolidates progress via structured integration with executable test-based verification. In empirical evaluation, we find that CAID improves accuracy over single-agent baselines by 25.6% absolute on paper reproduction tasks (PaperBench) and 14.7% on Python library development tasks (Commit0). Through systematic analysis, we find that branch-and-merge is a central coordination mechanism for multi-agent collaboration, and that SWE primitives such as git worktree, git commit, and git merge enable it to be realized in a reliable and executable manner.",
+   "authors": [
+    "Jiayi Geng",
+    "Graham Neubig"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7133976416",
+   "doi": "10.1145/3796507",
+   "title": "Large Language Model-Based Agents for Software Engineering: A Survey",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 302,
+   "abstract": "The recent advance in Large Language Models (LLMs) has shaped a new paradigm of AI agents, i.e., LLM-based agents. Compared to standalone LLMs, LLM-based agents substantially extend the versatility and expertise of LLMs by enhancing LLMs with the capabilities of perceiving and utilizing external resources and tools. To date, LLM-based agents have been applied and shown remarkable effectiveness in Software Engineering (SE). The synergy between multiple agents and human interaction brings further promise in tackling complex real-world SE problems. In this work, we present a comprehensive and systematic survey on LLM-based agents for SE. We collect 124 papers and categorize them from two perspectives, i.e., the SE and agent perspectives. In addition, we discuss open challenges and future directions in this critical domain. The repository of this survey is at https://github.com/FudanSELab/Agent4SE-Paper-List .",
+   "authors": [
+    "Liu Jun-wei",
+    "Kaixin Wang",
+    "Yixuan Chen",
+    "Xin Peng",
+    "Zhenpeng Chen",
+    "Lingming Zhang",
+    "Yiling Lou"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403788984",
+   "doi": "10.48550/arxiv.2409.16299",
+   "title": "HyperAgent: Generalist Software Engineering Agents to Solve Coding Tasks at Scale",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 79,
+   "abstract": "Large Language Models (LLMs) have revolutionized software engineering (SE), showcasing remarkable proficiency in various coding tasks. Despite recent advancements that have enabled the creation of autonomous software agents utilizing LLMs for end-to-end development tasks, these systems are typically designed for specific SE functions. We introduce HyperAgent, an innovative generalist multi-agent system designed to tackle a wide range of SE tasks across different programming languages by mimicking the workflows of human developers. HyperAgent features four specialized agents-Planner, Navigator, Code Editor, and Executor-capable of handling the entire lifecycle of SE tasks, from initial planning to final verification. HyperAgent sets new benchmarks in diverse SE tasks, including GitHub issue resolution on the renowned SWE-Bench benchmark, outperforming robust baselines. Furthermore, HyperAgent demonstrates exceptional performance in repository-level code generation (RepoExec) and fault localization and program repair (Defects4J), often surpassing state-of-the-art baselines.",
+   "authors": [
+    "Huy N. Phan",
+    "Nguyen, Tien N.",
+    "Phong X. Nguyen",
+    "Nghi D. Q. Bui"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4413033636",
+   "doi": "10.1007/s10515-025-00544-2",
+   "title": "Agents in software engineering: survey, landscape, and vision",
+   "year": 2025,
+   "venue": "Automated Software Engineering",
+   "type": "article",
+   "cited_by": 85,
+   "abstract": "",
+   "authors": [
+    "Yanlin Wang",
+    "Wanjun Zhong",
+    "Yanxian Huang",
+    "Ensheng Shi",
+    "Min Yang",
+    "Jiachi Chen",
+    "Hui Li",
+    "Yuchi Ma"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402427415",
+   "doi": "10.48550/arxiv.2408.07060",
+   "title": "Diversity Empowers Intelligence: Integrating Expertise of Software Engineering Agents",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 43,
+   "abstract": "Large language model (LLM) agents have shown great potential in solving real-world software engineering (SWE) problems. The most advanced open-source SWE agent can resolve over 27% of real GitHub issues in SWE-Bench Lite. However, these sophisticated agent frameworks exhibit varying strengths, excelling in certain tasks while underperforming in others. To fully harness the diversity of these agents, we propose DEI (Diversity Empowered Intelligence), a framework that leverages their unique expertise. DEI functions as a meta-module atop existing SWE agent frameworks, managing agent collectives for enhanced problem-solving. Experimental results show that a DEI-guided committee of agents is able to surpass the best individual agent's performance by a large margin. For instance, a group of open-source SWE agents, with a maximum individual resolve rate of 27.3% on SWE-Bench Lite, can achieve a 34.3% resolve rate with DEI, making a 25% improvement and beating most closed-source solutions. Our best-performing group excels with a 55% resolve rate, securing the highest ranking on SWE-Bench Lite. Our findings contribute to the growing body of research on collaborative AI systems and their potential to solve complex software engineering challenges.",
+   "authors": [
+    "Kexun Zhang",
+    "Yao, Weiran",
+    "Zuxin Liu",
+    "Yihao Feng",
+    "Zhi\u2010Wei Liu",
+    "Rithesh Murthy",
+    "Tian Lan",
+    "Li, Lei"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415055415",
+   "doi": "10.1145/3861334",
+   "title": "Agentic Software Engineering: Foundational Pillars and a Research Roadmap",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 88,
+   "abstract": "Agentic Software Engineering (SE 3.0) represents a new era where intelligent agents are tasked not with simple code generation, but with achieving complex, goal-oriented SE objectives. To harness these new capabilities while ensuring trustworthiness, we must recognize a fundamental duality within the SE field in the Agentic SE era, comprising two symbiotic modalities: SE for Humans and SE for Agents. This duality demands a radical reimagining of the foundational pillars of SE (actors, processes, tools, and artifacts), which manifest differently in each modality. This new vision of SE requires two distinct, purpose-built workbenches (aka tools) for these two collaborative modalities: the Agent Command Environment (ACE), a command center where humans orchestrate, mentor, and oversee agent teams while managing an inbox of agent-generated events like Merge-Readiness Packs (MRPs) and Consultation Request Packs (CRPs); and the Agent Execution Environment (AEE), a digital workbench where agents not only execute tasks but can proactively invoke human expertise when facing complex trade-offs or ambiguity. This bidirectional partnership, which supports agent-initiated human callbacks and handovers, gives rise to new, structured engineering activities (i.e., processes) that redefine human-AI collaboration, elevating the practice from agentic coding to true agentic software engineering. This paper presents the Structured Agentic Software Engineering (SASE) vision, outlining several of the foundational pillars for the future of SE. The paper culminates in a research roadmap that identifies a few key challenges and opportunities while briefly discussing the resulting impact of this future on SE education. Our goal is not to offer a definitive solution, but to provide a conceptual scaffold with structured vocabulary to catalyze a community-wide dialogue, pushing the SE community to think beyond its classic, human-centric tenets toward a disciplined, scalable, and trustworthy agentic future.",
+   "authors": [
+    "Ahmed E. Hassan",
+    "Hao Li",
+    "Dayi Lin",
+    "Bram Adams",
+    "Tse-Hsun Peter Chen",
+    "Yutaro Kashiwa",
+    "Dong Qiu"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4384812233",
+   "doi": "10.48550/arxiv.2307.07924",
+   "title": "ChatDev: Communicative Agents for Software Development",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1070,
+   "abstract": "Software development is a complex task that necessitates cooperation among multiple members with diverse skills. Numerous studies used deep learning to improve specific phases in a waterfall model, such as design, coding, and testing. However, the deep learning model in each phase requires unique designs, leading to technical inconsistencies across various phases, which results in a fragmented and ineffective development process. In this paper, we introduce ChatDev, a chat-powered software development framework in which specialized agents driven by large language models (LLMs) are guided in what to communicate (via chat chain) and how to communicate (via communicative dehallucination). These agents actively contribute to the design, coding, and testing phases through unified language-based communication, with solutions derived from their multi-turn dialogues. We found their utilization of natural language is advantageous for system design, and communicating in programming language proves helpful in debugging. This paradigm demonstrates how linguistic communication facilitates multi-agent collaboration, establishing language as a unifying bridge for autonomous task-solving among LLM agents. The code and data are available at https://github.com/OpenBMB/ChatDev.",
+   "authors": [
+    "Qian, Chen",
+    "Liu, Wei",
+    "Liu, Hongzhang",
+    "Nuo Chen",
+    "Dang, Yufan",
+    "Li, Jiahao",
+    "Cheng Hong Yang",
+    "Weize Chen"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7117543588",
+   "doi": "10.48550/arxiv.2512.21919",
+   "title": "SWE-RM: Execution-free Feedback For Software Engineering Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 31,
+   "abstract": "Execution-based feedback like unit testing is widely used in the development of coding agents through test-time scaling (TTS) and reinforcement learning (RL). This paradigm requires scalable and reliable collection of unit test cases to provide accurate feedback, and the resulting feedback is often sparse and cannot effectively distinguish between trajectories that are both successful or both unsuccessful. In contrast, execution-free feedback from reward models can provide more fine-grained signals without depending on unit test cases. Despite this potential, execution-free feedback for realistic software engineering (SWE) agents remains underexplored. Aiming to develop versatile reward models that are effective across TTS and RL, however, we observe that two verifiers with nearly identical TTS performance can nevertheless yield very different results in RL. Intuitively, TTS primarily reflects the model's ability to select the best trajectory, but this ability does not necessarily generalize to RL. To address this limitation, we identify two additional aspects that are crucial for RL training: classification accuracy and calibration. We then conduct comprehensive controlled experiments to investigate how to train a robust reward model that performs well across these metrics. In particular, we analyze the impact of various factors such as training data scale, policy mixtures, and data source composition. Guided by these investigations, we introduce SWE-RM, an accurate and robust reward model adopting a mixture-of-experts architecture with 30B total parameters and 3B activated during inference. SWE-RM substantially improves SWE agents on both TTS and RL performance. For example, it increases the accuracy of Qwen3-Coder-Flash from 51.6% to 62.0%, and Qwen3-Coder-Max from 67.0% to 74.6% on SWE-Bench Verified using TTS, achieving new state-of-the-art performance among open-source models.",
+   "authors": [
+    "KaShun Shum",
+    "Binyuan Hui",
+    "Jiawei Chen",
+    "Lei Zhang",
+    "X. W.",
+    "Jiaxi Yang",
+    "Yuzhen Huang",
+    "Junyang Lin"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7127418923",
+   "doi": "10.48550/arxiv.2602.02262",
+   "title": "OmniCode: A Benchmark for Evaluating Software Engineering Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 6,
+   "abstract": "LLM-powered coding agents are redefining how real-world software is developed. To drive the research towards better coding agents, we require challenging benchmarks that can rigorously evaluate the ability of such agents to perform various software engineering tasks. However, popular coding benchmarks such as HumanEval and SWE-Bench focus on narrowly scoped tasks such as competition programming and patch generation. In reality, software engineers have to handle a broader set of tasks for real-world software development. To address this gap, we propose OmniCode, a novel software engineering benchmark that contains a broader and more diverse set of task categories beyond code or patch generation. Overall, OmniCode contains 1794 tasks spanning three programming languages - Python, Java, and C++ - and four key categories: bug fixing, test generation, code review fixing, and style fixing. In contrast to prior software engineering benchmarks, the tasks in OmniCode are (1) manually validated to eliminate ill-defined problems, and (2) synthetically crafted or recently curated to avoid data leakage issues, presenting a new framework for synthetically generating diverse software tasks from limited real-world data. We evaluate OmniCode with popular agent frameworks such as SWE-Agent and show that while they may perform well on bug fixing for Python, they fall short on tasks such as Test Generation and in languages such as C++ and Java. For instance, SWE-Agent achieves a maximum of 25.0% with DeepSeek-V3.1 on C++ Test Generation. OmniCode aims to serve as a robust benchmark and spur the development of agents that can perform well across different aspects of software development. Code and data are available at https://github.com/seal-research/OmniCode.",
+   "authors": [
+    "Atharv Sonwane",
+    "Eng-Shen Tu",
+    "Wei-Chung Lu",
+    "Claas Beger",
+    "Carter Larsen",
+    "Debjit Dhar",
+    "Simon Alford",
+    "Rachel Chen"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402684050",
+   "doi": "10.18653/v1/2024.acl-long.810",
+   "title": "ChatDev: Communicative Agents for Software Development",
+   "year": 2024,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 721,
+   "abstract": "Chen Qian, Wei Liu, Hongzhang Liu, Nuo Chen, Yufan Dang, Jiahao Li, Cheng Yang, Weize Chen, Yusheng Su, Xin Cong, Juyuan Xu, Dahai Li, Zhiyuan Liu, Maosong Sun. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.",
+   "authors": [
+    "Chen Qian",
+    "Wei Liu",
+    "Hongzhang Liu",
+    "Nuo Chen",
+    "Yufan Dang",
+    "Jiahao Li",
+    "Cheng Yang",
+    "Weize Chen"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4399795342",
+   "doi": "10.48550/arxiv.2406.11638",
+   "title": "MASAI: Modular Architecture for Software-engineering AI Agents",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 71,
+   "abstract": "A common method to solve complex problems in software engineering, is to divide the problem into multiple sub-problems. Inspired by this, we propose a Modular Architecture for Software-engineering AI (MASAI) agents, where different LLM-powered sub-agents are instantiated with well-defined objectives and strategies tuned to achieve those objectives. Our modular architecture offers several advantages: (1) employing and tuning different problem-solving strategies across sub-agents, (2) enabling sub-agents to gather information from different sources scattered throughout a repository, and (3) avoiding unnecessarily long trajectories which inflate costs and add extraneous context. MASAI enabled us to achieve the highest performance (28.33% resolution rate) on the popular and highly challenging SWE-bench Lite dataset consisting of 300 GitHub issues from 11 Python repositories. We conduct a comprehensive evaluation of MASAI relative to other agentic methods and analyze the effects of our design decisions and their contribution to the success of MASAI.",
+   "authors": [
+    "Daman Arora",
+    "Atharv Sonwane",
+    "Wadhwa, Nalin",
+    "Abhav Mehrotra",
+    "Saiteja Utpala",
+    "Ramakrishna Bairi",
+    "Aditya Kanade",
+    "Nagarajan Natarajan"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415312611",
+   "doi": "10.1145/3744916.3773202",
+   "title": "Unified Software Engineering Agent as AI Software Engineer",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 28,
+   "abstract": "The growth of Large Language Model (LLM) technology has raised expectations for automated coding. However, software engineering is more than coding and is concerned with activities including maintenance and evolution of a project. In this context, the concept of LLM agents has gained traction, which utilize LLMs as reasoning engines to invoke external tools autonomously. But is an LLM agent the same as an AI software engineer? In this paper, we seek to understand this question by developing a Unified Software Engineering agent or USEagent. Unlike existing work which builds specialized agents for specific software tasks such as testing, debugging, and repair, our goal is to build a unified agent which can orchestrate and handle multiple capabilities. This gives the agent the promise of handling complex scenarios in software development such as fixing an incomplete patch, adding new features, or taking over code written by others. We envision USEagent as the first draft of a future AI Software Engineer which can be a team member in future software development teams involving both AI and humans. To evaluate the efficacy of USEagent, we build a Unified Software Engineering bench (USEbench) comprising of myriad tasks such as coding, testing, and patching. USEbench is a judicious mixture of tasks from existing benchmarks such as SWE-bench, SWT-bench, and REPOCOD. In an evaluation on USEbench consisting of 1,271 repository-level software engineering tasks, USEagent shows improved efficacy compared to existing general agents such as OpenHands CodeActAgent. For specific tasks such as issue resolution in SWE-bench, USEagent demonstrates efficacy comparable to agents such as AutoCodeRover (which are focused on software maintenance), while maintaining applicability to a broader range of software engineering tasks. There exist gaps in the capabilities of USEagent for certain coding tasks, which provides hints on further developing the AI Software Engineer of the future.",
+   "authors": [
+    "Leonhard Applis",
+    "Yuntong Zhang",
+    "Shanchao Liang",
+    "Nan Jiang",
+    "Lin Tan",
+    "Abhik Roychoudhury"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7124428379",
+   "doi": "10.34726/hss.2025.136382",
+   "title": "Reducing Token Usage of Software Engineering Agents",
+   "year": 2025,
+   "venue": "reposiTUm (TU Wien)",
+   "type": "dissertation",
+   "cited_by": 1,
+   "abstract": "Auf LLMs basierende Agenten werden zunehmend eingesetzt, um Aufgaben in der Softwareentwicklung, wie die Behebung von Bugs oder die Implementierung neuer Funktionen, zu automatisieren. Solche Systeme m\u00fcssen Informationen aus gro\u00dfen Code-Repositorien verarbeiten, wodurch ihr Arbeitskontext schnell anw\u00e4chst. Ein langer Kontext ist jedoch teuer und kann die Modellleistung beeintr\u00e4chtigen, da LLMs Schwierigkeiten haben, irrelevante Informationen zu ignorieren. Diese Arbeit untersucht Strategien zur Reduktion der Kontextgr\u00f6\u00dfe und damit des Tokenverbrauchs in Agenten f\u00fcr die Softwareentwicklung, bei m\u00f6glichst geringem Einfluss auf die Performanz. Eine Voranalyse zeigt, dass Code-Tokens den gr\u00f6\u00dften Anteil des gesamten Tokenverbrauchs im gew\u00e4hlten Setup ausmachen. Aus diesem Grund schlagen wir vor, eine Reihe von Code-Minifikationstransformationen anzuwenden, die nicht essenzielle lexikalische Elemente entfernen oder verk\u00fcrzen, ohne die Programmsemantik zu ver\u00e4ndern. Die vorgeschlagenen Transformationen werden in einen Agenten f\u00fcr die Softwareentwicklung integriert und systematisch auf der SWE-bench Verified Benchmark, unter Verwendung von GPT-4.1 und GPT-5-mini, evaluiert. Die Experimente zeigen, dass Minifikation den durchschnittlichen Eingabe-Tokenverbrauch um 42% reduziert, bei einem Leistungsverlust von lediglich 12%. Diese Ergebnisse verdeutlichen, dass einfache Code-Transformationen erhebliche Effizienzgewinne bei gleichzeitig hoher Leistungsf\u00e4higkeit erm\u00f6glichen und somit einen vielversprechenden Ansatz f\u00fcr kosteneffizientere Agenten darstellen.",
+   "authors": [
+    "Nicolas Hrubec"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7202163904",
+   "doi": "10.48550/arxiv.2608.09278",
+   "title": "Software Engineering for and with GUI Agent",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "GUI agents have advanced rapidly, producing a growing body of frameworks, benchmarks, and applications. However, this growth has outpaced the maturity of the field. GUI agents remain technically brittle, incompletely engineered, and insufficiently validated for sustained real-world use. They are evolving into closed-loop software systems. Within these systems, model reasoning is coupled with interface perception, execution feedback, recovery, and human oversight. This evolution calls for a software engineering perspective that remains largely absent from existing research. We address this gap by reviewing 336 GUI-agent papers from January 2018 to April 2026. Five research questions examine the research landscape, architectures, evaluation, software lifecycle concerns, and future opportunities. Our findings show that the field has expanded sharply since 2024, while mobile and web settings remain dominant. Architectures increasingly adopt modular perceive-reason-act loops, but recovery, human escalation, safety enforcement, and auditability remain underdeveloped. This architectural imbalance extends to evaluation. Evaluations are becoming more interactive, but they remain centered on task success and are difficult to compare across protocols. More broadly, existing studies provide limited support for testing beyond benchmarks and for maintaining agents after release. Observability, privacy engineering, and systematic human oversight are also underdeveloped. Together, these findings show that capability improvements alone cannot ensure deployment readiness. Future research should connect dependable execution with lifecycle-centered testing and reproducible evaluation. It should also integrate permission and privacy controls with cost-aware, human-centered governance. This integration is necessary to build dependable, maintainable, secure, and deployable GUI-agent systems.",
+   "authors": [
+    "Shengcheng Yu",
+    "Yuchen Ling",
+    "Junyang Xing",
+    "Quan Zhou",
+    "Chunrong Fang",
+    "Zhenyu Chen"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416365794",
+   "doi": "10.48550/arxiv.2502.18525",
+   "title": "Programming with Pixels: Can Computer-Use Agents do Software Engineering?",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 10,
+   "abstract": "Computer-use agents (CUAs) hold the promise of performing a wide variety of general tasks, but current evaluations have primarily focused on simple scenarios. It therefore remains unclear whether such generalist agents can automate more sophisticated and specialized work such as software engineering (SWE). To investigate this, we introduce $\\texttt{Programming with Pixels}$ (PwP), the first comprehensive computer-use environment for software engineering, where agents visually control an IDE to perform diverse software engineering tasks. To enable holistic evaluation, we also introduce \\texttt{PwP-Bench}, a benchmark of 15 existing and new software-engineering tasks spanning multiple modalities, programming languages, and skillsets. We perform an extensive evaluation of state-of-the-art open-weight and closed-weight CUAs and find that when interacting purely visually, they perform significantly worse than specialized coding agents. However, when the same CUAs are given direct access to just two APIs-file editing and bash operations-performance jumps, often reaching the levels of specialized agents despite having a task-agnostic design. Furthermore, when given access to additional IDE tools via text APIs, all models show further gains. Our analysis shows that current CUAs fall short mainly due to limited visual grounding and the inability to take full advantage of the rich environment, leaving clear room for future improvements.PwP establishes software engineering as a natural domain for benchmarking whether generalist computer-use agents can reach specialist-level performance on sophisticated tasks. Code and data released at https://programmingwithpixels.com",
+   "authors": [
+    "Pranjal Aggarwal",
+    "Sean Welleck"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403365379",
+   "doi": "10.48550/arxiv.2410.08164",
+   "title": "Agent S: An Open Agentic Framework that Uses Computers Like a Human",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 131,
+   "abstract": "We present Agent S, an open agentic framework that enables autonomous interaction with computers through a Graphical User Interface (GUI), aimed at transforming human-computer interaction by automating complex, multi-step tasks. Agent S aims to address three key challenges in automating computer tasks: acquiring domain-specific knowledge, planning over long task horizons, and handling dynamic, non-uniform interfaces. To this end, Agent S introduces experience-augmented hierarchical planning, which learns from external knowledge search and internal experience retrieval at multiple levels, facilitating efficient task planning and subtask execution. In addition, it employs an Agent-Computer Interface (ACI) to better elicit the reasoning and control capabilities of GUI agents based on Multimodal Large Language Models (MLLMs). Evaluation on the OSWorld benchmark shows that Agent S outperforms the baseline by 9.37% on success rate (an 83.6% relative improvement) and achieves a new state-of-the-art. Comprehensive analysis highlights the effectiveness of individual components and provides insights for future improvements. Furthermore, Agent S demonstrates broad generalizability to different operating systems on a newly-released WindowsAgentArena benchmark. Code available at https://github.com/simular-ai/Agent-S.",
+   "authors": [
+    "Saaket Agashe",
+    "Han, Jiuzhou",
+    "Shuyu Gan",
+    "Jiachen Yang",
+    "Li, Ang",
+    "Xin Eric Wang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agent-computer interface software engineering agent"
+  }
+ ]
+}

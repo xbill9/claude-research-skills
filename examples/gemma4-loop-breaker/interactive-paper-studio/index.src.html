@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loop-Breaker Explorer</title>
+<style>
+:root{
+  --bg:#f7f8fa;--panel:#ffffff;--ink:#16202c;--muted:#5b6675;--line:#dde2e8;--accent:#2457c5;
+  --gain:#0f8a5f;--cliff:#c2385a;--warn:#b5650f;--soft:#eef2f8;--grid:#e6eaef;
+  --s1:#2457c5;--s2:#9aa3ae;--s3:#c2385a;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f141a;--panel:#171e27;--ink:#e6ebf1;--muted:#9aa6b4;--line:#2a3441;--accent:#7ea4ff;
+    --gain:#3fcf95;--cliff:#ff7b98;--warn:#f0a85a;--soft:#1d2733;--grid:#25303c;
+    --s1:#7ea4ff;--s2:#6c7682;--s3:#ff7b98;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f141a;--panel:#171e27;--ink:#e6ebf1;--muted:#9aa6b4;--line:#2a3441;--accent:#7ea4ff;
+  --gain:#3fcf95;--cliff:#ff7b98;--warn:#f0a85a;--soft:#1d2733;--grid:#25303c;
+  --s1:#7ea4ff;--s2:#6c7682;--s3:#ff7b98;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{overflow-x:hidden}
+header{padding:20px 24px 0;max-width:1400px;margin:0 auto}
+h1{font-size:1.35rem;line-height:1.3;margin:0 0 4px}
+.byline{color:var(--muted);font-size:.9rem;margin:0 0 8px}
+.finding{background:var(--soft);border-left:4px solid var(--accent);padding:8px 12px;margin:8px 0 12px;border-radius:4px}
+nav{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+nav button{background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:8px 12px;font:inherit;cursor:pointer}
+nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+main{max-width:1400px;margin:0 auto;padding:16px 24px 40px}
+section[hidden]{display:none}
+.sim{display:grid;grid-template-columns:32% 1fr;gap:16px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+.deck h2,.card h2{font-size:1rem;margin:0 0 8px}
+.card h3{font-size:.92rem;margin:12px 0 6px}
+.presets{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
+.presets button{font:inherit;font-size:.85rem;padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--ink);cursor:pointer;text-align:left}
+.presets button.on{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.ctl{margin:10px 0}
+.ctl label{display:flex;justify-content:space-between;gap:8px;font-size:.88rem}
+.ctl output{font-variant-numeric:tabular-nums;font-weight:600}
+.ctl small{display:block;color:var(--muted);font-size:.76rem;line-height:1.3}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.toggle{display:flex;align-items:center;gap:8px;font-size:.88rem;margin-top:8px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}
+.kpi .k{font-size:.75rem;color:var(--muted);line-height:1.25}
+.kpi .v{font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
+.kpi .d{font-size:.78rem;font-variant-numeric:tabular-nums}
+.gain{color:var(--gain)}.loss{color:var(--cliff)}.flat{color:var(--muted)}
+.tag{display:inline-block;font-size:.68rem;padding:0 5px;border-radius:3px;border:1px solid var(--line);color:var(--muted);margin-left:4px;vertical-align:middle}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}
+.chart h3{font-size:.88rem;margin:0 0 4px}
+.chart p{font-size:.76rem;color:var(--muted);margin:4px 0 0;line-height:1.3}
+canvas{width:100%;height:220px;display:block}
+.wide{grid-column:1/-1}
+.det{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.det .card{padding:10px}
+.det select,.det input[type=number]{font:inherit;font-size:.85rem;background:var(--soft);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:2px 4px}
+.fire{font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:.84rem;font-variant-numeric:tabular-nums}
+th,td{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.tbl{overflow-x:auto}
+.note{color:var(--muted);font-size:.82rem}
+.formula{font-family:"Cambria Math","STIX Two Math",Georgia,serif;background:var(--soft);padding:8px 10px;border-radius:6px;overflow-x:auto;font-size:.95rem}
+img.fig{width:100%;height:auto;border-radius:6px;background:#fff}
+code{font-size:.85em;background:var(--soft);padding:0 3px;border-radius:3px}
+.ok{color:var(--gain);font-weight:600}.bad{color:var(--cliff);font-weight:600}
+#selfcheck{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;white-space:pre-wrap;background:var(--soft);padding:8px;border-radius:6px}
+@media (max-width:760px){
+  header,main{padding-left:16px;padding-right:16px}
+  .sim{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .charts,.det{grid-template-columns:1fr}
+  h1{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Breaking the 15-Minute Cliff in Quantized Gemma 4 Coding Agents</h1>
+  <p class="byline">Robina Mirbahar, 2026 &middot; interactive companion built from the paper's tables and stated formulas</p>
+  <p class="finding">Pruning failed turns from the context (G-CCR) lifts Trap-25 loop escape from 4/25 (16.0%) to 24/25 (96.0%) and cuts active post-reset KV tokens by 70.8% (PDF Table 3); calibrated sampling (&tau; = 1.0, top-k 64) lifts Stage-1 synthesis from 23/129 to 51/129 (PDF Table 1).</p>
+  <nav role="tablist">
+    <button role="tab" data-tab="sim" aria-selected="true">Live Simulator</button>
+    <button role="tab" data-tab="arch" aria-selected="false">Architecture</button>
+    <button role="tab" data-tab="abl" aria-selected="false">Ablation Matrix</button>
+    <button role="tab" data-tab="repro" aria-selected="false">Reproducibility</button>
+  </nav>
+</header>
+<main>
+<section id="tab-sim">
+  <div class="sim">
+    <div class="card deck">
+      <h2>Operating point</h2>
+      <div class="presets" id="presets"></div>
+      <div class="note" id="presetCite"></div>
+      <div class="ctl"><label>Sampling temperature &tau; <output id="o_tau"></output></label>
+        <input type="range" id="tau" min="0.1" max="1.5" step="0.05">
+        <small>Paper values: 0.20 baseline, 0.25 hidden thinking, 1.00 calibrated (Table 1), 0.75 recovery burst (&sect;3.4).</small></div>
+      <div class="ctl"><label>|A| issue contract + 1-hop slice, tokens <output id="o_a"></output></label>
+        <input type="range" id="a_tok" min="500" max="8000" step="100">
+        <small>Illustrative. The paper gives no token count for A.</small></div>
+      <div class="ctl"><label>Tokens added to B per failed turn <output id="o_b"></output></label>
+        <input type="range" id="per_turn" min="200" max="4000" step="100">
+        <small>Illustrative. The paper gives no per-turn growth law.</small></div>
+      <div class="ctl"><label><span>Per-token logit gap &ell;<sub>B</sub> &minus; &ell;<sub>A</sub></span> <output id="o_gap"></output></label>
+        <input type="range" id="gap" min="-2" max="2" step="0.1">
+        <small>Illustrative. 0 means every token draws equal raw attention.</small></div>
+      <div class="ctl"><label>Turns in the loop <output id="o_turns"></output></label>
+        <input type="range" id="turns" min="4" max="28" step="1">
+        <small>Per-task cap is 28 tool calls (&sect;1).</small></div>
+      <label class="toggle"><input type="checkbox" id="reset"> <span>G-CCR reset when C<sub>err</sub> &ge; 2 (prune B, add 150-token ledger to A)</span></label>
+    </div>
+    <div>
+      <div class="kpis" id="kpis"></div>
+      <div class="charts">
+        <div class="chart"><h3>Active context per turn vs the 14,336-token compaction cliff</h3><canvas id="cv_ctx"></canvas>
+          <p>Toy worst-case loop: every turn fails with the same error and appends the B tokens set on the left. Grey = unpruned, blue = with G-CCR. Shape only; the paper's own 12-turn curve is Figure 2(b).</p></div>
+        <div class="chart"><h3>Attention share on failed-turn tail B (Proposition 1)</h3><canvas id="cv_dil"></canvas>
+          <p>w<sub>B</sub> = |B|e<sup>&Delta;</sup> / (|A| + |B|e<sup>&Delta;</sup>), assuming uniform per-token logits within A and within B. That assumption is this page's, not the paper's.</p></div>
+        <div class="chart wide"><h3>Quantization-noise amplification vs temperature (&sect;3.2)</h3><canvas id="cv_tau"></canvas>
+          <p>From exp((z<sub>v</sub>+&epsilon;<sub>v</sub>)/&tau;) with &epsilon; ~ N(0, &sigma;<sub>q</sub><sup>2</sup>) iid: the log-odds between two tokens shifts by (&epsilon;<sub>v</sub>&minus;&epsilon;<sub>w</sub>)/&tau;, standard deviation &radic;2&middot;&sigma;<sub>q</sub>/&tau;. The paper does not give &sigma;<sub>q</sub>, so the axis is in units of &sigma;<sub>q</sub>.</p></div>
+      </div>
+      <h3 style="font-size:.95rem;margin:16px 0 6px">Loop detectors (&sect;3.4): any one firing triggers a reset</h3>
+      <div class="det">
+        <div class="card"><b>C<sub>err</sub>(t) &ge; 2</b><br><span class="note">Repeats of the same error signature</span><br>
+          <input type="number" id="d_cerr" min="0" max="10" value="1"> <span id="f_cerr"></span></div>
+        <div class="card"><b>S<sub>diff</sub>(t) &ge; 0.82</b><br><span class="note">LCS similarity of consecutive diffs on one AST symbol</span><br>
+          <input type="range" id="d_sdiff" min="0" max="1" step="0.01" value="0.5" style="width:60%"> <output id="o_sdiff"></output> <span id="f_sdiff"></span></div>
+        <div class="card"><b>H<sub>W</sub>(t) &lt; 0.55 bits, W = 4</b><br><span class="note">Entropy of the last four actions</span><br>
+          <span id="acts"></span><br><span id="f_hw"></span></div>
+      </div>
+      <p class="note" id="detNote"></p>
+    </div>
+  </div>
+</section>
+
+<section id="tab-arch" hidden>
+  <div class="card">
+    <h2>Pipeline (PDF Figure 1)</h2>
+    <img class="fig" alt="Four-stage LoopBreakerEngine pipeline: Gemma 4 QAT and repo graph, Stage-1 calibration and parse, G-CCR loop breaker, two-container verification" src="__FIG1__">
+    <h3>Code graph and the dilution bound (&sect;3.1)</h3>
+    <p>The repository is a typed graph G<sub>repo</sub> = (V, E, R, X) over six relations: CALLS, CALLED_BY, IMPORTS, INHERITS, PARALLEL_SYNC_ASYNC, DOCS_EXAMPLE. At turn t the active tokens split into A (issue contract plus 1-hop slice) and B<sub>t</sub> (accumulated tracebacks and rejected diffs). Proposition 1, adapted from Lemma 39 of Sanford et al.:</p>
+    <div class="formula">Attn<sub>h</sub>(X)<sub>N</sub> = [ Z<sub>h,A</sub>&middot;exp(L<sub>h,A</sub>) + Z<sub>h,B<sub>t</sub></sub>&middot;exp(L<sub>h,B<sub>t</sub></sub>) ] / [ exp(L<sub>h,A</sub>) + exp(L<sub>h,B<sub>t</sub></sub>) ]</div>
+    <p>As |B<sub>t</sub>| grows, exp(L<sub>h,B<sub>t</sub></sub>) dominates the denominator. The paper states the qualitative effect and one measured pair (dilution 0.72 &rarr; 0.06 after G-CCR, &sect;3.1) but no closed form for L<sub>h,B<sub>t</sub></sub>(|B<sub>t</sub>|). The simulator uses the uniform-logit reading stated under its chart.</p>
+    <h3>Thinking budgets matched to graph depth (Proposition 2, &sect;3.1)</h3>
+    <table><tr><th>Phase</th><th>thinking_budget</th><th>Source</th></tr>
+      <tr><td>D1 single-hop file read</td><td>512 (from 4096, &minus;87.5%)</td><td>&sect;3.1</td></tr>
+      <tr><td>LDP co-change edits</td><td>2048 to 4096</td><td>&sect;3.1</td></tr>
+      <tr><td>LDW burst after reset</td><td>6144, &tau; = 0.75</td><td>&sect;3.1, &sect;3.4</td></tr></table>
+    <h3>Action-entropy detector: what W = 4 can produce</h3>
+    <p class="note">With four actions the entropy takes only five values, so H<sub>W</sub> &lt; 0.55 fires only when all four actions are identical. Computed by verify_model.py:</p>
+    <table id="entTable"><tr><th>Pattern in window</th><th>H<sub>4</sub> (bits)</th><th>Fires?</th></tr></table>
+    <h3>Harness limits (&sect;1)</h3>
+    <ul><li>Compaction fires when dialogue history exceeds 14,336 tokens (8,192 output tokens reserved; max_model_len 32,768).</li>
+      <li>28 tool calls and 240 to 480 seconds per task, 12-hour global budget.</li>
+      <li>Grading in a clean Container B after stripping test and config edits.</li></ul>
+  </div>
+</section>
+
+<section id="tab-abl" hidden>
+  <div class="card">
+    <h2>Cumulative ablation M0 &rarr; M6 (PDF Table 2), 129 tasks</h2>
+    <canvas id="cv_abl" style="height:320px"></canvas>
+    <p class="note">Bars: solve rate with 95% Wilson interval computed from the solved counts. Green line: Stage-1 isolated ceiling 39.5% (Table 1). Click a row below to highlight it.</p>
+    <canvas id="cv_kv" style="height:240px"></canvas>
+    <p class="note">Peak KV tokens per configuration against the 14,336-token compaction cliff.</p>
+    <div class="tbl"><table id="t2"></table></div>
+    <h2 style="margin-top:18px">Trap-25 loop recovery (PDF Table 3)</h2>
+    <div class="tbl"><table id="t3"></table></div>
+    <h2 style="margin-top:18px">Stage-1 sampling calibration (PDF Table 1)</h2>
+    <div class="tbl"><table id="t1"></table></div>
+  </div>
+</section>
+
+<section id="tab-repro" hidden>
+  <div class="card">
+    <h2>Grounding table: computed vs published</h2>
+    <p class="note">The Python column is verify_model.py's value, computed from the paper's raw counts; the page's JavaScript recomputes the same quantities for the presets (self-check below). A match means within the published rounding: 0.05 unless noted, 0.5 for the abstract's whole-number -93%, 0.1 for the 22.4-point gap.</p>
+    <div class="tbl"><table id="ground"></table></div>
+    <h2 style="margin-top:18px">Preset self-check (JS vs Python)</h2>
+    <div id="selfcheck"></div>
+    <h3>Rerun</h3>
+    <p class="note"><code>python3 verify_model.py</code> writes preset_values.json; <code>python3 build_page.py</code> embeds it here; <code>node check_js.mjs</code> recomputes every preset with this page's JavaScript and compares.</p>
+  </div>
+</section>
+</main>
+
+<script id="presets-data" type="application/json">__PRESETS_JSON__</script>
+
+<script id="model">
+// Mirror of verify_model.py. Keep the two in step.
+const Z95 = 1.959963984540054;
+function rate(k, n){ return 100 * k / n; }
+function wilson(k, n, z = Z95){
+  const p = k / n, d = 1 + z*z/n, c = (p + z*z/(2*n)) / d;
+  const h = z * Math.sqrt(p*(1-p)/n + z*z/(4*n*n)) / d;
+  return [100*(c-h), 100*(c+h)];
+}
+function pctChange(nw, old){ return 100 * (nw - old) / old; }
+function logFact(n){ let s = 0; for (let i = 2; i <= n; i++) s += Math.log(i); return s; }
+function hyperLogp(a, r1, c1, n){
+  return logFact(r1) + logFact(n-r1) + logFact(c1) + logFact(n-c1)
+       - logFact(n) - logFact(a) - logFact(r1-a) - logFact(c1-a) - logFact(n-r1-c1+a);
+}
+function fisher(k1, n1, k2, n2){
+  const n = n1 + n2, c1 = k1 + k2, lo = Math.max(0, c1 - n2), hi = Math.min(n1, c1);
+  const lpObs = hyperLogp(k1, n1, c1, n); let two = 0, greater = 0;
+  for (let a = lo; a <= hi; a++){
+    const lp = hyperLogp(a, n1, c1, n);
+    if (lp <= lpObs + 1e-7) two += Math.exp(lp);
+    if (a >= k1) greater += Math.exp(lp);
+  }
+  return [Math.min(1, two), Math.min(1, greater)];
+}
+function windowEntropy(actions){
+  const c = {}; for (const a of actions) c[a] = (c[a] || 0) + 1;
+  const w = actions.length; let h = 0;
+  for (const k in c){ const p = c[k] / w; h -= p * Math.log2(p); }
+  return h;
+}
+function noiseLogoddsSd(tau, sigmaQ){ return Math.SQRT2 * sigmaQ / tau; }
+function dilution(aTok, bTok, gap){ const eb = bTok * Math.exp(gap); return eb / (aTok + eb); }
+function trajectory(aTok, perTurn, gap, turns, reset, cThr = 2, ledger = 150){
+  let a = aTok, b = 0, rep = 0; const out = {ctx: [], dil: [], reset_at: []};
+  for (let t = 1; t <= turns; t++){
+    b += perTurn; rep += 1;
+    if (reset && rep >= cThr){ b = 0; a += ledger; rep = 0; out.reset_at.push(t); }
+    out.ctx.push(a + b); out.dil.push(dilution(a, b, gap));
+  }
+  return out;
+}
+function firstCross(ctx, cliff = 14336){ for (let i = 0; i < ctx.length; i++) if (ctx[i] > cliff) return i + 1; return 0; }
+function byId(rows, id){ return rows.find(r => r.id === id); }
+function presetReadout(p, s, T){
+  const t1 = byId(T.t1, p.t1), t2 = byId(T.t2, p.t2), t3 = byId(T.t3, p.t3), b3 = T.t3[0];
+  const [two, one] = fisher(t3.k, t3.n, b3.k, b3.n);
+  const tr = trajectory(s.a_tok, s.per_turn, s.gap, s.turns, p.reset);
+  const w1 = wilson(t1.k, t1.n), w2 = wilson(t2.k, 129), w3 = wilson(t3.k, t3.n);
+  return {
+    t1_rate: rate(t1.k, t1.n), t1_ci_lo: w1[0], t1_ci_hi: w1[1],
+    t1_delta_pts: rate(t1.k, t1.n) - rate(T.t1[0].k, T.t1[0].n),
+    t2_rate: rate(t2.k, 129), t2_ci_lo: w2[0], t2_ci_hi: w2[1],
+    t2_compaction_change_pct: pctChange(t2.compact, T.t2[0].compact),
+    t3_rate: rate(t3.k, t3.n), t3_ci_lo: w3[0], t3_ci_hi: w3[1],
+    t3_fisher_two_sided: two, t3_fisher_one_sided: one,
+    t3_kv_pct: pctChange(t3.post_kv, b3.post_kv), t3_think_pct: pctChange(t3.think, b3.think),
+    noise_sd_over_sigma: noiseLogoddsSd(p.tau, s.sigma_q),
+    toy_peak_dilution: Math.max(...tr.dil), toy_peak_ctx: Math.max(...tr.ctx),
+    toy_cliff_turn: firstCross(tr.ctx), toy_resets: tr.reset_at.length,
+  };
+}
+// Compare every preset readout with the Python values; returns {rows, worst}.
+function selfCheck(D){
+  const rows = []; let worst = 0;
+  for (const p of D.presets){
+    const js = presetReadout(p, D.slider_defaults, D.tables);
+    for (const k in p.readout){
+      const py = p.readout[k], v = js[k];
+      const abs = Math.abs(v - py), rel = py !== 0 ? abs / Math.abs(py) : abs;
+      const err = Math.min(abs, rel); worst = Math.max(worst, err);
+      rows.push({preset: p.id, key: k, js: v, py, abs, rel, ok: abs < 5e-5 || rel < 1e-9});
+    }
+  }
+  return {rows, worst};
+}
+if (typeof module !== "undefined") module.exports = {rate, wilson, pctChange, fisher, windowEntropy, noiseLogoddsSd, dilution, trajectory, firstCross, presetReadout, selfCheck};
+</script>
+
+<script>
+(() => {
+const D = JSON.parse(document.getElementById("presets-data").textContent);
+const T = D.tables, $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = (v, d = 1) => (Math.abs(v) < 1e-12 ? 0 : v).toFixed(d);
+const sgn = (v, d = 1) => (v > 0 ? "+" : "") + fmt(v, d);
+const pfmt = p => p >= 0.001 ? p.toFixed(3) : p.toExponential(2);
+
+// ---------- tabs
+function showTab(name){
+  if (!["sim", "arch", "abl", "repro"].includes(name)) name = "sim";
+  document.querySelectorAll("nav button").forEach(x => x.setAttribute("aria-selected", x.dataset.tab === name));
+  ["sim", "arch", "abl", "repro"].forEach(t => $("tab-" + t).hidden = t !== name);
+  requestDraw();
+}
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => { history.replaceState(null, "", "#" + b.dataset.tab); showTab(b.dataset.tab); }));
+window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
+
+// ---------- state
+const S = Object.assign({tau: 0.2, reset: false, preset: "baseline"}, D.slider_defaults);
+const sliders = {tau: "o_tau", a_tok: "o_a", per_turn: "o_b", gap: "o_gap", turns: "o_turns"};
+function syncControls(){
+  for (const k in sliders){ $(k).value = S[k]; }
+  $("reset").checked = S.reset; showOutputs();
+}
+function showOutputs(){
+  $("o_tau").textContent = (+S.tau).toFixed(2);
+  $("o_a").textContent = (+S.a_tok).toLocaleString("en-US");
+  $("o_b").textContent = (+S.per_turn).toLocaleString("en-US");
+  $("o_gap").textContent = (+S.gap).toFixed(1);
+  $("o_turns").textContent = S.turns;
+}
+for (const k in sliders) $(k).addEventListener("input", e => { S[k] = +e.target.value; S.preset = null; markPreset(); update(); });
+$("reset").addEventListener("change", e => { S.reset = e.target.checked; S.preset = null; markPreset(); update(); });
+
+// ---------- presets
+const pbox = $("presets");
+D.presets.forEach(p => {
+  const b = document.createElement("button"); b.textContent = p.name; b.dataset.id = p.id;
+  b.addEventListener("click", () => applyPreset(p.id)); pbox.appendChild(b);
+});
+function markPreset(){
+  pbox.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.id === S.preset));
+  const p = D.presets.find(x => x.id === S.preset);
+  $("presetCite").textContent = p ? "Sources: " + p.cite + ". Other sliders reset to their illustrative defaults."
+                                  : "Custom point: the published-row cards keep the last preset's rows.";
+}
+let rowPreset = D.presets[0];
+function applyPreset(id){
+  const p = D.presets.find(x => x.id === id);
+  Object.assign(S, D.slider_defaults, {tau: p.tau, reset: p.reset, preset: id}); rowPreset = p;
+  syncControls(); markPreset(); update();
+}
+
+// ---------- KPIs
+function kpiCard(label, value, delta, cls, tag){
+  return `<div class="kpi"><div class="k">${label}${tag ? `<span class="tag">${tag}</span>` : ""}</div><div class="v">${value}</div><div class="d ${cls}">${delta}</div></div>`;
+}
+const cls = (v, goodUp = true) => Math.abs(v) < 1e-9 ? "flat" : ((v > 0) === goodUp ? "gain" : "loss");
+let traj = null, trajOff = null;
+function update(){
+  showOutputs();
+  traj = trajectory(S.a_tok, S.per_turn, S.gap, S.turns, true);
+  trajOff = trajectory(S.a_tok, S.per_turn, S.gap, S.turns, false);
+  const R = presetReadout(rowPreset, S, T), B = presetReadout(D.presets[0], S, T);
+  const live = S.reset ? traj : trajOff;
+  const noise = noiseLogoddsSd(S.tau, 1), noiseB = noiseLogoddsSd(0.2, 1);
+  const t3 = byId(T.t3, rowPreset.t3);
+  const cross = firstCross(live.ctx);
+  $("kpis").innerHTML =
+    kpiCard("Stage-1 solve rate", fmt(R.t1_rate) + "%", `${sgn(R.t1_delta_pts)} pts vs baseline &middot; CI ${fmt(R.t1_ci_lo)}&ndash;${fmt(R.t1_ci_hi)}`, cls(R.t1_delta_pts), "Table 1") +
+    kpiCard("End-to-end solve rate", fmt(R.t2_rate) + "%", `${sgn(R.t2_rate - B.t2_rate)} pts vs M0 &middot; row ${rowPreset.t2}`, cls(R.t2_rate - B.t2_rate), "Table 2") +
+    kpiCard("Trap-25 escape rate", fmt(R.t3_rate) + "%", `${sgn(R.t3_rate - B.t3_rate)} pts &middot; Fisher p ${pfmt(R.t3_fisher_two_sided)}`, cls(R.t3_rate - B.t3_rate), "Table 3") +
+    kpiCard("Post-reset KV tokens", t3.post_kv.toLocaleString("en-US"), `${sgn(R.t3_kv_pct)}% vs unpruned`, cls(R.t3_kv_pct, false), "Table 3") +
+    kpiCard("Log-odds noise sd", fmt(noise, 2) + " &sigma;<sub>q</sub>", `${sgn(pctChange(noise, noiseB))}% vs &tau; = 0.20`, cls(noise - noiseB, false), "live") +
+    kpiCard("Peak attention on B", fmt(100 * Math.max(...live.dil)) + "%", `${S.reset ? "with" : "without"} G-CCR &middot; unpruned ${fmt(100 * Math.max(...trajOff.dil))}%`, cls(Math.max(...live.dil) - Math.max(...trajOff.dil), false), "live") +
+    kpiCard("Peak active context", Math.round(Math.max(...live.ctx)).toLocaleString("en-US"), cross ? `crosses 14,336 at turn ${cross}` : "stays below 14,336", cross ? "loss" : "gain", "live") +
+    kpiCard("Resets fired", String(live.reset_at.length), S.reset ? "C<sub>err</sub> &ge; 2 rule" : "G-CCR off", "flat", "live");
+  updateDetectors();
+  requestDraw();
+}
+
+// ---------- detectors
+const ACTS = ["edit_file", "run_command", "read_file", "get_status"];
+const actState = ["edit_file", "run_command", "edit_file", "run_command"];
+$("acts").innerHTML = actState.map((a, i) => `<select data-i="${i}">${ACTS.map(x => `<option${x === a ? " selected" : ""}>${x}</option>`).join("")}</select>`).join(" ");
+$("acts").addEventListener("change", e => { actState[+e.target.dataset.i] = e.target.value; updateDetectors(); });
+$("d_cerr").addEventListener("input", updateDetectors);
+$("d_sdiff").addEventListener("input", updateDetectors);
+function flag(el, on){ el.innerHTML = on ? '<span class="fire loss">FIRES</span>' : '<span class="gain">quiet</span>'; }
+function updateDetectors(){
+  const th = D.constants.thresh, cerr = +$("d_cerr").value, sd = +$("d_sdiff").value, h = windowEntropy(actState);
+  $("o_sdiff").textContent = sd.toFixed(2);
+  flag($("f_cerr"), cerr >= th.c_err); flag($("f_sdiff"), sd >= th.s_diff);
+  $("f_hw").innerHTML = `H<sub>4</sub> = ${fmt(h, 3)} bits &middot; ` + (h < th.h_w ? '<span class="fire loss">FIRES</span>' : '<span class="gain">quiet</span>');
+  const any = cerr >= th.c_err || sd >= th.s_diff || h < th.h_w;
+  $("detNote").innerHTML = any ? "At least one detector fires: G-CCR prunes B<sub>t</sub>, inserts the 150-token NEGATIVE_CONSTRAINT_LEDGER and starts a 6144-token recovery burst at &tau; = 0.75 (&sect;3.4)."
+                               : "No detector fires; the trajectory continues unpruned. The paper does not define how S<sub>diff</sub> normalises the LCS, so it is a direct input here.";
+}
+
+// ---------- canvas drawing (requestAnimationFrame, eased between states)
+let pending = false; const anim = {};
+function requestDraw(){ if (!pending){ pending = true; requestAnimationFrame(frame); } }
+function ease(key, target){
+  const cur = anim[key];
+  if (!cur || cur.length !== target.length){ anim[key] = target.slice(); return {v: anim[key], done: true}; }
+  let done = true;
+  for (let i = 0; i < target.length; i++){ const d = target[i] - cur[i]; if (Math.abs(d) > 1e-4 * (Math.abs(target[i]) + 1)){ cur[i] += d * 0.25; done = false; } else cur[i] = target[i]; }
+  return {v: cur, done};
+}
+function frame(){
+  pending = false; let done = true;
+  if (!$("tab-sim").hidden && traj){
+    const a = ease("off", trajOff.ctx), b = ease("on", traj.ctx), c = ease("doff", trajOff.dil), d = ease("don", traj.dil);
+    done = a.done && b.done && c.done && d.done;
+    lineChart($("cv_ctx"), [{y: a.v, color: css("--s2"), dash: [5, 4]}, ...(S.reset ? [{y: b.v, color: css("--s1")}] : [])],
+      {ymax: Math.max(16000, ...trajOff.ctx) * 1.05, hline: D.constants.cliff, hlabel: "14,336 cliff", ylab: v => (v / 1000).toFixed(0) + "k", resets: S.reset ? traj.reset_at : []});
+    lineChart($("cv_dil"), [{y: c.v, color: css("--s2"), dash: [5, 4]}, ...(S.reset ? [{y: d.v, color: css("--s1")}] : [])],
+      {ymax: 1, ylab: v => (v * 100).toFixed(0) + "%", resets: S.reset ? traj.reset_at : []});
+    tauChart($("cv_tau"));
+  }
+  if (!$("tab-abl").hidden){ ablChart(); kvChart(); }
+  if (!done) requestDraw();
+}
+function setup(cv){
+  const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  cv.width = Math.max(1, Math.round(r.width * dpr)); cv.height = Math.max(1, Math.round(r.height * dpr));
+  const g = cv.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, r.width, r.height);
+  g.font = "11px system-ui, sans-serif"; return [g, r.width, r.height];
+}
+function axes(g, W, H, m, ymax, ylab, nx, xlab){
+  g.strokeStyle = css("--grid"); g.fillStyle = css("--muted"); g.lineWidth = 1;
+  for (let i = 0; i <= 4; i++){
+    const y = m.t + (H - m.t - m.b) * (1 - i / 4);
+    g.beginPath(); g.moveTo(m.l, y); g.lineTo(W - m.r, y); g.stroke();
+    g.textAlign = "right"; g.textBaseline = "middle"; g.fillText(ylab(ymax * i / 4), m.l - 4, y);
+  }
+  g.textAlign = "center"; g.textBaseline = "top";
+  const step = Math.max(1, Math.ceil(nx / 8));
+  for (let i = 1; i <= nx; i += step){ g.fillText(xlab(i), m.l + (W - m.l - m.r) * (i - 1) / Math.max(1, nx - 1), H - m.b + 4); }
+}
+function lineChart(cv, series, o){
+  const [g, W, H] = setup(cv), m = {l: 40, r: 10, t: 10, b: 22}, n = series[0].y.length;
+  axes(g, W, H, m, o.ymax, o.ylab, n, i => "t" + i);
+  const X = i => m.l + (W - m.l - m.r) * i / Math.max(1, n - 1), Y = v => m.t + (H - m.t - m.b) * (1 - Math.min(v, o.ymax) / o.ymax);
+  for (const t of o.resets){ g.fillStyle = css("--soft"); g.fillRect(X(t - 1) - 3, m.t, 6, H - m.t - m.b); }
+  if (o.hline){ g.strokeStyle = css("--cliff"); g.setLineDash([2, 3]); g.beginPath(); g.moveTo(m.l, Y(o.hline)); g.lineTo(W - m.r, Y(o.hline)); g.stroke(); g.setLineDash([]);
+    g.fillStyle = css("--cliff"); g.textAlign = "left"; g.textBaseline = "bottom"; g.fillText(o.hlabel, m.l + 4, Y(o.hline) - 2); }
+  for (const s of series){
+    g.strokeStyle = s.color; g.lineWidth = 2; g.setLineDash(s.dash || []); g.beginPath();
+    s.y.forEach((v, i) => i ? g.lineTo(X(i), Y(v)) : g.moveTo(X(i), Y(v))); g.stroke(); g.setLineDash([]);
+  }
+}
+function tauChart(cv){
+  const [g, W, H] = setup(cv), m = {l: 40, r: 10, t: 10, b: 22}, lo = 0.1, hi = 1.5, ymax = 15;
+  const X = t => m.l + (W - m.l - m.r) * (t - lo) / (hi - lo), Y = v => m.t + (H - m.t - m.b) * (1 - Math.min(v, ymax) / ymax);
+  g.strokeStyle = css("--grid"); g.fillStyle = css("--muted");
+  for (let i = 0; i <= 3; i++){ const v = ymax * i / 3, y = Y(v); g.beginPath(); g.moveTo(m.l, y); g.lineTo(W - m.r, y); g.stroke(); g.textAlign = "right"; g.textBaseline = "middle"; g.fillText(v.toFixed(0) + "σ", m.l - 4, y); }
+  g.textAlign = "center"; g.textBaseline = "top";
+  for (let t = 0.2; t <= 1.5001; t += 0.2) g.fillText("τ " + t.toFixed(1), X(t), H - m.b + 4);
+  g.strokeStyle = css("--s1"); g.lineWidth = 2; g.beginPath();
+  for (let i = 0; i <= 140; i++){ const t = lo + (hi - lo) * i / 140; const v = noiseLogoddsSd(t, 1); i ? g.lineTo(X(t), Y(v)) : g.moveTo(X(t), Y(v)); } g.stroke();
+  const marks = [[0.2, "0.20 baseline"], [0.25, "0.25"], [0.75, "0.75 burst"], [1.0, "1.00 calibrated"]];
+  g.fillStyle = css("--muted"); g.textAlign = "left"; g.textBaseline = "bottom";
+  marks.forEach(([t, l], i) => { g.beginPath(); g.arc(X(t), Y(noiseLogoddsSd(t, 1)), 3, 0, 7); g.fill(); if (t !== 0.25) g.fillText(l, X(t) + 5, Y(noiseLogoddsSd(t, 1)) - 2 - (i === 0 ? 0 : 0)); });
+  g.fillStyle = css("--cliff"); g.beginPath(); g.arc(X(S.tau), Y(noiseLogoddsSd(S.tau, 1)), 5, 0, 7); g.fill();
+}
+let hiRow = "M6";
+function ablChart(){
+  const cv = $("cv_abl"), [g, W, H] = setup(cv), m = {l: 40, r: 10, t: 10, b: 24}, rows = T.t2, ymax = 50, n = rows.length;
+  const bw = (W - m.l - m.r) / n, Y = v => m.t + (H - m.t - m.b) * (1 - v / ymax);
+  g.strokeStyle = css("--grid"); g.fillStyle = css("--muted");
+  for (let i = 0; i <= 5; i++){ const y = Y(i * 10); g.beginPath(); g.moveTo(m.l, y); g.lineTo(W - m.r, y); g.stroke(); g.textAlign = "right"; g.textBaseline = "middle"; g.fillText(i * 10 + "%", m.l - 4, y); }
+  rows.forEach((r, i) => {
+    const x = m.l + i * bw + bw * 0.18, w = bw * 0.64, v = rate(r.k, 129), [lo, hi] = wilson(r.k, 129);
+    g.fillStyle = r.id === hiRow ? css("--accent") : css("--s2"); g.fillRect(x, Y(v), w, Y(0) - Y(v));
+    g.strokeStyle = css("--ink"); g.lineWidth = 1; g.beginPath(); g.moveTo(x + w / 2, Y(lo)); g.lineTo(x + w / 2, Y(hi)); g.moveTo(x + w * .3, Y(lo)); g.lineTo(x + w * .7, Y(lo)); g.moveTo(x + w * .3, Y(hi)); g.lineTo(x + w * .7, Y(hi)); g.stroke();
+    g.fillStyle = css("--ink"); g.textAlign = "center"; g.textBaseline = "top"; g.fillText(r.id, x + w / 2, H - m.b + 4);
+    g.textBaseline = "bottom"; g.fillText(fmt(v) + "%", x + w / 2, Y(hi) - 2);
+  });
+  const c = rate(51, 129); g.strokeStyle = css("--gain"); g.setLineDash([4, 3]); g.beginPath(); g.moveTo(m.l, Y(c)); g.lineTo(W - m.r, Y(c)); g.stroke(); g.setLineDash([]);
+  g.fillStyle = css("--gain"); g.textAlign = "right"; g.textBaseline = "bottom"; g.fillText("Stage-1 ceiling " + fmt(c) + "%", W - m.r - 2, Y(c) - 2);
+}
+function kvChart(){
+  const cv = $("cv_kv"), [g, W, H] = setup(cv), m = {l: 40, r: 10, t: 10, b: 24}, rows = T.t2, ymax = 30000, n = rows.length;
+  const bw = (W - m.l - m.r) / n, Y = v => m.t + (H - m.t - m.b) * (1 - v / ymax);
+  g.strokeStyle = css("--grid"); g.fillStyle = css("--muted");
+  for (let i = 0; i <= 3; i++){ const y = Y(i * 10000); g.beginPath(); g.moveTo(m.l, y); g.lineTo(W - m.r, y); g.stroke(); g.textAlign = "right"; g.textBaseline = "middle"; g.fillText(i * 10 + "k", m.l - 4, y); }
+  rows.forEach((r, i) => {
+    const x = m.l + i * bw + bw * 0.18, w = bw * 0.64;
+    g.fillStyle = r.peak_kv > D.constants.cliff ? css("--cliff") : css("--s1"); g.fillRect(x, Y(r.peak_kv), w, Y(0) - Y(r.peak_kv));
+    g.fillStyle = css("--ink"); g.textAlign = "center"; g.textBaseline = "top"; g.fillText(r.id, x + w / 2, H - m.b + 4);
+  });
+  g.strokeStyle = css("--cliff"); g.setLineDash([2, 3]); g.beginPath(); g.moveTo(m.l, Y(D.constants.cliff)); g.lineTo(W - m.r, Y(D.constants.cliff)); g.stroke(); g.setLineDash([]);
+  g.fillStyle = css("--cliff"); g.textAlign = "right"; g.textBaseline = "bottom"; g.fillText("14,336 cliff", W - m.r - 2, Y(D.constants.cliff) - 2);
+}
+window.addEventListener("resize", requestDraw);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", requestDraw);
+
+// ---------- static tables
+const t2 = $("t2");
+t2.innerHTML = "<tr><th>Row</th><th>Configuration</th><th>Calls</th><th>Peak KV</th><th>Compacted</th><th>Solved</th><th>Rate (Wilson 95%)</th><th>Held-out</th></tr>" +
+  T.t2.map(r => { const [lo, hi] = wilson(r.k, 129); return `<tr data-id="${r.id}" style="cursor:pointer"><td>${r.id}</td><td>${r.label}</td><td>${r.calls}</td><td>${r.peak_kv.toLocaleString("en-US")}</td><td>${r.compact.toFixed(1)}%</td><td>${r.k}/129</td><td>${fmt(rate(r.k, 129))}% [${fmt(lo)}, ${fmt(hi)}]</td><td>${r.heldout.toFixed(3)}</td></tr>`; }).join("");
+t2.addEventListener("click", e => { const tr = e.target.closest("tr[data-id]"); if (tr){ hiRow = tr.dataset.id; requestDraw(); } });
+$("t3").innerHTML = "<tr><th>Configuration</th><th>Solved</th><th>Escape (Wilson 95%)</th><th>Fisher p vs baseline</th><th>Avg turns</th><th>Think tokens</th><th>Post-reset KV</th><th>Peak KV</th></tr>" +
+  T.t3.map(r => { const [lo, hi] = wilson(r.k, r.n), [p2] = fisher(r.k, r.n, T.t3[0].k, T.t3[0].n);
+    return `<tr><td>${r.label}</td><td>${r.k}/${r.n}</td><td>${fmt(rate(r.k, r.n))}% [${fmt(lo)}, ${fmt(hi)}]</td><td>${pfmt(p2)}</td><td>${r.turns}</td><td>${r.think.toLocaleString("en-US")} (${sgn(pctChange(r.think, T.t3[0].think))}%)</td><td>${r.post_kv.toLocaleString("en-US")} (${sgn(pctChange(r.post_kv, T.t3[0].post_kv))}%)</td><td>${r.peak_kv.toLocaleString("en-US")}</td></tr>`; }).join("") +
+  `<tr><td colspan="8" class="note">Fisher p is two-sided, computed here. The paper prints p = 4.2&times;10<sup>&minus;9</sup> for ccr_adaptive; the two-sided value from the published counts is 7.18&times;10<sup>&minus;9</sup> and the one-sided value 3.59&times;10<sup>&minus;9</sup>.</td></tr>`;
+$("t1").innerHTML = "<tr><th>Configuration</th><th>Think budget</th><th>&tau; / top-k</th><th>Solved</th><th>Rate (Wilson 95%)</th></tr>" +
+  T.t1.map(r => { const [lo, hi] = wilson(r.k, r.n); return `<tr><td>${r.label}</td><td>${r.budget}</td><td>${r.tau.toFixed(2)} / ${r.topk}</td><td>${r.k}/${r.n}</td><td>${fmt(rate(r.k, r.n))}% [${fmt(lo)}, ${fmt(hi)}]</td></tr>`; }).join("") +
+  `<tr><td colspan="5" class="note">The Wilson upper bound for 51/129 is 48.157%, which rounds to 48.2; the paper prints 48.1.</td></tr>`;
+$("entTable").innerHTML += Object.entries(D.entropy_patterns_W4).map(([k, v]) => {
+  const h = windowEntropy(k.split("")); return `<tr><td>${k.split("").join(" ")}</td><td>${fmt(h, 3)}</td><td>${h < D.constants.thresh.h_w ? "yes" : "no"}</td></tr>`; }).join("");
+
+// ---------- grounding table: recompute what can be recomputed in JS from the raw inputs
+const g = $("ground");
+g.innerHTML = "<tr><th>Quantity</th><th>Python</th><th>Published</th><th>Source</th><th>Match</th><th>Note</th></tr>" +
+  D.grounding.map(r => `<tr><td>${r.quantity}</td><td>${Number.isInteger(r.sim) ? r.sim : r.sim.toFixed(4)}</td><td>${r.pub}</td><td>${r.cite}</td><td class="${r.match ? "ok" : "bad"}">${r.match ? "yes" : "no"}</td><td class="note">${r.note || ""}</td></tr>`).join("");
+
+// ---------- self-check (console + page)
+const sc = selfCheck(D), bad = sc.rows.filter(r => !r.ok);
+const lines = [`${sc.rows.length} preset values compared, ${bad.length} mismatches, worst error ${sc.worst.toExponential(2)} (absolute or relative, whichever is smaller)`];
+bad.forEach(r => { lines.push(`MISMATCH ${r.preset}.${r.key}: js=${r.js} py=${r.py}`); console.error("preset mismatch", r); });
+if (!bad.length) console.log("[self-check] " + lines[0]);
+$("selfcheck").textContent = lines.join("\n");
+
+applyPreset("baseline");
+showTab(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>

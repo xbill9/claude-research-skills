@@ -1,0 +1,2929 @@
+{
+ "W7117557793": {
+  "title_search": {
+   "query": "Context as a Tool: Context Management for Long-Horizon SWE-Agents",
+   "candidates": [
+    {
+     "doi": "10.18653/v1/2026.findings-acl.1032",
+     "title": "Context as a Tool: Context Management for Long-Horizon SWE-Agents",
+     "authors": [
+      "Shukai Liu",
+      "Bo Jiang",
+      "Jian Yang",
+      "Yizhi LI",
+      "Jinyang Guo",
+      "Xianglong Liu",
+      "Bryan Dai"
+     ],
+     "first_author_family": "Liu",
+     "author_count": 7,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 1.0,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/v1/2026.findings-acl.930",
+     "title": "ARC: Active and Reflection-driven Context Management for Long-Horizon Information Seeking Agents",
+     "authors": [
+      "Yilun Yao",
+      "Shan Huang",
+      "Elsie Dai",
+      "Zhewen Tan",
+      "Zhenyu Duan",
+      "Shousheng Jia",
+      "Yanbing Jiang",
+      "Tong Yang"
+     ],
+     "first_author_family": "Yao",
+     "author_count": 8,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6289,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/2026.emnlp-main.1634",
+     "title": "Beyond Planning: Sparse Context Reset for Long-Horizon GUI Agents",
+     "authors": [
+      "Weiyao Huang",
+      "Xinye Wu",
+      "Zeming Liu",
+      "Xiaoyu Shen",
+      "Yunpu Ma"
+     ],
+     "first_author_family": "Huang",
+     "author_count": 5,
+     "year": 2026,
+     "venue": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.625,
+     "year_matches": false
+    },
+    {
+     "doi": "10.21203/rs.3.rs-11487641/v1",
+     "title": "When Does Context Compaction Pay in Long-Horizon Agents?",
+     "authors": [
+      "Yuyao Wang"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6218,
+     "year_matches": false
+    },
+    {
+     "doi": "10.21203/rs.3.rs-11487641/v2",
+     "title": "When Does Context Compaction Pay in Long-Horizon Agents?",
+     "authors": [
+      "Yuyao Wang"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6218,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 1.0,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2512.22087",
+   "error": "Crossref HTTP 404"
+  }
+ },
+ "W7125680675": {
+  "title_search": {
+   "query": "SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents",
+   "candidates": [
+    {
+     "doi": "10.36227/techrxiv.21225629",
+     "title": "Adaptive Context Modeling for Arithmetic Coding Using Perceptron",
+     "authors": [
+      "Lucas Lopes",
+      "Philip Chou",
+      "Ricardo de Queiroz"
+     ],
+     "first_author_family": "Lopes",
+     "author_count": 3,
+     "year": 2022,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+     "is_preprint_of": [
+      "10.1109/LSP.2022.3223314"
+     ],
+     "has_preprint": [],
+     "title_similarity": 0.5738,
+     "year_matches": false
+    },
+    {
+     "doi": "10.36227/techrxiv.21225629.v1",
+     "title": "Adaptive Context Modeling for Arithmetic Coding Using Perceptron",
+     "authors": [
+      "Lucas Lopes",
+      "Philip Chou",
+      "Ricardo de Queiroz"
+     ],
+     "first_author_family": "Lopes",
+     "author_count": 3,
+     "year": 2022,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+     "is_preprint_of": [
+      "10.1109/LSP.2022.3223314"
+     ],
+     "has_preprint": [],
+     "title_similarity": 0.5738,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/2026.emnlp-main.1312",
+     "title": "SWE-MEM: Learning Adaptive Memory Management for Long-Horizon Coding Agents",
+     "authors": [
+      "Shuzheng Gao",
+      "Wenhao Zeng",
+      "Zhaojian Yu",
+      "Jianqiao Wangni",
+      "Chaozheng Wang",
+      "Kai Cai",
+      "Shilin He",
+      "Michael R. Lyu"
+     ],
+     "first_author_family": "Gao",
+     "author_count": 8,
+     "year": 2026,
+     "venue": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5606,
+     "year_matches": true
+    },
+    {
+     "doi": "10.52202/075280-0950",
+     "title": "LLM-Pruner: On the Structural Pruning of Large Language Models",
+     "authors": [
+      "Xinyin Ma",
+      "Gongfan Fang",
+      "Xinchao Wang"
+     ],
+     "first_author_family": "Ma",
+     "author_count": 3,
+     "year": 2023,
+     "venue": "Advances in Neural Information Processing Systems 36",
+     "type": "proceedings-article",
+     "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5378,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/cvpr52729.2023.02333",
+     "title": "X-Pruner: eXplainable Pruning for Vision Transformers",
+     "authors": [
+      "Lu Yu",
+      "Wei Xiang"
+     ],
+     "first_author_family": "Yu",
+     "author_count": 2,
+     "year": 2023,
+     "venue": "2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5273,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.5738,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2601.16746",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents",
+   "candidates": [
+    {
+     "doi": "10.36227/techrxiv.21225629",
+     "title": "Adaptive Context Modeling for Arithmetic Coding Using Perceptron",
+     "authors": [
+      "Lucas Lopes",
+      "Philip Chou",
+      "Ricardo de Queiroz"
+     ],
+     "first_author_family": "Lopes",
+     "author_count": 3,
+     "year": 2022,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+     "is_preprint_of": [
+      "10.1109/LSP.2022.3223314"
+     ],
+     "has_preprint": [],
+     "title_similarity": 0.5738
+    },
+    {
+     "doi": "10.36227/techrxiv.21225629.v1",
+     "title": "Adaptive Context Modeling for Arithmetic Coding Using Perceptron",
+     "authors": [
+      "Lucas Lopes",
+      "Philip Chou",
+      "Ricardo de Queiroz"
+     ],
+     "first_author_family": "Lopes",
+     "author_count": 3,
+     "year": 2022,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+     "is_preprint_of": [
+      "10.1109/LSP.2022.3223314"
+     ],
+     "has_preprint": [],
+     "title_similarity": 0.5738
+    },
+    {
+     "doi": "10.18653/2026.emnlp-main.1312",
+     "title": "SWE-MEM: Learning Adaptive Memory Management for Long-Horizon Coding Agents",
+     "authors": [
+      "Shuzheng Gao",
+      "Wenhao Zeng",
+      "Zhaojian Yu",
+      "Jianqiao Wangni",
+      "Chaozheng Wang",
+      "Kai Cai",
+      "Shilin He",
+      "Michael R. Lyu"
+     ],
+     "first_author_family": "Gao",
+     "author_count": 8,
+     "year": 2026,
+     "venue": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5606
+    },
+    {
+     "doi": "10.52202/075280-0950",
+     "title": "LLM-Pruner: On the Structural Pruning of Large Language Models",
+     "authors": [
+      "Xinyin Ma",
+      "Gongfan Fang",
+      "Xinchao Wang"
+     ],
+     "first_author_family": "Ma",
+     "author_count": 3,
+     "year": 2023,
+     "venue": "Advances in Neural Information Processing Systems 36",
+     "type": "proceedings-article",
+     "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5378
+    },
+    {
+     "doi": "10.1109/cvpr52729.2023.02333",
+     "title": "X-Pruner: eXplainable Pruning for Vision Transformers",
+     "authors": [
+      "Lu Yu",
+      "Wei Xiang"
+     ],
+     "first_author_family": "Yu",
+     "author_count": 2,
+     "year": 2023,
+     "venue": "2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5273
+    }
+   ],
+   "best_title_similarity": 0.5738,
+   "best_is_match": false
+  }
+ },
+ "W7215726049": {
+  "title_search": {
+   "query": "AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents",
+   "candidates": [
+    {
+     "doi": "10.18653/2026.realm-1.72",
+     "title": "Contract Before Code: Failure-Compiled Contracts for Long-Horizon Coding Agents",
+     "authors": [
+      "Jiangnan YU",
+      "Kisson Songqi Lin"
+     ],
+     "first_author_family": "YU",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "Proceedings of the Second Workshop for REsearch on Agent Language Models (REALM 2026)",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6184,
+     "year_matches": true
+    },
+    {
+     "doi": "10.21203/rs.3.rs-11487641/v1",
+     "title": "When Does Context Compaction Pay in Long-Horizon Agents?",
+     "authors": [
+      "Yuyao Wang"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6047,
+     "year_matches": true
+    },
+    {
+     "doi": "10.21203/rs.3.rs-11487641/v2",
+     "title": "When Does Context Compaction Pay in Long-Horizon Agents?",
+     "authors": [
+      "Yuyao Wang"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6047,
+     "year_matches": true
+    },
+    {
+     "doi": "10.2139/ssrn.7580538",
+     "title": "Authorization-Preserving Context Lifecycles for Long-Horizon AI Agents",
+     "authors": [
+      "Genliang Zhu",
+      "Chu Wang"
+     ],
+     "first_author_family": "Zhu",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5972,
+     "year_matches": true
+    },
+    {
+     "doi": "10.18653/v1/2026.findings-acl.1032",
+     "title": "Context as a Tool: Context Management for Long-Horizon SWE-Agents",
+     "authors": [
+      "Shukai Liu",
+      "Bo Jiang",
+      "Jian Yang",
+      "Yizhi LI",
+      "Jinyang Guo",
+      "Xianglong Liu",
+      "Bryan Dai"
+     ],
+     "first_author_family": "Liu",
+     "author_count": 7,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5942,
+     "year_matches": true
+    }
+   ],
+   "best_title_similarity": 0.6184,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2610.02163",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents",
+   "candidates": [
+    {
+     "doi": "10.18653/2026.realm-1.72",
+     "title": "Contract Before Code: Failure-Compiled Contracts for Long-Horizon Coding Agents",
+     "authors": [
+      "Jiangnan YU",
+      "Kisson Songqi Lin"
+     ],
+     "first_author_family": "YU",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "Proceedings of the Second Workshop for REsearch on Agent Language Models (REALM 2026)",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6184
+    },
+    {
+     "doi": "10.21203/rs.3.rs-11487641/v1",
+     "title": "When Does Context Compaction Pay in Long-Horizon Agents?",
+     "authors": [
+      "Yuyao Wang"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6047
+    },
+    {
+     "doi": "10.21203/rs.3.rs-11487641/v2",
+     "title": "When Does Context Compaction Pay in Long-Horizon Agents?",
+     "authors": [
+      "Yuyao Wang"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6047
+    },
+    {
+     "doi": "10.2139/ssrn.7580538",
+     "title": "Authorization-Preserving Context Lifecycles for Long-Horizon AI Agents",
+     "authors": [
+      "Genliang Zhu",
+      "Chu Wang"
+     ],
+     "first_author_family": "Zhu",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5972
+    },
+    {
+     "doi": "10.18653/v1/2026.findings-acl.1032",
+     "title": "Context as a Tool: Context Management for Long-Horizon SWE-Agents",
+     "authors": [
+      "Shukai Liu",
+      "Bo Jiang",
+      "Jian Yang",
+      "Yizhi LI",
+      "Jinyang Guo",
+      "Xianglong Liu",
+      "Bryan Dai"
+     ],
+     "first_author_family": "Liu",
+     "author_count": 7,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5942
+    }
+   ],
+   "best_title_similarity": 0.6184,
+   "best_is_match": false
+  }
+ },
+ "W4415332588": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.1145/3797084",
+   "title": "Reducing Cost of LLM Agents with Trajectory Reduction",
+   "authors": [
+    "Yuan-An Xiao",
+    "Pengfei Gao",
+    "Chao Peng",
+    "Yingfei Xiong"
+   ],
+   "first_author_family": "Xiao",
+   "author_count": 4,
+   "year": 2026,
+   "venue": "Proceedings of the ACM on Software Engineering",
+   "type": "journal-article",
+   "publisher": "Association for Computing Machinery (ACM)",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W7154351780": {
+  "title_search": {
+   "query": "CodeComp: Structural KV Cache Compression for Agentic Coding",
+   "candidates": [
+    {
+     "doi": "10.18653/v1/2025.findings-emnlp.88",
+     "title": "EvolKV: Evolutionary KV Cache Compression for LLM Inference",
+     "authors": [
+      "Bohan Yu",
+      "Yekun Chai"
+     ],
+     "first_author_family": "Yu",
+     "author_count": 2,
+     "year": 2025,
+     "venue": "Findings of the Association for Computational Linguistics: EMNLP 2025",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5812,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/v1/2025.trl-1.13",
+     "title": "TableKV: KV Cache Compression for In-Context Table Processing",
+     "authors": [
+      "Giulio Corallo",
+      "Elia Faure-Rolland",
+      "Miriam Lamari",
+      "Paolo Papotti"
+     ],
+     "first_author_family": "Corallo",
+     "author_count": 4,
+     "year": 2025,
+     "venue": "Proceedings of the 4th Table Representation Learning Workshop",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5714,
+     "year_matches": false
+    },
+    {
+     "doi": "10.52202/085713-4639",
+     "title": "InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding",
+     "authors": [
+      "Minsoo Kim",
+      "Kyuhong Shim",
+      "Jungwook Choi",
+      "Simyung Chang"
+     ],
+     "first_author_family": "Kim",
+     "author_count": 4,
+     "year": 2025,
+     "venue": "Advances in Neural Information Processing Systems 38",
+     "type": "proceedings-article",
+     "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5694,
+     "year_matches": false
+    },
+    {
+     "doi": "10.52202/085713-0317",
+     "title": "Inference-Time Hyper-Scaling with KV Cache Compression",
+     "authors": [
+      "Adrian \u0141a\u0144cucki",
+      "Konrad Staniszewski",
+      "Piotr Nawrot",
+      "Edoardo Maria Ponti"
+     ],
+     "first_author_family": "\u0141a\u0144cucki",
+     "author_count": 4,
+     "year": 2025,
+     "venue": "Advances in Neural Information Processing Systems 38",
+     "type": "proceedings-article",
+     "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.531,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/cicc63670.2025.10983416",
+     "title": "Key, Value, Compress: A Systematic Exploration of KV Cache Compression Techniques",
+     "authors": [
+      "Neusha Javidnia",
+      "Bita Darvish Rouhani",
+      "Farinaz Koushanfar"
+     ],
+     "first_author_family": "Javidnia",
+     "author_count": 3,
+     "year": 2025,
+     "venue": "2025 IEEE Custom Integrated Circuits Conference (CICC)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5255,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.5812,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2604.10235",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "CodeComp: Structural KV Cache Compression for Agentic Coding",
+   "error": "lookup failed: HTTP Error 429: Too Many Requests",
+   "candidates": []
+  }
+ },
+ "W7167425954": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.1145/3805760.3814911",
+   "title": "Wink: Recovering from Misbehaviors in Coding Agents",
+   "authors": [
+    "Rahul Nanda",
+    "Chandra Maddila",
+    "Smriti Jha",
+    "Euna Mehnaz Khan",
+    "Matteo Paltenghi",
+    "Satish Chandra"
+   ],
+   "first_author_family": "Nanda",
+   "author_count": 6,
+   "year": 2026,
+   "venue": "Proceedings of the 3rd ACM International Conference on AI-Powered Software",
+   "type": "proceedings-article",
+   "publisher": "ACM",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W7172523833": {
+  "title_search": {
+   "query": "Fail-Fast, Restart-Smart: Early Failure Prediction and Restart for SWE Agentic Tasks",
+   "candidates": [
+    {
+     "doi": "10.1109/tc.2010.129",
+     "title": "FREM: A Fast Restart Mechanism for General Checkpoint/Restart",
+     "authors": [
+      "Yawei Li",
+      "Zhiling Lan"
+     ],
+     "first_author_family": "Li",
+     "author_count": 2,
+     "year": 2011,
+     "venue": "IEEE Transactions on Computers",
+     "type": "journal-article",
+     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4366,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1211/pj.2015.20068764",
+     "title": "Failure to restart ARB therapy after surgery linked to higher mortality",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": 2015,
+     "venue": "The Pharmaceutical Journal",
+     "type": "journal-article",
+     "publisher": "Royal Pharmaceutical Society",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4314,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1007/springerreference_9960",
+     "title": "checkpoint-restart service facility",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": null,
+     "venue": "SpringerReference",
+     "type": "reference-entry",
+     "publisher": "Springer-Verlag",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.359,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1007/springerreference_23669",
+     "title": "restart instruction",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": null,
+     "venue": "SpringerReference",
+     "type": "reference-entry",
+     "publisher": "Springer-Verlag",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.3168,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1007/springerreference_23138",
+     "title": "recovery and restart",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": null,
+     "venue": "SpringerReference",
+     "type": "reference-entry",
+     "publisher": "Springer-Verlag",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.3137,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.4366,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2608.03222",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "Fail-Fast, Restart-Smart: Early Failure Prediction and Restart for SWE Agentic Tasks",
+   "candidates": [
+    {
+     "doi": "10.1109/tc.2010.129",
+     "title": "FREM: A Fast Restart Mechanism for General Checkpoint/Restart",
+     "authors": [
+      "Yawei Li",
+      "Zhiling Lan"
+     ],
+     "first_author_family": "Li",
+     "author_count": 2,
+     "year": 2011,
+     "venue": "IEEE Transactions on Computers",
+     "type": "journal-article",
+     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4366
+    },
+    {
+     "doi": "10.1211/pj.2015.20068764",
+     "title": "Failure to restart ARB therapy after surgery linked to higher mortality",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": 2015,
+     "venue": "The Pharmaceutical Journal",
+     "type": "journal-article",
+     "publisher": "Royal Pharmaceutical Society",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4314
+    },
+    {
+     "doi": "10.1007/springerreference_9960",
+     "title": "checkpoint-restart service facility",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": null,
+     "venue": "SpringerReference",
+     "type": "reference-entry",
+     "publisher": "Springer-Verlag",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.359
+    },
+    {
+     "doi": "10.1007/springerreference_23669",
+     "title": "restart instruction",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": null,
+     "venue": "SpringerReference",
+     "type": "reference-entry",
+     "publisher": "Springer-Verlag",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.3168
+    },
+    {
+     "doi": "10.1007/springerreference_23138",
+     "title": "recovery and restart",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": null,
+     "venue": "SpringerReference",
+     "type": "reference-entry",
+     "publisher": "Springer-Verlag",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.3137
+    }
+   ],
+   "best_title_similarity": 0.4366,
+   "best_is_match": false
+  }
+ },
+ "W4416711632": {
+  "title_search": {
+   "query": "When Agents go Astray: Course-Correcting SWE Agents with PRMs",
+   "candidates": [
+    {
+     "doi": "10.1097/00131746-200701000-00006",
+     "title": "When Colleagues Go Astray...",
+     "authors": [
+      "NORMAN A. CLEMENS"
+     ],
+     "first_author_family": "CLEMENS",
+     "author_count": 1,
+     "year": 2007,
+     "venue": "Journal of Psychiatric Practice",
+     "type": "journal-article",
+     "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4471,
+     "year_matches": false
+    },
+    {
+     "doi": "10.2139/ssrn.7115038",
+     "title": "When Pricing Agents Meet Buying Agents: Personalized Pricing and Verifiable Trust",
+     "authors": [
+      "Chupeng Xie"
+     ],
+     "first_author_family": "Xie",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4286,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/csmla70906.2026.11724504",
+     "title": "Bounded Interactive Adaptation for CoT Agents: Correcting Reasoning Trajectories with Sparse Human Feedback",
+     "authors": [
+      "Yujia Sun"
+     ],
+     "first_author_family": "Sun",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "2026 International Conference on Computer Science, Machine Learning and Agents (CSMLA)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4096,
+     "year_matches": false
+    },
+    {
+     "doi": "10.5220/0005738703850391",
+     "title": "Artificial Student Agents and Course Mastery Tracking",
+     "authors": [
+      "Linda DuHadway",
+      "Thomas C. Henderson"
+     ],
+     "first_author_family": "DuHadway",
+     "author_count": 2,
+     "year": 2016,
+     "venue": "Proceedings of the 8th International Conference on Agents and Artificial Intelligence",
+     "type": "proceedings-article",
+     "publisher": "SCITEPRESS - Science and and Technology Publications",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4071,
+     "year_matches": false
+    },
+    {
+     "doi": "10.4135/9798348927615",
+     "title": "Who\u2019s in Charge? When AI Agents Go Rogue",
+     "authors": [
+      "Sonia Mehrotra"
+     ],
+     "first_author_family": "Mehrotra",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "book",
+     "publisher": "SAGE Publications: SAGE Business Cases Originals",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.3878,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.4471,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2509.02360",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "When Agents go Astray: Course-Correcting SWE Agents with PRMs",
+   "candidates": [
+    {
+     "doi": "10.1097/00131746-200701000-00006",
+     "title": "When Colleagues Go Astray...",
+     "authors": [
+      "NORMAN A. CLEMENS"
+     ],
+     "first_author_family": "CLEMENS",
+     "author_count": 1,
+     "year": 2007,
+     "venue": "Journal of Psychiatric Practice",
+     "type": "journal-article",
+     "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4471
+    },
+    {
+     "doi": "10.2139/ssrn.7115038",
+     "title": "When Pricing Agents Meet Buying Agents: Personalized Pricing and Verifiable Trust",
+     "authors": [
+      "Chupeng Xie"
+     ],
+     "first_author_family": "Xie",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4286
+    },
+    {
+     "doi": "10.1109/csmla70906.2026.11724504",
+     "title": "Bounded Interactive Adaptation for CoT Agents: Correcting Reasoning Trajectories with Sparse Human Feedback",
+     "authors": [
+      "Yujia Sun"
+     ],
+     "first_author_family": "Sun",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "2026 International Conference on Computer Science, Machine Learning and Agents (CSMLA)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4096
+    },
+    {
+     "doi": "10.5220/0005738703850391",
+     "title": "Artificial Student Agents and Course Mastery Tracking",
+     "authors": [
+      "Linda DuHadway",
+      "Thomas C. Henderson"
+     ],
+     "first_author_family": "DuHadway",
+     "author_count": 2,
+     "year": 2016,
+     "venue": "Proceedings of the 8th International Conference on Agents and Artificial Intelligence",
+     "type": "proceedings-article",
+     "publisher": "SCITEPRESS - Science and and Technology Publications",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4071
+    },
+    {
+     "doi": "10.4135/9798348927615",
+     "title": "Who\u2019s in Charge? When AI Agents Go Rogue",
+     "authors": [
+      "Sonia Mehrotra"
+     ],
+     "first_author_family": "Mehrotra",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "book",
+     "publisher": "SAGE Publications: SAGE Business Cases Originals",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.3878
+    }
+   ],
+   "best_title_similarity": 0.4471,
+   "best_is_match": false
+  }
+ },
+ "W4404342086": {
+  "title_search": {
+   "query": "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+   "candidates": [
+    {
+     "doi": "10.26434/chemrxiv-2025-dlrq7",
+     "title": "Enhancing Monte Carlo Tree Search for Retrosynthesis",
+     "authors": [
+      "Ton Blackshaw",
+      "Joseph Davies",
+      "Kristian Spoerer",
+      "Jonathan Hirst"
+     ],
+     "first_author_family": "Blackshaw",
+     "author_count": 4,
+     "year": 2025,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "American Chemical Society (ACS)",
+     "is_preprint_of": [
+      "10.1021/acs.jcim.5c00417"
+     ],
+     "has_preprint": [],
+     "title_similarity": 0.5634,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/mci.2023.3328150/mm1",
+     "title": "Playing With Monte-Carlo Tree Search [AI-eXplained]_mci-3328150-immersive.zip",
+     "authors": [
+      "Jianlin Liu"
+     ],
+     "first_author_family": "Liu",
+     "author_count": 1,
+     "year": null,
+     "venue": "",
+     "type": "component",
+     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5576,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/cig.2019.8848034",
+     "title": "Enhancing Monte Carlo Tree Search for Playing Hearthstone",
+     "authors": [
+      "Jean Seong Bjorn Choe",
+      "Jong-Kook Kim"
+     ],
+     "first_author_family": "Choe",
+     "author_count": 2,
+     "year": 2019,
+     "venue": "2019 IEEE Conference on Games (CoG)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5306,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1021/acs.jcim.5c00584.s001",
+     "title": "Molecular Optimization Based on a Monte Carlo Tree Search and Multiobjective Genetic Algorithm",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": null,
+     "venue": "",
+     "type": "component",
+     "publisher": "American Chemical Society (ACS)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5217,
+     "year_matches": false
+    },
+    {
+     "doi": "10.5220/0012311700003636",
+     "title": "Solving Job Shop Problems with Neural Monte Carlo Tree Search",
+     "authors": [
+      "Marco Kemmerling",
+      "Anas Abdelrazeq",
+      "Robert Schmitt"
+     ],
+     "first_author_family": "Kemmerling",
+     "author_count": 3,
+     "year": 2024,
+     "venue": "Proceedings of the 16th International Conference on Agents and Artificial Intelligence",
+     "type": "proceedings-article",
+     "publisher": "SCITEPRESS - Science and Technology Publications",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5166,
+     "year_matches": true
+    }
+   ],
+   "best_title_similarity": 0.5634,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2410.20285",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+   "candidates": [
+    {
+     "doi": "10.26434/chemrxiv-2025-dlrq7",
+     "title": "Enhancing Monte Carlo Tree Search for Retrosynthesis",
+     "authors": [
+      "Ton Blackshaw",
+      "Joseph Davies",
+      "Kristian Spoerer",
+      "Jonathan Hirst"
+     ],
+     "first_author_family": "Blackshaw",
+     "author_count": 4,
+     "year": 2025,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "American Chemical Society (ACS)",
+     "is_preprint_of": [
+      "10.1021/acs.jcim.5c00417"
+     ],
+     "has_preprint": [],
+     "title_similarity": 0.5634
+    },
+    {
+     "doi": "10.1109/mci.2023.3328150/mm1",
+     "title": "Playing With Monte-Carlo Tree Search [AI-eXplained]_mci-3328150-immersive.zip",
+     "authors": [
+      "Jianlin Liu"
+     ],
+     "first_author_family": "Liu",
+     "author_count": 1,
+     "year": null,
+     "venue": "",
+     "type": "component",
+     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5576
+    },
+    {
+     "doi": "10.1109/cig.2019.8848034",
+     "title": "Enhancing Monte Carlo Tree Search for Playing Hearthstone",
+     "authors": [
+      "Jean Seong Bjorn Choe",
+      "Jong-Kook Kim"
+     ],
+     "first_author_family": "Choe",
+     "author_count": 2,
+     "year": 2019,
+     "venue": "2019 IEEE Conference on Games (CoG)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5306
+    },
+    {
+     "doi": "10.1021/acs.jcim.5c00584.s001",
+     "title": "Molecular Optimization Based on a Monte Carlo Tree Search and Multiobjective Genetic Algorithm",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": null,
+     "venue": "",
+     "type": "component",
+     "publisher": "American Chemical Society (ACS)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5217
+    },
+    {
+     "doi": "10.5220/0012311700003636",
+     "title": "Solving Job Shop Problems with Neural Monte Carlo Tree Search",
+     "authors": [
+      "Marco Kemmerling",
+      "Anas Abdelrazeq",
+      "Robert Schmitt"
+     ],
+     "first_author_family": "Kemmerling",
+     "author_count": 3,
+     "year": 2024,
+     "venue": "Proceedings of the 16th International Conference on Agents and Artificial Intelligence",
+     "type": "proceedings-article",
+     "publisher": "SCITEPRESS - Science and Technology Publications",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5166
+    }
+   ],
+   "best_title_similarity": 0.5634,
+   "best_is_match": false
+  }
+ },
+ "W4415935825": {
+  "title_search": {
+   "query": "Understanding Code Agent Behaviour: An Empirical Study of Success and Failure Trajectories",
+   "candidates": [
+    {
+     "doi": "10.21203/rs.3.rs-11027985/v1",
+     "title": "Code Agents under Split Specifications: An Empirical Study of Silent Failure in System Integration",
+     "authors": [
+      "Camilo Chac\u00f3n Sartori"
+     ],
+     "first_author_family": "Sartori",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5914,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1007/s10664-025-10654-w",
+     "title": "Towards understanding code review practices for infrastructure-as-code: An empirical study on OpenStack projects",
+     "authors": [
+      "Narjes Bessghaier",
+      "Ali Ouni",
+      "Mohammed Sayagh",
+      "Moataz Chouchen",
+      "Mohamed Wiem Mkaouer"
+     ],
+     "first_author_family": "Bessghaier",
+     "author_count": 5,
+     "year": 2025,
+     "venue": "Empirical Software Engineering",
+     "type": "journal-article",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.56,
+     "year_matches": true
+    },
+    {
+     "doi": "10.21203/rs.3.rs-11020126/v1",
+     "title": "When Does Cross-Agent Peer Verification Detect Unfaithful Self- Reports? An Empirical Study of Real LLM Tool-Use Agent Trajectories",
+     "authors": [
+      "Vivek Garike"
+     ],
+     "first_author_family": "Garike",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5596,
+     "year_matches": false
+    },
+    {
+     "doi": "10.21832/kim2408",
+     "title": "Understanding Success and Failure in Adult ESL",
+     "authors": [
+      "Taewoong Kim"
+     ],
+     "first_author_family": "Kim",
+     "author_count": 1,
+     "year": 2022,
+     "venue": "",
+     "type": "monograph",
+     "publisher": "Multilingual Matters",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5481,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/wi-iat.2010.250",
+     "title": "Understanding the Behaviour of Reactive Robots in a Patrol Task by Analysing Their Trajectories",
+     "authors": [
+      "Swagat Kumar",
+      "Nguyen Huy Thach",
+      "Einoshin Suzuki"
+     ],
+     "first_author_family": "Kumar",
+     "author_count": 3,
+     "year": 2010,
+     "venue": "2010 IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5435,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.5914,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2511.00197",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "Understanding Code Agent Behaviour: An Empirical Study of Success and Failure Trajectories",
+   "candidates": [
+    {
+     "doi": "10.21203/rs.3.rs-11027985/v1",
+     "title": "Code Agents under Split Specifications: An Empirical Study of Silent Failure in System Integration",
+     "authors": [
+      "Camilo Chac\u00f3n Sartori"
+     ],
+     "first_author_family": "Sartori",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5914
+    },
+    {
+     "doi": "10.1007/s10664-025-10654-w",
+     "title": "Towards understanding code review practices for infrastructure-as-code: An empirical study on OpenStack projects",
+     "authors": [
+      "Narjes Bessghaier",
+      "Ali Ouni",
+      "Mohammed Sayagh",
+      "Moataz Chouchen",
+      "Mohamed Wiem Mkaouer"
+     ],
+     "first_author_family": "Bessghaier",
+     "author_count": 5,
+     "year": 2025,
+     "venue": "Empirical Software Engineering",
+     "type": "journal-article",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.56
+    },
+    {
+     "doi": "10.21203/rs.3.rs-11020126/v1",
+     "title": "When Does Cross-Agent Peer Verification Detect Unfaithful Self- Reports? An Empirical Study of Real LLM Tool-Use Agent Trajectories",
+     "authors": [
+      "Vivek Garike"
+     ],
+     "first_author_family": "Garike",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Springer Science and Business Media LLC",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5596
+    },
+    {
+     "doi": "10.21832/kim2408",
+     "title": "Understanding Success and Failure in Adult ESL",
+     "authors": [
+      "Taewoong Kim"
+     ],
+     "first_author_family": "Kim",
+     "author_count": 1,
+     "year": 2022,
+     "venue": "",
+     "type": "monograph",
+     "publisher": "Multilingual Matters",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5481
+    },
+    {
+     "doi": "10.1109/wi-iat.2010.250",
+     "title": "Understanding the Behaviour of Reactive Robots in a Patrol Task by Analysing Their Trajectories",
+     "authors": [
+      "Swagat Kumar",
+      "Nguyen Huy Thach",
+      "Einoshin Suzuki"
+     ],
+     "first_author_family": "Kumar",
+     "author_count": 3,
+     "year": 2010,
+     "venue": "2010 IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5435
+    }
+   ],
+   "best_title_similarity": 0.5914,
+   "best_is_match": false
+  }
+ },
+ "W7160926458": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.1145/3832783.3834492",
+   "title": "Debugging the Debuggers: Failure-Anchored Structured Recovery for Software Engineering Agents",
+   "authors": [
+    "Chenyu Zhao",
+    "Shenglin Zhang",
+    "Yihang Lin",
+    "Wenwei Gu",
+    "Zhimin Chen",
+    "Yongqian Sun",
+    "Dan Pei",
+    "Chetan Bansal",
+    "Saravan Rajmohan",
+    "Minghua Ma"
+   ],
+   "first_author_family": "Zhao",
+   "author_count": 10,
+   "year": 2026,
+   "venue": "Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering",
+   "type": "proceedings-article",
+   "publisher": "ACM",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W4415101712": {
+  "title_search": {
+   "query": "LocAgent: Graph-Guided LLM Agents for Code Localization",
+   "candidates": [
+    {
+     "doi": "10.18653/v1/2025.acl-long.426",
+     "title": "LocAgent: Graph-Guided LLM Agents for Code Localization",
+     "authors": [
+      "Zhaoling Chen",
+      "Robert Tang",
+      "Gangda Deng",
+      "Fang Wu",
+      "Jialong Wu",
+      "Zhiwei Jiang",
+      "Viktor Prasanna",
+      "Arman Cohan",
+      "Xingyao Wang"
+     ],
+     "first_author_family": "Chen",
+     "author_count": 9,
+     "year": 2025,
+     "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 1.0,
+     "year_matches": true
+    },
+    {
+     "doi": "10.1109/iclad65226.2025.00020",
+     "title": "RTL++: Graph-enhanced LLM for RTL Code Generation",
+     "authors": [
+      "Mohammad Akyash",
+      "Kimia Azar",
+      "Hadi Kamali"
+     ],
+     "first_author_family": "Akyash",
+     "author_count": 3,
+     "year": 2025,
+     "venue": "2025 IEEE International Conference on LLM-Aided Design (ICLAD)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.58,
+     "year_matches": true
+    },
+    {
+     "doi": "10.1109/iclad65226.2025.00027",
+     "title": "An AST-guided LLM Approach for SVRF Code Synthesis",
+     "authors": [
+      "Abanoub E. Abdelmalak",
+      "Mohamed A. Elsayed",
+      "Ilhami Torunoglu",
+      "David Abercrombie"
+     ],
+     "first_author_family": "Abdelmalak",
+     "author_count": 4,
+     "year": 2025,
+     "venue": "2025 IEEE International Conference on LLM-Aided Design (ICLAD)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5192,
+     "year_matches": true
+    },
+    {
+     "doi": "10.21437/interspeech.2026-1113",
+     "title": "LLM-HB: Language-Aware LLM-Guided Hotword Biasing for Code-Switching ASR",
+     "authors": [
+      "Yuxuan He",
+      "Genshun Wan",
+      "Pengcheng Li",
+      "Gongping Huang",
+      "Jian-Qing Gao",
+      "Yanmin Qian"
+     ],
+     "first_author_family": "He",
+     "author_count": 6,
+     "year": 2026,
+     "venue": "Interspeech 2026",
+     "type": "proceedings-article",
+     "publisher": "ISCA",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.464,
+     "year_matches": false
+    },
+    {
+     "doi": "10.20944/preprints202604.0147.v1",
+     "title": "Grammar-Guided Incremental Method for Efficient LLM-Generated Code Execution",
+     "authors": [
+      "Anton Svystunov",
+      "Yaroslav Tereshchenko"
+     ],
+     "first_author_family": "Svystunov",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "MDPI AG",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4615,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 1.0,
+   "best_is_match": true
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2503.09089",
+   "error": "Crossref HTTP 404"
+  }
+ },
+ "W4404087993": {
+  "title_search": {
+   "query": "RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph",
+   "candidates": [
+    {
+     "doi": "10.1145/3832783.3834646",
+     "title": "FeatX: Editing Software by Editing Features for Repository-Level Code Evolution",
+     "authors": [
+      "Xutian Li",
+      "Yifeng Zhu",
+      "Xianlin Zhao",
+      "Yanzhen Zou",
+      "Lu Zhang",
+      "Bing Xie"
+     ],
+     "first_author_family": "Li",
+     "author_count": 6,
+     "year": 2026,
+     "venue": "Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering",
+     "type": "proceedings-article",
+     "publisher": "ACM",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6104,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/issrew67781.2025.00051",
+     "title": "CECoder: Fine-Grained Code Element Retrieval for Repository-Level Code Generation",
+     "authors": [
+      "Yiming He",
+      "Jingzheng Wu",
+      "Xiang Ling",
+      "Tianyue Luo",
+      "Mutian Yang",
+      "Chen Zhao"
+     ],
+     "first_author_family": "He",
+     "author_count": 6,
+     "year": 2025,
+     "venue": "2025 IEEE 36th International Symposium on Software Reliability Engineering Workshops (ISSREW)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5513,
+     "year_matches": false
+    },
+    {
+     "doi": "10.37547/tajet/volume06issue07-11",
+     "title": "Explainable AI In Software Engineering: Enhancing Developer-AI Collaboration",
+     "authors": [
+      "Independent Researcher, USA",
+      "Jyoti Kunal Shah"
+     ],
+     "first_author_family": null,
+     "author_count": 2,
+     "year": 2024,
+     "venue": "The American Journal of Engineering and Technology",
+     "type": "journal-article",
+     "publisher": "The USA Journals",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.543,
+     "year_matches": true
+    },
+    {
+     "doi": "10.1109/llm4code66737.2025.00026",
+     "title": "Knowledge Graph Based Repository-Level Code Generation",
+     "authors": [
+      "Mihir Athale",
+      "Vishal Vaddina"
+     ],
+     "first_author_family": "Athale",
+     "author_count": 2,
+     "year": 2025,
+     "venue": "2025 IEEE/ACM International Workshop on Large Language Models for Code (LLM4Code)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5231,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1145/3714462",
+     "title": "Teaching Code LLMs to Use Autocompletion Tools in Repository-Level Code Generation",
+     "authors": [
+      "Chong Wang",
+      "Jian Zhang",
+      "Yebo Feng",
+      "Tianlin Li",
+      "Weisong Sun",
+      "Yang Liu",
+      "Xin Peng"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 7,
+     "year": 2025,
+     "venue": "ACM Transactions on Software Engineering and Methodology",
+     "type": "journal-article",
+     "publisher": "Association for Computing Machinery (ACM)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5063,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.6104,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2410.14684",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph",
+   "candidates": [
+    {
+     "doi": "10.1145/3832783.3834646",
+     "title": "FeatX: Editing Software by Editing Features for Repository-Level Code Evolution",
+     "authors": [
+      "Xutian Li",
+      "Yifeng Zhu",
+      "Xianlin Zhao",
+      "Yanzhen Zou",
+      "Lu Zhang",
+      "Bing Xie"
+     ],
+     "first_author_family": "Li",
+     "author_count": 6,
+     "year": 2026,
+     "venue": "Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering",
+     "type": "proceedings-article",
+     "publisher": "ACM",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6104
+    },
+    {
+     "doi": "10.1109/issrew67781.2025.00051",
+     "title": "CECoder: Fine-Grained Code Element Retrieval for Repository-Level Code Generation",
+     "authors": [
+      "Yiming He",
+      "Jingzheng Wu",
+      "Xiang Ling",
+      "Tianyue Luo",
+      "Mutian Yang",
+      "Chen Zhao"
+     ],
+     "first_author_family": "He",
+     "author_count": 6,
+     "year": 2025,
+     "venue": "2025 IEEE 36th International Symposium on Software Reliability Engineering Workshops (ISSREW)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5513
+    },
+    {
+     "doi": "10.37547/tajet/volume06issue07-11",
+     "title": "Explainable AI In Software Engineering: Enhancing Developer-AI Collaboration",
+     "authors": [
+      "Independent Researcher, USA",
+      "Jyoti Kunal Shah"
+     ],
+     "first_author_family": null,
+     "author_count": 2,
+     "year": 2024,
+     "venue": "The American Journal of Engineering and Technology",
+     "type": "journal-article",
+     "publisher": "The USA Journals",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.543
+    },
+    {
+     "doi": "10.1109/llm4code66737.2025.00026",
+     "title": "Knowledge Graph Based Repository-Level Code Generation",
+     "authors": [
+      "Mihir Athale",
+      "Vishal Vaddina"
+     ],
+     "first_author_family": "Athale",
+     "author_count": 2,
+     "year": 2025,
+     "venue": "2025 IEEE/ACM International Workshop on Large Language Models for Code (LLM4Code)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5231
+    },
+    {
+     "doi": "10.1145/3714462",
+     "title": "Teaching Code LLMs to Use Autocompletion Tools in Repository-Level Code Generation",
+     "authors": [
+      "Chong Wang",
+      "Jian Zhang",
+      "Yebo Feng",
+      "Tianlin Li",
+      "Weisong Sun",
+      "Yang Liu",
+      "Xin Peng"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 7,
+     "year": 2025,
+     "venue": "ACM Transactions on Software Engineering and Methodology",
+     "type": "journal-article",
+     "publisher": "Association for Computing Machinery (ACM)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5063
+    }
+   ],
+   "best_title_similarity": 0.6104,
+   "best_is_match": false
+  }
+ },
+ "W4416453608": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.52202/085713-0537",
+   "title": "Code Graph Model (CGM): A Graph-Integrated Large Language Model for Repository-Level Software Engineering Tasks",
+   "authors": [
+    "Hongyuan Tao",
+    "Ying Zhang",
+    "Zhenhao Tang",
+    "Hongen Peng",
+    "Xukun Zhu",
+    "Bingchang Liu",
+    "Yingguang Yang",
+    "Ziyin Zhang",
+    "Zhaogui Xu",
+    "Haipeng Zhang"
+   ],
+   "first_author_family": "Tao",
+   "author_count": 15,
+   "year": 2025,
+   "venue": "Advances in Neural Information Processing Systems 38",
+   "type": "proceedings-article",
+   "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W7125926949": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.1109/ase63991.2025.00249",
+   "title": "Issue Localization via LLM-Driven Iterative Code Graph Searching",
+   "authors": [
+    "Zhonghao Jiang",
+    "Xiaoxue Ren",
+    "Meng Yan",
+    "Wei Jiang",
+    "Yong Li",
+    "Zhongxin Liu"
+   ],
+   "first_author_family": "Jiang",
+   "author_count": 6,
+   "year": 2025,
+   "venue": "2025 40th IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "proceedings-article",
+   "publisher": "IEEE",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W7223971351": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.66977/xsci.2610.0030",
+   "title": "How Do Small Coding Agents Use Code Graphs and Embeddings?",
+   "authors": [
+    "Saurav Bellam"
+   ],
+   "first_author_family": "Bellam",
+   "author_count": 1,
+   "year": 2026,
+   "venue": "",
+   "type": "posted-content",
+   "publisher": "XSci Ltd.",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W4387561453": {
+  "title_search": {
+   "query": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+   "candidates": [
+    {
+     "doi": "10.18653/v1/2025.emnlp-industry.19",
+     "title": "ECom-Bench: Can LLM Agent Resolve Real-World E-commerce Customer Support Issues?",
+     "authors": [
+      "Haoxin Wang",
+      "Xianhan Peng",
+      "Huang Cheng",
+      "Yizhe Huang",
+      "Ming Gong",
+      "Chenghan Yang",
+      "Yang Liu",
+      "Jiang Lin"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 8,
+     "year": 2025,
+     "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6429,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1145/3786167.3788410",
+     "title": "PerfBench: Can Agents Resolve Real-World Performance Bugs?",
+     "authors": [
+      "Spandan Garg",
+      "Roshanak Zilouchian Moghaddam",
+      "Neel Sundaresan"
+     ],
+     "first_author_family": "Garg",
+     "author_count": 3,
+     "year": 2026,
+     "venue": "Proceedings of the 2026 International Workshop on Agentic Engineering",
+     "type": "proceedings-article",
+     "publisher": "ACM",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6271,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1145/3759425.3763379",
+     "title": "CG-Bench: Can Language Models Assist Call Graph Construction in the Real World?",
+     "authors": [
+      "Ting Yuan",
+      "Wenrui Zhang",
+      "Dong Chen",
+      "Jie Wang"
+     ],
+     "first_author_family": "Yuan",
+     "author_count": 4,
+     "year": 2025,
+     "venue": "Proceedings of the 1st ACM SIGPLAN International Workshop on Language Models and Programming Languages",
+     "type": "proceedings-article",
+     "publisher": "ACM",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6043,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/v1/2026.findings-acl.371",
+     "title": "SupChain-Bench: Benchmarking Large Language Models for Real-World Supply Chain Management",
+     "authors": [
+      "Shengyue Guan",
+      "Yihao Liu",
+      "Lang Cao"
+     ],
+     "first_author_family": "Guan",
+     "author_count": 3,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5867,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/v1/2026.findings-acl.402",
+     "title": "SWE-QA: Can Language Models Answer Repository-level Code Questions?",
+     "authors": [
+      "Weihan Peng",
+      "Yuling Shi",
+      "Yuhang Wang",
+      "Xinyun Zhang",
+      "Beijun Shen",
+      "Xiaodong Gu"
+     ],
+     "first_author_family": "Peng",
+     "author_count": 6,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5827,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.6429,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2310.06770",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+   "candidates": [
+    {
+     "doi": "10.18653/v1/2025.emnlp-industry.19",
+     "title": "ECom-Bench: Can LLM Agent Resolve Real-World E-commerce Customer Support Issues?",
+     "authors": [
+      "Haoxin Wang",
+      "Xianhan Peng",
+      "Huang Cheng",
+      "Yizhe Huang",
+      "Ming Gong",
+      "Chenghan Yang",
+      "Yang Liu",
+      "Jiang Lin"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 8,
+     "year": 2025,
+     "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6429
+    },
+    {
+     "doi": "10.1145/3786167.3788410",
+     "title": "PerfBench: Can Agents Resolve Real-World Performance Bugs?",
+     "authors": [
+      "Spandan Garg",
+      "Roshanak Zilouchian Moghaddam",
+      "Neel Sundaresan"
+     ],
+     "first_author_family": "Garg",
+     "author_count": 3,
+     "year": 2026,
+     "venue": "Proceedings of the 2026 International Workshop on Agentic Engineering",
+     "type": "proceedings-article",
+     "publisher": "ACM",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6271
+    },
+    {
+     "doi": "10.1145/3759425.3763379",
+     "title": "CG-Bench: Can Language Models Assist Call Graph Construction in the Real World?",
+     "authors": [
+      "Ting Yuan",
+      "Wenrui Zhang",
+      "Dong Chen",
+      "Jie Wang"
+     ],
+     "first_author_family": "Yuan",
+     "author_count": 4,
+     "year": 2025,
+     "venue": "Proceedings of the 1st ACM SIGPLAN International Workshop on Language Models and Programming Languages",
+     "type": "proceedings-article",
+     "publisher": "ACM",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.6043
+    },
+    {
+     "doi": "10.18653/v1/2026.findings-acl.371",
+     "title": "SupChain-Bench: Benchmarking Large Language Models for Real-World Supply Chain Management",
+     "authors": [
+      "Shengyue Guan",
+      "Yihao Liu",
+      "Lang Cao"
+     ],
+     "first_author_family": "Guan",
+     "author_count": 3,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5867
+    },
+    {
+     "doi": "10.18653/v1/2026.findings-acl.402",
+     "title": "SWE-QA: Can Language Models Answer Repository-level Code Questions?",
+     "authors": [
+      "Weihan Peng",
+      "Yuling Shi",
+      "Yuhang Wang",
+      "Xinyun Zhang",
+      "Beijun Shen",
+      "Xiaodong Gu"
+     ],
+     "first_author_family": "Peng",
+     "author_count": 6,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5827
+    }
+   ],
+   "best_title_similarity": 0.6429,
+   "best_is_match": false
+  }
+ },
+ "W4405957747": {
+  "title_search": {
+   "query": "Training Software Engineering Agents and Verifiers with SWE-Gym",
+   "candidates": [
+    {
+     "doi": "10.18653/v1/2025.findings-acl.193",
+     "title": "SWE-Dev: Building Software Engineering Agents with Training and Inference Scaling",
+     "authors": [
+      "Haoran Wang",
+      "Zhenyu Hou",
+      "Yao Wei",
+      "Jie Tang",
+      "Yuxiao Dong"
+     ],
+     "first_author_family": "Wang",
+     "author_count": 5,
+     "year": 2025,
+     "venue": "Findings of the Association for Computational Linguistics: ACL 2025",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5734,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/csee.2000.827010",
+     "title": "Thirteenth Conference on Software Engineering Education and Training",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": 2000,
+     "venue": "Thirteenth Conference on Software Engineering Education and Training",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5649,
+     "year_matches": false
+    },
+    {
+     "doi": "10.52202/085713-3239",
+     "title": "SWE-smith: Scaling Data for Software Engineering Agents",
+     "authors": [
+      "John Yang",
+      "Kilian Lieret",
+      "Carlos Jimenez",
+      "Alexander Wettig",
+      "Kabir Khandpur",
+      "Yanzhe Zhang",
+      "Binyuan Hui",
+      "Ofir Press",
+      "Ludwig Schmidt",
+      "Diyi Yang"
+     ],
+     "first_author_family": "Yang",
+     "author_count": 10,
+     "year": 2025,
+     "venue": "Advances in Neural Information Processing Systems 38",
+     "type": "proceedings-article",
+     "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5641,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/2026.findings-emnlp.131",
+     "title": "OPEN-SWE-TRACES: Advancing Dual-Mode Multilingual Distillation for Software Engineering Agents",
+     "authors": [
+      "Wasi Uddin Ahmad",
+      "Nikolai Ludwig",
+      "Somshubra Majumdar",
+      "Boris Ginsburg"
+     ],
+     "first_author_family": "Ahmad",
+     "author_count": 4,
+     "year": 2026,
+     "venue": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4487,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/v1/2026.acl-long.697",
+     "title": "Agentic Rubrics as Contextual Verifiers for SWE Agents",
+     "authors": [
+      "Mohit Raghavendra",
+      "Anisha Gunjal",
+      "Bing Liu",
+      "Yunzhong He"
+     ],
+     "first_author_family": "Raghavendra",
+     "author_count": 4,
+     "year": 2026,
+     "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4444,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.5734,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2412.21139",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "Training Software Engineering Agents and Verifiers with SWE-Gym",
+   "error": "lookup failed: HTTP Error 429: Too Many Requests",
+   "candidates": []
+  }
+ },
+ "W4417525566": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.52202/085713-3239",
+   "title": "SWE-smith: Scaling Data for Software Engineering Agents",
+   "authors": [
+    "John Yang",
+    "Kilian Lieret",
+    "Carlos Jimenez",
+    "Alexander Wettig",
+    "Kabir Khandpur",
+    "Yanzhe Zhang",
+    "Binyuan Hui",
+    "Ofir Press",
+    "Ludwig Schmidt",
+    "Diyi Yang"
+   ],
+   "first_author_family": "Yang",
+   "author_count": 10,
+   "year": 2025,
+   "venue": "Advances in Neural Information Processing Systems 38",
+   "type": "proceedings-article",
+   "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W7131676563": {
+  "title_search": {
+   "query": "SWE-Prot\u00e9g\u00e9: Learning to Selectively Collaborate With an Expert Unlocks Small Language Models as Software Engineering Agents",
+   "candidates": [
+    {
+     "doi": "10.32657/10356/182234",
+     "title": "Building trustworthy AI from small DNNs to large language models: a software engineering perspective",
+     "authors": [
+      "",
+      "Tianlin Li"
+     ],
+     "first_author_family": null,
+     "author_count": 2,
+     "year": null,
+     "venue": "",
+     "type": "dissertation",
+     "publisher": "Nanyang Technological University",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5315,
+     "year_matches": false
+    },
+    {
+     "doi": "10.18653/v1/2025.emnlp-demos.30",
+     "title": "SWE-MERA: A Dynamic Benchmark for Agenticly Evaluating Large Language Models on Software Engineering Tasks",
+     "authors": [
+      "Adamenko Pavel",
+      "Ivanov Mikhail",
+      "Aidar Valeev",
+      "Rodion Levichev",
+      "Pavel Zadorozhny",
+      "Ivan Lopatin",
+      "Dmitrii Babaev",
+      "Alena Fenogenova",
+      "Valentin Malykh"
+     ],
+     "first_author_family": "Pavel",
+     "author_count": 9,
+     "year": 2025,
+     "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5263,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/seai65851.2025.11108177",
+     "title": "Collaborating Agents with Large Language Models for Question-Answering Tasks",
+     "authors": [
+      "Thien Huynh",
+      "Dung Nguyen"
+     ],
+     "first_author_family": "Huynh",
+     "author_count": 2,
+     "year": 2025,
+     "venue": "2025 IEEE 5th International Conference on Software Engineering and Artificial Intelligence (SEAI)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4724,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1016/s0957-4174(97)83791-8",
+     "title": "Domain and specification models for software engineering",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": 1997,
+     "venue": "Expert Systems with Applications",
+     "type": "journal-article",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4581,
+     "year_matches": false
+    },
+    {
+     "doi": "10.2139/ssrn.4951037",
+     "title": "Leveraging Large Language Models to Discover Expert Software Developers",
+     "authors": [
+      "Vitor  Queiroz de Campos",
+      "Jos\u00e9 Maria David",
+      "Victor Str\u00f6ele"
+     ],
+     "first_author_family": "de Campos",
+     "author_count": 3,
+     "year": 2024,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4536,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.5315,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2602.22124",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "SWE-Prot\u00e9g\u00e9: Learning to Selectively Collaborate With an Expert Unlocks Small Language Models as Software Engineering Agents",
+   "candidates": [
+    {
+     "doi": "10.32657/10356/182234",
+     "title": "Building trustworthy AI from small DNNs to large language models: a software engineering perspective",
+     "authors": [
+      "",
+      "Tianlin Li"
+     ],
+     "first_author_family": null,
+     "author_count": 2,
+     "year": null,
+     "venue": "",
+     "type": "dissertation",
+     "publisher": "Nanyang Technological University",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5315
+    },
+    {
+     "doi": "10.18653/v1/2025.emnlp-demos.30",
+     "title": "SWE-MERA: A Dynamic Benchmark for Agenticly Evaluating Large Language Models on Software Engineering Tasks",
+     "authors": [
+      "Adamenko Pavel",
+      "Ivanov Mikhail",
+      "Aidar Valeev",
+      "Rodion Levichev",
+      "Pavel Zadorozhny",
+      "Ivan Lopatin",
+      "Dmitrii Babaev",
+      "Alena Fenogenova",
+      "Valentin Malykh"
+     ],
+     "first_author_family": "Pavel",
+     "author_count": 9,
+     "year": 2025,
+     "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+     "type": "proceedings-article",
+     "publisher": "Association for Computational Linguistics",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5263
+    },
+    {
+     "doi": "10.1109/seai65851.2025.11108177",
+     "title": "Collaborating Agents with Large Language Models for Question-Answering Tasks",
+     "authors": [
+      "Thien Huynh",
+      "Dung Nguyen"
+     ],
+     "first_author_family": "Huynh",
+     "author_count": 2,
+     "year": 2025,
+     "venue": "2025 IEEE 5th International Conference on Software Engineering and Artificial Intelligence (SEAI)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4724
+    },
+    {
+     "doi": "10.1016/s0957-4174(97)83791-8",
+     "title": "Domain and specification models for software engineering",
+     "authors": [],
+     "first_author_family": null,
+     "author_count": 0,
+     "year": 1997,
+     "venue": "Expert Systems with Applications",
+     "type": "journal-article",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4581
+    },
+    {
+     "doi": "10.2139/ssrn.4951037",
+     "title": "Leveraging Large Language Models to Discover Expert Software Developers",
+     "authors": [
+      "Vitor  Queiroz de Campos",
+      "Jos\u00e9 Maria David",
+      "Victor Str\u00f6ele"
+     ],
+     "first_author_family": "de Campos",
+     "author_count": 3,
+     "year": 2024,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4536
+    }
+   ],
+   "best_title_similarity": 0.5315,
+   "best_is_match": false
+  }
+ },
+ "W7171740466": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.1145/3794763.3794810",
+   "title": "Evaluating the Impact of Post-Training Quantization on Large Language Models for Code Generation",
+   "authors": [
+    "Alessandro Giagnorio",
+    "Antonio Mastropaolo",
+    "Saima Afrin",
+    "Massimiliano Di Penta",
+    "Gabriele Bavota"
+   ],
+   "first_author_family": "Giagnorio",
+   "author_count": 5,
+   "year": 2026,
+   "venue": "Proceedings of the 2026 34th IEEE/ACM International Conference on Program Comprehension",
+   "type": "proceedings-article",
+   "publisher": "ACM",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W7225790577": {
+  "title_search": {
+   "query": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+   "candidates": [
+    {
+     "doi": "10.1111/cgf.70532",
+     "title": "Instructable 3D Scene Editing via LLM\u2010Driven Closed\u2010Loop Gaussian Splatting",
+     "authors": [
+      "H. Zhang",
+      "Y. W. Wu",
+      "Y. L. Liu"
+     ],
+     "first_author_family": "Zhang",
+     "author_count": 3,
+     "year": 2026,
+     "venue": "Computer Graphics Forum",
+     "type": "journal-article",
+     "publisher": "Wiley",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5,
+     "year_matches": true
+    },
+    {
+     "doi": "10.1080/00423114.2013.876502",
+     "title": "Driver steering model for closed-loop steering function analysis",
+     "authors": [
+      "Pratiksh Bolia",
+      "Thomas Weiskircher",
+      "Steffen M\u00fcller"
+     ],
+     "first_author_family": "Bolia",
+     "author_count": 3,
+     "year": 2014,
+     "venue": "Vehicle System Dynamics",
+     "type": "journal-article",
+     "publisher": "Informa UK Limited",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4885,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1145/3767308.3839058",
+     "title": "SOMIN: Fusing Marketing Science and LLM Agents for Closed-Loop Autonomous Campaigns",
+     "authors": [
+      "Aleks Farseev"
+     ],
+     "first_author_family": "Farseev",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "Proceedings of the 34th ACM International Conference on Multimedia",
+     "type": "proceedings-article",
+     "publisher": "ACM",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4564,
+     "year_matches": true
+    },
+    {
+     "doi": "10.1109/southeastcon63549.2026.11476226",
+     "title": "Multi-Agent LLM Closed-Loop Optimization for NP-Hard Problems",
+     "authors": [
+      "Kiran Nair",
+      "Bikash Chandra Singh"
+     ],
+     "first_author_family": "Nair",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "SoutheastCon 2026",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4219,
+     "year_matches": true
+    },
+    {
+     "doi": "10.2139/ssrn.6778404",
+     "title": "Fuzzy-Gated Verification of LLM Agents for Industrial Fault Diagnosis: An Evolutionary-Optimized Closed-Loop Framework",
+     "authors": [
+      "Yifan Xiao",
+      "Dexuan Xu",
+      "Shijie Li",
+      "Weiping Ding",
+      "Yu Huang"
+     ],
+     "first_author_family": "Xiao",
+     "author_count": 5,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4022,
+     "year_matches": true
+    }
+   ],
+   "best_title_similarity": 0.5,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2611.13410",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+   "candidates": [
+    {
+     "doi": "10.1111/cgf.70532",
+     "title": "Instructable 3D Scene Editing via LLM\u2010Driven Closed\u2010Loop Gaussian Splatting",
+     "authors": [
+      "H. Zhang",
+      "Y. W. Wu",
+      "Y. L. Liu"
+     ],
+     "first_author_family": "Zhang",
+     "author_count": 3,
+     "year": 2026,
+     "venue": "Computer Graphics Forum",
+     "type": "journal-article",
+     "publisher": "Wiley",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5
+    },
+    {
+     "doi": "10.1080/00423114.2013.876502",
+     "title": "Driver steering model for closed-loop steering function analysis",
+     "authors": [
+      "Pratiksh Bolia",
+      "Thomas Weiskircher",
+      "Steffen M\u00fcller"
+     ],
+     "first_author_family": "Bolia",
+     "author_count": 3,
+     "year": 2014,
+     "venue": "Vehicle System Dynamics",
+     "type": "journal-article",
+     "publisher": "Informa UK Limited",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4885
+    },
+    {
+     "doi": "10.1145/3767308.3839058",
+     "title": "SOMIN: Fusing Marketing Science and LLM Agents for Closed-Loop Autonomous Campaigns",
+     "authors": [
+      "Aleks Farseev"
+     ],
+     "first_author_family": "Farseev",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "Proceedings of the 34th ACM International Conference on Multimedia",
+     "type": "proceedings-article",
+     "publisher": "ACM",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4564
+    },
+    {
+     "doi": "10.1109/southeastcon63549.2026.11476226",
+     "title": "Multi-Agent LLM Closed-Loop Optimization for NP-Hard Problems",
+     "authors": [
+      "Kiran Nair",
+      "Bikash Chandra Singh"
+     ],
+     "first_author_family": "Nair",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "SoutheastCon 2026",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4219
+    },
+    {
+     "doi": "10.2139/ssrn.6778404",
+     "title": "Fuzzy-Gated Verification of LLM Agents for Industrial Fault Diagnosis: An Evolutionary-Optimized Closed-Loop Framework",
+     "authors": [
+      "Yifan Xiao",
+      "Dexuan Xu",
+      "Shijie Li",
+      "Weiping Ding",
+      "Yu Huang"
+     ],
+     "first_author_family": "Xiao",
+     "author_count": 5,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4022
+    }
+   ],
+   "best_title_similarity": 0.5,
+   "best_is_match": false
+  }
+ },
+ "W7223657872": {
+  "title_search": {
+   "query": "Measuring the Energy Cost of Completing Tasks with Quantized Language-Model Agents",
+   "candidates": [
+    {
+     "doi": "10.2139/ssrn.4686345",
+     "title": "Energy Social Surveys Replicated with Large Language Model Agents",
+     "authors": [
+      "Michael Fell"
+     ],
+     "first_author_family": "Fell",
+     "author_count": 1,
+     "year": 2024,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.585,
+     "year_matches": false
+    },
+    {
+     "doi": "10.1109/ica67499.2025.00027",
+     "title": "A Framework for Team Collaborative Tasks Based on Large Language Model Agents",
+     "authors": [
+      "Yuanyang Xiao",
+      "Lei Niu"
+     ],
+     "first_author_family": "Xiao",
+     "author_count": 2,
+     "year": 2025,
+     "venue": "2025 IEEE International Conference on Agentic AI (ICA)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5535,
+     "year_matches": false
+    },
+    {
+     "doi": "10.20944/preprints202611.1268.v1",
+     "title": "Subscription-Free AI: Energy-Efficient On-Device Inference of Quantized Language Models on Low-Cost Edge Hardware",
+     "authors": [
+      "Ajay Waghmare",
+      "Subramaniam Ganesan"
+     ],
+     "first_author_family": "Waghmare",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "MDPI AG",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5464,
+     "year_matches": true
+    },
+    {
+     "doi": "10.2139/ssrn.6456718",
+     "title": "Weighted Developmental Memory Architecture (WDMA): A Theoretical Framework for Cost-Aware, Self-Evolving Memory Systems in Large Language Model Agents",
+     "authors": [
+      "Saurav Das"
+     ],
+     "first_author_family": "Das",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4825,
+     "year_matches": true
+    },
+    {
+     "doi": "10.2139/ssrn.5388358",
+     "title": "Measuring New Quality Productivity with Large Language Model-based Agents: Evidence on Government Subsidies from China",
+     "authors": [
+      "Ruiqing Yan"
+     ],
+     "first_author_family": "Yan",
+     "author_count": 1,
+     "year": 2025,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4824,
+     "year_matches": false
+    }
+   ],
+   "best_title_similarity": 0.585,
+   "best_is_match": false
+  },
+  "verify_doi": {
+   "verified": false,
+   "doi": "10.48550/arxiv.2610.32417",
+   "error": "Crossref HTTP 404"
+  },
+  "title_search_noyear": {
+   "query": "Measuring the Energy Cost of Completing Tasks with Quantized Language-Model Agents",
+   "candidates": [
+    {
+     "doi": "10.2139/ssrn.4686345",
+     "title": "Energy Social Surveys Replicated with Large Language Model Agents",
+     "authors": [
+      "Michael Fell"
+     ],
+     "first_author_family": "Fell",
+     "author_count": 1,
+     "year": 2024,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.585
+    },
+    {
+     "doi": "10.1109/ica67499.2025.00027",
+     "title": "A Framework for Team Collaborative Tasks Based on Large Language Model Agents",
+     "authors": [
+      "Yuanyang Xiao",
+      "Lei Niu"
+     ],
+     "first_author_family": "Xiao",
+     "author_count": 2,
+     "year": 2025,
+     "venue": "2025 IEEE International Conference on Agentic AI (ICA)",
+     "type": "proceedings-article",
+     "publisher": "IEEE",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5535
+    },
+    {
+     "doi": "10.20944/preprints202611.1268.v1",
+     "title": "Subscription-Free AI: Energy-Efficient On-Device Inference of Quantized Language Models on Low-Cost Edge Hardware",
+     "authors": [
+      "Ajay Waghmare",
+      "Subramaniam Ganesan"
+     ],
+     "first_author_family": "Waghmare",
+     "author_count": 2,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "MDPI AG",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.5464
+    },
+    {
+     "doi": "10.2139/ssrn.6456718",
+     "title": "Weighted Developmental Memory Architecture (WDMA): A Theoretical Framework for Cost-Aware, Self-Evolving Memory Systems in Large Language Model Agents",
+     "authors": [
+      "Saurav Das"
+     ],
+     "first_author_family": "Das",
+     "author_count": 1,
+     "year": 2026,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4825
+    },
+    {
+     "doi": "10.2139/ssrn.5388358",
+     "title": "Measuring New Quality Productivity with Large Language Model-based Agents: Evidence on Government Subsidies from China",
+     "authors": [
+      "Ruiqing Yan"
+     ],
+     "first_author_family": "Yan",
+     "author_count": 1,
+     "year": 2025,
+     "venue": "",
+     "type": "posted-content",
+     "publisher": "Elsevier BV",
+     "is_preprint_of": [],
+     "has_preprint": [],
+     "title_similarity": 0.4824
+    }
+   ],
+   "best_title_similarity": 0.585,
+   "best_is_match": false
+  }
+ },
+ "W4411449940": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.1145/3715754",
+   "title": "Demystifying LLM-Based Software Engineering Agents",
+   "authors": [
+    "Chunqiu Steven Xia",
+    "Yinlin Deng",
+    "Soren Dunn",
+    "Lingming Zhang"
+   ],
+   "first_author_family": "Xia",
+   "author_count": 4,
+   "year": 2025,
+   "venue": "Proceedings of the ACM on Software Engineering",
+   "type": "journal-article",
+   "publisher": "Association for Computing Machinery (ACM)",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ },
+ "W4402442868": {
+  "verify_doi": {
+   "verified": true,
+   "doi": "10.1145/3650212.3680384",
+   "title": "AutoCodeRover: Autonomous Program Improvement",
+   "authors": [
+    "Yuntong Zhang",
+    "Haifeng Ruan",
+    "Zhiyu Fan",
+    "Abhik Roychoudhury"
+   ],
+   "first_author_family": "Zhang",
+   "author_count": 4,
+   "year": 2024,
+   "venue": "Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis",
+   "type": "proceedings-article",
+   "publisher": "ACM",
+   "is_preprint_of": [],
+   "has_preprint": []
+  }
+ }
+}

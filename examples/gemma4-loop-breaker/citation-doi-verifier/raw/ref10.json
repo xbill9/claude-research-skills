@@ -1,0 +1,306 @@
+{
+ "entry": {
+  "key": "ref10",
+  "n": 10,
+  "authors": "S. Ouyang et al",
+  "first_author_surname": "Ouyang",
+  "title": "RepoGraph: Enhancing AI software engineering with repository-level code graph",
+  "year": 2025,
+  "venue_claimed": "ICLR",
+  "arxiv": null,
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "RepoGraph: Enhancing AI software engineering with repository-level code graph",
+  "candidates": [
+   {
+    "doi": "10.1109/trustcom53373.2021.00133",
+    "title": "Phishing Web Page Detection with HTML-Level Graph Neural Network",
+    "authors": [
+     "Linshu Ouyang",
+     "Yongzheng Zhang"
+    ],
+    "first_author_family": "Ouyang",
+    "author_count": 2,
+    "year": 2021,
+    "venue": "2021 IEEE 20th International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4429,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1007/978-981-96-3564-1_6",
+    "title": "Enhancing Aggregation Procedure for\u00a0GCN-Based Knowledge Graph Completion by\u00a0Leveraging Entity-Level and\u00a0Relation-Level Analogy",
+    "authors": [
+     "Xiaojun Shi",
+     "Xiaoye Ouyang",
+     "Dayu Guo",
+     "Xiaoling Zhu"
+    ],
+    "first_author_family": "Shi",
+    "author_count": 4,
+    "year": 2025,
+    "venue": "Lecture Notes in Electrical Engineering",
+    "type": "book-chapter",
+    "publisher": "Springer Nature Singapore",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4257,
+    "first_author_matches": false,
+    "year_matches": true
+   },
+   {
+    "doi": "10.1109/icse55347.2025.00246",
+    "title": "Knowledge-Enhanced Program Repair for Data Science Code",
+    "authors": [
+     "Shuyin Ouyang",
+     "Jie M. Zhang",
+     "Zeyu Sun",
+     "Albert Merono Penuela"
+    ],
+    "first_author_family": "Ouyang",
+    "author_count": 4,
+    "year": 2025,
+    "venue": "2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3969,
+    "first_author_matches": true,
+    "year_matches": true
+   },
+   {
+    "doi": "10.4108/eetpht.11.11670",
+    "title": "Enhancing Medical Question-Answering Systems with Knowledge Graph-Integrated Large Language Models: A Comparative Analysis",
+    "authors": [
+     "Jiaxu Lin",
+     "Silin Ouyang"
+    ],
+    "first_author_family": "Lin",
+    "author_count": 2,
+    "year": 2026,
+    "venue": "EAI Endorsed Transactions on Pervasive Health and Technology",
+    "type": "journal-article",
+    "publisher": "European Alliance for Innovation n.o.",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3756,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1109/ase63991.2025.00072",
+    "title": "Let the Code Speak: Incorporating Program Dynamic State for Better Method-Level Fault Localization",
+    "authors": [
+     "Yihao Qin",
+     "Shangwen Wang",
+     "Bo Lin",
+     "Xin Peng",
+     "Sheng Ouyang",
+     "Liqian Chen",
+     "Xiaoguang Mao"
+    ],
+    "first_author_family": "Qin",
+    "author_count": 7,
+    "year": 2025,
+    "venue": "2025 40th IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3699,
+    "first_author_matches": false,
+    "year_matches": true
+   }
+  ],
+  "best_title_similarity": 0.4429,
+  "best_is_match": false
+ },
+ "arxiv_title_search": {
+  "status": 429,
+  "entries": ""
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W4404087993",
+    "doi": "https://doi.org/10.48550/arxiv.2410.14684",
+    "title": "RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph",
+    "year": 2024,
+    "type": "preprint",
+    "authors": [
+     "Siru Ouyang",
+     "Wenhao Yu",
+     "Kaixin Ma",
+     "Zilin Xiao",
+     "Zhihan Zhang",
+     "Mengzhao Jia",
+     "Jiawei Han",
+     "Hongming Zhang",
+     "Dong Yu"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2410.14684"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2410.14684"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4416366023",
+    "doi": "https://doi.org/10.48550/arxiv.2503.21710",
+    "title": "Enhancing repository-level software repair via repository-aware knowledge graphs",
+    "year": 2025,
+    "type": "preprint",
+    "authors": [
+     "Boyang Yang",
+     "Jiadong Ren",
+     "Shunfu Jin",
+     "Yang Liu",
+     "Liu Feng",
+     "Bach Le",
+     "Haoye Tian"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2503.21710"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2503.21710"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4416453608",
+    "doi": "https://doi.org/10.52202/085713-0537",
+    "title": "Code Graph Model (CGM): A Graph-Integrated Large Language Model for Repository-Level Software Engineering Tasks",
+    "year": 2025,
+    "type": "conference-paper",
+    "authors": [
+     "Hongyuan Tao",
+     "Ying Zhang",
+     "Zhenhao Tang",
+     "Hongen Peng",
+     "Xukun Zhu",
+     "Bingchang Liu",
+     "Yingguang Yang",
+     "Ziyin Zhang",
+     "Zhaogui Xu",
+     "Haipeng Zhang",
+     "Linchao Zhu",
+     "Rui Wang",
+     "Hang Yu",
+     "Jianguo Li",
+     "Peng Di"
+    ],
+    "primary_location": "neural information processing systems",
+    "locations": [
+     {
+      "source": "neural information processing systems",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.52202/085713-0537"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2505.16901"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2505.16901"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7169754613",
+    "doi": "https://doi.org/10.5121/csit.2026.1601103",
+    "title": "FROM ONTOLOGIES TO REPOSITORY INTELLIGENCE:AREVIEW OF KNOWLEDGE GRAPHS FOR MINING SOFTWARE REPOSITORIES",
+    "year": 2026,
+    "type": "conference-paper",
+    "authors": [
+     "St\u00f6ger Manuel",
+     "Mario Bernhart",
+     "Thomas Grechenig"
+    ],
+    "primary_location": "International Conference on Advanced Information Technologies and Applications (ICAITA)",
+    "locations": [
+     {
+      "source": "International Conference on Advanced Information Technologies and Applications (ICAITA)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.5121/csit.2026.1601103"
+     },
+     {
+      "source": "SSRN Electronic Journal",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://doi.org/10.2139/ssrn.6986739"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7166816959",
+    "doi": "https://doi.org/10.1145/3832783.3834646",
+    "title": "FeatX: Editing Software by Editing Features for Repository-Level Code Evolution",
+    "year": 2026,
+    "type": "conference-paper",
+    "authors": [
+     "Xutian Li",
+     "Yifeng Zhu",
+     "Xianlin Zhao",
+     "Yanzhen Zou",
+     "Lu Zhang",
+     "Bing Xie"
+    ],
+    "primary_location": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+    "locations": [
+     {
+      "source": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1145/3832783.3834646"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://arxiv.org/abs/2606.31206"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2606.31206"
+     }
+    ]
+   }
+  ]
+ }
+}

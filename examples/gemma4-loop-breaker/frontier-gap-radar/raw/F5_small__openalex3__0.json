@@ -1,0 +1,516 @@
+{
+ "url": "https://api.openalex.org/works?search=quantized+language+model+agent+tool+use+multi-turn&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W7223657872",
+   "doi": "10.48550/arxiv.2610.32417",
+   "title": "Measuring the Energy Cost of Completing Tasks with Quantized Language-Model Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Quantization reduces the memory and energy needed to serve large language models (LLMs) and AI agents for coding and data analysis can now run on locally hosted LLMs. In practice, this benefit is commonly benchmarked per output token. Yet an agent calls its model repeatedly, runs tools, and revises its work, and quantization can change both how much the agent generates and whether it succeeds. Existing energy studies either compare quantized models on single requests or measure agents at one fixed precision, overlooking how a change in precision plays out across a complete agent task. To address this gap, this paper presents the first characterization of the task-level energy trade-offs of model quantization in locally hosted agents. We develop 29 agent tasks with automatic pass/fail checks in six families, ranging from single-answer SQL analytics to multi-step repository bug fixing, and measure CPU and GPU energy per output token and per completed task for 4-bit and 8-bit versions of two open-weight models on bare-metal NVIDIA A100 nodes with llama$.$cpp. Our findings reveal that 4-bit precision generally saves energy per token, though whether it saves energy per completed task is task dependent and changes with the model and the execution budget (i.e., limits on turns, tokens, and time). We trace this discrepancy to the extra tokens needed to complete a task in full, which translates into using up to 3.5 times as much energy per completed task. These findings offer actionable guidance for developers and operators choosing model precision for agents, showing how tokens per completed task, set against the per-token saving, reveal whether lower precision completes the work with less energy.",
+   "authors": [
+    "Stephen Abkin",
+    "Aldric Yang",
+    "Alex Flesher",
+    "Nitheesh Kodarapu",
+    "Deepak Panigrahy",
+    "Aakash Tyagi",
+    "David Kebo Houngninou"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4412945361",
+   "doi": "10.18653/v1/2025.acl-long.605",
+   "title": "Can a Single Model Master Both Multi-turn Conversations and Tool Use? CoALM: A Unified Conversational Agentic Language Model",
+   "year": 2025,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 21,
+   "abstract": "Emre Can Acikgoz, Jeremiah Greer, Akul Datta, Ze Yang, William Zeng, Oussama Elachqar, Emmanouil Koukoumidis, Dilek Hakkani-T\u00fcr, Gokhan Tur. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025.",
+   "authors": [
+    "Emre Can Acikgoz",
+    "Jeremiah Greer",
+    "Akul Datta",
+    "Ze Yang",
+    "William Zeng",
+    "Oussama Elachqar",
+    "Emmanouil Koukoumidis",
+    "Dilek Z. Hakkani-Tur"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7196946207",
+   "doi": "10.5281/zenodo.21824791",
+   "title": "Thirty Roles, One Model: A Measured Multi-Agent Chat System on a Single Quantized Local Language Model",
+   "year": 2026,
+   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "30 named AI roles. One 8B model. Zero cloud. Full multi-agent hierarchy running entirely on a single desktop GPU. This paper documents a complete multi-agent chat system where 30 distinct roles arranged in a 29-edge reporting hierarchy are all served by a single locally hosted 8-billion-parameter instruction model inside one desktop process. No network calls. No per-agent endpoints. 4-bit NF4 quantization packs the entire model into just 5.4 GB of VRAM on a 20 GB GPU, leaving the rest of the card free. A three-stage router decides which roles should respond to each message at a cost of at most one short greedy generation. Selected roles then answer through one of three paths: streamed single-shot, left-padded batch, or a tool-use loop that lets managers delegate to their direct reports. Every generation path ends in the same instrumentation call so every token is measured identically. The measurement layer writes four append-only JSONL streams. An aggregator turns those logs into a full report, provenance manifest, and LaTeX tables. Every number in the paper is the exact output of that converter run on a recorded session: nothing was typed by hand. Key measured results from the proof session:\u2022 Model load: 13.9 s\u2022 Average routing cost: 1.6 s / 12.2 completion tokens\u2022 Single-shot decode: 11.60 tokens/s\u2022 Mean time-to-first-token: 459 ms\u2022 Full user turn (routing + every role answer): mean 27.2 s\u2022 Peak device memory: 5.9 GB",
+   "authors": [
+    "Robert Renis"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4385681800",
+   "doi": "10.48550/arxiv.2308.03427",
+   "title": "TPTU: Large Language Model-based AI Agents for Task Planning and Tool Usage",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 167,
+   "abstract": "With recent advancements in natural language processing, Large Language Models (LLMs) have emerged as powerful tools for various real-world applications. Despite their prowess, the intrinsic generative abilities of LLMs may prove insufficient for handling complex tasks which necessitate a combination of task planning and the usage of external tools. In this paper, we first propose a structured framework tailored for LLM-based AI Agents and discuss the crucial capabilities necessary for tackling intricate problems. Within this framework, we design two distinct types of agents (i.e., one-step agent and sequential agent) to execute the inference process. Subsequently, we instantiate the framework using various LLMs and evaluate their Task Planning and Tool Usage (TPTU) abilities on typical tasks. By highlighting key findings and challenges, our goal is to provide a helpful resource for researchers and practitioners to leverage the power of LLMs in their AI applications. Our study emphasizes the substantial potential of these models, while also identifying areas that need more investigation and improvement.",
+   "authors": [
+    "Jingqing Ruan",
+    "Chen, Yihong",
+    "Bin Zhang",
+    "Zhiwei Xu",
+    "Tianpeng Bao",
+    "Du, Guoqing",
+    "Shiwei Shi",
+    "Hangyu Mao"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411231222",
+   "doi": "10.23939/acps2025.01.034",
+   "title": "Evaluating small quantized language models on apple silicon",
+   "year": 2025,
+   "venue": "Advances in Cyber-Physical Systems",
+   "type": "article",
+   "cited_by": 3,
+   "abstract": "This study examines the capabilities and limitations of small, 4-bit quantized language models that run locally on Apple Silicon. Four models have been benchmarked on a dataset of natural language prompts, with runtime metrics including inference time, memory usage, and token throughput, as well as output behavior. The study provides an empirical assessment of the feasibility of deploying language models on resource-constrained devices. The results highlight trade-offs of small language models and underscore the importance of model size, quantization, and prompt tuning in balancing performance, efficiency, and usability. Building on these insights, future work will extend evaluations to multi-turn agentic dialogues, analyze the semantic quality of output, and pursue further optimizations to enhance local inference performance.",
+   "authors": [
+    "Oleh Chaplia",
+    "Halyna Klym"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7155107524",
+   "doi": "10.1109/icassp55912.2026.11464123",
+   "title": "ECG-Agent: On-Device Tool-Calling Agent for ECG Multi-Turn Dialogue",
+   "year": 2026,
+   "venue": "IEEE International Conference on Acoustics Speech and Signal Processing",
+   "type": "conference-paper",
+   "cited_by": 4,
+   "abstract": "Recent advances in Multimodal Large Language Models have rapidly expanded to electrocardiograms, focusing on classification, report generation, and single-turn QA tasks. However, these models fall short in real-world scenarios, lacking multi-turn conversational ability, on-device efficiency, and precise understanding of ECG measurements such as the PQRST intervals. To address these limitations, we introduce ECG-Agent, the first LLM-based tool-calling agent for multi-turn ECG dialogue. To facilitate its development and evaluation, we also present ECG-Multi-Turn-Dialogue (ECG-MTD) dataset, a collection of realistic user-assistant multi-turn dialogues for diverse ECG lead configurations. We develop ECG-Agents in various sizes, from on-device capable to larger agents. Experimental results show that ECG-Agents outperform baseline ECG-LLMs in response accuracy. Furthermore, on-device agents achieve comparable performance to larger agents in various evaluations that assess response accuracy, tool-calling ability, and hallucinations, demonstrating their viability for real-world applications. The dataset and code are available in this URL",
+   "authors": [
+    "Hyunseung Chung",
+    "J H Oh",
+    "Daeun Kyung",
+    "Jiho Kim",
+    "Yeonsu Kwon",
+    "Mingyu Kim",
+    "Edward Choi"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7226004609",
+   "doi": "10.54097/1jkymf92",
+   "title": "Execution-Guided Verification for Reliable Tool-Using Large Language Model Agents",
+   "year": 2026,
+   "venue": "Jisuanji shenghuojia.",
+   "type": "article",
+   "cited_by": 0,
+   "abstract": "Large language model (LLM) agents increasingly operate on real systems through tool calls, yet their behavior is stochastic: the same request may be resolved correctly in one run and incorrectly in the next, and erroneous write operations are costly to undo. This paper presents execution-guided verification (EGV), a training-free and model-agnostic procedure that decides which agent behavior to commit by executing candidate trajectories instead of judging their text. EGV replays the tool calls of k independently sampled trajectories against isolated copies of the backend state, groups candidates that reach an identical final world state, and commits a representative of the best-supported state, while failed tool calls serve as a secondary signal for tie-breaking and representative selection. The support share of the committed state acts as a verification confidence for selective execution with escalation to human operators. Experiments on 1,980 real trajectories of GPT-4o and Claude-3.5-Sonnet in the retail and airline domains of \u03c4-bench, replayed in a sandbox that reproduces 99.96% of the recorded tool observations, show that EGV improves task success over single-run execution in every setting, e.g., from 61.0% to 68.7% for Claude-3.5-Sonnet in retail, with a pooled gain of 6.1 points (95% CI [3.8, 8.3]), and that it consistently outperforms voting over emitted action sequences. Execution agreement predicts trajectory success with an AUROC of 79.4\u201382.8, and committing only unanimously supported states yields 81.0\u2013100% success on 16\u201340% of the requests. These results establish world-state equivalence as an effective and inexpensive verification signal for stateful tool-using agents.",
+   "authors": [
+    "Oliver Hargreaves",
+    "Sienna Patel",
+    "Callum Price",
+    "Emily Foster"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4393305455",
+   "doi": "10.1109/tcad.2024.3383347",
+   "title": "ChatEDA: A Large Language Model Powered Autonomous Agent for EDA",
+   "year": 2024,
+   "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+   "type": "article",
+   "cited_by": 229,
+   "abstract": "The integration of a complex set of Electronic Design Automation (EDA) tools to enhance interoperability is a critical concern for circuit designers. Recent advancements in large language models (LLMs) have showcased their exceptional capabilities in natural language processing and comprehension, offering a novel approach to interfacing with EDA tools. This research paper introduces ChatEDA, an autonomous agent for EDA empowered by a large language model, AutoMage, complemented by EDA tools serving as executors. ChatEDA streamlines the design flow from the Register-Transfer Level (RTL) to the Graphic Data System Version II (GDSII) by effectively managing task decomposition, script generation, and task execution. Through comprehensive experimental evaluations, ChatEDA has demonstrated its proficiency in handling diverse requirements, and our fine-tuned AutoMage model has exhibited superior performance compared to GPT-4 and other similar LLMs.",
+   "authors": [
+    "Haoyuan Wu",
+    "Zhuolun He",
+    "Xinyun Zhang",
+    "Xufeng Yao",
+    "Su Zheng",
+    "Haisheng Zheng",
+    "Bei Yu"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415971869",
+   "doi": "10.48550/arxiv.2507.05257",
+   "title": "Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 204,
+   "abstract": "Recent benchmarks for Large Language Model (LLM) agents primarily focus on evaluating reasoning, planning, and execution capabilities, while another critical component-memory, encompassing how agents memorize, update, and retrieve long-term information-is under-evaluated due to the lack of benchmarks. We term agents with memory mechanisms as memory agents. In this paper, based on classic theories from memory science and cognitive science, we identify four core competencies essential for memory agents: accurate retrieval, test-time learning, long-range understanding, and selective forgetting. Existing benchmarks either rely on limited context lengths or are tailored for static, long-context settings like book-based QA, which do not reflect the interactive, multi-turn nature of memory agents that incrementally accumulate information. Moreover, no existing benchmarks cover all four competencies. We introduce MemoryAgentBench, a new benchmark specifically designed for memory agents. Our benchmark transforms existing long-context datasets and incorporates newly constructed datasets into a multi-turn format, effectively simulating the incremental information processing characteristic of memory agents. By carefully selecting and curating datasets, our benchmark provides comprehensive coverage of the four core memory competencies outlined above, thereby offering a systematic and challenging testbed for assessing memory quality. We evaluate a diverse set of memory agents, ranging from simple context-based and retrieval-augmented generation (RAG) systems to advanced agents with external memory modules and tool integration. Empirical results reveal that current methods fall short of mastering all four competencies, underscoring the need for further research into comprehensive memory mechanisms for LLM agents.",
+   "authors": [
+    "Hu, Yuanzhe",
+    "Yu Wang",
+    "Julian McAuley"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4405033019",
+   "doi": "10.48550/arxiv.2411.18279",
+   "title": "Large Language Model-Brained GUI Agents: A Survey",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 215,
+   "abstract": "GUIs have long been central to human-computer interaction, providing an intuitive and visually-driven way to access and interact with digital systems. The advent of LLMs, particularly multimodal models, has ushered in a new era of GUI automation. They have demonstrated exceptional capabilities in natural language understanding, code generation, and visual processing. This has paved the way for a new generation of LLM-brained GUI agents capable of interpreting complex GUI elements and autonomously executing actions based on natural language instructions. These agents represent a paradigm shift, enabling users to perform intricate, multi-step tasks through simple conversational commands. Their applications span across web navigation, mobile app interactions, and desktop automation, offering a transformative user experience that revolutionizes how individuals interact with software. This emerging field is rapidly advancing, with significant progress in both research and industry. To provide a structured understanding of this trend, this paper presents a comprehensive survey of LLM-brained GUI agents, exploring their historical evolution, core components, and advanced techniques. We address research questions such as existing GUI agent frameworks, the collection and utilization of data for training specialized GUI agents, the development of large action models tailored for GUI tasks, and the evaluation metrics and benchmarks necessary to assess their effectiveness. Additionally, we examine emerging applications powered by these agents. Through a detailed analysis, this survey identifies key research gaps and outlines a roadmap for future advancements in the field. By consolidating foundational knowledge and state-of-the-art developments, this work aims to guide both researchers and practitioners in overcoming challenges and unlocking the full potential of LLM-brained GUI agents.",
+   "authors": [
+    "Chaoyun Zhang",
+    "Shilin He",
+    "Jiaxu Qian",
+    "Bowen Li",
+    "Liqun Li",
+    "Si Qin",
+    "Kang, Yu",
+    "Minghua Ma"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416513724",
+   "doi": "10.48550/arxiv.2506.23394",
+   "title": "Teaching a Language Model to Speak the Language of Tools",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "External tool integration through function-calling is essential for practical language model applications, yet most multilingual models lack reliable tool-use capabilities in non-English languages. Even state-of-the-art multilingual models struggle with determining when to use tools and generating the structured outputs required for function calls, often exhibiting language confusion when prompted in lower-resource languages. This work presents a methodology for adapting existing language models to enable robust tool use in any target language, using Bulgarian as a case study. The approach involves continued training of the BgGPT model series (2.6B, 9B, 27B parameters) on a novel bilingual dataset of 10,035 function-calling examples designed to support standardized protocols like MCP (Model Context Protocol). The research introduces TUCAN (Tool-Using Capable Assistant Navigator), which achieves up to 28.75% improvement in function-calling accuracy over base models while preserving core language understanding, as verified on established Bulgarian benchmarks. Beyond accuracy gains, TUCAN models demonstrate production-ready response formatting with clean, parsable function calls, contrasting with the verbose and inconsistent outputs of base models. The models, evaluation framework, and dataset are released to enable replication for other languages. This work demonstrates a practical approach for extending tool-augmented capabilities beyond English-centric systems.",
+   "authors": [
+    "Simeon Emanuilov"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7166350919",
+   "doi": "10.1145/3801487.3805608",
+   "title": "POSTER: TinyLLM: Evaluation and Optimization of Small Language Models for Agentic Tasks on Edge Devices",
+   "year": 2026,
+   "venue": "ACM International Conference on Computing Frontiers (CF)",
+   "type": "conference-paper",
+   "cited_by": 3,
+   "abstract": "As autonomous AI agents increasingly rely on Large Language Models (LLMs) for decision making; the necessity for local, privacy preserving execution on edge devices has become paramount. This paper investigates the effectiveness of Small Language Models (SLMs) with equal or fewer than 4 billion parameters for agentic tasks, specifically function and API calling. Using the Berkeley Function Calling Leaderboard (BFCL), we provide a comprehensive evaluation of models including xLAM-2, Qwen3, and TinyLlama. We introduce a Direct Preference Optimization (DPO) pipeline that leverages AgentBank (ALFRED) trajectories to align SLMs toward expert level tool use behavior. Our experimental results demonstrate a clear performance hierarchy where models in the 1-3B range significantly outperform sub 1B variants, achieving up to 65.74% overall accuracy and 55.62% in multi turn scenarios. Furthermore, we validate deployment feasibility through 4-bit quantization and hardware simulation, showing that these models can operate within the 8GB VRAM constraints of an Nvidia Jetson Nano while maintaining a functional throughput of \u223c 2.6 tokens/sec.",
+   "authors": [
+    "Mohd Ariful Haque",
+    "Fahad Rahman",
+    "Kishor Datta Gupta",
+    "Khalil A. Shujaee",
+    "Roy George"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4393853379",
+   "doi": "10.48550/arxiv.2403.19708",
+   "title": "Cost-Efficient Large Language Model Serving for Multi-turn Conversations with CachedAttention",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 51,
+   "abstract": "Interacting with humans through multi-turn conversations is a fundamental feature of large language models (LLMs). However, existing LLM serving engines executing multi-turn conversations are inefficient due to the need to repeatedly compute the key-value (KV) caches of historical tokens, incurring high serving costs. To address the problem, this paper proposes CachedAttention, a new attention mechanism that enables reuse of KV caches across multi-turn conversations, significantly reducing the repetitive computation overheads. CachedAttention maintains a hierarchical KV caching system that leverages cost-effective memory/storage mediums to save KV caches for all requests. To reduce KV cache access overheads from slow mediums, CachedAttention employs layer-wise pre-loading and asynchronous saving schemes to overlap the KV cache access with the GPU computation. To ensure that the KV caches to be accessed are placed in the fastest hierarchy, CachedAttention employs scheduler-aware fetching and eviction schemes to consciously place the KV caches in different layers based on the hints from the inference job scheduler. To avoid the invalidation of the saved KV caches incurred by context window overflow, CachedAttention enables the saved KV caches to remain valid via decoupling the positional encoding and effectively truncating the KV caches. Extensive experimental results demonstrate that CachedAttention significantly decreases the time to the first token (TTFT) by up to 87%, improves the prompt prefilling throughput by up to 7.8$\\times$ for multi-turn conversations, and reduces the end-to-end inference cost by up to 70%.",
+   "authors": [
+    "Bin Gao",
+    "Zhuomin He",
+    "Puru Sharma",
+    "Qingxuan Kang",
+    "Djordje Jevdjic",
+    "Deng, Junbo",
+    "Xingkun Yang",
+    "Zhou Yu"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7225146253",
+   "doi": "10.48550/arxiv.2611.02368",
+   "title": "Beyond Accuracy: How Quantization Affects Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "Agents are increasingly used for coding tasks, but the inference cost of large language models (LLMs) limits where they can run. Quantization reduces model size, but its effects on coding agents that execute and revise programs remain underexplored. We compare BF16 with 4-bit AWQ and GPTQ for Qwen2.5-Coder-Instruct (7B, 14B, and 32B) and Devstral-Small-2507 (24B) on OJBench coding problems across three seeds. We detect no statistically significant accuracy loss for any of the coding agents. However, final accuracy can conceal substantial behavioral changes: AWQ reduces Qwen-7B one-shot solves from 17 to 0 while increasing loop-based solves from 10 to 25. All Qwen-32B successes involve tool use, whereas Devstral rarely makes a valid executor call. Failure profiles also differ: Qwen-32B produces far more compilation errors than the smaller Qwen models, rising slightly under quantization, while Devstral's failures shift significantly from runtime errors toward wrong answers and timeouts. These findings indicate that quantization robustness in coding agents should be assessed through solution trajectories, tool use, and failure modes, in addition to final accuracy.",
+   "authors": [
+    "Areej Mehboob",
+    "Muhammad Ali Shafique",
+    "Muhammad Qadeer",
+    "Hamza Farooq"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414971614",
+   "doi": "10.48550/arxiv.2510.04618",
+   "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 384,
+   "abstract": "Large language model (LLM) applications such as agents and domain-specific reasoning increasingly rely on context adaptation: modifying inputs with instructions, strategies, or evidence, rather than weight updates. Prior approaches improve usability but often suffer from brevity bias, which drops domain insights for concise summaries, and from context collapse, where iterative rewriting erodes details over time. We introduce ACE (Agentic Context Engineering), a framework that treats contexts as evolving playbooks that accumulate, refine, and organize strategies through a modular process of generation, reflection, and curation. ACE prevents collapse with structured, incremental updates that preserve detailed knowledge and scale with long-context models. Across agent and domain-specific benchmarks, ACE optimizes contexts both offline (e.g., system prompts) and online (e.g., agent memory), consistently outperforming strong baselines: +10.6% on agents and +8.6% on finance, while significantly reducing adaptation latency and rollout cost. Notably, ACE could adapt effectively without labeled supervision and instead by leveraging natural execution feedback. On the AppWorld leaderboard, ACE matches the top-ranked production-level agent on the overall average and surpasses it on the harder test-challenge split, despite using a smaller open-source model. These results show that comprehensive, evolving contexts enable scalable, efficient, and self-improving LLM systems with low overhead.",
+   "authors": [
+    "Qizheng Zhang",
+    "Changran Hu",
+    "Shubhangi Upasani",
+    "Ma, Boyuan",
+    "Hong, Fenglu",
+    "Vamsidhar Reddy Kamanuru",
+    "Jay Rainton",
+    "Wu Chen"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415960242",
+   "doi": "10.1145/3848510",
+   "title": "Mixed-Precision Quantization for Language Models: Techniques and Prospects",
+   "year": 2026,
+   "venue": "ACM Computing Surveys",
+   "type": "article",
+   "cited_by": 8,
+   "abstract": "The rapid scaling of Language Models (LMs) has resulted in unprecedented computational, memory, and energy requirements, making their training and deployment increasingly unsustainable. Quantization has emerged as a crucial compression technique for reducing model size, alleviating memory bottlenecks, and accelerating inference. However, while uniform low-bit quantization (e.g., INT8, INT4) provides significant efficiency gains, it can degrade accuracy in sensitive components of transformer-based LMs. Mixed-precision quantization offers a promising alternative by selectively allocating precision across layers or within tensors to strike a balance between efficiency and accuracy. This survey provides a comprehensive overview of Mixed-Precision quantization frameworks for LMs (MXPLMs). We first review quantization fundamentals, including uniform and non-uniform quantizers, quantization granularity, and methods widely used in post-training quantization. We then categorize and compare recent MXPLM frameworks according to their bit allocation strategies and precision configurations across weights, activations, and key-value caches. A comparative analysis highlights differences in perplexity, zero-shot task performance, and deployment trade-offs. Furthermore, we contrast MXPLMs with earlier mixed-precision quantization methods for deep neural networks, identifying strategies that transfer and those that face challenges in the LM setting. Then, we discuss quantization-compatible hardware, KV cache and mixture-of-experts quantization, and summarize open issues and future directions, including hardware-aware design, activation quantization, and scalable optimization methods for billion-parameter models.",
+   "authors": [
+    "Mariam Rakka",
+    "Marios Fournarakis",
+    "Olga Krestinskaya",
+    "Jinane Bazzi",
+    "Khaled Nabil Salama",
+    "Fadi J Kurdahi",
+    "Ahmed M. Eltawil",
+    "Mohammed E. Fouda"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415338087",
+   "doi": "10.48550/arxiv.2509.25238",
+   "title": "PALADIN: Self-Correcting Language Model Agents to Cure Tool-Failure Cases",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 27,
+   "abstract": "Tool-augmented language agents frequently fail in real-world deployment due to tool malfunctions--timeouts, API exceptions, or inconsistent outputs--triggering cascading reasoning errors and task abandonment. Existing agent training pipelines optimize only for success trajectories, failing to expose models to the tool failures that dominate real-world usage. We propose \\textbf{PALADIN}, a generalizable framework for equipping language agents with robust failure recovery capabilities. PALADIN trains on 50,000+ recovery-annotated trajectories constructed via systematic failure injection and expert demonstrations on an enhanced ToolBench dataset. Training uses LoRA-based fine-tuning to retain base capabilities while injecting recovery competence. At inference, PALADIN detects execution-time errors and retrieves the most similar case from a curated bank of 55+ failure exemplars aligned with ToolScan's taxonomy, then executes the corresponding recovery action. This approach generalizes to novel failures beyond the training distribution, retaining 95.2\\% recovery performance on unseen tool APIs. Evaluation across PaladinEval and ToolReflectEval demonstrates consistent improvements in Recovery Rate (RR), Task Success Rate (TSR), Catastrophic Success Rate (CSR), and Efficiency Score (ES). PALADIN improves RR from 32.76% to 89.68% (+57% relative) over ToolBench and outperforms the strongest baseline CRITIC (76.34%) by +13.3%. Against vanilla agents, PALADIN achieves 89.86\\% RR (+66% relative improvement from 23.75%). These results establish PALADIN as an effective method for building fault-tolerant agents capable of robust recovery in real-world tool environments.",
+   "authors": [
+    "Sri Vatsa Vuddanti",
+    "Shah, Aarav",
+    "Satwik Kumar Chittiprolu",
+    "Tony Song",
+    "Sunishchal Dev",
+    "Kevin Zhu",
+    "Maheep Chaudhary"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7213388203",
+   "doi": null,
+   "title": "Pretraining, Quantization, and Evaluation of Romanian Small Language Models",
+   "year": 2026,
+   "venue": "Lund University Publications Student Papers (Lund University)",
+   "type": "dissertation",
+   "cited_by": 0,
+   "abstract": "This thesis explores the design and evaluation of Small Language Models for the Romanian Language. We build a 21.16 GB curated Romanian corpus from web crawls, targeted scrapers, and literary texts, which translates to approximately 5.6 billion tokens. Four 300M-parameter architectural variants based on different attention mechanisms are pretrained from scratch and evaluated on fluency, sentiment classification, and semantic similarity; these architectures are: Multi-Head Attention, Grouped-Query Attention, Multi-Query Attention, and Sliding Window Attention. Our best model achieves the lowest perplexity on four out of five held-out Romanian domains against existing models pretrained from scratch, including models with up to 10 times more parameters, and all four of our variants surpass every published Romanian baseline on the LaRoSeDa sentiment classification benchmark, including the encoder-based RoBERT-large. We further demonstrate that aggressive 4-bit quantization retains over 98.5% of full-precision fluency, enabling deployment on low-power edge devices under 200 MB.",
+   "authors": [
+    "T.A. DIAC"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4394708597",
+   "doi": "10.48550/arxiv.2404.04442",
+   "title": "Exploring Autonomous Agents through the Lens of Large Language Models: A Review",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 55,
+   "abstract": "Large Language Models (LLMs) are transforming artificial intelligence, enabling autonomous agents to perform diverse tasks across various domains. These agents, proficient in human-like text comprehension and generation, have the potential to revolutionize sectors from customer service to healthcare. However, they face challenges such as multimodality, human value alignment, hallucinations, and evaluation. Techniques like prompting, reasoning, tool utilization, and in-context learning are being explored to enhance their capabilities. Evaluation platforms like AgentBench, WebArena, and ToolLLM provide robust methods for assessing these agents in complex scenarios. These advancements are leading to the development of more resilient and capable autonomous agents, anticipated to become integral in our digital lives, assisting in tasks from email responses to disease diagnosis. The future of AI, with LLMs at the forefront, is promising.",
+   "authors": [
+    "Barua, Saikat"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402683785",
+   "doi": "10.18653/v1/2024.findings-acl.557",
+   "title": "Agent-FLAN: Designing Data and Methods of Effective Agent Tuning for Large Language Models",
+   "year": 2024,
+   "venue": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+   "type": "conference-paper",
+   "cited_by": 128,
+   "abstract": "Open-sourced Large Language Models (LLMs) have achieved great success in various NLP tasks, however, they are still far inferior to APIbased models when acting as agents.How to integrate agent ability into general LLMs becomes a crucial and urgent problem.This paper first delivers three key observations: (1) the current agent training corpus is entangled with both formats following and agent reasoning, which significantly shifts from the distribution of its pre-training data; (2) LLMs exhibit different learning speeds on the capabilities required by agent tasks; and (3) current approaches have side-effects when improving agent abilities by introducing hallucinations.Based on the above findings, we propose Agent-FLAN to effectively Fine-tune LANguage models for Agents.Through careful decomposition and redesign of the training corpus, Agent-FLAN enables Llama2-7B to outperform prior best works by 3.5% across various agent evaluation datasets.With comprehensively constructed negative samples, Agent-FLAN greatly alleviates the hallucination issues based on our established evaluation benchmark.Besides, it consistently improves the agent capability of LLMs when scaling model sizes while slightly enhancing the general capability of LLMs.The code and model are available at https://github.com/InternLM/Agent-FLAN.",
+   "authors": [
+    "Zehui Chen",
+    "Kuikun Liu",
+    "Qiuchen Wang",
+    "Wenwei Zhang",
+    "Jiangning Liu",
+    "Dahua Lin",
+    "Kai Chen",
+    "Feng Zhao"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4392935324",
+   "doi": "10.1016/j.tics.2024.01.011",
+   "title": "Dissociating language and thought in large language models",
+   "year": 2024,
+   "venue": "Trends in Cognitive Sciences",
+   "type": "review",
+   "cited_by": 711,
+   "abstract": "",
+   "authors": [
+    "Kyle Mahowald",
+    "Anna Aleksandrovna Ivanova",
+    "Idan Blank",
+    "Nancy Kanwisher",
+    "Joshua B. Tenenbaum",
+    "Evelina G. Fedorenko"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415250038",
+   "doi": "10.48550/arxiv.2509.12434",
+   "title": "Building Coding Agents via Entropy-Enhanced Multi-Turn Preference Optimization",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 9,
+   "abstract": "Software engineering presents complex, multi-step challenges for Large Language Models (LLMs), requiring reasoning over large codebases and coordinated tool use. The difficulty of these tasks is exemplified by benchmarks like SWE-bench, where current LLMs still struggle to resolve real-world issues. A promising approach to enhance performance is test-time scaling (TTS), but its gains are heavily dependent on the diversity of model outputs. While standard alignment methods such as Direct Preference Optimization (DPO) and Kahneman-Tversky Optimization (KTO) are effective at aligning model outputs with human preferences, this process can come at the cost of reduced diversity, limiting the effectiveness of TTS. Additionally, existing preference optimization algorithms are typically designed for single-turn tasks and do not fully address the complexities of multi-turn reasoning and tool integration required for interactive coding agents. To bridge this gap, we introduce EntroPO, an entropy-enhanced framework that adapts existing preference optimization algorithms to the multi-turn, tool-assisted setting. EntroPO augments the preference objective to explicitly preserve policy entropy and generalizes learning to optimize over multi-turn interactions rather than single-turn responses. We validate EntroPO by fine-tuning a diverse suite of models from different families and sizes (up to 106B parameters).To maximize performance gains from TTS, we further propose a hybrid best-trajectory selection scheme combining a learned verifier model with model free approaches. On the SWEBENCH leaderboard, our approach establishes new state-of-the-art results among open-weight models. A 30B parameter model trained with EntroPO ranks 1st on SWEBENCH-LITE and 4th on SWEBENCH-VERIFIED on the open-weight leaderboard, surpassed only by models with over 10x more parameters(e.g., >$350B).",
+   "authors": [
+    "Jiahao Yu",
+    "Cheng, Zelei",
+    "Wu, Xian",
+    "Xinyu Xing"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4362515116",
+   "doi": "10.1007/s11704-026-60308-3",
+   "title": "A Survey of Large Language Models",
+   "year": 2026,
+   "venue": "Frontiers of Computer Science",
+   "type": "article",
+   "cited_by": 8586,
+   "abstract": "Abstract The rapid evolution of large language models (LLMs) has driven a transformative shift in artificial intelligence (AI), reshaping both research paradigms and practical applications. Distinguished from their predecessors by unprecedented scale and advanced capabilities, LLMs necessitate new frameworks for understanding their development, behavior, and societal impact. This survey systematically reviews recent advancements in LLM techniques across four key dimensions: (1) pre-training methodologies, which establish core model capabilities through large-scale self-supervised training, architectural innovations, and data curation strategies; (2) post-training techniques, including supervised fine-tuning and reinforcement learning, which adapt foundational models to downstream tasks and enhance their alignment and safety; (3) utilization strategies, such as in-context learning, prompt engineering, and agentic reasoning, that optimize real-world deployment and enable effective interaction with external environments; and (4) evaluation methods, encompassing benchmarks for key ability dimensions such as core language capabilities, reasoning, and safety, which support comprehensive and reliable assessment of model performance. Additionally, we identify critical research issues, including those concerning theoretical foundations, efficient scaling, alignment, and agentic capability, and highlight the open challenges they present. By synthesizing state-of-the-art insights and emerging trends, this survey aims to provide a systematic and comprehensive framework for understanding the trajectory, current limitations, and future directions of LLM progress.",
+   "authors": [
+    "Wayne Xin Zhao",
+    "Kun Zhou",
+    "Junyi Li",
+    "Tianyi Tang",
+    "Zican Dong",
+    "Yupeng Hou",
+    "Beichen Zhang",
+    "Yingqian Min"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7133233472",
+   "doi": "10.52202/075280-0441",
+   "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+   "year": 2023,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 4084,
+   "abstract": "We present QLoRA, an efficient finetuning approach that reduces memory usage enough to finetune a 65B parameter model on a single 48GB GPU while preserving full 16-bit finetuning task performance. QLoRA backpropagates gradients through a frozen, 4-bit quantized pretrained language model into Low Rank Adapters~(LoRA). Our best model family, which we name Guanaco, outperforms all previous openly released models on the Vicuna benchmark, reaching 99.3% of the performance level of ChatGPT while only requiring 24 hours of finetuning on a single GPU. QLoRA introduces a number of innovations to save memory without sacrificing performance: (a) 4-bit NormalFloat (NF4), a new data type that is information theoretically optimal for normally distributed weights (b) double quantization to reduce the average memory footprint by quantizing the quantization constants, and (c) paged optimziers to manage memory spikes. We use QLoRA to finetune more than 1,000 models, providing a detailed analysis of instruction following and chatbot performance across 8 instruction datasets, multiple model types (LLaMA, T5), and model scales that would be infeasible to run with regular finetuning (e.g. 33B and 65B parameter models). Our results show that QLoRA finetuning on a small high-quality dataset leads to state-of-the-art results, even when using smaller models than the previous SoTA. We provide a detailed analysis of chatbot performance based on both human and GPT-4 evaluations showing that GPT-4 evaluations are a cheap and reasonable alternative to human evaluation. Furthermore, we find that current chatbot benchmarks are not trustworthy to accurately evaluate the performance levels of chatbots. A lemon-picked analysis demonstrates where Guanaco fails compared to ChatGPT. We release all of our models and code, including CUDA kernels for 4-bit training.",
+   "authors": [
+    "Tim Dettmers",
+    "Artidoro Pagnoni",
+    "Ari Holtzman",
+    "Luke Zettlemoyer"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415088660",
+   "doi": "10.48550/arxiv.2509.11575",
+   "title": "A Survey of Reasoning and Agentic Systems in Time Series with Large Language Models",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 40,
+   "abstract": "Time series reasoning treats time as a first-class axis and incorporates intermediate evidence directly into the answer. This survey defines the problem and organizes the literature by reasoning topology with three families: direct reasoning in one step, linear chain reasoning with explicit intermediates, and branch-structured reasoning that explores, revises, and aggregates. The topology is crossed with the main objectives of the field, including traditional time series analysis, explanation and understanding, causal inference and decision making, and time series generation, while a compact tag set spans these axes and captures decomposition and verification, ensembling, tool use, knowledge access, multimodality, agent loops, and LLM alignment regimes. Methods and systems are reviewed across domains, showing what each topology enables and where it breaks down in faithfulness or robustness, along with curated datasets, benchmarks, and resources that support study and deployment (https://github.com/blacksnail789521/Time-Series-Reasoning-Survey). Evaluation practices that keep evidence visible and temporally aligned are highlighted, and guidance is distilled on matching topology to uncertainty, grounding with observable artifacts, planning for shift and streaming, and treating cost and latency as design budgets. We emphasize that reasoning structures must balance capacity for grounding and self-correction against computational cost and reproducibility, while future progress will likely depend on benchmarks that tie reasoning quality to utility and on closed-loop testbeds that trade off cost and risk under shift-aware, streaming, and long-horizon settings. Taken together, these directions mark a shift from narrow accuracy toward reliability at scale, enabling systems that not only analyze but also understand, explain, and act on dynamic worlds with traceable evidence and credible outcomes.",
+   "authors": [
+    "Ching Chang",
+    "Yidan Shi",
+    "Defu Cao",
+    "Yang, Wei",
+    "Hwang, Jeehyun",
+    "Haixin Wang",
+    "Pang, Jiacheng",
+    "Wei William Wang"
+   ],
+   "facet": "F5_small",
+   "query": "quantized language model agent tool use multi-turn"
+  }
+ ]
+}

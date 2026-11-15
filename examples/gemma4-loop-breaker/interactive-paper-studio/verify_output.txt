@@ -1,0 +1,17 @@
+fisher two-sided ours=7.178606e-09 scipy=7.178606e-09; one-sided ours=3.589303e-09 scipy=3.589303e-09
+baseline {'t1_rate': 17.829457, 't1_ci_lo': 12.184695, 't1_ci_hi': 25.334811, 't1_delta_pts': 0.0, 't2_rate': 11.627907, 't2_ci_lo': 7.174577, 't2_ci_hi': 18.300496, 't2_compaction_change_pct': 0.0, 't3_rate': 16.0, 't3_ci_lo': 6.403451, 't3_ci_hi': 34.653622, 't3_fisher_two_sided': 1.0, 't3_fisher_one_sided': 0.64903, 't3_kv_pct': 0.0, 't3_think_pct': 0.0, 'noise_sd_over_sigma': 7.071068, 'toy_peak_dilution': 0.9, 'toy_peak_ctx': 20000.0, 'toy_cliff_turn': 9, 'toy_resets': 0}
+hidden {'t1_rate': 27.131783, 't1_ci_lo': 20.203035, 't1_ci_hi': 35.383119, 't1_delta_pts': 9.302326, 't2_rate': 13.953488, 't2_ci_lo': 9.012017, 't2_ci_hi': 20.979718, 't2_compaction_change_pct': -35.483871, 't3_rate': 20.0, 't3_ci_lo': 8.860585, 't3_ci_hi': 39.13095, 't3_fisher_two_sided': 1.0, 't3_fisher_one_sided': 0.5, 't3_kv_pct': 19.143265, 't3_think_pct': 13.042901, 'noise_sd_over_sigma': 5.656854, 'toy_peak_dilution': 0.9, 'toy_peak_ctx': 20000.0, 'toy_cliff_turn': 9, 'toy_resets': 0}
+ccr_only {'t1_rate': 39.534884, 't1_ci_lo': 31.517738, 't1_ci_hi': 48.157282, 't1_delta_pts': 21.705426, 't2_rate': 19.379845, 't2_ci_lo': 13.48555, 't2_ci_hi': 27.045064, 't2_compaction_change_pct': -87.536657, 't3_rate': 72.0, 't3_ci_lo': 52.423395, 't3_ci_hi': 85.716146, 't3_fisher_two_sided': 0.000147, 't3_fisher_one_sided': 7.3e-05, 't3_kv_pct': -46.721229, 't3_think_pct': -20.652366, 'noise_sd_over_sigma': 1.414214, 'toy_peak_dilution': 0.428571, 'toy_peak_ctx': 4250.0, 'toy_cliff_turn': 0, 'toy_resets': 6}
+optimum {'t1_rate': 39.534884, 't1_ci_lo': 31.517738, 't1_ci_hi': 48.157282, 't1_delta_pts': 21.705426, 't2_rate': 24.031008, 't2_ci_lo': 17.477431, 't2_ci_hi': 32.086508, 't2_compaction_change_pct': -93.108504, 't3_rate': 96.0, 't3_ci_lo': 80.455936, 't3_ci_hi': 99.290377, 't3_fisher_two_sided': 0.0, 't3_fisher_one_sided': 0.0, 't3_kv_pct': -70.785779, 't3_think_pct': -45.064131, 'noise_sd_over_sigma': 1.414214, 'toy_peak_dilution': 0.428571, 'toy_peak_ctx': 4250.0, 'toy_cliff_turn': 0, 'toy_resets': 6}
+entropy W=4: {'AAAA': -0.0, 'AAAB': 0.8113, 'AABB': 1.0, 'AABC': 1.5, 'ABCD': 2.0}
+grounding: 67 match, 10 mismatch of 77
+  MISMATCH Table 1 Calibrated thinking mode: Wilson hi % 48.1573 vs 48.1 48.157 rounds to 48.2; paper prints 48.1
+  MISMATCH Fisher exact p, 24/25 vs 4/25 (two-sided) x1e9 7.1786 vs 4.2 Paper value matches neither tail; one-sided = 3.59e-09
+  MISMATCH Fisher exact p, 24/25 vs 4/25 (one-sided) x1e9 3.5893 vs 4.2 
+  MISMATCH Fraction of 29-task gap recovered by M2 -> M6 0.3103 vs 0.5 M0->M6 gains 16 tasks, M2->M6 gains 9; neither is half of 29 (16/29 = 0.552 is closest)
+  MISMATCH Fraction of 29-task gap: M0 -> M6 gain / 29 0.5517 vs 0.5 
+  MISMATCH Wilson 95% half-width, p=0.20, n=58, points 10.1421 vs 9.8 Normal-approx half-width is 10.29; neither gives 9.8
+  MISMATCH Dilution 0.72 -> 0.06 as bits: log2(0.72/0.06) 3.585 vs 4.51 no stated reading reproduces 4.51
+  MISMATCH Dilution 0.72 -> 0.06 as bits: -log2(0.06) 4.0589 vs 4.51 no stated reading reproduces 4.51
+  MISMATCH Dilution 0.72 -> 0.06 as bits: log2 odds ratio 5.3322 vs 4.51 no stated reading reproduces 4.51
+  MISMATCH Dilution 0.72 -> 0.06 as bits: log2(0.94/0.28) 1.7472 vs 4.51 no stated reading reproduces 4.51

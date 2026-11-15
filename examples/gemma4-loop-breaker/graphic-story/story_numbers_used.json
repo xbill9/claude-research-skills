@@ -1,0 +1,662 @@
+{
+ "bits_gain": {
+  "display": "+4.51 bits",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "budget_cut_pct": {
+  "display": "87.5%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "budget_d1": {
+  "display": "512",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "budget_full": {
+  "display": "4096",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "budget_ldp_lo": {
+  "display": "2048",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "budget_ldw": {
+  "display": "6144",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "burst_tau": {
+  "display": "τ = 0.75",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4"
+ },
+ "calib_T": {
+  "display": "1.0",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2"
+ },
+ "calib_top_k": {
+  "display": "64",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2"
+ },
+ "calib_top_p": {
+  "display": "0.95",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2"
+ },
+ "call_cap": {
+  "display": "28",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 2"
+ },
+ "compaction_cliff": {
+  "display": "14,336",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 1"
+ },
+ "compaction_cut_quoted": {
+  "display": "-93%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Abstract"
+ },
+ "det_entropy": {
+  "display": "< 0.55 bits",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4"
+ },
+ "det_err": {
+  "display": "≥ 2",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4"
+ },
+ "det_lcs": {
+  "display": "≥ 0.82",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4"
+ },
+ "det_window": {
+  "display": "W = 4",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4"
+ },
+ "dilution_after": {
+  "display": "0.06",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "dilution_before": {
+  "display": "0.72",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "episodes": {
+  "display": "100",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4"
+ },
+ "fail_invariants": {
+  "display": "three",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5"
+ },
+ "file_reads_trip": {
+  "display": "Two",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 1"
+ },
+ "fisher_p": {
+  "display": "4.2×10⁻⁹",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 3.4"
+ },
+ "global_hours": {
+  "display": "12-hour",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 2"
+ },
+ "gpus": {
+  "display": "4",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1"
+ },
+ "greedy_tau": {
+  "display": "0.2",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2"
+ },
+ "ledger_tokens": {
+  "display": "150-token",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4"
+ },
+ "lora_adapters": {
+  "display": "3",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "lora_mem_cut": {
+  "display": "66.3%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "lora_pass_after": {
+  "display": "1.00",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "lora_pass_before": {
+  "display": "0.33",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "lora_swap_ms": {
+  "display": "1.42 ms",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "lora_vram": {
+  "display": "+64.5 MB",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "max_model_len": {
+  "display": "32,768",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1"
+ },
+ "output_reserve": {
+  "display": "8,192",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 1"
+ },
+ "peak_active_k": {
+  "display": "10.6k",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Figure 2 caption"
+ },
+ "recall_after": {
+  "display": "0.931",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3"
+ },
+ "recall_before": {
+  "display": "0.448",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3"
+ },
+ "repo_fastapi": {
+  "display": "67",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1"
+ },
+ "repo_httpx": {
+  "display": "1",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1"
+ },
+ "repo_requests": {
+  "display": "13",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1"
+ },
+ "repo_rich": {
+  "display": "48",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1"
+ },
+ "sci_base": {
+  "display": "1/5",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "sci_ccr": {
+  "display": "5/5",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "serializations": {
+  "display": "90",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ },
+ "t1_base_ci": {
+  "display": "[12.2%, 25.3%]",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_base_rate": {
+  "display": "17.8%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_base_solved": {
+  "display": "23/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_base_tempk": {
+  "display": "0.20 / 40",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_base_think": {
+  "display": "0 (Off) / false",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_calib_ci": {
+  "display": "[31.5%, 48.1%]",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_calib_rate": {
+  "display": "39.5%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_calib_solved": {
+  "display": "51/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_calib_tempk": {
+  "display": "1.00 / 64",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_calib_think": {
+  "display": "4096 / true",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_gain_pts": {
+  "display": "+21.7 pts",
+  "source": "computed in story_numbers_build.py from t1_calib_rate, t1_base_rate"
+ },
+ "t1_hidden_ci": {
+  "display": "[20.2%, 35.4%]",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_hidden_rate": {
+  "display": "27.1%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_hidden_solved": {
+  "display": "35/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_hidden_tempk": {
+  "display": "0.25 / 40",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_hidden_think": {
+  "display": "4096 / false",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1"
+ },
+ "t1_mcnemar": {
+  "display": "1.8×10⁻⁶",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2 / Table 1 caption"
+ },
+ "t2_M0_calls": {
+  "display": "24.6",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0"
+ },
+ "t2_M0_comp": {
+  "display": "68.2%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0"
+ },
+ "t2_M0_held": {
+  "display": "0.121",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0"
+ },
+ "t2_M0_kv": {
+  "display": "28,400",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0"
+ },
+ "t2_M0_label": {
+  "display": "Default starter (T=0.2, 9 tools)",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0"
+ },
+ "t2_M0_rate": {
+  "display": "11.6%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0"
+ },
+ "t2_M0_solved": {
+  "display": "15/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0"
+ },
+ "t2_M1_calls": {
+  "display": "21.2",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1"
+ },
+ "t2_M1_comp": {
+  "display": "44.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1"
+ },
+ "t2_M1_held": {
+  "display": "0.138",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1"
+ },
+ "t2_M1_kv": {
+  "display": "22,100",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1"
+ },
+ "t2_M1_label": {
+  "display": "+ Lean-6 toolset",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1"
+ },
+ "t2_M1_rate": {
+  "display": "14.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1"
+ },
+ "t2_M1_solved": {
+  "display": "18/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1"
+ },
+ "t2_M2_calls": {
+  "display": "18.9",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2"
+ },
+ "t2_M2_comp": {
+  "display": "31.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2"
+ },
+ "t2_M2_held": {
+  "display": "0.172",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2"
+ },
+ "t2_M2_kv": {
+  "display": "18,600",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2"
+ },
+ "t2_M2_label": {
+  "display": "+ Calibrated thinking",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2"
+ },
+ "t2_M2_rate": {
+  "display": "17.1%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2"
+ },
+ "t2_M2_solved": {
+  "display": "22/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2"
+ },
+ "t2_M3_calls": {
+  "display": "15.4",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3"
+ },
+ "t2_M3_comp": {
+  "display": "8.5%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3"
+ },
+ "t2_M3_held": {
+  "display": "0.190",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3"
+ },
+ "t2_M3_kv": {
+  "display": "11,200",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3"
+ },
+ "t2_M3_label": {
+  "display": "+ Turn-1 contract parser + 120-line reads",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3"
+ },
+ "t2_M3_rate": {
+  "display": "19.4%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3"
+ },
+ "t2_M3_solved": {
+  "display": "25/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3"
+ },
+ "t2_M4_calls": {
+  "display": "13.8",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4"
+ },
+ "t2_M4_comp": {
+  "display": "6.2%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4"
+ },
+ "t2_M4_held": {
+  "display": "0.207",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4"
+ },
+ "t2_M4_kv": {
+  "display": "10,400",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4"
+ },
+ "t2_M4_label": {
+  "display": "+ Call-12 edit deadline",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4"
+ },
+ "t2_M4_rate": {
+  "display": "20.9%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4"
+ },
+ "t2_M4_solved": {
+  "display": "27/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4"
+ },
+ "t2_M5_calls": {
+  "display": "13.1",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5"
+ },
+ "t2_M5_comp": {
+  "display": "5.4%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5"
+ },
+ "t2_M5_held": {
+  "display": "0.224",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5"
+ },
+ "t2_M5_kv": {
+  "display": "9,850",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5"
+ },
+ "t2_M5_label": {
+  "display": "+ Co-change coupling",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5"
+ },
+ "t2_M5_rate": {
+  "display": "22.5%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5"
+ },
+ "t2_M5_solved": {
+  "display": "29/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5"
+ },
+ "t2_M6_calls": {
+  "display": "12.4",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6"
+ },
+ "t2_M6_comp": {
+  "display": "4.7%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6"
+ },
+ "t2_M6_held": {
+  "display": "0.241",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6"
+ },
+ "t2_M6_kv": {
+  "display": "9,420",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6"
+ },
+ "t2_M6_label": {
+  "display": "+ Graph backtrack + red-test",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6"
+ },
+ "t2_M6_rate": {
+  "display": "24.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6"
+ },
+ "t2_M6_solved": {
+  "display": "31/129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6"
+ },
+ "t2_mcnemar": {
+  "display": "4.6×10⁻⁵",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3 / Table 2 caption"
+ },
+ "t2_ratio": {
+  "display": "2.07x",
+  "source": "computed in story_numbers_build.py from t2_M6_solved, t2_M0_solved"
+ },
+ "t3_baseline_static_ci": {
+  "display": "[6.4, 34.7]",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_baseline_static_esc": {
+  "display": "16.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_baseline_static_kv": {
+  "display": "159,816",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_baseline_static_kvpct": {
+  "display": "0.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_baseline_static_peak": {
+  "display": "24,821",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_baseline_static_solved": {
+  "display": "4/25",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_baseline_static_tag": {
+  "display": "Unpruned",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_baseline_static_think": {
+  "display": "45,220 (0.0%)",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_baseline_static_turns": {
+  "display": "11.04",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static"
+ },
+ "t3_ccr_adaptive_ci": {
+  "display": "[80.5, 99.3]",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_adaptive_esc": {
+  "display": "96.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_adaptive_kv": {
+  "display": "46,689",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_adaptive_kvpct": {
+  "display": "-70.8%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_adaptive_peak": {
+  "display": "10,563",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_adaptive_solved": {
+  "display": "24/25",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_adaptive_tag": {
+  "display": "My Method",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_adaptive_think": {
+  "display": "24,842 (-45.1%)",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_adaptive_turns": {
+  "display": "6.96",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive"
+ },
+ "t3_ccr_only_ci": {
+  "display": "[52.4, 85.7]",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_ccr_only_esc": {
+  "display": "72.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_ccr_only_kv": {
+  "display": "85,148",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_ccr_only_kvpct": {
+  "display": "-46.7%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_ccr_only_peak": {
+  "display": "14,488",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_ccr_only_solved": {
+  "display": "18/25",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_ccr_only_tag": {
+  "display": "Pruning + Ledger",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_ccr_only_think": {
+  "display": "35,881 (-20.7%)",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_ccr_only_turns": {
+  "display": "8.76",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only"
+ },
+ "t3_naive_subagent_ci": {
+  "display": "[8.9, 39.1]",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "t3_naive_subagent_esc": {
+  "display": "20.0%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "t3_naive_subagent_kv": {
+  "display": "190,410",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "t3_naive_subagent_kvpct": {
+  "display": "+19.1%",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "t3_naive_subagent_peak": {
+  "display": "31,067",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "t3_naive_subagent_solved": {
+  "display": "5/25",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "t3_naive_subagent_tag": {
+  "display": "Full Handoff",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "t3_naive_subagent_think": {
+  "display": "51,118 (+13.0%)",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "t3_naive_subagent_turns": {
+  "display": "10.72",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent"
+ },
+ "tasks": {
+  "display": "129",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Abstract"
+ },
+ "tax_pts": {
+  "display": "22.4-point",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3"
+ },
+ "tax_tasks": {
+  "display": "29",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3"
+ },
+ "tests_passed": {
+  "display": "20 passed",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5"
+ },
+ "tests_time": {
+  "display": "4.82s",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5"
+ },
+ "time_cap_hi": {
+  "display": "480",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 2"
+ },
+ "time_cap_lo": {
+  "display": "240",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 2"
+ },
+ "trap_gain_pts_quoted": {
+  "display": "+80.0 pts",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4"
+ },
+ "traps": {
+  "display": "25",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Abstract"
+ },
+ "turn_1_fix": {
+  "display": "Turn 1",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5"
+ },
+ "turns": {
+  "display": "937",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1"
+ },
+ "turns_1_4": {
+  "display": "Turns 1 to 4",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3"
+ },
+ "verify_budget_s": {
+  "display": "15 seconds",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5"
+ },
+ "vram_gb": {
+  "display": "96 GB",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1"
+ },
+ "wilcoxon": {
+  "display": "p < 10⁻⁶",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Abstract"
+ },
+ "window_lines": {
+  "display": "120-line",
+  "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1"
+ }
+}

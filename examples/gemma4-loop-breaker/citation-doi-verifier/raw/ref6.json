@@ -1,0 +1,369 @@
+{
+ "entry": {
+  "key": "ref6",
+  "n": 6,
+  "authors": "B. Perozzi et al",
+  "first_author_surname": "Perozzi",
+  "title": "Let your graph do the talking: Encoding structured data for LLMs",
+  "year": 2024,
+  "venue_claimed": null,
+  "arxiv": "2402.05862",
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "Let your graph do the talking: Encoding structured data for LLMs",
+  "candidates": [
+   {
+    "doi": "10.1137/1.9781611974348.24",
+    "title": "Scalable Anomaly Ranking of Attributed Neighborhoods",
+    "authors": [
+     "Bryan Perozzi",
+     "Leman Akoglu"
+    ],
+    "first_author_family": "Perozzi",
+    "author_count": 2,
+    "year": 2016,
+    "venue": "Proceedings of the 2016 SIAM International Conference on Data Mining",
+    "type": "proceedings-article",
+    "publisher": "Society for Industrial and Applied Mathematics",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4174,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1007/978-3-642-36844-8_13",
+    "title": "Scalable Graph Clustering with Pregel",
+    "authors": [
+     "Bryan Perozzi",
+     "Christopher McCubbin",
+     "Spencer Beecher",
+     "J. T. Halbert"
+    ],
+    "first_author_family": "Perozzi",
+    "author_count": 4,
+    "year": 2013,
+    "venue": "Studies in Computational Intelligence",
+    "type": "book-chapter",
+    "publisher": "Springer Berlin Heidelberg",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1145/3637528.3671448",
+    "title": "Graph Reasoning with LLMs (GReaL)",
+    "authors": [
+     "Anton Tsitsulin",
+     "Bryan Perozzi",
+     "Bahare Fatemi",
+     "Jonathan J. Halcrow"
+    ],
+    "first_author_family": "Tsitsulin",
+    "author_count": 4,
+    "year": 2024,
+    "venue": "Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+    "type": "proceedings-article",
+    "publisher": "ACM",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.383,
+    "first_author_matches": false,
+    "year_matches": true
+   },
+   {
+    "doi": "10.1109/asonam49781.2020.9381348",
+    "title": "Debiasing Graph Representations via Metadata-Orthogonal Training",
+    "authors": [
+     "John Palowitch",
+     "Bryan Perozzi"
+    ],
+    "first_author_family": "Palowitch",
+    "author_count": 2,
+    "year": 2020,
+    "venue": "2020 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.378,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1007/s13278-014-0179-3",
+    "title": "Scalable graph clustering with parallel approximate PageRank",
+    "authors": [
+     "Bryan Perozzi",
+     "Christopher McCubbin",
+     "J. T. Halbert"
+    ],
+    "first_author_family": "Perozzi",
+    "author_count": 3,
+    "year": 2014,
+    "venue": "Social Network Analysis and Mining",
+    "type": "journal-article",
+    "publisher": "Springer Science and Business Media LLC",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3577,
+    "first_author_matches": true,
+    "year_matches": false
+   }
+  ],
+  "best_title_similarity": 0.4174,
+  "best_is_match": false
+ },
+ "arxiv_by_id": {
+  "status": 200,
+  "entries": [
+   {
+    "id": "2402.05862v1",
+    "title": "Let Your Graph Do the Talking: Encoding Structured Data for LLMs",
+    "authors": [
+     "Bryan Perozzi",
+     "Bahare Fatemi",
+     "Dustin Zelle",
+     "Anton Tsitsulin",
+     "Mehran Kazemi",
+     "Rami Al-Rfou",
+     "Jonathan Halcrow"
+    ],
+    "published": "2024-02-08T17:51:44Z",
+    "updated": "2024-02-08T17:51:44Z",
+    "journal_ref": null,
+    "doi": null,
+    "comment": null
+   }
+  ]
+ },
+ "crossref_arxiv_doi": {
+  "verified": false,
+  "doi": "10.48550/arXiv.2402.05862",
+  "error": "Crossref HTTP 404"
+ },
+ "openalex_by_arxiv_doi": {
+  "status": 200,
+  "work": {
+   "id": "https://openalex.org/W4391710060",
+   "doi": "https://doi.org/10.48550/arxiv.2402.05862",
+   "title": "Let Your Graph Do the Talking: Encoding Structured Data for LLMs",
+   "year": 2024,
+   "type": "preprint",
+   "authors": [
+    "Bryan Perozzi",
+    "Bahare Fatemi",
+    "Dustin Zelle",
+    "Anton Tsitsulin",
+    "Mehran Kazemi",
+    "Rami Al\u2010Rfou",
+    "Jonathan Halcrow"
+   ],
+   "primary_location": "arXiv (Cornell University)",
+   "locations": [
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": "submittedVersion",
+     "landing": "http://arxiv.org/abs/2402.05862"
+    },
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": null,
+     "landing": "https://doi.org/10.48550/arxiv.2402.05862"
+    }
+   ]
+  }
+ },
+ "arxiv_title_search": {
+  "status": 429,
+  "entries": ""
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W4391710060",
+    "doi": "https://doi.org/10.48550/arxiv.2402.05862",
+    "title": "Let Your Graph Do the Talking: Encoding Structured Data for LLMs",
+    "year": 2024,
+    "type": "preprint",
+    "authors": [
+     "Bryan Perozzi",
+     "Bahare Fatemi",
+     "Dustin Zelle",
+     "Anton Tsitsulin",
+     "Mehran Kazemi",
+     "Rami Al\u2010Rfou",
+     "Jonathan Halcrow"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2402.05862"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2402.05862"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4392384650",
+    "doi": "https://doi.org/10.1145/3616855.3635856",
+    "title": "Let the LLMs Talk: Simulating Human-to-Human Conversational QA via Zero-Shot LLM-to-LLM Interactions",
+    "year": 2024,
+    "type": "conference-paper",
+    "authors": [
+     "Zahra Abbasiantaeb",
+     "Yifei Yuan",
+     "Evangelos Kanoulas",
+     "Mohammad Aliannejadi"
+    ],
+    "primary_location": "ACM International Conference on Web Search and Data Mining (WSDM)",
+    "locations": [
+     {
+      "source": "ACM International Conference on Web Search and Data Mining (WSDM)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1145/3616855.3635856"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2312.02913"
+     },
+     {
+      "source": "UvA-DARE (University of Amsterdam)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://hdl.handle.net/11245.1/dac93f03-6039-4347-82f2-a79d310ff75d"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2312.02913"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4412889887",
+    "doi": "https://doi.org/10.18653/v1/2025.acl-long.1317",
+    "title": "Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation",
+    "year": 2025,
+    "type": "conference-paper",
+    "authors": [
+     "Shijie Wang",
+     "Wenqi Fan",
+     "Yue Feng",
+     "Shanru Lin",
+     "Xinyu Ma",
+     "Shuaiqiang Wang",
+     "Dawei Yin"
+    ],
+    "primary_location": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+    "locations": [
+     {
+      "source": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.18653/v1/2025.acl-long.1317"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2501.02226"
+     },
+     {
+      "source": "CityU Scholars",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://hdl.handle.net/2031/ba39a663-bab1-4dcf-9d9e-6c8ea06d8e80"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2501.02226"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4393277515",
+    "doi": "https://doi.org/10.1145/3655103.3655110",
+    "title": "Exploring the Potential of Large Language Models (LLMs)in Learning on Graphs",
+    "year": 2024,
+    "type": "article",
+    "authors": [
+     "Zhikai Chen",
+     "Haitao Mao",
+     "Hang Li",
+     "Wei Jin",
+     "Hongzhi Wen",
+     "Xiaochi Wei",
+     "Shuaiqiang Wang",
+     "Dawei Yin",
+     "Wenqi Fan",
+     "Hui Liu",
+     "Jiliang Tang"
+    ],
+    "primary_location": "ACM SIGKDD Explorations Newsletter",
+    "locations": [
+     {
+      "source": "ACM SIGKDD Explorations Newsletter",
+      "source_type": "journal",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1145/3655103.3655110"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2307.03393"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2307.03393"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4401857389",
+    "doi": "https://doi.org/10.1145/3637528.3671448",
+    "title": "Graph Reasoning with LLMs (GReaL)",
+    "year": 2024,
+    "type": "conference-paper",
+    "authors": [
+     "Anton Tsitsulin",
+     "Bryan Perozzi",
+     "Bahare Fatemi",
+     "Jonathan Halcrow"
+    ],
+    "primary_location": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)",
+    "locations": [
+     {
+      "source": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1145/3637528.3671448"
+     }
+    ]
+   }
+  ]
+ }
+}

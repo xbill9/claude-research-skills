@@ -1,0 +1,357 @@
+{
+ "entry": {
+  "key": "ref7",
+  "n": 7,
+  "authors": "M. Galkin, X. Yuan, H. Mostafa, J. Tang, and Z. Zhu",
+  "first_author_surname": "Galkin",
+  "title": "Towards foundation models for knowledge graph reasoning (ULTRA)",
+  "year": 2024,
+  "venue_claimed": "ICLR",
+  "arxiv": "2310.04562",
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "Towards foundation models for knowledge graph reasoning (ULTRA)",
+  "candidates": [
+   {
+    "doi": "10.52202/079017-1715",
+    "title": "A Foundation Model for Zero-shot Logical Query Reasoning",
+    "authors": [
+     "Mikhail Galkin",
+     "Jincheng Zhou",
+     "Bruno Ribeiro",
+     "Jian Tang",
+     "Zhaocheng Zhu"
+    ],
+    "first_author_family": "Galkin",
+    "author_count": 5,
+    "year": 2024,
+    "venue": "Advances in Neural Information Processing Systems 37",
+    "type": "proceedings-article",
+    "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.6325,
+    "first_author_matches": true,
+    "year_matches": true
+   },
+   {
+    "doi": "10.1145/3624062.3626081",
+    "title": "Towards Foundation Models for Materials Science: The Open MatSci ML Toolkit",
+    "authors": [
+     "Kin Long Kelvin Lee",
+     "Carmelo Gonzales",
+     "Matthew Spellings",
+     "Mikhail Galkin",
+     "Santiago Miret",
+     "Nalini Kumar"
+    ],
+    "first_author_family": "Lee",
+    "author_count": 6,
+    "year": 2023,
+    "venue": "Proceedings of the SC '23 Workshops of the International Conference on High Performance Computing, Network, Storage, and Analysis",
+    "type": "proceedings-article",
+    "publisher": "ACM",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.563,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1109/icsc.2017.85",
+    "title": "Semantic Data Integration for Knowledge Graph Construction at Query Time",
+    "authors": [
+     "Diego Collarana",
+     "Mikhail Galkin",
+     "Ignacio Traverso-Ribon",
+     "Christoph Lange",
+     "Maria-Esther Vidal",
+     "Soren Auer"
+    ],
+    "first_author_family": "Collarana",
+    "author_count": 6,
+    "year": 2017,
+    "venue": "2017 IEEE 11th International Conference on Semantic Computing (ICSC)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.5113,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.52202/075280-2591",
+    "title": "A*Net: A Scalable Path-based Reasoning Approach for Knowledge Graphs",
+    "authors": [
+     "Zhaocheng Zhu",
+     "Xinyu Yuan",
+     "Michael Galkin",
+     "Louis-Pascal Xhonneux",
+     "Ming Zhang",
+     "Maxime Gazeau",
+     "Jian Tang"
+    ],
+    "first_author_family": "Zhu",
+    "author_count": 7,
+    "year": 2023,
+    "venue": "Advances in Neural Information Processing Systems 36",
+    "type": "proceedings-article",
+    "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4844,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1109/tpami.2021.3124805",
+    "title": "Bringing Light Into the Dark: A Large-Scale Evaluation of Knowledge Graph Embedding Models Under a Unified Framework",
+    "authors": [
+     "Mehdi Ali",
+     "Max Berrendorf",
+     "Charles Tapley Hoyt",
+     "Laurent Vermue",
+     "Mikhail Galkin",
+     "Sahand Sharifzadeh",
+     "Asja Fischer",
+     "Volker Tresp",
+     "Jens Lehmann"
+    ],
+    "first_author_family": "Ali",
+    "author_count": 9,
+    "year": 2022,
+    "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "type": "journal-article",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4545,
+    "first_author_matches": false,
+    "year_matches": false
+   }
+  ],
+  "best_title_similarity": 0.6325,
+  "best_is_match": false
+ },
+ "arxiv_by_id": {
+  "status": 429,
+  "entries": ""
+ },
+ "crossref_arxiv_doi": {
+  "verified": false,
+  "doi": "10.48550/arXiv.2310.04562",
+  "error": "Crossref HTTP 404"
+ },
+ "openalex_by_arxiv_doi": {
+  "status": 200,
+  "work": {
+   "id": "https://openalex.org/W4387559172",
+   "doi": "https://doi.org/10.48550/arxiv.2310.04562",
+   "title": "Towards Foundation Models for Knowledge Graph Reasoning",
+   "year": 2023,
+   "type": "preprint",
+   "authors": [
+    "Mikhail Galkin",
+    "Xinyu Yuan",
+    "Hesham Mostafa",
+    "Jian Tang",
+    "Zhaocheng Zhu"
+   ],
+   "primary_location": "arXiv (Cornell University)",
+   "locations": [
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": "submittedVersion",
+     "landing": "http://arxiv.org/abs/2310.04562"
+    },
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": null,
+     "landing": "https://doi.org/10.48550/arxiv.2310.04562"
+    }
+   ]
+  }
+ },
+ "arxiv_title_search": {
+  "status": 429,
+  "entries": ""
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W4387559172",
+    "doi": "https://doi.org/10.48550/arxiv.2310.04562",
+    "title": "Towards Foundation Models for Knowledge Graph Reasoning",
+    "year": 2023,
+    "type": "preprint",
+    "authors": [
+     "Mikhail Galkin",
+     "Xinyu Yuan",
+     "Hesham Mostafa",
+     "Jian Tang",
+     "Zhaocheng Zhu"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2310.04562"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2310.04562"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7160705243",
+    "doi": "https://doi.org/10.1007/978-3-032-19096-3_29",
+    "title": "Fine-Tuning Foundation Models for Temporal Knowledge Graph Reasoning",
+    "year": 2026,
+    "type": "conference-paper",
+    "authors": [
+     "Manuel Dileo",
+     "Pasquale Minervini",
+     "Matteo Zignani"
+    ],
+    "primary_location": "Communications in computer and information science",
+    "locations": [
+     {
+      "source": "Communications in computer and information science",
+      "source_type": "book series",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1007/978-3-032-19096-3_29"
+     },
+     {
+      "source": "Archivio Istituzionale della Ricerca (Universita Degli Studi Di Milano)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://hdl.handle.net/2434/1272743"
+     },
+     {
+      "source": "Edinburgh Research Explorer (University of Edinburgh)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://www.research.ed.ac.uk/en/publications/9fe10835-1d0c-410e-927c-5b6c40c82011"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7196944237",
+    "doi": "https://doi.org/10.52202/085713-5058",
+    "title": "Towards Graph Foundation Models: Training on Knowledge Graphs Enables Transferability to General Graphs",
+    "year": 2025,
+    "type": "conference-paper",
+    "authors": [
+     "Kai Wang",
+     "Siqiang Luo",
+     "Caihua Shan",
+     "Yifei Shen"
+    ],
+    "primary_location": "neural information processing systems",
+    "locations": [
+     {
+      "source": "neural information processing systems",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.52202/085713-5058"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2410.12609"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2410.12609"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4415798942",
+    "doi": "https://doi.org/10.52202/079017-0227",
+    "title": "A Prompt-Based Knowledge Graph Foundation Model for Universal In-Context Reasoning",
+    "year": 2024,
+    "type": "conference-paper",
+    "authors": [
+     "Yuanning Cui",
+     "Zequn Sun",
+     "Wei Hu"
+    ],
+    "primary_location": "neural information processing systems",
+    "locations": [
+     {
+      "source": "neural information processing systems",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.52202/079017-0227"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2410.12288"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2410.12288"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4412887909",
+    "doi": "https://doi.org/10.18653/v1/2025.findings-acl.1046",
+    "title": "Beyond Completion: A Foundation Model for General Knowledge Graph Reasoning",
+    "year": 2025,
+    "type": "conference-paper",
+    "authors": [
+     "Hua Yin",
+     "Zhiqiang Liu",
+     "Mingyang Chen",
+     "Zheng Fang",
+     "Chi Man Wong",
+     "Lingxiao Li",
+     "Chi\u2010Man Vong",
+     "Hua\u2010Jun Chen",
+     "Wen Zhang"
+    ],
+    "primary_location": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+    "locations": [
+     {
+      "source": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.18653/v1/2025.findings-acl.1046"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2505.21926"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2505.21926"
+     }
+    ]
+   }
+  ]
+ }
+}

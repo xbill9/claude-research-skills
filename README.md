@@ -58,10 +58,11 @@ Every skill follows the same ground rules:
 | `verify_fisher_exact(k_method, n_method, k_baseline, n_baseline)` | Two-sided p-value, odds ratio, difference in points |
 | `verify_mcnemar_exact(b, c)` | Exact binomial McNemar p-value for two systems run on the same tasks |
 | `leaderboard_noise_floor(num_tasks, baseline_rate, alpha, power)` | Standard error, 95% CI half-width, and minimum detectable lift against a fixed baseline and between two runs |
-| `verify_doi_metadata(doi)` | Crossref record: title, authors, year, venue, type, and `is_preprint_of` / `has_preprint` links |
+| `verify_doi_metadata(doi)` | Crossref record, or DataCite when Crossref has none (arXiv `10.48550` DOIs live there): title, authors, year, venue, type, `registry`, and Crossref's `is_preprint_of` / `has_preprint` links |
 | `search_crossref_by_title(title, author, year, rows)` | Crossref candidates ranked by computed title similarity, with author and year match flags and a `best_is_match` verdict |
+| `search_openreview_by_title(title, rows)` | OpenReview notes with their venue label (`ICLR 2024 poster`, a workshop, `Submitted to …`) and computed title similarity; confirms the ICLR/NeurIPS/TMLR venues Crossref does not index |
 
-Fisher's exact test uses exact rational arithmetic. It matches `scipy.stats.fisher_exact` to within 3.3e-16 over 3,000 random tables. McNemar matches `scipy.stats.binomtest` to within 1.3e-15 over 2,000 cases. Set `CROSSREF_MAILTO` to put your address in the User-Agent and use Crossref's polite pool. Without it, the server sends no contact details.
+Fisher's exact test uses exact rational arithmetic. It matches `scipy.stats.fisher_exact` to within 3.3e-16 over 3,000 random tables. McNemar matches `scipy.stats.binomtest` to within 1.3e-15 over 2,000 cases. Set `CROSSREF_MAILTO` to put your address in the User-Agent and use Crossref's polite pool. Without it, the server sends no contact details. Every tool rejects argument names its schema does not list, so a misspelled option returns an error instead of a default.
 
 ---
 
@@ -69,6 +70,12 @@ Fisher's exact test uses exact rational arithmetic. It matches `scipy.stats.fish
 
 - **`stdlib_shadow_guard.py`** runs as a `PreToolUse` hook on `Write`. It denies creating a new `numbers.py`, `math.py`, `statistics.py`, `random.py`, `types.py`, `fractions.py`, `decimal.py` or `json.py`, and suggests `verify_math.py` instead. Edits to existing files go through.
 - **`rules/CLAUDE.md`** holds the kit's always-on provenance and visual QA rules as a snippet. Paste it into a project's `CLAUDE.md` to switch them on for that project.
+
+---
+
+#### Worked example
+
+[`examples/gemma4-loop-breaker/`](examples/gemma4-loop-breaker/) holds all eight skills run on one paper, with each run's outputs and notes.
 
 ---
 
@@ -90,8 +97,8 @@ Fisher's exact test uses exact rational arithmetic. It matches `scipy.stats.fish
 #### Tests
 
 ```bash
-python3 tests/test_plugin.py                         # 129 offline checks
-RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py  # + live Crossref checks (132)
+python3 tests/test_plugin.py                         # 130 offline checks
+RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py  # + live Crossref, DataCite and OpenReview checks (135)
 claude plugin validate ./plugin
 ```
 

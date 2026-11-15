@@ -1,0 +1,994 @@
+{
+ "slider_defaults": {
+  "a_tok": 2000,
+  "per_turn": 1500,
+  "gap": 0.0,
+  "turns": 12,
+  "sigma_q": 1.0
+ },
+ "presets": [
+  {
+   "id": "baseline",
+   "name": "Unpruned greedy baseline",
+   "tau": 0.2,
+   "reset": false,
+   "t1": "t1_baseline",
+   "t2": "M0",
+   "t3": "baseline_static",
+   "cite": "Table 1 row 1 (tau 0.20), Table 2 M0, Table 3 baseline_static",
+   "readout": {
+    "t1_rate": 17.829457364341085,
+    "t1_ci_lo": 12.184694884053377,
+    "t1_ci_hi": 25.334810896117865,
+    "t1_delta_pts": 0.0,
+    "t2_rate": 11.627906976744185,
+    "t2_ci_lo": 7.174577169453558,
+    "t2_ci_hi": 18.300495990027795,
+    "t2_compaction_change_pct": 0.0,
+    "t3_rate": 16.0,
+    "t3_ci_lo": 6.40345145667644,
+    "t3_ci_hi": 34.653621607178856,
+    "t3_fisher_two_sided": 0.9999999999999964,
+    "t3_fisher_one_sided": 0.6490304186988954,
+    "t3_kv_pct": 0.0,
+    "t3_think_pct": 0.0,
+    "noise_sd_over_sigma": 7.0710678118654755,
+    "toy_peak_dilution": 0.9,
+    "toy_peak_ctx": 20000.0,
+    "toy_cliff_turn": 9,
+    "toy_resets": 0
+   }
+  },
+  {
+   "id": "hidden",
+   "name": "Low-temp hidden thinking",
+   "tau": 0.25,
+   "reset": false,
+   "t1": "t1_hidden",
+   "t2": "M1",
+   "t3": "naive_subagent",
+   "cite": "Table 1 row 2 (tau 0.25), Table 2 M1, Table 3 naive_subagent",
+   "readout": {
+    "t1_rate": 27.131782945736433,
+    "t1_ci_lo": 20.203035452746633,
+    "t1_ci_hi": 35.38311925845943,
+    "t1_delta_pts": 9.302325581395348,
+    "t2_rate": 13.953488372093023,
+    "t2_ci_lo": 9.012017253209102,
+    "t2_ci_hi": 20.979718139030958,
+    "t2_compaction_change_pct": -35.48387096774194,
+    "t3_rate": 20.0,
+    "t3_ci_lo": 8.860584686802571,
+    "t3_ci_hi": 39.13095036954033,
+    "t3_fisher_two_sided": 0.999999999999982,
+    "t3_fisher_one_sided": 0.49999999999998945,
+    "t3_kv_pct": 19.143264754467637,
+    "t3_think_pct": 13.042901371074747,
+    "noise_sd_over_sigma": 5.656854249492381,
+    "toy_peak_dilution": 0.9,
+    "toy_peak_ctx": 20000.0,
+    "toy_cliff_turn": 9,
+    "toy_resets": 0
+   }
+  },
+  {
+   "id": "ccr_only",
+   "name": "CCR pruning only",
+   "tau": 1.0,
+   "reset": true,
+   "t1": "t1_calibrated",
+   "t2": "M3",
+   "t3": "ccr_only",
+   "cite": "Table 1 row 3 (tau 1.00), Table 2 M3, Table 3 ccr_only",
+   "readout": {
+    "t1_rate": 39.53488372093023,
+    "t1_ci_lo": 31.51773752801282,
+    "t1_ci_hi": 48.157282424573005,
+    "t1_delta_pts": 21.705426356589147,
+    "t2_rate": 19.37984496124031,
+    "t2_ci_lo": 13.485549675617492,
+    "t2_ci_hi": 27.04506425972622,
+    "t2_compaction_change_pct": -87.5366568914956,
+    "t3_rate": 72.0,
+    "t3_ci_lo": 52.423394809638424,
+    "t3_ci_hi": 85.71614614904344,
+    "t3_fisher_two_sided": 0.00014657929215080963,
+    "t3_fisher_one_sided": 7.32896460754048e-05,
+    "t3_kv_pct": -46.7212294138259,
+    "t3_think_pct": -20.65236620964175,
+    "noise_sd_over_sigma": 1.4142135623730951,
+    "toy_peak_dilution": 0.42857142857142855,
+    "toy_peak_ctx": 4250.0,
+    "toy_cliff_turn": 0,
+    "toy_resets": 6
+   }
+  },
+  {
+   "id": "optimum",
+   "name": "Calibrated optimum (G-CCR)",
+   "tau": 1.0,
+   "reset": true,
+   "t1": "t1_calibrated",
+   "t2": "M6",
+   "t3": "ccr_adaptive",
+   "cite": "Table 1 row 3 (tau 1.00), Table 2 M6, Table 3 ccr_adaptive",
+   "readout": {
+    "t1_rate": 39.53488372093023,
+    "t1_ci_lo": 31.51773752801282,
+    "t1_ci_hi": 48.157282424573005,
+    "t1_delta_pts": 21.705426356589147,
+    "t2_rate": 24.031007751937985,
+    "t2_ci_lo": 17.47743081975101,
+    "t2_ci_hi": 32.086507581110105,
+    "t2_compaction_change_pct": -93.10850439882698,
+    "t3_rate": 96.0,
+    "t3_ci_lo": 80.45593626380625,
+    "t3_ci_hi": 99.29037664980127,
+    "t3_fisher_two_sided": 7.178606491749314e-09,
+    "t3_fisher_one_sided": 3.5893032458746636e-09,
+    "t3_kv_pct": -70.78577864544226,
+    "t3_think_pct": -45.0641309155241,
+    "noise_sd_over_sigma": 1.4142135623730951,
+    "toy_peak_dilution": 0.42857142857142855,
+    "toy_peak_ctx": 4250.0,
+    "toy_cliff_turn": 0,
+    "toy_resets": 6
+   }
+  }
+ ],
+ "entropy_patterns_W4": {
+  "AAAA": -0.0,
+  "AAAB": 0.8112781244591328,
+  "AABB": 1.0,
+  "AABC": 1.5,
+  "ABCD": 2.0
+ },
+ "grounding": [
+  {
+   "quantity": "Table 1 Non-thinking low-temp baseline: rate %",
+   "sim": 17.829457364341085,
+   "pub": 17.8,
+   "cite": "PDF Table 1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 1 Non-thinking low-temp baseline: Wilson lo %",
+   "sim": 12.184694884053377,
+   "pub": 12.2,
+   "cite": "PDF Table 1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 1 Non-thinking low-temp baseline: Wilson hi %",
+   "sim": 25.334810896117865,
+   "pub": 25.3,
+   "cite": "PDF Table 1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 1 Low-temp thinking (hidden thoughts): rate %",
+   "sim": 27.131782945736433,
+   "pub": 27.1,
+   "cite": "PDF Table 1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 1 Low-temp thinking (hidden thoughts): Wilson lo %",
+   "sim": 20.203035452746633,
+   "pub": 20.2,
+   "cite": "PDF Table 1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 1 Low-temp thinking (hidden thoughts): Wilson hi %",
+   "sim": 35.38311925845943,
+   "pub": 35.4,
+   "cite": "PDF Table 1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 1 Calibrated thinking mode: rate %",
+   "sim": 39.53488372093023,
+   "pub": 39.5,
+   "cite": "PDF Table 1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 1 Calibrated thinking mode: Wilson lo %",
+   "sim": 31.51773752801282,
+   "pub": 31.5,
+   "cite": "PDF Table 1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 1 Calibrated thinking mode: Wilson hi %",
+   "sim": 48.157282424573005,
+   "pub": 48.1,
+   "cite": "PDF Table 1",
+   "match": false,
+   "note": "48.157 rounds to 48.2; paper prints 48.1"
+  },
+  {
+   "quantity": "Table 2 M0: rate %",
+   "sim": 11.627906976744185,
+   "pub": 11.6,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M0: Wilson lo %",
+   "sim": 7.174577169453558,
+   "pub": 7.2,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M0: Wilson hi %",
+   "sim": 18.300495990027795,
+   "pub": 18.3,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M1: rate %",
+   "sim": 13.953488372093023,
+   "pub": 14.0,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M1: Wilson lo %",
+   "sim": 9.012017253209102,
+   "pub": 9.0,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M1: Wilson hi %",
+   "sim": 20.979718139030958,
+   "pub": 21.0,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M2: rate %",
+   "sim": 17.05426356589147,
+   "pub": 17.1,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M2: Wilson lo %",
+   "sim": 11.540608807999162,
+   "pub": 11.5,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M2: Wilson hi %",
+   "sim": 24.47334289458584,
+   "pub": 24.5,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M3: rate %",
+   "sim": 19.37984496124031,
+   "pub": 19.4,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M3: Wilson lo %",
+   "sim": 13.485549675617492,
+   "pub": 13.5,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M3: Wilson hi %",
+   "sim": 27.04506425972622,
+   "pub": 27.0,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M4: rate %",
+   "sim": 20.930232558139537,
+   "pub": 20.9,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M4: Wilson lo %",
+   "sim": 14.802085577501112,
+   "pub": 14.8,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M4: Wilson hi %",
+   "sim": 28.73963651301507,
+   "pub": 28.7,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M5: rate %",
+   "sim": 22.48062015503876,
+   "pub": 22.5,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M5: Wilson lo %",
+   "sim": 16.133057682170488,
+   "pub": 16.1,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M5: Wilson hi %",
+   "sim": 30.419772563518165,
+   "pub": 30.4,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M6: rate %",
+   "sim": 24.031007751937985,
+   "pub": 24.0,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M6: Wilson lo %",
+   "sim": 17.47743081975101,
+   "pub": 17.5,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 2 M6: Wilson hi %",
+   "sim": 32.086507581110105,
+   "pub": 32.1,
+   "cite": "PDF Table 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 baseline_static: escape %",
+   "sim": 16.0,
+   "pub": 16.0,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 baseline_static: Wilson lo %",
+   "sim": 6.40345145667644,
+   "pub": 6.4,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 baseline_static: Wilson hi %",
+   "sim": 34.653621607178856,
+   "pub": 34.7,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 baseline_static: think-token change %",
+   "sim": 0.0,
+   "pub": 0.0,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 baseline_static: post-reset KV change %",
+   "sim": 0.0,
+   "pub": 0.0,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 naive_subagent: escape %",
+   "sim": 20.0,
+   "pub": 20.0,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 naive_subagent: Wilson lo %",
+   "sim": 8.860584686802571,
+   "pub": 8.9,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 naive_subagent: Wilson hi %",
+   "sim": 39.13095036954033,
+   "pub": 39.1,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 naive_subagent: think-token change %",
+   "sim": 13.042901371074747,
+   "pub": 13.0,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 naive_subagent: post-reset KV change %",
+   "sim": 19.143264754467637,
+   "pub": 19.1,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_only: escape %",
+   "sim": 72.0,
+   "pub": 72.0,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_only: Wilson lo %",
+   "sim": 52.423394809638424,
+   "pub": 52.4,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_only: Wilson hi %",
+   "sim": 85.71614614904344,
+   "pub": 85.7,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_only: think-token change %",
+   "sim": -20.65236620964175,
+   "pub": -20.7,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_only: post-reset KV change %",
+   "sim": -46.7212294138259,
+   "pub": -46.7,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_adaptive: escape %",
+   "sim": 96.0,
+   "pub": 96.0,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_adaptive: Wilson lo %",
+   "sim": 80.45593626380625,
+   "pub": 80.5,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_adaptive: Wilson hi %",
+   "sim": 99.29037664980127,
+   "pub": 99.3,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_adaptive: think-token change %",
+   "sim": -45.0641309155241,
+   "pub": -45.1,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Table 3 ccr_adaptive: post-reset KV change %",
+   "sim": -70.78577864544226,
+   "pub": -70.8,
+   "cite": "PDF Table 3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Fisher exact p, 24/25 vs 4/25 (two-sided) x1e9",
+   "sim": 7.1786064917493135,
+   "pub": 4.2,
+   "cite": "Abstract, \u00a73.4, \u00a75",
+   "match": false,
+   "note": "Paper value matches neither tail; one-sided = 3.59e-09"
+  },
+  {
+   "quantity": "Fisher exact p, 24/25 vs 4/25 (one-sided) x1e9",
+   "sim": 3.5893032458746634,
+   "pub": 4.2,
+   "cite": "Abstract, \u00a73.4, \u00a75",
+   "match": false,
+   "note": ""
+  },
+  {
+   "quantity": "Compaction change M0 -> M6 %",
+   "sim": -93.10850439882698,
+   "pub": -93.0,
+   "cite": "Abstract (-93%)",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "M0 -> M1 compaction drop, points",
+   "sim": 24.200000000000003,
+   "pub": 24.2,
+   "cite": "\u00a74 (-24.2 pts)",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "M6 / M0 solved ratio",
+   "sim": 2.066666666666667,
+   "pub": 2.1,
+   "cite": "PAPER.md \u00a73.3 (2.1x)",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Stage-1 gain, points",
+   "sim": 21.705426356589147,
+   "pub": 21.7,
+   "cite": "\u00a74 (+21.7 pts)",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Localization-Trajectory Tax, points (Table 1 row 3 - M2)",
+   "sim": 22.48062015503876,
+   "pub": 22.4,
+   "cite": "\u00a73.3",
+   "match": true,
+   "note": "paper subtracts the rounded rates 39.5 - 17.1"
+  },
+  {
+   "quantity": "Tasks lost, Table 1 row 3 - M2",
+   "sim": 29,
+   "pub": 29,
+   "cite": "\u00a73.3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Fraction of 29-task gap recovered by M2 -> M6",
+   "sim": 0.3103448275862069,
+   "pub": 0.5,
+   "cite": "\u00a73.3 ('recovers half')",
+   "match": false,
+   "note": "M0->M6 gains 16 tasks, M2->M6 gains 9; neither is half of 29 (16/29 = 0.552 is closest)"
+  },
+  {
+   "quantity": "Fraction of 29-task gap: M0 -> M6 gain / 29",
+   "sim": 0.5517241379310345,
+   "pub": 0.5,
+   "cite": "\u00a73.3 ('recovers half')",
+   "match": false,
+   "note": ""
+  },
+  {
+   "quantity": "Trap-25 gain, points",
+   "sim": 80.0,
+   "pub": 80.0,
+   "cite": "\u00a74 (+80.0 pts)",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "D1 thinking-budget cut %",
+   "sim": -87.5,
+   "pub": -87.5,
+   "cite": "\u00a73.1",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Multi-LoRA memory change % (18.4 vs 54.6 GB)",
+   "sim": -66.3003663003663,
+   "pub": -66.3,
+   "cite": "PAPER.md \u00a74",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Binomial SE, p=0.20, n=58, %",
+   "sim": 5.252257314388903,
+   "pub": 5.25,
+   "cite": "PDF \u00a71 item 2",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Wilson 95% half-width, p=0.20, n=58, points",
+   "sim": 10.142057703758365,
+   "pub": 9.8,
+   "cite": "PDF \u00a71 item 2",
+   "match": false,
+   "note": "Normal-approx half-width is 10.29; neither gives 9.8"
+  },
+  {
+   "quantity": "Per-repo M0 solved sum (7+6+2+0)",
+   "sim": 15,
+   "pub": 15,
+   "cite": "\u00a73.3 per-repo rates x repo sizes",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Per-repo M6 solved sum (15+12+3+1)",
+   "sim": 31,
+   "pub": 31,
+   "cite": "\u00a73.3 per-repo rates x repo sizes",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "fastapi M0 rate % (7/67)",
+   "sim": 10.447761194029852,
+   "pub": 10.4,
+   "cite": "\u00a73.3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "fastapi M6 rate % (15/67)",
+   "sim": 22.388059701492537,
+   "pub": 22.4,
+   "cite": "\u00a73.3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "rich M0 rate % (6/48)",
+   "sim": 12.5,
+   "pub": 12.5,
+   "cite": "\u00a73.3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "rich M6 rate % (12/48)",
+   "sim": 25.0,
+   "pub": 25.0,
+   "cite": "\u00a73.3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "requests M0 rate % (2/13)",
+   "sim": 15.384615384615385,
+   "pub": 15.4,
+   "cite": "\u00a73.3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "requests M6 rate % (3/13)",
+   "sim": 23.076923076923077,
+   "pub": 23.1,
+   "cite": "\u00a73.3",
+   "match": true,
+   "note": ""
+  },
+  {
+   "quantity": "Dilution 0.72 -> 0.06 as bits: log2(0.72/0.06)",
+   "sim": 3.584962500721156,
+   "pub": 4.51,
+   "cite": "\u00a73.1",
+   "match": false,
+   "note": "no stated reading reproduces 4.51"
+  },
+  {
+   "quantity": "Dilution 0.72 -> 0.06 as bits: -log2(0.06)",
+   "sim": 4.058893689053568,
+   "pub": 4.51,
+   "cite": "\u00a73.1",
+   "match": false,
+   "note": "no stated reading reproduces 4.51"
+  },
+  {
+   "quantity": "Dilution 0.72 -> 0.06 as bits: log2 odds ratio",
+   "sim": 5.332196430341189,
+   "pub": 4.51,
+   "cite": "\u00a73.1",
+   "match": false,
+   "note": "no stated reading reproduces 4.51"
+  },
+  {
+   "quantity": "Dilution 0.72 -> 0.06 as bits: log2(0.94/0.28)",
+   "sim": 1.7472339296200332,
+   "pub": 4.51,
+   "cite": "\u00a73.1",
+   "match": false,
+   "note": "no stated reading reproduces 4.51"
+  }
+ ],
+ "tables": {
+  "t1": [
+   {
+    "id": "t1_baseline",
+    "label": "Non-thinking low-temp baseline",
+    "tau": 0.2,
+    "topk": 40,
+    "budget": 0,
+    "k": 23,
+    "n": 129,
+    "pub_rate": 17.8,
+    "pub_ci": [
+     12.2,
+     25.3
+    ]
+   },
+   {
+    "id": "t1_hidden",
+    "label": "Low-temp thinking (hidden thoughts)",
+    "tau": 0.25,
+    "topk": 40,
+    "budget": 4096,
+    "k": 35,
+    "n": 129,
+    "pub_rate": 27.1,
+    "pub_ci": [
+     20.2,
+     35.4
+    ]
+   },
+   {
+    "id": "t1_calibrated",
+    "label": "Calibrated thinking mode",
+    "tau": 1.0,
+    "topk": 64,
+    "budget": 4096,
+    "k": 51,
+    "n": 129,
+    "pub_rate": 39.5,
+    "pub_ci": [
+     31.5,
+     48.1
+    ]
+   }
+  ],
+  "t2": [
+   {
+    "id": "M0",
+    "label": "Default starter template (T=0.2, 9 tools)",
+    "calls": 24.6,
+    "peak_kv": 28400,
+    "compact": 68.2,
+    "k": 15,
+    "pub_rate": 11.6,
+    "pub_ci": [
+     7.2,
+     18.3
+    ],
+    "heldout": 0.121
+   },
+   {
+    "id": "M1",
+    "label": "+ Lean-6 workspace toolset",
+    "calls": 21.2,
+    "peak_kv": 22100,
+    "compact": 44.0,
+    "k": 18,
+    "pub_rate": 14.0,
+    "pub_ci": [
+     9.0,
+     21.0
+    ],
+    "heldout": 0.138
+   },
+   {
+    "id": "M2",
+    "label": "+ Calibrated thinking sampling (T=1.0)",
+    "calls": 18.9,
+    "peak_kv": 18600,
+    "compact": 31.0,
+    "k": 22,
+    "pub_rate": 17.1,
+    "pub_ci": [
+     11.5,
+     24.5
+    ],
+    "heldout": 0.172
+   },
+   {
+    "id": "M3",
+    "label": "+ Turn-1 6-relation parser + 120-line reads",
+    "calls": 15.4,
+    "peak_kv": 11200,
+    "compact": 8.5,
+    "k": 25,
+    "pub_rate": 19.4,
+    "pub_ci": [
+     13.5,
+     27.0
+    ],
+    "heldout": 0.19
+   },
+   {
+    "id": "M4",
+    "label": "+ Call-12 source-edit deadline",
+    "calls": 13.8,
+    "peak_kv": 10400,
+    "compact": 6.2,
+    "k": 27,
+    "pub_rate": 20.9,
+    "pub_ci": [
+     14.8,
+     28.7
+    ],
+    "heldout": 0.207
+   },
+   {
+    "id": "M5",
+    "label": "+ Structural co-change coupling",
+    "calls": 13.1,
+    "peak_kv": 9850,
+    "compact": 5.4,
+    "k": 29,
+    "pub_rate": 22.5,
+    "pub_ci": [
+     16.1,
+     30.4
+    ],
+    "heldout": 0.224
+   },
+   {
+    "id": "M6",
+    "label": "+ Graph backtrack + red-test submit",
+    "calls": 12.4,
+    "peak_kv": 9420,
+    "compact": 4.7,
+    "k": 31,
+    "pub_rate": 24.0,
+    "pub_ci": [
+     17.5,
+     32.1
+    ],
+    "heldout": 0.241
+   }
+  ],
+  "t3": [
+   {
+    "id": "baseline_static",
+    "label": "baseline_static (unpruned)",
+    "reset": false,
+    "k": 4,
+    "n": 25,
+    "pub_rate": 16.0,
+    "pub_ci": [
+     6.4,
+     34.7
+    ],
+    "turns": 11.04,
+    "think": 45220,
+    "pub_think_pct": 0.0,
+    "post_kv": 159816,
+    "pub_kv_pct": 0.0,
+    "peak_kv": 24821
+   },
+   {
+    "id": "naive_subagent",
+    "label": "naive_subagent (full handoff)",
+    "reset": false,
+    "k": 5,
+    "n": 25,
+    "pub_rate": 20.0,
+    "pub_ci": [
+     8.9,
+     39.1
+    ],
+    "turns": 10.72,
+    "think": 51118,
+    "pub_think_pct": 13.0,
+    "post_kv": 190410,
+    "pub_kv_pct": 19.1,
+    "peak_kv": 31067
+   },
+   {
+    "id": "ccr_only",
+    "label": "ccr_only (pruning + ledger)",
+    "reset": true,
+    "k": 18,
+    "n": 25,
+    "pub_rate": 72.0,
+    "pub_ci": [
+     52.4,
+     85.7
+    ],
+    "turns": 8.76,
+    "think": 35881,
+    "pub_think_pct": -20.7,
+    "post_kv": 85148,
+    "pub_kv_pct": -46.7,
+    "peak_kv": 14488
+   },
+   {
+    "id": "ccr_adaptive",
+    "label": "ccr_adaptive (G-CCR + adaptive thinking)",
+    "reset": true,
+    "k": 24,
+    "n": 25,
+    "pub_rate": 96.0,
+    "pub_ci": [
+     80.5,
+     99.3
+    ],
+    "turns": 6.96,
+    "think": 24842,
+    "pub_think_pct": -45.1,
+    "post_kv": 46689,
+    "pub_kv_pct": -70.8,
+    "peak_kv": 10563
+   }
+  ]
+ },
+ "constants": {
+  "cliff": 14336,
+  "ledger": 150,
+  "thresh": {
+   "c_err": 2,
+   "s_diff": 0.82,
+   "h_w": 0.55,
+   "W": 4
+  }
+ }
+}

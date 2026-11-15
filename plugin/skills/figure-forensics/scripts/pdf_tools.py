@@ -88,18 +88,40 @@ def html_to_pdf(html_path: Path, pdf_path: Path, wait_ms: int = 1800) -> Path:
     return pdf_path
 
 
+MIN_WINDOW_WIDTH = 500  # headless Chrome lays out at >= 500 CSS px whatever --window-size says
+
+
 def html_to_png(html_path: Path, png_path: Path, width: int, height: int, wait_ms: int = 1800) -> Path:
+    """Screenshot `html_path` with a true `width` x `height` CSS-pixel viewport.
+
+    The page is loaded in an iframe of exactly that size inside a window at least
+    MIN_WINDOW_WIDTH wide, then cropped, so phone-width media queries really apply.
+    """
+    from PIL import Image
+
     png_path = png_path.resolve()
-    _run_browser(
-        [
-            "--hide-scrollbars",
-            f"--window-size={width},{height}",
-            f"--virtual-time-budget={wait_ms}",
-            f"--screenshot={png_path}",
-            html_path.resolve().as_uri(),
-        ],
-        png_path,
-    )
+    with tempfile.TemporaryDirectory(prefix="research-kit-shot-") as tmp:
+        wrapper = Path(tmp, "viewport.html")
+        wrapper.write_text(
+            '<!doctype html><html><body style="margin:0;background:#fff">'
+            f'<iframe src="{html_path.resolve().as_uri()}" '
+            f'style="display:block;width:{width}px;height:{height}px;border:0"></iframe></body></html>',
+            encoding="utf-8",
+        )
+        _run_browser(
+            [
+                "--hide-scrollbars",
+                "--allow-file-access-from-files",
+                f"--window-size={max(width, MIN_WINDOW_WIDTH)},{height}",
+                f"--virtual-time-budget={wait_ms}",
+                f"--screenshot={png_path}",
+                wrapper.as_uri(),
+            ],
+            png_path,
+        )
+    with Image.open(png_path) as im:
+        cropped = im.crop((0, 0, width, height))
+    cropped.save(png_path)
     return png_path
 
 

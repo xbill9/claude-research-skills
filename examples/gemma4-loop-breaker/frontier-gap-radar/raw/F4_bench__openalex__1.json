@@ -1,0 +1,529 @@
+{
+ "url": "https://api.openalex.org/works?search=repository-level+code+repair+benchmark+LLM+agents+evaluation&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4412889702",
+   "doi": "10.18653/v1/2025.acl-long.1490",
+   "title": "Benchmarking LLMs and LLM-based Agents in Practical Vulnerability Detection for Code Repositories",
+   "year": 2025,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 43,
+   "abstract": "Alperen Yildiz, Sin G Teo, Yiling Lou, Yebo Feng, Chong Wang, Dinil Mon Divakaran. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025.",
+   "authors": [
+    "Alperen Yildiz",
+    "Sin G. Teo",
+    "Yiling Lou",
+    "Yebo Feng",
+    "Chong Wang",
+    "Dinil Mon Divakaran"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7154689853",
+   "doi": "10.48550/arxiv.2604.14709",
+   "title": "HWE-Bench: Benchmarking LLM Agents on Real-World Hardware Bug Repair Tasks",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 10,
+   "abstract": "Existing benchmarks for hardware design primarily evaluate Large Language Models (LLMs) on isolated, component-level tasks such as generating HDL modules from specifications, leaving repository-scale evaluation unaddressed. We introduce HWE-Bench, the first large-scale, repository-level benchmark for evaluating LLM agents on real-world hardware bug repair tasks. HWE-Bench comprises 417 task instances derived from real historical bug-fix pull requests across six major open-source projects spanning both Verilog/SystemVerilog and Chisel, covering RISC-V cores, SoCs, and security roots-of-trust. Each task is grounded in a fully containerized environment where the agent must resolve a real bug report, with correctness validated through the project's native simulation and regression flows. The benchmark is built through a largely automated pipeline that enables efficient expansion to new repositories. We evaluate seven LLMs with four agent frameworks and find that the best agent resolves 70.7% of tasks overall, with performance exceeding 90% on smaller cores but dropping below 65% on complex SoC-level projects. We observe larger performance gaps across models than commonly reported on software benchmarks, and difficulty is driven by project scope and bug-type distribution rather than code size alone. Our failure analysis traces agent failures to three stages of the debugging process: fault localization, hardware-semantic reasoning, and cross-artifact coordination across RTL, configuration, and verification components, providing concrete directions for developing more capable hardware-aware agents.",
+   "authors": [
+    "Fan Cui",
+    "Hongyuan Hou -",
+    "Zizhang Luo",
+    "Chenyun Yin",
+    "Yun Eric Liang"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414888770",
+   "doi": "10.48550/arxiv.2506.00172",
+   "title": "Breakpoint: Scalable evaluation of system-level reasoning in LLM code agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 7,
+   "abstract": "Benchmarks for large language models (LLMs) have predominantly assessed short-horizon, localized reasoning. Existing long-horizon suites (e.g. SWE-bench) rely on manually curated issues, so expanding or tuning difficulty demands expensive human effort and evaluations quickly saturate. However, many real-world tasks, such as software engineering or scientific research, require agents to rapidly comprehend and manipulate novel, complex structures dynamically; evaluating these capabilities requires the ability to construct large and varied sets of problems for agents to solve. We introduce Breakpoint, a benchmarking methodology that automatically generates code-repair tasks by adversarially corrupting functions within real-world software repositories. Breakpoint systematically controls task difficulty along two clear dimensions: local reasoning (characterized by code complexity metrics such as cyclomatic complexity) and system-level reasoning (characterized by call-graph centrality and the number of simultaneously corrupted interdependent functions). In experiments across more than 900 generated tasks we demonstrate that our methodology can scale to arbitrary difficulty, with state-of-the-art models' success rates ranging from 55% on the easiest tasks down to 0% on the hardest.",
+   "authors": [
+    "Kaivalya Hariharan",
+    "Uzay Girit",
+    "Wang, Atticus",
+    "Jacob Andreas"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7165662689",
+   "doi": "10.48550/arxiv.2606.22082",
+   "title": "CodeTeam: An LLM-Powered Multi-Agent Framework for Repository-Level Code Generation",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 5,
+   "abstract": "Natural language to repository generation (NL2Repo) requires a system to construct an entire software repository from a natural-language requirements document. Compared with function-level code generation, this task demands longer planning horizons, stable interfaces across files, and iterative debugging of cross-file inconsistencies. To address these challenges, we propose CodeTeam, an LLM-based multi-agent framework that separates planning, decision making, and implementation into distinct, coordinated stages. In the planning stage, multiple Architect agents draft competing software design sketches (SDS), optionally grounded by retrieved design references. A CTO agent then evaluates, selects, and normalizes the most promising SDS into a machine-checkable contract that specifies file ownership, public interfaces, and dependency constraints. In the implementation stage, Developer agents generate code under a dependency-aware scheduler with bounded context and lightweight Git-based coordination, while a QA agent runs tests and drives iterative repairs. On the synthesis-based SketchEval benchmark, we explicitly compare CodeTeam's prompt-engineering (PE) and supervised fine-tuning (SFT) variants with the corresponding CodeS variants, where CodeTeam improves the overall SketchBLEU by 4.1 and 2.9 absolute points, respectively. On the execution-based NL2Repo-Bench benchmark, used as an external validation protocol, CodeTeam achieves the highest average test pass rate in both settings (34.6% PE, 42.3% SFT), confirming that the sketch-improvements extend to functional correctness under upstream test suites. Ablation results show that project-specific developer allocation and retrieval-augmented planning each contribute substantially to the SketchBLEU improvement (9.9% and 8.1% relative, respectively). CodeTeam and the experimental results are available at https://github.com/WhitenWhiten/CodeTeam",
+   "authors": [
+    "Yifei Wang",
+    "R K Li",
+    "Peng Liang",
+    "Qiong Feng",
+    "Zengyang Li",
+    "Mojtaba Shahin",
+    "Arif Ali Khan"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4406866661",
+   "doi": "10.1145/3715109",
+   "title": "HumanEvalComm: Benchmarking the Communication Competence of Code Generation for LLMs and LLM Agent",
+   "year": 2025,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 31,
+   "abstract": "Large language models (LLMs) have significantly improved their ability to perform tasks in the field of code generation. However, there is still a gap between LLMs being capable coders and being top-tier software engineers. The most recent trend is using LLM-based agents to iterate the code generation process. Based on the observation that top-level software engineers often ask clarifying questions to reduce Ambiguity in both requirements and coding solutions, we argue that the same should be applied to LLMs for code generation tasks. For this purpose, we define the communication skills of LLMs as \u201cbeing able to ask clarifying questions when the description of the code generation problem has issues\u201d. In this study, we restrict these issues to three matters from the software requirement engineering field: inconsistent requirements, ambiguous requirements, and incomplete requirements. By asking probing questions about the requirements of problem descriptions before generating the final code, the challenges of programming with LLMs, such as unclear intent specification may be alleviated, resulting to a correct code in the initial iterations. In this work, we conducted an empirical study on the benchmark and analysis of the communication skills of LLMs for code generation. We created a new benchmark, HumanEvalComm, by modifying problem descriptions according to three issues mentioned above, Inconsistency , Ambiguity , Incompleteness . We then experimented on HumanEvalComm with different Code LLMs, and a new LLM agent approach, C o de C l a rificatio n a nd G eneration A ge n t (Okanagan), to identify and ask questions in ambiguous parts from code and descriptions for further refining the generated code. In the evaluation, we introduced an LLM-based evaluator and created Communication Rate and Good Question Rate as the evaluation metrics to represent the ratio of questions asked and questions with good quality in responses. We found that more than 60% of responses from Code LLMs still generate code rather than ask questions when the problem descriptions are manually modified according to different clarification categories. The Pass@1 and Test Pass Rate of most Code LLMs drop by 35% \\(\\sim\\) 52% and by 17% \\(\\sim\\) 35% respectively, with statistical significance in each category for over 75% numbers. Okanagan, as an LLM agent approach that uses LLM such as ChatGPT 3.5, effectively increases the Communication Rate and Good Question Rate by an absolute 58% and 38%, respectively. Thus, Okanagan boosts Pass@1 and Test Pass Rate by an absolute 8% and 7%, respectively, when the problem descriptions are modified based on given clarification categories. This result indicates the potential for achieving more effective communication capability using LLM agent. Our benchmark and full code are publicly available at https://github.com/jie-jw-wu/human-eval-comm .",
+   "authors": [
+    "Jie JW Wu",
+    "Fatemeh H. Fard"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161688020",
+   "doi": "10.48550/arxiv.2605.17444",
+   "title": "MemRepair: Hierarchical Memory for Agentic Repository-Level Vulnerability Repair",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "Modern software ecosystems face a rapidly growing number of disclosed vulnerabilities, increasing the need for automated repair techniques that can operate reliably at repository scale. Although Large Language Model (LLM)-based agents have recently shown promise for automated vulnerability repair (AVR), most existing systems still treat repair as a single generation step over the currently visible code context. As a result, they lack a persistent mechanism for reusing prior fixes or learning from failed validation attempts, which limits their effectiveness on complex, multi-file repair tasks. We present MemRepair, a memory-augmented agentic framework that formulates vulnerability repair as an iterative, experience-driven process. MemRepair combines three complementary memory layers, i.e., History-Fix, Security-Pattern, and Refinement-Trajectory memories, with a dynamic feedback-driven refinement loop. This design allows the agent to retrieve repository-specific repair conventions, apply reusable security defenses, and exploit prior \"failure-to-success\" trajectories to revise semantically invalid patches based on runtime evidence. We evaluate MemRepair on three representative repository-level vulnerability repair benchmarks: SEC-Bench, PatchEval (Python, Go, JavaScript), and the C++ subset of Multi-SWE-bench. MemRepair achieves state-of-the-art resolution rates of 58.0%, 58.2%, and 30.58%, respectively, outperforming strong general-purpose agents such as OpenHands and SWE-agent, as well as the specialized AVR tool InfCode-C++, while maintaining competitive repair cost. These results show that persistent, hierarchical repair memory can substantially improve the reliability of agentic vulnerability repair across diverse languages and repository settings.",
+   "authors": [
+    "Simiao Liu",
+    "Li Zhang",
+    "Fang Liu",
+    "Xiaoli Lian",
+    "Yang Liu",
+    "Yinghao Zhu"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403363594",
+   "doi": "10.48550/arxiv.2410.06992",
+   "title": "SWE-Bench+: Enhanced Coding Benchmark for LLMs",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 141,
+   "abstract": "Large Language Models (LLMs) in Software Engineering (SE) can offer assistance for coding. To facilitate a rigorous evaluation of LLMs in practical coding contexts, Carlos et al. introduced the SWE-bench dataset, which comprises 2,294 real-world GitHub issues and their corresponding pull requests, collected from 12 widely used Python repositories. Several impressive LLM-based toolkits recently are developed and evaluated on this dataset. However, a systematic evaluation of the quality of SWE-bench remains missing. In this paper, we addressed this gap by presenting an empirical analysis of the SWE-bench dataset. We conducted a manual screening of instances where SWEAgent + GPT-4 successfully resolved issues by comparing the model-generated patches with the actual pull requests. SWE-Agent+GPT-4 was at the top of SWE-bench leaderboard during the time of our study. Our analysis reveals some critical issues with the SWE-bench dataset: 1) 32.67% of the successful patches involve cheating as the solutions were directly provided in the issue report or the comments. We refer to as solution leakage problem. 2) 31.08% of the passed patches are suspicious patches due to weak test cases, i.e., the tests were not adequate to verify the correctness of a patch. When we filtered out these problematic issues, the resolution rate of SWE-Agent+GPT-4 dropped from 12.47% to 3.97%. We also observed that the same data quality issues also exist in the two variants of SWE-bench, i.e., SWE-bench Lite and SWE-Bench Verified. In addition, over 94% of the issues were created before LLM's knowledge cutoff dates, posing potential data leakage issues.",
+   "authors": [
+    "Reem Aleithan",
+    "Xue, Haoran",
+    "Mohammad Mahdi Mohajer",
+    "Elijah Nnorom",
+    "Gias Uddin",
+    "Song Wang"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7160837719",
+   "doi": "10.48550/arxiv.2605.07001",
+   "title": "SmellBench: Evaluating LLM Agents on Architectural Code Smell Repair",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 6,
+   "abstract": "Architectural code smells erode software maintainability and are costly to repair manually, yet unlike localized bugs, they require cross-module reasoning about design intent that challenges both developers and automated tools. While large language model agents excel at bug fixing and code-level refactoring, their ability to repair architectural code smells remains unexplored. We present the first empirical evaluation of LLM agents on architectural code smell repair. We contribute SmellBench, a task orchestration framework that incorporates smell-type-specific optimized prompts and supports iterative multi-step execution, together with a scoring methodology that separately evaluates repair effectiveness, false positive identification, and net codebase impact. We evaluate 11 agent configurations from four model families (GPT, Claude, Gemini, Mistral) on 65 hard-severity architectural smells detected by PyExamine in the Python project scikit-learn, validated against expert judgments. Expert validation reveals that 63.1% of detected smells are false positives, while the best agent achieves a 47.7% resolution rate. Agents identify false positives with up to $\u03ba= 0.94$ expert agreement, but repair aggressiveness and net codebase quality are inversely related: the most aggressive agent introduces 140 new smells. These findings expose a gap between current LLM capabilities in localized code transformations and the architectural understanding needed for cross-module refactoring. SmellBench provides reusable infrastructure for tracking progress on this underexplored dimension of automated software engineering. We release our code and data at https://doi.org/10.5281/zenodo.19247588.",
+   "authors": [
+    "Ion George Dinu",
+    "Marian Cristian Mih\u0103escu",
+    "Traian Eugen Rebedea"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411551762",
+   "doi": "10.1109/icse55347.2025.00157",
+   "title": "RepairAgent: An Autonomous, LLM-Based Agent for Program Repair",
+   "year": 2025,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 491,
+   "abstract": "Automated program repair has emerged as a powerful technique to mitigate the impact of software bugs on system reliability and user experience. This paper introduces Repair Agent, the first work to address the program repair challenge through an autonomous agent based on a large language model (LLM). Unlike existing deep learning-based approaches, which prompt a model with a fixed prompt or in a fixed feedback loop, our work treats the LLM as an agent capable of autonomously planning and executing actions to fix bugs by invoking suitable tools. Repair Agent freely interleaves gathering information about the bug, gathering repair ingredients, and validating fixes, while deciding which tools to invoke based on the gathered information and feedback from previous fix attempts. Key contributions that enable Repair Agent include a set of tools that are useful for program repair, a dynamically updated prompt format that allows the LLM to interact with these tools, and a finite state machine that guides the agent in invoking the tools. Our evaluation on the popular Defects4J dataset demonstrates Repair Agent's effectiveness in autonomously repairing 164 bugs, including 39 bugs not fixed by prior techniques. Interacting with the LLM imposes an average cost of 270k tokens per bug, which, under the current pricing of OpenAI's GPT-3.5 model, translates to 14 cents per bug. To the best of our knowledge, this work is the first to present an autonomous, LLM-based agent for program repair, paving the way for future agent-based techniques in software engineering.",
+   "authors": [
+    "Islem Bouzenia",
+    "Pr\u00e9mkumar D\u00e9vanbu",
+    "Michael Pradel"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7117547917",
+   "doi": "10.48550/arxiv.2512.21373",
+   "title": "AInsteinBench: Benchmarking Coding Agents on Scientific Repositories",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 14,
+   "abstract": "We introduce AInsteinBench, a large-scale benchmark for evaluating whether large language model (LLM) agents can operate as scientific computing development agents within real research software ecosystems. Unlike existing scientific reasoning benchmarks which focus on conceptual knowledge, or software engineering benchmarks that emphasize generic feature implementation and issue resolving, AInsteinBench evaluates models in end-to-end scientific development settings grounded in production-grade scientific repositories. The benchmark consists of tasks derived from maintainer-authored pull requests across six widely used scientific codebases, spanning quantum chemistry, quantum computing, molecular dynamics, numerical relativity, fluid dynamics, and cheminformatics. All benchmark tasks are carefully curated through multi-stage filtering and expert review to ensure scientific challenge, adequate test coverage, and well-calibrated difficulty. By leveraging evaluation in executable environments, scientifically meaningful failure modes, and test-driven verification, AInsteinBench measures a model's ability to move beyond surface-level code generation toward the core competencies required for computational scientific research.",
+   "authors": [
+    "Titouan Duston",
+    "Shuo Xin",
+    "Yang Sun",
+    "Daoguang Zan",
+    "Aoyan Li",
+    "Shulin Xin",
+    "Kai Shen",
+    "Yuli Chen"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7164821586",
+   "doi": "10.1145/3832783.3834363",
+   "title": "LLM Agents Can See Code Repositories",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 14,
+   "abstract": "Coding agents powered by large language models (LLMs) have demonstrated remarkable proficiency in software engineering tasks. Yet modern coding agents rely almost entirely on text, leaving a major gap between how human developers and agents comprehend software repositories. Human developers leverage visual repository cues such as folder hierarchies and dependencies, raising the question of whether multimodal models can similarly improve repository understanding. In this paper, we conduct the first systematic empirical study on multimodal foundation models for repository-level tasks. Our experiments across four modern multimodal models reveal that while a vision-only context representation degrades performance and inflates token costs, integrating visualized context graphs as a supplementary modality can help agents grasp the repository more efficiently. Specifically, providing agents with visual structural context alongside standard text interfaces reduces input token consumption by up to 26% while maintaining or improving issue-resolution accuracy. Furthermore, we demonstrate that visual tools are most effective when utilized during the fault localization stage and when agents autonomously dictate their exploration depth. Our findings highlight a promising hybrid-modality pathway for the design of next-generation coding agents.",
+   "authors": [
+    "Dongjian Ma",
+    "Silin Chen",
+    "Yufei Yang",
+    "Y Shi",
+    "Yanfu Yan",
+    "Xiaodong Gu"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414891524",
+   "doi": "10.52202/085713-1440",
+   "title": "AgentAuditor: Human-level Safety and Security Evaluation for LLM Agents",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 60,
+   "abstract": "Despite the rapid advancement of LLM-based agents, the reliable evaluation of their safety and security remains a significant challenge. Existing rule-based or LLM-based evaluators often miss dangers in agents' step-by-step actions, overlook subtle meanings, fail to see how small issues compound, and get confused by unclear safety or security rules. To overcome this evaluation crisis, we introduce AgentAuditor, a universal, training-free, memory-augmented reasoning framework that empowers LLM evaluators to emulate human expert evaluators. AgentAuditor constructs an experiential memory by having an LLM adaptively extract structured semantic features (e.g., scenario, risk, behavior) and generate associated chain-of-thought reasoning traces for past interactions. A multi-stage, context-aware retrieval-augmented generation process then dynamically retrieves the most relevant reasoning experiences to guide the LLM evaluator's assessment of new cases. Moreover, we developed ASSEBench, the first benchmark designed to check how well LLM-based evaluators can spot both safety risks and security threats. ASSEBench comprises 2293 meticulously annotated interaction records, covering 15 risk types across 29 application scenarios. A key feature of ASSEBench is its nuanced approach to ambiguous risk situations, employing \"Strict\" and \"Lenient\" judgment standards. Experiments demonstrate that AgentAuditor not only consistently improves the evaluation performance of LLMs across all benchmarks but also sets a new state-of-the-art in LLM-as-a-judge for agent safety and security, achieving human-level accuracy. Our work is openly accessible at https://github.com/Astarojth/AgentAuditor.",
+   "authors": [
+    "Hanjun Luo",
+    "Shenyu Dai",
+    "Chiming Ni",
+    "Xinfeng Li",
+    "Guibin Zhang",
+    "Kun Wang",
+    "Tongliang Liu",
+    "Hanan Salam"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7162452547",
+   "doi": "10.1145/3818617",
+   "title": "SGAgent : Suggestion-Guided LLM-Based Multi-Agent Framework for Repository-Level Software Repair",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 13,
+   "abstract": "The rapid advancement of Large Language Models (LLMs) has led to the emergence of intelligent agents capable of autonomously interacting with environments and invoking external tools. Recently, agent-based software repair approaches have received widespread attention, as repair agents can automatically analyze and localize bugs, generate patches, and achieve state-of-the-art performance on repository-level benchmarks (e.g., SWE-Bench). However, existing software repair approaches usually adopt a localize-then-fix paradigm , jumping directly from \u201cwhere the bug is\u201d to \u201chow to fix it,\u201d leaving a fundamental reasoning gap. To this end, we propose SGAgent , a S uggestion- G uided multi- Agent framework for repository-level software repair, which follows a localize-suggest-fix paradigm. Specifically, SGAgent introduces a suggestion to strengthen the transition from localization to repair. The suggester starts from the buggy locations and incrementally retrieves relevant context until it fully understands the bug, and then provides actionable repair suggestions. Moreover, we construct a Knowledge Graph (KG) from the target repository and develop a KG-based toolkit to enhance SGAgent \u2019s ability to enhance global contextual awareness and repository-level reasoning. Based on these components, three specialized sub-agents in SGAgent (i.e., localizer, suggester, and fixer) collaborate to achieve automated end-to-end software repair. We evaluated SGAgent on the SWE-Bench-Lite benchmark. Experimental results show that SGAgent with Claude-3.5 achieves 51.3% repair accuracy, 81.2% file-level, and 52.4% function-level localization accuracy with an average cost of $1.48 per instance, outperforming all baselines using the same base model. Moreover, SGAgent generalizes well across different base LLMs, further reaching a 60.7% resolution rate with Claude-4. When extended to vulnerability repair, SGAgent achieves a 48.0% resolution rate on VUL4J and VJBench, demonstrating strong generalization across tasks and programming languages.",
+   "authors": [
+    "Q Zhang",
+    "Chengyu Gao",
+    "Yu Han",
+    "Ye Shang",
+    "Chunrong Fang",
+    "Zhenyu Chen",
+    "Liang Xiao"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7220916347",
+   "doi": "10.48550/arxiv.2610.07967",
+   "title": "DecepEval: A Benchmark for Evaluating Deception in LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "As large language model (LLM) agents become increasingly autonomous, they may pursue task performance through deception, raising concerns about their reliable deployment. Existing evaluations show that LLM agents can deceive, but often examine isolated scenarios or narrowly defined conditions, limiting systematic understanding of when deception becomes more likely. To address this gap, we introduce DecepEval, a benchmark comprising 1,532 instances across 3 task families and 28 professional scenarios. Drawing on classical fraud theories, we propose the LLM Deception Diamond framework, which characterizes four external conditions that may induce deception: pressure, incentive, opportunity, and conflict. DecepEval pairs neutral and induced versions of each instance to measure condition-dependent changes in deception rates, while explicit task facts and observable agent behavior help distinguish deception from capability-related errors. Evaluations of nine frontier LLMs show that inducements increase deception across models and task families, even among models with low baseline deception rates. DecepEval makes these vulnerabilities measurable, providing a shared benchmark for progress toward trustworthy artificial intelligence.",
+   "authors": [
+    "Yiming Xu",
+    "Hongyue Yu",
+    "Beihua Yang",
+    "Zihan Chen",
+    "Yixin Liu",
+    "Zhen Peng",
+    "Bin Shi",
+    "Bo Dong"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416017103",
+   "doi": "10.1145/3786181.3788703",
+   "title": "SecRepoBench: Benchmarking Code Agents for Secure Code Completion in Real-World Repositories",
+   "year": 2026,
+   "venue": "International Workshop on Large Language Models for Code (LLM4Code)",
+   "type": "conference-paper",
+   "cited_by": 48,
+   "abstract": "This paper introduces SecRepoBench, a benchmark to evaluate code agents on secure code completion in real-world repositories. SecRepoBench has 318 code completion tasks in 27 C/C++ repositories, covering 15 CWEs. We evaluate 29 standalone LLMs and 15 code agents across 3 state-of-the-art agent frameworks using our benchmark. We find that state-of-the-art LLMs struggle with generating correct and secure code completions. However, code agents significantly outperform standalone LLMs. We show that SecRepoBench is more difficult than the prior state-of-the-art benchmark. Finally, our comprehensive analysis provides insights into potential directions for enhancing the ability of code agents to write correct and secure code in real-world repositories.",
+   "authors": [
+    "Chihao Shen",
+    "Connor Dilgren",
+    "Purva Chiniya",
+    "Luke Griffith",
+    "Yu Ding",
+    "Yizheng Chen"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417351600",
+   "doi": "10.1145/3808181",
+   "title": "ExpeRepair: Dual-Memory Enhanced LLM-Based Repository-Level Program Repair",
+   "year": 2026,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 49,
+   "abstract": "Automatically repairing software issues remains a fundamental challenge at the intersection of software engineering and AI. Although recent advances in Large Language Models (LLMs) have demonstrated potential for repository-level repair tasks, current methods exhibit two notable limitations: (1) they often address issues in isolation, neglecting to incorporate insights from previously resolved issues, and (2) they rely on static, rigid prompting strategies that constrain their ability to generalize across diverse and evolving contexts. We propose ExpeRepair, a novel LLM-based program repair framework inspired by the dual-memory systems of human cognition, where episodic and semantic memory synergistically support learning and decision-making. Unlike existing methods, ExpeRepair continuously learns from historical repair experiences via dual-channel knowledge accumulation, enabling it to adaptively reuse past knowledge during inference. Specifically, ExpeRepair organizes prior repair knowledge into two complementary memories: an episodic memory that stores concrete repair demonstrations, and a semantic memory that encodes abstract, reflective insights. At inference time, ExpeRepair activates both memory systems by retrieving relevant demonstrations from episodic memory and recalling high-level repair insights from semantic memory. It further enhances adaptability through dynamic prompt composition, integrating both memory types to replace static prompts with context-aware, experience-driven prompts. We evaluate ExpeRepair on two benchmarks: SWE-Bench Lite and SWE-Bench Verified. Experimental results show that ExpeRepair achieves pass@1 scores of 60.3% and 74.6% on the two benchmarks, respectively, achieving the best performance among the evaluated open-source methods. We have open-sourced ExpeRepair at https://github.com/ExpeRepair/ExpeRepair.",
+   "authors": [
+    "Fangwen Mu",
+    "Junjie Wang",
+    "Lin Shi",
+    "Song Wang",
+    "SHUANG-LONG LI",
+    "Qing Wang"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416548195",
+   "doi": "10.48550/arxiv.2508.00083",
+   "title": "A Survey on Code Generation with LLM-based Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 195,
+   "abstract": "Code generation agents powered by large language models (LLMs) are revolutionizing the software development paradigm. Distinct from previous code generation techniques, code generation agents are characterized by three core features. 1) Autonomy: the ability to independently manage the entire workflow, from task decomposition to coding and debugging. 2) Expanded task scope: capabilities that extend beyond generating code snippets to encompass the full software development lifecycle (SDLC). 3) Enhancement of engineering practicality: a shift in research emphasis from algorithmic innovation toward practical engineering challenges, such as system reliability, process management, and tool integration. This domain has recently witnessed rapid development and an explosion in research, demonstrating significant application potential. This paper presents a systematic survey of the field of LLM-based code generation agents. We trace the technology's developmental trajectory from its inception and systematically categorize its core techniques, including both single-agent and multi-agent architectures. Furthermore, this survey details the applications of LLM-based agents across the full SDLC, summarizes mainstream evaluation benchmarks and metrics, and catalogs representative tools. Finally, by analyzing the primary challenges, we identify and propose several foundational, long-term research directions for the future work of the field.",
+   "authors": [
+    "Yihong Dong",
+    "Xue Jiang",
+    "Qian, Jiaru",
+    "Wang, Tian",
+    "Kechi Zhang",
+    "Zhi Yang Jin",
+    "Ge Li"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4406231153",
+   "doi": "10.48550/arxiv.2501.04227",
+   "title": "Agent Laboratory: Using LLM Agents as Research Assistants",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 401,
+   "abstract": "Historically, scientific discovery has been a lengthy and costly process, demanding substantial time and resources from initial conception to final results. To accelerate scientific discovery, reduce research costs, and improve research quality, we introduce Agent Laboratory, an autonomous LLM-based framework capable of completing the entire research process. This framework accepts a human-provided research idea and progresses through three stages--literature review, experimentation, and report writing to produce comprehensive research outputs, including a code repository and a research report, while enabling users to provide feedback and guidance at each stage. We deploy Agent Laboratory with various state-of-the-art LLMs and invite multiple researchers to assess its quality by participating in a survey, providing human feedback to guide the research process, and then evaluate the final paper. We found that: (1) Agent Laboratory driven by o1-preview generates the best research outcomes; (2) The generated machine learning code is able to achieve state-of-the-art performance compared to existing methods; (3) Human involvement, providing feedback at each stage, significantly improves the overall quality of research; (4) Agent Laboratory significantly reduces research expenses, achieving an 84% decrease compared to previous autonomous research methods. We hope Agent Laboratory enables researchers to allocate more effort toward creative ideation rather than low-level coding and writing, ultimately accelerating scientific discovery.",
+   "authors": [
+    "Samuel Schmidgall",
+    "Yusheng Su",
+    "Ze Wang",
+    "Ximeng Sun",
+    "Jialian Wu",
+    "Xiaodong Yu",
+    "Jiang Liu",
+    "Michael Moor"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7172390667",
+   "doi": "10.48550/arxiv.2608.02001",
+   "title": "VulnGym: Benchmarking Coding Agents for Repository-Level Vulnerability Detection",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 5,
+   "abstract": "Recent advances in LLM-based vulnerability detection have shown promising results, while coding agents further extend this capability from isolated code snippets to complete repositories. This shift requires agents to autonomously explore repositories and locate vulnerability-relevant code, instead of performing detection on preselected functions. However, existing benchmarks primarily focus on vulnerability classification over preselected code snippets, limiting their ability to evaluate coding agents in repository-level vulnerability detection. Moreover, without fine-grained vulnerability trace annotations, the capability limitations underlying the detection process remain difficult to explore. To address these limitations, we present \\textbf{VulnGym}, a real-world repository-level benchmark for evaluating vulnerability detection by coding agents. VulnGym aligns reviewed GitHub advisories with their corresponding vulnerable version repositories. It contains 184 advisories and 408 vulnerability entries across 23 repositories, with each entry annotated with line-level entry points, critical operations, and vulnerability traces. Using this fine-grained ground truth, VulnGym defines an end-to-end detection task and three oracle-based subtasks to jointly evaluate vulnerability detection and diagnose limitations in code localization and evidence construction. Our evaluation indicates that current coding agents remain limited in both end-to-end repository-level vulnerability detection and the construction of accurate supporting traces.",
+   "authors": [
+    "Kexing Ji",
+    "Jiachen Liu",
+    "Enze Hu",
+    "Cuiyun Gao",
+    "Keke Lian",
+    "Yongheng Liu",
+    "Lei Zhang",
+    "Tian Dong"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7131824086",
+   "doi": "10.1145/3744916.3773108",
+   "title": "Evaluating and Improving Automated Repository-Level Rust Issue Resolution with LLM-based Agents",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 8,
+   "abstract": "The Rust programming language presents a steep learning curve and significant coding challenges, making the automation of issue resolution essential for its broader adoption. Recently, LLM-powered code agents have shown remarkable success in resolving complex software engineering tasks, yet their application to Rust has been limited by the absence of a large-scale, repository-level benchmark. To bridge this gap, we introduce Rust-SWE-bench, a benchmark comprising 500 real-world, repository-level software engineering tasks from 34 diverse and popular Rust repositories. We then perform a comprehensive study on Rust-SWE-bench with four representative agents and four state-of-the-art LLMs to establish a foundational understanding of their capabilities and limitations in the Rust ecosystem.",
+   "authors": [
+    "Jiahong Xiang",
+    "Wenxiao He",
+    "Xihua Wang",
+    "Hongliang Tian",
+    "Yuqun Zhang"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411119411",
+   "doi": "10.18653/v1/2025.naacl-long.633",
+   "title": "CSR-Bench: Benchmarking LLM Agents in Deployment of Computer Science Research Repositories",
+   "year": 2025,
+   "venue": "Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT)",
+   "type": "conference-paper",
+   "cited_by": 16,
+   "abstract": "Yijia Xiao, Runhui Wang, Luyang Kong, Davor Golac, Wei Wang. Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2025.",
+   "authors": [
+    "Yijia Xiao",
+    "Runhui Wang",
+    "Luyang Kong",
+    "Davor Golac",
+    "Wei William Wang"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7163915557",
+   "doi": "10.48550/arxiv.2606.07297",
+   "title": "SWE-Explore: Benchmarking How Coding Agents Explore Repositories",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 34,
+   "abstract": "Repository-level coding benchmarks such as SWE-bench have driven a rapid surge in the capabilities of coding agents. Yet they usually treat coding tasks as a holistic, binary prediction problem (e.g., resolved or unresolved), neglecting fine-grained agent capabilities such as repository understanding, context retrieval, code localization, and bug diagnosis. In this paper, we introduce SWE-Explore, a benchmark that isolates the evaluation of repository exploration, a critical capability of coding agents. Given a repository and an issue, SWE-Explore asks an explorer to return a ranked list of relevant code regions under a fixed line budget. SWE-Explore covers 848 issues across 10 programming languages and 203 open-source repositories. For each instance, we derive line-level ground truth from independent agent trajectories that successfully solved the same issue, distilling the specific code regions their solution paths actually consulted. We evaluate exploration along coverage, ranking, and context-efficiency dimensions, showing that these metrics strongly track downstream repair behavior. Across a broad set of retrieval methods, general coding agents, and specialized localizers, we find that agentic explorers form a clear tier above classical retrieval. While file-level localization is already strong for modern methods, line-level coverage and efficient ranking remain the key axes differentiating state-of-the-art explorers.",
+   "authors": [
+    "Shaoqiu Zhang",
+    "Yuhang Wang",
+    "Jialiang Liang",
+    "Yuling Shi",
+    "Wenhao Zeng",
+    "Maoquan Wang",
+    "Shilin He",
+    "Ningyuan Xu"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7167246132",
+   "doi": "10.5281/zenodo.21157034",
+   "title": "Repository-Level Code Generation with Retrieval-Augmented Large Language Model Agents",
+   "year": 2024,
+   "venue": "International Journal on Recent and Innovation Trends in Computing and Communication",
+   "type": "article",
+   "cited_by": 0,
+   "abstract": "Most code-generation benchmarks score a model on self-contained functions in a single file. Real software is writteninside repositories, where a correct edit depends on cross-file types, project conventions, and executable test suites\u2014asetting today\u2019s public suites largely ignore. We present REPOFORGE, a benchmark and an open retrieval-augmented agentframework for repository-level code generation. REPOFORGE contains 4,140 executable items mined from 612permissively licensed GitHub repositories across five programming languages, spanning four task families: single-filecompletion, cross-file completion, program repair, and feature implementation. Every item ships with a project contextand a hidden test suite, so correctness is measured by execution rather than by textual overlap. The accompanyingREPOFORGE agent couples structure-aware dense retrieval with an iterative reason\u2013retrieve\u2013edit\u2013test loop that groundsgeneration in the repository. Across six 2023-era code models, retrieval-augmented prompting lifts execution Pass@1 by19\u201330 points over a no-retrieval baseline, and the REPOFORGE agent adds a further 6\u20138 points over static dense retrieval,reaching 86.3% Pass@1 with GPT-4. We release the benchmark, the harness, and all evaluation scripts to serve as areproducible baseline for repository-level software engineering with LLMs.",
+   "authors": [
+    "Veera Ravindra Divi"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414564940",
+   "doi": "10.48550/arxiv.2503.06680",
+   "title": "FEA-Bench: A Benchmark for Evaluating Repository-Level Code Generation for Feature Implementation",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 36,
+   "abstract": "Implementing new features in repository-level codebases is a crucial application of code generation models. However, current benchmarks lack a dedicated evaluation framework for this capability. To fill this gap, we introduce FEA-Bench, a benchmark designed to assess the ability of large language models (LLMs) to perform incremental development within code repositories. We collect pull requests from 83 GitHub repositories and use rule-based and intent-based filtering to construct task instances focused on new feature development. Each task instance containing code changes is paired with relevant unit test files to ensure that the solution can be verified. The feature implementation requires LLMs to simultaneously possess code completion capabilities for new components and code editing abilities for other relevant parts in the code repository, providing a more comprehensive evaluation method of LLMs' automated software engineering capabilities. Experimental results show that LLMs perform significantly worse in the FEA-Bench, highlighting considerable challenges in such repository-level incremental code development.",
+   "authors": [
+    "Wei Li",
+    "Zhang, Xin",
+    "Zhongxin Guo",
+    "Shaoguang Mao",
+    "Luo, Wen",
+    "Guangyue Peng",
+    "Yangyu Huang",
+    "Houfeng Wang"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161728449",
+   "doi": "10.48550/arxiv.2605.18693",
+   "title": "SkillGenBench: Benchmarking Skill Generation Pipelines for LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 23,
+   "abstract": "As LLM agents are increasingly built around reusable skills, a central challenge is no longer only whether agents can use provided skills, but whether they can generate correct, reusable, and executable skills from repositories and documents. Existing benchmarks primarily evaluate the efficacy of given skills or the ability of agents to solve downstream tasks from raw context, but they do not isolate skill generation itself as the object of study. We introduce SkillGenBench, a benchmark for evaluating skill generation pipelines under a unified and controlled protocol. In SkillGenBench, a generator receives raw corpora and produces standardized skill artifacts, which are then executed under fixed harnesses and assessed with unified evaluation procedures. The benchmark covers two generation regimes: task-conditioned generation, where a task-specific skill is synthesized after the task is revealed, and task-agnostic generation, where a reusable skill library must be distilled before downstream tasks are known. It also spans two complementary procedural sources: repository-grounded instances, where procedures are distributed across code, configuration, and scripts, and document-grounded instances, where procedures and constraints must be distilled from long-form text. We provide standardized task specifications, pinned environments, and evaluation protocols centered on deterministic execution-based checks, supplemented by auxiliary signals for diagnosis. Experiments across a range of skill-generation methods and backbones show substantial performance variation, highlight the difficulty of reusable skill distillation, and reveal distinct failure modes in skill generation from software repositories versus long-form documents. SkillGenBench establishes a reproducible testbed for studying skill generation as an independent research problem in agent systems.",
+   "authors": [
+    "Yifan Zhou",
+    "Zhentao Zhang",
+    "Ziming Cheng",
+    "Shuo Zhang",
+    "Qizhen Lan",
+    "Zhangquan Chen",
+    "Zhi Yang",
+    "QianyuXu"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  }
+ ]
+}

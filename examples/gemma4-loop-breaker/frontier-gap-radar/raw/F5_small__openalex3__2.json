@@ -1,0 +1,516 @@
+{
+ "url": "https://api.openalex.org/works?search=low-bit+quantization+agentic+capabilities+benchmark&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4406123441",
+   "doi": "10.48550/arxiv.2501.03035",
+   "title": "Quantization Meets Reasoning: Exploring LLM Low-Bit Quantization Degradation for Mathematical Reasoning",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 45,
+   "abstract": "Large language models have achieved significant advancements in complex mathematical reasoning benchmarks, such as MATH. However, their substantial computational requirements present challenges for practical deployment. Model quantization has emerged as an effective strategy to reduce memory usage and computational costs by employing lower precision and bit-width representations. In this study, we systematically evaluate the impact of quantization on mathematical reasoning tasks. Our results demonstrate that aggressive quantization methods like AWQ and GPTQ introduce up to 32.39% accuracy degradation (average 11.31%) on Llama-3 models, particularly in numerical computation and reasoning planning. To address this, we introduce a multidimensional evaluation framework combining qualitative capability analysis and quantitative error assessment. We further develop targeted recovery strategies, showing that fine-tuning quantized models on only 545 task-specific examples for 3 minutes on 4 GPUs effectively restores reasoning capabilities to near full-precision levels. Additionally, our error assessment pipeline achieves 98.9% accuracy in diagnosing and localizing errors across 3,366 failure cases, providing actionable insights for mitigating quantization-induced degradation.",
+   "authors": [
+    "Li, Zhen",
+    "Yupeng Su",
+    "Yang, Runming",
+    "Xie, Congkai",
+    "Wang, Zheng",
+    "Zhongwei Xie",
+    "Ngai Wong",
+    "Hongxia Yang"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417084370",
+   "doi": "10.48550/arxiv.2505.05530",
+   "title": "Low-bit Model Quantization for Deep Neural Networks: A Survey",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 20,
+   "abstract": "With unprecedented rapid development, deep neural networks (DNNs) have deeply influenced almost all fields. However, their heavy computation costs and model sizes are usually unacceptable in real-world deployment. Model quantization, an effective weight-lighting technique, has become an indispensable procedure in the whole deployment pipeline. The essence of quantization acceleration is the conversion from continuous floating-point numbers to discrete integer ones, which significantly speeds up the memory I/O and calculation, i.e., addition and multiplication. However, performance degradation also comes with the conversion because of the loss of precision. Therefore, it has become increasingly popular and critical to investigate how to perform the conversion and how to compensate for the information loss. This article surveys the recent five-year progress towards low-bit quantization on DNNs. We discuss and compare the state-of-the-art quantization methods and classify them into 8 main categories and 24 sub-categories according to their core techniques. Furthermore, we shed light on the potential research opportunities in the field of model quantization. A curated list of model quantization is provided at https://github.com/Kai-Liu001/Awesome-Model-Quantization.",
+   "authors": [
+    "Kai Liu",
+    "Qian Sheng Zheng",
+    "Tao, Kaiwen",
+    "Zhiteng Li",
+    "Haotong Qin",
+    "Wenbo Li",
+    "Yong Guo",
+    "Xianglong Liu"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7202148329",
+   "doi": "10.48550/arxiv.2608.06564",
+   "title": "Which Decisions Low-Bit Quantization Breaks, and How to Predict Them",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 3,
+   "abstract": "Quantization saves memory by storing model weights with fewer bits. It can also change model decisions, such as whether to call a tool or which option to choose from a finite set. We study these decision changes in 16 language models from 8 families at 4, 3 and 2 bits, across several post-training quantization settings. Our evaluation covers tool use, safety, general knowledge and social bias, using BFCL, XSTest, MMLU, BoolQ, BBQ and synthetic tasks. The decision margin is the score difference between two possible first tokens, measured before and after quantization. Writing the margin before quantization as $m$ and the margin after quantization as $m'$, we find an approximately linear relationship across decisions: $m' \\approx c m + b$. The slope $c$ is usually below one and becomes smaller as precision falls, so quantization progressively shrinks decision margins. The offset $b$ is the same for every decision of one kind. Quantization therefore does not simply add random noise, and even a strong preference at full precision can flip. Quantization also affects different kinds of decisions to different degrees. Within tool use, whether to call a tool is often more sensitive than which tool to call: on 400 BFCL tasks, three of five models lose more completed calls than correct tool selections at 3-bit round-to-nearest. Under GPTQ and GGUF far fewer whether-to-call decisions flip than under plain rounding, so there is no single 3-bit failure point. The same relationship predicts how often decisions flip. Across 1,082 combinations of models, quantization settings, bit-widths and decision types, we fit the slope, the offset and the spread around the fitted line on half of the decisions and predict the flip rate on the other half. The predicted flip rate differs from the observed flip rate by a median of 1.0 percentage point, while reusing the flip rate of the first half misses by 1.3.",
+   "authors": [
+    "Zekun Wu",
+    "Swati Dhiman",
+    "Adriano Koshiyama"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4389794056",
+   "doi": "10.1007/s44267-023-00031-w",
+   "title": "RobustMQ: benchmarking robustness of quantized models",
+   "year": 2023,
+   "venue": "Visual Intelligence",
+   "type": "article",
+   "cited_by": 22,
+   "abstract": "Abstract Quantization has emerged as an essential technique for deploying deep neural networks (DNNs) on devices with limited resources. However, quantized models exhibit vulnerabilities when exposed to various types of noise in real-world applications. Despite the importance of evaluating the impact of quantization on robustness, existing research on this topic is limited and often disregards established principles of robustness evaluation, resulting in incomplete and inconclusive findings. To address this gap, we thoroughly evaluated the robustness of quantized models against various types of noise (adversarial attacks, natural corruption, and systematic noise) on ImageNet. The comprehensive evaluation results empirically provide valuable insights into the robustness of quantized models in various scenarios. For example: 1) quantized models exhibit higher adversarial robustness than their floating-point counterparts, but are more vulnerable to natural corruption and systematic noise; 2) in general, increasing the quantization bit-width results in a decrease in adversarial robustness, an increase in natural robustness, and an increase in systematic robustness; 3) among corruption methods, impulse noise and glass blur are the most harmful to quantized models, while brightness has the least impact; 4) among different types of systematic noise, the nearest neighbor interpolation has the highest impact, while bilinear interpolation, cubic interpolation, and area interpolation are the three least harmful. Our research contributes to advancing the robust quantization of models and their deployment in real-world scenarios.",
+   "authors": [
+    "Yisong Xiao",
+    "Aishan Liu",
+    "Tianyuan Zhang",
+    "Haotong Qin",
+    "Jinyang Guo",
+    "Xianglong Liu"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7133233472",
+   "doi": "10.52202/075280-0441",
+   "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+   "year": 2023,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 4084,
+   "abstract": "We present QLoRA, an efficient finetuning approach that reduces memory usage enough to finetune a 65B parameter model on a single 48GB GPU while preserving full 16-bit finetuning task performance. QLoRA backpropagates gradients through a frozen, 4-bit quantized pretrained language model into Low Rank Adapters~(LoRA). Our best model family, which we name Guanaco, outperforms all previous openly released models on the Vicuna benchmark, reaching 99.3% of the performance level of ChatGPT while only requiring 24 hours of finetuning on a single GPU. QLoRA introduces a number of innovations to save memory without sacrificing performance: (a) 4-bit NormalFloat (NF4), a new data type that is information theoretically optimal for normally distributed weights (b) double quantization to reduce the average memory footprint by quantizing the quantization constants, and (c) paged optimziers to manage memory spikes. We use QLoRA to finetune more than 1,000 models, providing a detailed analysis of instruction following and chatbot performance across 8 instruction datasets, multiple model types (LLaMA, T5), and model scales that would be infeasible to run with regular finetuning (e.g. 33B and 65B parameter models). Our results show that QLoRA finetuning on a small high-quality dataset leads to state-of-the-art results, even when using smaller models than the previous SoTA. We provide a detailed analysis of chatbot performance based on both human and GPT-4 evaluations showing that GPT-4 evaluations are a cheap and reasonable alternative to human evaluation. Furthermore, we find that current chatbot benchmarks are not trustworthy to accurately evaluate the performance levels of chatbots. A lemon-picked analysis demonstrates where Guanaco fails compared to ChatGPT. We release all of our models and code, including CUDA kernels for 4-bit training.",
+   "authors": [
+    "Tim Dettmers",
+    "Artidoro Pagnoni",
+    "Ari Holtzman",
+    "Luke Zettlemoyer"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7125390417",
+   "doi": "10.48550/arxiv.2601.14888",
+   "title": "What Makes Low-Bit Quantization-Aware Training Work for Reasoning LLMs? A Systematic Study",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 10,
+   "abstract": "Reasoning models excel at complex tasks such as coding and mathematics, yet their inference is often slow and token-inefficient. To improve the inference efficiency, post-training quantization (PTQ) usually comes with the cost of large accuracy drops, especially for reasoning tasks under low-bit settings. In this study, we present a systematic empirical study of quantization-aware training (QAT) for reasoning models. Our key findings include: (1) Knowledge distillation is a robust objective for reasoning models trained via either supervised fine-tuning or reinforcement learning; (2) PTQ provides a strong initialization for QAT, improving accuracy while reducing training cost; (3) Reinforcement learning remains feasible for quantized models given a viable cold start and yields additional gains; and (4) Aligning the PTQ calibration domain with the QAT training domain accelerates convergence and often improves the final accuracy. Finally, we consolidate these findings into an optimized workflow (Reasoning-QAT), and show that it consistently outperforms state-of-the-art PTQ methods across multiple LLM backbones and reasoning datasets. For instance, on Qwen3-0.6B, it surpasses GPTQ by 44.53% on MATH-500 and consistently recovers performance in the 2-bit regime.",
+   "authors": [
+    "Keyu Lv",
+    "Manyi Zhang",
+    "Xiaobo Xia",
+    "Jingchen Ni",
+    "Shannan Yan",
+    "Xianzhi Yu",
+    "Lu Hou",
+    "Chun Yuan"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416176707",
+   "doi": "10.48550/arxiv.2508.06753",
+   "title": "Pushing the Envelope of LLM Inference with Ultra-Low-Bit Quantized Models",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 3,
+   "abstract": "The advent of ultra-low-bit LLM models, approaching the perplexity and task accuracy of their full precision counterparts, is ushering in a new era of LLM inference. While these advances promise models that are cost-effective regarding latency, memory, throughput, and energy consumption, the efficiency of runtimes for deploying ultra-low-bit models remains under-explored. In this work, we take a bottom-up approach: we first implement 2-bit microkernels for modern CPUs, achieving close-to-roofline performance. We integrate these microkernels into LLM inference pipelines and present end-to-end results with 2-bit models, outperforming the state-of-the-art (SOTA) bitnet.cpp runtime by 2.2$\\times$, and deliver up to 7$\\times$ speedup compared to 16-bit inference. We extend this work to Intel Xe2 GPUs where we implement mixed-precision, 2-bit kernels, and show their performance to be close-to-optimal. We integrated the GPU kernels in the vLLM framework and evaluated end-to-end inference for a range of models and Xe2 GPUs. We obtain up to 6.7$\\times$ speedup compared to the 16-bit pipeline, pushing the envelope of LLM inference.",
+   "authors": [
+    "Evangelos Georganas",
+    "Dhiraj D. Kalamkar",
+    "Alexander Heinecke",
+    "Dubey, Pradeep"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7127622704",
+   "doi": "10.48550/arxiv.2602.03760",
+   "title": "RAWDet-7: A Multi-Scenario Benchmark for Object Detection and Description on Quantized RAW Images",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "Most vision models are trained on RGB images processed through ISP pipelines optimized for human perception, which can discard sensor-level information useful for machine reasoning. RAW images preserve unprocessed scene data, enabling models to leverage richer cues for both object detection and object description, capturing fine-grained details, spatial relationships, and contextual information often lost in processed images. To support research in this domain, we introduce RAWDet-7, a large-scale dataset of ~25k training and 7.6k test RAW images collected across diverse cameras, lighting conditions, and environments, densely annotated for seven object categories following MS-COCO and LVIS conventions. In addition, we provide object-level descriptions derived from the corresponding high-resolution sRGB images, facilitating the study of object-level information preservation under RAW image processing and low-bit quantization. The dataset allows evaluation under simulated 4-bit, 6-bit, and 8-bit quantization, reflecting realistic sensor constraints, and provides a benchmark for studying detection performance, description quality & detail, and generalization in low-bit RAW image processing. Dataset & code upon acceptance.",
+   "authors": [
+    "Mishal Fatima",
+    "Shashank Agnihotri",
+    "Kanchana Vaishnavi Gandikota",
+    "Michael Moeller",
+    "Margret Keuper"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7119478092",
+   "doi": "10.48550/arxiv.2601.03484",
+   "title": "From Bits to Chips: An LLM-based Hardware-Aware Quantization Agent for Streamlined Deployment of LLMs",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "Deploying models, especially large language models (LLMs), is becoming increasingly attractive to a broader user base, including those without specialized expertise. However, due to the resource constraints of certain hardware, maintaining high accuracy with larger model while meeting the hardware requirements remains a significant challenge. Model quantization technique helps mitigate memory and compute bottlenecks, yet the added complexities of tuning and deploying quantized models further exacerbates these challenges, making the process unfriendly to most of the users. We introduce the Hardware-Aware Quantization Agent (HAQA), an automated framework that leverages LLMs to streamline the entire quantization and deployment process by enabling efficient hyperparameter tuning and hardware configuration, thereby simultaneously improving deployment quality and ease of use for a broad range of users. Our results demonstrate up to a 2.3x speedup in inference, along with increased throughput and improved accuracy compared to unoptimized models on Llama. Additionally, HAQA is designed to implement adaptive quantization strategies across diverse hardware platforms, as it automatically finds optimal settings even when they appear counterintuitive, thereby reducing extensive manual effort and demonstrating superior adaptability. Code will be released.",
+   "authors": [
+    "Kaiyuan Deng",
+    "Hangyu Zheng",
+    "Minghai Qing",
+    "Kunxiong Zhu",
+    "Gen Li",
+    "Yang Xiao",
+    "Lan Emily Zhang",
+    "Linke Guo"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4399657599",
+   "doi": "10.48550/arxiv.2406.08184",
+   "title": "MobileAgentBench: An Efficient and User-Friendly Benchmark for Mobile LLM Agents",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 74,
+   "abstract": "Large language model (LLM)-based mobile agents are increasingly popular due to their capability to interact directly with mobile phone Graphic User Interfaces (GUIs) and their potential to autonomously manage daily tasks. Despite their promising prospects in both academic and industrial sectors, little research has focused on benchmarking the performance of existing mobile agents, due to the inexhaustible states of apps and the vague definition of feasible action sequences. To address this challenge, we propose an efficient and user-friendly benchmark, MobileAgentBench, designed to alleviate the burden of extensive manual testing. We initially define 100 tasks across 10 open-source apps, categorized by multiple levels of difficulty. Subsequently, we evaluate several existing mobile agents, including AppAgent and MobileAgent, to thoroughly and systematically compare their performance. All materials are accessible on our project webpage: https://MobileAgentBench.github.io, contributing to the advancement of both academic and industrial fields.",
+   "authors": [
+    "Luyuan Wang",
+    "Yongyu Deng",
+    "Yiwei Zha",
+    "Guodong Mao",
+    "Qinmin Wang",
+    "Tianchen Min",
+    "Chen, Wei",
+    "Shoufa Chen"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7225790577",
+   "doi": "10.48550/arxiv.2611.13410",
+   "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Low-bit quantization reduces the inference cost of LLM agents but can compromise task success. Examining failed rollouts, we find that quantized agents overlook task requirements or environmental conditions, producing environment transitions that diverge from successful full-precision references. Correcting these behavioral divergences remains difficult: offline data may miss the student's failure contexts, while its own rollouts may provide few correct responses in those contexts. We introduce SteerDistill, a quantization-aware distillation method in which a full-precision teacher guides the student to revise failed responses and iteratively refines its guidance using feedback from student execution. This closed-loop teacher steering produces locally verified behavioral corrections. We internalize these corrections by training the student without guidance to match the steered student's predictions at corrected turns and the full-precision teacher's at other turns, enabling unassisted inference. Across five agentic benchmarks and three models, SteerDistill exceeds the strongest quantized baseline by 1.67--2.18 points in average score under W4A16 and stays within one point of BF16. On $\u03c4^2$-Bench, it outperforms QeRL by 1.84 percentage points in success rate using 67% fewer training GPU hours and produces shorter successful trajectories than the quantized baselines.",
+   "authors": [
+    "Genming Cui",
+    "Xiangyu Li",
+    "Zixu Hao",
+    "Xin Ding",
+    "Yunxin Liu",
+    "Ting Cao"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416036919",
+   "doi": "10.18653/v1/2025.emnlp-main.494",
+   "title": "XQuant: Achieving Ultra-Low Bit KV Cache Quantization with Cross-Layer Compression",
+   "year": 2025,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 1,
+   "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities across diverse natural language processing tasks.However, their extensive memory requirements, particularly due to KV cache growth during long-text understanding and generation, present significant challenges for deployment in resourceconstrained environments.Quantization has emerged as a promising solution to reduce memory consumption while preserving historical information.We propose XQuant, a training-free and plug-and-play framework that achieves ultra-low equivalent bit-width KV cache quantization.XQuant introduces two key innovations: a computationally negligible data-free calibration method and cross-layer KV cache compression, enabling quantization to sub-1.4 bits.Extensive experiments on TruthfulQA and LongBench demonstrate that XQuant outperforms state-of-the-art methods (e.g., KIVI-2bit and AsymKV-1.5bit)by achieving lower bit-width while maintaining superior performance, establishing a better trade-off between memory efficiency and model accuracy.The source code is available at https: //github.com/brinenick511/XQuant.KeyCache[l][0], 14 KeyCache[l][1], 15 KeyCache[l][2] 16 else 17 DequantizedKey \u2190 Dequantize 18 KeyCache[l -1][0], 19 KeyCache[l -1][1], 20 KeyCache[l][2] 21 if l < vm or l mod 2 == 0 then 22 DequantizedValue \u2190 Dequantize 23 ValueCache[l][0], 24 ValueCache[l][1], 25 ValueCache[l][2] 26 else 27 DequantizedValue \u2190 Dequantize 28 ValueCache[l -1][0], 29 ValueCache[l -1][1], 30 ValueCache[l][2]",
+   "authors": [
+    "Haoqi Yang",
+    "Yao Yao",
+    "Zuchao Li",
+    "Baoyuan Qi",
+    "Liu Guoming",
+    "Hai Zhao"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7204073147",
+   "doi": "10.48550/arxiv.2608.21134",
+   "title": "Llama-Mobile: Efficient 2.7-Bit Quantization of VLMs",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Deploying vision-language models (VLMs) on mobile devices is challenging due to their significant memory and compute requirements. We present a framework for quantizing VLMs for efficient inference on resource-constrained hardware. Our approach combines a quantization pipeline that uses the model itself to generate training data and does not require access to the training setup, with a novel 2.7-bit-per-parameter format supporting efficient execution on Arm CPUs. We validate our approach by compressing the Llama 3.2 11B Vision Instruct model to 3.7 GB with 8-bit activations, preserving strong performance on a set of standard visual question answering tasks.",
+   "authors": [
+    "Luka Ribar",
+    "Jeevan Bhoot",
+    "Douglas Orr"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7108913547",
+   "doi": "10.48550/arxiv.2512.04746",
+   "title": "SignRoundV2: Toward Closing the Performance Gap in Extremely Low-Bit Post-Training Quantization for LLMs",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 7,
+   "abstract": "Extremely low-bit quantization is critical for efficiently deploying Large Language Models (LLMs), yet it often leads to severe performance degradation at 2 bits and even at 4 bits (e.g., MXFP4). We present SignRoundV2, a post-training quantization framework designed to maintain high performance even under aggressive compression. SignRoundV2 introduces (1) a simple yet efficient adaptive mixed-precision strategy that leverages gradient information and quantization-induced reconstruction errors to guide layer-wise bit allocation, and (2) a set of lightweight stabilization techniques, including loss filtering and a pre-tuning scale search, to improve tuning effectiveness in extremely low-bit regimes. Our approach takes a significant step toward closing the performance gap between quantized and full-precision models. Experimental results across diverse LLMs demonstrate that SignRoundV2 achieves near-lossless performance in mixed MXFP settings, narrowing the gap to $\\sim$1\\% at an average of 4.5 bits, while substantially improving accuracy in challenging 2-bit weight-only quantization. The source code is available at \\url{https://github.com/intel/auto-round}.",
+   "authors": [
+    "Cheng, Wenhua",
+    "Zhang, Weiwei",
+    "Guo, Heng",
+    "Shen, Haihao",
+    "Ma, Zaner"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7204966218",
+   "doi": "10.18653/2026.emnlp-main.2414",
+   "title": "Q-Strata: Hierarchical Bit Allocation for Mixed-Precision Quantization of Mixture-of-Experts LLMs",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 2,
+   "abstract": "Mixed-precision quantization (MPQ) assigns a different bitwidth to each linear layer of a large language model (LLM) to minimize the quantization-induced quality loss under a fixed budget, but Mixture-of-Experts (MoE) models contain these layers in every expert of every MoE block, so the allocation space grows far larger than in a dense model.Existing methods either allocate within each block under a uniform per-block budget, or allocate across blocks through an additive proxy, and neither directly optimizes a model-level objective over the choices that couple the blocks.We propose Q-STRATA, a bi-level allocator that ranks within-block assignments with a cheap proxy and allocates across blocks with a model-level objective evaluated on the assembled quantized model.Its inner stage caches a Pareto frontier of candidates per block over finely spaced budgets, leaving the outer stage to set one budget per block instead of a bitwidth for every linear layer.With the search reduced to one budget per block, the outer stage optimizes this model-level objective directly, capturing the inter-block coupling that additive proxies miss.On Mixtral-8x7B-Instruct, Qwen1.5-MoE-A2.7B,and DeepSeek-V2-Lite, Q-STRATA consistently achieves lower Wiki-Text2 perplexity than uniform-bitwidth GPTQ and the state-of-the-art MoE MPQ methods MxMoE and GEMQ in the low-bit regime.The code is available at https://github.com/ snu-mllab/Q-Strata/tree/main.",
+   "authors": [
+    "Deokjae Lee",
+    "Sihun Chu",
+    "Hyun Oh Song"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7212031868",
+   "doi": "10.18653/2026.emnlp-main.590",
+   "title": "All for 1-Bit: Towards Genuine 1-Bit Post-Training Quantization for LLMs",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 3,
+   "abstract": "Large language models (LLMs) have achieved remarkable progress, yet their massive storage and memory-bandwidth demands still hinder efficient deployment.Weight binarization is a promising solution, but existing binarizationbased post-training quantization (PTQ) methods usually far exceed the nominal 1-bit storage target due to hidden overhead.To address this gap, we propose All for 1-Bit (AF1), a genuine 1-bit PTQ framework for LLMs.AF1 comprises two complementary components: (1) Null-space-Aware Binary Factorization (NABF) for improving binary reconstruction through Hessian-aware surrogate reparameterization, null-space-aware binary factorization, and scale-only global reconstruction; and(2) Hierarchical Shapley Allocation (HiSA) for assigning structural capacity using hierarchical Shapley sensitivity.Together, they preserve model accuracy under a strict 1.0 effective-BPW budget for target linear weights in the PTQ setting.Experiments on LLaMA, Qwen, and Gemma families show that AF1 consistently outperforms existing binarization-based PTQ methods in perplexity and zero-shot accuracy.Compared with BF16, AF1 achieves an average 2.5\u00d7 inference speedup and over 90% memory reduction across evaluated models, providing a practical path toward deployable genuine 1-bit compression for LLMs.The code for reproducibility is available at AF1.",
+   "authors": [
+    "Zhixiong Zhao",
+    "Zukang Xu",
+    "Guangyu Sun",
+    "Lifeng Liu",
+    "Dawei Yang"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7160046151",
+   "doi": "10.55041/ijcope.v2i4.942",
+   "title": "PEFT Fine-Tuning with 1.58-Bit Quantization for a Quantum Computing Research Agent Chatbot: Architecture, Mathematical Foundations, and Practical Implementation",
+   "year": 2026,
+   "venue": "International Journal of Creative and Open Research in Engineering and Management",
+   "type": "article",
+   "cited_by": 0,
+   "abstract": "Quantum computing represents one of the most technically dense frontiers in modern science, with specialized vocabulary spanning quantum gates, superposition, entanglement, variational quantum algorithms, and error-correction codes. Providing accurate, real-time research-grade assistance in this domain requires an LLM that is both highly capable and deployable on resource-constrained hardware. This paper presents the design and deployment of a Quantum Computing Research Agent Chatbot powered by PEFT fine-tuning of a 1.58-bit quantized LLM (BitNet b1.58). We extend the mathematical frameworks of Low-Rank Adaptation (LoRA), Adapter Layers, and Prefix Tuning to the quantum-domain fine-tuning context, incorporating a bespoke quantum-terminology corpus and a Retrieval-Augmented Generation (RAG) layer backed by a curated quantum literature index. We derive the rank\u2013accuracy trade-off in the context of quantum NLP tasks, show that LoRA at rank r = 16 achieves an F1 score of 88.7 on quantum question-answering benchmarks while using only 0.13% of full model parameters, and demonstrate end-to-end inference at 4.2 tokens/second on a single NVIDIA T4 GPU. The proposed agent pipeline integrates with academic literature APIs (arXiv, Semantic Scholar) and supports multi-turn research dialogues, citation generation, and mathematical expression rendering. Keywords\u2014 Quantum Computing Chatbot, PEFT, BitNet 1.58-bit Quantization, Low-Rank Adaptation, Research Agent, Retrieval-Augmented Generation, Ternary Weight Matrices, Quantum NLP",
+   "authors": [
+    "Rasikannan.L Rasikannan.L",
+    "Mohamed Israk.B Mohamed Israk.B",
+    "Vijay.K Vijay.K",
+    "Vinoth Kumar.G Vinoth Kumar.G",
+    "Sabtharishi.G Sabtharishi.G"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414981984",
+   "doi": "10.18653/v1/2026.acl-long.1454",
+   "title": "VecInfer: Efficient LLM Inference with Low-Bit KV Cache via Outlier-Suppressed Vector Quantization",
+   "year": 2026,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 5,
+   "abstract": "Dingyu Yao, Chenxu Yang, Zhengyang Tong, Zheng Lin, Wei Liu, Jian Luan, Weiping Wang. Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2026.",
+   "authors": [
+    "Dingyu Yao",
+    "Chenxu Yang",
+    "Zhengyang Tong",
+    "Zheng Lin",
+    "Wei Liu",
+    "Jian Luan",
+    "Weiping Wang"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161722262",
+   "doi": "10.48550/arxiv.2605.17170",
+   "title": "TriAxialKV: Toward Extreme Low-Precision KV-Cache Quantization for Agentic Inference Tasks",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 4,
+   "abstract": "Agentic workloads have emerged as a major workload for LLM inference. They differ significantly from chat-only workloads, requiring long-context processing, the ability to handle multimodal inputs, and structured multi-turn interactions with tool calling capabilities. As a result, their context exhibits structure that can carry different importance along three key axes: temporal recency to the current turn, modality such as text or image tokens, and semantic role such as user queries, tool calls, observations, or reasoning. These axes capture distinct token behaviors and lead to different sensitivities to KV-cache compression. However, existing KV-cache quantization methods are typically homogeneous or exploit only heterogeneity on a single dimension, such as temporal proximity or modality, overlooking the interactions among them. To this end, we introduce TriAxialKV, a novel mixed-precision KV-cache quantization scheme that assigns each token a triaxial tag, calibrates per-tag sensitivity, and allocates INT2/INT4 bitwidths under a fixed memory budget. We implement TriAxialKV as an end-to-end serving system, comprising calibration, mixed-precision quantization and memory management, and custom fused Triton decode kernels. When using Qwen3-VL-32B-Thinking as a computer-use agent operating the OSWorld, TriAxialKV matches the accuracy of SGLang with BF16 KV cache while supporting 4.5$\\times$ KV cache size and achieving 30% higher end-to-end throughput, when running on real GPU systems.",
+   "authors": [
+    "Hanzhang Shen",
+    "Haoran Wu",
+    "Yiren Zhao",
+    "Robert Mullins"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7203700465",
+   "doi": "10.48550/arxiv.2608.15117",
+   "title": "Anatomy of a Quantized Agent: VRAM Stability and Forecasting in Code-Synthesis Agentic Workloads",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Analytical models of peak VRAM consumption for LLM inference decompose memory into weight-storage, KV-cache, and activation terms parameterized by step count, tool invocations, and context expansion. We evaluate this decomposition empirically within a strictly scoped measurement study: a LangGraph-based CUDA-kernel-synthesis agent (AgentK), a 4-bit quantization family (Q4 K M), a single NVIDIA H100 GPU, and four LLM backbones across 1,920 trajectories. Focusing on peak-memory forecasting behavior, we report two primary observations. First, closed-form analytical models achieve competitive accuracy when provided with two empirical constants: loaded-weight VRAM and a fixed activation-memory overhead. Supplied with live GPU readings and ground-truth trajectory parameters, the closed-form model matches or outperforms the best learned baseline on three of the four backbones (test MAPE 2.2-4.4% vs. 3.4-6.5%, p = 0.76). The exception is the smallest backbone (Phi-4-mini), where minimal VRAM variance (CV 0.3%) causes dynamic modeling to underperform simple regression. Second, compile success strictly bifurcates by backbone capacity (from 5.7% for Phi-4-mini to 62.0% for Qwen2.5-Coder-14B), demonstrating that functional code synthesis remains constrained by intrinsic LLM capabilities rather than available memory. Furthermore, because overall peak-memory variance is remarkably low across all backbones (CV 0.3-9.4%), learned prompt-feature regression offers statistically insignificant improvements over a constant-mean baseline. Consequently, we find no justification for deploying complex predictive VRAM models in highly quantized, weight-dominated regimes. We release the evaluated corpus and anonymized framework to support replication.",
+   "authors": [
+    "Anubhab Banerjee"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7225146253",
+   "doi": "10.48550/arxiv.2611.02368",
+   "title": "Beyond Accuracy: How Quantization Affects Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "Agents are increasingly used for coding tasks, but the inference cost of large language models (LLMs) limits where they can run. Quantization reduces model size, but its effects on coding agents that execute and revise programs remain underexplored. We compare BF16 with 4-bit AWQ and GPTQ for Qwen2.5-Coder-Instruct (7B, 14B, and 32B) and Devstral-Small-2507 (24B) on OJBench coding problems across three seeds. We detect no statistically significant accuracy loss for any of the coding agents. However, final accuracy can conceal substantial behavioral changes: AWQ reduces Qwen-7B one-shot solves from 17 to 0 while increasing loop-based solves from 10 to 25. All Qwen-32B successes involve tool use, whereas Devstral rarely makes a valid executor call. Failure profiles also differ: Qwen-32B produces far more compilation errors than the smaller Qwen models, rising slightly under quantization, while Devstral's failures shift significantly from runtime errors toward wrong answers and timeouts. These findings indicate that quantization robustness in coding agents should be assessed through solution trajectories, tool use, and failure modes, in addition to final accuracy.",
+   "authors": [
+    "Areej Mehboob",
+    "Muhammad Ali Shafique",
+    "Muhammad Qadeer",
+    "Hamza Farooq"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223294044",
+   "doi": "10.48550/arxiv.2610.30779",
+   "title": "ProQuant: Preserving Expert Quality over Quantity in Ultra-Low-Bit Quantization of Mixture-of-Experts Models",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Mixture-of-Experts (MoE) large language models reduce computation through sparse activation but still incur substantial storage costs. Mixed-precision post-training quantization (PTQ) reduces these costs by quantizing different model components at different bit widths, but existing methods often struggle to preserve generation quality under tight bit budgets. We identify two key challenges: (1) nonlinear quantization errors at extremely low precision are underestimated when cross-layer propagation is ignored; (2) direct router fine-tuning may cause routing drift, and calibration gains may not generalize to downstream tasks. To address these issues, we propose ProQuant, a weight-only PTQ framework for MoE models. Prune-or-Prioritize Mixed-Precision Allocation (PoP) jointly optimizes expert pruning and bit-width assignment. It allows higher-precision experts to substitute for severely degraded ones while improving bit-budget utilization. Routing-Consistent RMSNorm Finetune (RoCo) adapts expert input representations through mathematically equivalent transformations. It compensates for quantization errors to reduce routing drift. Extensive experiments demonstrate that ProQuant outperforms existing methods across diverse generative tasks. Code is available at https://github.com/ThrowBug/ProQuant.git.",
+   "authors": [
+    "Jiaqi Chen",
+    "Xianglong Yan",
+    "Chengzhu Bao",
+    "Xie Chen",
+    "Yulun Zhang"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7172447540",
+   "doi": "10.48550/arxiv.2608.01078",
+   "title": "Attend to Your Own Thoughts: Breaking the Barrier for Post-Training Quantization of Reasoning LLMs through the Lens of 1.58-Bit Quantization",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 7,
+   "abstract": "We propose ScaleQ-1.58, a scalable ternary post-training quantization (PTQ) framework for reasoning LLMs. Its core insight stems from an empirical finding: although modern LLMs are typically trained to exhibit chain-of-thought reasoning capabilities, in the PTQ regime, even the latest CAT-Q method based on learning-based differentiable ternarization still leads to performance collapse on challenging mathematics and coding tasks when using conventional calibration schemes that ignore the model's reasoning process. Driven by this finding, we introduce a simple calibration approach, Attend to Your Own Thoughts (AYOT), where reasoning traces and final answers generated by the pre-trained high-precision target LLM on a proper set of calibration samples are used as the context input during the ternarization process, along with the corresponding questions. ScaleQ-1.58 is formed by simply integrating AYOT with CAT-Q, which demonstrates several scaling properties: (1) with only 4M calibration tokens, Qwen3-1.7B ternarized by ScaleQ-1.58 reaches over 90.52% of the performance of the prior best BitNet b1.58 2B4T averaged over 4 mathematics and coding tasks, and our ternary Qwen3-4B shows an absolute gain of 8.97%, while requiring 1,000,000x fewer calibration tokens for quantization; (2) ScaleQ-1.58 generalizes well to both dense and MoE architectures, with performance improving as model scale increases (up to 235B parameters); (3) ScaleQ-1.58 demonstrates strong generalization across tasks of varying difficulty levels, including mathematics, coding and scientific logic reasoning, as well as commonsense reasoning and basic language generation; (4) its performance continues to improve as the number of calibration tokens increases. Notably, AYOT also exhibits strong generalization ability across other quantization bit-widths. Code will be available at https://github.com/IntelChina-AI/BitTern.",
+   "authors": [
+    "Shigeng Wang",
+    "Chao Li",
+    "Yangyuxuan Kang",
+    "Jiawei Fan",
+    "Anbang Yao"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4404388936",
+   "doi": "10.48550/arxiv.2411.05007",
+   "title": "SVDQuant: Absorbing Outliers by Low-Rank Components for 4-Bit Diffusion Models",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 139,
+   "abstract": "Diffusion models can effectively generate high-quality images. However, as they scale, rising memory demands and higher latency pose substantial deployment challenges. In this work, we aim to accelerate diffusion models by quantizing their weights and activations to 4 bits. At such an aggressive level, both weights and activations are highly sensitive, where existing post-training quantization methods like smoothing become insufficient. To overcome this limitation, we propose SVDQuant, a new 4-bit quantization paradigm. Different from smoothing, which redistributes outliers between weights and activations, our approach absorbs these outliers using a low-rank branch. We first consolidate the outliers by shifting them from activations to weights. Then, we use a high-precision, low-rank branch to take in the weight outliers with Singular Value Decomposition (SVD), while a low-bit quantized branch handles the residuals. This process eases the quantization on both sides. However, naively running the low-rank branch independently incurs significant overhead due to extra data movement of activations, negating the quantization speedup. To address this, we co-design an inference engine Nunchaku that fuses the kernels of the low-rank branch into those of the low-bit branch to cut off redundant memory access. It can also seamlessly support off-the-shelf low-rank adapters (LoRAs) without re-quantization. Extensive experiments on SDXL, PixArt-$\u03a3$, and FLUX.1 validate the effectiveness of SVDQuant in preserving image quality. We reduce the memory usage for the 12B FLUX.1 models by 3.5$\\times$, achieving 3.0$\\times$ speedup over the 4-bit weight-only quantization (W4A16) baseline on the 16GB laptop 4090 GPU with INT4 precision. On the latest RTX 5090 desktop with Blackwell architecture, we achieve a 3.1$\\times$ speedup compared to the W4A16 model using NVFP4 precision.",
+   "authors": [
+    "Muyang Li",
+    "Yujun Lin",
+    "Zhekai Zhang",
+    "Tianle Cai",
+    "Li, Xiuyu",
+    "Junxian Guo",
+    "Enze Xie",
+    "Chenlin Meng"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161742294",
+   "doi": "10.48550/arxiv.2605.17757",
+   "title": "OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 16,
+   "abstract": "INT2 KV-cache quantization is attractive for long-context LLM serving, yet making it both accurate and practical remains challenging. Data-oblivious rotations such as Hadamard transforms flatten channel outliers, but still degrade sharply at INT2 because they ignore how downstream attention queries the cache. We propose OSCAR, an ultra-low-bit KV-cache quantization method that estimates attention-aware covariance targets offline and uses them to derive fixed per-layer rotations and clipping thresholds. By aligning the quantization basis with the second-moment structures consumed by attention, OSCAR preserves attention fidelity at 2-bit precision. Beyond theoretical analysis under a frozen-error surrogate, we build a serving-ready OSCAR system with fused Triton write and decode kernels that preserve paged KV-cache layouts and prefix caching, integrating into modern serving engines such as SGLang and vLLM. We evaluate OSCAR on reasoning and coding benchmarks with generation traces of up to 32K tokens across five tasks. On Qwen3-4B-Thinking-2507 and Qwen3-8B, OSCAR narrows the BF16 accuracy gap to 3.78 and 1.21 points, respectively, where Hadamard-only INT2 collapses, and matches BF16 within run-to-run variance on Qwen3-32B and GLM-4.7 (358B parameters). On RULER-NIAH up to 128K tokens, OSCAR substantially outperforms QuaRot-style INT2 across context lengths. System-wise, OSCAR compresses KV-cache memory by nearly $8\\times$, boosts multi-request throughput by up to $7.8\\times$ at large batch sizes within the same memory budget, and accelerates batch-size-1 decoding by up to $3.1\\times$ over BF16 by cutting KV memory traffic.",
+   "authors": [
+    "Zhongzhu Zhou",
+    "Donglin Zhuang",
+    "Jisen Li",
+    "Ziyan Chen",
+    "Shuaiwen Leon Song",
+    "Ben Athiwaratkun",
+    "Xiaoxia Wu"
+   ],
+   "facet": "F5_small",
+   "query": "low-bit quantization agentic capabilities benchmark"
+  }
+ ]
+}

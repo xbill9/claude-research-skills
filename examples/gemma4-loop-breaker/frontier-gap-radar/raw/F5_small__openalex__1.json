@@ -1,0 +1,527 @@
+{
+ "url": "https://api.openalex.org/works?search=quantization+large+language+model+code+generation+accuracy&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W7125135101",
+   "doi": "10.1145/3747588",
+   "title": "A Survey on Large Language Models for Code Generation",
+   "year": 2025,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 1265,
+   "abstract": "Large Language Models (LLMs) have garnered remarkable advancements across diverse code-related tasks, known as Code LLMs, particularly in code generation that generates source code with LLM from natural language descriptions. This burgeoning field has captured significant interest from both academic researchers and industry professionals due to its practical significance in software development, e.g., GitHub Copilot . Despite the active exploration of LLMs for a variety of code tasks, either from the perspective of Natural Language Processing (NLP) or Software Engineering (SE) or both, there is a noticeable absence of a comprehensive and up-to-date literature review dedicated to LLM for code generation. In this survey, we aim to bridge this gap by providing a systematic literature review that serves as a valuable reference for researchers investigating the cutting-edge progress in LLMs for code generation. We introduce a taxonomy to categorize and discuss the recent developments in LLMs for code generation, covering aspects such as data curation, latest advances, performance evaluation, ethical implications, environmental impact, and real-world applications. In addition, we present a historical overview of the evolution of LLMs for code generation and provide a quantitative and qualitative comparative analysis of experimental results of code LLMs, sourced from their original papers to ensure a fair comparison on the HumanEval, MBPP, and BigCodeBench benchmarks, across various levels of difficulty and types of programming tasks, to highlight the progressive enhancements in LLM capabilities for code generation. We identify critical challenges and promising opportunities regarding the gap between academia and practical development. Furthermore, we have established a dedicated resource GitHub page ( https://github.com/juyongjiang/CodeLLMSurvey ) to continuously document and disseminate the most recent advances in the field.",
+   "authors": [
+    "Juyong Jiang",
+    "Fan Wang",
+    "Jiasi Shen",
+    "Sungju Kim",
+    "Sunghun Kim"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4392340571",
+   "doi": "10.48550/arxiv.2402.18158",
+   "title": "Evaluating Quantized Large Language Models",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 122,
+   "abstract": "Post-training quantization (PTQ) has emerged as a promising technique to reduce the cost of large language models (LLMs). Specifically, PTQ can effectively mitigate memory consumption and reduce computational overhead in LLMs. To meet the requirements of both high efficiency and performance across diverse scenarios, a comprehensive evaluation of quantized LLMs is essential to guide the selection of quantization methods. This paper presents a thorough evaluation of these factors by evaluating the effect of PTQ on Weight, Activation, and KV Cache on 11 model families, including OPT, LLaMA2, Falcon, Bloomz, Mistral, ChatGLM, Vicuna, LongChat, StableLM, Gemma, and Mamba, with parameters ranging from 125M to 180B. The evaluation encompasses five types of tasks: basic NLP, emergent ability, trustworthiness, dialogue, and long-context tasks. Moreover, we also evaluate the state-of-the-art (SOTA) quantization methods to demonstrate their applicability. Based on the extensive experiments, we systematically summarize the effect of quantization, provide recommendations to apply quantization techniques, and point out future directions. The code can be found in https://github.com/thu-nics/qllm-eval.",
+   "authors": [
+    "Shiyao Li",
+    "Xuefei Ning",
+    "Luning Wang",
+    "Liu, Tengxuan",
+    "Xiangsheng Shi",
+    "Shengen Yan",
+    "Guohao Dai",
+    "Huazhong Yang"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4386231419",
+   "doi": "10.48550/arxiv.2308.13137",
+   "title": "OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 390,
+   "abstract": "Large language models (LLMs) have revolutionized natural language processing tasks. However, their practical deployment is hindered by their immense memory and computation requirements. Although recent post-training quantization (PTQ) methods are effective in reducing memory footprint and improving the computational efficiency of LLM, they hand-craft quantization parameters, leading to low performance, especially in extremely low-bit quantization. To tackle this issue, we introduce an Omnidirectionally calibrated Quantization (\\textbf{OmniQuant}) technique for LLMs, which achieves good performance in diverse quantization settings while maintaining the computational efficiency of PTQ by efficiently optimizing various quantization parameters. OmniQuant comprises two innovative components including Learnable Weight Clipping (LWC) and Learnable Equivalent Transformation (LET). LWC modulates the extreme values of weights by optimizing the clipping threshold. Meanwhile, LET tackles activation outliers by shifting the challenge of quantization from activations to weights. Operating within a differentiable framework using block-wise error minimization, OmniQuant can optimize the quantization process efficiently for both weight-only and weight-activation quantization. For instance, the LLaMA-2 model family size 7-70B can be processed with OmniQuant on a single A100-40G GPU within 1-16 hours using 128 samples. Extensive experiments validate OmniQuant's superior performance across diverse quantization configurations such as W4A4 (4-bit weight, 4-bit activation), W6A6, W4A16, W3A16, and W2A16. Additionally, OmniQuant demonstrates effectiveness in instruction-tuned models and delivers notable improvements in inference speed and memory reduction on real devices. Codes are available at \\url{https://github.com/OpenGVLab/OmniQuant}.",
+   "authors": [
+    "Wenqi Shao",
+    "Mengzhao Chen",
+    "Zhaoyang Zhang",
+    "Peng Xu",
+    "Lirui Zhao",
+    "Zhiqian Li",
+    "Kaipeng Zhang",
+    "Gao, Peng"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4408146288",
+   "doi": "10.1109/icairc64177.2024.10899941",
+   "title": "A Comprehensive Study on Quantization Techniques for Large Language Models",
+   "year": 2024,
+   "venue": "International Conference on Artificial Intelligence, Robotics, and Communication (ICAIRC)",
+   "type": "conference-paper",
+   "cited_by": 99,
+   "abstract": "Large Language Models (LLMs) have been extensively researched and used in both academia and industry since the rise in popularity of the Transformer model, which demonstrates excellent performance in AI. However, the computational demands of LLMs are immense, and the energy resources required to run them are often limited. For instance, popular models like GPT-3, with 175 billion parameters and a storage requirement of 350 GB, present significant challenges for deployment on resource-constrained IoT devices and embedded systems. These systems often lack the computational capacity to handle such large models. Quantization, a technique that reduces the precision of model values to a smaller set of discrete values, offers a promising solution by reducing the size of LLMs and accelerating inference. In this research, we provide a comprehensive analysis of quantization techniques within the machine learning field, with a particular focus on their application to LLMs. We begin by exploring the mathematical theory of quantization, followed by a review of common quantization methods and how they are implemented. Furthermore, we examine several prominent quantization methods applied to LLMs, detailing their algorithms and performance outcomes.",
+   "authors": [
+    "Jiedong Lang",
+    "Zhehao Guo",
+    "Shuyu Huang"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7125460658",
+   "doi": null,
+   "title": "The impact of quantization on the inference performance and quality of large language models: A comparative study on code generation task",
+   "year": 2025,
+   "venue": "Aaltodoc (Aalto University)",
+   "type": "dissertation",
+   "cited_by": 0,
+   "abstract": "Large language models (LLMs) have recently achieved strong performance on code generation tasks, but their deployment is often limited by high inference costs in terms of memory, latency, and energy consumption. Quantization---the reduction of numerical precision in weights and activations---offers a promising avenue for making LLMs more efficient, yet its impact on functional correctness and serving performance in realistic code-generation settings remains underexplored. This thesis investigates how post-training quantization affects both the quality and efficiency of LLMs on competitive-programming style code generation. Concretely, the study focuses on two members of the Llama~3 family: Llama~3.1~8B Instruct and Llama~3.2~3B Instruct. Both models are evaluated on the CodeContests dataset, which provides natural-language problem descriptions paired with executable test suites. Several quantization schemes are considered, including 8-bit and 4-bit weight-only quantization via \\texttt{bitsandbytes}, GPTQ-based 4-bit quantization, and Activation-aware Weight Quantization (AWQ). The models are assessed in a few-shot setting using pass@1 and pass@5, and inference performance is measured in terms of memory footprint, latency, and throughput on a single NVIDIA V100 32\\,GB GPU. Overall, the thesis contributes a systematic comparison of post-training quantization methods for code-focused LLMs, quantifies their impact on both accuracy and serving efficiency, and offers practical guidance for deploying Llama~3.x models under realistic hardware constraints.",
+   "authors": [
+    "An Binh Tran"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7171740466",
+   "doi": "10.1145/3794763.3794810",
+   "title": "Evaluating the Impact of Post-Training Quantization on Large Language Models for Code Generation",
+   "year": 2026,
+   "venue": "IEEE International Conference on Program Comprehension (ICPC)",
+   "type": "conference-paper",
+   "cited_by": 11,
+   "abstract": "Large Language Models (LLMs) have shown an impressive capability in code generation. The LLM effectiveness generally increases with its size: The higher the number of LLM's trainable parameters the better its ability to implement code. However, when it comes to deploying LLM-based code generators, larger LLMs pose significant challenges related to their memory (and, consequently, carbon) footprint. A previous work by Wei et al. proposed to leverage quantization techniques to reduce the memory footprint of LLM-based code generators without substantially degrading their effectiveness. In short, they studied LLMs featuring up to 16B parameters, quantizing their precision from floating point 32 bits down to int 8 bits and showing their limited impact on code generation performance. Given the fast pace at which LLM capabilities and quantization techniques are evolving, in this work we present a differentiated replication of the work by Wei et al. in which we consider (i) on the one side, more recent and larger code-related LLMs, of up to 34B parameters; (ii) the latest advancements in model quantization techniques, which allow pushing the compression to the extreme quantization level of 2 bits per model parameter and; (iii) different types of calibration datasets to guide the quantization process, including code-specific ones. Our empirical evaluation reveals that the new frontier for LLM quantization is 4-bit precision, resulting in an average memory footprint reduction of 70% compared to the original model without observing any significant decrease in performance. Additionally, when the quantization becomes even more extreme (3 and 2 bits), a code-specific calibration dataset helps to limit the loss of performance.",
+   "authors": [
+    "Alessandro Giagnorio",
+    "Antonio Mastropaolo",
+    "Saima Afrin",
+    "Massimiliano Di Penta",
+    "Gabriele Bavota"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4390833798",
+   "doi": "10.48550/arxiv.2401.06118",
+   "title": "Extreme Compression of Large Language Models via Additive Quantization",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 180,
+   "abstract": "The emergence of accurate open large language models (LLMs) has led to a race towards performant quantization techniques which can enable their execution on end-user devices. In this paper, we revisit the problem of \"extreme\" LLM compression-defined as targeting extremely low bit counts, such as 2 to 3 bits per parameter-from the point of view of classic methods in Multi-Codebook Quantization (MCQ). Our algorithm, called AQLM, generalizes the classic Additive Quantization (AQ) approach for information retrieval to advance the state-of-the-art in LLM compression, via two innovations: 1) learned additive quantization of weight matrices in input-adaptive fashion, and 2) joint optimization of codebook parameters across each transformer blocks. Broadly, AQLM is the first scheme that is Pareto optimal in terms of accuracy-vs-model-size when compressing to less than 3 bits per parameter, and significantly improves upon all known schemes in the extreme compression (2bit) regime. In addition, AQLM is practical: we provide fast GPU and CPU implementations of AQLM for token generation, which enable us to match or outperform optimized FP16 implementations for speed, while executing in a much smaller memory footprint.",
+   "authors": [
+    "Vage Egiazarian",
+    "Andrei Panferov",
+    "Denis Kuznedelev",
+    "Elias Frantar",
+    "Artem Babenko",
+    "Dan Alistarh"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4387686975",
+   "doi": "10.48550/arxiv.2310.08659",
+   "title": "LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 216,
+   "abstract": "Quantization is an indispensable technique for serving Large Language Models (LLMs) and has recently found its way into LoRA fine-tuning. In this work we focus on the scenario where quantization and LoRA fine-tuning are applied together on a pre-trained model. In such cases it is common to observe a consistent gap in the performance on downstream tasks between full fine-tuning and quantization plus LoRA fine-tuning approach. In response, we propose LoftQ (LoRA-Fine-Tuning-aware Quantization), a novel quantization framework that simultaneously quantizes an LLM and finds a proper low-rank initialization for LoRA fine-tuning. Such an initialization alleviates the discrepancy between the quantized and full-precision model and significantly improves generalization in downstream tasks. We evaluate our method on natural language understanding, question answering, summarization, and natural language generation tasks. Experiments show that our method is highly effective and outperforms existing quantization methods, especially in the challenging 2-bit and 2/4-bit mixed precision regimes. The code is available on https://github.com/yxli2123/LoftQ.",
+   "authors": [
+    "Li, Yixiao",
+    "Yu, Yifan",
+    "Liang Chen",
+    "Pengcheng He",
+    "Nikos Karampatziakis",
+    "Weizhu Chen",
+    "Tuo Zhao"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402683730",
+   "doi": "10.18653/v1/2024.findings-acl.726",
+   "title": "A Comprehensive Evaluation of Quantization Strategies for Large Language Models",
+   "year": 2024,
+   "venue": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+   "type": "conference-paper",
+   "cited_by": 119,
+   "abstract": "Increasing the number of parameters in large language models (LLMs) usually improves performance in downstream tasks but raises compute and memory costs, making deployment difficult in resource-limited settings.Quantization techniques, which reduce the bits needed for model weights or activations with minimal performance loss, have become popular due to the rise of LLMs.However, most quantization studies use pre-trained LLMs, and the impact of quantization on instruction-tuned LLMs and the relationship between perplexity and benchmark performance of quantized LLMs are not well understood.Evaluation of quantized LLMs is often limited to language modeling and a few classification tasks, leaving their performance on other benchmarks unclear.To address these gaps, we propose a structured evaluation framework consisting of three critical dimensions: (1) knowledge & capacity, (2) alignment, and (3) efficiency, and conduct extensive experiments across ten diverse benchmarks.Our experimental results indicate that LLMs with 4-bit quantization can retain performance comparable to their non-quantized counterparts, and perplexity can serve as a proxy metric for quantized LLMs on most benchmarks.Furthermore, quantized LLMs with larger parameter scales can outperform smaller LLMs.Despite the memory savings achieved through quantization, it can also slow down the inference speed of LLMs.Consequently, substantial engineering efforts and hardware support are imperative to achieve a balanced optimization of decoding speed and memory consumption in the context of quantized LLMs.",
+   "authors": [
+    "Renren Jin",
+    "Jiangcun Du",
+    "Wuwei Huang",
+    "Wei Liu",
+    "Jian Luan",
+    "Bin Wang",
+    "Deyi Xiong"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7224630646",
+   "doi": "10.1145/3842793.3842826",
+   "title": "An Efficient Vector Quantization Algorithm for Multimodal Retrieval-Augmented Generation in Large Language Models",
+   "year": 2026,
+   "venue": "International Conference on Artificial Intelligence and Smart Manufacturing",
+   "type": "conference-paper",
+   "cited_by": 0,
+   "abstract": "This paper addresses a practical bottleneck in multimodal retrieval-augmented generation (MRAG) for large language models (LLMs): maintaining up-to-date, high-quality vector indexes under frequent data updates. Conventional vector quantization methods such as VQ, PQ, OPQ, and AQ/APQ either incur high preprocessing costs when codebooks must be retrained or sacrifice retrieval accuracy, making them less suitable for MRAG scenarios where timeliness and stable accuracy are both critical. To resolve this trade-off, we propose Balanced K-means Product Quantization (BKMPQ), a product-quantization-based scheme that partitions dimensions into M balanced similarity groups. This design reduces preprocessing cost relative to orthogonal-transform-based methods while retaining or improving quantization accuracy compared with standard PQ and OPQ variants. BKMPQ uses asymmetric distance computation (ADC) for high-precision nearest-neighbor scoring and follows standard PQ encoding and decoding within the balanced subspaces. We evaluate BKMPQ against several baselines on SIFT1M, GIST1M, and MNIST using 64-bit codes and a re-ranking pipeline. Results show that BKMPQ achieves consistently strong recall, especially for practical re-ranking ranges, while its preprocessing time scales approximately linearly with vector dimension. These results indicate that BKMPQ provides a favorable trade-off between preprocessing cost and retrieval accuracy for MRAG pipelines that require frequent index updates.",
+   "authors": [
+    "Jiaxing Hu",
+    "Qiang Zhu",
+    "Mengyao Wang",
+    "Xinyao Chen",
+    "Zhibo Wang",
+    "Jiangpu Ji"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7162993317",
+   "doi": "10.5281/zenodo.20484797",
+   "title": "Quantization Impact on Qwen2 Multimodal Code Generation Across MultiPL-E Languages",
+   "year": 2026,
+   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+   "type": "report",
+   "cited_by": 0,
+   "abstract": "This report synthesises findings from 5 peer-reviewed papers addressing the following research question: How does 4-bit quantization affect the pass@1 accuracy of multimodal code generation models on the MultiPL-E benchmark when transitioning from Python to Java. This report introduces the Qwen2 series, the latest addition to our large language models and large multimodal models. We release a comprehensive suite of foundational and instruction-tuned language models, encompassing a parameter range from 0.5 to 72 billion, featuring dense. 9 claims were extracted from source literature; 9 were independently verified against retrieved documents. An automated multi-reviewer quality assessment produced a score of 7.8/10. This report is a machine-generated literature synthesis and does not constitute original research. Research goal: How does 4-bit quantization affect the pass@1 accuracy of multimodal code generation models on the MultiPL-E benchmark when transitioning from Python to Java? Autonomous literature synthesis. Automated review score: 7.8/10. Full text and citation available at Assignee Research.",
+   "authors": [
+    "Assignee Research"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4412945475",
+   "doi": "10.18653/v1/2025.acl-long.498",
+   "title": "EfficientQAT: Efficient Quantization-Aware Training for Large Language Models",
+   "year": 2025,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 181,
+   "abstract": "Mengzhao Chen, Wenqi Shao, Peng Xu, Jiahao Wang, Peng Gao, Kaipeng Zhang, Ping Luo. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025.",
+   "authors": [
+    "Mengzhao Chen",
+    "Wenqi Shao",
+    "Peng Xu",
+    "Jiahao Wang",
+    "Peng Gao",
+    "Kaipeng Zhang",
+    "Ping Luo"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4407684039",
+   "doi": "10.48550/arxiv.2502.10743",
+   "title": "1bit-Merging: Dynamic Quantized Merging for Large Language Models",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 5,
+   "abstract": "Recent advances in large language models have led to specialized models excelling in specific domains, creating a need for efficient model merging techniques. While traditional merging approaches combine parameters into a single static model, they often compromise task-specific performance. However, task-specific routing methods maintain accuracy but introduce substantial storage overhead. We present \\texttt{1bit}-Merging, a novel framework that integrates task-specific routing with 1-bit quantized task vectors to balance performance and storage efficiency. Our approach leverages the observation that different task-specific models store knowledge in distinct layers-chat models primarily in attention layers and math/code models in MLP layers, enabling targeted compression strategies. Through extensive experiments with LLaMA2 and Mistral model families across chat, mathematical reasoning, and code generation tasks, we demonstrate that 1bit-Merging achieves comparable or superior performance to existing methods while significantly reducing storage requirements. Our framework offers a practical solution for combining specialized models while maintaining their individual strengths and addressing the storage challenges of current approaches.",
+   "authors": [
+    "Shuqi Liu",
+    "Yao, Yuxuan",
+    "Bowei He",
+    "Zehua Liu",
+    "Xiongwei Han",
+    "Mingxuan Yuan",
+    "Han Wu",
+    "Linqi Song"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417102700",
+   "doi": "10.48550/arxiv.2508.02343",
+   "title": "MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 11,
+   "abstract": "Quantization significantly accelerates inference in large language models (LLMs) by replacing original high-precision matrices with low-precision counterparts. Recent advances in weight-activation quantization have primarily focused on mapping both weights and activations to the INT4 format. Although the new FP4 Tensor Cores in NVIDIA's Blackwell architecture offer up to 4x speedup over FP16, existing INT4-based kernels fail to fully exploit this capability due to mismatched data formats. To bridge this gap, we propose MicroMix, a co-designed mixed-precision quantization algorithm and GEMM kernel based on Microscaling (MX) data formats. Tailored for the Blackwell architecture, the MicroMix kernel supports arbitrary combinations of MXFP4, MXFP6, and MXFP8 channels, and produces BFloat16 outputs. To achieve a favorable trade-off between accuracy and efficiency for each linear layer, we introduce quantization thresholds that identify activation elements where lower-precision formats (MXFP4 or MXFP6) incur excessive quantization error. Our algorithm selectively allocates higher-precision channels to preserve accuracy while maintaining compute efficiency. On the Llama and Qwen model families, MicroMix achieves near-FP16 performance across diverse downstream tasks with an average precision of 5 bits. In particular, Qwen2.5-32B-Base, Coder and Math exhibit lossless accuracy on zero-shot, code generation, and mathematical reasoning benchmarks. In addition, on RTX 5070Ti laptop and RTX 5090 GPUs, our kernel achieves 2.29-3.38x acceleration compared to TensorRT-FP16. Our code is available at https://github.com/lwy2020/MicroMix.",
+   "authors": [
+    "Wenyuan Liu",
+    "Meng Hu",
+    "Luo, Yilun",
+    "Zhao, Yafei",
+    "Zhang, Peng",
+    "Xindian Ma"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4387156572",
+   "doi": "10.48550/arxiv.2309.14717",
+   "title": "QA-LoRA: Quantization-Aware Low-Rank Adaptation of Large Language Models",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 212,
+   "abstract": "Recently years have witnessed a rapid development of large language models (LLMs). Despite the strong ability in many language-understanding tasks, the heavy computational burden largely restricts the application of LLMs especially when one needs to deploy them onto edge devices. In this paper, we propose a quantization-aware low-rank adaptation (QA-LoRA) algorithm. The motivation lies in the imbalanced degrees of freedom of quantization and adaptation, and the solution is to use group-wise operators which increase the degree of freedom of quantization meanwhile decreasing that of adaptation. QA-LoRA is easily implemented with a few lines of code, and it equips the original LoRA with two-fold abilities: (i) during fine-tuning, the LLM's weights are quantized (e.g., into INT4) to reduce time and memory usage; (ii) after fine-tuning, the LLM and auxiliary weights are naturally integrated into a quantized model without loss of accuracy. We apply QA-LoRA to the LLaMA and LLaMA2 model families and validate its effectiveness in different fine-tuning datasets and downstream scenarios. Code will be made available at https://github.com/yuhuixu1993/qa-lora.",
+   "authors": [
+    "Yuhui Xu",
+    "Lingxi Xie",
+    "Xiaotao Gu",
+    "Xin Chen",
+    "Heng Chang",
+    "Hengheng Zhang",
+    "Chen, Zhengsu",
+    "Xiaopeng Zhang"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4385326807",
+   "doi": "10.48550/arxiv.2307.13304",
+   "title": "QuIP: 2-Bit Quantization of Large Language Models With Guarantees",
+   "year": 2023,
+   "venue": "PubMed",
+   "type": "article",
+   "cited_by": 95,
+   "abstract": "weight and Hessian matrices, i.e., from the weights being even in magnitude and the directions in which it is important to round them accurately being unaligned with the coordinate axes. QuIP consists of two steps: (1) an adaptive rounding procedure minimizing a quadratic proxy objective; (2) efficient pre- and post-processing that ensures weight and Hessian incoherence via multiplication by random orthogonal matrices. We complement QuIP with the first theoretical analysis for an LLM-scale quantization algorithm, and show that our theory also applies to an existing method, OPTQ. Empirically, we find that our incoherence preprocessing improves several existing quantization algorithms and yields the first LLM quantization methods that produce viable results using only two bits per weight. Our code can be found at https://github.com/Cornell-RelaxML/QuIP.",
+   "authors": [
+    "Jerry Chee",
+    "Yaohui Cai",
+    "Volodymyr Kuleshov",
+    "Christopher De"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4392018977",
+   "doi": "10.48550/arxiv.2402.12065",
+   "title": "WKVQuant: Quantizing Weight and Key/Value Cache for Large Language Models Gains More",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 89,
+   "abstract": "Large Language Models (LLMs) face significant deployment challenges due to their substantial memory requirements and the computational demands of auto-regressive text generation process. This paper addresses these challenges by focusing on the quantization of LLMs, a technique that reduces memory consumption by converting model parameters and activations into low-bit integers. We critically analyze the existing quantization approaches, identifying their limitations in balancing the accuracy and efficiency of the quantized LLMs. To advance beyond these limitations, we propose WKVQuant, a PTQ framework especially designed for quantizing weights and the key/value (KV) cache of LLMs. Specifically, we incorporates past-only quantization to improve the computation of attention. Additionally, we introduce two-dimensional quantization strategy to handle the distribution of KV cache, along with a cross-block reconstruction regularization for parameter optimization. Experiments show that WKVQuant achieves almost comparable memory savings to weight-activation quantization, while also approaching the performance of weight-only quantization.",
+   "authors": [
+    "Yuxuan Yue",
+    "Zhihang Yuan",
+    "Haojie Duanmu",
+    "Sifan Zhou",
+    "Jianlong Wu",
+    "Liqiang Nie"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4408167042",
+   "doi": "10.1016/j.jag.2025.104456",
+   "title": "GeoCode-GPT: A large language model for geospatial code generation",
+   "year": 2025,
+   "venue": "International Journal of Applied Earth Observation and Geoinformation",
+   "type": "article",
+   "cited_by": 54,
+   "abstract": "\u2022 Introduced GeoCode-GPT-7B, the first LLM for geospatial code generation. \u2022 Developed and open-sourced GeoCode-PT, GeoCode-SFT, and GeoCode-Eval datasets. \u2022 Proposed a pretraining and fine-tuning strategy combining QLoRA and LoRA. \u2022 Established an evaluation framework for geospatial code generation. The increasing demand for spatiotemporal data and modeling tasks in geosciences has made geospatial code generation technology a critical factor in enhancing productivity. Although large language models (LLMs) have demonstrated potential in code generation tasks, they often encounter issues such as refusal to code or hallucination in geospatial code generation due to a lack of domain-specific knowledge and code corpora. To address these challenges, this paper presents and open-sources the GeoCode-PT and GeoCode-SFT corpora, along with the GeoCode-Eval evaluation dataset. Additionally, by leveraging QLoRA and LoRA for pretraining and fine-tuning, we introduce GeoCode-GPT-7B, the first LLM focused on geospatial code generation, fine-tuned from Code Llama-7B. Furthermore, we establish a comprehensive geospatial code evaluation framework, incorporating option matching, expert validation, and prompt engineering scoring for LLMs, and systematically evaluate GeoCode-GPT-7B using the GeoCode-Eval dataset. Experimental results reveal that GeoCode-GPT significantly outperforms existing models across multiple tasks. For multiple-choice tasks, its accuracy improves by 9.1% to 32.1%. In code summarization, it achieves superior scores in completeness, accuracy, and readability, with gains ranging from 1.7 to 25.4 points. For code generation, its performance in accuracy, readability, and executability surpasses benchmarks by 1.2 to 25.1 points. Grounded in the fine-tuning paradigm, this study introduces and validates an approach to enhance LLMs in geospatial code generation and associated tasks. These findings extend the application boundaries of such models in geospatial domains and offer a robust foundation for exploring their latent potential.",
+   "authors": [
+    "Shuyang Hou",
+    "Zhangxiao Shen",
+    "Anqi Zhao",
+    "Jianyuan Liang",
+    "Zhipeng Gui",
+    "Xuefeng Guan",
+    "Rui Li",
+    "Huayi Wu"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4409797602",
+   "doi": "10.1145/3731753",
+   "title": "Ecosystem of Large Language Models for Code",
+   "year": 2025,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 29,
+   "abstract": "The extensive availability of publicly accessible source code and the advances in language models, coupled with increasing computational resources, have led to a remarkable rise of large language models for code (LLM4Code). These models do not exist in isolation but rather depend on and interact with each other, forming a complex ecosystem that is worth studying. It motivates us to introduce a pioneering analysis of the LLM4Code ecosystem . Utilizing Hugging Face [ ]\u2014the premier hub for transformer-based models\u2014as our primary source, we manually curate a list of datasets and models focused on software engineering tasks. We first identify key datasets, models, and users in the ecosystem and quantify their contributions and importance. We then examine each model\u2019s documentation to trace its base model and understand the process for deriving new models. We categorize LLM4Code model reuse into nine categories, with the top three being fine-tuning , architecture sharing , and quantization . Additionally, we examine documentation and licensing practices, revealing that LLM4Code documentation is less detailed than that of general AI repositories on GitHub. The license usage pattern is also different from other software repositories, and we further analyze potential license incompatibility issues. To analyze the rapidly growing LLM4Code, we explore the potential of using LLMs to assist in constructing and analyzing the ecosystem. Advanced LLMs from OpenAI identify LLM4Code with 98% accuracy, infer base models with 87% accuracy, and predict reuse types with 89% accuracy. We employ LLMs to expand the ecosystem and find that conclusions from the manually curated dataset align with those from the automatically created one. Based on our findings, we discuss the implications and suggestions to facilitate the healthy growth of LLM4Code.",
+   "authors": [
+    "Zhou Yang",
+    "Jieke Shi",
+    "Pr\u00e9mkumar D\u00e9vanbu",
+    "David Lo"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4404918643",
+   "doi": "10.1162/tacl_a_00704",
+   "title": "A Survey on Model Compression for Large Language Models",
+   "year": 2024,
+   "venue": "Transactions of the Association for Computational Linguistics",
+   "type": "article",
+   "cited_by": 558,
+   "abstract": "Abstract Large Language Models (LLMs) have transformed natural language processing tasks successfully. Yet, their large size and high computational needs pose challenges for practical use, especially in resource-limited settings. Model compression has emerged as a key research area to address these challenges. This paper presents a survey of model compression techniques for LLMs. We cover methods like quantization, pruning, and knowledge distillation, highlighting recent advancements. We also discuss benchmarking strategies and evaluation metrics crucial for assessing compressed LLMs. This survey offers valuable insights for researchers and practitioners, aiming to enhance efficiency and real-world applicability of LLMs while laying a foundation for future advancements.",
+   "authors": [
+    "Xunyu Zhu",
+    "Jian Li",
+    "Yong Liu",
+    "Can Ma",
+    "Weiping Wang"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4404570004",
+   "doi": "10.1145/3786175.3788343",
+   "title": "Precision or Peril: A PoC of Python Code Quality from Quantized Large Language Models",
+   "year": 2026,
+   "venue": null,
+   "type": "conference-paper",
+   "cited_by": 8,
+   "abstract": "Context: Large Language Models (LLMs) like GPT-5 and LLaMA-405b exhibit advanced code generation abilities, but their deployment demands substantial computation resources and energy. Quantization can reduce memory footprint and hardware requirements, yet may degrade code quality. Objective: This study investigates code generation performance of smaller LLMs, examines the effect of quantization, and identifies common code quality issues as a proof of concepts (PoC). Method: Four open-source LLMs are evaluated on Python benchmarks using code similarity metrics, with an analysis on 8-bit and 4-bit quantization, alongside static code quality assessment. Results: While smaller LLMs can generate functional code, benchmark performance is limited. Quantization impacts are variable, and generated code exhibits quality and maintainability concerns. Conclusions: LLM-generated code should be carefully validated before integration into software projects.",
+   "authors": [
+    "Eric L. Melin",
+    "Adam Torek",
+    "Nasir U. Eisty",
+    "Casey Kennington"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4385970045",
+   "doi": "10.48550/arxiv.2308.01240",
+   "title": "Evaluating Instruction-Tuned Large Language Models on Code Comprehension and Generation",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 129,
+   "abstract": "In this work, we evaluate 10 open-source instructed LLMs on four representative code comprehension and generation tasks. We have the following main findings. First, for the zero-shot setting, instructed LLMs are very competitive on code comprehension and generation tasks and sometimes even better than small SOTA models specifically fine-tuned on each downstream task. We also find that larger instructed LLMs are not always better on code-related tasks. Second, for the few-shot setting, we find that adding demonstration examples substantially helps instructed LLMs perform better on most code comprehension and generation tasks; however, the examples would sometimes induce unstable or even worse performance. Furthermore, we find widely-used BM25-based shot selection strategy significantly outperforms the basic random selection or fixed selection only on generation problems. Third, for the fine-tuning setting, we find that fine-tuning could further improve the model performance on downstream code comprehension and generation tasks compared to the zero-shot/one-shot performance. In addition, after being fine-tuned on the same downstream task dataset, instructed LLMs outperform both the small SOTA models and similar-scaled LLMs without instruction tuning. Based on our findings, we further present practical implications on model and usage recommendation, performance and cost trade-offs, and future direction.",
+   "authors": [
+    "Zhiqiang Yuan",
+    "Liu, Junwei",
+    "Qiancheng Zi",
+    "Mingwei Liu",
+    "Xin Peng",
+    "Yiling Lou"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4380993527",
+   "doi": "10.48550/arxiv.2306.08568",
+   "title": "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 766,
+   "abstract": "Code Large Language Models (Code LLMs), such as StarCoder, have demonstrated exceptional performance in code-related tasks. However, most existing models are solely pre-trained on extensive raw code data without instruction fine-tuning. In this paper, we introduce WizardCoder, which empowers Code LLMs with complex instruction fine-tuning, by adapting the Evol-Instruct method to the domain of code. Through comprehensive experiments on four prominent code generation benchmarks, namely HumanEval, HumanEval+, MBPP, and DS-1000, we unveil the exceptional capabilities of our model. It surpasses all other open-source Code LLMs by a substantial margin. Moreover, our model even outperforms the largest closed LLMs, Anthropic's Claude and Google's Bard, on HumanEval and HumanEval+. Our code, model weights, and data are public at https://github.com/nlpxucan/WizardLM",
+   "authors": [
+    "Ziyang Luo",
+    "Can Xu",
+    "Pu Zhao",
+    "Qing\u2010Feng Sun",
+    "Xiubo Geng",
+    "Wenxiang Hu",
+    "Chongyang Tao",
+    "Jing Ma"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4406961439",
+   "doi": "10.48550/arxiv.2501.17116",
+   "title": "Optimizing Large Language Model Training Using FP4 Quantization",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 50,
+   "abstract": "The growing computational demands of training large language models (LLMs) necessitate more efficient methods. Quantized training presents a promising solution by enabling low-bit arithmetic operations to reduce these costs. While FP8 precision has demonstrated feasibility, leveraging FP4 remains a challenge due to significant quantization errors and limited representational capacity. This work introduces the first FP4 training framework for LLMs, addressing these challenges with two key innovations: a differentiable quantization estimator for precise weight updates and an outlier clamping and compensation strategy to prevent activation collapse. To ensure stability, the framework integrates a mixed-precision training scheme and vector-wise quantization. Experimental results demonstrate that our FP4 framework achieves accuracy comparable to BF16 and FP8, with minimal degradation, scaling effectively to 13B-parameter LLMs trained on up to 100B tokens. With the emergence of next-generation hardware supporting FP4, our framework sets a foundation for efficient ultra-low precision training.",
+   "authors": [
+    "Ruizhe Wang",
+    "Yeyun Gong",
+    "Xiao Liu",
+    "Guoshuai Zhao",
+    "Ziyue Yang",
+    "Baining Guo",
+    "Zheng-Jun Zha",
+    "Peng Cheng"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4396648407",
+   "doi": "10.1145/3653081.3653102",
+   "title": "Retrieval-Augmented Generation with Quantized Large Language Models: A Comparative Analysis",
+   "year": 2023,
+   "venue": "International Conference on Internet of Things, Automation and Artificial Intelligence (IoTAAI)",
+   "type": "conference-paper",
+   "cited_by": 4,
+   "abstract": "Large language models have demonstrated emergent intelligence and ability to handle a wide array of tasks. However, the reliability of these models in terms of factual accuracy and timely knowledge acquisition remains a challenge. Researchers explore the implementation of retrieval-augmented generation methods, aiming to enhance the authenticity and specificity in knowledge-intensive tasks. This paper discusses the practical application in industrial settings, particularly in assisting design personnel with navigating complex standards and quality manuals. Utilizing an open-source model with 6 billion parameters, the study employs quantization technology for local deployment, addressing computational challenges. The retrieval-augmented generation framework is analyzed, emphasizing the integration of document parsing, vector databases, and text embedding models. Experimental results compare models at different quantization levels, revealing trade-offs between response time, model size, and performance metrics. The findings suggest that 4-bit integer quantization is optimal for standard document retrieval and question-answering tasks, highlighting practical considerations for CPU inference. The paper concludes with insights into hyper-parameter tuning, model comparisons, and future optimizations for enhanced performance in edge device deployments of large language models.",
+   "authors": [
+    "Shanglin Yang",
+    "Jialin Zhu",
+    "Jialin Wang",
+    "Xiaohan Xu",
+    "Zihang Shao",
+    "Liwei Yao",
+    "Benchang Zheng",
+    "Hu Huang"
+   ],
+   "facet": "F5_small",
+   "query": "quantization large language model code generation accuracy"
+  }
+ ]
+}

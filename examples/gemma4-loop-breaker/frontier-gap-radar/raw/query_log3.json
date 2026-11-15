@@ -1,0 +1,58 @@
+[
+ {
+  "facet": "F2_recovery",
+  "src": "openalex3",
+  "query": "coding agent stuck repeated edits loop detection",
+  "url": "https://api.openalex.org/works?search=coding+agent+stuck+repeated+edits+loop+detection&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F2_recovery",
+  "src": "openalex3",
+  "query": "agent trajectory failure analysis SWE-bench why agents fail",
+  "url": "https://api.openalex.org/works?search=agent+trajectory+failure+analysis+SWE-bench+why+agents+fail&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F5_small",
+  "src": "openalex3",
+  "query": "quantized language model agent tool use multi-turn",
+  "url": "https://api.openalex.org/works?search=quantized+language+model+agent+tool+use+multi-turn&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F5_small",
+  "src": "openalex3",
+  "query": "small language models SWE-bench agent",
+  "url": "https://api.openalex.org/works?search=small+language+models+SWE-bench+agent&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F5_small",
+  "src": "openalex3",
+  "query": "low-bit quantization agentic capabilities benchmark",
+  "url": "https://api.openalex.org/works?search=low-bit+quantization+agentic+capabilities+benchmark&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F6_scaffold",
+  "src": "openalex3",
+  "query": "SWE-agent agent-computer interfaces automated software engineering",
+  "url": "https://api.openalex.org/works?search=SWE-agent+agent-computer+interfaces+automated+software+engineering&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F6_scaffold",
+  "src": "openalex3",
+  "query": "OpenHands open platform AI software developers",
+  "url": "https://api.openalex.org/works?search=OpenHands+open+platform+AI+software+developers&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F1_context",
+  "src": "openalex3",
+  "query": "KV cache compression long context agent",
+  "url": "https://api.openalex.org/works?search=KV+cache+compression+long+context+agent&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ }
+]

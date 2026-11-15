@@ -1,0 +1,529 @@
+{
+ "url": "https://api.openalex.org/works?search=repository+knowledge+graph+LLM+agent+code+repair&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4412889702",
+   "doi": "10.18653/v1/2025.acl-long.1490",
+   "title": "Benchmarking LLMs and LLM-based Agents in Practical Vulnerability Detection for Code Repositories",
+   "year": 2025,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 43,
+   "abstract": "Alperen Yildiz, Sin G Teo, Yiling Lou, Yebo Feng, Chong Wang, Dinil Mon Divakaran. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025.",
+   "authors": [
+    "Alperen Yildiz",
+    "Sin G. Teo",
+    "Yiling Lou",
+    "Yebo Feng",
+    "Chong Wang",
+    "Dinil Mon Divakaran"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415101712",
+   "doi": "10.48550/arxiv.2503.09089",
+   "title": "LocAgent: Graph-Guided LLM Agents for Code Localization",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 49,
+   "abstract": "Code localization--identifying precisely where in a codebase changes need to be made--is a fundamental yet challenging task in software maintenance. Existing approaches struggle to efficiently navigate complex codebases when identifying relevant code sections. The challenge lies in bridging natural language problem descriptions with the appropriate code elements, often requiring reasoning across hierarchical structures and multiple dependencies. We introduce LocAgent, a framework that addresses code localization through graph-based representation. By parsing codebases into directed heterogeneous graphs, LocAgent creates a lightweight representation that captures code structures (files, classes, functions) and their dependencies (imports, invocations, inheritance), enabling LLM agents to effectively search and locate relevant entities through powerful multi-hop reasoning. Experimental results on real-world benchmarks demonstrate that our approach significantly enhances accuracy in code localization. Notably, our method with the fine-tuned Qwen-2.5-Coder-Instruct-32B model achieves comparable results to SOTA proprietary models at greatly reduced cost (approximately 86% reduction), reaching up to 92.7% accuracy on file-level localization while improving downstream GitHub issue resolution success rates by 12% for multiple attempts (Pass@10). Our code is available at https://github.com/gersteinlab/LocAgent.",
+   "authors": [
+    "Zhaoling Chen",
+    "Xiangru Tang",
+    "Gangda Deng",
+    "Fang Wu",
+    "Jialong Wu",
+    "Zhiwei Jiang",
+    "Viktor K. Prasanna",
+    "Arman Cohan"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411551762",
+   "doi": "10.1109/icse55347.2025.00157",
+   "title": "RepairAgent: An Autonomous, LLM-Based Agent for Program Repair",
+   "year": 2025,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 491,
+   "abstract": "Automated program repair has emerged as a powerful technique to mitigate the impact of software bugs on system reliability and user experience. This paper introduces Repair Agent, the first work to address the program repair challenge through an autonomous agent based on a large language model (LLM). Unlike existing deep learning-based approaches, which prompt a model with a fixed prompt or in a fixed feedback loop, our work treats the LLM as an agent capable of autonomously planning and executing actions to fix bugs by invoking suitable tools. Repair Agent freely interleaves gathering information about the bug, gathering repair ingredients, and validating fixes, while deciding which tools to invoke based on the gathered information and feedback from previous fix attempts. Key contributions that enable Repair Agent include a set of tools that are useful for program repair, a dynamically updated prompt format that allows the LLM to interact with these tools, and a finite state machine that guides the agent in invoking the tools. Our evaluation on the popular Defects4J dataset demonstrates Repair Agent's effectiveness in autonomously repairing 164 bugs, including 39 bugs not fixed by prior techniques. Interacting with the LLM imposes an average cost of 270k tokens per bug, which, under the current pricing of OpenAI's GPT-3.5 model, translates to 14 cents per bug. To the best of our knowledge, this work is the first to present an autonomous, LLM-based agent for program repair, paving the way for future agent-based techniques in software engineering.",
+   "authors": [
+    "Islem Bouzenia",
+    "Pr\u00e9mkumar D\u00e9vanbu",
+    "Michael Pradel"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416366023",
+   "doi": "10.48550/arxiv.2503.21710",
+   "title": "Enhancing repository-level software repair via repository-aware knowledge graphs",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 56,
+   "abstract": "Repository-level software repair faces challenges in bridging semantic gaps between issue descriptions and code patches. Existing approaches, which primarily rely on large language models (LLMs), are hindered by semantic ambiguities, limited understanding of structural context, and insufficient reasoning capabilities. To address these limitations, we propose KGCompass with two innovations: (1) a novel repository-aware knowledge graph (KG) that accurately links repository artifacts (issues and pull requests) and codebase entities (files, classes, and functions), allowing us to effectively narrow down the vast search space to only 20 most relevant functions with accurate candidate fault locations and contextual information, and (2) a path-guided repair mechanism that leverages KG-mined entity paths, tracing through which allows us to augment LLMs with relevant contextual information to generate precise patches along with their explanations. Experimental results in the SWE-bench Lite demonstrate that KGCompass achieves state-of-the-art single-LLM repair performance (58.3%) and function-level fault location accuracy (56.0%) across open-source approaches with a single repair model, costing only $0.2 per repair. Among the bugs that KGCompass successfully localizes, 89.7% lack explicit location hints in the issue and are found only through multi-hop graph traversal, where pure LLMs struggle to locate bugs accurately. Relative to pure-LLM baselines, KGCompass lifts the resolved rate by 50.8% on Claude-4 Sonnet, 30.2% on Claude-3.5 Sonnet, 115.7% on DeepSeek-V3, and 156.4% on Qwen2.5 Max. These consistent improvements demonstrate that this graph-guided repair framework delivers model-agnostic, cost-efficient repair and sets a strong new baseline for repository-level repair.",
+   "authors": [
+    "Boyang Yang",
+    "Jiadong Ren",
+    "Shunfu Jin",
+    "Yang Liu",
+    "Liu Feng",
+    "Bach Le",
+    "Haoye Tian"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7164821586",
+   "doi": "10.1145/3832783.3834363",
+   "title": "LLM Agents Can See Code Repositories",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 14,
+   "abstract": "Coding agents powered by large language models (LLMs) have demonstrated remarkable proficiency in software engineering tasks. Yet modern coding agents rely almost entirely on text, leaving a major gap between how human developers and agents comprehend software repositories. Human developers leverage visual repository cues such as folder hierarchies and dependencies, raising the question of whether multimodal models can similarly improve repository understanding. In this paper, we conduct the first systematic empirical study on multimodal foundation models for repository-level tasks. Our experiments across four modern multimodal models reveal that while a vision-only context representation degrades performance and inflates token costs, integrating visualized context graphs as a supplementary modality can help agents grasp the repository more efficiently. Specifically, providing agents with visual structural context alongside standard text interfaces reduces input token consumption by up to 26% while maintaining or improving issue-resolution accuracy. Furthermore, we demonstrate that visual tools are most effective when utilized during the fault localization stage and when agents autonomously dictate their exploration depth. Our findings highlight a promising hybrid-modality pathway for the design of next-generation coding agents.",
+   "authors": [
+    "Dongjian Ma",
+    "Silin Chen",
+    "Yufei Yang",
+    "Y Shi",
+    "Yanfu Yan",
+    "Xiaodong Gu"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7123271405",
+   "doi": "10.48550/arxiv.2601.05539",
+   "title": "LIDL: LLM Integration Defect Localization via Knowledge Graph-Enhanced Multi-Agent Analysis",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "LLM-integrated software, which embeds or interacts with large language models (LLMs) as functional components, exhibits probabilistic and context-dependent behaviors that fundamentally differ from those of traditional software. This shift introduces a new category of integration defects that arise not only from code errors but also from misaligned interactions among LLM-specific artifacts, including prompts, API calls, configurations, and model outputs. However, existing defect localization techniques are ineffective at identifying these LLM-specific integration defects because they fail to capture cross-layer dependencies across heterogeneous artifacts, cannot exploit incomplete or misleading error traces, and lack semantic reasoning capabilities for identifying root causes. To address these challenges, we propose LIDL, a multi-agent framework for defect localization in LLM-integrated software. LIDL (1) constructs a code knowledge graph enriched with LLM-related annotations that represent interaction boundaries across source code, prompts, and configuration files, (2) fuses complementary sources of error evidence to surface candidate defect locations, and (3) applies context-aware validation that uses counterfactual reasoning to distinguish true root causes from propagated symptoms. We evaluate LIDL on 146 real-world defect instances collected from 105 GitHub repositories and 16 agent-based systems. The results show that LIDL significantly outperforms seven state-of-the-art baselines in localization accuracy, improving Top-3 accuracy by 19.15%, 21.69%, and 21.65% at the file, function, and line levels. Notably, LIDL achieves these gains at a lower cost than most baselines. Our localization results also improve downstream repair success by 30.77% over the best-performing baselines.",
+   "authors": [
+    "Gou Tan",
+    "Zilong He",
+    "Min Li",
+    "Pengfei Chen",
+    "Jieke Shi",
+    "Zhensu Sun",
+    "Ting Zhang",
+    "Danwen Chen"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7162452547",
+   "doi": "10.1145/3818617",
+   "title": "SGAgent : Suggestion-Guided LLM-Based Multi-Agent Framework for Repository-Level Software Repair",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 13,
+   "abstract": "The rapid advancement of Large Language Models (LLMs) has led to the emergence of intelligent agents capable of autonomously interacting with environments and invoking external tools. Recently, agent-based software repair approaches have received widespread attention, as repair agents can automatically analyze and localize bugs, generate patches, and achieve state-of-the-art performance on repository-level benchmarks (e.g., SWE-Bench). However, existing software repair approaches usually adopt a localize-then-fix paradigm , jumping directly from \u201cwhere the bug is\u201d to \u201chow to fix it,\u201d leaving a fundamental reasoning gap. To this end, we propose SGAgent , a S uggestion- G uided multi- Agent framework for repository-level software repair, which follows a localize-suggest-fix paradigm. Specifically, SGAgent introduces a suggestion to strengthen the transition from localization to repair. The suggester starts from the buggy locations and incrementally retrieves relevant context until it fully understands the bug, and then provides actionable repair suggestions. Moreover, we construct a Knowledge Graph (KG) from the target repository and develop a KG-based toolkit to enhance SGAgent \u2019s ability to enhance global contextual awareness and repository-level reasoning. Based on these components, three specialized sub-agents in SGAgent (i.e., localizer, suggester, and fixer) collaborate to achieve automated end-to-end software repair. We evaluated SGAgent on the SWE-Bench-Lite benchmark. Experimental results show that SGAgent with Claude-3.5 achieves 51.3% repair accuracy, 81.2% file-level, and 52.4% function-level localization accuracy with an average cost of $1.48 per instance, outperforming all baselines using the same base model. Moreover, SGAgent generalizes well across different base LLMs, further reaching a 60.7% resolution rate with Claude-4. When extended to vulnerability repair, SGAgent achieves a 48.0% resolution rate on VUL4J and VJBench, demonstrating strong generalization across tasks and programming languages.",
+   "authors": [
+    "Q Zhang",
+    "Chengyu Gao",
+    "Yu Han",
+    "Ye Shang",
+    "Chunrong Fang",
+    "Zhenyu Chen",
+    "Liang Xiao"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411272183",
+   "doi": "10.1109/icse-companion66252.2025.00079",
+   "title": "CKGFuzzer: LLM-Based Fuzz Driver Generation Enhanced By Code Knowledge Graph",
+   "year": 2025,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 43,
+   "abstract": "In recent years, the programming capabilities of large language models (LLMs) have garnered significant attention. Fuzz testing, a highly effective technique, plays a key role in enhancing software reliability and detecting vulnerabilities. However, traditional fuzz testing tools rely on manually crafted fuzz drivers, which can limit both testing efficiency and effectiveness. To address this challenge, we propose an automated fuzz testing method driven by a code knowledge graph and powered by an LLM-based intelligent agent system, referred to as CKGFuzzer. We approach fuzz driver creation as a code generation task, leveraging the knowledge graph of the code repository to automate the generation process within the fuzzing loop, while continuously refining both the fuzz driver and input seeds. The code knowledge graph is constructed through interprocedural program analysis, where each node in the graph represents a code entity, such as a function or a file. The knowledge graph-enhanced CKGFuzzer not only effectively resolves compilation errors in fuzz drivers and generates input seeds tailored to specific API usage scenarios, but also analyzes fuzz driver crash reports, assisting developers in improving code quality. By querying the knowledge graph of the code repository and learning from API usage scenarios, we can better identify testing targets and understand the specific purpose of each fuzz driver. We evaluated our approach using eight open-source software projects. The experimental results indicate that CKGFuzzer achieved an average improvement of 8.73% in code coverage compared to state-of-the-art techniques. Additionally, CKGFuzzer reduced the manual review workload in crash case analysis by 84.4% and successfully detected 11 real bugs (including nine previously unreported bugs) across the tested libraries. Our research enhances the overall performance of fuzz testing by refining fuzz driver generation strategies and input seed analysis, offering a more effective solution for vulnerability remediation and software quality improvement.",
+   "authors": [
+    "Hanxiang Xu",
+    "Wei Ma",
+    "T. Zhou",
+    "Yanjie Zhao",
+    "Kai Chen",
+    "Qiang Hu",
+    "Yang Liu",
+    "Haoyu Wang"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7124455383",
+   "doi": "10.48550/arxiv.2601.10112",
+   "title": "Repository Intelligence Graph: Deterministic Architectural Map for LLM Code Assistants",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 5,
+   "abstract": "Repository aware coding agents often struggle to recover build and test structure, especially in multilingual projects where cross language dependencies are encoded across heterogeneous build systems and tooling. We introduce the Repository Intelligence Graph (RIG), a deterministic, evidence backed architectural map that represents buildable components, aggregators, runners, tests, external packages, and package managers, connected by explicit dependency and coverage edges that trace back to concrete build and test definitions. We also present SPADE, a deterministic extractor that constructs RIG from build and test artifacts (currently with an automatic CMake plugin based on the CMake File API and CTest metadata), and exposes RIG as an LLM friendly JSON view that agents can treat as the authoritative description of repository structure. We evaluate three commercial agents (Claude Code, Cursor, Codex) on eight repositories spanning low to high build oriented complexity, including the real world MetaFFI project. Each agent answers thirty structured questions per repository with and without RIG in context, and we measure accuracy, wall clock completion time, and efficiency (seconds per correct answer). Across repositories and agents, providing RIG improves mean accuracy by 12.2\\% and reduces completion time by 53.9\\%, yielding a mean 57.8\\% reduction in seconds per correct answer. Gains are larger in multilingual repositories, which improve by 17.7\\% in accuracy and 69.5\\% in efficiency on average, compared to 6.6\\% and 46.1\\% in single language repositories. Qualitative analysis suggests that RIG shifts failures from structural misunderstandings toward reasoning mistakes over a correct structure, while rare regressions highlight that graph based reasoning quality remains a key factor.",
+   "authors": [
+    "Tsvi Cherny-Shahar",
+    "Amiram Yehudai"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416548195",
+   "doi": "10.48550/arxiv.2508.00083",
+   "title": "A Survey on Code Generation with LLM-based Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 195,
+   "abstract": "Code generation agents powered by large language models (LLMs) are revolutionizing the software development paradigm. Distinct from previous code generation techniques, code generation agents are characterized by three core features. 1) Autonomy: the ability to independently manage the entire workflow, from task decomposition to coding and debugging. 2) Expanded task scope: capabilities that extend beyond generating code snippets to encompass the full software development lifecycle (SDLC). 3) Enhancement of engineering practicality: a shift in research emphasis from algorithmic innovation toward practical engineering challenges, such as system reliability, process management, and tool integration. This domain has recently witnessed rapid development and an explosion in research, demonstrating significant application potential. This paper presents a systematic survey of the field of LLM-based code generation agents. We trace the technology's developmental trajectory from its inception and systematically categorize its core techniques, including both single-agent and multi-agent architectures. Furthermore, this survey details the applications of LLM-based agents across the full SDLC, summarizes mainstream evaluation benchmarks and metrics, and catalogs representative tools. Finally, by analyzing the primary challenges, we identify and propose several foundational, long-term research directions for the future work of the field.",
+   "authors": [
+    "Yihong Dong",
+    "Xue Jiang",
+    "Qian, Jiaru",
+    "Wang, Tian",
+    "Kechi Zhang",
+    "Zhi Yang Jin",
+    "Ge Li"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4406231153",
+   "doi": "10.48550/arxiv.2501.04227",
+   "title": "Agent Laboratory: Using LLM Agents as Research Assistants",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 401,
+   "abstract": "Historically, scientific discovery has been a lengthy and costly process, demanding substantial time and resources from initial conception to final results. To accelerate scientific discovery, reduce research costs, and improve research quality, we introduce Agent Laboratory, an autonomous LLM-based framework capable of completing the entire research process. This framework accepts a human-provided research idea and progresses through three stages--literature review, experimentation, and report writing to produce comprehensive research outputs, including a code repository and a research report, while enabling users to provide feedback and guidance at each stage. We deploy Agent Laboratory with various state-of-the-art LLMs and invite multiple researchers to assess its quality by participating in a survey, providing human feedback to guide the research process, and then evaluate the final paper. We found that: (1) Agent Laboratory driven by o1-preview generates the best research outcomes; (2) The generated machine learning code is able to achieve state-of-the-art performance compared to existing methods; (3) Human involvement, providing feedback at each stage, significantly improves the overall quality of research; (4) Agent Laboratory significantly reduces research expenses, achieving an 84% decrease compared to previous autonomous research methods. We hope Agent Laboratory enables researchers to allocate more effort toward creative ideation rather than low-level coding and writing, ultimately accelerating scientific discovery.",
+   "authors": [
+    "Samuel Schmidgall",
+    "Yusheng Su",
+    "Ze Wang",
+    "Ximeng Sun",
+    "Jialian Wu",
+    "Xiaodong Yu",
+    "Jiang Liu",
+    "Michael Moor"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7155045587",
+   "doi": "10.48550/arxiv.2604.17870",
+   "title": "GraSP: Graph-Structured Skill Compositions for LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 35,
+   "abstract": "Skill ecosystems for LLM agents have matured rapidly, yet recent benchmarks show that providing agents with more skills does not monotonically improve performance -- focused sets of 2-3 skills outperform comprehensive documentation, and excessive skills actually hurt. The bottleneck has shifted from skill availability to skill orchestration: agents need not more skills, but a structural mechanism to select, compose, and execute them with explicit causal dependencies. We propose GraSP, the first executable skill graph architecture that introduces a compilation layer between skill retrieval and execution. GraSP transforms flat skill sets into typed directed acyclic graphs (DAGs) with precondition-effect edges, executes them with node-level verification, and performs locality-bounded repair through five typed operators -- reducing replanning from O(N) to O(d^h). Across ALFWorld, ScienceWorld, WebShop, and InterCode with eight LLM backbones, GraSP outperforms ReAct, Reflexion, ExpeL, and flat skill baselines in every configuration, improving reward by up to +19 points over the strongest baseline while cutting environment steps by up to 41%. GraSP's advantage grows with task complexity and is robust to both skill over-retrieval and quality degradation, confirming that structured orchestration -- not larger skill libraries -- is the key to reliable agent execution.",
+   "authors": [
+    "Tianle Xia",
+    "Lingxiang Hu",
+    "Yiding Sun",
+    "Ming Xu",
+    "Liqun Liu",
+    "Siying Wang",
+    "Wei Xu",
+    "Jie Jiang"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7168263912",
+   "doi": "10.4230/lipics.esem.2026.68",
+   "title": "TerraRepair: A Tool-Grounded LLM Agent for Infrastructure-As-Code Repair",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "Background. Infrastructure-as-Code (IaC) scanners detect cloud misconfigurations in Terraform and other IaC languages before deployment, but repairing the flagged configurations remains largely manual. Recent Large Language Model (LLM)-based repair approaches can repair some findings, but may hallucinate unsupported constructs or suppress warnings without fixing the issue. Aims. We study whether tool grounding can improve LLM-based Terraform repair, and when a finding should be escalated because the required deployment-specific context is not available. Method. We present TerraRepair, a prototype of a tool-grounded LLM agent for Terraform repair with structured escalation. TerraRepair retrieves dependency context from Terraform references, consults the installed provider schema, and re-runs the scanner before returning a candidate repair. When the required context is absent, TerraRepair escalates instead of fabricating a plausible fix. Results. We evaluate our tool on two vulnerable-by-design Terraform repositories using two IaC security scanners, Checkov and Trivy, across AWS, Azure, and GCP. On the combined AWS benchmark, TerraRepair improves scanner-verified fix rates from 26.6% to 78.4% on Checkov and from 44.8% to 72.4% on Trivy, compared with a controlled one-shot baseline. It also reduces the baseline\u2019s 44.8-73.6 percentage point (pp) claimed-vs-verified repair gap to under 5 pp. In a sampled semantic audit covering AWS only, 78.9% of TerraRepair\u2019s scanner-verified AWS repairs are labeled as correct under a majority-vote protocol with two LLM judges and one author. Conclusions. These emerging results show that tool grounding can substantially improve scanner-verified LLM-based IaC repair on the studied benchmarks, while missing deployment-specific context remains the main knowledge boundary for full autonomy.",
+   "authors": [
+    "Minase Mekete Mengistu",
+    "Juri Di Rocco",
+    "Phuong T. Nguyen",
+    "Davide Di Ruscio"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403370443",
+   "doi": "10.48550/arxiv.2408.02479",
+   "title": "From LLMs to LLM-based Agents for Software Engineering: A Survey of Current, Challenges and Future",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 310,
+   "abstract": "With the rise of large language models (LLMs), researchers are increasingly exploring their applications in var ious vertical domains, such as software engineering. LLMs have achieved remarkable success in areas including code generation and vulnerability detection. However, they also exhibit numerous limitations and shortcomings. LLM-based agents, a novel tech nology with the potential for Artificial General Intelligence (AGI), combine LLMs as the core for decision-making and action-taking, addressing some of the inherent limitations of LLMs such as lack of autonomy and self-improvement. Despite numerous studies and surveys exploring the possibility of using LLMs in software engineering, it lacks a clear distinction between LLMs and LLM based agents. It is still in its early stage for a unified standard and benchmarking to qualify an LLM solution as an LLM-based agent in its domain. In this survey, we broadly investigate the current practice and solutions for LLMs and LLM-based agents for software engineering. In particular we summarise six key topics: requirement engineering, code generation, autonomous decision-making, software design, test generation, and software maintenance. We review and differentiate the work of LLMs and LLM-based agents from these six topics, examining their differences and similarities in tasks, benchmarks, and evaluation metrics. Finally, we discuss the models and benchmarks used, providing a comprehensive analysis of their applications and effectiveness in software engineering. We anticipate this work will shed some lights on pushing the boundaries of LLM-based agents in software engineering for future research.",
+   "authors": [
+    "Haolin Jin",
+    "Li Huang",
+    "Haipeng Cai",
+    "Jun Yan",
+    "Bo Li",
+    "Huaming Chen"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411449940",
+   "doi": "10.1145/3715754",
+   "title": "Demystifying LLM-Based Software Engineering Agents",
+   "year": 2025,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 876,
+   "abstract": "Recent advancements in large language models (LLMs) have significantly advanced the automation of software development tasks, including code synthesis, program repair, and test generation. More recently, researchers and industry practitioners have developed various autonomous LLM agents to perform end-to-end software development tasks. These agents are equipped with the ability to use tools, run commands, observe feedback from the environment, and plan for future actions. However, the complexity of these agent-based approaches, together with the limited abilities of current LLMs, raises the following question: Do we really have to employ complex autonomous software agents? To attempt to answer this question, we build Agentless \u2013 an agentless approach to automatically resolve software development issues. Compared to the verbose and complex setup of agent-based approaches, Agentless employs a simplistic three-phase process of localization, repair, and patch validation, without letting the LLM decide future actions or operate with complex tools. Our results on the popular SWE-bench Lite benchmark show that surprisingly the simplistic Agentless is able to achieve both the highest performance (32.00%, 96 correct fixes) and low cost ($0.70) compared with all existing open-source software agents at the time of paper submission! Agentless also achieves more than 50% solve rate when using Claude 3.5 Sonnet on the new SWE-bench Verified benchmark. In fact, Agentless has already been adopted by OpenAI as the go-to approach to showcase the real-world coding performance of both GPT-4o and the new o1 models; more recently, Agentless has also been used by DeepSeek to evaluate their newest DeepSeek V3 and R1 models . Furthermore, we manually classified the problems in SWE-bench Lite and found problems with exact ground truth patches or insufficient/misleading issue descriptions. As such, we construct SWE-bench Lite- S by excluding such problematic issues to perform more rigorous evaluation and comparison. Our work highlights the currently overlooked potential of a simplistic, cost-effective technique in autonomous software development. We hope Agentless will help reset the baseline, starting point, and horizon for autonomous software agents, and inspire future work along this crucial direction. We have open-sourced Agentless at: https://github.com/OpenAutoCoder/Agentless",
+   "authors": [
+    "Chunqiu Steven Xia",
+    "Yinlin Deng",
+    "Soren Dunn",
+    "Lingming Zhang"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417351600",
+   "doi": "10.1145/3808181",
+   "title": "ExpeRepair: Dual-Memory Enhanced LLM-Based Repository-Level Program Repair",
+   "year": 2026,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 49,
+   "abstract": "Automatically repairing software issues remains a fundamental challenge at the intersection of software engineering and AI. Although recent advances in Large Language Models (LLMs) have demonstrated potential for repository-level repair tasks, current methods exhibit two notable limitations: (1) they often address issues in isolation, neglecting to incorporate insights from previously resolved issues, and (2) they rely on static, rigid prompting strategies that constrain their ability to generalize across diverse and evolving contexts. We propose ExpeRepair, a novel LLM-based program repair framework inspired by the dual-memory systems of human cognition, where episodic and semantic memory synergistically support learning and decision-making. Unlike existing methods, ExpeRepair continuously learns from historical repair experiences via dual-channel knowledge accumulation, enabling it to adaptively reuse past knowledge during inference. Specifically, ExpeRepair organizes prior repair knowledge into two complementary memories: an episodic memory that stores concrete repair demonstrations, and a semantic memory that encodes abstract, reflective insights. At inference time, ExpeRepair activates both memory systems by retrieving relevant demonstrations from episodic memory and recalling high-level repair insights from semantic memory. It further enhances adaptability through dynamic prompt composition, integrating both memory types to replace static prompts with context-aware, experience-driven prompts. We evaluate ExpeRepair on two benchmarks: SWE-Bench Lite and SWE-Bench Verified. Experimental results show that ExpeRepair achieves pass@1 scores of 60.3% and 74.6% on the two benchmarks, respectively, achieving the best performance among the evaluated open-source methods. We have open-sourced ExpeRepair at https://github.com/ExpeRepair/ExpeRepair.",
+   "authors": [
+    "Fangwen Mu",
+    "Junjie Wang",
+    "Lin Shi",
+    "Song Wang",
+    "SHUANG-LONG LI",
+    "Qing Wang"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4405094793",
+   "doi": "10.1145/3796510",
+   "title": "Synergizing LLMs and Knowledge Graphs: A Novel Approach to Software Repository-Related Question Answering",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 4,
+   "abstract": "Software repositories contain valuable information for understanding the development process. However, extracting insights from repository data is time-consuming and requires technical expertise. While software engineering chatbots support natural language interactions with repositories, chatbots struggle to understand questions beyond their trained intents and to accurately retrieve the relevant data. This study aims to improve the accuracy of LLM-based chatbots in answering repository-related questions by augmenting them with knowledge graphs. We use a two-step approach: constructing a knowledge graph from repository data, and synergizing the knowledge graph with an LLM to handle natural language questions and answers. We curated 150 questions of varying complexity and evaluated the approach on 5 popular open source projects. Our initial results revealed the limitations of the approach, with most errors due to the reasoning ability of the LLM. We therefore applied few-shot chain-of-thought prompting, which improved accuracy to 84%. We also compared against baselines (MSRBot and GPT-4o-search-preview), and our approach performed significantly better. In a task-based user study with 20 participants, users completed more tasks correctly and in less time with our approach, and they reported that it was useful. Our findings demonstrate that LLMs and knowledge graphs are a viable solution for making repository data accessible.",
+   "authors": [
+    "Samuel Abedu",
+    "SayedHassan Khatoonabadi",
+    "Emad Shihab"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7171951889",
+   "doi": "10.48550/arxiv.2607.27249",
+   "title": "OwlPath: Lossless Knowledge Compression for LLM Bug Repair",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "LLM-based software engineering agents are constrained by limited context windows: roughly 100K tokens must store structurally relevant code subsets to resolve bugs. Standard retrieval models treat code as plain text, forcing agents to resolve multi-hop dependencies including subclass chains, transitive callers and interface implementations through slow trial and error. We tackle this limitation with lossless knowledge compression, encoding source code into an OWL2 ontology to answer structural queries using minimal relevant code fragments. We present OwlPath, an OWL2 reasoning layer atop CodeGraph, a widely used code intelligence platform with 500K+ GitHub stars, offering a unified CLI for structural code retrieval. Powered by tree-sitter parsing, OwlPath supports multi-language repositories (Python, JavaScript, TypeScript, Go, etc.) and encodes language-specific semantics into a unified OWL2 ontology. It adopts two complementary modules. First, a transitive-closure engine fetches all structurally linked symbols via single SPARQL property-path queries, capturing multi-hop relations missed by string matching. Second, the OWL Software Knowledge Map (OWL-SKM) precomputes a compact 3KB summary with module trees, core APIs and issue-related symbols, directing agents to target modules in the first query. Evaluated on 18 SWE-bench Pro instances, OwlPath obtains a 68.4% strict-apply rate versus 66.7% for the CodeGraph baseline, cutting token usage by 28.8% and runtime by 39.5%. In offline retrieval tests over 67 instances, OwlPath improves recall 2.06 times (0.464 vs 0.226) and reaches 88.1% hit rate compared to CodeGraph's 59.7%. On a 37-question structural retrieval benchmark, recall rises from 4.4% to 28.8%, with 69-80% accuracy on transitive caller and interface tasks.",
+   "authors": [
+    "Bo Zhang",
+    "Ren Pan",
+    "Huan Chen",
+    "Xiang Song"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223543053",
+   "doi": null,
+   "title": "Talking to LADM: natural-language querying of land and property knowledge graphs with LLM agents",
+   "year": 2026,
+   "venue": "Minerva Access (University of Melbourne)",
+   "type": "conference-paper",
+   "cited_by": 0,
+   "abstract": "Land and property data are highly fragmented, unstructured, and multimodal, and are distributed across disconnected data repositories. Although the Land Administration Domain Model (LADM) provides a standard structure for representing this information, accessing LADM-based databases generally requires knowledge of the database schema and technical query languages such as SQL, SPARQL, GQL, and Cypher. This limits users\u2019 access to land and property data since they typically do not have database-querying expertise. Large language models (LLMs) provide an opportunity to address this problem through natural language interaction. However, relying on an LLM alone can produce incorrect answers, particularly in the land administration domain in which relationships between parties, rights, restrictions, responsibilities, land parcels, and source documents are important. This paper presents an end-to-end framework for natural-language querying of land and property data by integrating an LLM agent with an LADM II-driven knowledge graph. The knowledge graph is implemented as a labelled property graph (LPG) in the Neo4j graph database management system using a top-down mapping approach based on core LADM concepts. The LADM knowledge graph, which comprises more than 1481 nodes and 2656 relationships, was created using real-world land and property data extracted from cadastral plans and administrative instruments in Victoria, Australia. The framework was implemented as a prototype in which Neo4j was used to store the LADM II-driven knowledge graph, while LangChain and LangGraph were used to connect the language model with the knowledge graph and manage the query-processing workflow. The prototype was evaluated using 143 expert-curated natural-language questions such as legal, spatial, and temporal queries. The benchmark questions included both attribute retrieval and reasoning tasks and were reviewed and refined with input from licensed land surveyors and land registry specialists. Performance was assessed using semantic result accuracy, which evaluates whether the generated query retrieves the required land and property information to answer the question. By comparing the results returned by the prototype-generated queries with the gold-standard results, the prototype achieved an overall accuracy of 87.4%. This demonstrates substantially better performance than the Text2Cypher baseline, a direct approach that converts natural-language questions into Cypher queries. The baseline achieved accuracies of 2.1% in the zero-shot scenario and 14.0% in the domain-prompted scenario. The main contribution of this work is to demonstrate that LADM can provide a semantic foundation for LLM-based interaction with land and property data and can provide a step towards conversational access to land and property data.",
+   "authors": [
+    "H Hosseini",
+    "B Atazadeh",
+    "A Rajabifard"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7168272036",
+   "doi": "10.48550/arxiv.2607.10621",
+   "title": "WebDesignIter: Co-Evolving Design Knowledge for Repository-Level Front-End Code Generation",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Front-end development accumulates change after change at the repository level, weaving complex cross-file dependencies that current LLM coding agents tuned for single-shot tasks cannot reliably track across multiple iterations, leading to functional regressions and code that resists maintenance. We argue the missing piece is design knowledge: architectural principles, module responsibilities, and structural constraints that developers lean on to keep code readable, maintainable, and evolvable as a system scales. To operationalize this, we propose WebDesignIter, a framework built around a persistent knowledge graph (WebAppArchKG) that fuses repository structure with design knowledge and keeps both in sync across development cycles. WebDesignIter works in two stages: design-informed planning pulls historical context and architectural overviews from WebAppArchKG to produce an implementation plan with corresponding test scripts, and design-aware generation executes that plan through targeted diff-based patches, validated by sandbox execution and automatic syntax repair. On Web-Bench, WebDesignIter delivers an average Pass@2 gain of 9.55 percentage points across nine foundation models over existing baselines. More importantly, WebDesignIter outperforms every general-purpose coding agent Claude Code, OpenHands, SWE-Agent, Codex CLI on every model configuration, posting the highest Pass@1 and Pass@2 while consuming 2530 fewer input tokens. Ablation singles out design knowledge as the most impactful component: stripping it drops Pass@1 by 11.40 percentage points, a degradation far larger than removing code-graph retrieval, patch-based generation, or sandbox verification, confirming that design knowledge provides a fundamentally more efficient and reliable path to repository-level code generation.",
+   "authors": [
+    "Zheng Pei",
+    "Mingwei Liu",
+    "Zhenxi Chen",
+    "Zihao Wang",
+    "Yanlin Wang"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7218693691",
+   "doi": "10.1145/3849809",
+   "title": "LLM See, LLM Do: Enhancing Repository-Aware Code Generation in LLMs Through Logical Context and Usage Knowledge",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 0,
+   "abstract": "Large language models (LLMs) have significantly advanced automatic code generation. Although they have demonstrated remarkable ability in writing standalone code, they still struggle with real-world repository-level coding tasks due to the lack of repository-specific knowledge. Existing studies typically employ retrieval-augmented generation (RAG) approaches to retrieve relevant context to guide LLMs\u2019 generation. However, these approaches fail to ensure the logical relevance and the usability of retrieved results, leading to suboptimal code generation. To address this problem, we propose LogiCoder , a novel RAG approach that leverages logical relationships within code repositories to retrieve usage knowledge for LLMs. Specifically, LogiCoder first builds a dependency graph to identify candidate callee functions. By tracing their call relationships, LogiCoder retrieves their usage examples from the entire repository. Then it integrates the most contextually similar ones with semantic search results via re-ranking. These top-ranked examples are eventually incorporated into LLMs\u2019 prompts to enhance their repository awareness during code generation. We apply LogiCoder to five widely-used LLMs and evaluate it on the DevEval benchmark. Experimental results show that on challenging tasks that require cross-file calls, LogiCoder achieves a new state-of-the-art Pass@1 of 44.58%, with relative improvements of up to 27.26% in Pass@1 and 14.71% in Recall@1 over existing baselines. Ablation studies confirm the effectiveness of each component in LogiCoder .",
+   "authors": [
+    "Tanghaoran Zhang",
+    "Xinjun Mao",
+    "Yuxin Zhao",
+    "Kang Yang",
+    "Zhang Zhang",
+    "Yao Lu",
+    "Youren Chen",
+    "Yue Yu"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7165662689",
+   "doi": "10.48550/arxiv.2606.22082",
+   "title": "CodeTeam: An LLM-Powered Multi-Agent Framework for Repository-Level Code Generation",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 5,
+   "abstract": "Natural language to repository generation (NL2Repo) requires a system to construct an entire software repository from a natural-language requirements document. Compared with function-level code generation, this task demands longer planning horizons, stable interfaces across files, and iterative debugging of cross-file inconsistencies. To address these challenges, we propose CodeTeam, an LLM-based multi-agent framework that separates planning, decision making, and implementation into distinct, coordinated stages. In the planning stage, multiple Architect agents draft competing software design sketches (SDS), optionally grounded by retrieved design references. A CTO agent then evaluates, selects, and normalizes the most promising SDS into a machine-checkable contract that specifies file ownership, public interfaces, and dependency constraints. In the implementation stage, Developer agents generate code under a dependency-aware scheduler with bounded context and lightweight Git-based coordination, while a QA agent runs tests and drives iterative repairs. On the synthesis-based SketchEval benchmark, we explicitly compare CodeTeam's prompt-engineering (PE) and supervised fine-tuning (SFT) variants with the corresponding CodeS variants, where CodeTeam improves the overall SketchBLEU by 4.1 and 2.9 absolute points, respectively. On the execution-based NL2Repo-Bench benchmark, used as an external validation protocol, CodeTeam achieves the highest average test pass rate in both settings (34.6% PE, 42.3% SFT), confirming that the sketch-improvements extend to functional correctness under upstream test suites. Ablation results show that project-specific developer allocation and retrieval-augmented planning each contribute substantially to the SketchBLEU improvement (9.9% and 8.1% relative, respectively). CodeTeam and the experimental results are available at https://github.com/WhitenWhiten/CodeTeam",
+   "authors": [
+    "Yifei Wang",
+    "R K Li",
+    "Peng Liang",
+    "Qiong Feng",
+    "Zengyang Li",
+    "Mojtaba Shahin",
+    "Arif Ali Khan"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7147614389",
+   "doi": "10.48550/arxiv.2603.27277",
+   "title": "Codebase-Memory: Tree-Sitter-Based Knowledge Graphs for LLM Code Exploration via MCP",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 10,
+   "abstract": "Large Language Model (LLM) coding agents typically explore codebases through repeated file-reading and grep-searching, consuming thousands of tokens per query without structural understanding. We present Codebase-Memory, an open-source system that constructs a persistent, Tree-Sitter-based knowledge graph via the Model Context Protocol (MCP), parsing 66 languages through a multi-phase pipeline with parallel worker pools, call-graph traversal, impact analysis, and community discovery. Evaluated across 31 real-world repositories, Codebase-Memory achieves 83% answer quality versus 92% for a file-exploration agent, at ten times fewer tokens and 2.1 times fewer tool calls. For graph-native queries such as hub detection and caller ranking, it matches or exceeds the explorer on 19 of 31 languages.",
+   "authors": [
+    "Martin Vogel",
+    "Falk Meyer-Eschenbach",
+    "Severin Kohler",
+    "Elias Gr\u00fcnewald",
+    "Felix Balzer"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4399401005",
+   "doi": "10.48550/arxiv.2406.01304",
+   "title": "CodeR: Issue Resolving with Multi-Agent and Task Graphs",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 146,
+   "abstract": "GitHub issue resolving recently has attracted significant attention from academia and industry. SWE-bench is proposed to measure the performance in resolving issues. In this paper, we propose CodeR, which adopts a multi-agent framework and pre-defined task graphs to Repair & Resolve reported bugs and add new features within code Repository. On SWE-bench lite, CodeR is able to solve 28.33% of issues, when submitting only once for each issue. We examine the performance impact of each design of CodeR and offer insights to advance this research direction.",
+   "authors": [
+    "Dong Chen",
+    "Shaoxin Lin",
+    "Muhan Zeng",
+    "Daoguang Zan",
+    "Jian-Gang Wang",
+    "Anton Cheshkov",
+    "Sun, Jun",
+    "Hao Yu"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416035220",
+   "doi": "10.18653/v1/2025.findings-emnlp.320",
+   "title": "Agent Laboratory: Using LLM Agents as Research Assistants",
+   "year": 2025,
+   "venue": "Findings of the Association for Computational Linguistics: EMNLP (Findings of EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 148,
+   "abstract": "Samuel Schmidgall, Yusheng Su, Ze Wang, Ximeng Sun, Jialian Wu, Xiaodong Yu, Jiang Liu, Michael Moor, Zicheng Liu, Emad Barsoum. Findings of the Association for Computational Linguistics: EMNLP 2025. 2025.",
+   "authors": [
+    "Samuel Schmidgall",
+    "Yusheng Su",
+    "Ze Wang",
+    "Ximeng Sun",
+    "Jialian Wu",
+    "Xiaodong Yu",
+    "Jiang Liu",
+    "Michael Moor"
+   ],
+   "facet": "F3_graph",
+   "query": "repository knowledge graph LLM agent code repair"
+  }
+ ]
+}

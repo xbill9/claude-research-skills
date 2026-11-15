@@ -1,0 +1,527 @@
+{
+ "url": "https://api.openalex.org/works?search=context+compression+LLM+agent+observation+pruning+SWE-bench&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W7125680675",
+   "doi": "10.48550/arxiv.2601.16746",
+   "title": "SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 68,
+   "abstract": "LLM agents have demonstrated remarkable capabilities in software development, but their performance is hampered by long interaction contexts, which incur high API costs and latency. While various context compression approaches such as LongLLMLingua have emerged to tackle this challenge, they typically rely on fixed metrics such as PPL, ignoring the task-specific nature of code understanding. As a result, they frequently disrupt syntactic and logical structure and fail to retain critical implementation details. In this paper, we propose SWE-Pruner, a self-adaptive context pruning framework tailored for coding agents. Drawing inspiration from how human programmers \"selectively skim\" source code during development and debugging, SWE-Pruner performs task-aware adaptive pruning for long contexts. Given the current task, the agent formulates an explicit goal (e.g., \"focus on error handling\") as a hint to guide the pruning targets. A lightweight neural skimmer (0.6B parameters) is trained to dynamically select relevant lines from the surrounding context given the goal. Evaluations across four benchmarks and multiple models validate SWE-Pruner's effectiveness in various scenarios, achieving 23-54% token reduction on agent tasks like SWE-Bench Verified while even improving success rates, and up to 14.84x compression on single-turn tasks like LongCodeQA with minimal performance impact.",
+   "authors": [
+    "Yuhang Wang",
+    "Yanan Shi",
+    "Mo Yang",
+    "Rongrui Zhang",
+    "Shilin He",
+    "Heng Lian",
+    "Yuting Chen",
+    "Siyu Ye"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214195747",
+   "doi": "10.48550/arxiv.2609.27891",
+   "title": "Schr\u00f6dinger's Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "Repository-level coding benchmarks have become the standard for evaluating coding agents, yet they inherently suffer from data leakage because they are built upon popular open-source repositories repeatedly used for training. Consequently, strong performance may reflect memorization of canonical repository cues rather than robust repository reasoning. We propose SchrodingerRepo (Schr\u00f6dinger's Repository), an evaluation framework for testing coding agents under dynamically instantiated repository representations. Instead of repeatedly using a static representation of the test repository, SchrodingerRepo treats the test repository as an evaluation-time latent variable that is dynamically instantiated only when the agent enters the evaluation environment. The instantiated repository preserves the original executable behavior while eroding familiar cues such as naming conventions, file layouts, and implementation patterns through four transformation levels: problem statement reconstruction, namespace remapping, intra-file layout reordering, and functionality-preserving code rewriting. We evaluate popular LLMs on SWE-bench Verified and SWE-QA. Results show that removing familiar repository cues consistently degrades agent performance and substantially increases interaction costs across models. Further analysis reveals that the additional cost is primarily caused by increased difficulty in repository exploration and localization. These findings suggest that current coding agents may partially rely on memorized repository-side cues, highlighting the need for evaluation under dynamically instantiated repository representations.",
+   "authors": [
+    "Silin Chen",
+    "Yufei Yang",
+    "Xiaodong Gu",
+    "Yuling Shi",
+    "Chengcheng Wan",
+    "Haibing Guan"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7163065568",
+   "doi": "10.18653/2026.emnlp-main.2396",
+   "title": "Context Compression for LLM Agents: A Survey of Methods, Failure Modes, and Evaluation",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 7,
+   "abstract": "As Large Language Models (LLMs) evolve into autonomous agents for long-horizon tasks, managing unbounded interaction trajectories under fixed context budgets becomes a core systems challenge.Unlike standard long-context documents, agent trajectories are heterogeneous and interleave observations, reasoning traces, and tool executions, so compression must preserve temporal dependencies, actionable state, and structural fidelity.Yet existing methods remain fragmented, making it difficult to compare design choices and reason about their reliability implications.This survey introduces a unified taxonomy of agent context compression along three dimensions: compression target (what is compressed), compression mechanism (how it is transformed and retained), and control policy (who decides when compression is triggered).We further organize recurring failures in compressed execution into F1: Pre-compression Decision Error, F2: In-compression Information Loss, and F3: Post-compression Access Failure, and examine domain-specific trade-offs in software engineering, web navigation, and deep research.By unifying the design space, failure taxonomy, and evaluation perspective, this survey provides a foundation for building scalable and recoverable LLM agents.",
+   "authors": [
+    "Yifei Wang",
+    "Ziteng Wang",
+    "Yuling Shi",
+    "Silin Chen",
+    "Xinrui Wang",
+    "Yueqi Wang",
+    "Beijun Shen",
+    "Linjing Li"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214897561",
+   "doi": "10.48550/arxiv.2609.37590",
+   "title": "FOCUS: Training-Free Decision-Preserving Context Compression for LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "LLM agents accumulate interaction histories that grow linearly with task length, causing quadratic inference cost scaling and performance degradation from attention dilution. Existing context-compression methods learn what to discard offline: by contrastively optimizing guidelines, distilling compressors, or training compression policies. This incurs a substantial cost. Further, the compression policy is learned a priori and is not dynamically conditioned on the evolving test-time trajectories. In this paper we ask a complementary question: Which past interactions causally shape the agent's future decisions? We recast context compression as a causal decision preservation problem over discrete interaction units and introduce FOCUS, a training-free context compression framework that operates entirely at test time. Our method requires no offline data collection or fine-tuning, and is architecture-agnostic, attaching to any closed-API frontier model as a modular compression layer. We evaluate FOCUS on diverse agentic benchmarks including API and tool-calling, QA, web domain and multi-turn dialogue. Our method establishes new state of the art performance, cutting peak context by up to 48% and dependency by 73% while improving task success by up to 8.9 percentage points over uncompressed execution.",
+   "authors": [
+    "Shantanu Dixit",
+    "Anson Bastos",
+    "Xuchao Zhang",
+    "Chetan Bansal",
+    "Saravan Rajmohan"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223110875",
+   "doi": "10.48550/arxiv.2610.28612",
+   "title": "TraceLite: Efficient Trace Reduction for SWE Agents via Optical Compression and Redundancy Removal",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Software engineering agents solve repository-level tasks through iterative tool use, but their continuously growing interaction traces incur substantial token consumption and inference overhead. Existing compression approaches often require model training, auxiliary LLM calls, or assumptions about specific content such as source code. We present TraceLite, a simple yet effective, training-free framework for compressing heterogeneous SWE-agent observations. Our preliminary study shows that optical rendering preserves substantial textual and semantic information under moderate compression, while agent trajectories exhibit both cross-step and phase-level redundancy. Motivated by these findings, TraceLite preserves recent observations as high-fidelity text, renders historical observations as compact images, removes overlapping content, and discards phase-expired observation payloads after code editing. It requires neither offline training nor auxiliary LLM inference. We evaluate TraceLite on SWE-bench Verified and DeepSWE using GPT-5.6-Luna and Gemini-3.8Flash as backbone models. On SWE-bench Verified, TraceLite achieves 78.25% resolve rate, outperforming the evaluated compression baselines while reducing average input-token consumption and API cost by 33.05% and 21.30%, respectively. Moreover, it introduces only 0.438 seconds of compression latency per observation. These results demonstrate that TraceLite improves SWE-agent efficiency with low processing overhead and without compromising issue-resolution capability. Our code is available at https://github.com/xjywhu/TraceLite.",
+   "authors": [
+    "Jingyu Xiao",
+    "Qianxi Liu",
+    "Yintong Huo",
+    "Yuan Jiang",
+    "Michael R. Lyu"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7167611099",
+   "doi": "10.48550/arxiv.2607.02911",
+   "title": "CoACT: Action-Preserving Observation Compression for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 7,
+   "abstract": "LLM-based coding agents solve software-engineering tasks through iterative interactions with development environments, where returned observations accumulate in the context and become a major source of inference cost. Observation compression reduces this cost by shortening observations before they are appended to the context. However, existing methods still exhibit an unsatisfactory efficiency-effectiveness trade-off, as they do not explicitly model how compression affects the agent's subsequent behavior. This paper proposes CoACT, an action-preserving observation compression method for coding agents. CoACT is built on next-action preservation (NAP), which requires a compressed observation to induce the same next action as the raw observation. By checking the agent's immediate next action, NAP provides a practical signal for whether a compression preserves the information needed for continued task solving. During training, a teacher model first generates multiple compressed candidates of each observation. CoACT then uses an action-preservation reward based on NAP to filter out candidates that would change the agent's next action, and uses a length-reduction reward to choose compact candidates as supervision for a lightweight compressor. Experiments on SWE-bench Verified with three agentic models show that CoACT reduces average total token consumption by 33.0% while maintaining task-solving effectiveness close to the uncompressed agent.",
+   "authors": [
+    "Haorui Chen",
+    "Yuancheng Zhu",
+    "Yitong Zhang",
+    "Jia Li"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7169841099",
+   "doi": "10.48550/arxiv.2607.18213",
+   "title": "SWE-Pruner Pro: The Coder LLM Already Knows What to Prune",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 4,
+   "abstract": "Pruning long context for coding agents has been a vital technology for efficient context management. While existing context pruning methods such as SWE-Pruner realize this by attaching a separate code classifier, we find the agent itself encodes internal representations indicating the relevance of code context when reading tool output. Based on this finding, we propose SWE-Pruner Pro, which prunes tool outputs directly inside the agent. Concretely, a small head turns the agent's own internal representations into a keep-or-prune label for each line, with a length-aware embedding keyed to each tool output's line count. Across two open-weight backbones and four multi-turn benchmarks, SWE-Pruner Pro saves up to 39% of prompt and completion tokens while preserving task quality, with bounded inference overhead. Notably, on MiMo-V2-Flash SWE-Pruner Pro additionally raises the SWE-Bench Verified resolve rate by +3.8% and the long-context Oolong accuracy by +2.2 points.",
+   "authors": [
+    "Yuhang Wang",
+    "Y Shi",
+    "Shaoqiu Zhang",
+    "Jialiang Liang",
+    "Shilin He",
+    "Siyu Ye",
+    "Yuting Chen",
+    "Kai Cai"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223833714",
+   "doi": "10.48550/arxiv.2610.34425",
+   "title": "CTXAgent - Self-Controlled Context Management of LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Agent harnesses keep long sessions inside the context window by compacting the history when a token threshold is crossed. We study an alternative in which the model manages its own context: it decides when to compact, what to keep and what to write as the hand-off, given two tools and one paragraph of guidance. Since earlier work found that open-weight models cannot manage their own context without scaffolding, we compare seven frontier models under identical conditions, with and without the context tools, on token cost and benchmark score, and we compare our harness with three widely used harnesses on two of these models. The benchmark is assembled from existing ones: coding exercises, multi-step SciCode problems and SWE-bench Pro and Terminal-Bench 4.0 tasks are interleaved with planted facts, ephemeral observations and standing instructions, all checked deterministically, in sessions of 35-212 turns that resemble a user working through different tasks in one chat. Most of the strongest models manage their context: they compact and curate regularly, the live context of the mixed sessions stays mostly below 100k tokens, and their benchmark scores mostly do not drop significantly. For the models that manage their context well, the cost reduction is substantial but varies between models, because some models compact so often that other costs increase. With Claude Opus 5.5, the self-managed harness matches Claude Code on task success at 34% lower cost than its explicit 200k-window configuration and 49% lower than its default, with no context window to choose. We release the agent, the benchmark and all result rows.",
+   "authors": [
+    "M. Busch",
+    "M. Tacke",
+    "Roland Can Aydin",
+    "Christian Feiler",
+    "Christian Johannes Cyron"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7155204330",
+   "doi": "10.48550/arxiv.2604.19572",
+   "title": "A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 12,
+   "abstract": "As terminal agents scale to long-horizon, multi-turn workflows, a key bottleneck is not merely limited context length, but the accumulation of noisy terminal observations in the interaction history. Retaining raw observations preserves useful environment feedback, but also leads to context saturation and high token cost; conversely, naive compression may discard task-critical signals needed for subsequent actions. Because terminal environments are highly heterogeneous across repositories, commands, and execution states, heuristic-based or fixed-prompt compression methods are difficult to generalize. We propose TACO, a plug-and-play, training-free, self-evolving Terminal Agent Compression framework for existing terminal agents. TACO automatically discovers, refines, and reuses structured compression rules from interaction trajectories, enabling workflow-adaptive filtering of low-value terminal outputs while preserving task-relevant observations. Experiments on TerminalBench (TB 1.0 and TB 2.0) and four additional terminal-related benchmarks, including SWE-Bench Lite, CompileBench, DevEval, and CRUST-Bench, show that TACO consistently improves task performance and token efficiency across agent scaffolds and backbone models. On TerminalBench, TACO yields 1%-4% accuracy gains across strong agentic models and improves accuracy by around 2%-3% under the same token budget. On additional terminal-related benchmarks, it reduces total token consumption while maintaining or improving task success rates. These results suggest that self-evolving, workflow-adaptive observation compression is an effective path toward more reliable and efficient long-horizon terminal agents. The code is publicly available at https://github.com/multimodal-art-projection/TACO.",
+   "authors": [
+    "Jincheng Ren",
+    "Siwei Wu",
+    "Yizhi Li",
+    "Kang Zhu",
+    "Shu Xu",
+    "Boyu Feng",
+    "Ruibin Yuan",
+    "Wei Zhang"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416711932",
+   "doi": "10.48550/arxiv.2509.02547",
+   "title": "The Landscape of Agentic Reinforcement Learning for LLMs: A Survey",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 230,
+   "abstract": "The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm shift from conventional reinforcement learning applied to large language models (LLM RL), reframing LLMs from passive sequence generators into autonomous, decision-making agents embedded in complex, dynamic worlds. This survey formalizes this conceptual shift by contrasting the degenerate single-step Markov Decision Processes (MDPs) of LLM-RL with the temporally extended, partially observable Markov decision processes (POMDPs) that define Agentic RL. Building on this foundation, we propose a comprehensive twofold taxonomy: one organized around core agentic capabilities, including planning, tool use, memory, reasoning, self-improvement, and perception, and the other around their applications across diverse task domains. Central to our thesis is that reinforcement learning serves as the critical mechanism for transforming these capabilities from static, heuristic modules into adaptive, robust agentic behavior. To support and accelerate future research, we consolidate the landscape of open-source environments, benchmarks, and frameworks into a practical compendium. By synthesizing over five hundred recent works, this survey charts the contours of this rapidly evolving field and highlights the opportunities and challenges that will shape the development of scalable, general-purpose AI agents.",
+   "authors": [
+    "Guibin Zhang",
+    "Geng, Hejia",
+    "Yu, Xiaohang",
+    "Zhenfei Yin",
+    "Zhang, Zaibin",
+    "Tan, Zelin",
+    "Heng Zhou",
+    "Zhongzhi Li"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7162558836",
+   "doi": "10.48550/arxiv.2605.26596",
+   "title": "AGORA: Adapter-Grounded Observation-Action Retention for Inference-Free Prompt Compression in LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 4,
+   "abstract": "The token-level extractive compressors widely used for general LM context are structurally inappropriate for LLM agents: across 17 (env, backbone, method) cells spanning two independent token-level method families, every cell collapses to mean reward <= 0.05 despite 1.3-13.3x realized compression. We name and characterize this failure mode as action-grammar destruction -- the tokens carrying action semantics (identifiers, brackets, action verbs) are exactly those self-information ranks lowest, so a general-purpose compressor reliably removes them and the environment rejects the residual. The diagnosis points to step-granularity compression. We introduce AGORA, an inference-free step-level compressor combining a structural prompt parser, an always-keep floor for format- and recency-critical content, and a 125M-parameter relevance scorer trained on counterfactual next-action-change labels (~2ms/step, zero per-step LLM toll). Across the compared inference-free and LLM-based methods, AGORA is the only one retaining >= 75% uncompressed performance in 8 of 9 cells (with the lone exception at 73%); a four-way component ablation isolates the structural floor as the dominant quality lever and the learned scorer as the source of 1.0-11.5x adaptive end-to-end compression from a single fixed keep ratio.",
+   "authors": [
+    "Haoran Zhang",
+    "Zhaohua Sun"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415332588",
+   "doi": "10.1145/3797084",
+   "title": "Reducing Cost of LLM Agents with Trajectory Reduction",
+   "year": 2026,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 76,
+   "abstract": "Multi-turn agent systems based on Large Language Models (LLMs) have become increasingly popular for software engineering tasks. While LLM agents demonstrate promising effectiveness, the high computational cost of input tokens due to ever-growing trajectories remains a significant efficiency concern. Efficiency has been largely overlooked in existing studies and agent products, and this paper addresses this gap by introducing an inference-time trajectory reduction approach that reduces computational costs. By analyzing existing agent trajectories, we demonstrate that useless, redundant, and expired information is widespread across trajectories. Such waste can be identified and reduced without compromising the agent's performance. We propose a simple yet effective trajectory reduction approach, AgentDiet, which automatically removes such waste during agent execution. We implement AgentDiet on a top-performing coding agent, and our evaluation on two LLMs and two benchmarks shows that AgentDiet can reduce input tokens by 39.9%-59.7% and the total computational cost by 21.1%-35.9%, while maintaining the same agent performance. These results indicate that inference-time trajectory reduction is a promising direction for agent systems.",
+   "authors": [
+    "Yuan-an Xiao",
+    "Pengfei Gao",
+    "Chao Peng",
+    "Yingfei Xiong"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7164896536",
+   "doi": "10.18653/2026.findings-emnlp.899",
+   "title": "TokenPilot: Cache-Efficient Context Management for LLM Agents",
+   "year": 2026,
+   "venue": "Findings of the Association for Computational Linguistics: EMNLP (Findings of EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 3,
+   "abstract": "As LLM agents are deployed in long-horizon sessions, context accumulation drives up inference costs.Existing approaches utilize text pruning or dynamic memory eviction to minimize token footprints; however, their unconstrained sequence mutations alter layouts, introducing prefix mismatches and cache invalidation.This reveals a critical trade-off between text sparsity and prompt cache continuity.To address this, we present TokenPilot, a dualgranularity context management framework.Globally, Ingestion-Aware Compaction acts as a framework harness to stabilize prompt prefixes and eliminate open-world environmental noise at the ingestion gate.Locally, Lifecycle-Aware Eviction monitors the ongoing residual utility of context segments, enforcing a conservative batch-turn schedule to offload content segments only when task relevance expires.Experiments on PinchBench and Claw-Eval under both isolated and continuous modes demonstrate that TokenPilot reduces costs by 61% and 56% in isolated mode, and 61% and 87% in continuous mode, while maintaining competitive performance compared to prior systems 1 .",
+   "authors": [
+    "Xu BuQiang",
+    "Zirui Xue",
+    "\u6c88\u5178\u8c0b",
+    "Chenyang Fu",
+    "Chiyu Wu",
+    "Caiying Huang",
+    "Chen Jiang",
+    "Jizhan Fang"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214653194",
+   "doi": "10.48550/arxiv.2609.30465",
+   "title": "RAZOR: Pruning Replaceable Experts in LLMs",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 3,
+   "abstract": "Mixture-of-experts (MoE) models activate only a few experts per token but store the entire expert pool. Pruning this pool requires identifying experts whose removal preserves model behavior. Routing frequency and output magnitude do not fully describe deletion damage, which also depends on how the surviving and replacement experts compensate for the removed output. We introduce RAZOR, a training-free pruning method based on consensus residuals, the deviations of expert outputs from their original weighted mixture. At a fixed layer input, these residuals give the exact output change for a single deletion under survivor renormalization and router refill. RAZOR aggregates this damage by conditional root mean square and selects experts under a layerwise budget using forward computation alone, without gradients, subset search, or recovery training. Against frequency, activation-norm, and REAP baselines on GLM-4.7-Flash and Qwen3.6-35B-A3B at 25% and 50% expert removal, it attains the highest macro average over nine reasoning-intensive tasks in all four model-budget settings, gaining 2.12-5.59 points over REAP and lowering reverse KL in all four. On DeepSeek-V4-Flash-0731 and Hy3, it also achieves the highest macro average among the three residual criteria. Local exactness does not guarantee better joint pruning. Generation analyses show changes in diversity, formatting, and termination despite higher task scores.",
+   "authors": [
+    "Mingyang Song",
+    "Mao Zheng"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416548195",
+   "doi": "10.48550/arxiv.2508.00083",
+   "title": "A Survey on Code Generation with LLM-based Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 195,
+   "abstract": "Code generation agents powered by large language models (LLMs) are revolutionizing the software development paradigm. Distinct from previous code generation techniques, code generation agents are characterized by three core features. 1) Autonomy: the ability to independently manage the entire workflow, from task decomposition to coding and debugging. 2) Expanded task scope: capabilities that extend beyond generating code snippets to encompass the full software development lifecycle (SDLC). 3) Enhancement of engineering practicality: a shift in research emphasis from algorithmic innovation toward practical engineering challenges, such as system reliability, process management, and tool integration. This domain has recently witnessed rapid development and an explosion in research, demonstrating significant application potential. This paper presents a systematic survey of the field of LLM-based code generation agents. We trace the technology's developmental trajectory from its inception and systematically categorize its core techniques, including both single-agent and multi-agent architectures. Furthermore, this survey details the applications of LLM-based agents across the full SDLC, summarizes mainstream evaluation benchmarks and metrics, and catalogs representative tools. Finally, by analyzing the primary challenges, we identify and propose several foundational, long-term research directions for the future work of the field.",
+   "authors": [
+    "Yihong Dong",
+    "Xue Jiang",
+    "Qian, Jiaru",
+    "Wang, Tian",
+    "Kechi Zhang",
+    "Zhi Yang Jin",
+    "Ge Li"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415192111",
+   "doi": "10.18653/2026.findings-emnlp.452",
+   "title": "Pruning the Unsurprising: Efficient LLM Reasoning via First-Token Surprisal",
+   "year": 2026,
+   "venue": "Findings of the Association for Computational Linguistics: EMNLP (Findings of EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 40,
+   "abstract": "Large Reasoning Models (LRMs) have demonstrated remarkable capabilities by scaling up the length of Chain-of-Thought (CoT).However, excessively long reasoning traces pose substantial challenges for training cost and inference latency.While various CoT compression approaches have emerged to address this challenge, they face inherent trade-offs: tokenlevel methods often disrupt syntactic and logical coherence, while step-level methods based on perplexity fail to reliably capture the logically critical reasoning steps because of the dilution of logical information.In this paper, we propose ASAP (Anchor-guided, SurprisAlbased Pruning), a novel coarse-to-fine framework for CoT compression.ASAP first performs anchor-guided pruning to preserve the core reasoning structure, which efficiently reduces the search space for subsequent processing.Leveraging the insight that logical branching choices are concentrated at the onset of reasoning steps, it then enables logic-aware pruning by selecting logically essential reasoning steps based on a novel first-token surprisal metric.Finally, ASAP distills the models to autonomously generate and leverage these concise CoTs at inference time, enabling efficient reasoning.Experiments show that ASAP achieves state-of-the-art accuracy across multiple benchmarks while substantially reducing training and inference costs.",
+   "authors": [
+    "Wenhao Zeng",
+    "Chao Hu",
+    "Yaoning Wang",
+    "Yuling Shi",
+    "Chengcheng Wan",
+    "Hongyu Zhang",
+    "Xiaodong Gu"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161569372",
+   "doi": "10.48550/arxiv.2605.15315",
+   "title": "Context Pruning for Coding Agents via Multi-Rubric Latent Reasoning",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "LLM-powered coding agents spend the majority of their token budget reading repository files, yet much of the retrieved code is irrelevant to the task at hand. Existing learned pruners compress this context with a single-objective sequence labeler, collapsing all facets of code relevance into one score and one transition matrix. We show that this formulation creates a modeling bottleneck: a single CRF transition prior must serve heterogeneous retention patterns, including contiguous semantic spans and sparse structural support lines. We propose LaMR (Latent Multi-Rubric), a structured pruning framework that decomposes code relevance into two interpretable quality dimensions, semantic evidence and dependency support, each modeled by a dedicated CRF with dimension-specific transition dynamics. A mixture-of-experts gating network dynamically weights the per-rubric emissions conditioned on the query, and a final CRF layer on the fused emissions produces the aggregate keep-or-prune decision. To supervise each dimension without additional annotation cost, we derive multi-rubric labels from the existing training corpus via AST-based program analysis, simultaneously denoising the teacher's binary labels. By effectively filtering distracting noise, LaMR frequently matches or even outperforms unpruned full-context baselines. Experiments on four benchmarks (SWE-Bench Verified, SWE-QA, LCC, LongCodeQA) show that LaMR wins 12 of 16 head-to-head multi-turn comparisons. It saves up to 31% more tokens on multi-turn agent tasks and improves Exact Match by up to +3.5 on single-turn tasks, while performance is frequently enhanced by denoising the context, and any remaining drops are marginal.",
+   "authors": [
+    "Jingjing Wang",
+    "Xiwen Chen",
+    "Wenhui Zhu",
+    "Huayu Li",
+    "Zhengxiao He",
+    "Feiyang Cai",
+    "Ana S. Carreon-Rascon",
+    "Xuanzhao Dong"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7147261063",
+   "doi": "10.1145/3832783.3834397",
+   "title": "Compressing Code Context for LLM-Based Issue Resolution",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 18,
+   "abstract": "Large Language Models (LLMs) are now capable of resolving real-world GitHub issues. However, current approaches overapproximate the code context and suffer from two compounding problems: the prohibitive cost of processing massive inputs, and low effectiveness as noise floods the context window and distracts the model from the bug-fixing signal. Existing compression techniques fail to resolve this tension: generic compressors compromise the semantic integrity of code, while code-specific tools lack awareness of code structure and task context to preserve essential patch ingredients. To address this, we propose a novel framework consisting of two components. First, Oracle-guided Context Distillation (OCD), a context distillation algorithm that combines genetic search and delta debugging to systematically reduce code contexts to their minimal sufficient subsequence \u2014 retaining only the ingredients required for a successful fix. We use this distilled data to fine-tune, a lightweight model that learns to compress code context at inference time, filtering noise and combating distraction while preserving fix ingredients. Evaluated on SWE-bench Verified across three frontier LLMs, maintains a stable compression rate of about 6\u00d7 across models, reduces the total token budget by 51.8%\u201371.3% relative to the uncompressed setting, improves issue resolution rates by 5.0%\u20139.2%, and delivers the best overall balance among effectiveness, compression ratio, and latency compared with state-of-the-art context compression baselines.",
+   "authors": [
+    "Haoxiang Jia",
+    "Earl T. Barr",
+    "Sergey Mechtaev"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7164155799",
+   "doi": "10.48550/arxiv.2606.10209",
+   "title": "Less Context, Better Agents: Efficient Context Engineering for Long-Horizon Tool-Using LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 6,
+   "abstract": "Large language models deployed as autonomous agents for enterprise workflows face a key challenge: verbose tool responses from enterprise systems can cause context overflow, stale-state errors, and high inference cost. We study this problem in automated expense itemization in Microsoft Dynamics 365 Finance and Operations using Model Context Protocol tools. We evaluate four GPT-5 configurations on a 50-task hotel expense benchmark: no user model, full conversation history, context pruned to the last 5 tool call/response pairs, and pruning with automated summarization. Results are averaged across 5 independent runs, with the user model held constant for the context-engineering comparison. The no-user-model baseline achieves only 8.0% complete itemization. Full-context retention improves completion to 71.0%, but consumes 1,480,996 tokens and 14.56 hours per benchmark. Pruning to the last 5 tool calls improves completion to 79.0% while reducing token use to 535,274 and runtime to 5.39 hours. Adding summarization achieves the best result: 91.6% complete itemization and 99.64% average amount itemized, with 553,374 tokens and 5.79 hours. We further report confidence intervals, effect-size analysis, sensitivity over pruning and summary windows, failure analysis, results across five expense types grouped into three categories, and cross-model evidence with Claude Sonnet 4.5. These results show that, for this class of enterprise tool-use workflow, selective retention of recent tool interactions plus compact summarization can improve both reliability and efficiency compared with full-history retention.",
+   "authors": [
+    "Abhilasha Lodha",
+    "Mahsa Pahlavikhah Varnosfaderani",
+    "Abir Chakraborty",
+    "Abhinav Mithal"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7166801336",
+   "doi": "10.18653/v1/2026.findings-acl.868",
+   "title": "SWE-AGILE: A Software Agent Framework for Efficiently Managing Dynamic Reasoning Context",
+   "year": 2026,
+   "venue": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+   "type": "conference-paper",
+   "cited_by": 12,
+   "abstract": "Prior representative ReAct-style approaches in autonomous Software Engineering (SWE) typically lack the explicit System-2 reasoning required for deep analysis and handling complex edge cases.While recent reasoning models demonstrate the potential of extended Chainof-Thought (CoT), applying them to the multiturn SWE task creates a fundamental dilemma: retaining full reasoning history leads to context explosion and \"Lost-in-the-Middle\" degradation, while discarding it would force the agent to redundantly re-reason at every step.To address these challenges, we propose SWE-AGILE, a novel software agent framework designed to bridge the gap between reasoning depth, efficiency, and context constraints.SWE-AGILE introduces a Dynamic Reasoning Context strategy, maintaining a \"sliding window\" of detailed reasoning for immediate continuity to prevent redundant re-analyzing, while compressing historical reasoning content into concise Reasoning Digests.Empirically, SWE-AGILE sets a new standard for 7B-8B models on SWE-Bench-Verified using only 2.2k trajectories and 896 tasks.Code is available at https://github.com/KDEGroup/ SWE-AGILE.",
+   "authors": [
+    "Shuquan Lian",
+    "JunCheng Liu",
+    "Yazhe Chen",
+    "Yuhong Chen",
+    "Hui Li"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7154426196",
+   "doi": "10.48550/arxiv.2604.11462",
+   "title": "Escaping the Context Bottleneck: Active Context Curation for LLM Agents via Reinforcement Learning",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 9,
+   "abstract": "Large Language Models (LLMs) struggle with long-horizon tasks due to the \"context bottleneck\" and the \"lost-in-the-middle\" phenomenon, where accumulated noise from verbose environments degrades reasoning over multi-turn interactions. To address this issue, we introduce a symbiotic framework that decouples context management from task execution. Our architecture pairs a lightweight, specialized policy model, ContextCurator, with a powerful frozen foundation model, TaskExecutor. Trained via reinforcement learning, ContextCurator actively reduces information entropy in the working memory. It aggressively prunes environmental noise while preserving reasoning anchors, that is, sparse data points that are critical for future deductions. On WebArena, our framework improves the success rate of Gemini-3.0-flash from 36.4% to 41.2% while reducing token consumption by 8.8% (from 47.4K to 43.3K). On DeepSearch, it achieves a 57.1% success rate, compared with 53.9%, while reducing token consumption by a factor of 8. Remarkably, a 7B ContextCurator matches the context management performance of GPT-4o, providing a scalable and computationally efficient paradigm for autonomous long-horizon agents.",
+   "authors": [
+    "Xiaozhe Li",
+    "Tianyi Lyu",
+    "Yizhao Yang",
+    "Liang Shan",
+    "Siyi Yang",
+    "Ligao Zhang",
+    "Zhuoyi Huang",
+    "Qingwen Liu"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7166656697",
+   "doi": "10.18653/2026.emnlp-main.1312",
+   "title": "SWE-MEM: Learning Adaptive Memory Management for Long-Horizon Coding Agents",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 21,
+   "abstract": "Long-horizon software engineering agents often need to manage lengthy and noisy interaction histories under limited context budgets.Existing memory management methods rely on static compression workflows or rigid compression schedules, and often decouple memory decisions from task-solving performance.We present SWE-MEM, a training framework for proactive and on-demand memory management in software engineering agents.SWE-MEM provides a flexible memory tool that lets agents decide when, what, and how to compress based on trajectory state, task progress, and remaining context budget.We train agents with synthesized proactive memory-management trajectories and Memory-aware GRPO, which jointly optimizes memory management and issue resolution through memory-aware trajectory splitting and step-level credit assignment.On SWE-Bench Verified, SWE-MEM achieves 43.4% and 60.2% resolve rate with 4B and 30B models, respectively, outperforming existing memory management baselines in both performance and token efficiency.",
+   "authors": [
+    "Shuzheng Gao",
+    "Wenhao Zeng",
+    "Zhaojian Yu",
+    "Jianqiao Wangni",
+    "Chaozheng Wang",
+    "Kai Cai",
+    "Shilin He",
+    "Michael R. Lyu"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7151734831",
+   "doi": "10.48550/arxiv.2604.04979",
+   "title": "Squeez: Task-Conditioned Tool-Output Pruning for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 5,
+   "abstract": "Coding agents repeatedly consume long tool observations even though only a small fraction of each observation matters for the next step. We study task-conditioned tool-output pruning: given a focused query and one tool output, return the smallest verbatim evidence block the agent should inspect next. We introduce a benchmark of 11,477 examples built from SWE-bench repository interactions and synthetic multi-ecosystem tool outputs, with a manually curated 618-example test set. We fine-tune Qwen 3.5 2B with LoRA and compare it against larger zero-shot models and heuristic pruning baselines. Our model reaches 0.86 recall and 0.80 F1 while removing 92% of input tokens, outperforming zero-shot Qwen 3.5 35B A3B by 11 recall points and all heuristic baselines by a wide margin.",
+   "authors": [
+    "\u00c1d\u00e1m Kov\u00e1cs"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7163915557",
+   "doi": "10.48550/arxiv.2606.07297",
+   "title": "SWE-Explore: Benchmarking How Coding Agents Explore Repositories",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 34,
+   "abstract": "Repository-level coding benchmarks such as SWE-bench have driven a rapid surge in the capabilities of coding agents. Yet they usually treat coding tasks as a holistic, binary prediction problem (e.g., resolved or unresolved), neglecting fine-grained agent capabilities such as repository understanding, context retrieval, code localization, and bug diagnosis. In this paper, we introduce SWE-Explore, a benchmark that isolates the evaluation of repository exploration, a critical capability of coding agents. Given a repository and an issue, SWE-Explore asks an explorer to return a ranked list of relevant code regions under a fixed line budget. SWE-Explore covers 848 issues across 10 programming languages and 203 open-source repositories. For each instance, we derive line-level ground truth from independent agent trajectories that successfully solved the same issue, distilling the specific code regions their solution paths actually consulted. We evaluate exploration along coverage, ranking, and context-efficiency dimensions, showing that these metrics strongly track downstream repair behavior. Across a broad set of retrieval methods, general coding agents, and specialized localizers, we find that agentic explorers form a clear tier above classical retrieval. While file-level localization is already strong for modern methods, line-level coverage and efficient ranking remain the key axes differentiating state-of-the-art explorers.",
+   "authors": [
+    "Shaoqiu Zhang",
+    "Yuhang Wang",
+    "Jialiang Liang",
+    "Yuling Shi",
+    "Wenhao Zeng",
+    "Maoquan Wang",
+    "Shilin He",
+    "Ningyuan Xu"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7156840681",
+   "doi": "10.48550/arxiv.2604.23069",
+   "title": "ContextWeaver: Selective and Dependency-Structured Memory Construction for LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 4,
+   "abstract": "Large language model (LLM) agents often struggle in long-context interactions. As the history grows, sliding windows and prompt compression may drop earlier information that later steps rely on. Retrieval-based memory systems surface relevant content but still overlook the causal and logical dependencies between steps. We introduce ContextWeaver, a selective and dependency-structured memory framework that organizes an agent's interaction trace into a graph of reasoning steps and selects the relevant context for future actions. ContextWeaver supports (1) dependency-based construction and traversal that link each step to the earlier steps it relies on; (2) compact dependency summaries of the reasoning paths; and (3) a lightweight validation layer that incorporates execution feedback. On five software-engineering and terminal benchmarks with a fixed budget per task, ContextWeaver improves the resolve rate over a sliding-window baseline on all five, with a significant gain when pooled across benchmarks, while using 13-18% fewer agent steps. It also performs favorably against alternative context-management approaches, with the largest gains on long-horizon repository tasks. On SWE-Bench Pro, ContextWeaver raises the resolve rate from 66.5% to 72.6%, with significant improvements across all three model backbones. The improvement also holds when the sliding window's budget is raised to cover the summary cost.",
+   "authors": [
+    "Yating Wu",
+    "Yuhao Zhang",
+    "Sayan Ghosh",
+    "Sourya Basu",
+    "Anoop Deoras",
+    "Jun Huan",
+    "Gaurav Gupta"
+   ],
+   "facet": "F1_context",
+   "query": "context compression LLM agent observation pruning SWE-bench"
+  }
+ ]
+}

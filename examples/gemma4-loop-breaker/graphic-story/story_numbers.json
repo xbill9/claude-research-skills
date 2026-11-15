@@ -1,0 +1,1437 @@
+{
+ "_about": "Every number shown in the comic. Quoted entries carry the PDF page/section/table and the verbatim fragment; derived entries carry the formula and inputs. Built by story_numbers_build.py.",
+ "_checks": [
+  {
+   "check": "repo sum == tasks",
+   "computed": 129,
+   "paper": 129,
+   "ok": true
+  },
+  {
+   "check": "t1_base 23/129",
+   "computed": 17.829,
+   "paper": 17.8,
+   "ok": true
+  },
+  {
+   "check": "t1_hidden 35/129",
+   "computed": 27.132,
+   "paper": 27.1,
+   "ok": true
+  },
+  {
+   "check": "t1_calib 51/129",
+   "computed": 39.535,
+   "paper": 39.5,
+   "ok": true
+  },
+  {
+   "check": "t2 M0 15/129",
+   "computed": 11.628,
+   "paper": 11.6,
+   "ok": true
+  },
+  {
+   "check": "t2 M1 18/129",
+   "computed": 13.953,
+   "paper": 14.0,
+   "ok": true
+  },
+  {
+   "check": "t2 M2 22/129",
+   "computed": 17.054,
+   "paper": 17.1,
+   "ok": true
+  },
+  {
+   "check": "t2 M3 25/129",
+   "computed": 19.38,
+   "paper": 19.4,
+   "ok": true
+  },
+  {
+   "check": "t2 M4 27/129",
+   "computed": 20.93,
+   "paper": 20.9,
+   "ok": true
+  },
+  {
+   "check": "t2 M5 29/129",
+   "computed": 22.481,
+   "paper": 22.5,
+   "ok": true
+  },
+  {
+   "check": "t2 M6 31/129",
+   "computed": 24.031,
+   "paper": 24.0,
+   "ok": true
+  },
+  {
+   "check": "t3 baseline_static 4/25",
+   "computed": 16.0,
+   "paper": 16.0,
+   "ok": true
+  },
+  {
+   "check": "t3 naive_subagent 5/25",
+   "computed": 20.0,
+   "paper": 20.0,
+   "ok": true
+  },
+  {
+   "check": "t3 ccr_only 18/25",
+   "computed": 72.0,
+   "paper": 72.0,
+   "ok": true
+  },
+  {
+   "check": "t3 ccr_adaptive 24/25",
+   "computed": 96.0,
+   "paper": 96.0,
+   "ok": true
+  },
+  {
+   "check": "t3 baseline_static KV vs baseline",
+   "computed": 0.0,
+   "paper": 0.0,
+   "ok": true
+  },
+  {
+   "check": "t3 naive_subagent KV vs baseline",
+   "computed": 19.143,
+   "paper": 19.1,
+   "ok": true
+  },
+  {
+   "check": "t3 ccr_only KV vs baseline",
+   "computed": -46.721,
+   "paper": -46.7,
+   "ok": true
+  },
+  {
+   "check": "t3 ccr_adaptive KV vs baseline",
+   "computed": -70.786,
+   "paper": -70.8,
+   "ok": true
+  },
+  {
+   "check": "t1 gain quoted vs computed",
+   "computed": 21.7,
+   "paper": 21.7,
+   "ok": true
+  },
+  {
+   "check": "tax pts quoted vs computed",
+   "computed": 22.4,
+   "paper": 22.4,
+   "ok": true
+  },
+  {
+   "check": "tax tasks quoted vs computed",
+   "computed": 29,
+   "paper": 29,
+   "ok": true
+  },
+  {
+   "check": "compaction cut quoted vs computed",
+   "computed": 93.1,
+   "paper": 93,
+   "ok": true
+  },
+  {
+   "check": "KV cut quoted vs computed",
+   "computed": 70.8,
+   "paper": 70.8,
+   "ok": true
+  },
+  {
+   "check": "trap gain quoted vs computed",
+   "computed": 80.0,
+   "paper": 80.0,
+   "ok": true
+  },
+  {
+   "check": "D1 budget cut quoted vs computed",
+   "computed": 87.5,
+   "paper": 87.5,
+   "ok": true
+  }
+ ],
+ "numbers": {
+  "tasks": {
+   "value": 129,
+   "display": "129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Abstract",
+   "quote": "Across the 129-task two-container swegemma benchmark",
+   "derived": false
+  },
+  "traps": {
+   "value": 25,
+   "display": "25",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Abstract",
+   "quote": "a controlled 25-task fault-injection suite (Trap-25)",
+   "derived": false
+  },
+  "repo_fastapi": {
+   "value": 67,
+   "display": "67",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1",
+   "quote": "fastapi/fastapi: 67",
+   "derived": false
+  },
+  "repo_rich": {
+   "value": 48,
+   "display": "48",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1",
+   "quote": "Textualize/rich: 48",
+   "derived": false
+  },
+  "repo_requests": {
+   "value": 13,
+   "display": "13",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1",
+   "quote": "psf/requests: 13",
+   "derived": false
+  },
+  "repo_httpx": {
+   "value": 1,
+   "display": "1",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1",
+   "quote": "encode/httpx: 1",
+   "derived": false
+  },
+  "gpus": {
+   "value": 4,
+   "display": "4",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1",
+   "quote": "runs on four NVIDIA L4 GPUs (96 GB total VRAM)",
+   "derived": false
+  },
+  "vram_gb": {
+   "value": 96,
+   "display": "96 GB",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1",
+   "quote": "four NVIDIA L4 GPUs (96 GB total VRAM)",
+   "derived": false
+  },
+  "max_model_len": {
+   "value": 32768,
+   "display": "32,768",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1",
+   "quote": "vLLM (max_model_len = 32,768)",
+   "derived": false
+  },
+  "turns": {
+   "value": 937,
+   "display": "937",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1",
+   "quote": "Auditing 937 turns of live trajectory telemetry",
+   "derived": false
+  },
+  "compaction_cliff": {
+   "value": 14336,
+   "display": "14,336",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 1",
+   "quote": "once dialogue history exceeds 14,336 tokens",
+   "derived": false
+  },
+  "output_reserve": {
+   "value": 8192,
+   "display": "8,192",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 1",
+   "quote": "(reserving 8,192 output tokens)",
+   "derived": false
+  },
+  "call_cap": {
+   "value": 28,
+   "display": "28",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 2",
+   "quote": "Each episode is capped at 28 tool calls",
+   "derived": false
+  },
+  "time_cap_lo": {
+   "value": 240,
+   "display": "240",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 2",
+   "quote": "240 to 480 seconds",
+   "derived": false
+  },
+  "time_cap_hi": {
+   "value": 480,
+   "display": "480",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 2",
+   "quote": "240 to 480 seconds",
+   "derived": false
+  },
+  "global_hours": {
+   "value": 12,
+   "display": "12-hour",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 2",
+   "quote": "under a 12-hour global wall-clock budget",
+   "derived": false
+  },
+  "file_reads_trip": {
+   "value": 2,
+   "display": "Two",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Section 1 item 1",
+   "quote": "Two unwindowed file reads trip lossy summarization",
+   "derived": false
+  },
+  "dilution_before": {
+   "value": 0.72,
+   "display": "0.72",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "cuts softmax dilution from 0.72 to 0.06",
+   "derived": false
+  },
+  "dilution_after": {
+   "value": 0.06,
+   "display": "0.06",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "cuts softmax dilution from 0.72 to 0.06",
+   "derived": false
+  },
+  "bits_gain": {
+   "value": 4.51,
+   "display": "+4.51 bits",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "(+4.51 bits effective attention)",
+   "derived": false
+  },
+  "serializations": {
+   "value": 90,
+   "display": "90",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "Across 90 controlled serializations",
+   "derived": false
+  },
+  "window_lines": {
+   "value": 120,
+   "display": "120-line",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "retaining a 120-line 1-hop incidence window",
+   "derived": false
+  },
+  "budget_full": {
+   "value": 4096,
+   "display": "4096",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "cuts D1 file-read budgets by 87.5% (4096 to 512)",
+   "derived": false
+  },
+  "budget_d1": {
+   "value": 512,
+   "display": "512",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "cuts D1 file-read budgets by 87.5% (4096 to 512)",
+   "derived": false
+  },
+  "budget_cut_pct": {
+   "value": 87.5,
+   "display": "87.5%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "cuts D1 file-read budgets by 87.5%",
+   "derived": false
+  },
+  "budget_ldp_lo": {
+   "value": 2048,
+   "display": "2048",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "reserves 2048 to 4096 tokens for LDP co-change edits",
+   "derived": false
+  },
+  "budget_ldw": {
+   "value": 6144,
+   "display": "6144",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.1",
+   "quote": "allocates a 6144-token LDW burst after context reset",
+   "derived": false
+  },
+  "t1_base_solved": {
+   "value": 23,
+   "display": "23/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "23 / 129",
+   "derived": false
+  },
+  "t1_base_rate": {
+   "value": 17.8,
+   "display": "17.8%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "17.8% [12.2%, 25.3%]",
+   "derived": false
+  },
+  "t1_base_ci": {
+   "value": "[12.2%, 25.3%]",
+   "display": "[12.2%, 25.3%]",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "17.8% [12.2%, 25.3%]",
+   "derived": false
+  },
+  "t1_base_tempk": {
+   "value": "0.20 / 40",
+   "display": "0.20 / 40",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "Temp / top-k = 0.20 / 40",
+   "derived": false
+  },
+  "t1_base_think": {
+   "value": "0 (Off) / false",
+   "display": "0 (Off) / false",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "Think Budget / Thoughts = 0 (Off) / false",
+   "derived": false
+  },
+  "t1_hidden_solved": {
+   "value": 35,
+   "display": "35/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "35 / 129",
+   "derived": false
+  },
+  "t1_hidden_rate": {
+   "value": 27.1,
+   "display": "27.1%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "27.1% [20.2%, 35.4%]",
+   "derived": false
+  },
+  "t1_hidden_ci": {
+   "value": "[20.2%, 35.4%]",
+   "display": "[20.2%, 35.4%]",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "27.1% [20.2%, 35.4%]",
+   "derived": false
+  },
+  "t1_hidden_tempk": {
+   "value": "0.25 / 40",
+   "display": "0.25 / 40",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "Temp / top-k = 0.25 / 40",
+   "derived": false
+  },
+  "t1_hidden_think": {
+   "value": "4096 / false",
+   "display": "4096 / false",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "Think Budget / Thoughts = 4096 / false",
+   "derived": false
+  },
+  "t1_calib_solved": {
+   "value": 51,
+   "display": "51/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "51 / 129",
+   "derived": false
+  },
+  "t1_calib_rate": {
+   "value": 39.5,
+   "display": "39.5%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "39.5% [31.5%, 48.1%]",
+   "derived": false
+  },
+  "t1_calib_ci": {
+   "value": "[31.5%, 48.1%]",
+   "display": "[31.5%, 48.1%]",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "39.5% [31.5%, 48.1%]",
+   "derived": false
+  },
+  "t1_calib_tempk": {
+   "value": "1.00 / 64",
+   "display": "1.00 / 64",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "Temp / top-k = 1.00 / 64",
+   "derived": false
+  },
+  "t1_calib_think": {
+   "value": "4096 / true",
+   "display": "4096 / true",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Table 1",
+   "quote": "Think Budget / Thoughts = 4096 / true",
+   "derived": false
+  },
+  "calib_T": {
+   "value": 1.0,
+   "display": "1.0",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2",
+   "quote": "Calibrating tau = 1.0, top-p = 0.95, top-k = 64",
+   "derived": false
+  },
+  "calib_top_p": {
+   "value": 0.95,
+   "display": "0.95",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2",
+   "quote": "top-p = 0.95",
+   "derived": false
+  },
+  "calib_top_k": {
+   "value": 64,
+   "display": "64",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2",
+   "quote": "top-k = 64",
+   "derived": false
+  },
+  "greedy_tau": {
+   "value": 0.2,
+   "display": "0.2",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2",
+   "quote": "Under greedy/low-temperature decoding (tau = 0.2)",
+   "derived": false
+  },
+  "t1_mcnemar": {
+   "value": 1.8e-06,
+   "display": "1.8×10⁻⁶",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.2 Section 3.2 / Table 1 caption",
+   "quote": "McNemar paired p = 1.8x10-6",
+   "derived": false
+  },
+  "t1_gain_pts_quoted": {
+   "value": 21.7,
+   "display": "+21.7 pts",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "(+21.7 pts Stage-1 synthesis)",
+   "derived": false
+  },
+  "turns_1_4": {
+   "value": "1-4",
+   "display": "Turns 1 to 4",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3",
+   "quote": "(Turn 1-4 Recall@3 = 0.448)",
+   "derived": false
+  },
+  "turn_1_fix": {
+   "value": 1,
+   "display": "Turn 1",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5",
+   "quote": "running pytest -vv --tb=short on Turn 1 decomposes compound assertions",
+   "derived": false
+  },
+  "tax_pts": {
+   "value": 22.4,
+   "display": "22.4-point",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3",
+   "quote": "exposes a 22.4-point Localization-Trajectory Tax",
+   "derived": false
+  },
+  "tax_tasks": {
+   "value": 29,
+   "display": "29",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3",
+   "quote": "29 solvable tasks are lost",
+   "derived": false
+  },
+  "recall_before": {
+   "value": 0.448,
+   "display": "0.448",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3",
+   "quote": "(Turn 1-4 Recall@3 = 0.448)",
+   "derived": false
+  },
+  "recall_after": {
+   "value": 0.931,
+   "display": "0.931",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3",
+   "quote": "(M3, Recall@3 = 0.931 [7])",
+   "derived": false
+  },
+  "t2_mcnemar": {
+   "value": 4.6e-05,
+   "display": "4.6×10⁻⁵",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.3 / Table 2 caption",
+   "quote": "McNemar paired p = 4.6x10-5",
+   "derived": false
+  },
+  "compaction_cut_quoted": {
+   "value": 93,
+   "display": "-93%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Abstract",
+   "quote": "cutting context compaction from 68.2% to 4.7% (-93%)",
+   "derived": false
+  },
+  "t2_M0_label": {
+   "value": "Default starter (T=0.2, 9 tools)",
+   "display": "Default starter (T=0.2, 9 tools)",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0",
+   "quote": "row label (shortened)",
+   "derived": false
+  },
+  "t2_M0_calls": {
+   "value": 24.6,
+   "display": "24.6",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0",
+   "quote": "Calls = 24.6",
+   "derived": false
+  },
+  "t2_M0_kv": {
+   "value": 28400,
+   "display": "28,400",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0",
+   "quote": "Peak KV = 28,400",
+   "derived": false
+  },
+  "t2_M0_comp": {
+   "value": 68.2,
+   "display": "68.2%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0",
+   "quote": "Compacted = 68.2%",
+   "derived": false
+  },
+  "t2_M0_solved": {
+   "value": 15,
+   "display": "15/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0",
+   "quote": "Solved = 15/129 (11.6% ...)",
+   "derived": false
+  },
+  "t2_M0_rate": {
+   "value": 11.6,
+   "display": "11.6%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0",
+   "quote": "Solved = 15/129 (11.6% ...)",
+   "derived": false
+  },
+  "t2_M0_held": {
+   "value": 0.121,
+   "display": "0.121",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M0",
+   "quote": "Held-Out = 0.121",
+   "derived": false
+  },
+  "t2_M1_label": {
+   "value": "+ Lean-6 toolset",
+   "display": "+ Lean-6 toolset",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1",
+   "quote": "row label (shortened)",
+   "derived": false
+  },
+  "t2_M1_calls": {
+   "value": 21.2,
+   "display": "21.2",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1",
+   "quote": "Calls = 21.2",
+   "derived": false
+  },
+  "t2_M1_kv": {
+   "value": 22100,
+   "display": "22,100",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1",
+   "quote": "Peak KV = 22,100",
+   "derived": false
+  },
+  "t2_M1_comp": {
+   "value": 44.0,
+   "display": "44.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1",
+   "quote": "Compacted = 44.0%",
+   "derived": false
+  },
+  "t2_M1_solved": {
+   "value": 18,
+   "display": "18/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1",
+   "quote": "Solved = 18/129 (14.0% ...)",
+   "derived": false
+  },
+  "t2_M1_rate": {
+   "value": 14.0,
+   "display": "14.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1",
+   "quote": "Solved = 18/129 (14.0% ...)",
+   "derived": false
+  },
+  "t2_M1_held": {
+   "value": 0.138,
+   "display": "0.138",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M1",
+   "quote": "Held-Out = 0.138",
+   "derived": false
+  },
+  "t2_M2_label": {
+   "value": "+ Calibrated thinking",
+   "display": "+ Calibrated thinking",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2",
+   "quote": "row label (shortened)",
+   "derived": false
+  },
+  "t2_M2_calls": {
+   "value": 18.9,
+   "display": "18.9",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2",
+   "quote": "Calls = 18.9",
+   "derived": false
+  },
+  "t2_M2_kv": {
+   "value": 18600,
+   "display": "18,600",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2",
+   "quote": "Peak KV = 18,600",
+   "derived": false
+  },
+  "t2_M2_comp": {
+   "value": 31.0,
+   "display": "31.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2",
+   "quote": "Compacted = 31.0%",
+   "derived": false
+  },
+  "t2_M2_solved": {
+   "value": 22,
+   "display": "22/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2",
+   "quote": "Solved = 22/129 (17.1% ...)",
+   "derived": false
+  },
+  "t2_M2_rate": {
+   "value": 17.1,
+   "display": "17.1%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2",
+   "quote": "Solved = 22/129 (17.1% ...)",
+   "derived": false
+  },
+  "t2_M2_held": {
+   "value": 0.172,
+   "display": "0.172",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M2",
+   "quote": "Held-Out = 0.172",
+   "derived": false
+  },
+  "t2_M3_label": {
+   "value": "+ Turn-1 contract parser + 120-line reads",
+   "display": "+ Turn-1 contract parser + 120-line reads",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3",
+   "quote": "row label (shortened)",
+   "derived": false
+  },
+  "t2_M3_calls": {
+   "value": 15.4,
+   "display": "15.4",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3",
+   "quote": "Calls = 15.4",
+   "derived": false
+  },
+  "t2_M3_kv": {
+   "value": 11200,
+   "display": "11,200",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3",
+   "quote": "Peak KV = 11,200",
+   "derived": false
+  },
+  "t2_M3_comp": {
+   "value": 8.5,
+   "display": "8.5%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3",
+   "quote": "Compacted = 8.5%",
+   "derived": false
+  },
+  "t2_M3_solved": {
+   "value": 25,
+   "display": "25/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3",
+   "quote": "Solved = 25/129 (19.4% ...)",
+   "derived": false
+  },
+  "t2_M3_rate": {
+   "value": 19.4,
+   "display": "19.4%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3",
+   "quote": "Solved = 25/129 (19.4% ...)",
+   "derived": false
+  },
+  "t2_M3_held": {
+   "value": 0.19,
+   "display": "0.190",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M3",
+   "quote": "Held-Out = 0.190",
+   "derived": false
+  },
+  "t2_M4_label": {
+   "value": "+ Call-12 edit deadline",
+   "display": "+ Call-12 edit deadline",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4",
+   "quote": "row label (shortened)",
+   "derived": false
+  },
+  "t2_M4_calls": {
+   "value": 13.8,
+   "display": "13.8",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4",
+   "quote": "Calls = 13.8",
+   "derived": false
+  },
+  "t2_M4_kv": {
+   "value": 10400,
+   "display": "10,400",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4",
+   "quote": "Peak KV = 10,400",
+   "derived": false
+  },
+  "t2_M4_comp": {
+   "value": 6.2,
+   "display": "6.2%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4",
+   "quote": "Compacted = 6.2%",
+   "derived": false
+  },
+  "t2_M4_solved": {
+   "value": 27,
+   "display": "27/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4",
+   "quote": "Solved = 27/129 (20.9% ...)",
+   "derived": false
+  },
+  "t2_M4_rate": {
+   "value": 20.9,
+   "display": "20.9%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4",
+   "quote": "Solved = 27/129 (20.9% ...)",
+   "derived": false
+  },
+  "t2_M4_held": {
+   "value": 0.207,
+   "display": "0.207",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M4",
+   "quote": "Held-Out = 0.207",
+   "derived": false
+  },
+  "t2_M5_label": {
+   "value": "+ Co-change coupling",
+   "display": "+ Co-change coupling",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5",
+   "quote": "row label (shortened)",
+   "derived": false
+  },
+  "t2_M5_calls": {
+   "value": 13.1,
+   "display": "13.1",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5",
+   "quote": "Calls = 13.1",
+   "derived": false
+  },
+  "t2_M5_kv": {
+   "value": 9850,
+   "display": "9,850",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5",
+   "quote": "Peak KV = 9,850",
+   "derived": false
+  },
+  "t2_M5_comp": {
+   "value": 5.4,
+   "display": "5.4%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5",
+   "quote": "Compacted = 5.4%",
+   "derived": false
+  },
+  "t2_M5_solved": {
+   "value": 29,
+   "display": "29/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5",
+   "quote": "Solved = 29/129 (22.5% ...)",
+   "derived": false
+  },
+  "t2_M5_rate": {
+   "value": 22.5,
+   "display": "22.5%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5",
+   "quote": "Solved = 29/129 (22.5% ...)",
+   "derived": false
+  },
+  "t2_M5_held": {
+   "value": 0.224,
+   "display": "0.224",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M5",
+   "quote": "Held-Out = 0.224",
+   "derived": false
+  },
+  "t2_M6_label": {
+   "value": "+ Graph backtrack + red-test",
+   "display": "+ Graph backtrack + red-test",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6",
+   "quote": "row label (shortened)",
+   "derived": false
+  },
+  "t2_M6_calls": {
+   "value": 12.4,
+   "display": "12.4",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6",
+   "quote": "Calls = 12.4",
+   "derived": false
+  },
+  "t2_M6_kv": {
+   "value": 9420,
+   "display": "9,420",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6",
+   "quote": "Peak KV = 9,420",
+   "derived": false
+  },
+  "t2_M6_comp": {
+   "value": 4.7,
+   "display": "4.7%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6",
+   "quote": "Compacted = 4.7%",
+   "derived": false
+  },
+  "t2_M6_solved": {
+   "value": 31,
+   "display": "31/129",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6",
+   "quote": "Solved = 31/129 (24.0% ...)",
+   "derived": false
+  },
+  "t2_M6_rate": {
+   "value": 24.0,
+   "display": "24.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6",
+   "quote": "Solved = 31/129 (24.0% ...)",
+   "derived": false
+  },
+  "t2_M6_held": {
+   "value": 0.241,
+   "display": "0.241",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Table 2 row M6",
+   "quote": "Held-Out = 0.241",
+   "derived": false
+  },
+  "peak_active_k": {
+   "value": 10.6,
+   "display": "10.6k",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Figure 2 caption",
+   "quote": "keeping active context (peak 10.6k) strictly below the 14,336-token compaction cliff",
+   "derived": false
+  },
+  "det_err": {
+   "value": 2,
+   "display": "≥ 2",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4",
+   "quote": "(1) Repeated Error Signature Cerr(t) >= 2",
+   "derived": false
+  },
+  "det_lcs": {
+   "value": 0.82,
+   "display": "≥ 0.82",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4",
+   "quote": "(2) Oscillating Diff LCS Similarity Sdiff(t) >= 0.82",
+   "derived": false
+  },
+  "det_entropy": {
+   "value": 0.55,
+   "display": "< 0.55 bits",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4",
+   "quote": "(3) Low Action Entropy HW(t) < 0.55 bits (W = 4)",
+   "derived": false
+  },
+  "det_window": {
+   "value": 4,
+   "display": "W = 4",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4",
+   "quote": "(W = 4)",
+   "derived": false
+  },
+  "ledger_tokens": {
+   "value": 150,
+   "display": "150-token",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4",
+   "quote": "injects a 150-token <NEGATIVE_CONSTRAINT_LEDGER>",
+   "derived": false
+  },
+  "burst_tau": {
+   "value": 0.75,
+   "display": "τ = 0.75",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4",
+   "quote": "triggers a 6144-token LDW burst (tau = 0.75)",
+   "derived": false
+  },
+  "episodes": {
+   "value": 100,
+   "display": "100",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4",
+   "quote": "Across 100 AST-verified episodes",
+   "derived": false
+  },
+  "sandbox_states": {
+   "value": 75,
+   "display": "75",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.3 Section 3.4",
+   "quote": "(75 verified exec() sandbox states ...)",
+   "derived": false
+  },
+  "fisher_p": {
+   "value": 4.2e-09,
+   "display": "4.2×10⁻⁹",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 3.4",
+   "quote": "(Fisher's Exact p = 4.2x10-9",
+   "derived": false
+  },
+  "wilcoxon": {
+   "value": "p < 10^-6",
+   "display": "p < 10⁻⁶",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.1 Abstract",
+   "quote": "(Wilcoxon p < 10-6)",
+   "derived": false
+  },
+  "t3_baseline_static_tag": {
+   "value": "Unpruned",
+   "display": "Unpruned",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "baseline_static (Unpruned)",
+   "derived": false
+  },
+  "t3_baseline_static_solved": {
+   "value": 4,
+   "display": "4/25",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "Solved = 4 / 25",
+   "derived": false
+  },
+  "t3_baseline_static_esc": {
+   "value": 16.0,
+   "display": "16.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "Escape Rate = 16.0% [6.4, 34.7]",
+   "derived": false
+  },
+  "t3_baseline_static_ci": {
+   "value": "[6.4, 34.7]",
+   "display": "[6.4, 34.7]",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "Escape Rate = 16.0% [6.4, 34.7]",
+   "derived": false
+  },
+  "t3_baseline_static_turns": {
+   "value": 11.04,
+   "display": "11.04",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "Avg Turns = 11.04",
+   "derived": false
+  },
+  "t3_baseline_static_think": {
+   "value": "45,220 (0.0%)",
+   "display": "45,220 (0.0%)",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "Avg Think Tok = 45,220 (0.0%)",
+   "derived": false
+  },
+  "t3_baseline_static_kv": {
+   "value": 159816,
+   "display": "159,816",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "Post-Reset KV = 159,816 (0.0%)",
+   "derived": false
+  },
+  "t3_baseline_static_kvpct": {
+   "value": "0.0%",
+   "display": "0.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "Post-Reset KV = 159,816 (0.0%)",
+   "derived": false
+  },
+  "t3_baseline_static_peak": {
+   "value": 24821,
+   "display": "24,821",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row baseline_static",
+   "quote": "Peak KV = 24,821",
+   "derived": false
+  },
+  "t3_naive_subagent_tag": {
+   "value": "Full Handoff",
+   "display": "Full Handoff",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "naive_subagent (Full Handoff)",
+   "derived": false
+  },
+  "t3_naive_subagent_solved": {
+   "value": 5,
+   "display": "5/25",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "Solved = 5 / 25",
+   "derived": false
+  },
+  "t3_naive_subagent_esc": {
+   "value": 20.0,
+   "display": "20.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "Escape Rate = 20.0% [8.9, 39.1]",
+   "derived": false
+  },
+  "t3_naive_subagent_ci": {
+   "value": "[8.9, 39.1]",
+   "display": "[8.9, 39.1]",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "Escape Rate = 20.0% [8.9, 39.1]",
+   "derived": false
+  },
+  "t3_naive_subagent_turns": {
+   "value": 10.72,
+   "display": "10.72",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "Avg Turns = 10.72",
+   "derived": false
+  },
+  "t3_naive_subagent_think": {
+   "value": "51,118 (+13.0%)",
+   "display": "51,118 (+13.0%)",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "Avg Think Tok = 51,118 (+13.0%)",
+   "derived": false
+  },
+  "t3_naive_subagent_kv": {
+   "value": 190410,
+   "display": "190,410",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "Post-Reset KV = 190,410 (+19.1%)",
+   "derived": false
+  },
+  "t3_naive_subagent_kvpct": {
+   "value": "+19.1%",
+   "display": "+19.1%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "Post-Reset KV = 190,410 (+19.1%)",
+   "derived": false
+  },
+  "t3_naive_subagent_peak": {
+   "value": 31067,
+   "display": "31,067",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row naive_subagent",
+   "quote": "Peak KV = 31,067",
+   "derived": false
+  },
+  "t3_ccr_only_tag": {
+   "value": "Pruning + Ledger",
+   "display": "Pruning + Ledger",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "ccr_only (Pruning + Ledger)",
+   "derived": false
+  },
+  "t3_ccr_only_solved": {
+   "value": 18,
+   "display": "18/25",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "Solved = 18 / 25",
+   "derived": false
+  },
+  "t3_ccr_only_esc": {
+   "value": 72.0,
+   "display": "72.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "Escape Rate = 72.0% [52.4, 85.7]",
+   "derived": false
+  },
+  "t3_ccr_only_ci": {
+   "value": "[52.4, 85.7]",
+   "display": "[52.4, 85.7]",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "Escape Rate = 72.0% [52.4, 85.7]",
+   "derived": false
+  },
+  "t3_ccr_only_turns": {
+   "value": 8.76,
+   "display": "8.76",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "Avg Turns = 8.76",
+   "derived": false
+  },
+  "t3_ccr_only_think": {
+   "value": "35,881 (-20.7%)",
+   "display": "35,881 (-20.7%)",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "Avg Think Tok = 35,881 (-20.7%)",
+   "derived": false
+  },
+  "t3_ccr_only_kv": {
+   "value": 85148,
+   "display": "85,148",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "Post-Reset KV = 85,148 (-46.7%)",
+   "derived": false
+  },
+  "t3_ccr_only_kvpct": {
+   "value": "-46.7%",
+   "display": "-46.7%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "Post-Reset KV = 85,148 (-46.7%)",
+   "derived": false
+  },
+  "t3_ccr_only_peak": {
+   "value": 14488,
+   "display": "14,488",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_only",
+   "quote": "Peak KV = 14,488",
+   "derived": false
+  },
+  "t3_ccr_adaptive_tag": {
+   "value": "My Method",
+   "display": "My Method",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "ccr_adaptive (My Method)",
+   "derived": false
+  },
+  "t3_ccr_adaptive_solved": {
+   "value": 24,
+   "display": "24/25",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "Solved = 24 / 25",
+   "derived": false
+  },
+  "t3_ccr_adaptive_esc": {
+   "value": 96.0,
+   "display": "96.0%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "Escape Rate = 96.0% [80.5, 99.3]",
+   "derived": false
+  },
+  "t3_ccr_adaptive_ci": {
+   "value": "[80.5, 99.3]",
+   "display": "[80.5, 99.3]",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "Escape Rate = 96.0% [80.5, 99.3]",
+   "derived": false
+  },
+  "t3_ccr_adaptive_turns": {
+   "value": 6.96,
+   "display": "6.96",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "Avg Turns = 6.96",
+   "derived": false
+  },
+  "t3_ccr_adaptive_think": {
+   "value": "24,842 (-45.1%)",
+   "display": "24,842 (-45.1%)",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "Avg Think Tok = 24,842 (-45.1%)",
+   "derived": false
+  },
+  "t3_ccr_adaptive_kv": {
+   "value": 46689,
+   "display": "46,689",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "Post-Reset KV = 46,689 (-70.8%)",
+   "derived": false
+  },
+  "t3_ccr_adaptive_kvpct": {
+   "value": "-70.8%",
+   "display": "-70.8%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "Post-Reset KV = 46,689 (-70.8%)",
+   "derived": false
+  },
+  "t3_ccr_adaptive_peak": {
+   "value": 10563,
+   "display": "10,563",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Table 3 row ccr_adaptive",
+   "quote": "Peak KV = 10,563",
+   "derived": false
+  },
+  "trap_gain_pts_quoted": {
+   "value": 80.0,
+   "display": "+80.0 pts",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "(+80.0 pts Trap-25 escape)",
+   "derived": false
+  },
+  "sci_ccr": {
+   "value": 5,
+   "display": "5/5",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "G-CCR achieves 100% recovery (5/5 vs. 1/5 baseline)",
+   "derived": false
+  },
+  "sci_base": {
+   "value": 1,
+   "display": "1/5",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "(5/5 vs. 1/5 baseline)",
+   "derived": false
+  },
+  "lora_adapters": {
+   "value": 3,
+   "display": "3",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "hot-swapping 3 rank-16 QLoRA adapters",
+   "derived": false
+  },
+  "lora_vram": {
+   "value": 64.5,
+   "display": "+64.5 MB",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "(+64.5 MB VRAM, 1.42 ms swap latency)",
+   "derived": false
+  },
+  "lora_swap_ms": {
+   "value": 1.42,
+   "display": "1.42 ms",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "(+64.5 MB VRAM, 1.42 ms swap latency)",
+   "derived": false
+  },
+  "lora_mem_cut": {
+   "value": 66.3,
+   "display": "66.3%",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "cuts GPU memory by 66.3%",
+   "derived": false
+  },
+  "lora_pass_before": {
+   "value": 0.33,
+   "display": "0.33",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "raising gated task pass rates from 0.33 to 1.00",
+   "derived": false
+  },
+  "lora_pass_after": {
+   "value": 1.0,
+   "display": "1.00",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 4",
+   "quote": "raising gated task pass rates from 0.33 to 1.00",
+   "derived": false
+  },
+  "fail_invariants": {
+   "value": 3,
+   "display": "three",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5",
+   "quote": "bundles three distinct proxy invariants ... behind a bare AssertionError",
+   "derived": false
+  },
+  "tests_passed": {
+   "value": 20,
+   "display": "20 passed",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5",
+   "quote": "20 passed in 4.82s",
+   "derived": false
+  },
+  "tests_time": {
+   "value": 4.82,
+   "display": "4.82s",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5",
+   "quote": "20 passed in 4.82s",
+   "derived": false
+  },
+  "verify_budget_s": {
+   "value": 15,
+   "display": "15 seconds",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5",
+   "quote": "exact p-values offline in under 15 seconds",
+   "derived": false
+  },
+  "tables_count": {
+   "value": 12,
+   "display": "12",
+   "source": "Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf p.4 Section 5",
+   "quote": "verifies all 12 CSV/JSONL tables",
+   "derived": false
+  },
+  "repo_sum": {
+   "value": 129,
+   "display": "129",
+   "formula": "fastapi + rich + requests + httpx",
+   "inputs": [
+    "repo_fastapi",
+    "repo_rich",
+    "repo_requests",
+    "repo_httpx"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from repo_fastapi, repo_rich, repo_requests, repo_httpx"
+  },
+  "t1_gain_pts": {
+   "value": 21.7,
+   "display": "+21.7 pts",
+   "formula": "t1_calib_rate - t1_base_rate",
+   "inputs": [
+    "t1_calib_rate",
+    "t1_base_rate"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from t1_calib_rate, t1_base_rate"
+  },
+  "tax_pts_calc": {
+   "value": 22.4,
+   "display": "22.4 pts",
+   "formula": "t1_calib_rate - t2_M2_rate",
+   "inputs": [
+    "t1_calib_rate",
+    "t2_M2_rate"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from t1_calib_rate, t2_M2_rate"
+  },
+  "tax_tasks_calc": {
+   "value": 29,
+   "display": "29",
+   "formula": "t1_calib_solved - t2_M2_solved",
+   "inputs": [
+    "t1_calib_solved",
+    "t2_M2_solved"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from t1_calib_solved, t2_M2_solved"
+  },
+  "t2_gain_tasks": {
+   "value": 16,
+   "display": "+16 tasks",
+   "formula": "t2_M6_solved - t2_M0_solved",
+   "inputs": [
+    "t2_M6_solved",
+    "t2_M0_solved"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from t2_M6_solved, t2_M0_solved"
+  },
+  "compaction_cut_calc": {
+   "value": 93.1,
+   "display": "-93.1%",
+   "formula": "1 - M6_comp / M0_comp",
+   "inputs": [
+    "t2_M6_comp",
+    "t2_M0_comp"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from t2_M6_comp, t2_M0_comp"
+  },
+  "kv_cut_calc": {
+   "value": 70.8,
+   "display": "-70.8%",
+   "formula": "1 - ccr_adaptive_kv / baseline_static_kv",
+   "inputs": [
+    "t3_ccr_adaptive_kv",
+    "t3_baseline_static_kv"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from t3_ccr_adaptive_kv, t3_baseline_static_kv"
+  },
+  "trap_gain_pts": {
+   "value": 80.0,
+   "display": "+80.0 pts",
+   "formula": "ccr_adaptive_esc - baseline_static_esc",
+   "inputs": [
+    "t3_ccr_adaptive_esc",
+    "t3_baseline_static_esc"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from t3_ccr_adaptive_esc, t3_baseline_static_esc"
+  },
+  "budget_cut_calc": {
+   "value": 87.5,
+   "display": "87.5%",
+   "formula": "1 - budget_d1 / budget_full",
+   "inputs": [
+    "budget_d1",
+    "budget_full"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from budget_d1, budget_full"
+  },
+  "t2_ratio": {
+   "value": 2.07,
+   "display": "2.07x",
+   "formula": "t2_M6_solved / t2_M0_solved",
+   "inputs": [
+    "t2_M6_solved",
+    "t2_M0_solved"
+   ],
+   "derived": true,
+   "source": "computed in story_numbers_build.py from t2_M6_solved, t2_M0_solved"
+  }
+ }
+}

@@ -1,0 +1,386 @@
+{
+ "url": "http://export.arxiv.org/api/query?search_query=all%3Arepository-level+AND+all%3Acode+AND+all%3Arepair+AND+all%3Abenchmark+AND+all%3ALLM+AND+all%3Aagents+AND+all%3Aevaluation&sortBy=relevance&max_results=25",
+ "records": [
+  {
+   "src": "arxiv",
+   "arxiv": "2605.17444",
+   "doi": null,
+   "title": "MemRepair: Hierarchical Memory for Agentic Repository-Level Vulnerability Repair",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Modern software ecosystems face a rapidly growing number of disclosed vulnerabilities, increasing the need for automated repair techniques that can operate reliably at repository scale. Although Large Language Model (LLM)-based agents have recently shown promise for automated vulnerability repair (AVR), most existing systems still treat repair as a single generation step over the currently visible code context. As a result, they lack a persistent mechanism for reusing prior fixes or learning from failed validation attempts, which limits their effectiveness on complex, multi-file repair tasks. We present MemRepair, a memory-augmented agentic framework that formulates vulnerability repair as an iterative, experience-driven process. MemRepair combines three complementary memory layers, i.e., History-Fix, Security-Pattern, and Refinement-Trajectory memories, with a dynamic feedback-driven refinement loop. This design allows the agent to retrieve repository-specific repair conventions, apply reusable security defenses, and exploit prior \"failure-to-success\" trajectories to revise semantically invalid patches based on runtime evidence. We evaluate MemRepair on three representative repository-level vulnerability repair benchmarks: SEC-Bench, PatchEval (Python, Go, JavaScript), and the C++ subset of Multi-SWE-bench. MemRepair achieves state-of-the-art resolution rates of 58.0%, 58.2%, and 30.58%, respectively, outperforming strong general-purpose agents such as OpenHands and SWE-agent, as well as the specialized AVR tool InfCode-C++, while maintaining competitive repair cost. These results show that persistent, hierarchical repair memory can substantially improve the reliability of agentic vulnerability repair across diverse languages and repository settings.",
+   "authors": [
+    "Simiao Liu",
+    "Li Zhang",
+    "Fang Liu",
+    "Xiaoli Lian",
+    "Yang Liu",
+    "Yinghao Zhu"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2604.14709",
+   "doi": null,
+   "title": "HWE-Bench: Benchmarking LLM Agents on Real-World Hardware Bug Repair Tasks",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Existing benchmarks for hardware design primarily evaluate Large Language Models (LLMs) on isolated, component-level tasks such as generating HDL modules from specifications, leaving repository-scale evaluation unaddressed. We introduce HWE-Bench, the first large-scale, repository-level benchmark for evaluating LLM agents on real-world hardware bug repair tasks. HWE-Bench comprises 417 task instances derived from real historical bug-fix pull requests across six major open-source projects spanning both Verilog/SystemVerilog and Chisel, covering RISC-V cores, SoCs, and security roots-of-trust. Each task is grounded in a fully containerized environment where the agent must resolve a real bug report, with correctness validated through the project's native simulation and regression flows. The benchmark is built through a largely automated pipeline that enables efficient expansion to new repositories. We evaluate seven LLMs with four agent frameworks and find that the best agent resolves 70.7% of tasks overall, with performance exceeding 90% on smaller cores but dropping below 65% on complex SoC-level projects. We observe larger performance gaps across models than commonly reported on software benchmarks, and difficulty is driven by project scope and bug-type distribution rather than code size alone. Our failure analysis traces agent failures to three stages of the debugging process: fault localization, hardware-semantic reasoning, and cross-artifact coordination across RTL, configuration, and verification components, providing concrete directions for developing more capable hardware-aware agents.",
+   "authors": [
+    "Fan Cui",
+    "Hongyuan Hou",
+    "Zizhang Luo",
+    "Chenyun Yin",
+    "Yun Liang"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2606.22082",
+   "doi": null,
+   "title": "CodeTeam: An LLM-Powered Multi-Agent Framework for Repository-Level Code Generation",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Natural language to repository generation (NL2Repo) requires a system to construct an entire software repository from a natural-language requirements document. Compared with function-level code generation, this task demands longer planning horizons, stable interfaces across files, and iterative debugging of cross-file inconsistencies. To address these challenges, we propose CodeTeam, an LLM-based multi-agent framework that separates planning, decision making, and implementation into distinct, coordinated stages. In the planning stage, multiple Architect agents draft competing software design sketches (SDS), optionally grounded by retrieved design references. A CTO agent then evaluates, selects, and normalizes the most promising SDS into a machine-checkable contract that specifies file ownership, public interfaces, and dependency constraints. In the implementation stage, Developer agents generate code under a dependency-aware scheduler with bounded context and lightweight Git-based coordination, while a QA agent runs tests and drives iterative repairs. On the synthesis-based SketchEval benchmark, we explicitly compare CodeTeam's prompt-engineering (PE) and supervised fine-tuning (SFT) variants with the corresponding CodeS variants, where CodeTeam improves the overall SketchBLEU by 4.1 and 2.9 absolute points, respectively. On the execution-based NL2Repo-Bench benchmark, used as an external validation protocol, CodeTeam achieves the highest average test pass rate in both settings (34.6% PE, 42.3% SFT), confirming that the sketch-improvements extend to functional correctness under upstream test suites. Ablation results show that project-specific developer allocation and retrieval-augmented planning each contribute substantially to the SketchBLEU improvement (9.9% and 8.1% relative, respectively). CodeTeam and the experimental results are available at https://github.com/WhitenWhiten/CodeTeam",
+   "authors": [
+    "Yifei Wang",
+    "Ruiyin Li",
+    "Peng Liang",
+    "Qiong Feng",
+    "Zengyang Li",
+    "Mojtaba Shahin",
+    "Arif Ali Khan"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2506.00172",
+   "doi": null,
+   "title": "Breakpoint: Scalable evaluation of system-level reasoning in LLM code agents",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "Benchmarks for large language models (LLMs) have predominantly assessed short-horizon, localized reasoning. Existing long-horizon suites (e.g. SWE-bench) rely on manually curated issues, so expanding or tuning difficulty demands expensive human effort and evaluations quickly saturate. However, many real-world tasks, such as software engineering or scientific research, require agents to rapidly comprehend and manipulate novel, complex structures dynamically; evaluating these capabilities requires the ability to construct large and varied sets of problems for agents to solve. We introduce Breakpoint, a benchmarking methodology that automatically generates code-repair tasks by adversarially corrupting functions within real-world software repositories. Breakpoint systematically controls task difficulty along two clear dimensions: local reasoning (characterized by code complexity metrics such as cyclomatic complexity) and system-level reasoning (characterized by call-graph centrality and the number of simultaneously corrupted interdependent functions). In experiments across more than 900 generated tasks we demonstrate that our methodology can scale to arbitrary difficulty, with state-of-the-art models' success rates ranging from 55% on the easiest tasks down to 0% on the hardest.",
+   "authors": [
+    "Kaivalya Hariharan",
+    "Uzay Girit",
+    "Atticus Wang",
+    "Jacob Andreas"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2608.09273",
+   "doi": null,
+   "title": "Entropy-based Code Adversarial Translation for Real-world Repository Migration",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "LLMs have demonstrated strong capabilities in code generation and automated program repair, but migrating an entire repository rarely produces a runnable application because long-horizon translation challenges LLM-based agents' ability to maintain repository-level migration objectives. In this work, we propose Entropy-based Code Adversarial Translation (ECAT), a multi-agent framework for automated Android-to-HarmonyOS repository migration. ECAT formulates repository migration as adversarial entropy minimization through a generator-discriminator architecture. The discriminator measures migration quality using a unified metric called Code Entropy and produces text gradients that specify both file-level generation directives and the skills needed to execute them. Guided by these optimization signals, the generator iteratively updates the repository, and each update is accepted only if it reduces Code Entropy. Repeated generator--discriminator interactions progressively drive the migration from an initial template toward a functionally complete HarmonyOS repository. Successful low-entropy trajectories are further distilled into a self-evolving memory tree, enabling transferable migration knowledge across repositories. We also introduce A2H-RepoBench, the first real-world benchmark for Android-to-HarmonyOS repository migration, covering applications from tens of thousands to hundreds of thousands of lines of code. Evaluated by node alignment and an agent-based functional judge, ECAT achieves 74.7% overall migration quality and consistently outperforms existing agent-based methods across repositories of different scales.",
+   "authors": [
+    "Yushun Tang",
+    "Yisen Cao",
+    "Zhicheng Chen",
+    "Lin Peng",
+    "Junkang Mao",
+    "Fengyi Song",
+    "Yantao Jia"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2606.11416",
+   "doi": null,
+   "title": "MPC-Patch-Bench: Security-Aware LLM Code Patch for Multi-Party Computation",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Repository-level benchmarks for evaluating Large Language Model (LLM) code repair on Secure Multi-Party Computation (MPC) software do not yet exist, and directly transplanting general-purpose benchmarks such as SWE-bench fails on three structural fronts: (i) MPC repositories are dominated by generic Python infrastructure rather than cryptographic logic; (ii) high-value MPC fixes lack the standardized tests rigid extraction pipelines require; and (iii) standard fail-to-pass evaluation is insufficient for code that must also be cryptographically safe. MPC is increasingly deployed for privacy-preserving machine learning, biomedical collaboration, and secure analytics. Existing MPC-specific code-synthesis efforts cover only operator-level or single-framework tasks; evaluating LLM agents on real repository-level MPC repair instead demands MPC-aware data curation and a verifier matched to the security and numerical-fidelity guarantees MPC programs must obey neither of which existing benchmarks provide. We introduce MPC-Patch-Bench, a repository-level benchmark organised around two frameworks. (1)The Data Curation Framework combines a domain-specific curation agent that filters raw pull requests through three cryptographic layers with a human-AI completion engine that synthesizes missing problem statements and Fail-to-Pass/Pass-to-Pass tests, yielding 205 fully verified instances. (2)The MPC Verifier provides dedicated security and numerical-fidelity checks via dynamic differential testing against plaintext oracles and MPC-specific static analysis rules that flag unsafe reveals, insecure arithmetic, and illegal public/private casts. The strongest evaluated LLM functionally resolves only 22.9% of MPC-Patch-Bench tasks; the MPC Verifier further reduces verified resolution to 17.1%, with up to 40% of functionally-passing patches rejected for cryptographic or numerical-fidelity violations.",
+   "authors": [
+    "Yukuan Zhang",
+    "Mengxin Zheng",
+    "Qian Lou"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2510.03588",
+   "doi": null,
+   "title": "REFINE: Enhancing Program Repair Agents through Context-Aware Patch Refinement",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large Language Models (LLMs) have recently shown strong potential in automatic program repair (APR), especially in repository-level settings where the goal is to generate patches based on natural language issue descriptions, large codebases, and regression tests. However, despite their promise, current LLM-based APR techniques often struggle to produce correct fixes due to limited understanding of code context and over-reliance on incomplete test suites. As a result, they frequently generate Draft Patches-partially correct patches that either incompletely address the bug or overfit to the test cases. In this work, we propose a novel patch refinement framework, Refine, that systematically transforms Draft Patches into correct ones. Refine addresses three key challenges: disambiguating vague issue and code context, diversifying patch candidates through test-time scaling, and aggregating partial fixes via an LLM-powered code review process. We implement Refine as a general refinement module that can be integrated into both open-agent-based and workflow-based APR systems. Our evaluation on the SWE-Bench Lite benchmark shows that Refine achieves state-of-the-art results among workflow-based approaches and approaches the best-known performance across all APR categories. Specifically, Refine boosts AutoCodeRover's performance by 14.67%, achieving a score of 51.67% and surpassing all prior baselines. On SWE-Bench Verified, Refine improves the resolution rate by 12.2%, and when integrated across multiple APR systems, it yields an average improvement of 14%-demonstrating its broad effectiveness and generalizability. These results highlight the effectiveness of refinement as a missing component in current APR pipelines and the potential of agentic collaboration in closing the gap between near-correct and correct patches. We also open source our code.",
+   "authors": [
+    "Anvith Pabba",
+    "Simin Chen",
+    "Alex Mathai",
+    "Anindya Chakraborty",
+    "Baishakhi Ray"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2609.39086",
+   "doi": null,
+   "title": "Trustworthy Runtime Error Healing in Real-World Repositories: A Benchmark and Guardrail",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Runtime error healing lets a crashed program continue by generating code that repairs its live runtime state. Recent work shows that LLMs can generate such healing code, but it is evaluated only on small competition programs, and executing LLM-generated code inside a live process raises safety concerns that remain unaddressed. In this paper, we take LLM-based runtime healing toward practical use in real-world repositories. We first build HealBench, a benchmark of 265 runtime errors from 18 real-world repositories, each paired with a reference execution on the patched version. HealBench also provides a unified framework that lets LLM agents heal with cross-file context and live runtime state. We then design HealGuard, which requires healing code to be written in HealCore, an analyzable subset of Python, and uses static and dynamic taint analysis to check whether state changed by healing reaches operations protected by developers. We evaluate a dedicated healing method and three general coding agents with three backbone LLMs. The best setting resumes execution in 38.11% of instances and passes the target test in 28.68%, showing that existing agents can already heal a meaningful share of real repository-level crashes. However, among executions that pass, HealGuard flags 17.4% whose healing-changed state may reach a protected operation. On 684 controlled cases, HealGuard detects all unsafe cases, at the cost of a 68.42% false positive rate.",
+   "authors": [
+    "Gou Tan",
+    "Pengfei Chen",
+    "Zhensu Sun",
+    "Jieke Shi",
+    "Junkai Chen",
+    "Ting Zhang",
+    "Weifeng Sun",
+    "Junda He"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2506.16650",
+   "doi": null,
+   "title": "SemAgent: A Semantics Aware Program Repair Agent",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large Language Models (LLMs) have shown impressive capabilities in downstream software engineering tasks such as Automated Program Repair (APR). In particular, there has been a lot of research on repository-level issue-resolution benchmarks such as SWE-Bench. Although there has been significant progress on this topic, we notice that in the process of solving such issues, existing agentic systems tend to hyper-localize on immediately suspicious lines of code and fix them in isolation, without a deeper understanding of the issue semantics, code semantics, or execution semantics. Consequently, many existing systems generate patches that overfit to the user issue, even when a more general fix is preferable. To address this limitation, we introduce SemAgent, a novel workflow-based procedure that leverages issue, code, and execution semantics to generate patches that are complete - identifying and fixing all lines relevant to the issue. We achieve this through a novel pipeline that (a) leverages execution semantics to retrieve relevant context, (b) comprehends issue-semantics via generalized abstraction, (c) isolates code-semantics within the context of this abstraction, and (d) leverages this understanding in a two-stage architecture: a repair stage that proposes fine-grained fixes, followed by a reviewer stage that filters relevant fixes based on the inferred issue-semantics. Our evaluations show that our methodology achieves a solve rate of 44.66% on the SWEBench-Lite benchmark beating all other workflow-based approaches, and an absolute improvement of 7.66% compared to our baseline, which lacks such deep semantic understanding. We note that our approach performs particularly well on issues requiring multi-line reasoning (and editing) and edge-case handling, suggesting that incorporating issue and code semantics into APR pipelines can lead to robust and semantically consistent repairs.",
+   "authors": [
+    "Anvith Pabba",
+    "Alex Mathai",
+    "Anindya Chakraborty",
+    "Baishakhi Ray"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2609.04167",
+   "doi": null,
+   "title": "SWE-Gate: Passing Functional Tests Is Not Enough for Software Engineering Agents",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Repository-level software engineering benchmarks have significantly advanced the evaluation of coding agents, but existing benchmarks primarily measure whether generated patches pass functional tests and overlook review-derived acceptance constraints (review constraints) that often influence whether a patch is acceptable in real-world software development. We introduce SWE-Gate, a repository-level benchmark for software engineering agents that explicitly evaluates review constraint compliance alongside functional correctness. SWE-Gate derives review constraints from real pull request review comments and synthesizes repository-level repair instances around these constraints. Each instance provides separate functional and constraint tests, together with non-compliant and gold patches, enabling explicit separation between issue resolution capability and review constraint compliance. We construct SWE-Gate with 303 repository-level repair instances spanning 75 open-source Python repositories across diverse software domains. Experiments with four LLM backends spanning different capability levels under a common coding-agent scaffold reveal a substantial gap between functional success and success under the complete repair specification: among 644 repairs that pass the functional tests, 221 fail to satisfy the provided review constraints. These findings show that functional-only evaluation overestimates agents' ability to satisfy the full requirements of repository-level repair tasks. The replication package including code, data, and experimental results is available at https://github.com/DeepSoftwareAnalytics/SWE-Gate.",
+   "authors": [
+    "Xin He",
+    "Yanlin Wang",
+    "Mingwei Liu",
+    "Jiachi Chen",
+    "Hongyu Zhang",
+    "Guanbin Li"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2510.09721",
+   "doi": null,
+   "title": "A Comprehensive Survey on Benchmarks and Solutions in Software Engineering of LLM-Empowered Agentic System",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "The integration of Large Language Models (LLMs) into software engineering has driven a transition from traditional rule-based systems to autonomous agentic systems capable of solving complex problems. However, systematic progress is hindered by a lack of comprehensive understanding of how benchmarks and solutions interconnect. This survey addresses this gap by providing the first holistic analysis of LLM-powered software engineering, offering insights into evaluation methodologies and solution paradigms. We review over 150 recent papers and propose a taxonomy along two key dimensions: (1) Solutions, categorized into prompt-based, fine-tuning-based, and agent-based paradigms, and (2) Benchmarks, including tasks such as code generation, translation, and repair. Our analysis highlights the evolution from simple prompt engineering to sophisticated agentic systems incorporating capabilities like planning, reasoning, memory mechanisms, and tool augmentation. To contextualize this progress, we present a unified pipeline illustrating the workflow from task specification to deliverables, detailing how different solution paradigms address various complexity levels. Unlike prior surveys that focus narrowly on specific aspects, this work connects 50+ benchmarks to their corresponding solution strategies, enabling researchers to identify optimal approaches for diverse evaluation criteria. We also identify critical research gaps and propose future directions, including multi-agent collaboration, self-evolving systems, and formal verification integration. This survey serves as a foundational guide for advancing LLM-driven software engineering. We maintain a GitHub repository that continuously updates the reviewed and related papers at https://github.com/lisaGuojl/LLM-Agent-SE-Survey.",
+   "authors": [
+    "Jiale Guo",
+    "Suizhi Huang",
+    "Mei Li",
+    "Dong Huang",
+    "Xingsheng Chen",
+    "Regina Zhang",
+    "Zhijiang Guo",
+    "Han Yu"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2603.03823",
+   "doi": null,
+   "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large language model (LLM)-powered agents have demonstrated strong capabilities in automating software engineering tasks such as static bug fixing. However, in the real world, the development of mature software is typically predicated on complex requirement changes and long-term feature iterations -- a process that static, one-shot repair paradigms fail to capture. To bridge this gap, we propose SWE-CI, the first repository-level benchmark built upon the Continuous Integration loop, aiming to shift the evaluation paradigm for code generation from static, short-term functional correctness toward dynamic, long-term maintainability. The key insight is simple: Maintainability can be revealed by tracking how functional correctness changes over time. The benchmark comprises 100 tasks, each deriving from a real-world code repository with a development history spanning an average of 233 days and 71 consecutive commits. SWE-CI requires agents to systematically resolve these tasks through dozens of rounds of analysis and coding iterations. SWE-CI provides valuable insights into how well agents can sustain code quality throughout long-term evolution.",
+   "authors": [
+    "Jialong Chen",
+    "Xander Xu",
+    "Hu Wei",
+    "Chuan Chen",
+    "Bing Zhao"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2609.38335",
+   "doi": null,
+   "title": "E2E-SWE: Benchmarking LLMs on Building Working Codebases from Scratch",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Coding agents powered by large language models (LLMs) are evolving from making localized code changes to developing complete software repositories. However, evaluating repository-scale generation remains challenging: tasks must demand system-level reasoning while ensuring that all evaluated behaviors are precisely specified and independent of any particular implementation. We introduce E2E-SWE, a benchmark for evaluating whether coding agents can build complete, functional software repositories end to end. E2E-SWE contains 186 whole-repository generation tasks spanning 11 programming languages. Given only a natural-language specification and an empty workspace, an agent must implement a complete, installable project that satisfies a comprehensive suite of hidden tests. Each task is constructed by a software engineer in collaboration with an LLM; together, they develop the test suite and a corresponding implementation-independent specification. To ensure that tasks are well specified and practically solvable, we further subject them to an iterative verification process in which autonomous agents audit and repair task defects using static inspection and failures observed from real model rollouts. Evaluating 13 frontier models, we find substantial variation in end-to-end repository generation ability, with pass@1 ranging from 11.7% to 67.7%, providing strong model differentiation while leaving considerable headroom for future progress. Analysis of agent trajectories further reveals long, front-loaded reasoning patterns, highlighting the planning and system-level reasoning required to construct working codebases from scratch.",
+   "authors": [
+    "Hantian Ding",
+    "Chloe Bi",
+    "Jiacheng Zhu",
+    "John Yang",
+    "Matt Deitke",
+    "Pengcheng Yin",
+    "Zijian Wang",
+    "Rui Hou"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2601.18241",
+   "doi": null,
+   "title": "TAM-Eval: Evaluating LLMs for Automated Unit Test Maintenance",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "While Large Language Models (LLMs) have shown promise in software engineering, their application to unit testing remains largely confined to isolated test generation or oracle prediction, neglecting the broader challenge of test suite maintenance. We introduce TAM-Eval (Test Automated Maintenance Evaluation), a framework and benchmark designed to evaluate model performance across three core test maintenance scenarios: creation, repair, and updating of test suites. Unlike prior work limited to function-level tasks, TAM-Eval operates at the test file level, while maintaining access to full repository context during isolated evaluation, better reflecting real-world maintenance workflows. Our benchmark comprises 1,539 automatically extracted and validated scenarios from Python, Java, and Go projects. TAM-Eval supports system-agnostic evaluation of both raw LLMs and agentic workflows, using a reference-free protocol based on test suite pass rate, code coverage, and mutation testing. Empirical results indicate that state-of-the-art LLMs have limited capabilities in realistic test maintenance processes and yield only marginal improvements in test effectiveness. We release TAM-Eval as an open-source framework to support future research in automated software testing. Our data and code are publicly available at https://github.com/trndcenter/TAM-Eval.",
+   "authors": [
+    "Elena Bruches",
+    "Vadim Alperovich",
+    "Dari Baturova",
+    "Roman Derunets",
+    "Daniil Grebenkin",
+    "Georgy Mkrtchyan",
+    "Oleg Sedukhin",
+    "Mikhail Klementev"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2506.14683",
+   "doi": null,
+   "title": "Unified Software Engineering Agent as AI Software Engineer",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "The growth of Large Language Model (LLM) technology has raised expectations for automated coding. However, software engineering is more than coding and is concerned with activities including maintenance and evolution of a project. In this context, the concept of LLM agents has gained traction, which utilize LLMs as reasoning engines to invoke external tools autonomously. But is an LLM agent the same as an AI software engineer? In this paper, we seek to understand this question by developing a Unified Software Engineering agent or USEagent. Unlike existing work which builds specialized agents for specific software tasks such as testing, debugging, and repair, our goal is to build a unified agent which can orchestrate and handle multiple capabilities. This gives the agent the promise of handling complex scenarios in software development such as fixing an incomplete patch, adding new features, or taking over code written by others. We envision USEagent as the first draft of a future AI Software Engineer which can be a team member in future software development teams involving both AI and humans. To evaluate the efficacy of USEagent, we build a Unified Software Engineering bench (USEbench) comprising of myriad tasks such as coding, testing, and patching. USEbench is a judicious mixture of tasks from existing benchmarks such as SWE-bench, SWT-bench, and REPOCOD. In an evaluation on USEbench consisting of 1,271 repository-level software engineering tasks, USEagent shows improved efficacy compared to existing general agents such as OpenHands CodeActAgent. There exist gaps in the capabilities of USEagent for certain coding tasks, which provides hints on further developing the AI Software Engineer of the future.",
+   "authors": [
+    "Leonhard Applis",
+    "Yuntong Zhang",
+    "Shanchao Liang",
+    "Nan Jiang",
+    "Lin Tan",
+    "Abhik Roychoudhury"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2609.32459",
+   "doi": null,
+   "title": "Beyond the Model: Demystifying Harness Effects in Software Engineering Agents",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large Language Model (LLM)-based agents are increasingly used for software engineering tasks, yet their performance is not determined by the base model alone. The agent harness substantially shapes how SE agents interact with repositories, execute actions, and validate solutions. However, the role of harness design remains insufficiently understood, especially across different models, tasks, and harness components. In this paper, we present a systematic empirical study of harness effects in SE agents. We first evaluate two representative harnesses, mini-SWE-agent and OpenCode, with ten models from two prominent open-weight model families, Qwen and DeepSeek, on three benchmarks: SWE-bench Pro, ProgramBench, and GitTaskBench. We then construct NanoHarness, a lightweight modular harness built on top of mini-SWE-agent, and use it to analyze five representative harness components: tool registry, context compression, explicit planning, subagents, and lazy skills. Experimental results show that harness effectiveness depends jointly on model capability and task type. Complex harnesses provide diminishing marginal gains on SWE-style issue repair as model capability improves, but can benefit stronger models on more complex and open-ended repository-level tasks. Component-level analysis on ProgramBench further shows that structured tool use and task-specific subagents provide the most stable improvements, while context compression and general subagents can hurt repository-generation performance. When combined, NanoHarness improves over mini-SWE-agent by 7.37 and 6.21 percentage points on Qwen3.7-Max and DeepSeek-V4-Pro, respectively, recovering most of the gains of product-level harnesses. These findings highlight harness design as a first-class factor in SE-agent performance and provide insights for building more effective and efficient coding agents.",
+   "authors": [
+    "Haichuan Hu",
+    "Quanjun Zhang",
+    "Shengcheng Yu",
+    "Zhifei Chen",
+    "Tianyu Luo",
+    "Chunrong Fang",
+    "Zhenyu Chen",
+    "Liang Xiao"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2608.09277",
+   "doi": null,
+   "title": "P$^{3}$: Joint Program-and-Proof Planning for Verified Code Generation",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Verified code generation asks a large language model (LLM) to generate both an executable program and a machine-checkable proof that the program meets a formal specification, promising software that is correct by construction. The de facto workflow decouples the two halves of the problem: first synthesize a program, then attempt to prove it correct. We observe that this sequential pipeline can be both ineffective and inefficient in practice. A program generated without anticipating its proof can be subtly incorrect or structurally difficult to verify, forcing the LLM into brittle repair loops that alternate between patching the code and patching the proof. Inspired by Dijkstra's view that a program and its correctness argument should be developed hand in hand, we propose $P^3$, an LLM-based agentic workflow that first derives a unified program-and-proof plan from the specification, then elaborates the implementation and proof scaffold under this shared plan. To evaluate verified code generation in realistic settings, we further introduce Lean4Commit0, a repository-derived, library-level benchmark built by extracting core APIs from real-world software repositories and translating their requirements, including relational specifications across APIs, into Lean tasks. Using four frontier LLM backends, we evaluate $P^3$ on Verina, AlgoVeri, and our Lean4Commit0 benchmark, where it achieves the highest solve rate in every benchmark--model setting. Compared with the stronger baseline, it improves solve rates by 4.6--11.2 percentage points and reduces per-task API cost by up to roughly 40\\% and wall-clock time by up to roughly 37\\% on the difficult subset of each benchmark. A targeted ablation further shows gains of 3.3--8.3 points over implementation-only planning, isolating the benefit of planning the program and proof jointly.",
+   "authors": [
+    "Zenan Li",
+    "Ziran Yang",
+    "Peiyang Song",
+    "Zhaoyu Li",
+    "Kaiyu Yang"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2604.26469",
+   "doi": null,
+   "title": "An Empirical Study of Speculative Decoding on Software Engineering Tasks",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large Language Models (LLMs) have become widely used for Software Engineering (SE) tasks, spanning from function-level code generation to complex repository-level workflows. However, the high latency of autoregressive inference remains a significant bottleneck, hindering their deployment in interactive environments. While Speculative Decoding (SD) offers a promising technique for lossless acceleration, prior research on long-context repository-level tasks and complex agentic interactions remains limited. To bridge this gap, we present the first systematic empirical study to evaluate the effectiveness of SD in SE tasks. We systematically benchmark a comprehensive spectrum of strategies, encompassing both model-based and model-free methods, across representative generation, editing, and repair scenarios. Our empirical results indicate that SD demonstrates clear potential for accelerating inference, particularly for smaller models that achieve higher speedups than those of their larger counterparts. We find that the effectiveness of SD methods varies across different task scenarios. Model-based approaches are well-suited for code generation, whereas model-free methods are better adapted to repository-level repair and editing scenarios. Furthermore, we observe that the repetitiveness of SE tasks improves the performance of model-free methods. In contrast to natural language tasks, the higher predictability of SE tasks allows for more aggressive hyperparameters. Our findings are summarized as guidelines to help increase inference efficiency for SE scenarios.",
+   "authors": [
+    "Yijia Li",
+    "Junkai Chen",
+    "Xing Hu",
+    "Xin Xia"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2603.22048",
+   "doi": null,
+   "title": "Dynamic analysis enhances issue resolution",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Resolving complex code defects from natural language descriptions remains a fundamental software engineering challenge. Recently, large language models (LLMs) have driven the creation of agent-based automated repair systems. While improving repository-level problem-solving, current methods struggle with complex defects like intricate polymorphic control flows and implicit type degradation. These approaches rely on static analysis and shallow execution feedback, lacking the ability to monitor intermediate execution states. Consequently, agents often fall into speculative exploration, consuming significant tokens without identifying the root cause. We introduce DAIRA (Dynamic Analysis-enhanced Issue Resolution Agent), a pioneering automated repair framework deeply embedding dynamic analysis into the agent's decision loop. DAIRA employs a Test Tracing-Driven workflow, using lightweight tools to capture runtime evidence (e.g., call stacks and variable states) and convert it into structured semantic reports. By illuminating execution paths and causal dependencies, DAIRA enables precise fault localization and prevents context window flooding from irrelevant code retrievals. This shifts the agent's approach from speculative reasoning to deterministic inference. Evaluations on the SWE-bench Verified benchmark show DAIRA achieves a state-of-the-art 79.4% resolution rate when powered by Gemini 3 Flash Preview. Furthermore, it demonstrates robustness in addressing deep-seated logical defects, securing a 44.4% resolution rate on the most demanding tasks. Compared to baselines, DAIRA uniquely resolves complex edge cases and improves operational efficiency. Across various LLMs, it reduces inference costs by approximately 10% and input token consumption by 25%.",
+   "authors": [
+    "Mingwei Liu",
+    "Zihao Wang",
+    "Zhenxi Chen",
+    "Zheng Pei",
+    "Yanlin Wang",
+    "Zibin Zheng"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2511.16005",
+   "doi": null,
+   "title": "InfCode-C++: Intent-Guided Semantic Retrieval and AST-Structured Search for C++ Issue Resolution",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "Large language model (LLM) agents have recently shown strong performance on repository-level issue resolution, but existing systems are almost exclusively designed for Python and rely heavily on lexical retrieval and shallow code navigation. These approaches transfer poorly to C++ projects, where overloaded identifiers, nested namespaces, template instantiations, and deep control-flow structures make context retrieval and fault localization substantially more difficult. As a result, state-of-the-art Python-oriented agents show a drastic performance drop on the C++ subset of MultiSWE-bench. We introduce INFCODE-C++, the first C++-aware autonomous system for end-to-end issue resolution. The system combines two complementary retrieval mechanisms -- semantic code-intent retrieval and deterministic AST-structured querying -- to construct accurate, language-aware context for repair.These components enable precise localization and robust patch synthesis in large, statically typed C++ repositories. Evaluated on the \\texttt{MultiSWE-bench-CPP} benchmark, INFCODE-C++ achieves a resolution rate of 25.58\\%, outperforming the strongest prior agent by 10.85 percentage points and more than doubling the performance of MSWE-agent. Ablation and behavioral studies further demonstrate the critical role of semantic retrieval, structural analysis, and accurate reproduction in C++ issue resolution. INFCODE-C++ highlights the need for language-aware reasoning in multi-language software agents and establishes a foundation for future research on scalable, LLM-driven repair for complex, statically typed ecosystems.",
+   "authors": [
+    "Qingao Dong",
+    "Mengfei Wang",
+    "Hengzhi Zhang",
+    "Zhichao Li",
+    "Yuan Yuan",
+    "Mu Li",
+    "Xiang Gao",
+    "Hailong Sun"
+   ],
+   "facet": "F4_bench",
+   "query": "repository-level code repair benchmark LLM agents evaluation"
+  }
+ ]
+}

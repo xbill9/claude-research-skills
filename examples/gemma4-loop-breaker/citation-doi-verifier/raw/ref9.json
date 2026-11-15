@@ -1,0 +1,312 @@
+{
+ "entry": {
+  "key": "ref9",
+  "n": 9,
+  "authors": "H. Taherkhani, M. Sepidband, and H. Hemmati",
+  "first_author_surname": "Taherkhani",
+  "title": "RGFL: Reasoning guided fault localization for automated program repair using large language models",
+  "year": 2026,
+  "venue_claimed": null,
+  "arxiv": "2601.18044",
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "RGFL: Reasoning guided fault localization for automated program repair using large language models",
+  "candidates": [
+   {
+    "doi": "10.1049/iet-gtd.2018.6736",
+    "title": "Wind turbines robust fault reconstruction using adaptive sliding mode observer",
+    "authors": [
+     "Ashkan Taherkhani",
+     "Farhad Bayat"
+    ],
+    "first_author_family": "Taherkhani",
+    "author_count": 2,
+    "year": 2019,
+    "venue": "IET Generation, Transmission &amp; Distribution",
+    "type": "journal-article",
+    "publisher": "Institution of Engineering and Technology (IET)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4114,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1109/icst69053.2026.00039",
+    "title": "Consistency Meets Verification: Enhancing Test Generation Quality in Large Language Models Without Ground-Truth Solutions",
+    "authors": [
+     "Hamed Taherkhani",
+     "Alireza DaghighFarsoodeh",
+     "Mohammad Chowdhury",
+     "Hung Viet Pham",
+     "Hadi Hemmati"
+    ],
+    "first_author_family": "Taherkhani",
+    "author_count": 5,
+    "year": 2026,
+    "venue": "2026 IEEE International Conference on Software Testing, Verification and Validation (ICST)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3687,
+    "first_author_matches": true,
+    "year_matches": true
+   },
+   {
+    "doi": "10.1109/tse.2026.3664287",
+    "title": "Toward Automated Validation of Language Model Synthesized Test Cases Using Semantic Entropy",
+    "authors": [
+     "Hamed Taherkhani",
+     "Jiho Shin",
+     "Muhammad Ammar Tahir",
+     "Md Rakib Hossain Misu",
+     "Vineet Sunil Gattani",
+     "Hadi Hemmati"
+    ],
+    "first_author_family": "Taherkhani",
+    "author_count": 6,
+    "year": 2026,
+    "venue": "IEEE Transactions on Software Engineering",
+    "type": "journal-article",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3298,
+    "first_author_matches": true,
+    "year_matches": true
+   },
+   {
+    "doi": "10.1145/3805704",
+    "title": "Automated Prompt Engineering for Cost-Effective Code Generation Using Evolutionary Algorithms",
+    "authors": [
+     "Hamed Taherkhani",
+     "Melika Sepidband",
+     "Hung Viet Pham",
+     "Song Wang",
+     "Hadi Hemmati"
+    ],
+    "first_author_family": "Taherkhani",
+    "author_count": 5,
+    "year": 2026,
+    "venue": "ACM Transactions on Software Engineering and Methodology",
+    "type": "journal-article",
+    "publisher": "Association for Computing Machinery (ACM)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3158,
+    "first_author_matches": true,
+    "year_matches": true
+   },
+   {
+    "doi": "10.1093/comjnl/bxq049",
+    "title": "Recognizing Algorithms Using Language Constructs, Software Metrics and Roles of Variables: An Experiment with Sorting Algorithms",
+    "authors": [
+     "A. Taherkhani",
+     "A. Korhonen",
+     "L. Malmi"
+    ],
+    "first_author_family": "Taherkhani",
+    "author_count": 3,
+    "year": 2010,
+    "venue": "The Computer Journal",
+    "type": "journal-article",
+    "publisher": "Oxford University Press (OUP)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3139,
+    "first_author_matches": true,
+    "year_matches": false
+   }
+  ],
+  "best_title_similarity": 0.4114,
+  "best_is_match": false
+ },
+ "arxiv_by_id": {
+  "status": 429,
+  "entries": ""
+ },
+ "crossref_arxiv_doi": {
+  "verified": false,
+  "doi": "10.48550/arXiv.2601.18044",
+  "error": "Crossref HTTP 404"
+ },
+ "openalex_by_arxiv_doi": {
+  "status": 200,
+  "work": {
+   "id": "https://openalex.org/W7125804068",
+   "doi": "https://doi.org/10.48550/arxiv.2601.18044",
+   "title": "RGFL: Reasoning Guided Fault Localization for Automated Program Repair Using Large Language Models",
+   "year": 2026,
+   "type": "preprint",
+   "authors": [
+    "Melika Sepidband",
+    "Hamed Taherkhani",
+    "Hung Viet Pham",
+    "Hadi Hemmati"
+   ],
+   "primary_location": "arXiv (Cornell University)",
+   "locations": [
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": "submittedVersion",
+     "landing": "http://arxiv.org/abs/2601.18044"
+    },
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": null,
+     "landing": "https://doi.org/10.48550/arxiv.2601.18044"
+    }
+   ]
+  }
+ },
+ "arxiv_title_search": {
+  "status": 429,
+  "entries": ""
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W7125804068",
+    "doi": "https://doi.org/10.48550/arxiv.2601.18044",
+    "title": "RGFL: Reasoning Guided Fault Localization for Automated Program Repair Using Large Language Models",
+    "year": 2026,
+    "type": "preprint",
+    "authors": [
+     "Melika Sepidband",
+     "Hamed Taherkhani",
+     "Hung Viet Pham",
+     "Hadi Hemmati"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2601.18044"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2601.18044"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7151869330",
+    "doi": "https://doi.org/10.48550/arxiv.2604.05481",
+    "title": "On the Role of Fault Localization Context for LLM-Based Program Repair",
+    "year": 2026,
+    "type": "preprint",
+    "authors": [
+     "Melika Sepidband",
+     "Hung Viet Pham",
+     "Hadi Hemmati"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2604.05481"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2604.05481"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7223030422",
+    "doi": "https://doi.org/10.48550/arxiv.2610.25826",
+    "title": "From Finding to Fixing: How Useful is Fault Localization for Agentic Program Repair?",
+    "year": 2026,
+    "type": "preprint",
+    "authors": [
+     "Xinyu Shi",
+     "Zhou Yang",
+     "An Ran Chen"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://arxiv.org/abs/2610.25826"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2610.25826"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7160393605",
+    "doi": "https://doi.org/10.48550/arxiv.2605.03117",
+    "title": "ARISE: A Repository-level Graph Representation and Toolset for Agentic Program Repair and Fault Localization",
+    "year": 2026,
+    "type": "preprint",
+    "authors": [
+     "Shahd Seddik",
+     "Fahd Seddik",
+     "Amirrezza Esmaeili",
+     "Mahdieh Sadatbenis",
+     "Fatemeh H. Fard"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://arxiv.org/abs/2605.03117"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2605.03117"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7206185231",
+    "doi": "https://doi.org/10.48550/arxiv.2609.00854",
+    "title": "Does Fault Localization Beat a Fresh Attempt? A Placebo-Controlled Study of Test-Guided Code Repair",
+    "year": 2026,
+    "type": "preprint",
+    "authors": [
+     "Anik Jha"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://arxiv.org/abs/2609.00854"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2609.00854"
+     }
+    ]
+   }
+  ]
+ }
+}

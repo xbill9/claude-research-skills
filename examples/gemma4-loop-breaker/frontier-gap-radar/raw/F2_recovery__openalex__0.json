@@ -1,0 +1,520 @@
+{
+ "url": "https://api.openalex.org/works?search=LLM+agent+loop+repetitive+actions+failure+recovery+software+engineering&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W7171935267",
+   "doi": "10.1016/j.sysarc.2026.103937",
+   "title": "Closed-loop evaluation of LLM agents for embedded software development",
+   "year": 2026,
+   "venue": "Journal of Systems Architecture",
+   "type": "article",
+   "cited_by": 1,
+   "abstract": "Large language models (LLMs) are increasingly deployed as coding agents that edit files, run builds and tests, inspect execution results, and repair software iteratively. Embedded firmware is a demanding target because correctness depends on closed-loop behavior under sensing, timing, and safety constraints, not only on static source quality. Yet embedded-agent evaluation remains limited and often emphasizes one-shot synthesis or offline correctness. We present a benchmark for closed-loop evaluation of embedded coding agents. Each task provides a plain-text engineering description, constrained workspace, and visible build-and-runtime surface. The agent must translate requirements into implementation and self-verification steps, then iterate until the required device behavior is achieved. The suite contains five embedded-control tasks and four feedback scenarios: one-shot generation, realistic self-verification, CI-style red/green feedback, and oracle-style detailed feedback. The implementation targets simulated ESP32 firmware for reproducibility. We evaluate seven GPT-family and Qwen-family configurations across five tasks and four scenarios, with three repetitions per condition for 420 runs. gpt-5.4 has the highest pass rate among evaluated configurations but does not saturate the benchmark; qwen3.5-27B is the strongest observed local model; and smaller local models degrade sharply in pass rate and search efficiency. These results suggest that capable local embedded coding agents are emerging.",
+   "authors": [
+    "Jorge Garc\u00eda\u2010Carrasco",
+    "Sergio Garc\u00eda-Carrasco",
+    "Alejandro Mat\u00e9",
+    "Juan Carlos Trujillo"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7160926458",
+   "doi": "10.1145/3832783.3834492",
+   "title": "Debugging the Debuggers: Failure-Anchored Structured Recovery for Software Engineering Agents",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 5,
+   "abstract": "Software engineering agents are increasingly deployed in evaluable engineering environments, yet post-failure recovery remains costly, manual, and largely ad hoc. Existing systems expose traces for inspection or generate follow-up feedback, but they do not turn heterogeneous runtime evidence into grounded, bounded recovery guidance for a subsequent attempt. We present PROBE, a failure-anchored framework for structured recovery in software engineering agents. PROBE organizes failed-run telemetry into structured evidence, structured diagnosis, and bounded recovery guidance, realized by a Telemetry Layer, a Diagnosis Layer, and a Guidance Gate. The Telemetry Layer preserves fine-grained runtime signals, the Diagnosis Layer fuses cross-signal evidence into a grounded diagnosis, and the Guidance Gate constructs diagnosis-derived recovery guidance only when it is evidence-grounded, actionable, and within the scope of agent-side behavior.",
+   "authors": [
+    "Chenyu Zhao",
+    "Shenglin Zhang",
+    "Yihang Lin",
+    "Wenwei Gu",
+    "Zhimin Chen",
+    "Yongqian Sun",
+    "Dan Pei",
+    "Chetan Bansal"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7206193539",
+   "doi": "10.48550/arxiv.2609.01185",
+   "title": "Reveree: Diagnosing LLM Reverse-Engineering Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "Reverse engineering (RE) is critical to security tasks such as malware analysis and vulnerability discovery, and large language model (LLM) agents are increasingly able to perform it autonomously. Capture-the-flag (CTF) RE challenges have become the standard proxy for measuring this capability, but evaluation rests on a single criterion: whether the agent captures the flag. This solve rate reveals neither where in the RE process an agent fails nor whether a success reflects analysis of the binary or recall of a public solution. In this paper, we propose Reveree, a diagnostic framework that scores an LLM RE agent's trajectory at three tiers: solve rate, milestone progress through an eight-stage RE schema, and a behavioral profile of its actions. Comprehension stages are scored by an outcome-blinded LLM judge validated against a human expert; all other stages are verified deterministically. Using Reveree, we evaluate nine frontier models and four prompting strategies on 88 picoCTF and NYU-CTF challenges. We find that the base model dominates performance, whereas prompting strategy is a secondary, model-dependent effect. Surprisingly, larger, newer, or costlier models are not reliably stronger. We also find that failures concentrate at the comprehension stages of the RE process, and that extra budget, persistence, or reasoning effort rescues few of them, pointing to a competence limit rather than a resource limit. Regarding memorization, while models reproduce picoCTF flags from challenge descriptions alone, NYU-CTF shows minimal measurable recall, and most solves survive surface perturbation, indicating that genuine analysis coexists with memorization. We release Reveree to the community.",
+   "authors": [
+    "Hadjer Benkraouda",
+    "Hongyu Cai",
+    "Berkay \u00c7elik",
+    "Gang Wang"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7171646178",
+   "doi": "10.2139/ssrn.7186738",
+   "title": "The Agent Loop: A Survey of Control Strategies, Skills, and Harnesses for LLM Agents",
+   "year": 2026,
+   "venue": "SSRN Electronic Journal",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "",
+   "authors": [
+    "Jungseob Lee",
+    "Chanjun Park"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4412945638",
+   "doi": "10.18653/v1/2025.acl-long.421",
+   "title": "MultiAgentBench : Evaluating the Collaboration and Competition of LLM agents",
+   "year": 2025,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 210,
+   "abstract": "Large Language Models (LLMs) have shown remarkable capabilities as autonomous agents; yet existing benchmarks either focus on singleagent tasks or are confined to narrow domains, failing to capture the dynamics of multi-agent coordination and competition.In this paper, we introduce MultiAgentBench, a comprehensive benchmark designed to evaluate LLMbased multi-agent systems across diverse, interactive scenarios.Our framework measures not only task completion but also the quality of collaboration and competition using novel, milestone-based key performance indicators.Moreover, we evaluate various coordination protocols (including star, chain, tree, and graph topologies) and innovative strategies such as group discussion and cognitive planning.Notably, gpt-4o-mini reaches the average highest task score, graph structure performs the best among coordination protocols in the research scenario,and cognitive planning improves milestone achievement rates by 3%.Code and datasets are publicavailable at https://github.com/ulab-uiuc/MARBLE.",
+   "authors": [
+    "Kunlun Zhu",
+    "Hongyi Du",
+    "Zhaochen Hong",
+    "Xiaocheng Yang",
+    "Shuyi Guo",
+    "Zhe Wang",
+    "Zhihua Wang",
+    "Cheng Qian"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416548195",
+   "doi": "10.48550/arxiv.2508.00083",
+   "title": "A Survey on Code Generation with LLM-based Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 195,
+   "abstract": "Code generation agents powered by large language models (LLMs) are revolutionizing the software development paradigm. Distinct from previous code generation techniques, code generation agents are characterized by three core features. 1) Autonomy: the ability to independently manage the entire workflow, from task decomposition to coding and debugging. 2) Expanded task scope: capabilities that extend beyond generating code snippets to encompass the full software development lifecycle (SDLC). 3) Enhancement of engineering practicality: a shift in research emphasis from algorithmic innovation toward practical engineering challenges, such as system reliability, process management, and tool integration. This domain has recently witnessed rapid development and an explosion in research, demonstrating significant application potential. This paper presents a systematic survey of the field of LLM-based code generation agents. We trace the technology's developmental trajectory from its inception and systematically categorize its core techniques, including both single-agent and multi-agent architectures. Furthermore, this survey details the applications of LLM-based agents across the full SDLC, summarizes mainstream evaluation benchmarks and metrics, and catalogs representative tools. Finally, by analyzing the primary challenges, we identify and propose several foundational, long-term research directions for the future work of the field.",
+   "authors": [
+    "Yihong Dong",
+    "Xue Jiang",
+    "Qian, Jiaru",
+    "Wang, Tian",
+    "Kechi Zhang",
+    "Zhi Yang Jin",
+    "Ge Li"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7220380892",
+   "doi": "10.48550/arxiv.2610.02994",
+   "title": "Sentry: Learning to Recover from LLM Agent Failures at Test Time",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 3,
+   "abstract": "LLM agents often fail mid-task due to invalid tool calls, repeated actions, or poorly grounded reasoning, and learning from these failures is a path to reliability. We find that how failure knowledge reaches the agent matters as much as what it contains. Failure lessons are conditional: kept in the agent's context, they misfire when their failure is absent, and removing them from an evolving playbook improves performance. Runtime interventions, in contrast, act only when a failure occurs but do not learn from their repairs. We argue that failure knowledge is conditional knowledge and should be conditionally exposed, and instantiate this principle in Sentry, a failure-management layer that runs alongside the agent. When Sentry detects a failure, it retrieves matching lessons from an external playbook to guide recovery, verifies without access to task rewards whether the agent recovered, and stores a new lesson only if it did; the full playbook never enters the agent's context. Across multiple agentic benchmarks, Sentry outperforms the strongest runtime-intervention baseline on every benchmark, by 37\\% on average, and the strongest context-evolution baseline by 39\\% on the two benchmarks where both are evaluated; combining Sentry with context evolution yields further gains. Learned lessons transfer to held-out tasks, and controlled experiments show that exposing the full playbook to the agent lowers performance even when relevant lessons remain available on demand.",
+   "authors": [
+    "Changxiu Ji",
+    "Amy Lu",
+    "Qizheng Zhang",
+    "Kunle Olukotun"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7165640054",
+   "doi": "10.48550/arxiv.2604.11270",
+   "title": "Evaluating LLM Agents on Automated Software Analysis Tasks",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "Numerous software analysis tools exist today, yet applying them to diverse open-source projects remains challenging due to environment setup, dependency resolution, and analysis tool configuration. LLM-based agents offer a potential solution, yet their effectiveness on the specific task of automated software analysis has not been systematically studied. Unlike issue solving or general environment setup, this task requires installing and configuring a separate analysis tool alongside the target project, generating tool-specific prerequisites, and validating that the analysis tool produces meaningful analysis outputs rather than merely declaring successful termination without evidence. We introduce AnalysisBench, a benchmark of 35 tool-project pairs spanning seven analysis tools and ten diverse C/C++ and Java projects, each with a manually constructed reference setup. Using AnalysisBench, we evaluate four agent architectures across four LLM backends. Our custom agent, AnalysisAgent, achieves manually verified success rates of 94% (Gemini-3-Flash, 33/35 tasks), compared to 77% for the best baseline (ExecutionAgent). Beyond quantitative results, we identify key limitations in existing agents, including stage mixing, poor error localization, and premature termination, and show that agentic architecture plays a critical role beyond LLM capability alone. We further find that whole-program analyses and Java-specific tools are the most difficult tasks, that Java toolchains pose greater challenges than C/C++, and that self-validated success consistently overstates manually verified success. Extended runs with AnalysisAgent-produced setups also surface two previously unknown defects in masscan and radare2, confirming that the produced setups support real downstream analysis.",
+   "authors": [
+    "Islem Bouzenia",
+    "Cristian Cadar",
+    "Michael Pradel"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7163065568",
+   "doi": "10.18653/2026.emnlp-main.2396",
+   "title": "Context Compression for LLM Agents: A Survey of Methods, Failure Modes, and Evaluation",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 7,
+   "abstract": "As Large Language Models (LLMs) evolve into autonomous agents for long-horizon tasks, managing unbounded interaction trajectories under fixed context budgets becomes a core systems challenge.Unlike standard long-context documents, agent trajectories are heterogeneous and interleave observations, reasoning traces, and tool executions, so compression must preserve temporal dependencies, actionable state, and structural fidelity.Yet existing methods remain fragmented, making it difficult to compare design choices and reason about their reliability implications.This survey introduces a unified taxonomy of agent context compression along three dimensions: compression target (what is compressed), compression mechanism (how it is transformed and retained), and control policy (who decides when compression is triggered).We further organize recurring failures in compressed execution into F1: Pre-compression Decision Error, F2: In-compression Information Loss, and F3: Post-compression Access Failure, and examine domain-specific trade-offs in software engineering, web navigation, and deep research.By unifying the design space, failure taxonomy, and evaluation perspective, this survey provides a foundation for building scalable and recoverable LLM agents.",
+   "authors": [
+    "Yifei Wang",
+    "Ziteng Wang",
+    "Yuling Shi",
+    "Silin Chen",
+    "Xinrui Wang",
+    "Yueqi Wang",
+    "Beijun Shen",
+    "Linjing Li"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223043578",
+   "doi": "10.21203/rs.3.rs-11442416/v2",
+   "title": "TME LLM OS: A Closed-Loop Systems Engineering Architecture for Epistemic Correction in AI Agent Systems",
+   "year": 2026,
+   "venue": "Research Square",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Abstract Current AI systems can combine foundation models, retrieval, tools, agents, and execution controls, yet still amplify an unsupported premise or require repeated user correction because generation, review, and release are not organized as one bounded epistemic episode. This systems-engineering proposal translates selected functions from the human Theoretical-Mechanistic-Experiential (TME) framework into a generic artificial architecture. The source framework distinguishes the real-time experiential field from cognition, memory, and action, and orders correction through salience, attention, ordinary awareness, functional self-awareness, reflective delay, secondary segmentation, discriminative comparison, and renewed orientation. The proposed TME LLM OS retains the Transformer-foundation-model core while adding episode continuity, source provenance, role-specific agents, structured correction, residual-mismatch assessment, and gated execution. Runtime correction returns unresolved mismatch to the current episode until provisional convergence reaches a task-dependent tolerance |\u0394| \u2264 \u03b5; validated corrections can enter a separate, governed, auditable, versioned, and reversible refinement path across episodes. The proposal does not equate functional implementation with lived experience. It yields testable predictions concerning grounding, recovery from false premises, safe release, recurrence of corrected errors, user burden, total task cost, and time-to-acceptable-result.",
+   "authors": [
+    "Ilan Kander"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7128378279",
+   "doi": "10.48550/arxiv.2406.13352",
+   "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 630,
+   "abstract": "AI agents aim to solve complex tasks by combining text-based reasoning with external tool calls. Unfortunately, AI agents are vulnerable to prompt injection attacks where data returned by external tools hijacks the agent to execute malicious tasks. To measure the adversarial robustness of AI agents, we introduce AgentDojo, an evaluation framework for agents that execute tools over untrusted data. To capture the evolving nature of attacks and defenses, AgentDojo is not a static test suite, but rather an extensible environment for designing and evaluating new agent tasks, defenses, and adaptive attacks. We populate the environment with 97 realistic tasks (e.g., managing an email client, navigating an e-banking website, or making travel bookings), 629 security test cases, and various attack and defense paradigms from the literature. We find that AgentDojo poses a challenge for both attacks and defenses: state-of-the-art LLMs fail at many tasks (even in the absence of attacks), and existing prompt injection attacks break some security properties but not all. We hope that AgentDojo can foster research on new design principles for AI agents that solve common tasks in a reliable and robust manner.. We release the code for AgentDojo at https://github.com/ethz-spylab/agentdojo.",
+   "authors": [
+    "Maksym Andriushchenko",
+    "Alexandra Souly",
+    "Mateusz Dziemian",
+    "Derek Duenas",
+    "Maxwell Lin",
+    "Justin Wang",
+    "Dan Hendrycks",
+    "Andy Zou"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7204132066",
+   "doi": "10.48550/arxiv.2608.21156",
+   "title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 16,
+   "abstract": "LLMs have evolved from language generators to autonomous agents capable of complex, long-horizon tasks. This evolution has produced paradigms including Prompt Engineering to elicit model capabilities, Context Engineering to manage information access, Harness Engineering to organize external tools and resources, and Loop Engineering to support continual reflection and self-improvement. Yet as tasks grow more complex, individual intelligence faces a fundamental limit: many tasks require heterogeneous expertise, interdependent subtasks, parallel execution, independent verification, and persistent state, exceeding any single agent's organizational capacity. Augmenting one agent's capabilities or context cannot resolve this architectural mismatch; intelligence must instead be distributed across specialized agents and organized at the system level. We call this System Intelligence: an agent system's ability to organize and coordinate multiple intelligent components into a coherent, adaptive whole pursuing a shared objective. Achieving it requires more than adding agents; it demands explicit structures to organize work, coordinate heterogeneous agents, and maintain evolving execution states. We introduce Graph Engineering, an emerging paradigm for next-generation agent systems. Unlike prior paradigms that mainly optimize individual interactions or agent-level behavior, Graph Engineering constructs explicit, dynamic, evolving graph structures representing tasks, agents, and system states. These abstractions provide a unified foundation for organizing complex objectives, orchestrating heterogeneous agents, modeling system dynamics, and enabling scalable agent evolution. We systematically review the principles, methodologies, and applications of Graph Engineering for LLM agents. Related papers, open-source data, and projects are collected at https://github.com/DEEP-JLU/Awesome-Graph-Engineering.",
+   "authors": [
+    "Yuyuan Feng",
+    "Zhiyi Xiang",
+    "Chaobin Yang",
+    "Qichao Ma",
+    "Zerui Chen",
+    "Yujing Zhang",
+    "Ke Huang",
+    "Chuanjie Wu"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7225719714",
+   "doi": "10.48550/arxiv.2611.11581",
+   "title": "Same Error, Different Recovery: How Delivery Changes LLM Agent Behavior",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "A tool-using language model must decide whether to retry a failed call, correct it, or stop and tell the user. The error text alone may not be enough: the same feedback can lead to different actions depending on where it appears in the conversation. We isolate this delivery problem by varying placement, guidance, retained history and turn structure. Two studies with plans fixed before data collection, across 13 open models from 3B to 70B parameters, compare the next action and subsequent task completion, with exact deterministic reruns. A new user turn that retains the failed exchange avoids the severe stopping failure observed in Llama models when that exchange is removed. It is non-inferior to history rewriting in pooled synthetic comparisons, but is not best for every model. We implement this form as an opt-in recovery layer within a deterministic inference engine and evaluate it on public benchmarks and a coding agent. On ToolMaze, it raises success on explicit errors by 14.2 points with 7-8B models and 10.5 points with 32-70B models; Loud/Quiet, 24 multi-turn tasks with visible failures and silent corruption, scored by final-state agreement, shows no measurable gain. A client given the exact fault kind performs better still. The findings support delivery as a distinct factor in recovery, not an engine-exclusive solution or a universal retry policy.",
+   "authors": [
+    "Sunghyeun Woo",
+    "Javier Conde",
+    "Pedro Reviriego"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403808675",
+   "doi": "10.48550/arxiv.2408.00989",
+   "title": "On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 98,
+   "abstract": "Large language model-based multi-agent systems have shown great abilities across various tasks due to the collaboration of expert agents, each focusing on a specific domain. However, the impact of clumsy or even malicious agents--those who frequently make errors in their tasks--on the overall performance of the system remains underexplored. This paper investigates: (1) What is the resilience of various system structures (e.g., A$\\rightarrow$B$\\rightarrow$C, A$\\leftrightarrow$B$\\leftrightarrow$C) under faulty agents, on different downstream tasks? (2) How can we increase system resilience to defend against these agents? To simulate faulty agents, we propose two approaches--AutoTransform and AutoInject--which introduce mistakes into the agents' responses. Experiments on four downstream tasks using six systems show that the \"hierarchical\" structure, i.e., A$\\rightarrow$(B$\\leftrightarrow$C), exhibits superior resilience with the lowest performance drop of 5.5%, compared to 10.5% and 23.7% of other two structures. To further improve resilience, we introduce (1) Challenger, that introduces a mechanism for each agent to challenge others' outputs, and (2) Inspector, an additional agent to review and correct messages, recovering up to 96.4% errors made by faulty agents. Our code and data are available at https://github.com/CUHK-ARISE/MAS-Resilience.",
+   "authors": [
+    "Jen-tse Huang",
+    "Jiaxu Zhou",
+    "Jin, Tailin",
+    "Zhou, Xuhui",
+    "Zixi Chen",
+    "Wenxuan Wang",
+    "Youliang Yuan",
+    "Michael Rung-Tsong Lyu"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7202163904",
+   "doi": "10.48550/arxiv.2608.09278",
+   "title": "Software Engineering for and with GUI Agent",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "GUI agents have advanced rapidly, producing a growing body of frameworks, benchmarks, and applications. However, this growth has outpaced the maturity of the field. GUI agents remain technically brittle, incompletely engineered, and insufficiently validated for sustained real-world use. They are evolving into closed-loop software systems. Within these systems, model reasoning is coupled with interface perception, execution feedback, recovery, and human oversight. This evolution calls for a software engineering perspective that remains largely absent from existing research. We address this gap by reviewing 336 GUI-agent papers from January 2018 to April 2026. Five research questions examine the research landscape, architectures, evaluation, software lifecycle concerns, and future opportunities. Our findings show that the field has expanded sharply since 2024, while mobile and web settings remain dominant. Architectures increasingly adopt modular perceive-reason-act loops, but recovery, human escalation, safety enforcement, and auditability remain underdeveloped. This architectural imbalance extends to evaluation. Evaluations are becoming more interactive, but they remain centered on task success and are difficult to compare across protocols. More broadly, existing studies provide limited support for testing beyond benchmarks and for maintaining agents after release. Observability, privacy engineering, and systematic human oversight are also underdeveloped. Together, these findings show that capability improvements alone cannot ensure deployment readiness. Future research should connect dependable execution with lifecycle-centered testing and reproducible evaluation. It should also integrate permission and privacy controls with cost-aware, human-centered governance. This integration is necessary to build dependable, maintainable, secure, and deployable GUI-agent systems.",
+   "authors": [
+    "Shengcheng Yu",
+    "Yuchen Ling",
+    "Junyang Xing",
+    "Quan Zhou",
+    "Chunrong Fang",
+    "Zhenyu Chen"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7136464128",
+   "doi": "10.1007/s11432-025-4670-0",
+   "title": "A survey on large language models for software engineering",
+   "year": 2026,
+   "venue": "Science China Information Sciences",
+   "type": "article",
+   "cited_by": 251,
+   "abstract": "Abstract Software engineering (SE) is the systematic design, development, maintenance, and management of software applications underpinning the digital infrastructure of our modern world. Very recently, the SE community has seen a rapidly increasing number of techniques employing large language models (LLMs) to automate a broad range of SE tasks. Nevertheless, existing information on the applications, effects, and possible limitations of LLMs within SE is still not well-studied. In this paper, we provide a systematic survey to summarize the current state-of-the-art research in the LLM-based SE community. We summarize 62 representative LLMs of Code across three model architectures, 15 pre-training objectives across four categories, and 16 downstream tasks across five categories. We then present a detailed summarization of the recent SE studies for which LLMs are commonly utilized, including 926 studies for 112 specific code-related tasks across five crucial phases within the SE workflow. We also discuss several critical aspects during the integration of LLMs into SE, such as empirical evaluation, benchmarking, security and reliability, domain tuning, compressing, and distillation. Finally, we highlight several challenges and potential opportunities in applying LLMs for future SE studies, such as exploring domain LLMs and constructing clean evaluation datasets. Overall, our work can help researchers gain a comprehensive understanding about the achievements of the existing LLM-based SE studies and promote the practical application of these techniques. Our artifacts are publicly available and will be continuously updated at the living repository https://github.com/iSEngLab/AwesomeLLM4SE .",
+   "authors": [
+    "Quanjun Zhang",
+    "Chunrong Fang",
+    "Yang Xie",
+    "Yaxin Zhang",
+    "Shengcheng Yu",
+    "Weisong Sun",
+    "Yun Yang",
+    "Zhenyu Chen"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161067994",
+   "doi": "10.48550/arxiv.2605.11946",
+   "title": "Counterfactual Trace Auditing of LLM Agent Skills",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 12,
+   "abstract": "Large Language Model agents are increasingly augmented with agent skills. Current evaluation methods for skills remain limited. Most deployed benchmarks report only pass rate before and after a skill is attached, treating the skill as a black box change to agent behavior. We introduce Counterfactual Trace Auditing (CTA), a framework for measuring how a skill changes agent behavior. CTA pairs each with skill agent trace with a without skill counterpart on the same task, segments both traces into goal directed phases, aligns the phases, and emits structured Skill Influence Pattern (SIP) annotations. These annotations describe the behavioral effect of a skill rather than only its task outcome. We instantiate CTA on SWE-Skills-Bench with Claude across 49 software engineering tasks. The resulting audit reveals a clear evaluation gap. Pass rate changes by only +0.3 percentage points on average, suggesting little aggregate effect. Yet CTA identifies 522 SIP instances across the same paired traces, showing that the skills substantially reshape agent behavior even when pass rate is nearly unchanged. The audit also separates several recurring effects that pass rate cannot detect, including literal template copying, off task artifact creation, excess planning, and task recovery. Three findings emerge. First, high baseline tasks contain most of the observed skill effects, although their pass rate is already saturated and therefore cannot reflect those effects. Second, tasks with moderate baseline performance show the most recoverable gain, but often at substantially higher token cost. Third, the dominant SIP type can be identified by baseline bucket: surface anchoring is most common on ceiling tasks and edge-case prompting is most common on mid-range and floor tasks. These regularities turn informal failure mode observations into reproducible behavioral measurements.",
+   "authors": [
+    "Xiaolin Zhou",
+    "Jinbo Liu",
+    "Li Li",
+    "Ryan A. Rossi",
+    "Xiyang Hu"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416070493",
+   "doi": "10.48550/arxiv.2504.13865",
+   "title": "A Survey on (M)LLM-Based GUI Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 88,
+   "abstract": "Graphical User Interface (GUI) Agents have emerged as a transformative paradigm in human-computer interaction, evolving from rule-based automation scripts to sophisticated AI-driven systems capable of understanding and executing complex interface operations. This survey provides a comprehensive examination of the rapidly advancing field of LLM-based GUI Agents, systematically analyzing their architectural foundations, technical components, and evaluation methodologies. We identify and analyze four fundamental components that constitute modern GUI Agents: (1) perception systems that integrate text-based parsing with multimodal understanding for comprehensive interface comprehension; (2) exploration mechanisms that construct and maintain knowledge bases through internal modeling, historical experience, and external information retrieval; (3) planning frameworks that leverage advanced reasoning methodologies for task decomposition and execution; and (4) interaction systems that manage action generation with robust safety controls. Through rigorous analysis of these components, we reveal how recent advances in large language models and multimodal learning have revolutionized GUI automation across desktop, mobile, and web platforms. We critically examine current evaluation frameworks, highlighting methodological limitations in existing benchmarks while proposing directions for standardization. This survey also identifies key technical challenges, including accurate element localization, effective knowledge retrieval, long-horizon planning, and safety-aware execution control, while outlining promising research directions for enhancing GUI Agents' capabilities. Our systematic review provides researchers and practitioners with a thorough understanding of the field's current state and offers insights into future developments in intelligent interface automation.",
+   "authors": [
+    "Tang, Fei",
+    "Haolei Xu",
+    "Hang Zhang",
+    "Siqi Chen",
+    "Xingyu Wu",
+    "Yongliang Shen",
+    "Wenqi Zhang",
+    "Guiyang Hou"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7203638561",
+   "doi": "10.48550/arxiv.2608.14380",
+   "title": "AgentRewind: Recoverable Execution for Long-Horizon LLM Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 13,
+   "abstract": "Many real-world tasks require LLM agents to interact with their environments over long execution horizons. Errors that occur early in execution may propagate through both the agent context and environment state, and their effects may be difficult to reverse through subsequent actions. Existing methods mainly seek to reduce such errors through plan refinement and safety checks but provide little support after errors occur. To enable recovery during long-horizon execution, we present AgentRewind, a runtime recovery framework that records aligned checkpoints of the agent context and controlled environment, allowing agents to return to an earlier state and resume execution with information from previous attempts. We also construct MettleBench, a benchmark for evaluating task completion and partial progress on long-horizon engineering assignments containing a series of related requirements. Experiments across tasks, multiple models, execution strategies, and agent harnesses show that AgentRewind improves task success rate and average checklist progress over the compared baselines.",
+   "authors": [
+    "Yu Zhuang",
+    "Kefei Chen",
+    "Yitong Duan",
+    "Shuxin Zheng",
+    "Jian Li",
+    "Xu-Yao Zhang"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7204192405",
+   "doi": "10.2139/ssrn.7335038",
+   "title": "Constructing and Utilizing Comprehensive Failure Taxonomies for Systematic Classification of LLM Agent Errors",
+   "year": 2026,
+   "venue": "SSRN Electronic Journal",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "",
+   "authors": [
+    "Pearl Winslow",
+    "Margaret Cullen"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417299422",
+   "doi": "10.48550/arxiv.2504.15585",
+   "title": "A Comprehensive Survey in LLM(-Agent) Full Stack Safety: Data, Training and Deployment",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 179,
+   "abstract": "The remarkable success of Large Language Models (LLMs) has illuminated a promising pathway toward achieving Artificial General Intelligence for both academic and industrial communities, owing to their unprecedented performance across various applications. As LLMs continue to gain prominence in both research and commercial domains, their security and safety implications have become a growing concern, not only for researchers and corporations but also for every nation. Currently, existing surveys on LLM safety primarily focus on specific stages of the LLM lifecycle, e.g., deployment phase or fine-tuning phase, lacking a comprehensive understanding of the entire \"lifechain\" of LLMs. To address this gap, this paper introduces, for the first time, the concept of \"full-stack\" safety to systematically consider safety issues throughout the entire process of LLM training, deployment, and eventual commercialization. Compared to the off-the-shelf LLM safety surveys, our work demonstrates several distinctive advantages: (I) Comprehensive Perspective. We define the complete LLM lifecycle as encompassing data preparation, pre-training, post-training, deployment and final commercialization. To our knowledge, this represents the first safety survey to encompass the entire lifecycle of LLMs. (II) Extensive Literature Support. Our research is grounded in an exhaustive review of over 800+ papers, ensuring comprehensive coverage and systematic organization of security issues within a more holistic understanding. (III) Unique Insights. Through systematic literature analysis, we have developed reliable roadmaps and perspectives for each chapter. Our work identifies promising research directions, including safety in data generation, alignment techniques, model editing, and LLM-based agent systems. These insights provide valuable guidance for researchers pursuing future work in this field.",
+   "authors": [
+    "Kun Wang",
+    "Guibin Zhang",
+    "Zhenhong Zhou",
+    "Jiahao Wu",
+    "Miao Yu",
+    "Shiqian Zhao",
+    "Chenlong Yin",
+    "Fu J"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417127534",
+   "doi": "10.48550/arxiv.2510.09244",
+   "title": "Fundamentals of Building Autonomous LLM Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 18,
+   "abstract": "This paper reviews the architecture and implementation methods of agents powered by large language models (LLMs). Motivated by the limitations of traditional LLMs in real-world tasks, the research aims to explore patterns to develop \"agentic\" LLMs that can automate complex tasks and bridge the performance gap with human capabilities. Key components include a perception system that converts environmental percepts into meaningful representations; a reasoning system that formulates plans, adapts to feedback, and evaluates actions through different techniques like Chain-of-Thought and Tree-of-Thought; a memory system that retains knowledge through both short-term and long-term mechanisms; and an execution system that translates internal decisions into concrete actions. This paper shows how integrating these systems leads to more capable and generalized software bots that mimic human cognitive processes for autonomous and intelligent behavior.",
+   "authors": [
+    "Victor de Lamo Castrillo",
+    "Habtom Kahsay Gidey",
+    "Lenz, Alexander",
+    "Alois Knoll"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7221778828",
+   "doi": "10.48550/arxiv.2610.14238",
+   "title": "Agentic Data Engineering for LLMs: System Design and a Controlled Empirical Study",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "LLM data engineering requires iterative experimentation to determine how data selection, rewards, and curricula affect model learning, making it a natural setting for AI-for-AI (AI4AI) research. Can agents use experimental feedback to progressively improve strategies, and do the resulting strategies improve target-model performance on held-out data? We study how agents use experimental feedback to develop data-engineering strategies under fixed training and evaluation protocols. Our Agentic Data Engineering (ADE) framework lets agents pursue, revise, or combine research directions using cumulative findings. Strategies are selected by in-loop scores and evaluated on held-out benchmarks. Across four tasks-math and code data selection, math reward design, and math curriculum learning-selected strategies achieve absolute gains over generic baselines of up to 13.34% on AIME25 Pass@32 and 5.85% averaged across four held-out benchmarks under fixed training conditions. In-loop scores improve over successive experiments, while held-out trajectories show that later in-loop gains do not always improve generalization. Comparisons of research organization and feedback access favor combining evidence analysis with cumulative findings. Research trajectories show how earlier findings inform strategy revisions and combinations across research directions.",
+   "authors": [
+    "Ruomeng Ding",
+    "Qianli Shen",
+    "Zhaoyang Han",
+    "Meixin Chen",
+    "Daoyuan Chen",
+    "Yaliang Li"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7131893979",
+   "doi": "10.36227/techrxiv.177222530.04005985/v1",
+   "title": "The Evaluation Challenge of Agency: Reliability, Contamination, and Evolution in LLM Agents",
+   "year": 2026,
+   "venue": null,
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Large Language Models (LLMs) have shifted from static text generators to autonomous agents that perceive, reason, and act. An agent is defined by its capacity to close the perception-action loop: perceiving environments, reasoning about underspecified goals, and executing actions via external tools. This transition has sparked an \"Evaluation Crisis,\" as traditional metrics fail to measure the perception-action loop. Current benchmarking landscapes are characterized by a fragmentation of methodologies and severe systemic issues. These include evaluator fragility, where rigid scoring penalizes valid alternative actions, and Search-Time Contamination (STC), a novel threat where web-enabled agents retrieve benchmark answers during execution. This paper provides an analysis of the state-of-the-art in LLM agent evaluation. We deconstruct the existing ecosystem into four primary domains-Generalist Assistants, Software Engineering, Web Navigation, and Operating System Control-analyzing frameworks such as GAIA, SWE-bench, and OSWorld. Furthermore, we synthesize a robust three-tier failure taxonomy derived from the Multi-Agent System Failure Taxonomy (MAST), identifying cognitive and architectural deficits that lead to \"loops of death\" and inter-agent misalignment. Finally, we map future evaluation trajectories, arguing for a progression toward dynamic environments and scalable \"Agent-as-a-Judge\" paradigms to ensure agents are evaluated on the efficiency, safety, and adaptability of their execution trajectories.",
+   "authors": [
+    "Zihan Dong",
+    "Zirou Liu",
+    "Zekun Wang",
+    "Yunqing Li",
+    "Zhiyuan Ma"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411551983",
+   "doi": "10.1109/icse55347.2025.00204",
+   "title": "Are LLMs Correctly Integrated into Software Systems?",
+   "year": 2025,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 46,
+   "abstract": "Large language models (LLMs) provide effective solutions in various application scenarios, with the support of retrieval-augmented generation (RAG). However, developers face challenges in integrating LLM and RAG into software systems, due to lacking interface specifications, various requirements from software context, and complicated system management. In this paper, we have conducted a comprehensive study of 100 open-source applications that incorporate LLMs with RAG support, and identified 18 defect patterns. Our study reveals that 77 % of these applications contain more than three types of integration defects that degrade software functionality, efficiency, and security. Guided by our study, we propose systematic guidelines for resolving these defects in software life cycle. We also construct an open-source defect library HYDRANGEA [1].",
+   "authors": [
+    "Yuchen Shao",
+    "Yuheng Huang",
+    "Jiawei Shen",
+    "Lei Ma",
+    "Ting Su",
+    "Chengcheng Wan"
+   ],
+   "facet": "F2_recovery",
+   "query": "LLM agent loop repetitive actions failure recovery software engineering"
+  }
+ ]
+}

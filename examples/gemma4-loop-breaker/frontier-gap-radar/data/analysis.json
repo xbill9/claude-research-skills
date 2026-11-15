@@ -1,0 +1,669 @@
+{
+ "N": 25,
+ "n_preprint": 10,
+ "n_published": 15,
+ "n_repo_repair": 21,
+ "counts": {
+  "D1": 6,
+  "D2": 4,
+  "D3": 4,
+  "D4": 7,
+  "D5": 10,
+  "D6": 4,
+  "D7": 3
+ },
+ "covers": {
+  "D1": [
+   "W7117557793",
+   "W7125680675",
+   "W7215726049",
+   "W4415332588",
+   "W7154351780",
+   "W7125926949"
+  ],
+  "D2": [
+   "W7167425954",
+   "W7172523833",
+   "W4416711632",
+   "W7131676563"
+  ],
+  "D3": [
+   "W7172523833",
+   "W4404342086",
+   "W7160926458",
+   "W4405957747"
+  ],
+  "D4": [
+   "W7154351780",
+   "W4415101712",
+   "W4404087993",
+   "W4416453608",
+   "W7125926949",
+   "W7223971351",
+   "W4402442868"
+  ],
+  "D5": [
+   "W7172523833",
+   "W4415101712",
+   "W4416453608",
+   "W7125926949",
+   "W7223971351",
+   "W4387561453",
+   "W4405957747",
+   "W4417525566",
+   "W7131676563",
+   "W7223657872"
+  ],
+  "D6": [
+   "W7223971351",
+   "W7171740466",
+   "W7225790577",
+   "W7223657872"
+  ],
+  "D7": [
+   "W7215726049",
+   "W4404342086",
+   "W7223657872"
+  ]
+ },
+ "repo_counts": {
+  "D1": 5,
+  "D2": 3,
+  "D3": 3,
+  "D4": 7,
+  "D5": 10,
+  "D6": 2,
+  "D7": 3
+ },
+ "single_dim_blind_spots": [],
+ "zero_rows": [
+  "W4415935825",
+  "W4411449940"
+ ],
+ "row_sums": {
+  "W7117557793": 1,
+  "W7125680675": 1,
+  "W7215726049": 2,
+  "W4415332588": 1,
+  "W7154351780": 2,
+  "W7167425954": 1,
+  "W7172523833": 3,
+  "W4416711632": 1,
+  "W4404342086": 2,
+  "W4415935825": 0,
+  "W7160926458": 1,
+  "W4415101712": 2,
+  "W4404087993": 1,
+  "W4416453608": 2,
+  "W7125926949": 3,
+  "W7223971351": 3,
+  "W4387561453": 1,
+  "W4405957747": 2,
+  "W4417525566": 1,
+  "W7131676563": 2,
+  "W7171740466": 1,
+  "W7225790577": 1,
+  "W7223657872": 3,
+  "W4411449940": 0,
+  "W4402442868": 1
+ },
+ "pairs": [
+  {
+   "pair": "D1xD2",
+   "a": "D1",
+   "b": "D2",
+   "observed": 0,
+   "expected_indep": 0.96,
+   "shortfall": 0.96,
+   "papers": []
+  },
+  {
+   "pair": "D1xD3",
+   "a": "D1",
+   "b": "D3",
+   "observed": 0,
+   "expected_indep": 0.96,
+   "shortfall": 0.96,
+   "papers": []
+  },
+  {
+   "pair": "D1xD4",
+   "a": "D1",
+   "b": "D4",
+   "observed": 2,
+   "expected_indep": 1.68,
+   "shortfall": -0.32,
+   "papers": [
+    "W7154351780",
+    "W7125926949"
+   ]
+  },
+  {
+   "pair": "D1xD5",
+   "a": "D1",
+   "b": "D5",
+   "observed": 1,
+   "expected_indep": 2.4,
+   "shortfall": 1.4,
+   "papers": [
+    "W7125926949"
+   ]
+  },
+  {
+   "pair": "D1xD6",
+   "a": "D1",
+   "b": "D6",
+   "observed": 0,
+   "expected_indep": 0.96,
+   "shortfall": 0.96,
+   "papers": []
+  },
+  {
+   "pair": "D1xD7",
+   "a": "D1",
+   "b": "D7",
+   "observed": 1,
+   "expected_indep": 0.72,
+   "shortfall": -0.28,
+   "papers": [
+    "W7215726049"
+   ]
+  },
+  {
+   "pair": "D2xD3",
+   "a": "D2",
+   "b": "D3",
+   "observed": 1,
+   "expected_indep": 0.64,
+   "shortfall": -0.36,
+   "papers": [
+    "W7172523833"
+   ]
+  },
+  {
+   "pair": "D2xD4",
+   "a": "D2",
+   "b": "D4",
+   "observed": 0,
+   "expected_indep": 1.12,
+   "shortfall": 1.12,
+   "papers": []
+  },
+  {
+   "pair": "D2xD5",
+   "a": "D2",
+   "b": "D5",
+   "observed": 2,
+   "expected_indep": 1.6,
+   "shortfall": -0.4,
+   "papers": [
+    "W7172523833",
+    "W7131676563"
+   ]
+  },
+  {
+   "pair": "D2xD6",
+   "a": "D2",
+   "b": "D6",
+   "observed": 0,
+   "expected_indep": 0.64,
+   "shortfall": 0.64,
+   "papers": []
+  },
+  {
+   "pair": "D2xD7",
+   "a": "D2",
+   "b": "D7",
+   "observed": 0,
+   "expected_indep": 0.48,
+   "shortfall": 0.48,
+   "papers": []
+  },
+  {
+   "pair": "D3xD4",
+   "a": "D3",
+   "b": "D4",
+   "observed": 0,
+   "expected_indep": 1.12,
+   "shortfall": 1.12,
+   "papers": []
+  },
+  {
+   "pair": "D3xD5",
+   "a": "D3",
+   "b": "D5",
+   "observed": 2,
+   "expected_indep": 1.6,
+   "shortfall": -0.4,
+   "papers": [
+    "W7172523833",
+    "W4405957747"
+   ]
+  },
+  {
+   "pair": "D3xD6",
+   "a": "D3",
+   "b": "D6",
+   "observed": 0,
+   "expected_indep": 0.64,
+   "shortfall": 0.64,
+   "papers": []
+  },
+  {
+   "pair": "D3xD7",
+   "a": "D3",
+   "b": "D7",
+   "observed": 1,
+   "expected_indep": 0.48,
+   "shortfall": -0.52,
+   "papers": [
+    "W4404342086"
+   ]
+  },
+  {
+   "pair": "D4xD5",
+   "a": "D4",
+   "b": "D5",
+   "observed": 4,
+   "expected_indep": 2.8,
+   "shortfall": -1.2,
+   "papers": [
+    "W4415101712",
+    "W4416453608",
+    "W7125926949",
+    "W7223971351"
+   ]
+  },
+  {
+   "pair": "D4xD6",
+   "a": "D4",
+   "b": "D6",
+   "observed": 1,
+   "expected_indep": 1.12,
+   "shortfall": 0.12,
+   "papers": [
+    "W7223971351"
+   ]
+  },
+  {
+   "pair": "D4xD7",
+   "a": "D4",
+   "b": "D7",
+   "observed": 0,
+   "expected_indep": 0.84,
+   "shortfall": 0.84,
+   "papers": []
+  },
+  {
+   "pair": "D5xD6",
+   "a": "D5",
+   "b": "D6",
+   "observed": 2,
+   "expected_indep": 1.6,
+   "shortfall": -0.4,
+   "papers": [
+    "W7223971351",
+    "W7223657872"
+   ]
+  },
+  {
+   "pair": "D5xD7",
+   "a": "D5",
+   "b": "D7",
+   "observed": 1,
+   "expected_indep": 1.2,
+   "shortfall": 0.2,
+   "papers": [
+    "W7223657872"
+   ]
+  },
+  {
+   "pair": "D6xD7",
+   "a": "D6",
+   "b": "D7",
+   "observed": 1,
+   "expected_indep": 0.48,
+   "shortfall": -0.52,
+   "papers": [
+    "W7223657872"
+   ]
+  }
+ ],
+ "pair_blind_ranked": [
+  {
+   "pair": "D1xD5",
+   "a": "D1",
+   "b": "D5",
+   "observed": 1,
+   "expected_indep": 2.4,
+   "shortfall": 1.4,
+   "papers": [
+    "W7125926949"
+   ]
+  },
+  {
+   "pair": "D2xD4",
+   "a": "D2",
+   "b": "D4",
+   "observed": 0,
+   "expected_indep": 1.12,
+   "shortfall": 1.12,
+   "papers": []
+  },
+  {
+   "pair": "D3xD4",
+   "a": "D3",
+   "b": "D4",
+   "observed": 0,
+   "expected_indep": 1.12,
+   "shortfall": 1.12,
+   "papers": []
+  },
+  {
+   "pair": "D1xD2",
+   "a": "D1",
+   "b": "D2",
+   "observed": 0,
+   "expected_indep": 0.96,
+   "shortfall": 0.96,
+   "papers": []
+  },
+  {
+   "pair": "D1xD3",
+   "a": "D1",
+   "b": "D3",
+   "observed": 0,
+   "expected_indep": 0.96,
+   "shortfall": 0.96,
+   "papers": []
+  },
+  {
+   "pair": "D1xD6",
+   "a": "D1",
+   "b": "D6",
+   "observed": 0,
+   "expected_indep": 0.96,
+   "shortfall": 0.96,
+   "papers": []
+  },
+  {
+   "pair": "D4xD7",
+   "a": "D4",
+   "b": "D7",
+   "observed": 0,
+   "expected_indep": 0.84,
+   "shortfall": 0.84,
+   "papers": []
+  },
+  {
+   "pair": "D2xD6",
+   "a": "D2",
+   "b": "D6",
+   "observed": 0,
+   "expected_indep": 0.64,
+   "shortfall": 0.64,
+   "papers": []
+  },
+  {
+   "pair": "D3xD6",
+   "a": "D3",
+   "b": "D6",
+   "observed": 0,
+   "expected_indep": 0.64,
+   "shortfall": 0.64,
+   "papers": []
+  },
+  {
+   "pair": "D2xD7",
+   "a": "D2",
+   "b": "D7",
+   "observed": 0,
+   "expected_indep": 0.48,
+   "shortfall": 0.48,
+   "papers": []
+  },
+  {
+   "pair": "D5xD7",
+   "a": "D5",
+   "b": "D7",
+   "observed": 1,
+   "expected_indep": 1.2,
+   "shortfall": 0.2,
+   "papers": [
+    "W7223657872"
+   ]
+  },
+  {
+   "pair": "D4xD6",
+   "a": "D4",
+   "b": "D6",
+   "observed": 1,
+   "expected_indep": 1.12,
+   "shortfall": 0.12,
+   "papers": [
+    "W7223971351"
+   ]
+  },
+  {
+   "pair": "D1xD7",
+   "a": "D1",
+   "b": "D7",
+   "observed": 1,
+   "expected_indep": 0.72,
+   "shortfall": -0.28,
+   "papers": [
+    "W7215726049"
+   ]
+  },
+  {
+   "pair": "D1xD4",
+   "a": "D1",
+   "b": "D4",
+   "observed": 2,
+   "expected_indep": 1.68,
+   "shortfall": -0.32,
+   "papers": [
+    "W7154351780",
+    "W7125926949"
+   ]
+  },
+  {
+   "pair": "D2xD3",
+   "a": "D2",
+   "b": "D3",
+   "observed": 1,
+   "expected_indep": 0.64,
+   "shortfall": -0.36,
+   "papers": [
+    "W7172523833"
+   ]
+  },
+  {
+   "pair": "D2xD5",
+   "a": "D2",
+   "b": "D5",
+   "observed": 2,
+   "expected_indep": 1.6,
+   "shortfall": -0.4,
+   "papers": [
+    "W7172523833",
+    "W7131676563"
+   ]
+  },
+  {
+   "pair": "D3xD5",
+   "a": "D3",
+   "b": "D5",
+   "observed": 2,
+   "expected_indep": 1.6,
+   "shortfall": -0.4,
+   "papers": [
+    "W7172523833",
+    "W4405957747"
+   ]
+  },
+  {
+   "pair": "D5xD6",
+   "a": "D5",
+   "b": "D6",
+   "observed": 2,
+   "expected_indep": 1.6,
+   "shortfall": -0.4,
+   "papers": [
+    "W7223971351",
+    "W7223657872"
+   ]
+  },
+  {
+   "pair": "D3xD7",
+   "a": "D3",
+   "b": "D7",
+   "observed": 1,
+   "expected_indep": 0.48,
+   "shortfall": -0.52,
+   "papers": [
+    "W4404342086"
+   ]
+  },
+  {
+   "pair": "D6xD7",
+   "a": "D6",
+   "b": "D7",
+   "observed": 1,
+   "expected_indep": 0.48,
+   "shortfall": -0.52,
+   "papers": [
+    "W7223657872"
+   ]
+  }
+ ],
+ "pool_total": 510,
+ "pool_swe": 172,
+ "pool_counts_swe": {
+  "D1": 24,
+  "D2": 21,
+  "D3": 6,
+  "D4": 12,
+  "D5": 45,
+  "D6": 1,
+  "D7": 15
+ },
+ "pool_pairs_swe": {
+  "D1xD2": 3,
+  "D1xD3": 1,
+  "D1xD4": 0,
+  "D1xD5": 5,
+  "D1xD6": 0,
+  "D1xD7": 10,
+  "D2xD3": 4,
+  "D2xD4": 3,
+  "D2xD5": 6,
+  "D2xD6": 0,
+  "D2xD7": 3,
+  "D3xD4": 2,
+  "D3xD5": 1,
+  "D3xD6": 0,
+  "D3xD7": 0,
+  "D4xD5": 4,
+  "D4xD6": 1,
+  "D4xD7": 1,
+  "D5xD6": 1,
+  "D5xD7": 2,
+  "D6xD7": 0
+ },
+ "quotes_verified": 38,
+ "year_counts": {
+  "2023": 1,
+  "2024": 4,
+  "2025": 8,
+  "2026": 12
+ },
+ "gaps": [
+  {
+   "kind": "single_repo",
+   "dims": [
+    "D6"
+   ],
+   "observed": 2,
+   "papers": [
+    "W7223971351",
+    "W7223657872"
+   ],
+   "id": "G1"
+  },
+  {
+   "kind": "pair",
+   "dims": [
+    "D1",
+    "D5"
+   ],
+   "observed": 1,
+   "expected_indep": 2.4,
+   "papers": [
+    "W7125926949"
+   ],
+   "pool_swe": 5,
+   "id": "G2"
+  },
+  {
+   "kind": "pair",
+   "dims": [
+    "D2",
+    "D4"
+   ],
+   "observed": 0,
+   "expected_indep": 1.12,
+   "papers": [],
+   "pool_swe": 3,
+   "id": "G3"
+  },
+  {
+   "kind": "pair",
+   "dims": [
+    "D3",
+    "D4"
+   ],
+   "observed": 0,
+   "expected_indep": 1.12,
+   "papers": [],
+   "pool_swe": 2,
+   "id": "G4"
+  },
+  {
+   "kind": "pair",
+   "dims": [
+    "D1",
+    "D2"
+   ],
+   "observed": 0,
+   "expected_indep": 0.96,
+   "papers": [],
+   "pool_swe": 3,
+   "id": "G5"
+  },
+  {
+   "kind": "pair",
+   "dims": [
+    "D1",
+    "D3"
+   ],
+   "observed": 0,
+   "expected_indep": 0.96,
+   "papers": [],
+   "pool_swe": 1,
+   "id": "G6"
+  },
+  {
+   "kind": "pair",
+   "dims": [
+    "D1",
+    "D6"
+   ],
+   "observed": 0,
+   "expected_indep": 0.96,
+   "papers": [],
+   "pool_swe": 0,
+   "id": "G7"
+  }
+ ]
+}

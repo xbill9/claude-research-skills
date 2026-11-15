@@ -1,0 +1,26 @@
+openalex_id,short,year,status,repo_repair_eval,D1_Context mgmt,D2_In-run loop/stall recovery,D3_Search / restart,D4_Graph retrieval,D5_Open-weight policy,D6_Quantized inference,D7_Multi-budget eval,D1_evidence,D2_evidence,D3_evidence,D4_evidence,D5_evidence,D6_evidence,D7_evidence
+W7117557793,CAT / SWE-Compressor,2025,published,1,1,0,0,0,0,0,0,proactively compress historical trajectories into actionable summaries,,,,,,
+W7125680675,SWE-Pruner,2026,preprint,1,1,0,0,0,0,0,0,23-54% token reduction on agent tasks like SWE-Bench Verified,,,,,,
+W7215726049,AutoCompact,2026,preprint,1,1,0,0,0,0,0,1,trains a coding agent to make these decisions as part of its policy,,,,,,with a 256K context window that never overflows and with a 16K window whose overflow triggers fallback compaction
+W4415332588,AgentDiet,2026,published,0,1,0,0,0,0,0,0,AgentDiet can reduce input tokens by 39.9%-59.7%,,,,,,
+W7154351780,CodeComp,2026,preprint,1,1,0,0,1,0,0,0,a training-free KV cache compression framework,,,Code Property Graph priors extracted by Joern,,,
+W7167425954,Wink,2026,published,0,0,1,0,0,0,0,0,,a system for automatically recovering from agentic misbehaviors at scale,,,,,
+W7172523833,FailFast-RestartSmart,2026,preprint,1,0,1,1,0,1,0,0,,predict failure from observable prefixes,RestartSmart launches a fresh same-policy rollout without prior prompt history,,RestartSmart raises Qwen3.6-27B resolution from 66.6% to 71.8%,,
+W4416711632,SWE-PRM,2025,preprint,1,0,1,0,0,0,0,0,,intervenes during execution to detect and course-correct trajectory-level errors,,,,,
+W4404342086,SWE-Search,2024,published,1,0,0,1,0,0,0,1,,,integrates Monte Carlo Tree Search (MCTS),,,,performance scales with increased inference-time compute through deeper search
+W4415935825,Trajectory study,2025,preprint,1,0,0,0,0,0,0,0,,,,,,,
+W7160926458,PROBE,2026,published,0,0,0,1,0,0,0,0,,,bounded recovery guidance for a subsequent attempt,,,,
+W4415101712,LocAgent,2025,published,1,0,0,0,1,1,0,0,,,,parsing codebases into directed heterogeneous graphs,fine-tuned Qwen-2.5-Coder-Instruct-32B model,,
+W4404087993,RepoGraph,2024,published,1,0,0,0,1,0,0,0,,,,a plug-in module that manages a repository-level structure,,,
+W4416453608,CGM,2025,published,1,0,0,0,1,1,0,0,,,,integrate repository code graph structures into the LLM's attention mechanism,using the open-source Qwen2.5-72B model,,
+W7125926949,CoSIL,2025,published,1,1,0,0,1,1,0,0,a pruner to filter unrelated directions and irrelevant contexts,,,two-phase code graph search strategy,with Qwen2.5-Coder-32B,,
+W7223971351,Small agents + graphs,2026,preprint,1,0,0,0,1,1,1,0,,,,+graph tools,six Qwen3 sizes from 0.6B to 32B,an FP8 control,
+W4387561453,SWE-bench,2023,published,1,0,0,0,0,1,0,0,,,,,our fine-tuned model SWE-Llama,,
+W4405957747,SWE-Gym,2024,published,1,0,0,1,0,1,0,0,,,inference-time scaling through verifiers trained on agent trajectories,,state-of-the-art for open-weight SWE agents,,
+W4417525566,SWE-smith,2025,published,1,0,0,0,0,1,0,0,,,,,We train SWE-agent-LM-32B,,
+W7131676563,SWE-Protégé,2026,preprint,1,0,1,0,0,1,0,0,,recognize stalled states,,,Qwen2.5-Coder-7B-Instruct,,
+W7171740466,PTQ for code gen,2026,published,0,0,0,0,0,0,1,0,,,,,,pushing the compression to the extreme quantization level of 2 bits per model parameter,
+W7225790577,SteerDistill,2026,preprint,0,0,0,0,0,0,1,0,,,,,,under W4A16 and stays within one point of BF16,
+W7223657872,Quantized-agent energy,2026,preprint,1,0,0,0,0,1,1,1,,,,,two open-weight models,4-bit and 8-bit versions of two open-weight models,"the execution budget (i.e., limits on turns, tokens, and time)"
+W4411449940,Agentless,2025,published,1,0,0,0,0,0,0,0,,,,,,,
+W4402442868,AutoCodeRover,2024,published,1,0,0,0,1,0,0,0,,,,We work on a program representation (abstract syntax tree),,,

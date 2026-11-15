@@ -1,0 +1,225 @@
+{
+ "entry": {
+  "key": "ref8",
+  "n": 8,
+  "authors": "B. Rozemberczki, O. Kiss, and R. Sarkar",
+  "first_author_surname": "Rozemberczki",
+  "title": "Karate Club: An API oriented open-source Python framework for unsupervised learning on graphs",
+  "year": 2020,
+  "venue_claimed": "CIKM",
+  "arxiv": null,
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "Karate Club: An API oriented open-source Python framework for unsupervised learning on graphs",
+  "candidates": [
+   {
+    "doi": "10.1145/3539597.3572706",
+    "title": "The 3rd International Workshop on Machine Learning on Graphs (MLoG)",
+    "authors": [
+     "Tyler Derr",
+     "Yao Ma",
+     "Benedek Rozemberczki",
+     "Neil Shah",
+     "Shirui Pan"
+    ],
+    "first_author_family": "Derr",
+    "author_count": 5,
+    "year": 2023,
+    "venue": "Proceedings of the Sixteenth ACM International Conference on Web Search and Data Mining",
+    "type": "proceedings-article",
+    "publisher": "ACM",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.5223,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1145/3340531.3412757",
+    "title": "Karate Club",
+    "authors": [
+     "Benedek Rozemberczki",
+     "Oliver Kiss",
+     "Rik Sarkar"
+    ],
+    "first_author_family": "Rozemberczki",
+    "author_count": 3,
+    "year": 2020,
+    "venue": "Proceedings of the 29th ACM International Conference on Information &amp; Knowledge Management",
+    "type": "proceedings-article",
+    "publisher": "ACM",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.2136,
+    "first_author_matches": true,
+    "year_matches": true
+   }
+  ],
+  "best_title_similarity": 0.5223,
+  "best_is_match": false
+ },
+ "arxiv_title_search": {
+  "status": 429,
+  "entries": ""
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W3093943311",
+    "doi": "https://doi.org/10.1145/3340531.3412757",
+    "title": "Karate Club: An API Oriented Open-Source Python Framework for Unsupervised Learning on Graphs",
+    "year": 2020,
+    "type": "conference-paper",
+    "authors": [
+     "Benedek R\u00f3zemberczki",
+     "Oliv\u00e9r Kiss",
+     "Rik Sarkar"
+    ],
+    "primary_location": "ACM International Conference on Information and Knowledge Management (CIKM)",
+    "locations": [
+     {
+      "source": "ACM International Conference on Information and Knowledge Management (CIKM)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1145/3340531.3412757"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W3048229548",
+    "doi": "https://doi.org/10.48550/arxiv.2003.04819",
+    "title": "Karate Club: An API Oriented Open-source Python Framework for Unsupervised Learning on Graphs",
+    "year": 2020,
+    "type": "preprint",
+    "authors": [
+     "Benedek R\u00f3zemberczki",
+     "Oliv\u00e9r Kiss",
+     "Rik Sarkar"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2003.04819"
+     },
+     {
+      "source": "Edinburgh Research Explorer (University of Edinburgh)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://www.research.ed.ac.uk/en/publications/c0de2622-034e-4f35-a5b1-20e6537e2cf7"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://arxiv.org/pdf/2003.04819.pdf"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2003.04819"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W3010723741",
+    "doi": null,
+    "title": "An API Oriented Open-source Python Framework for Unsupervised Learning on Graphs",
+    "year": 2020,
+    "type": "preprint",
+    "authors": [
+     "Benedek R\u00f3zemberczki",
+     "Oliv\u00e9r Kiss",
+     "Rik Sarkar"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://dblp.uni-trier.de/db/journals/corr/corr2003.html#abs-2003-04819"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W3112039868",
+    "doi": "https://doi.org/10.48550/arxiv.2012.06113",
+    "title": "Pair-view Unsupervised Graph Representation Learning",
+    "year": 2020,
+    "type": "preprint",
+    "authors": [
+     "You Li",
+     "Binli Luo",
+     "Ning Gui"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2012.06113"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2012.06113"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W3094607559",
+    "doi": "https://doi.org/10.1145/3340531.3412758",
+    "title": "Little Ball of Fur: A Python Library for Graph Sampling",
+    "year": 2020,
+    "type": "conference-paper",
+    "authors": [
+     "Benedek R\u00f3zemberczki",
+     "Oliv\u00e9r Kiss",
+     "Rik Sarkar"
+    ],
+    "primary_location": "ACM International Conference on Information and Knowledge Management (CIKM)",
+    "locations": [
+     {
+      "source": "ACM International Conference on Information and Knowledge Management (CIKM)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1145/3340531.3412758"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2006.04311"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://arxiv.org/pdf/2006.04311.pdf"
+     },
+     {
+      "source": "Edinburgh Research Explorer (University of Edinburgh)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://www.research.ed.ac.uk/files/180445467/Little_Ball_of_Fur_ROZEMBERCZKI_DOA17072020_AFV.pdf"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2006.04311"
+     }
+    ]
+   }
+  ]
+ }
+}

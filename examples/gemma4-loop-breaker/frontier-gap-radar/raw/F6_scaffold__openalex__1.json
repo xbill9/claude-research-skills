@@ -1,0 +1,520 @@
+{
+ "url": "https://api.openalex.org/works?search=agentless+localization+repair+LLM&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4411449940",
+   "doi": "10.1145/3715754",
+   "title": "Demystifying LLM-Based Software Engineering Agents",
+   "year": 2025,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 876,
+   "abstract": "Recent advancements in large language models (LLMs) have significantly advanced the automation of software development tasks, including code synthesis, program repair, and test generation. More recently, researchers and industry practitioners have developed various autonomous LLM agents to perform end-to-end software development tasks. These agents are equipped with the ability to use tools, run commands, observe feedback from the environment, and plan for future actions. However, the complexity of these agent-based approaches, together with the limited abilities of current LLMs, raises the following question: Do we really have to employ complex autonomous software agents? To attempt to answer this question, we build Agentless \u2013 an agentless approach to automatically resolve software development issues. Compared to the verbose and complex setup of agent-based approaches, Agentless employs a simplistic three-phase process of localization, repair, and patch validation, without letting the LLM decide future actions or operate with complex tools. Our results on the popular SWE-bench Lite benchmark show that surprisingly the simplistic Agentless is able to achieve both the highest performance (32.00%, 96 correct fixes) and low cost ($0.70) compared with all existing open-source software agents at the time of paper submission! Agentless also achieves more than 50% solve rate when using Claude 3.5 Sonnet on the new SWE-bench Verified benchmark. In fact, Agentless has already been adopted by OpenAI as the go-to approach to showcase the real-world coding performance of both GPT-4o and the new o1 models; more recently, Agentless has also been used by DeepSeek to evaluate their newest DeepSeek V3 and R1 models . Furthermore, we manually classified the problems in SWE-bench Lite and found problems with exact ground truth patches or insufficient/misleading issue descriptions. As such, we construct SWE-bench Lite- S by excluding such problematic issues to perform more rigorous evaluation and comparison. Our work highlights the currently overlooked potential of a simplistic, cost-effective technique in autonomous software development. We hope Agentless will help reset the baseline, starting point, and horizon for autonomous software agents, and inspire future work along this crucial direction. We have open-sourced Agentless at: https://github.com/OpenAutoCoder/Agentless",
+   "authors": [
+    "Chunqiu Steven Xia",
+    "Yinlin Deng",
+    "Soren Dunn",
+    "Lingming Zhang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7125804068",
+   "doi": "10.48550/arxiv.2601.18044",
+   "title": "RGFL: Reasoning Guided Fault Localization for Automated Program Repair Using Large Language Models",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 11,
+   "abstract": "Fault Localization (FL) is a critical step in Automated Program Repair (APR), and its importance has increased with the rise of Large Language Model (LLM)-based repair agents. In realistic project-level repair scenarios, software repositories often span millions of tokens, far exceeding current LLM context limits. Consequently, models must first identify a small, relevant subset of code, making accurate FL essential for effective repair. We present a novel project-level FL approach that improves both file- and element-level localization. Our method introduces a hierarchical reasoning module that (i) generates structured, bug-specific explanations for candidate files and elements, and (ii) leverages these explanations in a two-stage ranking scheme combining LLM-based and embedding-based signals. We further propose a counterfactual upper-bound analysis to quantify the contribution of each localization stage to repair success. We evaluate our approach on Python and Java projects from SWE-bench Verified, Lite, and Java. Compared to state-of-the-art baselines, including Agentless and OpenHands, our method consistently improves localization accuracy. On SWE-bench Verified, file-level Hit@1 improves from 71.4% to 85%, and MRR from 81.8% to 88.8%. At the element level, Exact Match under top-3 files increases from 36% to 69%. Integrating our localization into Agentless yields a 12.8% end-to-end repair success improvement.",
+   "authors": [
+    "Melika Sepidband",
+    "Hamed Taherkhani",
+    "Hung Viet Pham",
+    "Hadi Hemmati"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7151869330",
+   "doi": "10.48550/arxiv.2604.05481",
+   "title": "On the Role of Fault Localization Context for LLM-Based Program Repair",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 8,
+   "abstract": "Fault Localization (FL) is a key component of Large Language Model (LLM)-based Automated Program Repair (APR), yet its impact remains underexplored. In particular, it is unclear how much localization is needed, whether additional context beyond the predicted buggy location is beneficial, and how such context should be retrieved. We conduct a large-scale empirical study on 500 SWE-bench Verified instances using GPT-5-mini, evaluating 61 configurations that vary file-level, element-level, and line-level context. Our results show that more context does not consistently improve repair performance. File-level localization is the dominant factor, yielding a 15-17x improvement over a no-file baseline. Expanding file context is often associated with improved performance, with successful repairs most commonly observed in configurations with approximately 6-10 relevant files. Element-level context expansion provides conditional gains that depend strongly on the file context quality, while line-level context expansion frequently degrades performance due to noise amplification. LLM-based retrieval generally outperforms structural heuristics while using fewer files and tokens. Overall, the most effective FL context strategy typically combines a broad semantic understanding at higher abstraction levels with precise line-level localization. These findings challenge our assumption that increasing the localization context uniformly improves APR, and provide practical guidance for designing LLM-based FL strategies.",
+   "authors": [
+    "Melika Sepidband",
+    "Hung Viet Pham",
+    "Hadi Hemmati"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416519743",
+   "doi": "10.1145/3845995",
+   "title": "A Survey of LLM-based Software Repair: Taxonomies, Design Paradigms, and Applications",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 63,
+   "abstract": "Large language models (LLMs) are reshaping automated program repair. We present a reproducible hierarchical taxonomy that organizes 66 LLM-based repair systems according to where repair capability and control logic principally reside: taskadapted parameters, prompt and context design, designer-specified workflows, or LLM-directed runtime control. Adaptation, generation pattern, runtime control, and auxiliary evidence remain separate coded dimensions. This representation exposes control distinctions hidden by utilization labels and supports cross-paradigm analysis of system design and evaluation evidence. To the best of our knowledge, it is the first publicly available LLM-based software repair survey to operationalize Fine-Tuning, Prompting, Procedural, and Agentic as one corpus-wide primary classification. Our hierarchy complements prior surveys with a single corpus-wide primary decision rule, while the result-level protocol audit bounds which reported results are defensibly comparable. To analyze how repair systems use benchmarks, we record benchmark variants, metrics, base models, and fault-localization assumptions for each system\u2019s primary reported result, identifying protocol-aligned comparison windows and benchmark-family fragments. We clarify paradigm trade-offs in task alignment, deployment cost, controllability, and multi-hunk or cross-file repair. We outline open challenges and research directions. Our artifacts and scripted survey pipeline are publicly available at https://github.com/GLEAM-Lab/ProgramRepair .",
+   "authors": [
+    "Boyang Yang",
+    "Zijian Cai",
+    "Fenglin Liu",
+    "Bach Le",
+    "Lingming Zhang",
+    "Tegawend\u00e9 Fran\u00e7ois Bissyand\u00e9",
+    "Yang Liu",
+    "Haoye Tian"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7125926949",
+   "doi": "10.1109/ase63991.2025.00249",
+   "title": "Issue Localization via LLM-Driven Iterative Code Graph Searching",
+   "year": 2025,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 53,
+   "abstract": "Issue solving aims to generate patches to fix re-ported issues in real-world code repositories according to issue descriptions. Issue localization forms the basis for accurate issue solving. Recently, large language model (LLM) based issue localization methods have demonstrated state-of-the-art performance. However, these methods either search from files mentioned in issue descriptions or in the whole repository and struggle to balance the breadth and depth of the search space to converge on the target efficiently. Moreover, they allow LLM to explore whole repositories freely, making it challenging to control the search direction to prevent the LLM from searching for incorrect targets. Meanwhile, because LLMs may not correctly produce the required interaction formats with the environment, they suffer from search failures.This paper introduces COSIL, an LLM-driven, powerful function-level issue localization method without training or indexing. To balance search breadth and depth, COSIL employs a two-phase code graph search strategy. It first conducts broad exploration at the file level using dynamically constructed module call graphs, and then performs in-depth analysis at the function level by expanding the module call graph into a function call graph and executing iterative searches. To precisely control the search direction, COSIL designs a pruner to filter unrelated directions and irrelevant contexts. To avoid incorrect interaction formats in long contexts, COSIL introduces a reflection mechanism that uses additional independent queries in short contexts to enhance formatted abilities. Experiment results demonstrate that COSIL achieves a Top-1 localization accuracy of 43.3% and 44.6% on SWE-bench Lite and SWE-bench Verified, respectively, with Qwen2.5-Coder-32B, average outperforming the state-of-the-art methods by 96.04%. When COSIL is integrated into an issue-solving method, Agentless, the issue resolution rate improves by 2.98%\u201330.5%.",
+   "authors": [
+    "Zhonghao Jiang",
+    "Xiaoxue Ren",
+    "Meng Ling Yan",
+    "Wei Jiang",
+    "Yong Li",
+    "Zhongxin Liu"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403851340",
+   "doi": "10.1145/3797099",
+   "title": "TransAgent: Enhancing LLM-Based Code Translation via Fine-Grained Execution Alignment",
+   "year": 2026,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 67,
+   "abstract": "Code translation transforms code between programming languages while preserving functionality, which is critical in software development and maintenance. While traditional learning-based code translation methods have limited effectiveness due to the lack of sufficient parallel training data, Large Language Models (LLMs) have recently advanced this field with their strong code generation and comprehension capabilities. However, code translated by LLMs still suffers from diverse quality issues, such as syntax and semantic errors. In this work, we propose TransAGENT, a novel multi-agent system that eliminates the errors during LLM-based code translation. The main insight of TransAGENT is to localize error-prone code blocks via fine-grained execution alignment between source and target code. We evaluate TransAGENT on a newly constructed benchmark of recent programming tasks to mitigate data leakage. TransAGENT outperforms the latest UniTrans by up to 33.3% in translation accuracy and achieves an average improvement of 56.7% over Agentless in program repair performance. We also conduct an ablation study and evaluate TransAGENT across different LLMs, demonstrating its effectiveness and strong generalizability.",
+   "authors": [
+    "Zhiqiang Yuan",
+    "Weitong Chen",
+    "Hanlin Wang",
+    "Xin Peng",
+    "Zhenpeng Chen",
+    "Yiling Lou"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414799519",
+   "doi": "10.1145/3770581",
+   "title": "Integrating Various Software Artifacts for Better LLM-based Bug Localization and Program Repair",
+   "year": 2025,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 11,
+   "abstract": "LLMs have garnered considerable attention for their potential to streamline Automated Program Repair (APR). LLM-based approaches can either insert the correct code using an infilling-style technique or directly generate patches when provided with buggy methods, aiming for plausible patches to pass all tests. However, most of LLM-based APR methods rely on a single type of software information, such as issue descriptions or error stack traces, without fully leveraging a combination of diverse software artifacts. Human developers, in contrast, often use a range of information\u2014such as debugging data, issue discussions, and error stack traces\u2014to diagnose and fix bugs. Despite this, many LLM-based approaches do not explore which specific types of software information best assist in localizing and repairing software bugs. Addressing this gap is crucial for advancing LLM-based APR techniques. To investigate this and mimic the way human developers fix bugs, we propose DEV eloper Lo calization and Re pair ( DEVLoRe ). In this framework, LLMs first use issue content (description and discussion) and stack error traces to localize buggy methods, then rely on debug information in buggy methods and issue content and stack error to localize buggy lines and generate valid patches. We evaluated the effectiveness of issue content, error stack traces, and debugging information in bug localization and automatic program repair. Our results show that while issue content and error stack is particularly effective in assisting LLMs with fault localization and program repair respectively, different types of software artifacts complement each other in addressing various bugs. By incorporating these three types of artifacts and using the Defects4J v2.0 dataset for evaluation, DEVLoRe successfully localizes 49.3% of single-method bugs and generates 56.0% plausible patches. Additionally, DEVLoRe can localize 47.6% of non-single-method bugs and generates 14.5% plausible patches. Moreover, our framework streamlines the end-to-end process from buggy source code to a complete repair, and achieves a 39.7% and 17.1% of single-method and non-single-method bug repair rate, outperforming current state-of-the-art APR methods. Furthermore, we re-implemented and evaluated our framework, demonstrating its effectiveness in resolving nine unique issues compared to other state-of-the-art frameworks using the same or more advanced models on SWE-bench Lite. We also discussed whether a leading framework for Python code can be directly applied to Java code, or vice versa. The source code and experimental results of this work for replication are available at https://github.com/XYZboom/DEVLoRe .",
+   "authors": [
+    "Qiong Feng",
+    "Xiaotian Ma",
+    "Jiayi Sheng",
+    "Ziyuan Feng",
+    "Wei Song",
+    "Peng Liang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7162767196",
+   "doi": "10.48550/arxiv.2605.28893",
+   "title": "Towards Demystifying and Repairing LLM-in-the-Loop Vulnerabilities",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Large Language Models (LLMs) have been actively integrated into modern software systems as critical components, introducing a new type of software vulnerability, LLM-in-the-Loop (LiL) vulnerability, in which threats are caused by LLMs. Although some studies have attempted to investigate the impact of LiL vulnerabilities, they have unfortunately failed to clearly distinguish LiL vulnerabilities from conventional ones, leaving the understanding of real-world LiL vulnerabilities an open problem. To address this gap, we first clearly define the scope of LiL vulnerability, and discuss the differences between LiL vulnerabilities and vulnerabilities that exist in LLM systems but are not really caused by LLMs (i.e., LLM-ecosystem vulnerabilities). Then, we construct the first LiL vulnerability dataset, LiLCVE, covering 41 LiL vulnerabilities and 75 LLM-ecosystem vulnerabilities, to facilitate the risk analysis of LLM-integrated software. The analysis of LiLCVE reveals that LiL vulnerabilities have higher severity than LLM-ecosystem vulnerabilities and conventional software vulnerabilities, with 15.5% and 30.3% more critical vulnerabilities, respectively. Furthermore, given the high severity of LiL vulnerabilities and the potential of LLM-based vulnerability repair methods in patching conventional software vulnerabilities. We explore the capabilities of existing widely-used LLM-based methods in repairing vulnerabilities in LiLCVE. Experimental results on 20 agent-model configuration demonstrate that LiL vulnerabilities are far more challenging to fix, with an average decrease of 10.8% Pass@1 rate compared to other types of vulnerabilities. More critically, three categories, Generated Query Execution, Agent Action, and Model Output Rendering, frequently receive 0% repair success rates.",
+   "authors": [
+    "Yujie Ma",
+    "Jialin Rong",
+    "Chenxi Yang",
+    "Lili Quan",
+    "Jin Wen",
+    "Xiaofei Xie",
+    "Yongqiang Lyu",
+    "Qiang Hu"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417351600",
+   "doi": "10.1145/3808181",
+   "title": "ExpeRepair: Dual-Memory Enhanced LLM-Based Repository-Level Program Repair",
+   "year": 2026,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 49,
+   "abstract": "Automatically repairing software issues remains a fundamental challenge at the intersection of software engineering and AI. Although recent advances in Large Language Models (LLMs) have demonstrated potential for repository-level repair tasks, current methods exhibit two notable limitations: (1) they often address issues in isolation, neglecting to incorporate insights from previously resolved issues, and (2) they rely on static, rigid prompting strategies that constrain their ability to generalize across diverse and evolving contexts. We propose ExpeRepair, a novel LLM-based program repair framework inspired by the dual-memory systems of human cognition, where episodic and semantic memory synergistically support learning and decision-making. Unlike existing methods, ExpeRepair continuously learns from historical repair experiences via dual-channel knowledge accumulation, enabling it to adaptively reuse past knowledge during inference. Specifically, ExpeRepair organizes prior repair knowledge into two complementary memories: an episodic memory that stores concrete repair demonstrations, and a semantic memory that encodes abstract, reflective insights. At inference time, ExpeRepair activates both memory systems by retrieving relevant demonstrations from episodic memory and recalling high-level repair insights from semantic memory. It further enhances adaptability through dynamic prompt composition, integrating both memory types to replace static prompts with context-aware, experience-driven prompts. We evaluate ExpeRepair on two benchmarks: SWE-Bench Lite and SWE-Bench Verified. Experimental results show that ExpeRepair achieves pass@1 scores of 60.3% and 74.6% on the two benchmarks, respectively, achieving the best performance among the evaluated open-source methods. We have open-sourced ExpeRepair at https://github.com/ExpeRepair/ExpeRepair.",
+   "authors": [
+    "Fangwen Mu",
+    "Junjie Wang",
+    "Lin Shi",
+    "Song Wang",
+    "SHUANG-LONG LI",
+    "Qing Wang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415332089",
+   "doi": "10.48550/arxiv.2509.23045",
+   "title": "Kimi-Dev: Agentless Training as Skill Prior for SWE-Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 41,
+   "abstract": "Large Language Models (LLMs) are increasingly applied to software engineering (SWE), with SWE-bench as a key benchmark. Solutions are split into SWE-Agent frameworks with multi-turn interactions and workflow-based Agentless methods with single-turn verifiable steps. We argue these paradigms are not mutually exclusive: reasoning-intensive Agentless training induces skill priors, including localization, code edit, and self-reflection that enable efficient and effective SWE-Agent adaptation. In this work, we first curate the Agentless training recipe and present Kimi-Dev, an open-source SWE LLM achieving 60.4\\% on SWE-bench Verified, the best among workflow approaches. With additional SFT adaptation on 5k publicly-available trajectories, Kimi-Dev powers SWE-Agents to 48.6\\% pass@1, on par with that of Claude 3.5 Sonnet (241022 version). These results show that structured skill priors from Agentless training can bridge workflow and agentic frameworks for transferable coding agents.",
+   "authors": [
+    "Zonghan Yang",
+    "Wang, Shengjie",
+    "Kelin Fu",
+    "Wenyang He",
+    "Xiong, Weimin",
+    "Liu, Yibo",
+    "Miao, Yibo",
+    "Bofei Gao"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417490099",
+   "doi": "10.1145/3744916.3787760",
+   "title": "Input Reduction Enhanced LLM-based Program Repair",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 8,
+   "abstract": "Large Language Models (LLMs) have shown great potential in Automated Program Repair (APR). Test inputs, being crucial for reasoning the root cause of failures, are always included in the prompt for LLM-based APR. Unfortunately, LLMs struggle to retain key information in long prompts. When the test inputs are extensive in the prompt, this may trigger the \u201clost-in-the-middle\u201d issue, compromising repair performance. To address this, we propose ReduceFix, an LLM-based APR approach with a built-in component that automatically reduces test inputs while retaining their failure-inducing behavior. ReduceFix prompts an LLM to generate a reducer that minimizes failure-inducing test inputs without human effort, and then feeds the reduced failure-inducing inputs to guide patch generation.",
+   "authors": [
+    "Boyang Yang",
+    "Luyao Ren",
+    "Xin Yin",
+    "Jiadong Ren",
+    "Haoye Tian",
+    "Shunfu Jin"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415101712",
+   "doi": "10.48550/arxiv.2503.09089",
+   "title": "LocAgent: Graph-Guided LLM Agents for Code Localization",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 49,
+   "abstract": "Code localization--identifying precisely where in a codebase changes need to be made--is a fundamental yet challenging task in software maintenance. Existing approaches struggle to efficiently navigate complex codebases when identifying relevant code sections. The challenge lies in bridging natural language problem descriptions with the appropriate code elements, often requiring reasoning across hierarchical structures and multiple dependencies. We introduce LocAgent, a framework that addresses code localization through graph-based representation. By parsing codebases into directed heterogeneous graphs, LocAgent creates a lightweight representation that captures code structures (files, classes, functions) and their dependencies (imports, invocations, inheritance), enabling LLM agents to effectively search and locate relevant entities through powerful multi-hop reasoning. Experimental results on real-world benchmarks demonstrate that our approach significantly enhances accuracy in code localization. Notably, our method with the fine-tuned Qwen-2.5-Coder-Instruct-32B model achieves comparable results to SOTA proprietary models at greatly reduced cost (approximately 86% reduction), reaching up to 92.7% accuracy on file-level localization while improving downstream GitHub issue resolution success rates by 12% for multiple attempts (Pass@10). Our code is available at https://github.com/gersteinlab/LocAgent.",
+   "authors": [
+    "Zhaoling Chen",
+    "Xiangru Tang",
+    "Gangda Deng",
+    "Fang Wu",
+    "Jialong Wu",
+    "Zhiwei Jiang",
+    "Viktor K. Prasanna",
+    "Arman Cohan"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4407123518",
+   "doi": "10.48550/arxiv.2502.00350",
+   "title": "OrcaLoca: An LLM Agent Framework for Software Issue Localization",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 48,
+   "abstract": "Recent developments in Large Language Model (LLM) agents are revolutionizing Autonomous Software Engineering (ASE), enabling automated coding, problem fixes, and feature improvements. However, localization -- precisely identifying software problems by navigating to relevant code sections -- remains a significant challenge. Current approaches often yield suboptimal results due to a lack of effective integration between LLM agents and precise code search mechanisms. This paper introduces OrcaLoca, an LLM agent framework that improves accuracy for software issue localization by integrating priority-based scheduling for LLM-guided action, action decomposition with relevance scoring, and distance-aware context pruning. Experimental results demonstrate that OrcaLoca becomes the new open-source state-of-the-art (SOTA) in function match rate (65.33%) on SWE-bench Lite. It also improves the final resolved rate of an open-source framework by 6.33 percentage points through its patch generation integration.",
+   "authors": [
+    "Zhongming Yu",
+    "Hejia Zhang",
+    "Zhao, Yujie",
+    "Huang, Hanxian",
+    "Yao, Matrix",
+    "Ding, Ke",
+    "Jishen Zhao"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7131388287",
+   "doi": "10.1109/tse.2026.3668601",
+   "title": "Bridging Bug Localization and Issue Fixing: A Hierarchical Localization Framework Leveraging Large Language Models",
+   "year": 2026,
+   "venue": "IEEE Transactions on Software Engineering",
+   "type": "article",
+   "cited_by": 25,
+   "abstract": "Automated issue fixing is a critical task in software debugging and has recently garnered significant attention from academia and industry. However, existing fixing techniques predominantly focus on the repair phase, often overlooking the importance of improving the preceding bug localization phase. As a foundational step in issue fixing, bug localization plays a pivotal role in determining the overall effectiveness of the entire process.To enhance the precision of issue fixing by accurately identifying bug locations in large-scale projects, this paper presents BugCerberus, the first hierarchical bug localization framework powered by three customized large language models. First, BugCerberus analyzes intermediate representations of bug-related programs at file, function, and statement levels and extracts bug-related contextual information from the representations. Second, BugCerberus designs three customized LLMs at each level using bug reports and contexts to learn the patterns of bugs. Finally, BugCerberus hierarchically searches for bug-related code elements through well-tuned models to localize bugs at three levels. With BugCerberus, we further investigate the impact of bug localization on the issue fixing.We evaluate BugCerberus on the widely-used benchmark SWE-bench-lite. The experimental results demonstrate that BugCerberus outperforms all baselines. Specifically, at the fine-grained statement level, BugCerberus surpasses the state-of-the-art in Top-N (N=1, 3, 5, 10) by 16.5%, 5.4%, 10.2%, and 23.1%, respectively. Moreover, in the issue fixing experiments, BugCerberus improves the fix rate of the existing issue fixing approach Agentless by 17.4% compared to the best baseline, highlighting the significant impact of enhanced bug localization on automated issue fixing.",
+   "authors": [
+    "Jianming Chang",
+    "Xin Zhou",
+    "Lulu Wang",
+    "David Lo",
+    "Bixin Li"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7162452547",
+   "doi": "10.1145/3818617",
+   "title": "SGAgent : Suggestion-Guided LLM-Based Multi-Agent Framework for Repository-Level Software Repair",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 13,
+   "abstract": "The rapid advancement of Large Language Models (LLMs) has led to the emergence of intelligent agents capable of autonomously interacting with environments and invoking external tools. Recently, agent-based software repair approaches have received widespread attention, as repair agents can automatically analyze and localize bugs, generate patches, and achieve state-of-the-art performance on repository-level benchmarks (e.g., SWE-Bench). However, existing software repair approaches usually adopt a localize-then-fix paradigm , jumping directly from \u201cwhere the bug is\u201d to \u201chow to fix it,\u201d leaving a fundamental reasoning gap. To this end, we propose SGAgent , a S uggestion- G uided multi- Agent framework for repository-level software repair, which follows a localize-suggest-fix paradigm. Specifically, SGAgent introduces a suggestion to strengthen the transition from localization to repair. The suggester starts from the buggy locations and incrementally retrieves relevant context until it fully understands the bug, and then provides actionable repair suggestions. Moreover, we construct a Knowledge Graph (KG) from the target repository and develop a KG-based toolkit to enhance SGAgent \u2019s ability to enhance global contextual awareness and repository-level reasoning. Based on these components, three specialized sub-agents in SGAgent (i.e., localizer, suggester, and fixer) collaborate to achieve automated end-to-end software repair. We evaluated SGAgent on the SWE-Bench-Lite benchmark. Experimental results show that SGAgent with Claude-3.5 achieves 51.3% repair accuracy, 81.2% file-level, and 52.4% function-level localization accuracy with an average cost of $1.48 per instance, outperforming all baselines using the same base model. Moreover, SGAgent generalizes well across different base LLMs, further reaching a 60.7% resolution rate with Claude-4. When extended to vulnerability repair, SGAgent achieves a 48.0% resolution rate on VUL4J and VJBench, demonstrating strong generalization across tasks and programming languages.",
+   "authors": [
+    "Q Zhang",
+    "Chengyu Gao",
+    "Yu Han",
+    "Ye Shang",
+    "Chunrong Fang",
+    "Zhenyu Chen",
+    "Liang Xiao"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417095644",
+   "doi": "10.48550/arxiv.2506.17208",
+   "title": "Dissecting the SWE-Bench Leaderboards: Profiling Submitters and Architectures of LLM- and Agent-Based Repair Systems",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 18,
+   "abstract": "The rapid progress in Automated Program Repair (APR) has been driven by advances in AI, particularly large language models (LLMs) and agent-based systems. SWE-Bench is a recent benchmark designed to evaluate LLM-based repair systems using real issues and pull requests mined from 12 popular open-source Python repositories. Its public leaderboards -- SWE-Bench Lite and SWE-Bench Verified -- have become central platforms for tracking progress and comparing solutions. However, because the submission process does not require detailed documentation, the architectural design and origin of many solutions remain unclear. In this paper, we present the first comprehensive study of all submissions to the SWE-Bench Lite (79 entries) and Verified (99 entries) leaderboards, analyzing 80 unique approaches across dimensions such as submitter type, product availability, LLM usage, and system architecture. Our findings reveal the dominance of proprietary LLMs (especially Claude 3.5), the presence of both agentic and non-agentic designs, and a contributor base spanning from individual developers to large tech companies.",
+   "authors": [
+    "Mat\u00edas Mart\u00ednez",
+    "Xavier Franch"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416073194",
+   "doi": "10.48550/arxiv.2506.03585",
+   "title": "Improving LLM-Based Fault Localization with External Memory and Project Context",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 9,
+   "abstract": "Fault localization, the process of identifying the software components responsible for failures, is essential but often time-consuming. Recent advances in Large Language Models (LLMs) have enabled fault localization without extensive defect datasets or model fine-tuning. However, existing LLM-based methods rely only on general LLM capabilities and lack integration of project-specific knowledge, resulting in limited effectiveness, especially for complex software. We introduce MemFL, a novel approach that enhances LLM-based fault localization by integrating project-specific knowledge via external memory. This memory includes static summaries of the project and dynamic, iterative debugging insights gathered from previous attempts. By leveraging external memory, MemFL simplifies debugging into three streamlined steps, significantly improving efficiency and accuracy. Iterative refinement through dynamic memory further enhances reasoning quality over time. Evaluated on the Defects4J benchmark, MemFL using GPT-4o-mini localized 12.7% more bugs than current LLM-based methods, achieving this improvement with just 21% of the execution time (17.4 seconds per bug) and 33% of the API cost (0.0033 dollars per bug). On complex projects, MemFL's advantage increased to 27.6%. Additionally, MemFL with GPT-4.1-mini outperformed existing methods by 24.4%, requiring only 24.7 seconds and 0.0094 dollars per bug. MemFL thus demonstrates significant improvements by effectively incorporating project-specific knowledge into LLM-based fault localization, delivering high accuracy with reduced time and cost.",
+   "authors": [
+    "Yeo, Inseok",
+    "Duksan Ryu",
+    "Jongmoon Baik"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7213278174",
+   "doi": "10.18653/2026.realm-1.30",
+   "title": "Externalizing Requirement-to-Repair Artifacts as Observable Traces for LLM-Based Program Repair",
+   "year": 2026,
+   "venue": "Workshop for Research on Agent Language Models (REALM)",
+   "type": "conference-paper",
+   "cited_by": 0,
+   "abstract": "Repository-level repair requires not only correct patches but also inspectable records that explain how issue requirements are translated into code changes and post-edit evidence.We contribute THEMIS, a stageaware repair workflow that externalizes this requirement-to-repair process through semantic interpretation, a runtime requirement-code graph, graph-derived Developer guidance, retained repair rationale and patches, and postedit audit records.A retrospective audit of 300 SWE-bench Lite cases demonstrates that these artifacts provide broad support for cross-stage inspection: a complete Developer rationale is available for 288 cases, and 214 cases (71.3%) retain a complete audited field set connecting the selected stages.The retained records further enable systematic measurement of crossstage correspondence: target symbols recur in 62.6% of Developer rationales and in 62.8% of patches, rising to 75.8% when related symbols are included.In a paired 100-case comparison, the relational workflow resolves 19 cases versus 9 for the direct same-input condition; because the two conditions also differ in Analyzer output, graph-derived distillation, and Judge records, we report this as preliminary, workflow-level evidence rather than a causal effect of the graph component.Together, these results show that THEMIS makes otherwise implicit requirement-to-repair transitions inspectable, enabling systematic examination of how repair decisions persist, align, and evolve across stages.",
+   "authors": [
+    "Zewen Tao",
+    "Shin-nosuke Ishikawa"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7160837719",
+   "doi": "10.48550/arxiv.2605.07001",
+   "title": "SmellBench: Evaluating LLM Agents on Architectural Code Smell Repair",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 6,
+   "abstract": "Architectural code smells erode software maintainability and are costly to repair manually, yet unlike localized bugs, they require cross-module reasoning about design intent that challenges both developers and automated tools. While large language model agents excel at bug fixing and code-level refactoring, their ability to repair architectural code smells remains unexplored. We present the first empirical evaluation of LLM agents on architectural code smell repair. We contribute SmellBench, a task orchestration framework that incorporates smell-type-specific optimized prompts and supports iterative multi-step execution, together with a scoring methodology that separately evaluates repair effectiveness, false positive identification, and net codebase impact. We evaluate 11 agent configurations from four model families (GPT, Claude, Gemini, Mistral) on 65 hard-severity architectural smells detected by PyExamine in the Python project scikit-learn, validated against expert judgments. Expert validation reveals that 63.1% of detected smells are false positives, while the best agent achieves a 47.7% resolution rate. Agents identify false positives with up to $\u03ba= 0.94$ expert agreement, but repair aggressiveness and net codebase quality are inversely related: the most aggressive agent introduces 140 new smells. These findings expose a gap between current LLM capabilities in localized code transformations and the architectural understanding needed for cross-module refactoring. SmellBench provides reusable infrastructure for tracking progress on this underexplored dimension of automated software engineering. We release our code and data at https://doi.org/10.5281/zenodo.19247588.",
+   "authors": [
+    "Ion George Dinu",
+    "Marian Cristian Mih\u0103escu",
+    "Traian Eugen Rebedea"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223895003",
+   "doi": "10.48550/arxiv.2610.34290",
+   "title": "Repairing Broken Access Control in Web Applications with LLMs: An Empirical Benchmark Study",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Broken access control (BAC) ranks among the most severe web-application vulnerability classes, yet its automated repair remains largely unexplored. Unlike memory-safety vulnerabilities, BAC is a logic vulnerability whose repair demands a deep understanding of an application's access-control model and business semantics, which traditional automated vulnerability repair techniques handle poorly. Large language models (LLMs) open a promising avenue for this problem, but no standard benchmark exists for studying how well they repair BAC vulnerabilities. We construct BAC-Bench, the first benchmark for BAC repair, consisting of 46 real-world BAC vulnerabilities drawn from six widely used web applications spanning four programming languages. Each vulnerability is equipped with a sandboxed runtime environment, a PoC validation program and a functional test program. We further propose a BAC repair-strategy framework that characterizes any BAC patch along four dimensions, Position, Coverage, Mechanism, and Content. Evaluating eight base LLMs and two commercial LLM agents on BAC-Bench, we find that single-turn base LLMs repair 37.68% of the vulnerabilities on average, while two minimal scaffolds, Apply-Feedback and Navigate-and-Locate, raise this average to 66.03%, with the best base LLM reaching 75.36%, close to the 78.99% of the best agent. Notably, some LLM-generated patches surpass the official patches, and one incidentally closed a zero-day vulnerability that had lain dormant for three years. Our findings delineate the current capability boundary of LLM-based BAC repair and offer guidance toward its practical adoption.",
+   "authors": [
+    "Mingrui Liu",
+    "Liang He",
+    "Xinchu Wang",
+    "Yeting Li",
+    "Dongxu Han",
+    "Yunpeng Li",
+    "Yuling Liu"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7203886172",
+   "doi": "10.1007/s10664-026-10940-1",
+   "title": "CGARF: a causality-guided framework for reliable automated program repair",
+   "year": 2026,
+   "venue": "Empirical Software Engineering",
+   "type": "article",
+   "cited_by": 0,
+   "abstract": "",
+   "authors": [
+    "Le Yuan",
+    "Shaohua Liu",
+    "Yu Wang",
+    "Y.-W. Yao",
+    "Yifei Liu",
+    "Yu Wang",
+    "Tao Wang",
+    "Tianlu Mao"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7123271405",
+   "doi": "10.48550/arxiv.2601.05539",
+   "title": "LIDL: LLM Integration Defect Localization via Knowledge Graph-Enhanced Multi-Agent Analysis",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "LLM-integrated software, which embeds or interacts with large language models (LLMs) as functional components, exhibits probabilistic and context-dependent behaviors that fundamentally differ from those of traditional software. This shift introduces a new category of integration defects that arise not only from code errors but also from misaligned interactions among LLM-specific artifacts, including prompts, API calls, configurations, and model outputs. However, existing defect localization techniques are ineffective at identifying these LLM-specific integration defects because they fail to capture cross-layer dependencies across heterogeneous artifacts, cannot exploit incomplete or misleading error traces, and lack semantic reasoning capabilities for identifying root causes. To address these challenges, we propose LIDL, a multi-agent framework for defect localization in LLM-integrated software. LIDL (1) constructs a code knowledge graph enriched with LLM-related annotations that represent interaction boundaries across source code, prompts, and configuration files, (2) fuses complementary sources of error evidence to surface candidate defect locations, and (3) applies context-aware validation that uses counterfactual reasoning to distinguish true root causes from propagated symptoms. We evaluate LIDL on 146 real-world defect instances collected from 105 GitHub repositories and 16 agent-based systems. The results show that LIDL significantly outperforms seven state-of-the-art baselines in localization accuracy, improving Top-3 accuracy by 19.15%, 21.69%, and 21.65% at the file, function, and line levels. Notably, LIDL achieves these gains at a lower cost than most baselines. Our localization results also improve downstream repair success by 30.77% over the best-performing baselines.",
+   "authors": [
+    "Gou Tan",
+    "Zilong He",
+    "Min Li",
+    "Pengfei Chen",
+    "Jieke Shi",
+    "Zhensu Sun",
+    "Ting Zhang",
+    "Danwen Chen"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417537775",
+   "doi": "10.1109/ase63991.2025.00100",
+   "title": "Seeing is Fixing: Cross-Modal Reasoning with Multimodal LLMs for Visual Software Issue Repair",
+   "year": 2025,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 20,
+   "abstract": "Large language model (LLM)-based automated program repair (APR) techniques have shown promising results in resolving real-world github issue tasks. Existing APR systems are primarily evaluated in unimodal settings (e.g., SWE-bench), relying solely on textual issue descriptions and source code. However, these autonomous systems struggle to resolve multimodal problem scenarios (e.g., SWE-bench M) due to limitations in interpreting and leveraging visual information. In multimodal scenarios, LLMs need to rely on visual information in the graphical user interface (GUI) to understand bugs and generate fixes. To bridge this gap, we propose GUIRepair, a cross-modal reasoning approach for resolving multimodal issue scenarios by understanding and capturing visual information. Specifically, GUIRepair integrates two key components including Image2Code and Code2Image to enhance fault comprehension and patch validation. Image2Code extracts relevant project documents based on the issue report, then applies this domain knowledge to generate the reproduced code responsible for the visual symptoms, effectively translating GUI images into executable context for better fault comprehension. Code2Image replays the visual issue scenario using the reproduced code and captures GUI renderings of the patched program to assess whether the fix visually resolves the issue, providing feedback for patch validation. We evaluate GUIRepair on SWE-bench M, and the approach demonstrates significant effectiveness. When utilizing GPT-4o as the base model, GUIRepair solves 157 instances, outperforming the best open-source baseline by 26 instances. Furthermore, when using o4-mini as the base model, GUIRepair can achieve even better results and solve 175 instances, outperforming the top commercial system by 22 instances. This emphasizes the success of our new perspective on incorporating cross-modal reasoning by understanding and capturing visual information to resolve multimodal issues.",
+   "authors": [
+    "Kai Huang",
+    "Jian Zhang",
+    "Xiaofei Xie",
+    "Chunyang Chen"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7169854047",
+   "doi": "10.48550/arxiv.2607.17957",
+   "title": "DepRepair: LLM-Based Source-Code Repair for Dependency Breaking Changes",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 3,
+   "abstract": "Modern software projects depend on numerous third-party libraries, whose updates often introduce breaking changes. Adapting consumer code to such changes remains labor-intensive and error-prone. Existing work either characterizes dependency breaking changes without producing a verified consumer-side patch, or studies automated repair only in settings where the failure and repair context are contained within the target repository. However, dependency breaking changes violate this assumption: the decisive repair evidence lies upstream in release notes and API diffs, and no failing test localizes where the consumer breaks, leaving the repair under-informed. To study this cross-repository problem on real data, we introduce DepBench, a benchmark of 95 real-world dependency-update instances across four ecosystems, each paired with a Docker-based executable oracle that runs the consumer's own tests. To address these challenges, we propose DepRepair, a single-call LLM approach that grounds repair in structured upstream evidence through three components: an evidence filter that distills relevant upstream changes, a usage locator that identifies affected consumer sites, and a subcategory-aware guide that tailors repairs to the breaking-change type. Evaluated on DepBench, DepRepair attains the highest executable pass rate on each backbone, achieving 89.5% with GPT-5.5 and 82.1% with Claude Opus 4.6. We further find that raw upstream evidence reduces LLM and agent pass rates by 7--23 percentage points, whereas structured evidence consistently improves them.",
+   "authors": [
+    "Shenghao Yang",
+    "Bo Lu",
+    "Yaochen Liu",
+    "Yu Kang",
+    "Qiongfang Zhang",
+    "Chetan Bansal",
+    "Saravan Rajmohan",
+    "Minghua Ma"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411552133",
+   "doi": "10.1109/icse55347.2025.00080",
+   "title": "SpecRover: Code Intent Extraction via LLMs",
+   "year": 2025,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 133,
+   "abstract": "Autonomous program improvement typically involves automatically producing bug fixes and feature additions. Such program improvement can be accomplished by a combination of large language model (LLM) and program analysis capabilities, in the form of an LLM agent. Since program repair or program improvement typically requires a specification of intended behavior - specification inference can be useful for producing high quality program patches. In this work, we examine efficient and low-cost workflows for iterative specification inference within an LLM agent. Given a GitHub issue to be resolved in a software project, our goal is to conduct iterative code search accompanied by specification inference - thereby inferring intent from both the project structure and behavior. The intent thus captured is examined by a reviewer agent with the goal of vetting the patches as well as providing a measure of confidence in the vetted patches. Our approach SpecRover is built on the open-source LLM agent AutoCodeRover. In an evaluation on the full SWE-Bench consisting of 2294 GitHub issues, it shows more than 50% improvement in efficacy over AutoCodeRover. Compared to the open-source agents available, our work shows modest cost ($0.65 per issue) in resolving an average GitHub issue in SWE-Bench lite. The production of explanation by SpecRover allows for a better \u201csignal\u201d to be given to the developer, on when the suggested patches can be accepted with confidence. SpecRover also seeks to demonstrate the continued importance of specification inference in automated program repair, even as program repair technologies enter the LLM era.",
+   "authors": [
+    "Haifeng Ruan",
+    "Yuntong Zhang",
+    "Abhik Roychoudhury"
+   ],
+   "facet": "F6_scaffold",
+   "query": "agentless localization repair LLM"
+  }
+ ]
+}

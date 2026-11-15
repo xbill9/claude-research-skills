@@ -1,0 +1,355 @@
+{
+ "entry": {
+  "key": "ref5",
+  "n": 5,
+  "authors": "B. Fatemi, J. Halcrow, and B. Perozzi",
+  "first_author_surname": "Fatemi",
+  "title": "Talk like a graph: Encoding graphs for large language models",
+  "year": 2024,
+  "venue_claimed": "ICLR",
+  "arxiv": "2310.04560",
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "Talk like a graph: Encoding graphs for large language models",
+  "candidates": [
+   {
+    "doi": "10.1016/j.egyr.2025.12.011",
+    "title": "Adaptable semantic interoperability in heterogeneous smart grids using Large Language Models",
+    "authors": [
+     "Narges Fatemi",
+     "Javad Fattahi"
+    ],
+    "first_author_family": "Fatemi",
+    "author_count": 2,
+    "year": 2025,
+    "venue": "Energy Reports",
+    "type": "journal-article",
+    "publisher": "Elsevier BV",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.5033,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1145/3706119",
+    "title": "A Comparative Analysis of Instruction Fine-Tuning Large Language Models for Financial Text Classification",
+    "authors": [
+     "Sorouralsadat Fatemi",
+     "Yuheng Hu",
+     "Maryam Mousavi"
+    ],
+    "first_author_family": "Fatemi",
+    "author_count": 3,
+    "year": 2025,
+    "venue": "ACM Transactions on Management Information Systems",
+    "type": "journal-article",
+    "publisher": "Association for Computing Machinery (ACM)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4268,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1109/access.2023.3345414",
+    "title": "Evaluating the Effectiveness of GPT Large Language Model for News Classification in the IPTC News Ontology",
+    "authors": [
+     "Bahareh Fatemi",
+     "Fazle Rabbi",
+     "Andreas L. Opdahl"
+    ],
+    "first_author_family": "Fatemi",
+    "author_count": 3,
+    "year": 2023,
+    "venue": "IEEE Access",
+    "type": "journal-article",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.4324/9781315171593-7",
+    "title": "The Interplay of Psychology of Language and Discourse",
+    "authors": [
+     "Sayyed Mohsen Fatemi"
+    ],
+    "first_author_family": "Fatemi",
+    "author_count": 1,
+    "year": 2018,
+    "venue": "The Psychological Power of Language",
+    "type": "book-chapter",
+    "publisher": "Routledge",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3929,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1109/iccke50421.2020.9303694",
+    "title": "Attributed Graph Clustering via Deep Adaptive Graph Maximization",
+    "authors": [
+     "Bahareh Fatemi",
+     "Soheila Molaei",
+     "Hadi Zare",
+     "Hadi Veisi"
+    ],
+    "first_author_family": "Fatemi",
+    "author_count": 4,
+    "year": 2020,
+    "venue": "2020 10th International Conference on Computer and Knowledge Engineering (ICCKE)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.374,
+    "first_author_matches": true,
+    "year_matches": false
+   }
+  ],
+  "best_title_similarity": 0.5033,
+  "best_is_match": false
+ },
+ "arxiv_by_id": {
+  "status": 200,
+  "entries": [
+   {
+    "id": "2310.04560v1",
+    "title": "Talk like a Graph: Encoding Graphs for Large Language Models",
+    "authors": [
+     "Bahare Fatemi",
+     "Jonathan Halcrow",
+     "Bryan Perozzi"
+    ],
+    "published": "2023-10-06T19:55:21Z",
+    "updated": "2023-10-06T19:55:21Z",
+    "journal_ref": null,
+    "doi": null,
+    "comment": null
+   }
+  ]
+ },
+ "crossref_arxiv_doi": {
+  "verified": false,
+  "doi": "10.48550/arXiv.2310.04560",
+  "error": "Crossref HTTP 404"
+ },
+ "openalex_by_arxiv_doi": {
+  "status": 200,
+  "work": {
+   "id": "https://openalex.org/W4387559176",
+   "doi": "https://doi.org/10.48550/arxiv.2310.04560",
+   "title": "Talk like a Graph: Encoding Graphs for Large Language Models",
+   "year": 2023,
+   "type": "preprint",
+   "authors": [
+    "Bahare Fatemi",
+    "Jonathan Halcrow",
+    "Bryan Perozzi"
+   ],
+   "primary_location": "arXiv (Cornell University)",
+   "locations": [
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": "submittedVersion",
+     "landing": "http://arxiv.org/abs/2310.04560"
+    },
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": null,
+     "landing": "https://doi.org/10.48550/arxiv.2310.04560"
+    }
+   ]
+  }
+ },
+ "arxiv_title_search": {
+  "status": 200,
+  "entries": [
+   {
+    "id": "2310.04560v1",
+    "title": "Talk like a Graph: Encoding Graphs for Large Language Models",
+    "authors": [
+     "Bahare Fatemi",
+     "Jonathan Halcrow",
+     "Bryan Perozzi"
+    ],
+    "published": "2023-10-06T19:55:21Z",
+    "updated": "2023-10-06T19:55:21Z",
+    "journal_ref": null,
+    "doi": null,
+    "comment": null
+   }
+  ]
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W4387559176",
+    "doi": "https://doi.org/10.48550/arxiv.2310.04560",
+    "title": "Talk like a Graph: Encoding Graphs for Large Language Models",
+    "year": 2023,
+    "type": "preprint",
+    "authors": [
+     "Bahare Fatemi",
+     "Jonathan Halcrow",
+     "Bryan Perozzi"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2310.04560"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2310.04560"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4402915290",
+    "doi": "https://doi.org/10.1109/tkde.2024.3469578",
+    "title": "Large Language Models on Graphs: A Comprehensive Survey",
+    "year": 2024,
+    "type": "article",
+    "authors": [
+     "Bowen Jin",
+     "Gang Liu",
+     "Chi Han",
+     "Meng Jiang",
+     "Heng Ji",
+     "Jiawei Han"
+    ],
+    "primary_location": "IEEE Transactions on Knowledge and Data Engineering",
+    "locations": [
+     {
+      "source": "IEEE Transactions on Knowledge and Data Engineering",
+      "source_type": "journal",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1109/tkde.2024.3469578"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2312.02783"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2312.02783"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4396945188",
+    "doi": "https://doi.org/10.1145/3637528.3671460",
+    "title": "A Survey of Large Language Models for Graphs",
+    "year": 2024,
+    "type": "conference-paper",
+    "authors": [
+     "Xubin Ren",
+     "Jiabin Tang",
+     "Dawei Yin",
+     "Nitesh V. Chawla",
+     "Chao Huang"
+    ],
+    "primary_location": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)",
+    "locations": [
+     {
+      "source": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1145/3637528.3671460"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2405.08011"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2405.08011"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4391833337",
+    "doi": "https://doi.org/10.48550/arxiv.2402.08170",
+    "title": "LLaGA: Large Language and Graph Assistant",
+    "year": 2024,
+    "type": "preprint",
+    "authors": [
+     "Runjin Chen",
+     "Tong Feng Zhao",
+     "Ajay Kumar Jaiswal",
+     "Neil Shah",
+     "Wang, Zhangyang"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2402.08170"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2402.08170"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4391710060",
+    "doi": "https://doi.org/10.48550/arxiv.2402.05862",
+    "title": "Let Your Graph Do the Talking: Encoding Structured Data for LLMs",
+    "year": 2024,
+    "type": "preprint",
+    "authors": [
+     "Bryan Perozzi",
+     "Bahare Fatemi",
+     "Dustin Zelle",
+     "Anton Tsitsulin",
+     "Mehran Kazemi",
+     "Rami Al\u2010Rfou",
+     "Jonathan Halcrow"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2402.05862"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2402.05862"
+     }
+    ]
+   }
+  ]
+ }
+}

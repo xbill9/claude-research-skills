@@ -1,0 +1,527 @@
+{
+ "url": "https://api.openalex.org/works?search=self-debugging+large+language+model+test+feedback+repair&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4365205411",
+   "doi": "10.48550/arxiv.2304.05128",
+   "title": "Teaching Large Language Models to Self-Debug",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 853,
+   "abstract": "Large language models (LLMs) have achieved impressive performance on code generation. However, for complex programming tasks, generating the correct solution in one go becomes challenging, thus some prior works have designed program repair approaches to improve code generation performance. In this work, we propose Self-Debugging, which teaches a large language model to debug its predicted program via few-shot demonstrations. In particular, we demonstrate that Self-Debugging can teach the large language model to perform rubber duck debugging; i.e., without any human feedback on the code correctness or error messages, the model is able to identify its mistakes by investigating the execution results and explaining the generated code in natural language. Self-Debugging achieves the state-of-the-art performance on several code generation benchmarks, including the Spider dataset for text-to-SQL generation, TransCoder for C++-to-Python translation, and MBPP for text-to-Python generation. On the Spider benchmark where there are no unit tests to verify the correctness of predictions, Self-Debugging with code explanation consistently improves the baseline by 2-3%, and improves the prediction accuracy on problems of the hardest level by 9%. On TransCoder and MBPP where unit tests are available, Self-Debugging improves the baseline accuracy by up to 12%. Meanwhile, by leveraging feedback messages and reusing failed predictions, Self-Debugging notably improves sample efficiency, and can match or outperform baseline models that generate more than 10x candidate programs.",
+   "authors": [
+    "Xinyun Chen",
+    "Maxwell Lin",
+    "Nathanael Sch\u00e4rli",
+    "Denny Zhou"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4405556610",
+   "doi": "10.1007/s10664-024-10594-x",
+   "title": "Explainable automated debugging via large language model-driven scientific debugging",
+   "year": 2024,
+   "venue": "Empirical Software Engineering",
+   "type": "article",
+   "cited_by": 119,
+   "abstract": "Abstract Automated debugging techniques have the potential to reduce developer effort in debugging. However, while developers want rationales for the provided automatic debugging results, existing techniques are ill-suited to provide them, as their deduction process differs significantly froof human developers. Inspired by the way developers interact with code when debugging, we propose Automated Scientific Debugging ( AutoSD ), a technique that prompts large language models to automatically generate hypotheses, uses debuggers to interact with buggy code, and thus automatically reach conclusions prior to patch generation. In doing so, we aim to produce explanations of how a specific patch has been generated, with the hope that these explanations will lead to enhanced developer decision-making. Our empirical analysis on three program repair benchmarks shows that AutoSD performs competitively with other program repair baselines, and that it can indicate when it is confident in its results. Furthermore, we perform a human study with 20 participants to evaluate AutoSD -generated explanations. Participants with access to explanations judged patch correctness more accurately in five out of six real-world bugs studied. Furthermore, 70% of participants answered that they wanted explanations when using repair tools, and 55% answered that they were satisfied with the Scientific Debugging presentation.",
+   "authors": [
+    "Sungmin Kang",
+    "Bei Chen",
+    "Shin Yoo",
+    "Jian\u2013Guang Lou"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417248053",
+   "doi": "10.48550/arxiv.2504.06939",
+   "title": "FeedbackEval: A Benchmark for Evaluating Large Language Models in Feedback-Driven Code Repair Tasks",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 22,
+   "abstract": "Code repair is a fundamental task in software development, facilitating efficient bug resolution and software maintenance. Although large language models (LLMs) have demonstrated considerable potential in automated code repair, their ability to comprehend and leverage diverse types of feedback, which is crucial for iterative self-correction in authentic debugging scenarios, remains insufficiently understood. To bridge this gap, we introduce FeedbackEval, a systematic benchmark constructed from three heterogeneous sources (HumanEval, CoderEval, and SWE-Bench-verified), to evaluate LLMs' feedback comprehension and code repair performance. We conduct a comprehensive empirical study on five state-of-the-art LLMs, including GPT-4o, Claude-3.5, Deepseek-R1, GLM-4, and Qwen2.5, to evaluate their behavior under both single-iteration and iterative code repair settings. Our results show that mixed feedback yields the highest repair success (63.6%), with LLM-Expert and test feedback providing strong targeted gains (62.9% and 57.9%, respectively), while minimal (53.1%) and compiler feedback (49.2%) offer moderate benefits and LLM-Skilled proves least effective (48.8%). Iterative feedback further enhances repair performance, though the marginal benefit diminishes after two or three iterations. Moreover, prompt structure is shown to be critical: structured reasoning (RR, CoT) and dynamic example selection deliver notable improvements, whereas removing semantic cues such as docstrings or role-play causes severe degradation. This work introduces a robust benchmark and delivers practical insights to advance the understanding and development of feedback-driven code repair using LLMs.",
+   "authors": [
+    "Dekun Dai",
+    "Mingwei Liu",
+    "Anji Li",
+    "Jialun Cao",
+    "Yanlin Wang",
+    "Chong Wang",
+    "Xin Peng",
+    "Zibin Zheng"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4390833862",
+   "doi": "10.48550/arxiv.2401.04621",
+   "title": "DebugBench: Evaluating Debugging Capability of Large Language Models",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 107,
+   "abstract": "Large Language Models (LLMs) have demonstrated exceptional coding capability. However, as another critical component of programming proficiency, the debugging capability of LLMs remains relatively unexplored. Previous evaluations of LLMs' debugging ability are significantly limited by the risk of data leakage, the scale of the dataset, and the variety of tested bugs. To overcome these deficiencies, we introduce `DebugBench', an LLM debugging benchmark consisting of 4,253 instances. It covers four major bug categories and 18 minor types in C++, Java, and Python. To construct DebugBench, we collect code snippets from the LeetCode community, implant bugs into source data with GPT-4, and assure rigorous quality checks. We evaluate two commercial and four open-source models in a zero-shot scenario. We find that (1) while closed-source models exhibit inferior debugging performance compared to humans, open-source models relatively lower pass rate scores; (2) the complexity of debugging notably fluctuates depending on the bug category; (3) incorporating runtime feedback has a clear impact on debugging performance which is not always helpful. As an extension, we also compare LLM debugging and code generation, revealing a strong correlation between them for closed-source models. These findings will benefit the development of LLMs in debugging.",
+   "authors": [
+    "Runchu Tian",
+    "Yining Ye",
+    "Yujia Qin",
+    "Xin Cong",
+    "Yankai Lin",
+    "Yinxu Pan",
+    "Yesai Wu",
+    "Hui, Haotian"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4413274327",
+   "doi": "10.2139/ssrn.5396508",
+   "title": "Large Language Model Guided Self-Debugging Code Generation",
+   "year": 2025,
+   "venue": "SSRN Electronic Journal",
+   "type": "preprint",
+   "cited_by": 18,
+   "abstract": "",
+   "authors": [
+    "Muntasir Adnan",
+    "C. C. N. Kuhn",
+    "Zhiwei Xu"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4410407476",
+   "doi": "10.1145/3735638",
+   "title": "HDLdebugger: Streamlining HDL debugging with Large Language Models",
+   "year": 2025,
+   "venue": "ACM Transactions on Design Automation of Electronic Systems",
+   "type": "article",
+   "cited_by": 77,
+   "abstract": "In the domain of chip design, hardware description languages (HDLs) play a pivotal role. However, due to the inherent complexity of HDLs and the scarcity of high-quality debugging resources, HDL bug fixing remains a challenging and time-consuming task, even for seasoned engineers. Consequently, there is a pressing need to develop automated HDL code debugging models, which can alleviate the burden on hardware engineers. Despite the strong capabilities of large language models (LLMs) in generating, completing, and debugging software code, their utilization in the specialized field of HDL debugging has been limited and, to date, has not yielded satisfactory results. In this paper, we propose an LLM-assisted HDL debugging framework, namely HDLdebugger, which consists of HDL debugging data generation via a reverse engineering approach, a search engine for retrieval-augmented generation, and a retrieval-augmented LLM fine-tuning approach. Through the integration of these components, HDLdebugger can automate and streamline HDL debugging for chip design. Our comprehensive experiments, conducted on an HDL code dataset sourced from Industry, reveal that HDLdebugger outperforms 13 cutting-edge LLM baselines, displaying exceptional effectiveness in HDL code debugging.",
+   "authors": [
+    "Xufeng Yao",
+    "Haoyang Li",
+    "Tszho Chan",
+    "Wenyi Xiao",
+    "Mingxuan Yuan",
+    "Yu Huang",
+    "Lei Chen",
+    "Bei Yu"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402684113",
+   "doi": "10.18653/v1/2024.findings-acl.247",
+   "title": "DebugBench: Evaluating Debugging Capability of Large Language Models",
+   "year": 2024,
+   "venue": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+   "type": "conference-paper",
+   "cited_by": 67,
+   "abstract": "Runchu Tian, Yining Ye, Yujia Qin, Xin Cong, Yankai Lin, Yinxu Pan, Yesai Wu, Hui Haotian, Liu Weichuan, Zhiyuan Liu, Maosong Sun. Findings of the Association for Computational Linguistics: ACL 2024. 2024.",
+   "authors": [
+    "Runchu Tian",
+    "Yining Ye",
+    "Yujia Qin",
+    "Xin Cong",
+    "Yankai Lin",
+    "Yinxu Pan",
+    "Yesai Wu",
+    "Hui Haotian"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402670687",
+   "doi": "10.18653/v1/2024.findings-acl.49",
+   "title": "Debug like a Human: A Large Language Model Debugger via Verifying Runtime Execution Step by Step",
+   "year": 2024,
+   "venue": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+   "type": "conference-paper",
+   "cited_by": 221,
+   "abstract": "Large language models (LLMs) are leading significant progress in code generation.Beyond one-pass code generation, recent works further integrate unit tests and program verifiers into LLMs to iteratively refine the generated programs.However, these works consider the generated program as an indivisible entity, which falls short for LLMs in debugging the programs, especially when the programs contain complex logic flows and data operations.In contrast, when human developers debug programs, they typically set breakpoints and selectively examine runtime execution information.The execution flow and the intermediate variables play a crucial role in the debugging process, yet they are underutilized in the existing literature on code generation.In this study, we introduce Large Language Model Debugger (LDB), a novel debugging framework that enables LLMs to refine their generated programs with the runtime execution information.Specifically, LDB segments programs into basic blocks and tracks the values of intermediate variables after each block throughout runtime execution.This allows LLMs to concentrate on simpler code units within the overall execution flow, verify their correctness against the task description block by block, and effectively pinpoint any potential errors.Experiments demonstrate that LDB consistently enhances the baseline performance by up to 9.8% across the HumanEval, MBPP, and TransCoder benchmarks, archiving new state-of-the-art performance in code debugging for various LLM selections.",
+   "authors": [
+    "Zhong Li",
+    "Zilong Wang",
+    "Jingbo Shang"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4387355948",
+   "doi": "10.48550/arxiv.2310.01798",
+   "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 748,
+   "abstract": "Large Language Models (LLMs) have emerged as a groundbreaking technology with their unparalleled text generation capabilities across various applications. Nevertheless, concerns persist regarding the accuracy and appropriateness of their generated content. A contemporary methodology, self-correction, has been proposed as a remedy to these issues. Building upon this premise, this paper critically examines the role and efficacy of self-correction within LLMs, shedding light on its true potential and limitations. Central to our investigation is the notion of intrinsic self-correction, whereby an LLM attempts to correct its initial responses based solely on its inherent capabilities, without the crutch of external feedback. In the context of reasoning, our research indicates that LLMs struggle to self-correct their responses without external feedback, and at times, their performance even degrades after self-correction. Drawing from these insights, we offer suggestions for future research and practical applications in this field.",
+   "authors": [
+    "Jie Huang",
+    "Xinyun Chen",
+    "Swaroop Ranjan Mishra",
+    "Huaixiu Zheng",
+    "Adams Wei Yu",
+    "Xinying Song",
+    "Denny Zhou"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7225730960",
+   "doi": "10.61784/wjikm4029",
+   "title": "EXECUTION-FEEDBACK-GUIDED CONTEXT SELECTION FOR LARGE LANGUAGE MODEL-BASED SOFTWARE TESTING AND DEBUGGING",
+   "year": 2023,
+   "venue": "World\u00a0Journal\u00a0of\u00a0Information\u00a0and\u00a0Knowledge\u00a0Management\u00a0",
+   "type": "article",
+   "cited_by": 4,
+   "abstract": "Large language models (LLMs) are now routinely used to generate unit tests, localize faults and repair programs, yet their effectiveness on real projects hinges on a step that is rarely engineered explicitly: deciding which code enters the prompt. Whole files exceed context budgets, lexical retrieval misses the helper functions in which faults hide, and stack traces are silent for assertion failures. This paper presents EFCS, an execution-feedback-guided context selection approach that turns the by-products of test execution\u2014test outcomes, exception traces, statement-level spectra and dynamic call edges\u2014into a relevance model over function-level code units. EFCS fuses spectrum and traceback evidence, assembles a token-budgeted context from execution-trimmed function bodies and interface skeletons of runtime callees, and re-selects the context across debugging iterations through an evidence memory and a cost-aware feedback-escalation policy. We evaluate EFCS on 897 single-fault and 210 two-fault instances seeded into seven real-world Python projects with 4,182 developer-written tests, counting tokens with the cl100k tokenizer of GPT-3.5 and GPT-4. On held-out faults, EFCS places the faulty statement inside a 1K-token context for 94.6% of the faults, compared with 38.2% for BM25 retrieval, 58.7% for stack-trace selection and 9.6% for focal-file prompting; under a 2K budget it delivers interface-complete contexts for 95.3% of the faults while using 10.9% fewer tokens than spectrum-based selection. In a replay of iterative debugging, EFCS resolves 97.2% of two-fault instances within five model calls, lowers the share of wasted calls to 8.6%, and its escalation policy reduces traced test executions by 64.8% at a comparable resolution rate.",
+   "authors": [
+    "Tianjun Mo",
+    "Gaike Wang",
+    "Enmiao Feng",
+    "PengFei Li"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7155184682",
+   "doi": "10.48550/arxiv.2604.19305",
+   "title": "DebugRepair: Enhancing LLM-Based Automated Program Repair via Self-Directed Debugging",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 3,
+   "abstract": "Automated Program Repair (APR) has benefited from the code understanding and generation capabilities of Large Language Models (LLMs). Existing feedback-based APR methods iteratively refine candidate patches using test execution feedback and have shown promising results. However, most rely on outcome-level failure symptoms, such as stack traces, which show how failures are observed but fail to expose the intermediate runtime states critical for root-cause analysis. As a result, LLMs often infer bug causes without sufficient runtime evidence, leading to incorrect patches. To address this limitation, we propose DebugRepair, a self-directed debugging framework for LLM-based APR. DebugRepair enhances patch refinement with intermediate runtime evidence collected through simulated debugging. It consists of three components: test semantic purification, simulated instrumentation, and debugging-driven conversational repair. Together, they reduce noisy test context, collect runtime traces through targeted debugging statements with rule-based fallback, and progressively refine candidate patches using prior attempts and newly observed runtime states. We evaluate DebugRepair on three benchmarks across Java and Python. Experiments show that DebugRepair achieves state-of-the-art performance against 15 approaches. With GPT-3.5, it correctly fixes 224 bugs on Defects4J, outperforming prior SOTA LLM-based methods by 26.2%. With DeepSeek-V3, it correctly fixes 295 Defects4J bugs, surpassing the second-best baseline by 59 bugs. Across five additional backbone LLMs, DebugRepair improves repair performance by 51.3% over vanilla settings. Ablation studies further confirm the effectiveness of all components.",
+   "authors": [
+    "Linhao Wu",
+    "Yifei Pei",
+    "Zhen Yang",
+    "Kainan Li",
+    "\u5362\u4e2d\u676d",
+    "Hao Tan",
+    "Xiran Lyu",
+    "Jia Li"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4389158536",
+   "doi": "10.1145/3611643.3616243",
+   "title": "Baldur: Whole-Proof Generation and Repair with Large Language Models",
+   "year": 2023,
+   "venue": "ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)",
+   "type": "conference-paper",
+   "cited_by": 215,
+   "abstract": "Formally verifying software is a highly desirable but labor-intensive task. Recent work has developed methods to automate formal verification using proof assistants, such as Coq and Isabelle/HOL, e.g., by training a model to predict one proof step at a time and using that model to search through the space of possible proofs. This paper introduces a new method to automate formal verification: We use large language models, trained on natural language and code and fine-tuned on proofs, to generate whole proofs at once. We then demonstrate that a model fine-tuned to repair generated proofs further increasing proving power. This paper: (1) Demonstrates that whole-proof generation using transformers is possible and is as effective but more efficient than search-based techniques. (2) Demonstrates that giving the learned model additional context, such as a prior failed proof attempt and the ensuing error message, results in proof repair that further improves automated proof generation. (3) Establishes, together with prior work, a new state of the art for fully automated proof synthesis. We reify our method in a prototype, Baldur, and evaluate it on a benchmark of 6,336 Isabelle/HOL theorems and their proofs, empirically showing the effectiveness of whole-proof generation, repair, and added context. We also show that Baldur complements the state-of-the-art tool, Thor, by automatically generating proofs for an additional 8.7% of the theorems. Together, Baldur and Thor can prove 65.7% of the theorems fully automatically. This paper paves the way for new research into using large language models for automating formal verification.",
+   "authors": [
+    "Emily First",
+    "Markus N. Rabe",
+    "Talia Ringer",
+    "Yuriy Brun"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4391974543",
+   "doi": "10.1109/tse.2024.3368208",
+   "title": "Software Testing With Large Language Models: Survey, Landscape, and Vision",
+   "year": 2024,
+   "venue": "IEEE Transactions on Software Engineering",
+   "type": "article",
+   "cited_by": 852,
+   "abstract": "Pre-trained large language models (LLMs) have recently emerged as a breakthrough technology in natural language processing and artificial intelligence, with the ability to handle large-scale datasets and exhibit remarkable performance across a wide range of tasks. Meanwhile, software testing is a crucial undertaking that serves as a cornerstone for ensuring the quality and reliability of software products. As the scope and complexity of software systems continue to grow, the need for more effective software testing techniques becomes increasingly urgent, making it an area ripe for innovative approaches such as the use of LLMs. This paper provides a comprehensive review of the utilization of LLMs in software testing. It analyzes 102 relevant studies that have used LLMs for software testing, from both the software testing and LLMs perspectives. The paper presents a detailed discussion of the software testing tasks for which LLMs are commonly used, among which test case preparation and program repair are the most representative. It also analyzes the commonly used LLMs, the types of prompt engineering that are employed, as well as the accompanied techniques with these LLMs. It also summarizes the key challenges and potential opportunities in this direction. This work can serve as a roadmap for future research in this area, highlighting potential avenues for exploration, and identifying gaps in our current understanding of the use of LLMs in software testing.",
+   "authors": [
+    "Junjie Wang",
+    "Yuchao Huang",
+    "Chunyang Chen",
+    "Zhe Liu",
+    "Song Wang",
+    "Qing Wang"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7133184417",
+   "doi": "10.1145/3799693",
+   "title": "A Systematic Literature Review on Large Language Models for Automated Program Repair",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "review",
+   "cited_by": 149,
+   "abstract": "Automated Program Repair (APR) attempts to patch software bugs and reduce manual debugging efforts. Very recently, with the advances in Large Language Models (LLMs), a rapidly increasing number of APR techniques have been proposed, significantly facilitating software development and maintenance and demonstrating remarkable performance. However, due to ongoing explorations in the LLM-based APR field, it is challenging for researchers to understand the current achievements, challenges, and potential opportunities. This work provides the first systematic literature review to summarize the applications of LLMs in APR between 2020 and 2025. We analyze 189 relevant papers from LLMs, APR and their integration perspectives. First, we categorize existing popular LLMs that are applied to support APR and outline four types of utilization strategies for their deployment. Besides, we detail some specific repair scenarios that benefit from LLMs, e.g., semantic bugs and security vulnerabilities. Furthermore, we discuss several critical aspects of integrating LLMs into APR research, e.g., input forms and open science. Finally, we highlight a set of challenges remaining to be investigated and the potential guidelines for future research. Overall, our paper provides a systematic overview of the research landscape to the APR community, helping researchers gain a comprehensive understanding of achievements and promote future research. Our artifacts are publicly available at the GitHub repository: https://github.com/iSEngLab/AwesomeLLM4APR .",
+   "authors": [
+    "Quanjun Zhang",
+    "Chunrong Fang",
+    "Yang Xie",
+    "Yuxiang Ma",
+    "Weisong Sun",
+    "Yun Jin Yang",
+    "Zhenyu Chen"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403413311",
+   "doi": "10.1145/3674805.3690758",
+   "title": "Debugging with Open-Source Large Language Models: An Evaluation",
+   "year": 2024,
+   "venue": "Proceedings of the ... ACM-IEEE International Symposium on Empirical Software Engineering and Measurement/International Symposium on Empirical Software Engineering and Measurement",
+   "type": "conference-paper",
+   "cited_by": 26,
+   "abstract": "Large language models have shown good potential in supporting software development tasks. This is why more and more developers turn to LLMs (e.g. ChatGPT) to support them in fixing their buggy code. While this can save time and effort, many companies prohibit it due to strict code sharing policies. To address this, companies can run open-source LLMs locally. But until now there is not much research evaluating the performance of open-source large language models in debugging. This work is a preliminary evaluation of the capabilities of open-source LLMs in fixing buggy code. The evaluation covers five open-source large language models and uses the benchmark DebugBench which includes more than 4000 buggy code instances written in Python, Java and C++. Open-source LLMs achieved scores ranging from 43.9% to 66.6% with DeepSeek-Coder achieving the best score for all three programming languages.",
+   "authors": [
+    "Yacine Majdoub",
+    "Eya Ben Charrada"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4409495635",
+   "doi": "10.1109/icstw64639.2025.10962485",
+   "title": "Mutation Testing via Iterative Large Language Model-Driven Scientific Debugging",
+   "year": 2025,
+   "venue": "IEEE International Conference on Software Testing, Verification and Validation Workshops (ICSTW)",
+   "type": "conference-paper",
+   "cited_by": 17,
+   "abstract": "Large Language Models (LLMs) can generate plausible test code. Intuitively they generate this by imitating tests seen in their training data, rather than reasoning about execution semantics. However, such reasoning is important when applying mutation testing, where individual tests need to demonstrate differences in program behavior between a program and specific artificial defects (mutants). In this paper, we evaluate whether Scientific Debugging, which has been shown to help LLMs when debugging, can also help them to generate tests for mutants. In the resulting approach, LLMs form hypotheses about how to kill specific mutants, and then iteratively generate and refine tests until they succeed, all with detailed explanations for each step. We compare this method to three baselines: (1) directly asking the LLM to generate tests, (2) repeatedly querying the LLM when tests fail, and (3) search-based test generation with Pynguin. Our experiments evaluate these methods based on several factors, including mutation score, code coverage, success rate, and the ability to identify equivalent mutants. The results demonstrate that LLMs, although requiring higher computational cost, consistently outperform Pynguin in generating tests with better fault detection and coverage. Importantly, we observe that the iterative refinement of test cases is important for achieving high-quality test suites.",
+   "authors": [
+    "Philipp Straubinger",
+    "Marvin Kreis",
+    "Stephan Lukasczyk",
+    "Gordon Fraser"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4396831896",
+   "doi": "10.1145/3613905.3650764",
+   "title": "Exploring and Characterizing Large Language Models for Embedded System Development and Debugging",
+   "year": 2024,
+   "venue": "CHI Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA)",
+   "type": "conference-paper",
+   "cited_by": 47,
+   "abstract": "Large language models (LLMs) have shown remarkable abilities to generate code. However, their ability to develop software for physical computing and embedded systems, which requires cross-domain hardware and software knowledge, has not been thoroughly studied. We observe through our experiments and a 15-user pilot study that even when LLMs fail to produce working code, they can generate helpful reasoning about embedded design tasks, as well as specific debugging suggestions for both novice and expert developers. These results highlight the potential to develop AI assistants to dramatically lower the barrier to entry for working with hardware. To evaluate the capabilities and limitations of LLMs, we develop an automated testbench to quantify LLM performance on embedded programming tasks and perform 450 trials. We leverage these findings to analyze how programmers interact with these tools including their productivity and sense of fulfillment and outline a human-AI collaborative workflow for developing and debugging embedded systems.",
+   "authors": [
+    "Zachary Englhardt",
+    "Richard C. Li",
+    "Dilini Nissanka",
+    "Zhihan Zhang",
+    "Girish Narayanswamy",
+    "Joseph Breda",
+    "Xin Liu",
+    "Shwetak Patel"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4412944903",
+   "doi": "10.18653/v1/2025.acl-long.881",
+   "title": "Revisit Self-Debugging with Self-Generated Tests for Code Generation",
+   "year": 2025,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 30,
+   "abstract": "Large language models (LLMs) have demonstrated significant advancements in code generation, yet they still face challenges when tackling tasks that extend beyond their basic capabilities.Recently, the concept of selfdebugging has been proposed as a way to enhance code generation performance by leveraging execution feedback from tests.However, the availability of high-quality tests in realworld scenarios is often limited.In this context, self-debugging with self-generated tests emerges as a promising solution, though its limitations and practical potential have not been fully explored.To address this gap, we investigate the efficacy of self-debugging in code generation tasks.We propose and analyze two distinct paradigms for the self-debugging process: post-execution and in-execution selfdebugging.Our findings reveal that postexecution self-debugging struggles with the test bias introduced by self-generated tests, which can lead to misleading feedback.In contrast, inexecution self-debugging enables LLMs to mitigate this bias and leverage intermediate states during program execution.By focusing on runtime information rather than relying solely on potentially flawed self-generated tests, this approach demonstrates significant promise for improving the robustness and accuracy of LLMs in code generation tasks.",
+   "authors": [
+    "Xiancai Chen",
+    "Zhengwei Tao",
+    "Kechi Zhang",
+    "Changzhi Zhou",
+    "Xinyu Zhang",
+    "Wanli Gu",
+    "Yuanpeng He",
+    "Mengdi Zhang"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4385572248",
+   "doi": "10.18653/v1/2023.acl-long.427",
+   "title": "RL4F: Generating Natural Language Feedback with Reinforcement Learning for Repairing Model Outputs",
+   "year": 2023,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 91,
+   "abstract": "Afra Feyza Akyurek, Ekin Akyurek, Ashwin Kalyan, Peter Clark, Derry Tanti Wijaya, Niket Tandon. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2023.",
+   "authors": [
+    "Afra Feyza Aky\u00fcrek",
+    "Ekin Aky\u00fcrek",
+    "Ashwin Kalyan",
+    "Peter E. Clark",
+    "Derry Tanti Wijaya",
+    "Niket Tandon"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4390490761",
+   "doi": "10.1145/3639372",
+   "title": "Explainability for Large Language Models: A Survey",
+   "year": 2024,
+   "venue": "ACM Transactions on Intelligent Systems and Technology",
+   "type": "article",
+   "cited_by": 951,
+   "abstract": "Large language models (LLMs) have demonstrated impressive capabilities in natural language processing. However, their internal mechanisms are still unclear and this lack of transparency poses unwanted risks for downstream applications. Therefore, understanding and explaining these models is crucial for elucidating their behaviors, limitations, and social impacts. In this article, we introduce a taxonomy of explainability techniques and provide a structured overview of methods for explaining Transformer-based language models. We categorize techniques based on the training paradigms of LLMs: traditional fine-tuning-based paradigm and prompting-based paradigm. For each paradigm, we summarize the goals and dominant approaches for generating local explanations of individual predictions and global explanations of overall model knowledge. We also discuss metrics for evaluating generated explanations and discuss how explanations can be leveraged to debug models and improve performance. Lastly, we examine key challenges and emerging opportunities for explanation techniques in the era of LLMs in comparison to conventional deep learning models.",
+   "authors": [
+    "Haiyan Zhao",
+    "Hanjie Chen",
+    "Fan Yang",
+    "Ninghao Liu",
+    "Huiqi Deng",
+    "Hengyi Cai",
+    "Shuaiqiang Wang",
+    "Dawei Yin"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4390832734",
+   "doi": "10.48550/arxiv.2401.05319",
+   "title": "Leveraging Print Debugging to Improve Code Generation in Large Language Models",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 26,
+   "abstract": "Large language models (LLMs) have made significant progress in code generation tasks, but their performance in tackling programming problems with complex data structures and algorithms remains suboptimal. To address this issue, we propose an in-context learning approach that guides LLMs to debug by using a \"print debugging\" method, which involves inserting print statements to trace and analysing logs for fixing the bug. We collect a Leetcode problem dataset and evaluate our method using the Leetcode online judging system. Experiments with GPT-4 demonstrate the effectiveness of our approach, outperforming rubber duck debugging in easy and medium-level Leetcode problems by 1.5% and 17.9%.",
+   "authors": [
+    "Xueyu Hu",
+    "Kun Kuang",
+    "Jiankai Sun",
+    "Hongxia Yang",
+    "Fei Qing Wu"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4385473442",
+   "doi": "10.48550/arxiv.2307.15771",
+   "title": "The Hydra Effect: Emergent Self-repair in Language Model Computations",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 148,
+   "abstract": "We investigate the internal structure of language model computations using causal analysis and demonstrate two motifs: (1) a form of adaptive computation where ablations of one attention layer of a language model cause another layer to compensate (which we term the Hydra effect) and (2) a counterbalancing function of late MLP layers that act to downregulate the maximum-likelihood token. Our ablation studies demonstrate that language model layers are typically relatively loosely coupled (ablations to one layer only affect a small number of downstream layers). Surprisingly, these effects occur even in language models trained without any form of dropout. We analyse these effects in the context of factual recall and consider their implications for circuit-level attribution in language models.",
+   "authors": [
+    "McGrath, Thomas",
+    "Matthew Rahtz",
+    "J\u00e1nos Kram\u00e1r",
+    "Vladimir Mikulik",
+    "Shane Legg"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403536268",
+   "doi": "10.1145/3691620.3695529",
+   "title": "On the Evaluation of Large Language Models in Unit Test Generation",
+   "year": 2024,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 166,
+   "abstract": "Unit testing is an essential activity in software development for verifying the correctness of software components. However, manually writing unit tests is challenging and time-consuming. The emergence of Large Language Models (LLMs) offers a new direction for automating unit test generation. Existing research primarily focuses on closed-source LLMs (e.g., ChatGPT and CodeX) with fixed prompting strategies, leaving the capabilities of advanced open-source LLMs with various prompting settings unexplored. Particularly, open-source LLMs offer advantages in data privacy protection and have demonstrated superior performance in some tasks. Moreover, effective prompting is crucial for maximizing LLMs' capabilities. In this paper, we conduct the first empirical study to fill this gap, based on 17 Java projects, five widely-used open-source LLMs with different structures and parameter sizes, and comprehensive evaluation metrics. Our findings highlight the significant influence of various prompt factors, show the performance of open-source LLMs compared to the commercial GPT-4 and the traditional Evosuite, and identify limitations in LLM-based unit test generation. We then derive a series of implications from our study to guide future research and practical use of LLM-based unit test generation.",
+   "authors": [
+    "Lin Yang",
+    "Chen Yang",
+    "Shutao Gao",
+    "Weijing Wang",
+    "Bo Wang",
+    "Qihao Zhu",
+    "Xiao Chu",
+    "Jianyi Zhou"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4381252103",
+   "doi": "10.48550/arxiv.2306.09896",
+   "title": "Is Self-Repair a Silver Bullet for Code Generation?",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 162,
+   "abstract": "Large language models have shown remarkable aptitude in code generation, but still struggle to perform complex tasks. Self-repair -- in which the model debugs and repairs its own code -- has recently become a popular way to boost performance in these settings. However, despite its increasing popularity, existing studies of self-repair have been limited in scope; in many settings, its efficacy thus remains poorly understood. In this paper, we analyze Code Llama, GPT-3.5 and GPT-4's ability to perform self-repair on problems taken from HumanEval and APPS. We find that when the cost of carrying out repair is taken into account, performance gains are often modest, vary a lot between subsets of the data, and are sometimes not present at all. We hypothesize that this is because self-repair is bottlenecked by the model's ability to provide feedback on its own code; using a stronger model to artificially boost the quality of the feedback, we observe substantially larger performance gains. Similarly, a small-scale study in which we provide GPT-4 with feedback from human participants suggests that even for the strongest models, self-repair still lags far behind what can be achieved with human-level debugging.",
+   "authors": [
+    "Theo Olausson",
+    "Jeevana Priya Inala",
+    "Chenglong Wang",
+    "Jianfeng Gao",
+    "Armando Solar-Lezama"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4384920109",
+   "doi": "10.48550/arxiv.2307.10169",
+   "title": "Challenges and Applications of Large Language Models",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 883,
+   "abstract": "Large Language Models (LLMs) went from non-existent to ubiquitous in the machine learning discourse within a few years. Due to the fast pace of the field, it is difficult to identify the remaining challenges and already fruitful application areas. In this paper, we aim to establish a systematic set of open problems and application successes so that ML researchers can comprehend the field's current state more quickly and become productive.",
+   "authors": [
+    "Jean Kaddour",
+    "Joshua Harris",
+    "Maximilian Mozes",
+    "Herbie Bradley",
+    "Roberta R\u0103ileanu",
+    "Robert McHardy"
+   ],
+   "facet": "F2_recovery",
+   "query": "self-debugging large language model test feedback repair"
+  }
+ ]
+}

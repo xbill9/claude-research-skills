@@ -1,0 +1,254 @@
+[
+ {
+  "facet": "F1_context",
+  "src": "openalex",
+  "query": "context management coding agent long horizon software engineering",
+  "url": "https://api.openalex.org/works?search=context+management+coding+agent+long+horizon+software+engineering&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F1_context",
+  "src": "arxiv",
+  "query": "context management coding agent long horizon software engineering",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Acontext+AND+all%3Amanagement+AND+all%3Acoding+AND+all%3Aagent+AND+all%3Along+AND+all%3Ahorizon+AND+all%3Asoftware+AND+all%3Aengineering&sortBy=relevance&max_results=25",
+  "n": 12
+ },
+ {
+  "facet": "F1_context",
+  "src": "openalex",
+  "query": "context compression LLM agent observation pruning SWE-bench",
+  "url": "https://api.openalex.org/works?search=context+compression+LLM+agent+observation+pruning+SWE-bench&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F1_context",
+  "src": "arxiv",
+  "query": "context compression LLM agent observation pruning SWE-bench",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Acontext+AND+all%3Acompression+AND+all%3ALLM+AND+all%3Aagent+AND+all%3Aobservation+AND+all%3Apruning+AND+all%3ASWE-bench&sortBy=relevance&max_results=25",
+  "n": 0
+ },
+ {
+  "facet": "F1_context",
+  "src": "openalex",
+  "query": "memory summarization coding agent repository repair",
+  "url": "https://api.openalex.org/works?search=memory+summarization+coding+agent+repository+repair&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F1_context",
+  "src": "arxiv",
+  "query": "memory summarization coding agent repository repair",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Amemory+AND+all%3Asummarization+AND+all%3Acoding+AND+all%3Aagent+AND+all%3Arepository+AND+all%3Arepair&sortBy=relevance&max_results=25",
+  "n": 1
+ },
+ {
+  "facet": "F2_recovery",
+  "src": "openalex",
+  "query": "LLM agent loop repetitive actions failure recovery software engineering",
+  "url": "https://api.openalex.org/works?search=LLM+agent+loop+repetitive+actions+failure+recovery+software+engineering&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F2_recovery",
+  "src": "arxiv",
+  "query": "LLM agent loop repetitive actions failure recovery software engineering",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3ALLM+AND+all%3Aagent+AND+all%3Aloop+AND+all%3Arepetitive+AND+all%3Aactions+AND+all%3Afailure+AND+all%3Arecovery+AND+all%3Asoftware+AND+all%3Aengineering&sortBy=relevance&max_results=25",
+  "n": 1
+ },
+ {
+  "facet": "F2_recovery",
+  "src": "openalex",
+  "query": "self-debugging large language model test feedback repair",
+  "url": "https://api.openalex.org/works?search=self-debugging+large+language+model+test+feedback+repair&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F2_recovery",
+  "src": "arxiv",
+  "query": "self-debugging large language model test feedback repair",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Aself-debugging+AND+all%3Alarge+AND+all%3Alanguage+AND+all%3Amodel+AND+all%3Atest+AND+all%3Afeedback+AND+all%3Arepair&sortBy=relevance&max_results=25",
+  "n": 8
+ },
+ {
+  "facet": "F2_recovery",
+  "src": "openalex",
+  "query": "backtracking tree search coding agent SWE-bench",
+  "url": "https://api.openalex.org/works?search=backtracking+tree+search+coding+agent+SWE-bench&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F2_recovery",
+  "src": "arxiv",
+  "query": "backtracking tree search coding agent SWE-bench",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Abacktracking+AND+all%3Atree+AND+all%3Asearch+AND+all%3Acoding+AND+all%3Aagent+AND+all%3ASWE-bench&sortBy=relevance&max_results=25",
+  "n": 0
+ },
+ {
+  "facet": "F3_graph",
+  "src": "openalex",
+  "query": "code graph retrieval repository level issue localization LLM",
+  "url": "https://api.openalex.org/works?search=code+graph+retrieval+repository+level+issue+localization+LLM&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F3_graph",
+  "src": "arxiv",
+  "query": "code graph retrieval repository level issue localization LLM",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Acode+AND+all%3Agraph+AND+all%3Aretrieval+AND+all%3Arepository+AND+all%3Alevel+AND+all%3Aissue+AND+all%3Alocalization+AND+all%3ALLM&sortBy=relevance&max_results=25",
+  "n": 1
+ },
+ {
+  "facet": "F3_graph",
+  "src": "openalex",
+  "query": "repository knowledge graph LLM agent code repair",
+  "url": "https://api.openalex.org/works?search=repository+knowledge+graph+LLM+agent+code+repair&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F3_graph",
+  "src": "arxiv",
+  "query": "repository knowledge graph LLM agent code repair",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Arepository+AND+all%3Aknowledge+AND+all%3Agraph+AND+all%3ALLM+AND+all%3Aagent+AND+all%3Acode+AND+all%3Arepair&sortBy=relevance&max_results=25",
+  "n": 2
+ },
+ {
+  "facet": "F3_graph",
+  "src": "openalex",
+  "query": "graph-guided code search agent SWE-bench localization",
+  "url": "https://api.openalex.org/works?search=graph-guided+code+search+agent+SWE-bench+localization&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F3_graph",
+  "src": "arxiv",
+  "query": "graph-guided code search agent SWE-bench localization",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Agraph-guided+AND+all%3Acode+AND+all%3Asearch+AND+all%3Aagent+AND+all%3ASWE-bench+AND+all%3Alocalization&sortBy=relevance&max_results=25",
+  "n": 3
+ },
+ {
+  "facet": "F4_bench",
+  "src": "openalex",
+  "query": "SWE-bench resolve GitHub issues language models benchmark",
+  "url": "https://api.openalex.org/works?search=SWE-bench+resolve+GitHub+issues+language+models+benchmark&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F4_bench",
+  "src": "arxiv",
+  "query": "SWE-bench resolve GitHub issues language models benchmark",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3ASWE-bench+AND+all%3Aresolve+AND+all%3AGitHub+AND+all%3Aissues+AND+all%3Alanguage+AND+all%3Amodels+AND+all%3Abenchmark&sortBy=relevance&max_results=25",
+  "n": 17
+ },
+ {
+  "facet": "F4_bench",
+  "src": "openalex",
+  "query": "repository-level code repair benchmark LLM agents evaluation",
+  "url": "https://api.openalex.org/works?search=repository-level+code+repair+benchmark+LLM+agents+evaluation&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F4_bench",
+  "src": "arxiv",
+  "query": "repository-level code repair benchmark LLM agents evaluation",
+  "url": "http://export.arxiv.org/api/query?search_query=all%3Arepository-level+AND+all%3Acode+AND+all%3Arepair+AND+all%3Abenchmark+AND+all%3ALLM+AND+all%3Aagents+AND+all%3Aevaluation&sortBy=relevance&max_results=25",
+  "n": 20
+ },
+ {
+  "facet": "F4_bench",
+  "src": "openalex",
+  "query": "SWE-bench verified contamination evaluation agents",
+  "url": "https://api.openalex.org/works?search=SWE-bench+verified+contamination+evaluation+agents&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F4_bench",
+  "src": "arxiv",
+  "query": "SWE-bench verified contamination evaluation agents",
+  "url": "FAILED",
+  "n": 0
+ },
+ {
+  "facet": "F5_small",
+  "src": "openalex",
+  "query": "open-weight small language model software engineering agent training SWE-bench",
+  "url": "https://api.openalex.org/works?search=open-weight+small+language+model+software+engineering+agent+training+SWE-bench&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F5_small",
+  "src": "arxiv",
+  "query": "open-weight small language model software engineering agent training SWE-bench",
+  "url": "FAILED",
+  "n": 0
+ },
+ {
+  "facet": "F5_small",
+  "src": "openalex",
+  "query": "quantization large language model code generation accuracy",
+  "url": "https://api.openalex.org/works?search=quantization+large+language+model+code+generation+accuracy&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F5_small",
+  "src": "arxiv",
+  "query": "quantization large language model code generation accuracy",
+  "url": "FAILED",
+  "n": 0
+ },
+ {
+  "facet": "F5_small",
+  "src": "openalex",
+  "query": "fine-tuning open source LLM software engineering agent trajectories",
+  "url": "https://api.openalex.org/works?search=fine-tuning+open+source+LLM+software+engineering+agent+trajectories&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F5_small",
+  "src": "arxiv",
+  "query": "fine-tuning open source LLM software engineering agent trajectories",
+  "url": "FAILED",
+  "n": 0
+ },
+ {
+  "facet": "F6_scaffold",
+  "src": "openalex",
+  "query": "agent-computer interface software engineering agent",
+  "url": "https://api.openalex.org/works?search=agent-computer+interface+software+engineering+agent&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F6_scaffold",
+  "src": "arxiv",
+  "query": "agent-computer interface software engineering agent",
+  "url": "FAILED",
+  "n": 0
+ },
+ {
+  "facet": "F6_scaffold",
+  "src": "openalex",
+  "query": "agentless localization repair LLM",
+  "url": "https://api.openalex.org/works?search=agentless+localization+repair+LLM&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F6_scaffold",
+  "src": "arxiv",
+  "query": "agentless localization repair LLM",
+  "url": "FAILED",
+  "n": 0
+ },
+ {
+  "facet": "F6_scaffold",
+  "src": "openalex",
+  "query": "autonomous program improvement agent GitHub issues",
+  "url": "https://api.openalex.org/works?search=autonomous+program+improvement+agent+GitHub+issues&filter=from_publication_date%3A2023-01-01&per-page=25",
+  "n": 25
+ },
+ {
+  "facet": "F6_scaffold",
+  "src": "arxiv",
+  "query": "autonomous program improvement agent GitHub issues",
+  "url": "FAILED",
+  "n": 0
+ }
+]

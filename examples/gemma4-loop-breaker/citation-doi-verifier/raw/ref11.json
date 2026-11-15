@@ -1,0 +1,317 @@
+{
+ "entry": {
+  "key": "ref11",
+  "n": 11,
+  "authors": "C. E. Jimenez et al",
+  "first_author_surname": "Jimenez",
+  "title": "SWE-bench: Can language models resolve real-world GitHub issues?",
+  "year": 2024,
+  "venue_claimed": "ICLR",
+  "arxiv": null,
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "SWE-bench: Can language models resolve real-world GitHub issues?",
+  "candidates": [
+   {
+    "doi": "10.18653/v1/2023.bionlp-1.32",
+    "title": "Biomedical Language Models are Robust to Sub-optimal Tokenization",
+    "authors": [
+     "Bernal Jimenez Gutierrez",
+     "Huan Sun",
+     "Yu Su"
+    ],
+    "first_author_family": "Jimenez Gutierrez",
+    "author_count": 3,
+    "year": 2023,
+    "venue": "The 22nd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+    "type": "proceedings-article",
+    "publisher": "Association for Computational Linguistics",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4882,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.2139/ssrn.5467626",
+    "title": "AI and Environmental Accountability: A New Index for Real-world Impact",
+    "authors": [
+     "Ali Haidar",
+     "Hector Gonzalez Jimenez",
+     "Fr\u00e9d\u00e9ric Fr\u00e9ry"
+    ],
+    "first_author_family": "Haidar",
+    "author_count": 3,
+    "year": 2025,
+    "venue": "",
+    "type": "posted-content",
+    "publisher": "Elsevier BV",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4122,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.18653/v1/2023.findings-acl.50",
+    "title": "Aligning Instruction Tasks Unlocks Large Language Models as Zero-Shot Relation Extractors",
+    "authors": [
+     "Kai Zhang",
+     "Bernal Jimenez Gutierrez",
+     "Yu Su"
+    ],
+    "first_author_family": "Zhang",
+    "author_count": 3,
+    "year": 2023,
+    "venue": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "type": "proceedings-article",
+    "publisher": "Association for Computational Linguistics",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3974,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.64898/2026.11.11.26367866",
+    "title": "BenchmarkHub: an open-source platform for reproducible evaluation of large language models in healthcare",
+    "authors": [
+     "Juan Ignacio Alvarez-Arenas",
+     "Daniel Jimenez-Carretero",
+     "Fatima Sanchez-Cabo"
+    ],
+    "first_author_family": "Alvarez-Arenas",
+    "author_count": 3,
+    "year": 2026,
+    "venue": "",
+    "type": "posted-content",
+    "publisher": "openRxiv",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3879,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1145/3664476.3670911",
+    "title": "Single-image steganalysis in real-world scenarios based on classifier inconsistency detection",
+    "authors": [
+     "Daniel Lerch-Hostalot",
+     "David Meg\u00edas Jimenez"
+    ],
+    "first_author_family": "Lerch-Hostalot",
+    "author_count": 2,
+    "year": 2024,
+    "venue": "Proceedings of the 19th International Conference on Availability, Reliability and Security",
+    "type": "proceedings-article",
+    "publisher": "ACM",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3871,
+    "first_author_matches": false,
+    "year_matches": true
+   }
+  ],
+  "best_title_similarity": 0.4882,
+  "best_is_match": false
+ },
+ "arxiv_title_search": {
+  "status": 429,
+  "entries": ""
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W4387561453",
+    "doi": "https://doi.org/10.48550/arxiv.2310.06770",
+    "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+    "year": 2023,
+    "type": "preprint",
+    "authors": [
+     "Jimenez, Carlos E.",
+     "Yang, John",
+     "Alexander Wettig",
+     "Shunyu Yao",
+     "Kexin Pei",
+     "Ofir Press",
+     "Karthik Narasimhan"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2310.06770"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2310.06770"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4403363594",
+    "doi": "https://doi.org/10.48550/arxiv.2410.06992",
+    "title": "SWE-Bench+: Enhanced Coding Benchmark for LLMs",
+    "year": 2024,
+    "type": "preprint",
+    "authors": [
+     "Reem Aleithan",
+     "Xue, Haoran",
+     "Mohammad Mahdi Mohajer",
+     "Elijah Nnorom",
+     "Gias Uddin",
+     "Song Wang"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2410.06992"
+     },
+     {
+      "source": "YorkSpace (York University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://hdl.handle.net/10315/43000"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2410.06992"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4412888888",
+    "doi": "https://doi.org/10.18653/v1/2025.findings-acl.62",
+    "title": "SWE-Fixer: Training Open-Source LLMs for Effective and Efficient GitHub Issue Resolution",
+    "year": 2025,
+    "type": "conference-paper",
+    "authors": [
+     "Chengxing Xie",
+     "Bowen Li",
+     "Chang Gao",
+     "He Du",
+     "Wai Lam",
+     "Difan Zou",
+     "Kai Chen"
+    ],
+    "primary_location": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+    "locations": [
+     {
+      "source": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.18653/v1/2025.findings-acl.62"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2501.05040"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2501.05040"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4411523044",
+    "doi": "https://doi.org/10.1145/3728981",
+    "title": "SWE-GPT: A Process-Centric Language Model for Automated Software Improvement",
+    "year": 2025,
+    "type": "article",
+    "authors": [
+     "Yingwei Ma",
+     "Rongyu Cao",
+     "Yongchang Cao",
+     "Yue Zhang",
+     "Jue Chen",
+     "Yibo Liu",
+     "Yuchen Liu",
+     "Binhua Li",
+     "Fei Huang",
+     "Yongbin Li"
+    ],
+    "primary_location": "Proceedings of the ACM on software engineering.",
+    "locations": [
+     {
+      "source": "Proceedings of the ACM on software engineering.",
+      "source_type": "journal",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1145/3728981"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2411.00622"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2411.00622"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4402702510",
+    "doi": "https://doi.org/10.48550/arxiv.2408.14354",
+    "title": "SWE-bench-java: A GitHub Issue Resolving Benchmark for Java",
+    "year": 2024,
+    "type": "preprint",
+    "authors": [
+     "Daoguang Zan",
+     "Zhirong Huang",
+     "Ailun Yu",
+     "Shaoxin Lin",
+     "Yifan Shi",
+     "Wei Liu",
+     "Chen, Dong",
+     "Qi, Zongshuai",
+     "Yu, Hao",
+     "Yu, Lei",
+     "Dezhi Ran",
+     "Muhan Zeng",
+     "Shen, Bo",
+     "Pan Bian",
+     "Guangtai Liang",
+     "Bei Guan",
+     "Pengjie Huang",
+     "Tao Xie",
+     "Yongji Wang",
+     "Qianxiang Wang"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2408.14354"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2408.14354"
+     }
+    ]
+   }
+  ]
+ }
+}

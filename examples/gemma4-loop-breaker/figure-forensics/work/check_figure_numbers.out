@@ -1,0 +1,44 @@
+== Table 1 / Table 2 rates and Wilson 95% CIs (n=129) ==
+T1 baseline           23/129 = 17.83%  Wilson [12.2, 25.3]
+T1 hidden-thoughts    35/129 = 27.13%  Wilson [20.2, 35.4]
+T1 calibrated         51/129 = 39.53%  Wilson [31.5, 48.2]
+M0                    15/129 = 11.63%  Wilson [7.2, 18.3]
+M1                    18/129 = 13.95%  Wilson [9.0, 21.0]
+M2                    22/129 = 17.05%  Wilson [11.5, 24.5]
+M3                    25/129 = 19.38%  Wilson [13.5, 27.0]
+M4                    27/129 = 20.93%  Wilson [14.8, 28.7]
+M5                    29/129 = 22.48%  Wilson [16.1, 30.4]
+M6                    31/129 = 24.03%  Wilson [17.5, 32.1]
+
+== Trap-25 (Table 3) ==
+baseline_static  4/25 = 16.0%  Wilson [6.4, 34.7]
+naive_subagent   5/25 = 20.0%  Wilson [8.9, 39.1]
+ccr_only         18/25 = 72.0%  Wilson [52.4, 85.7]
+ccr_adaptive     24/25 = 96.0%  Wilson [80.5, 99.3]
+Fisher exact 24/25 vs 4/25 (two-sided): p = 7.179e-09
+Fisher exact 24/25 vs 4/25 (greater): p = 3.589e-09
+sum of avg turns x 25 episodes x 4 configs = 937.0
+think tokens changes vs baseline: ['+13.0%', '-20.7%', '-45.1%']
+post-reset KV changes vs baseline: ['+19.1%', '-46.7%', '-70.8%']
+
+== Gaps quoted in text / Figure 1 / Figure 2 ==
+Stage-1 gain 39.5-17.8 = 21.7 pts
+Tax: Table1 calibrated - M2 = 22.5 pts; 29 tasks
+M2->M6 tasks recovered: 9 of 29 = 31.0%;  M0->M6: 16 tasks
+Remaining gap M6 vs Stage-1 ceiling: 15.5 pts, 20 tasks
+M6/M0 ratio: 2.07
+Compaction M0->M6: -93.1%  M0->M1 pts: 24.2  M2->M3 (120-line reads + parser): -72.6%
+thinking budget 4096->512: -87.5%
+softmax dilution 0.72->0.06: log2 ratio = 3.58 bits (paper says +4.51 bits)
+58-task SE at p=0.2: 5.25%  pts/task: 1.72
+
+== Figure 3(a) per-repo labels -> implied integer counts ==
+fastapi   n=67 share=51.9%  M0/M6/Stage-1 = [7, 15, 25]  (['10.4', '22.4', '37.3'])
+rich      n=48 share=37.2%  M0/M6/Stage-1 = [6, 12, 20]  (['12.5', '25.0', '41.7'])
+requests  n=13 share=10.1%  M0/M6/Stage-1 = [2, 3, 5]  (['15.4', '23.1', '38.5'])
+httpx     n= 1 share=0.8%  M0/M6/Stage-1 = [0, 1, 1]  (['0.0', '100.0', '100.0'])
+column totals M0/M6/Stage-1: [15, 31, 51] (paper: 15, 31, 51)
+sum of n: 129
+httpx 1/1 Wilson 95% CI: [20.7, 100.0]
+httpx 0/1 Wilson 95% CI: [0.0, 79.3]
+sci-trap 5/5 vs 1/5 Fisher two-sided p = 0.048

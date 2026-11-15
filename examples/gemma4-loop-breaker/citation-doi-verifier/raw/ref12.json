@@ -1,0 +1,119 @@
+{
+ "entry": {
+  "key": "ref12",
+  "n": 12,
+  "authors": "Google Developers Blog",
+  "first_author_surname": null,
+  "title": "Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon (`google.adk` case study)",
+  "year": 2026,
+  "venue_claimed": null,
+  "arxiv": null,
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon (google.adk case study)",
+  "candidates": [
+   {
+    "doi": "10.1109/icndsa68777.2026.11652287",
+    "title": "AI-Powered Python Code Reviewer using Streamlit and Google Gemini",
+    "authors": [
+     "Divyanshu Rajput",
+     "Karan Dixit",
+     "Ayush Sehrawat",
+     "Anant Jain",
+     "Rohit",
+     "Bhuvnesh Malik"
+    ],
+    "first_author_family": "Rajput",
+    "author_count": 6,
+    "year": 2026,
+    "venue": "2026 International Conference on NextGen Data Science and Analytics (ICNDSA)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.4051,
+    "year_matches": true
+   },
+   {
+    "doi": "10.3389/frai.2025.1558696",
+    "title": "Gender and content bias in Large Language Models: a case study on Google Gemini 2.0 Flash Experimental",
+    "authors": [
+     "Roberto Balestri"
+    ],
+    "first_author_family": "Balestri",
+    "author_count": 1,
+    "year": 2025,
+    "venue": "Frontiers in Artificial Intelligence",
+    "type": "journal-article",
+    "publisher": "Frontiers Media SA",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3402,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1515/9781501519741-004",
+    "title": "Chapter 3: Python Data Structures",
+    "authors": [],
+    "first_author_family": null,
+    "author_count": 0,
+    "year": 2024,
+    "venue": "Google Gemini for Python",
+    "type": "book-chapter",
+    "publisher": "De Gruyter",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.304,
+    "year_matches": false
+   },
+   {
+    "doi": "10.5194/essd-2025-364-ac1",
+    "title": "Updated python environment and codebase",
+    "authors": [
+     "Michael Evans"
+    ],
+    "first_author_family": "Evans",
+    "author_count": 1,
+    "year": 2025,
+    "venue": "",
+    "type": "peer-review",
+    "publisher": "Copernicus GmbH",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.2879,
+    "year_matches": false
+   },
+   {
+    "doi": "10.55041/isjem04811",
+    "title": "Smart Chatbot Application Using Google Gemini and Python Flask",
+    "authors": [
+     "Sanketika Vidya Parishad Engineering College, Vishakhapatnam,",
+     "ANDAVARAPU SAISREE",
+     "M. SATISH"
+    ],
+    "first_author_family": null,
+    "author_count": 3,
+    "year": 2025,
+    "venue": "International Scientific Journal of Engineering and Management",
+    "type": "journal-article",
+    "publisher": "Edtech Publishers (OPC) Private Limited",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.2839,
+    "year_matches": false
+   }
+  ],
+  "best_title_similarity": 0.4051,
+  "best_is_match": false
+ },
+ "arxiv_title_search": {
+  "status": 429,
+  "entries": ""
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": []
+ }
+}

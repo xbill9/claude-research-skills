@@ -1,0 +1,406 @@
+{
+ "entry": {
+  "key": "ref4",
+  "n": 4,
+  "authors": "E. Markowitz et al",
+  "first_author_surname": "Markowitz",
+  "title": "Tree-of-Traversals: A zero-shot reasoning algorithm for augmenting black-box language models with knowledge graphs",
+  "year": 2024,
+  "venue_claimed": "ACL",
+  "arxiv": "2407.21358",
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "Tree-of-Traversals: A zero-shot reasoning algorithm for augmenting black-box language models with knowledge graphs",
+  "candidates": [
+   {
+    "doi": "10.18653/v1/2024.acl-long.665",
+    "title": "Tree-of-Traversals: A Zero-Shot Reasoning Algorithm for Augmenting Black-box Language Models with Knowledge Graphs",
+    "authors": [
+     "Elan Markowitz",
+     "Anil Ramakrishna",
+     "Jwala Dhamala",
+     "Ninareh Mehrabi",
+     "Charith Peris",
+     "Rahul Gupta",
+     "Kai-Wei Chang",
+     "Aram Galstyan"
+    ],
+    "first_author_family": "Markowitz",
+    "author_count": 8,
+    "year": 2024,
+    "venue": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "type": "proceedings-article",
+    "publisher": "Association for Computational Linguistics",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 1.0,
+    "first_author_matches": true,
+    "year_matches": true
+   },
+   {
+    "doi": "10.23919/mva.2017.7986834",
+    "title": "Hierarchical zero-shot classification with convolutional neural network features and semantic attribute learning",
+    "authors": [
+     "Jared Markowitz",
+     "Aurora C. Schmidt",
+     "Philippe M. Burlina",
+     "I-Jeng Wang"
+    ],
+    "first_author_family": "Markowitz",
+    "author_count": 4,
+    "year": 2017,
+    "venue": "2017 Fifteenth IAPR International Conference on Machine Vision Applications (MVA)",
+    "type": "proceedings-article",
+    "publisher": "IEEE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.2844,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1097/00006123-198611000-00007",
+    "title": "Models of spinal cord injury",
+    "authors": [
+     "H Kushner",
+     "R S Markowitz",
+     "A Mechanic",
+     "P Black"
+    ],
+    "first_author_family": "Kushner",
+    "author_count": 4,
+    "year": 1986,
+    "venue": "Neurosurgery",
+    "type": "journal-article",
+    "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.156,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1227/00006123-198801010-00008",
+    "title": "Models of spinal cord injury",
+    "authors": [
+     "P Black",
+     "R S Markowitz",
+     "I Damjanov",
+     "S D Finkelstein",
+     "H Kushner",
+     "J Gillespie",
+     "M Feldman"
+    ],
+    "first_author_family": "Black",
+    "author_count": 7,
+    "year": 1988,
+    "venue": "Neurosurgery",
+    "type": "journal-article",
+    "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.156,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1097/00006123-198801010-00008",
+    "title": "Models of spinal cord injury",
+    "authors": [
+     "P Black",
+     "R S Markowitz",
+     "I Damjanov",
+     "S D Finkelstein",
+     "H Kushner",
+     "J Gillespie",
+     "M Feldman"
+    ],
+    "first_author_family": "Black",
+    "author_count": 7,
+    "year": 1988,
+    "venue": "Neurosurgery",
+    "type": "journal-article",
+    "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.156,
+    "first_author_matches": false,
+    "year_matches": false
+   }
+  ],
+  "best_title_similarity": 1.0,
+  "best_is_match": true
+ },
+ "arxiv_by_id": {
+  "status": 200,
+  "entries": [
+   {
+    "id": "2407.21358v1",
+    "title": "Tree-of-Traversals: A Zero-Shot Reasoning Algorithm for Augmenting Black-box Language Models with Knowledge Graphs",
+    "authors": [
+     "Elan Markowitz",
+     "Anil Ramakrishna",
+     "Jwala Dhamala",
+     "Ninareh Mehrabi",
+     "Charith Peris",
+     "Rahul Gupta",
+     "Kai-Wei Chang",
+     "Aram Galstyan"
+    ],
+    "published": "2024-07-31T06:01:24Z",
+    "updated": "2024-07-31T06:01:24Z",
+    "journal_ref": null,
+    "doi": null,
+    "comment": "Accepted for publication at the ACL 2024 Conference"
+   }
+  ]
+ },
+ "crossref_arxiv_doi": {
+  "verified": false,
+  "doi": "10.48550/arXiv.2407.21358",
+  "error": "Crossref HTTP 404"
+ },
+ "openalex_by_arxiv_doi": {
+  "status": 200,
+  "work": {
+   "id": "https://openalex.org/W4402671536",
+   "doi": "https://doi.org/10.18653/v1/2024.acl-long.665",
+   "title": "Tree-of-Traversals: A Zero-Shot Reasoning Algorithm for Augmenting Black-box Language Models with Knowledge Graphs",
+   "year": 2024,
+   "type": "conference-paper",
+   "authors": [
+    "Elan Markowitz",
+    "Anil Ramakrishna",
+    "Jwala Dhamala",
+    "Ninareh Mehrabi",
+    "Charith Peris",
+    "Rahul Gupta",
+    "Kai-Wei Chang",
+    "Aram Galstyan"
+   ],
+   "primary_location": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "locations": [
+    {
+     "source": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+     "source_type": "conference",
+     "version": "publishedVersion",
+     "landing": "https://doi.org/10.18653/v1/2024.acl-long.665"
+    },
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": "submittedVersion",
+     "landing": "http://arxiv.org/abs/2407.21358"
+    },
+    {
+     "source": "arXiv (Cornell University)",
+     "source_type": "repository",
+     "version": null,
+     "landing": "https://doi.org/10.48550/arxiv.2407.21358"
+    }
+   ]
+  }
+ },
+ "arxiv_title_search": {
+  "status": 200,
+  "entries": [
+   {
+    "id": "2407.21358v1",
+    "title": "Tree-of-Traversals: A Zero-Shot Reasoning Algorithm for Augmenting Black-box Language Models with Knowledge Graphs",
+    "authors": [
+     "Elan Markowitz",
+     "Anil Ramakrishna",
+     "Jwala Dhamala",
+     "Ninareh Mehrabi",
+     "Charith Peris",
+     "Rahul Gupta",
+     "Kai-Wei Chang",
+     "Aram Galstyan"
+    ],
+    "published": "2024-07-31T06:01:24Z",
+    "updated": "2024-07-31T06:01:24Z",
+    "journal_ref": null,
+    "doi": null,
+    "comment": "Accepted for publication at the ACL 2024 Conference"
+   }
+  ]
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W4402671536",
+    "doi": "https://doi.org/10.18653/v1/2024.acl-long.665",
+    "title": "Tree-of-Traversals: A Zero-Shot Reasoning Algorithm for Augmenting Black-box Language Models with Knowledge Graphs",
+    "year": 2024,
+    "type": "conference-paper",
+    "authors": [
+     "Elan Markowitz",
+     "Anil Ramakrishna",
+     "Jwala Dhamala",
+     "Ninareh Mehrabi",
+     "Charith Peris",
+     "Rahul Gupta",
+     "Kai-Wei Chang",
+     "Aram Galstyan"
+    ],
+    "primary_location": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+    "locations": [
+     {
+      "source": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.18653/v1/2024.acl-long.665"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2407.21358"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2407.21358"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4412888160",
+    "doi": "https://doi.org/10.18653/v1/2025.findings-acl.856",
+    "title": "GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs",
+    "year": 2025,
+    "type": "conference-paper",
+    "authors": [
+     "Costas Mavromatis",
+     "George Karypis"
+    ],
+    "primary_location": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+    "locations": [
+     {
+      "source": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.18653/v1/2025.findings-acl.856"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4406734791",
+    "doi": "https://doi.org/10.48550/arxiv.2501.11223",
+    "title": "Reasoning Language Models: A Blueprint",
+    "year": 2025,
+    "type": "preprint",
+    "authors": [
+     "Maciej Besta",
+     "Barth, Julia",
+     "Schreiber, Eric",
+     "Ales Kubicek",
+     "Afonso Claudino Catarino",
+     "Robert Gerstenberger",
+     "Piotr Nyczyk",
+     "Patrick Iff",
+     "Li, Yueling",
+     "Sam Houliston",
+     "Tomasz Sternal",
+     "Marcin Copik",
+     "Grzegorz Kwa\u015bniewski",
+     "J\u00fcrgen M\u00fcller",
+     "\u0141ukasz Flis",
+     "Hannes Eberhard",
+     "Chen, Zixuan",
+     "H. Niewiadomski",
+     "Torsten Hoefler"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2501.11223"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2501.11223"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4416031380",
+    "doi": "https://doi.org/10.1007/s11432-025-4665-8",
+    "title": "Towards reasoning era: a survey of long chain-of-thought for reasoning large language models",
+    "year": 2026,
+    "type": "article",
+    "authors": [
+     "Qiguang Chen",
+     "Libo Qin",
+     "Jinhao Liu",
+     "Dengyun Peng",
+     "Jiannan Guan",
+     "Peng Wang",
+     "Mengkang Hu",
+     "Yu Zhou",
+     "Te Gao",
+     "Wanxiang Che"
+    ],
+    "primary_location": "Science China Information Sciences",
+    "locations": [
+     {
+      "source": "Science China Information Sciences",
+      "source_type": "journal",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1007/s11432-025-4665-8"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2503.09567"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2503.09567"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4417301008",
+    "doi": "https://doi.org/10.48550/arxiv.2505.12476",
+    "title": "Enhancing Large Language Models with Reward-guided Tree Search for Knowledge Graph Question and Answering",
+    "year": 2025,
+    "type": "preprint",
+    "authors": [
+     "Long Xiao",
+     "Liansheng Zhuang",
+     "Chen Shen",
+     "Shaotian Yan",
+     "Yifei Li",
+     "Shafei Wang"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2505.12476"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2505.12476"
+     }
+    ]
+   }
+  ]
+ }
+}

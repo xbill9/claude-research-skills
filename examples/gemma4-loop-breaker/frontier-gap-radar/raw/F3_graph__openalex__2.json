@@ -1,0 +1,517 @@
+{
+ "url": "https://api.openalex.org/works?search=graph-guided+code+search+agent+SWE-bench+localization&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4412886699",
+   "doi": "10.18653/v1/2025.acl-long.189",
+   "title": "UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench",
+   "year": 2025,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 60,
+   "abstract": "The advent of Large Language Models (LLMs) has spurred the development of coding agents for real-world code generation.As a widely used benchmark for evaluating the code generation capabilities of these agents, SWE-Bench uses real-world problems based on GitHub issues and their corresponding pull requests.However, the manually written test cases included in these pull requests are often insufficient, allowing generated patches to pass the tests without resolving the underlying issue.To address this challenge, we introduce UTGenerator, an LLM-driven test case generator that automatically analyzes codebases and dependencies to generate test cases for real-world Python projects.Building on UTGenerator, we propose UTBoost, a comprehensive framework for test case augmentation.In our evaluation, we identified 36 task instances with insufficient test cases and uncovered 345 erroneous patches incorrectly labeled as passed in the original SWE Bench.These corrections, impacting 40.9% of SWE-Bench Lite and 24.4% of SWE-Bench Verified leaderboard entries, yield 18 and 11 ranking changes, respectively.",
+   "authors": [
+    "Bin Yu",
+    "Yuxuan Zhu",
+    "Pinjia He",
+    "Daniel D. Kang"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403363594",
+   "doi": "10.48550/arxiv.2410.06992",
+   "title": "SWE-Bench+: Enhanced Coding Benchmark for LLMs",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 141,
+   "abstract": "Large Language Models (LLMs) in Software Engineering (SE) can offer assistance for coding. To facilitate a rigorous evaluation of LLMs in practical coding contexts, Carlos et al. introduced the SWE-bench dataset, which comprises 2,294 real-world GitHub issues and their corresponding pull requests, collected from 12 widely used Python repositories. Several impressive LLM-based toolkits recently are developed and evaluated on this dataset. However, a systematic evaluation of the quality of SWE-bench remains missing. In this paper, we addressed this gap by presenting an empirical analysis of the SWE-bench dataset. We conducted a manual screening of instances where SWEAgent + GPT-4 successfully resolved issues by comparing the model-generated patches with the actual pull requests. SWE-Agent+GPT-4 was at the top of SWE-bench leaderboard during the time of our study. Our analysis reveals some critical issues with the SWE-bench dataset: 1) 32.67% of the successful patches involve cheating as the solutions were directly provided in the issue report or the comments. We refer to as solution leakage problem. 2) 31.08% of the passed patches are suspicious patches due to weak test cases, i.e., the tests were not adequate to verify the correctness of a patch. When we filtered out these problematic issues, the resolution rate of SWE-Agent+GPT-4 dropped from 12.47% to 3.97%. We also observed that the same data quality issues also exist in the two variants of SWE-bench, i.e., SWE-bench Lite and SWE-Bench Verified. In addition, over 94% of the issues were created before LLM's knowledge cutoff dates, posing potential data leakage issues.",
+   "authors": [
+    "Reem Aleithan",
+    "Xue, Haoran",
+    "Mohammad Mahdi Mohajer",
+    "Elijah Nnorom",
+    "Gias Uddin",
+    "Song Wang"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415101712",
+   "doi": "10.48550/arxiv.2503.09089",
+   "title": "LocAgent: Graph-Guided LLM Agents for Code Localization",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 49,
+   "abstract": "Code localization--identifying precisely where in a codebase changes need to be made--is a fundamental yet challenging task in software maintenance. Existing approaches struggle to efficiently navigate complex codebases when identifying relevant code sections. The challenge lies in bridging natural language problem descriptions with the appropriate code elements, often requiring reasoning across hierarchical structures and multiple dependencies. We introduce LocAgent, a framework that addresses code localization through graph-based representation. By parsing codebases into directed heterogeneous graphs, LocAgent creates a lightweight representation that captures code structures (files, classes, functions) and their dependencies (imports, invocations, inheritance), enabling LLM agents to effectively search and locate relevant entities through powerful multi-hop reasoning. Experimental results on real-world benchmarks demonstrate that our approach significantly enhances accuracy in code localization. Notably, our method with the fine-tuned Qwen-2.5-Coder-Instruct-32B model achieves comparable results to SOTA proprietary models at greatly reduced cost (approximately 86% reduction), reaching up to 92.7% accuracy on file-level localization while improving downstream GitHub issue resolution success rates by 12% for multiple attempts (Pass@10). Our code is available at https://github.com/gersteinlab/LocAgent.",
+   "authors": [
+    "Zhaoling Chen",
+    "Xiangru Tang",
+    "Gangda Deng",
+    "Fang Wu",
+    "Jialong Wu",
+    "Zhiwei Jiang",
+    "Viktor K. Prasanna",
+    "Arman Cohan"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7221587976",
+   "doi": "10.5281/zenodo.23340592",
+   "title": "AI Code Synthesis, Autonomous Debugging, and the Evolution of the Software Engineering Lifecycle: Repository Graph Reasoning, SWE-bench Benchmarks, and Security Bounds",
+   "year": 2026,
+   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+   "type": "article",
+   "cited_by": 0,
+   "abstract": "Abstract\u2014The software engineering (SWE) lifecycle has transitioned from human-centric manual programming toward autonomous AI code synthesis and closed-loop program repair. Foundation models pre-trained on billions of source code tokens\u2014including modern frontier models and specialized coding LLMs\u2014have evolved beyond isolated function autocompletion toward whole-repository fault localization, cross-file patch synthesis, and dynamic regression test generation. However, deploying autonomous agentic coding frameworks in enterprise software development environments exposes acute structural vulnerabilities: contextual fragmentation across massive Abstract Syntax Trees (ASTs), patch-induced semantic regressions, dependency hallucination attacks (e.g., package typosquatting), and severe computational token overhead during multi-step debugging loops. This paper presents an exhaustive, mathematically formal technical investigation and empirical benchmark of autonomous AI code synthesis. We formalize program synthesis as directed exploration over Program Dependency Graphs (PDGs), establish the mathematical mechanics of execution-guided test-time search with verbal reinforcement feedback (Reflexion), and model repository-scale retrieval using tree-sitter AST parsing. Furthermore, we construct an empirical benchmarking testbed evaluating state-of-the-art coding architectures across 500 real-world open-source software engineering issues from SWE-bench Lite and SWE-bench Verified. Our findings demonstrate that while single-turn code generation models achieve only a 14.8% resolve rate, agentic tree-search architectures coupled with AST-guided repository graphs achieve a 46.2% issue resolution rate. Concurrently, execution-guided sandbox feedback reduces semantic patch regression by 64.8%, though AI-generated code introduces a 19.4% prevalence of unverified dependency inclusions. Finally, we formulate open research directions in neuro-symbolic program verification, verified formal specification synthesis, and automated zero-shot licensing provenance. Index Terms\u2014AI Code Synthesis, Automated Program Repair (APR), SWE-bench, Program Dependency Graphs (PDG), Abstract Syntax Tree (AST), Repository-Level Reasoning, Software Security, Agentic Coding.",
+   "authors": [
+    "Shubham Bhardwaj",
+    "Subh Kumar Gupta",
+    "Dr. Vishal Shrivastava",
+    "Er. Ram Babu Buri"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4399401005",
+   "doi": "10.48550/arxiv.2406.01304",
+   "title": "CodeR: Issue Resolving with Multi-Agent and Task Graphs",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 146,
+   "abstract": "GitHub issue resolving recently has attracted significant attention from academia and industry. SWE-bench is proposed to measure the performance in resolving issues. In this paper, we propose CodeR, which adopts a multi-agent framework and pre-defined task graphs to Repair & Resolve reported bugs and add new features within code Repository. On SWE-bench lite, CodeR is able to solve 28.33% of issues, when submitting only once for each issue. We examine the performance impact of each design of CodeR and offer insights to advance this research direction.",
+   "authors": [
+    "Dong Chen",
+    "Shaoxin Lin",
+    "Muhan Zeng",
+    "Daoguang Zan",
+    "Jian-Gang Wang",
+    "Anton Cheshkov",
+    "Sun, Jun",
+    "Hao Yu"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4387561453",
+   "doi": "10.48550/arxiv.2310.06770",
+   "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2109,
+   "abstract": "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous.",
+   "authors": [
+    "Jimenez, Carlos E.",
+    "Yang, John",
+    "Alexander Wettig",
+    "Shunyu Yao",
+    "Kexin Pei",
+    "Ofir Press",
+    "Karthik Narasimhan"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4404342086",
+   "doi": "10.48550/arxiv.2410.20285",
+   "title": "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 111,
+   "abstract": "Software engineers operating in complex and dynamic environments must continuously adapt to evolving requirements, learn iteratively from experience, and reconsider their approaches based on new insights. However, current large language model (LLM)-based software agents often follow linear, sequential processes that prevent backtracking and exploration of alternative solutions, limiting their ability to rethink their strategies when initial approaches prove ineffective. To address these challenges, we propose SWE-Search, a multi-agent framework that integrates Monte Carlo Tree Search (MCTS) with a self-improvement mechanism to enhance software agents' performance on repository-level software tasks. SWE-Search extends traditional MCTS by incorporating a hybrid value function that leverages LLMs for both numerical value estimation and qualitative evaluation. This enables self-feedback loops where agents iteratively refine their strategies based on both quantitative numerical evaluations and qualitative natural language assessments of pursued trajectories. The framework includes a SWE-Agent for adaptive exploration, a Value Agent for iterative feedback, and a Discriminator Agent that facilitates multi-agent debate for collaborative decision-making. Applied to the SWE-bench benchmark, our approach demonstrates a 23% relative improvement in performance across five models compared to standard open-source agents without MCTS. Our analysis reveals how performance scales with increased inference-time compute through deeper search, providing a pathway to improve software agents without requiring larger models or additional training data. This highlights the potential of self-evaluation driven search techniques in complex software engineering environments.",
+   "authors": [
+    "Antonis Antoniades",
+    "Albert \u00d6rwall",
+    "Kexun Zhang",
+    "Yuxi Xie",
+    "Anirudh Goyal",
+    "William Yang Wang"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7125680675",
+   "doi": "10.48550/arxiv.2601.16746",
+   "title": "SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 68,
+   "abstract": "LLM agents have demonstrated remarkable capabilities in software development, but their performance is hampered by long interaction contexts, which incur high API costs and latency. While various context compression approaches such as LongLLMLingua have emerged to tackle this challenge, they typically rely on fixed metrics such as PPL, ignoring the task-specific nature of code understanding. As a result, they frequently disrupt syntactic and logical structure and fail to retain critical implementation details. In this paper, we propose SWE-Pruner, a self-adaptive context pruning framework tailored for coding agents. Drawing inspiration from how human programmers \"selectively skim\" source code during development and debugging, SWE-Pruner performs task-aware adaptive pruning for long contexts. Given the current task, the agent formulates an explicit goal (e.g., \"focus on error handling\") as a hint to guide the pruning targets. A lightweight neural skimmer (0.6B parameters) is trained to dynamically select relevant lines from the surrounding context given the goal. Evaluations across four benchmarks and multiple models validate SWE-Pruner's effectiveness in various scenarios, achieving 23-54% token reduction on agent tasks like SWE-Bench Verified while even improving success rates, and up to 14.84x compression on single-turn tasks like LongCodeQA with minimal performance impact.",
+   "authors": [
+    "Yuhang Wang",
+    "Yanan Shi",
+    "Mo Yang",
+    "Rongrui Zhang",
+    "Shilin He",
+    "Heng Lian",
+    "Yuting Chen",
+    "Siyu Ye"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4410313682",
+   "doi": "10.52202/085713-2111",
+   "title": "Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 215,
+   "abstract": "The task of issue resolving is to modify a codebase to generate a patch that addresses a given issue. However, existing benchmarks, such as SWE-bench, focus almost exclusively on Python, making them insufficient for evaluating Large Language Models (LLMs) across diverse software ecosystems. To address this, we introduce a multilingual issue-resolving benchmark, called Multi-SWE-bench, covering Java, TypeScript, JavaScript, Go, Rust, C, and C++. It includes a total of 1,632 high-quality instances, which were carefully annotated from 2,456 candidates by 68 expert annotators, ensuring that the benchmark can provide an accurate and reliable evaluation. Based on Multi-SWE-bench, we evaluate a series of state-of-the-art models using three representative methods (Agentless, SWE-agent, and OpenHands) and present a comprehensive analysis with key empirical insights. In addition, we launch a Multi-SWE-RL open-source community, aimed at building large-scale reinforcement learning (RL) training datasets for issue-resolving tasks. As an initial contribution, we release a set of 4,723 well-structured instances spanning seven programming languages, laying a solid foundation for RL research in this domain. More importantly, we open-source our entire data production pipeline, along with detailed tutorials, encouraging the open-source community to continuously contribute and expand the dataset. We envision our Multi-SWE-bench and the ever-growing Multi-SWE-RL community as catalysts for advancing RL toward its full potential, bringing us one step closer to the dawn of AGI.",
+   "authors": [
+    "Daoguang Zan",
+    "Zhirong Huang",
+    "Wei Liu",
+    "Hanwu Chen",
+    "Shulin Xin",
+    "Linhao Zhang",
+    "Qi Liu",
+    "Qi Liu"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4405957747",
+   "doi": "10.48550/arxiv.2412.21139",
+   "title": "Training Software Engineering Agents and Verifiers with SWE-Gym",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 267,
+   "abstract": "We present SWE-Gym, the first environment for training real-world software engineering (SWE) agents. SWE-Gym contains 2,438 real-world Python task instances, each comprising a codebase with an executable runtime environment, unit tests, and a task specified in natural language. We use SWE-Gym to train language model based SWE agents, achieving up to 19% absolute gains in resolve rate on the popular SWE-Bench Verified and Lite test sets. We also experiment with inference-time scaling through verifiers trained on agent trajectories sampled from SWE-Gym. When combined with our fine-tuned SWE agents, we achieve 32.0% and 26.0% on SWE-Bench Verified and Lite, respectively, reflecting a new state-of-the-art for open-weight SWE agents. To facilitate further research, we publicly release SWE-Gym, models, and agent trajectories.",
+   "authors": [
+    "Jiayi Pan",
+    "Xingyao Wang",
+    "Graham Neubig",
+    "Navdeep Jaitly",
+    "Heng Ji",
+    "Alane Suhr",
+    "Yizhe Zhang"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7203880176",
+   "doi": "10.48550/arxiv.2608.19799",
+   "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 8,
+   "abstract": "Software increasingly functions as part of the scientific instrument itself, making failures in scientific code capable of compromising not only program behavior but also the evidence underlying scientific conclusions. Yet existing evaluations of coding agents largely emphasize aggregate task success, providing limited insight into why agents fail when repairing scientific software. We introduce \\textbf{SWE-bench Science}, a repository-level benchmark for scientific software engineering comprising 119 tasks from 98 GitHub repositories across 20 scientific domains. Each task is organized into one of three paradigms: Issue-driven, Expert-exploratory, and Engineering-integration. Even the best-performing agent, \\textbf{Claude Code with Opus-5 (max), achieves a pass@1 below 50\\%}, highlighting the substantial challenges posed by scientific software engineering. We identify four recurring failure mechanisms: deficits in scientific knowledge or abstraction, misguided exploration or surface-level repair, incomplete repair coverage or system integration, and failures to generalize scientific knowledge beyond observed cases in our analysis. We further conduct a paired ablation that removes explicit scientific guidance while preserving the repository and executable engineering context. The results show that scientific knowledge is not uniformly beneficial: well-grounded information can constrain repair and improve average performance and token efficiency, whereas poorly aligned guidance can induce anchoring and does not necessarily improve exact repair success. Together, SWE-bench Science provides a broad testbed for studying both the capabilities and failure mechanisms of coding agents in scientific software engineering.",
+   "authors": [
+    "Zhipeng Xu",
+    "Jiahao Lu",
+    "Yining Zheng",
+    "Yuxin Wang",
+    "Xipeng Qiu"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417525566",
+   "doi": "10.52202/085713-3239",
+   "title": "SWE-smith: Scaling Data for Software Engineering Agents",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 314,
+   "abstract": "Despite recent progress in Language Models (LMs) for software engineering, collecting training data remains a significant pain point. Existing datasets are small, with at most 1,000s of training instances from 11 or fewer GitHub repositories. The procedures to curate such datasets are often complex, necessitating hundreds of hours of human labor; companion execution environments also take up several terabytes of storage, severely limiting their scalability and usability. To address this pain point, we introduce SWE-smith, a novel pipeline for generating software engineering training data at scale. Given any Python codebase, SWE-smith constructs a corresponding execution environment, then automatically synthesizes 100s to 1,000s of task instances that break existing test(s) in the codebase. Using SWE-smith, we create a dataset of 50k instances sourced from 128 GitHub repositories, an order of magnitude larger than all previous works. We train SWE-agent-LM-32B, achieving 40.2% Pass@1 resolve rate on the SWE-bench Verified benchmark, state of the art among open source models. We open source SWE-smith (collection procedure, task instances, trajectories, models) to lower the barrier of entry for research in LM systems for automated software engineering. All assets available at https://swesmith.com.",
+   "authors": [
+    "John Yang",
+    "K. Lieret",
+    "Carlos Jimenez",
+    "Alexander Wettig",
+    "Kabir Khandpur",
+    "Yanzhe Zhang",
+    "Binyuan Hui",
+    "Ofir Press"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161613657",
+   "doi": null,
+   "title": "Agentic multi-hunk repair on SWE-bench verified",
+   "year": 2026,
+   "venue": "cIRcle (University of British Columbia)",
+   "type": "dissertation",
+   "cited_by": 0,
+   "abstract": "Most research on automated program repair (APR) addresses defects whose fix occupies a single contiguous code region. However, a substantial proportion of real-world bugs require coordinated edits at multiple disjoint locations. These multi-hunk defects pose a distinct challenge: the unit of correctness is the complete patch, so an edit that is locally correct but globally inconsistent invalidates the repair. This thesis investigates how contemporary tool-using coding agents perform in this setting on real-world Python code. The empirical study introduces Hunk-SWE, a curated multi-hunk subset of SWE-bench Verified comprising thirty-two human-validated GitHub issues from twelve established Python projects. Each instance is accompanied by the buggy commit, the developer\u2019s gold patch, and an executable test suite. Four production agents\u2014Claude Code, Codex, Gemini-cli, and Qwen Code\u2014are evaluated end-to-end on Hunk-SWE using a per-instance Docker pipeline that pins both the agent CLI and the SWE-bench evaluation image. Final pass/fail judgment is delegated to the official swebench.harness grader, ensuring verdicts identical to the public leaderboard. The thesis additionally reports two further families of metrics: file-level localization and operational efficiency, measured in tokens and runtime. The BIRCH structural metrics of hunk divergence and spatial proximity are generalized from a Java-only formulation to a multi-language formulation and applied to every instance of Hunk-SWE. Repair accuracy varies substantially across agents on Hunk-SWE. Codex resolves 29 of 32 instances (90.62%), Claude Code 28 of 32 (87.50%), Gemini-cli 19 of 32 (59.38%), and Qwen Code 13 of 32 (40.62%). The two lower-tier agents are strictly nested into the upper tier: every bug resolved by Qwen Code is also resolved by Gemini-cli, and every bug resolved by Gemini-cli is also resolved by both Codex and Claude Code. Codex and Claude Code are not strictly nested with respect to one another, however; the two agents differ on three bugs, and their union covers the same 30 instances as the union of all four agents. Codex and Gemini-cli attain comparable file-level localization rates (78.12% and 81.25% respectively), indicating that the 31-percentage-point gap in repair accuracy between them arises from synthesis rather than from navigation. Claude Code attains the highest localization rate at 90.62% and the smallest localization\u2013repair gap. Repair success declines as edits become more divergent and more dispersed, consistent with prior findings on Java multi-hunk repair. Operational behavior also differs across agents: Gemini-cli\u2019s failed attempts are approximately 5.2\u00d7 longer than its successful ones (950s vs. 182s), Qwen Code\u2019s failures are 1.5\u00d7 longer (422s vs. 284s), Claude Code\u2019s failures are 1.3\u00d7 longer (457s vs. 348s), and Codex\u2019s failures are slightly shorter than its successes (224s vs. 264s). These results indicate that accuracy and cost-of-failure are largely indepen",
+   "authors": [
+    "Daniel Ding"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214195747",
+   "doi": "10.48550/arxiv.2609.27891",
+   "title": "Schr\u00f6dinger's Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "Repository-level coding benchmarks have become the standard for evaluating coding agents, yet they inherently suffer from data leakage because they are built upon popular open-source repositories repeatedly used for training. Consequently, strong performance may reflect memorization of canonical repository cues rather than robust repository reasoning. We propose SchrodingerRepo (Schr\u00f6dinger's Repository), an evaluation framework for testing coding agents under dynamically instantiated repository representations. Instead of repeatedly using a static representation of the test repository, SchrodingerRepo treats the test repository as an evaluation-time latent variable that is dynamically instantiated only when the agent enters the evaluation environment. The instantiated repository preserves the original executable behavior while eroding familiar cues such as naming conventions, file layouts, and implementation patterns through four transformation levels: problem statement reconstruction, namespace remapping, intra-file layout reordering, and functionality-preserving code rewriting. We evaluate popular LLMs on SWE-bench Verified and SWE-QA. Results show that removing familiar repository cues consistently degrades agent performance and substantially increases interaction costs across models. Further analysis reveals that the additional cost is primarily caused by increased difficulty in repository exploration and localization. These findings suggest that current coding agents may partially rely on memorized repository-side cues, highlighting the need for evaluation under dynamically instantiated repository representations.",
+   "authors": [
+    "Silin Chen",
+    "Yufei Yang",
+    "Xiaodong Gu",
+    "Yuling Shi",
+    "Chengcheng Wan",
+    "Haibing Guan"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7220702263",
+   "doi": "10.48550/arxiv.2610.05099",
+   "title": "Small Agents with Semantic Search: Efficient Multilingual Code Localization",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Locating relevant files from natural-language requests is a core subtask for agents operating over code repositories. We investigate whether this task can be delegated to compact, specialized models to enable on-device search while reducing the token usage, latency, and inference cost of larger agents. We show that semantic search improves file localization, with gains in accuracy, cross-language transfer, and inference efficiency. To study this setting, we introduce a training framework for file-localization agents built around ColGREP, a local semantic search tool based on late-interaction retrieval models. Our recipe combines weighted supervised fine-tuning on teacher trajectories, assigning turn-level credit based on retrieval outcomes, with reinforcement learning on localization quality. We train three model families with fewer than two billion parameters to formulate search queries, inspect retrieved content, and identify relevant files. On localization tasks derived from SWE-bench Lite and Multi-SWE-bench Flash, ColGREP-equipped agents substantially improve over their base models and outperform corresponding GREP-based agents. In addition to improving localization accuracy, ColGREP reduces mean end-to-end trajectory latency by 44.1\\% on CPU while using 29.1\\% fewer tokens, and enables better generalization to programming languages unseen during fine-tuning. These results suggest that compact, tool-specialized localization agents can provide an efficient interface between natural-language requests and large codebases.",
+   "authors": [
+    "Maxence Lasbordes",
+    "Aarush Sinha",
+    "Rapha\u00ebl Sourty",
+    "Am\u00e9lie Chatelain",
+    "Djam\u00e9 Seddah"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7163915557",
+   "doi": "10.48550/arxiv.2606.07297",
+   "title": "SWE-Explore: Benchmarking How Coding Agents Explore Repositories",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 34,
+   "abstract": "Repository-level coding benchmarks such as SWE-bench have driven a rapid surge in the capabilities of coding agents. Yet they usually treat coding tasks as a holistic, binary prediction problem (e.g., resolved or unresolved), neglecting fine-grained agent capabilities such as repository understanding, context retrieval, code localization, and bug diagnosis. In this paper, we introduce SWE-Explore, a benchmark that isolates the evaluation of repository exploration, a critical capability of coding agents. Given a repository and an issue, SWE-Explore asks an explorer to return a ranked list of relevant code regions under a fixed line budget. SWE-Explore covers 848 issues across 10 programming languages and 203 open-source repositories. For each instance, we derive line-level ground truth from independent agent trajectories that successfully solved the same issue, distilling the specific code regions their solution paths actually consulted. We evaluate exploration along coverage, ranking, and context-efficiency dimensions, showing that these metrics strongly track downstream repair behavior. Across a broad set of retrieval methods, general coding agents, and specialized localizers, we find that agentic explorers form a clear tier above classical retrieval. While file-level localization is already strong for modern methods, line-level coverage and efficient ranking remain the key axes differentiating state-of-the-art explorers.",
+   "authors": [
+    "Shaoqiu Zhang",
+    "Yuhang Wang",
+    "Jialiang Liang",
+    "Yuling Shi",
+    "Wenhao Zeng",
+    "Maoquan Wang",
+    "Shilin He",
+    "Ningyuan Xu"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414903096",
+   "doi": "10.1145/3744916.3764576",
+   "title": "Are \u201cSolved Issues\u201d in SWE-bench Really Solved Correctly? An Empirical Study",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 82,
+   "abstract": "Automated issue solving aims to resolve real-world issues in software repositories. The most popular benchmarks for automated issue solving are SWE-bench and its human-filtered subset SWE-bench Verified, which are widely used to evaluate foundation models and software engineering agents. These benchmarks leverage testing to validate generated patches. However, because testing is rarely exhaustive, a patch may pass the tests but nevertheless fail to match the developers\u2019 expectations. Unfortunately, it is currently unclear to what extent evaluations performed with SWE-bench suffer from such plausible but incorrect patches. This paper presents an in-depth empirical study of the correctness of plausible patches generated by three state-of-the-art issue-solving tools (CodeStory, LearnByInteract, and OpenHands) evaluated on SWE-bench Verified. We extensively test and inspect generated patches, and compare them against human-written ground truth patches. The core of our methodology is a novel technique for differential patch testing, called PatchDiff, which automatically exposes behavioral discrepancies between two patches. Our findings reveal critical weaknesses in SWE-bench\u2019s patch validation mechanism, which causes 7.8% of all patches to count as \u201ccorrect\u201d while failing the developer-written test suite. Moreover, our novel automated technique reveals that even more (29.6%) plausible patches induce different behavior than the ground truth patches. These behavioral differences are often due to similar, but divergent implementations (46.8%) and due to generated patches that adapt more behavior than the ground truth patches (27.3%). Our manual inspection shows that 28.6% of behaviorally divergent patches are certainly incorrect. Combined, the different weaknesses lead to an inflation of reported resolution rates by 6.4 absolute percent points. Our findings are a call to arms for more robust and reliable evaluation of issue-solving tools. We envision our automated differential patch testing technique to be useful for this purpose.",
+   "authors": [
+    "You Wang",
+    "Michael Pradel",
+    "Zhongxin Liu"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414920507",
+   "doi": "10.1145/3744916.3787810",
+   "title": "SWE-Debate: Competitive Multi-Agent Debate for Software Issue Resolution",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 76,
+   "abstract": "Issue resolution has made remarkable progress thanks to the advanced reasoning capabilities of large language models (LLMs). Recently, agent-based frameworks such as SWE-agent have further advanced this progress by enabling autonomous, tool-using agents to tackle complex software engineering tasks. While existing agent-based issue resolution approaches are primarily based on agents' independent explorations, they often get stuck in local solutions and fail to identify issue patterns that span across different parts of the codebase. To address this limitation, we propose SWE-Debate, a competitive multi-agent debate framework that encourages diverse reasoning paths and achieves more consolidated issue localization. SWE-Debate first creates multiple fault propagation traces as localization proposals by traversing a code dependency graph. Then, it organizes a three-round debate among specialized agents, each embodying distinct reasoning perspectives along the fault propagation trace. This structured competition enables agents to collaboratively converge on a consolidated fix plan. Finally, this consolidated fix plan is integrated into an MCTS-based code modification agent for patch generation. Experiments on the SWE-bench benchmark show that SWE-Debate achieves new state-of-the-art results in open-source agent frameworks and outperforms baselines by a large margin.",
+   "authors": [
+    "H. Li",
+    "Yanan Shi",
+    "Shaoxin Lin",
+    "Xiaodong Gu",
+    "Heng Lian",
+    "Xin Wang",
+    "Yantao Jia",
+    "Tao Huang"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417095644",
+   "doi": "10.48550/arxiv.2506.17208",
+   "title": "Dissecting the SWE-Bench Leaderboards: Profiling Submitters and Architectures of LLM- and Agent-Based Repair Systems",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 18,
+   "abstract": "The rapid progress in Automated Program Repair (APR) has been driven by advances in AI, particularly large language models (LLMs) and agent-based systems. SWE-Bench is a recent benchmark designed to evaluate LLM-based repair systems using real issues and pull requests mined from 12 popular open-source Python repositories. Its public leaderboards -- SWE-Bench Lite and SWE-Bench Verified -- have become central platforms for tracking progress and comparing solutions. However, because the submission process does not require detailed documentation, the architectural design and origin of many solutions remain unclear. In this paper, we present the first comprehensive study of all submissions to the SWE-Bench Lite (79 entries) and Verified (99 entries) leaderboards, analyzing 80 unique approaches across dimensions such as submitter type, product availability, LLM usage, and system architecture. Our findings reveal the dominance of proprietary LLMs (especially Claude 3.5), the presence of both agentic and non-agentic designs, and a contributor base spanning from individual developers to large tech companies.",
+   "authors": [
+    "Mat\u00edas Mart\u00ednez",
+    "Xavier Franch"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7125926949",
+   "doi": "10.1109/ase63991.2025.00249",
+   "title": "Issue Localization via LLM-Driven Iterative Code Graph Searching",
+   "year": 2025,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 53,
+   "abstract": "Issue solving aims to generate patches to fix re-ported issues in real-world code repositories according to issue descriptions. Issue localization forms the basis for accurate issue solving. Recently, large language model (LLM) based issue localization methods have demonstrated state-of-the-art performance. However, these methods either search from files mentioned in issue descriptions or in the whole repository and struggle to balance the breadth and depth of the search space to converge on the target efficiently. Moreover, they allow LLM to explore whole repositories freely, making it challenging to control the search direction to prevent the LLM from searching for incorrect targets. Meanwhile, because LLMs may not correctly produce the required interaction formats with the environment, they suffer from search failures.This paper introduces COSIL, an LLM-driven, powerful function-level issue localization method without training or indexing. To balance search breadth and depth, COSIL employs a two-phase code graph search strategy. It first conducts broad exploration at the file level using dynamically constructed module call graphs, and then performs in-depth analysis at the function level by expanding the module call graph into a function call graph and executing iterative searches. To precisely control the search direction, COSIL designs a pruner to filter unrelated directions and irrelevant contexts. To avoid incorrect interaction formats in long contexts, COSIL introduces a reflection mechanism that uses additional independent queries in short contexts to enhance formatted abilities. Experiment results demonstrate that COSIL achieves a Top-1 localization accuracy of 43.3% and 44.6% on SWE-bench Lite and SWE-bench Verified, respectively, with Qwen2.5-Coder-32B, average outperforming the state-of-the-art methods by 96.04%. When COSIL is integrated into an issue-solving method, Agentless, the issue resolution rate improves by 2.98%\u201330.5%.",
+   "authors": [
+    "Zhonghao Jiang",
+    "Xiaoxue Ren",
+    "Meng Ling Yan",
+    "Wei Jiang",
+    "Yong Li",
+    "Zhongxin Liu"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7165797321",
+   "doi": "10.18653/2026.emnlp-main.711",
+   "title": "SHERLOC: Structured Diagnostic Localization for Code Repair Agents",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 8,
+   "abstract": "LLM agents solve repository-level coding tasks through multi-turn tool use, but utilize half their budget on locating faults before editing.Dedicated localization frameworks have emerged, yet are still evaluated as file retrieval rather than actionable diagnosis, producing locations without the diagnostic context a repair agent needs.We introduce SHERLOC (Structured Hypothesis-driven Exploration and Reasoning for Localization), a training-free framework pairing a reasoning LLM with compact repository tools and self-recovery, without fine-tuning or multi-agent orchestration.SHERLOC reaches state-of-the-art localization across model scales: 84.33% accuracy@1 on SWE-BENCH LITE and 81.27% recall@1 on SWE-BENCH VERIFIED; at \u223c 30B parameters, it matches or outperforms other agentic methods.Injecting our locations and diagnostic findings into repair agents yields an average +5.95 pp resolve-rate gain from the best SHERLOC result per setting on SWE-BENCH VERIFIED.SHERLOC cuts localization and total tokens by 36.7% and 23.1% on average. 1 SWE-Bench Lite 55 65 75 85 File-level Accuracy@1 (%) SHERLOC: Qwen3-235B 84.33 \u00b10.72 SWERank:",
+   "authors": [
+    "Hovhannes Tamoyan",
+    "Sean Narenthiran",
+    "Erik Arakelyan",
+    "Mira Mezini",
+    "Boris Ginsburg"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7164328014",
+   "doi": "10.18653/2026.emnlp-main.1604",
+   "title": "CORE-Bench: A Comprehensive Benchmark for Code Retrieval in the Era of Agentic Coding",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 13,
+   "abstract": "Code retrieval is becoming a core capability for coding agents, but existing benchmarks still mostly evaluate decontextualized docstring-to-function matching.This setting misses the retrieval problem faced by real agents: starting from an issue-like request, the model must navigate a concrete repository state, find edit-relevant locations, gather supporting context, and avoid many semantically similar but irrelevant local distractors.We introduce CORE-Bench, a repository-aware benchmark for this agentic retrieval setting.CORE-Bench organizes evaluation into three levels, from traditional code understanding to issue-to-edit localization and broader context retrieval.We build the benchmark from SWEbench-style instances and PR-derived software changes, using patch alignment for edit targets and agent traces with LLM-based validation for broader-context annotations.The resulting benchmark contains over 180K queries and 106K broader-context relevance labels.Experiments with lexical, general-purpose embedding, and code-oriented embedding models show a sharp drop from traditional code retrieval to agentic retrieval.PR-derived indomain supervised fine-tuning substantially improves Qwen3 embedding models, but the remaining gap indicates that current retrievers still struggle with requirement-conditioned repository navigation.Code 1 , data 2 , and SFT model checkpoints (0.6B, 4B, and 8B) are publicly available.",
+   "authors": [
+    "Fuwei Zhang",
+    "Yanzhao Zhang",
+    "Mingxin Li",
+    "Dingkun Long",
+    "Lexiang Hu",
+    "Pengjun Xie",
+    "Zhao Zhang",
+    "Fuzhen Zhuang"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214666670",
+   "doi": "10.48550/arxiv.2609.31176",
+   "title": "Semantic Navigation for Issue Localization in Code Repository",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Repository-level issue localization aims to identify and rank the files and functions relevant to resolving a reported issue. LLM agents approach this task iteratively: they identify a set of potentially relevant locations, inspect the corresponding code, and revise their judgments about these candidates as new evidence is acquired. Existing environments, however, provide limited support for this loop: agents must search for unresolved relation targets, reconstruct entity semantics from raw source code, and revise candidates without evidential basis. To address these limitations, we present SemNav, a framework that leverages deterministic retrieval to seed a broad candidate set and an LLM agent to continually refine that set, thereby combining initial coverage with evidence-guided revision. SemNav supports this process through three key components. A Semantic Navigation Graph resolves program relations on demand through a language server, enabling direct navigation to related entities across files. Issue-conditioned Semantic Cards provide compact, source-grounded interpretations of each entity's role and relevance to the issue. A persistent Candidate Workspace records each candidate together with its evidential basis, enabling grounded verification, revision, and ranking. Across SWE-bench Lite and PLocBench, SemNav outperforms existing baselines, improving File Hit@10 from 68.33\\% to 82.67\\% with Gemma 4B. Component ablations and trajectory analysis support the complementary roles of all three components, while Semantic Cards reduce working-context load by 48.2\\% relative to full-source reading. SemNav further ranks first on all seven evidence-quality metrics on SWE-Explore and improves downstream issue resolution from 44.00\\% to 52.33\\%.",
+   "authors": [
+    "Yunxiang Wei",
+    "Zhenyu Lei",
+    "Jundong Li"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7128015339",
+   "doi": "10.1145/3786583.3786904",
+   "title": "What\u2019s in a Benchmark? The Case of SWE-Bench in Automated Program Repair",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)",
+   "type": "conference-paper",
+   "cited_by": 7,
+   "abstract": "The rapid progress in Automated Program Repair (APR) has been fueled by advances in AI, particularly large language models (LLMs) and agent-based systems. SWE-Bench is a benchmark designed to evaluate repair systems using real issues mined from popular open-source Python repositories. Its public leaderboards\u2014SWE-Bench Lite and Verified\u2014have become central platforms for tracking progress and comparing solutions. In this paper, we present the first comprehensive study of these two leaderboards, examining who is submitting solutions, the products behind the submissions, the LLMs employed, and the openness of the approaches. We analyze 79 entries submitted to Lite leaderboard and 133 to Verified. Our results show that most entries on both leaderboards originate from industry, particularly small companies and large publicly traded companies. These submissions often achieve top results, although academic contributions\u2014typically open source\u2014also remain competitive. We also find a clear dominance of proprietary LLMs, especially Claude family, with state-of-the-art results on both leaderboards currently achieved by Claude 4 Sonnet. These findings offer insights into the SWE-Bench ecosystem that can guide greater transparency and diversity in future benchmark-driven research.",
+   "authors": [
+    "Mat\u00edas Mart\u00ednez",
+    "Xavier Franch"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223971351",
+   "doi": "10.66977/xsci.2610.0030",
+   "title": "How Do Small Coding Agents Use Code Graphs and Embeddings?",
+   "year": 2026,
+   "venue": null,
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Coding agents are given embedding search and code-graph tools on the premise that a repository's structure is something the model lacks and the tool supplies. We test that premise on SWE-bench Verified with small open-weight models, stratifying tasks by a deterministic hop depth (the shortest code-graph path from code the issue mentions to code the gold patch changes) that a companion paper defines and validates. First, we ablate a localization agent's tool set (grep only; +embedding search; +graph tools; all) on a depth-balanced 160-task split and on all 500 tasks for ten models (six Qwen3 sizes from 0.6B to 32B with five decodings each, an FP8 control, three Gemma 4 sizes; 79k episodes). Structured tools double grep-only accuracy for Qwen3-8B and Gemma 4 E4B; their gain peaks at 17-21 points at 1.7-4B and falls to 4-5 points at 32B (odds ratio 0.77-0.82 per doubling of parameters). From 8B up, about half of that gain is the form of the submission rather than finding the target; the fall from 14B to 32B is a fall in tool uptake at equal grep-only accuracy; and the same 4B size gains or does not gain from a tool depending on the checkpoint. Each extra hop multiplies the odds of correct localization by 0.50-0.67 at every size, and no tool set flattens that gradient: traces show the graph tools' gain is name lookup at hop 0 and one expansion at hop 1, and agents chain expansions in only 12-14% of episodes. A fixed repair model resolves 6-13 of 160 tasks from these localizations (oracle 26). Second, linear probes find direct call edges decodable under a within-anchor, degree-stratified protocol (AUC 0.74; 0.61-0.66 inside agent conversations), but below a lexical baseline (0.99), with two-hop edges at 0.57. Small agents carry a one-hop, largely lexical picture of their repository, in weights and in use. We release the agent, probes, logs and traces.",
+   "authors": [
+    "Saurav Bellam"
+   ],
+   "facet": "F3_graph",
+   "query": "graph-guided code search agent SWE-bench localization"
+  }
+ ]
+}

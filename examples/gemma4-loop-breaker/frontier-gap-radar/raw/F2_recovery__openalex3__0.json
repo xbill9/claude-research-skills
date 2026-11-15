@@ -1,0 +1,505 @@
+{
+ "url": "https://api.openalex.org/works?search=coding+agent+stuck+repeated+edits+loop+detection&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W7167425954",
+   "doi": "10.1145/3805760.3814911",
+   "title": "Wink: Recovering from Misbehaviors in Coding Agents",
+   "year": 2026,
+   "venue": "ACM International Conference on AI-Powered Software (AIware)",
+   "type": "conference-paper",
+   "cited_by": 25,
+   "abstract": "Autonomous coding agents, powered by large language models (LLMs), are increasingly being adopted in the software industry to automate complex engineering tasks. However, these agents are prone to a wide range of misbehaviors, such as deviating from the user's instructions, getting stuck in repetitive loops, or failing to use tools correctly. These failures disrupt the development workflow and often require resource-intensive manual intervention. In this paper, we present a system for automatically recovering from agentic misbehaviors at scale. We first introduce a taxonomy of misbehaviors grounded in an analysis of production traffic, identifying three primary categories: Specification Drift, Reasoning Problems, and Tool Call Failures, which we find occur in about 30% of all agent trajectories.",
+   "authors": [
+    "Rahul Nanda",
+    "Chandra Maddila",
+    "Smriti Jha",
+    "Euna Mehnaz Khan",
+    "Matteo Paltenghi",
+    "Satish Chandra"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415796623",
+   "doi": "10.52202/079017-2601",
+   "title": "SWT-Bench: Testing and Validating Real-World Bug-Fixes with Code Agents",
+   "year": 2024,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 81,
+   "abstract": "Rigorous software testing is crucial for developing and maintaining high-quality code, making automated test generation a promising avenue for both improving software quality and boosting the effectiveness of code generation methods. However, while code generation with Large Language Models (LLMs) is an extraordinarily active research area, test generation remains relatively unexplored. We address this gap and investigate the capability of LLM-based Code Agents to formalize user issues into test cases. To this end, we propose a novel benchmark based on popular GitHub repositories, containing real-world issues, ground-truth bug-fixes, and golden tests. We find that LLMs generally perform surprisingly well at generating relevant test cases, with Code Agents designed for code repair exceeding the performance of systems designed specifically for test generation. Further, as test generation is a similar but more structured task than code generation, it allows for a more fine-grained analysis using issue reproduction rate and coverage changes, providing a dual metric for analyzing systems designed for code repair. Finally, we find that generated tests are an effective filter for proposed code fixes, doubling the precision of SWE-Agent. We release all data and code at https://github.com/logic-star-ai/SWT-Bench",
+   "authors": [
+    "Niels M\u00fcndler",
+    "Mark Niklas M\u00fcller",
+    "Jingxuan He",
+    "Martin Vechev"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7213586618",
+   "doi": "10.48550/arxiv.2609.20822",
+   "title": "Coding Agents with Harness for Safe Robot Control",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 7,
+   "abstract": "Coding agents have emerged as a promising paradigm for robot manipulation: a language model writes the robot controller as a program, and agents built in this way now operate robots without robot-specific training. Whether this paradigm is also safe, however, has not been asked. We evaluate coding agents under a safety constraint, where each task pairs a manipulation goal with an obstacle the robot must not touch. The agent pursues the goal but collides with the obstacle in most cases, treating task completion as its sole objective. The agent reasons about the obstacle in its traces, and the prompt already forbids touching it, so neither perception nor instruction is at fault; the fault lies in the planning, where the stated constraint never becomes a priority. By decomposing manipulation into a route phase and a contact-rich moment, we locate the source of the failure. Along the route, the model cannot prioritize the safety constraint, having no notion of a clearing route and none of replanning once a chosen route becomes infeasible. At the contact, it is unaware that contact execution is bounded by the same constraint. To close this gap, we present SafeHarness, which equips the model with two obstacle-aware harnesses. Obstacle-aware route planning grounds the objects as bounding boxes and draws candidate routes over them as sequences of waypoints. The agent then plans a route in advance, verifies it, replans when necessary, and only then executes it. Obstacle-aware contact execution instead selects the contact position so that the contact itself avoids the obstacle. SafeHarness attains 81.2% task success and 91.9% collision avoidance with GPT-6-Astra, surpassing the previous SOTA by 13.7 and 23.0 points, and the same agent without harnesses by 31.2 and 57.5 points, respectively.",
+   "authors": [
+    "Bingxin Xu",
+    "Yuzhang Shang",
+    "Zhen Dong",
+    "Emilio Ferrara"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7167816723",
+   "doi": "10.18653/2026.emnlp-industry.94",
+   "title": "AgentLens: Trajectory Reviews for Coding Agent Evaluation",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 3,
+   "abstract": "We present AgentLens, a trajectory-level evaluation framework for interactive code agents, built from production-informed tasks and integrated into continuous regression testing.Most code-agent benchmarks reduce a run to a single bit-did the task pass?-but the people who actually use these agents experience the entire trajectory: how the agent follows instructions, uses its tools, verifies its own work, recovers from mistakes, and talks to them along the way.AgentLens evaluates that whole trajectory, pairing formal verification with LLM-written trajectory reviews and side-by-side comparisons, so that each run yields a readable explanation of the final score.Apart from ranking models, AgentLens can be used to diagnose model behavior, compare successive versions of agents, and catch product regressions in an evaluation pipeline.We release AgentLens at https://github.com/ agent-lens/agent-lens-bench.",
+   "authors": [
+    "Andrey Podivilov",
+    "Vadim Lomshakov",
+    "\u0421\u0435\u0440\u0433\u0435\u0439 \u0421\u0430\u0432\u0438\u043d",
+    "Matvei Startsev",
+    "Roman Pozharskiy",
+    "Maksim Parshin",
+    "Sergey Nikolenko"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7222935773",
+   "doi": "10.48550/arxiv.2610.22732",
+   "title": "TokenEconomizer: Experience-Driven Black-Box Cost Control for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Advances in frontier coding agents have sharply increased the token costs of AI-assisted software engineering. Their token efficiency is typically evaluated on isolated tasks, whereas real-world developers use them to continuously build, update, and maintain large-scale projects. This mismatch motivates us to evaluate agents over sequences of realistic coding tasks, where we find that agents exhibit recurring environment-dependent token costs that existing methods struggle to reduce. To minimize these costs, we introduce TokenEconomizer, an external controller that cuts environment-specific token costs over a sequence of tasks. These cuts come from determining (i) which operational micro-skills to inject, (ii) which persistently irrelevant tools to prune, and (iii) when to intervene in unproductive failure loops. Across Claude Code, Codex, and GitHub Copilot CLI paired with frontier models, TokenEconomizer reduces the average token cost by 18.4-30.9% with comparable task success. Savings hold in every repository under every tested agent-model setting and generalize to diverse domains such as sequential web development and security auditing, where costs fall by 6.4-21.2% depending on task structure. Our work establishes adaptive black-box cost control as a promising direction for reducing token costs of coding agents in realistic settings.",
+   "authors": [
+    "Aaron J. Li",
+    "Weijia Xu",
+    "Chandan Singh",
+    "Zixiao Chen",
+    "Jeevana Priya Inala",
+    "Charlotte Siska",
+    "Acar Tamersoy",
+    "Bin Yu"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214628144",
+   "doi": "10.48550/arxiv.2609.30725",
+   "title": "Analyzing and Mitigating Cost-Inefficient Behaviors in Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "Although effective, coding agents often incur substantial monetary costs. Their recurring cost-inefficient behaviors remain underexplored. We conduct the first study of behavioral cost inefficiencies in coding agents, analyzing 1,200 trajectories from Claude Code and Mini-SWE-Agent across four configurations on SWE-bench Verified. We identify three cost-inefficient behaviors: subsumed retrieval, similar script generation, and test re-execution. We then evaluate three mitigation strategies: structure-aware retrieval, agent-synthesized skills, and developer-designed skills, over 10k trajectories on held-out SWE-bench Verified and Pro tasks. Our main findings are: (1) The three behaviors affect 79.00%--98.00% of coding tasks and account for up to 22.75% of task cost. (2) Structure-aware retrieval can introduce retrieval overhead and alter agent delegation, causing inconsistent improvements in retrieval efficiency and cost increases of up to 28.14%. (3) Agent-synthesized skills tend to produce low-level, trace-specific guidance, limiting their effectiveness and generality. (4) In contrast, developer-designed skills provide high-level, trace-agnostic guidance, reducing cost by up to 41.73%, roughly twice the maximum gain from agent-synthesized skills.",
+   "authors": [
+    "Yiran Hu",
+    "Nan Jiang",
+    "Shanchao Liang",
+    "Dey, Anik",
+    "Yi Wu",
+    "Lin Tan"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7213605503",
+   "doi": "10.48550/arxiv.2609.20804",
+   "title": "An Empirical Study of Harness Design for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 16,
+   "abstract": "Coding harnesses shape how autonomous coding agents translate model capabilities into long-horizon software-engineering performance, yet existing work typically evaluates harnesses as monolithic systems, leaving the effectiveness of individual components unclear. To enable component-level comparisons, we study this question with a lightweight coding harness whose execution loop is fixed while three components are varied: planning, action space, and context management. Across four models evaluated on SWE-Bench Verified and Terminal-Bench 2.1, we evaluate 176 matched settings spanning five context-management strategies, four context-window budgets, and targeted ablations of planning and action space. We find that: (1) Context management becomes increasingly valuable as the context-window budget tightens, with most of its benefit coming from preventing context-overflow failures. (2) Staging rule-based elision before LLM-based summarization provides the strongest overall efficiency among the context-management strategies, whereas making elided content recoverable adds machinery that models rarely use and yields no accuracy gain. (3) Planning shifts from an accuracy scaffold for weaker models to a cost saver for stronger models, with little change in accuracy. (4) Predefined tools improve performance for models with weaker bash proficiency, whereas bash-capable models can operate effectively with a bash-only interface and achieve substantially lower cost, especially on command-line-centric tasks. Trajectory-level analysis explains these effects: context management extends execution trajectories without substantially altering agent behavior, planning changes where trajectories stop, and the action space changes the granularity at which code is written. These findings inform model- and budget-aware harness design and provide a modular framework for evaluating future harness components.",
+   "authors": [
+    "Run-Ze Fan",
+    "Zihao Zhang",
+    "Simin Ma",
+    "Yebowen Hu",
+    "Shouju Wang",
+    "Kaiqiang Song",
+    "Fei Liu",
+    "Hamed Zamani"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7203858865",
+   "doi": "10.48550/arxiv.2608.20195",
+   "title": "From Agent Behaviour to Agent-Friendly Documentation: An Empirical Study of How Coding Agents Discover, Read, and Write Technical Documentation",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "Technical documentation is written for human developers, but an increasing share of software changes is now authored by autonomous coding agents. Which documents they consult, when, and what follows remain unknown. We conduct a behaviour-grounded study of agent-documentation interaction across two public datasets: 557 agentic coding sessions from SWE-chat, yielding 94,813 development events including 3,033 documentation interactions; and 33,097 agentic pull requests from AIDev, with 690,260 classified file-level change records. Four findings challenge current documentation practice. First, agents' documentation work is dominated by agent-facing artefacts: instruction files and working notes account for 60.5% of all documentation interactions, versus 10.6% for classical technical documentation and 1.3% for API references. Second, the link between consultation and code editing is unresolved: the adjacent transition probability is 0.002 and the unadjusted three-event lift 1.05, whereas a stage-adjusted model places it above unity (OR 1.33 [1.09, 1.62]); documentation creation is elevated unadjusted (lift 1.67) but its adjusted interval includes unity. Third, no explicit documentation-based validation sequence was observed, and consultation is associated with less immediate testing (lift 0.23, cluster CI 0.08-0.45; adjusted OR 0.39 [0.25, 0.60]). Fourth, consultation is self-initiated (70.2%) far more often than failure-driven (7.5%), and documentation trails code: among multi-commit pull requests changing both, code is touched first 4.7x more often. From these traces we derive a descriptive model of agent-documentation interaction as a two-lobed cycle rather than a linear journey, and show that two widely assumed properties of \"agent-friendly\" documentation - actionability and verifiability - lack consistent behavioural support. We release our pipeline, coding scheme, and event-level data.",
+   "authors": [
+    "Zhijun Gao",
+    "Jing Chen"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7134067277",
+   "doi": "10.48550/arxiv.2603.05344",
+   "title": "Building Effective AI Coding Agents for the Terminal: Scaffolding, Harness, Context Engineering, and Lessons Learned",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 35,
+   "abstract": "The landscape of AI coding assistance is undergoing a fundamental shift from complex IDE plugins to versatile, terminal-native agents. Operating directly where developers manage source control, execute builds, and deploy environments, CLI-based agents offer unprecedented autonomy for long-horizon development tasks. In this paper, we present OPENDEV, an open-source, command-line coding agent written in Rust, engineered specifically for this new paradigm. Effective autonomous assistance requires strict safety controls and highly efficient context management to prevent context bloat and reasoning degradation. OPENDEV overcomes these challenges through a compound AI system architecture with workload-specialized model routing, a dual-agent architecture separating planning from execution, lazy tool discovery, and adaptive context compaction that progressively reduces older observations. Furthermore, it employs an automated memory system to accumulate project-specific knowledge across sessions and counteracts instruction fade-out through event-driven system reminders. By enforcing explicit reasoning phases and prioritizing context efficiency, OPENDEV provides a secure, extensible foundation for terminal-first AI assistance, offering a blueprint for robust autonomous software engineering.",
+   "authors": [
+    "Nghi D. Q. Bui"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223218013",
+   "doi": "10.48550/arxiv.2610.29014",
+   "title": "GenXR-Bench: Benchmarking Coding Agents for Interactive XR Development",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 1,
+   "abstract": "Coding agents are rapidly advancing from single-file generation to long-horizon repository-scale engineering, yet the evaluation of their capabilities to author interactive extended reality (XR) applications remains an open challenge. Unlike traditional software, XR applications operate within dynamic 3D physical environments where runtime robustness depends jointly on continuous user motion, spatial input, and environmental sensing. We introduce GenXR-Bench, the first benchmark for the end-to-end evaluation of coding agents in XR software development. GenXR-Bench contains 112 expert-authored tasks spanning 24 feature implementations, 21 bug repairs, and 67 application generation tasks. Held-out tests combine scripted and adaptive interactions with programmatic and visual assertions to evaluate core functionality and runtime behavior. GenXR-Bench's testing suite achieves 96.5% accuracy against blinded expert judgments of 124 candidate applications executed on consumer XR hardware. Evaluating 10 models on GenXR-Bench, we find that the strongest configuration achieves only 50.9% overall Pass@1. Failure analysis identifies recurring misunderstandings in asynchronous sensor lifecycles, physical grounding, and embodied interaction semantics. GenXR-Bench establishes a reproducible testbed for evaluating coding agents in the interactive and physically situated conditions of spatial computing.",
+   "authors": [
+    "William Huang",
+    "David Li",
+    "Xiang 'Anthony' Chen",
+    "Xun Qian",
+    "Nels Numan",
+    "Zhongyi Zhou",
+    "Hyunsung Cho",
+    "Salman Muin Kayser Chishti"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7165399465",
+   "doi": "10.48550/arxiv.2606.19613",
+   "title": "StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 3,
+   "abstract": "We introduce StaminaBench, a benchmark that measures the stamina of coding agents: how many consecutive interaction turns (change requests) they can handle before failing. Unlike the prevailing fraction-of-tasks-solved metric, this matches real vibe-coding where sessions run dozens or hundreds of turns. In StaminaBench, agents implement a REST API server and modify it across a tunable number of procedurally generated follow-up change requests - 100 in our experiments, resulting in codebases of up to 6,000 lines. Tests are generated fully programmatically without LLM involvement, ensuring reproducibility and reliability; change sequences are drawn from either a hardcoded or LLM-driven sampler, both constrained to a structured action space to ensure changes are valid. The agent and the server run in an isolated environment and communicate with the benchmark through HTTP, making testing fully black-box and language-agnostic. We evaluate six agent harnesses paired with seven open-source LLMs across 20 scenarios of 100 turns each and find that: (1) all the tested models fail within 5-6 turns, confirming that vibe-coding-style programming without thorough testing produces bugs; (2) passing test feedback back to the agent and allowing it to retry improves passed turn count by up to 12x; and (3) a good harness is required for strong performance: stronger models exhibit up to a 6x gap between their best and worst harness, while weaker models fail with any harness. We release the benchmark and the generated tasks to enable further research into multi-turn coding agent behavior. Benchmark code and data: github.com/amazon-science/StaminaBench.",
+   "authors": [
+    "Vlad Sobal",
+    "Shuo Yang",
+    "Yuting Zhang",
+    "Wei Xia",
+    "Stefano Soatto"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7165644885",
+   "doi": "10.18653/2026.emnlp-main.2478",
+   "title": "Steer, Don\u2019t Solve: Training Small Critic Models for Large Code Agents",
+   "year": 2026,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 4,
+   "abstract": "Coding tasks are typically complicated and require multiple capabilities, ranging from highlevel planning to low-level implementation.While coding agents are optimized for the joint capabilities, individual capabilities such as high-level planning may have different optima and remain a major bottleneck.To address this challenge, we train a separate critic model that is specialized in high-level planning to steer the coding agent in inference.We construct SFT and DPO data to train the critic model to identify errors made by the coding agent and provide correct and clear high-level guidance without generating concrete actions.Experiments show that our fine-tuned 4B and 8B critic models significantly improve the performance of 6 larger coding agents (e.g., improving the resolved rates of GLM-4.7-Flash-30B-A3B and GPT-OSS-120B by 16.0% and 14.4% on SWE-Bench Verified).The critic model also reduces the total inference costs for some coding agents by solving tasks in fewer steps (e.g., reducing the per-example inference cost for GPT-OSS-20B from $0.07 to $0.03). 1 * Equal contribution.",
+   "authors": [
+    "Shubham Gandhi",
+    "Yiqing Xie",
+    "Atharva Naik",
+    "Ry Zhu",
+    "Carolyn Rose"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7172172780",
+   "doi": null,
+   "title": "Agentic Method for Deterministic Validation of Legacy Code Migration",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 4,
+   "abstract": "Migration of legacy COBOL programs to Java requires extensive testing to ensure correct functionality. This effort is often complicated by the lack of test data and the difficulty of validating all corner cases. In this paper we propose a novel agentic test-synthesis method, the \"Locksmith Loop,\" which is initiated by preparing two runtime environments: the COBOL source and the generated Java target are each instrumented with mocks and executed off-mainframe on commodity hardware, then an iterative agentic loop performs Witness Search over input mocks to penetrate program branches, followed by parity-preserving mutations. When routing boundaries are reached, an analyzer identifies a Locked Paragraph: a condition preventing deeper exploration. Across three COBOL-Java case studies, spanning two open-source programs and one internal production-like COBOL program and ranging from 430 to 4,114 source lines, Locksmith consistently improved coverage beyond input-search plateaus, reaching nearly complete coverage on the two open-source programs and 91.90% branch coverage on the internal production-like COBOL program. The generated Java matched the COBOL reference under deterministic parity checks in all accepted test cases. Through these findings we demonstrate, to the best of our knowledge, a novel approach for validating agentic coding output using a deterministic oracle.",
+   "authors": [
+    "Andras Ferenczi",
+    "Jordan Docherty",
+    "Mariya Bessonov",
+    "Matthew Findlay",
+    "Krishna Lingamneni"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7221188051",
+   "doi": "10.48550/arxiv.2610.12269",
+   "title": "Cadence: Strategic Guidance for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Runtime monitors are increasingly used to improve the reliability of LLM-based coding agents by inspecting execution trajectories and delivering corrective guidance upon detecting misbehavior. However, their effectiveness remains limited by static guidance triggering schemes. Existing monitors rely either on fixed inspection intervals, missing timely guidance during severe misbehaviors while incurring unnecessary overhead during healthy execution, or on rigid heuristic rules, failing to detect complex reasoning errors. To address these limitations, we propose Cadence, a dynamic monitoring framework that adaptively schedules inspections and delivers guidance according to the agent's real-time execution health. Cadence consists of two core modules: a two-tier intervention module and an inspection scheduler. The intervention module delivers advisory-level guidance for normal executions and minor lapses, while providing replacement-level guidance for severe misbehaviors. Driven by the intervention level, the scheduler adjusts the inspection frequency by tightening supervision after replacement-level guidance and relaxing it after advisory-level guidance. Evaluated on 300 SWE-bench Lite tasks across two distinct agents, mini-swe-agent and Moatless, Cadence achieves the highest resolve rate among all evaluated monitors. Specifically, Cadence outperforms vanilla agents by 25.33\\% (+76 resolved tasks) on mini-swe-agent and 15.67\\% (+47 resolved tasks) on Moatless, while maintaining competitive token efficiency compared to state-of-the-art baselines.",
+   "authors": [
+    "Minxing Wang",
+    "He Ye",
+    "Earl T. Barr",
+    "Yintong Huo"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4394850404",
+   "doi": "10.3389/frobt.2024.1356827",
+   "title": "Human-in-the-loop error detection in an object organization task with a social robot",
+   "year": 2024,
+   "venue": "Frontiers in Robotics and AI",
+   "type": "article",
+   "cited_by": 10,
+   "abstract": "In human-robot collaboration, failures are bound to occur. A thorough understanding of potential errors is necessary so that robotic system designers can develop systems that remedy failure cases. In this work, we study failures that occur when participants interact with a working system and focus especially on errors in a robotic system\u2019s knowledge base of which the system is not aware. A human interaction partner can be part of the error detection process if they are given insight into the robot\u2019s knowledge and decision-making process. We investigate different communication modalities and the design of shared task representations in a joint human-robot object organization task. We conducted a user study (N = 31) in which the participants showed a Pepper robot how to organize objects, and the robot communicated the learned object configuration to the participants by means of speech, visualization, or a combination of speech and visualization. The multimodal, combined condition was preferred by 23 participants, followed by seven participants preferring the visualization. Based on the interviews, the errors that occurred, and the object configurations generated by the participants, we conclude that participants tend to test the system\u2019s limitations by making the task more complex, which provokes errors. This trial-and-error behavior has a productive purpose and demonstrates that failures occur that arise from the combination of robot capabilities, the user\u2019s understanding and actions, and interaction in the environment. Moreover, it demonstrates that failure can have a productive purpose in establishing better user mental models of the technology.",
+   "authors": [
+    "Helena Anna Frijns",
+    "Matthias Hirschmanner",
+    "Barbara Sienkiewicz",
+    "Peter H\u00f6nig",
+    "Bipin Indurkhya",
+    "Markus Vincze"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7223223518",
+   "doi": "10.48550/arxiv.2610.29155",
+   "title": "5uGUE: Agentic Hardware-in-the-Loop Fuzzing for 5G Devices and beyond",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "In this paper, we present 5uGUE, a large language model (LLM)-driven hardware-in-the-loop agent, which enables the wireless fuzzing of 5G-enabled devices (such as mobile phones). 5uGUE combines multi-step reasoning with tool-assisted interaction and integrates into the fuzzing pipeline by leveraging specialized tools for internet search, 5G protocol analysis, memory management, and test-case execution. The agent iteratively generates test cases, executes them on targets, collects runtime feedback, and adaptively refines the fuzzing strategy. We evaluate 5uGUE on five commercial off-the-shelf (COTS) 5G devices across six LLMs. The best performing runs for 5uGUE trigger 167 crashes in total (141 novel and 31 unique) within 60 interaction turns (49 to 133 minutes total runtime). In contrast, the best runs for the state-of-the-art baseline (5GHOUL) discovers only 13 crashes in total (10 novel and 6 unique) within 150 minutes. Overall, by integrating LLM-driven agents, 5uGUE demonstrates significantly better crash discovery performance (12.8x total, 5.2x unique improvement). Notably, our experiments identified 46 unique crashes, 44 of which were confirmed by the vendors but had been previously reported. More importantly, MediaTek confirmed two previously unknown, high-severity vulnerabilities, one of which was assigned CVE-2026-20525. Finally, to demonstrate that 5uGUE is agnostic to wireless protocols, we also extend it to Bluetooth Classic with only minimal code changes. In our evaluations, 5uGUE finds an average of 6.4 novel crashes and 1.6 unique crashes. In a nutshell, 5uGUE highlights that LLM agents are capable to operate effectively beyond software-in-the-loop settings, extending autonomous vulnerability discovery to the proprietary, hardware-bound systems that affect billions of end-user devices across multiple wireless protocols.",
+   "authors": [
+    "Guoqiang Hua",
+    "Udeshi Sakshi",
+    "Matheus Eduardo Garbelini",
+    "Daisuke Mashima",
+    "Sudipta Chattopadhyay"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7225137459",
+   "doi": "10.21203/rs.3.rs-11597011/v1",
+   "title": "CAPYBALA: Context-Aware Pruning for Yielding and Backtrack-Aligned Loop Avoidance in Autonomous Software Engineering Agents",
+   "year": 2026,
+   "venue": "Research Square",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Abstract Autonomous software engineering agents frequently become entrapped in catastrophic error loops and cognitive deadlocks, burning millions of tokens while executing repetitive failing tool invocations. Existing self-reflection frameworks exacerbate token exhaustion by appending redundant verbal history to the context window, while naive context truncation routinely violates protocol invariants between tool calls and execution responses. We introduce CAPYBALA (Context-Aware Pruning for Yielding and Backtrack-Aligned Loop Avoidance), an in-memory runtime supervisor that tracks agent trajectory dynamics via a signed feature-hashed phase-space manifold (O(1) space complexity, sub-millisecond execution latency) and performs atomic context pruning with formal protocol pairing guarantees (N_tool_call = N_tool_response). Evaluated across an offline trajectory replay benchmark of 200 real-world SWE-bench agent runs and 3,209 execution turns from the open Nebius SWE-agent trajectory corpus, alongside live head-to-head coding duels on active commercial foundation models, CAPYBALA captures deadlocks with 86.00% to 97.86% recall, 95.56% to 98.56% precision (with 96.00% to 96.67% clean specificity), eliminates an aggregate 42.8% of wasted tokens (1,017,250 tokens across 200 trajectories, saving 59.74% of non-productive turns across stuck trajectories and 40.3% to 47.1% in live coding duels), and maintains a sub-millisecond mean decision latency (0.641 ms mean supervisor turn, p50 = 0.546 ms; 53 \u03bcs raw feature extraction, p50 = 38 \u03bcs; p99 = 5.84 ms tail) without requiring model fine-tuning or secondary embedding inference.",
+   "authors": [
+    "Khairan Noor Fadhlillah"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7221505199",
+   "doi": "10.18653/2026.findings-emnlp.2264",
+   "title": "Quality, Not Just Outcome: A Structural Scoring Framework for Selecting Coding-Agent Trajectories for Supervised Fine-Tuning",
+   "year": 2026,
+   "venue": "Findings of the Association for Computational Linguistics: EMNLP (Findings of EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 0,
+   "abstract": "Open coding agents are commonly trained through supervised fine-tuning on interaction trajectories whose final patches pass the benchmark test suite.However, this outcome-level filtering criterion ignores process quality: trajectories that eventually succeed may still contain inefficient interaction patterns such as repetitive file inspection, unstable tool usage, or delayed modification behavior, all of which become part of the imitation target.We propose TQS (Trajectory Quality Score), a structural scoring framework for coding-agent trajectories that operates directly on trajectory structure, requires no LLM judge, and runs in linear time.TQS characterizes trajectory quality through structural signals organized around structured convergence: information focus, intent-action alignment, and policy dynamics.Using 155,144 successful trajectories from a public open-license corpus, we rank trajectories by TQS and fine-tune coding agents on filtered subsets.Models trained on top-ranked trajectories consistently outperform those trained on random or bottom-ranked subsets on SWE-Bench Verified.Our results suggest that process-level trajectory quality is an important factor in coding-agent supervision and that structural trajectory filtering provides an effective and scalable alternative to LLMbased data selection.Project page",
+   "authors": [
+    "Sida Li",
+    "Yuanxin Liu",
+    "Shicheng Li",
+    "Linli Yao",
+    "Xu Sun",
+    "Haoli Bai",
+    "Xiaohui Li"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417466325",
+   "doi": "10.48550/arxiv.2512.14012",
+   "title": "Professional Software Developers Don't Vibe, They Control: AI Agent Use for Coding in 2025",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 40,
+   "abstract": "The rise of AI agents is transforming how software can be built. The promise of agents is that developers might write code quicker, delegate multiple tasks to different agents, and even write a full piece of software purely out of natural language. In reality, what roles agents play in professional software development remains in question. This paper investigates how experienced developers use agents in building software, including their motivations, strategies, task suitability, and sentiments. Through field observations (N=13) and qualitative surveys (N=99), we find that while experienced developers value agents as a productivity boost, they retain their agency in software design and implementation out of insistence on fundamental software quality attributes, employing strategies for controlling agent behavior leveraging their expertise. In addition, experienced developers enjoy working with agents as source of collaboration rather than complete delegation given their judgment for task suitability. Our results shed light on the value of software development best practices in effective use of agents, suggest the kinds of tasks for which agents may be suitable, and point towards future opportunities for better agentic interfaces and agentic use guidelines.",
+   "authors": [
+    "Ruanqianqian Lisa Huang",
+    "Reyna, Avery",
+    "Sorin Lerner",
+    "Haijun Xia",
+    "Brian Hempel"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7201841400",
+   "doi": "10.1145/3832783.3834355",
+   "title": "AgentExecutor: Partial Code Execution via Agentic Context Generation",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 2,
+   "abstract": "Executing code snippets is essential for dynamic program analysis, but it remains challenging to execute an arbitrary code snippet due to issues like missing context and incomplete dependencies. Existing approaches to partial code execution, such as LExecutor and Treefix, leverage the power of language models to infer missing information and enable execution. However, they suffer from (i) limited action spaces and feedback, and (ii) rigid optimization strategies, which restrict their effectiveness and efficiency. In this paper, we propose AgentExecutor, a novel multi-agent framework for partial code execution. Our approach introduces a three-phase design: execution environment preparation, dynamic exploration with iterative refinement, and prefix evolution via program synthesis. Supported by the power of LLM agents who can think, act, and get feedback iteratively, AgentExecutor is able to autonomously explore a richer action space, enabling diverse operations such as creating resource files and resolving environment configuration. Furthermore, it adopts adaptive optimization strategies, including coverage-guided context pruning and prefix evolution via program synthesis, to systematically improve the execution quality of partial code. We evaluate AgentExecutor on two widely used datasets comprising Stack Overflow snippets and open-source project code. The results show that AgentExecutor achieves up to 94% and 90% code coverage, outperforming the state-of-the-art approach Treefix by 19.9% and 13.8%, respectively. In addition, AgentExecutor significantly reduces execution time (by up to 80.3%) and cost (by up to 56.6%). These findings demonstrate that AgentExecutor provides an effective and efficient solution for partial code execution.",
+   "authors": [
+    "Junkai Chen",
+    "Chengran Yang",
+    "Xing Hu",
+    "Zhenhao Li",
+    "Xin Xia",
+    "David Lo"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7220678928",
+   "doi": "10.48550/arxiv.2610.06193",
+   "title": "Correct Code, Broken Contributions? SWE-CC: Benchmarking Repository Policy Compliance for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Autonomous coding agents now resolve a substantial share of real-world GitHub issues. However, passing functional tests differs fundamentally from producing a high-quality contribution acceptable for merging. Mature open-source projects publish repository-specific contribution policies, spanning style, git, testing workflows, to ensure code quality and long-term maintainability. Because existing benchmarks evaluate patches solely on unit tests, agent compliance with repository governance remains unknown. In this paper, we introduce SWE-CC, a benchmark evaluating code and process compliance in autonomous software engineering. We develop a semi-automated pipeline that converts developer documentation across 12 open-source repositories into 823 machine-checkable atomic policies. SWE-CC introduces two features: 1) lightweight, deterministic checker functions that represent each policy, 2) a comprehensive auditing mechanism that inspects both agent runtime behaviors and final deliverables. We evaluate the compliance of agent workflows in 500 end-to-end software contribution tasks extended from SWE-bench Verified. Our evaluation of four LLMs under two agent scaffolds shows that modern agents suffer from coding compliance issues: although agents produce functionally correct patches, they still violate 43.1 percent of applicable project policies, with nearly half of all violations occurring during intermediate execution steps. These results show that functional correctness does not guarantee real-world readiness, highlighting that future software engineering agents must reliably conform to repository governance to enable safe and trustworthy deployment.",
+   "authors": [
+    "Truong Hai Dang",
+    "Rayner Goh",
+    "Thanh Le-Cong",
+    "Yintong Huo"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214754581",
+   "doi": "10.1145/3830418.3843858",
+   "title": "Don't Let AI Agents YOLO Your Files: Information and Control in Agent-Native Filesystems",
+   "year": 2026,
+   "venue": "ACM SIGOPS Symposium on Operating Systems Principles (SOSP)",
+   "type": "conference-paper",
+   "cited_by": 9,
+   "abstract": "AI coding agents regularly misuse their filesystem access, causing data corruption, loss, and leakage. We conduct the first systematic study of this problem through an analysis of 290 public reports. Our study reveals two fundamental gaps: users and agents have limited information about filesystem effects and insufficient control over them.",
+   "authors": [
+    "Shawn Zhong",
+    "Junxuan Liao",
+    "Jing Liu",
+    "Mai Zheng",
+    "Andrea Carol Arpaci-Dusseau",
+    "Remzi H. Arpaci-Dusseau"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7128767013",
+   "doi": "10.48550/arxiv.2602.11224",
+   "title": "Agent-Diff: Benchmarking LLM Agents on Enterprise API Tasks via Code Execution with State-Diff-Based Evaluation",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 12,
+   "abstract": "We present Agent-Diff, a novel benchmarking framework for evaluating agentic Large Language Models (LLMs) on real-world productivity software API tasks via code execution. Agentic LLM performance varies due to differences in models, external tool access, prompt structures, and agentic frameworks. Benchmarks must make fundamental trade-offs between a sandboxed approach that controls for variation in software environments and more ecologically valid approaches employing real services. Agent-Diff attempts to capture the desirable features of both of these approaches by including access to the real API interfaces for software services while sandboxing the environment in which calls are made, processed, and evaluated. This approach relies on two key innovations. The first is a novel state-diff contract, which separates process from outcome - rather than fuzzy trace or parameter matching, we define task success as whether the expected change in environment state was achieved. The second is a novel sandbox built on containerized replicas of enterprise APIs, allowing all models to interact with the same service interfaces through code execution. This enables controlled evaluation against a common set of state-diff contracts while preserving the structure of real-world API interaction. Using the Agent-Diff framework, we provide benchmarks for nine LLMs across 224 tasks utilizing enterprise software workflows. In addition, we evaluate the robustness of the framework with ablation experiments to assess the contribution of access to API documentation on benchmark performance. Code and data: https://github.com/agent-diff-bench/agent-diff.",
+   "authors": [
+    "Hubert M. Pysklo",
+    "Artem Zhuravel",
+    "Patrick D. Watson"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7132990210",
+   "doi": null,
+   "title": "VAPU: Verifying Multi-Agent System for Source Code Modernisation",
+   "year": 2025,
+   "venue": "Tampere University Institutional Repository (Tampere University)",
+   "type": "dissertation",
+   "cited_by": 0,
+   "abstract": "Applications, especially ones operating on the web, are very often deprecated due to fast moving technology. As up-keeping applications are costly and time-consuming continuous projects, many applications are left behind by their up keepers, causing challenges in security, reliability, and compatibility with other systems. Therefore, a fast and reliable system is needed to automate the needed updates for the applications. This thesis extends a previous study of a Large Language Model (LLM)-based multi-agent pipeline system now introduced as Verifying Agent Pipeline Updater (VAPU) designed to refactor and modernise code. The thesis aims to find how different LLMs, the temperature used, and different tasks impact the performance of VAPU. Furthermore, this thesis investigates the challenges and opportunities of using a multi-agent system for updating code to provide understanding of multi-agent systems use in the practical sense. A web legacy application was used as a case study to evaluate VAPU\u2019s performance. Six CakePHP view files from the legacy application were updated in five different LLMs at temperatures 0 and 1 with and without VAPU. VAPU\u2019s performance was further verified with 20 GitHub Python projects in different feature extension and modernisation tasks with all models, and both methods. The challenges and benefits of the multi-agent system\u2019s functionality were observed during the testing. Comparison with different LLMs showed differences in performance. Medium-sized LLMs exceeded in smaller version update tasks, while higher-parameter models were better in more difficult tasks. With the temperature lowered to 0, VAPU improved with a reduction in errors and a higher probability of completing the requirements. Based on the evaluation of the Python files and depending on the LLM used, VAPU can achieve an improvement up to 22.5% in various code update tasks. The improvements were focused on cases with complex code. This thesis demonstrates that a multi-agent system is capable of updating code with a possibility of higher rate of completed requirements compared to a prompt for an LLM. The thesis contributes additionally showing the benefits of lower temperature in code updating multi-agent systems. The benefits and challenges observed during the testing provide practitioners with opportunities to further improve similar systems further for updating code. VAPU provides a working foundation for practitioners for code updating multi-agent systems. The code for VAPU is publicly available at https://github.com/alasalm1/Multi-agent-pipeline",
+   "authors": [
+    "Valtteri Ala-Salmi"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7131395693",
+   "doi": "10.48550/arxiv.2602.20021",
+   "title": "Agents of Chaos",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 117,
+   "abstract": "We report an exploratory red-teaming study of autonomous language-model-powered agents deployed in a live laboratory environment with persistent memory, email accounts, Discord access, file systems, and shell execution. Over a two-week period, twenty AI researchers interacted with the agents under benign and adversarial conditions. Focusing on failures emerging from the integration of language models with autonomy, tool use, and multi-party communication, we document eleven representative case studies. Observed behaviors include unauthorized compliance with non-owners, disclosure of sensitive information, execution of destructive system-level actions, denial-of-service conditions, uncontrolled resource consumption, identity spoofing vulnerabilities, cross-agent propagation of unsafe practices, and partial system takeover. In several cases, agents reported task completion while the underlying system state contradicted those reports. We also report on some of the failed attempts. Our findings establish the existence of security-, privacy-, and governance-relevant vulnerabilities in realistic deployment settings. These behaviors raise unresolved questions regarding accountability, delegated authority, and responsibility for downstream harms, and warrant urgent attention from legal scholars, policymakers, and researchers across disciplines. This report serves as an initial empirical contribution to that broader conversation.",
+   "authors": [
+    "Natalie Shapira",
+    "Chris Wendler",
+    "Avery Yen",
+    "Gabriele Sarti",
+    "Koyena Pal",
+    "Olivia Floody",
+    "Adam Belfki",
+    "Alex Loftus"
+   ],
+   "facet": "F2_recovery",
+   "query": "coding agent stuck repeated edits loop detection"
+  }
+ ]
+}

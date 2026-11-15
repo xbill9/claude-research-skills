@@ -1,0 +1,227 @@
+{
+ "url": "http://export.arxiv.org/api/query?search_query=all%3Acontext+AND+all%3Amanagement+AND+all%3Acoding+AND+all%3Aagent+AND+all%3Along+AND+all%3Ahorizon+AND+all%3Asoftware+AND+all%3Aengineering&sortBy=relevance&max_results=25",
+ "records": [
+  {
+   "src": "arxiv",
+   "arxiv": "2605.02244",
+   "doi": null,
+   "title": "The Conversations Beneath the Code: Triadic Data for Long-Horizon Software Engineering Agents",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Frontier software engineering agents have saturated short-horizon benchmarks while regressing on the work that constitutes senior engineering: long-horizon, multi-engineer, ambiguous-specification deliverables. This paper takes a position on what training data is needed to close the gap. The substrate for the next generation of SWE agents is neither larger GitHub scrapes nor more solo-agent trajectories nor -- sufficient by itself -- open human-AI dialogue logs. It is triadic data: synchronized capture of the human-human conversations where engineering context is formed, the human-AI sessions where that context is partially consumed, and the multi-week cross-functional work that surrounds both. We argue that the canonical instantiation of triadic data is two complementary products: long-horizon expert trajectories captured under stimulated-recall protocols, and simulated cross-functional companies -- instrumented teams of senior engineers, product managers, designers, and data scientists working through ambiguous deliverables on shared infrastructure. We further specify a four-tier evidence framework through which any such corpus -- triadic or otherwise -- must justify its quality to a fine-tuning researcher: mechanical verification, statistical corpus characterization, probe experiments, and pre-registered blind evaluation. We argue that this data is capturable in 12-18 months with methods already mature in adjacent fields, that it is the empirical key to four open questions in agent training, and that the field's near-term research agenda should include it explicitly.",
+   "authors": [
+    "Yelin Kim"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2606.28434",
+   "doi": null,
+   "title": "SWE-MeM: Learning Adaptive Memory Management for Long-Horizon Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Long-horizon software engineering agents often need to manage lengthy and noisy interaction histories under limited context budgets. Existing memory management methods typically rely on static compression workflows or impose rigid constraints on compression timing and granularity. Moreover, these approaches fail to jointly optimize memory management and issue resolution capabilities to improve performance while reducing token usage. We present SWE-MeM, a training framework for proactive and on-demand memory management in software engineering agents. SWE-MeM provides a flexible memory tool that lets agents decide when, what, and how to compress based on trajectory state, task progress, and remaining context budget. We train agents with synthesized proactive memory-management trajectories and Memory-aware GRPO, which jointly optimizes memory management and issue resolution through memory-aware trajectory splitting and step-level credit assignment. On SWE-Bench Verified, SWE-MeM achieves 43.4% and 60.2% resolve rate with 4B and 30B models, respectively, outperforming existing memory management baselines in both performance and efficiency.",
+   "authors": [
+    "Shuzheng Gao",
+    "Wenhao Zeng",
+    "Zhaojian Yu",
+    "Jianqiao Wangni",
+    "Chaozheng Wang",
+    "Kai Cai",
+    "Shilin He",
+    "Michael R. Lyu"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2610.02163",
+   "doi": null,
+   "title": "AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Coding agents solve repository-level software engineering tasks through long trajectories of code inspection, search, editing, and testing. As a task progresses, earlier exploration becomes stale, so managing context is more than avoiding overflow: an agent must decide when to compact, what working state to preserve, and how to continue from it. We introduce AutoCompact, which trains a coding agent to make these decisions as part of its policy. To collect training data, we run the base agent on coding tasks and use a judge to review its compaction decisions, summaries, and actions after compaction. Flawed outputs are replaced with corrected ones before being executed in the environment, so each trajectory continues from the corrected decisions. We use these trajectories for supervised fine-tuning, then jointly optimize coding and compaction through reinforcement learning with task-success rewards. Experiments on SWE-bench Verified and SWE-PolyBench Verified show that AutoCompact improves pass rates over the base model by an absolute 9.2\\% and 5.0\\%, respectively. The improvements hold across all evaluated inference budgets, with a 256K context window that never overflows and with a 16K window whose overflow triggers fallback compaction.",
+   "authors": [
+    "Xuan Zhang",
+    "Longtao Zheng",
+    "Cunxiao Du",
+    "Bo An",
+    "Xin Dong"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2603.05344",
+   "doi": null,
+   "title": "Building Effective AI Coding Agents for the Terminal: Scaffolding, Harness, Context Engineering, and Lessons Learned",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "The landscape of AI coding assistance is undergoing a fundamental shift from complex IDE plugins to versatile, terminal-native agents. Operating directly where developers manage source control, execute builds, and deploy environments, CLI-based agents offer unprecedented autonomy for long-horizon development tasks. In this paper, we present OPENDEV, an open-source, command-line coding agent written in Rust, engineered specifically for this new paradigm. Effective autonomous assistance requires strict safety controls and highly efficient context management to prevent context bloat and reasoning degradation. OPENDEV overcomes these challenges through a compound AI system architecture with workload-specialized model routing, a dual-agent architecture separating planning from execution, lazy tool discovery, and adaptive context compaction that progressively reduces older observations. Furthermore, it employs an automated memory system to accumulate project-specific knowledge across sessions and counteracts instruction fade-out through event-driven system reminders. By enforcing explicit reasoning phases and prioritizing context efficiency, OPENDEV provides a secure, extensible foundation for terminal-first AI assistance, offering a blueprint for robust autonomous software engineering.",
+   "authors": [
+    "Nghi D. Q. Bui"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2512.10398",
+   "doi": null,
+   "title": "Confucius Code Agent: Scalable Agent Scaffolding for Real-World Codebases",
+   "year": 2025,
+   "venue": "arXiv (preprint)",
+   "abstract": "Real-world software engineering tasks require coding agents that can operate on massive repositories, sustain long-horizon sessions, and reliably coordinate complex toolchains at test time. Existing research-grade coding agents offer transparency but struggle when scaled to heavier, production-level workloads, while production-grade systems achieve strong practical performance but provide limited extensibility, interpretability, and controllability. We introduce the Confucius Code Agent (CCA), a software engineering agent that can operate at large-scale codebases. CCA is built on top of the Confucius SDK, an agent development platform structured around three complementary perspectives: Agent Experience (AX), User Experience (UX), and Developer Experience (DX). The SDK supports a unified orchestrator with advanced context management for long-context reasoning, a persistent note-taking system for cross-session continual learning, and a modular extension system for reliable tool use. In addition, we introduce a meta-agent that automates the construction, evaluation, and refinement of agents through a build-test-improve cycle, enabling rapid agent development on new tasks and tool stacks. Instantiated on the Confucius SDK using the meta-agent, CCA demonstrates strong performance on real-world software engineering tasks. On SWE-Bench-Pro, CCA achieves a Resolve@1 of 59%, exceeding prior research baselines as well as commercial results, under identical repositories, model backends, and tool access.",
+   "authors": [
+    "Sherman Wong",
+    "Zhenting Qi",
+    "Zhaodong Wang",
+    "Nathan Hu",
+    "Samuel Lin",
+    "Jun Ge",
+    "Erwin Gao",
+    "Wenlin Chen"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2608.05141",
+   "doi": null,
+   "title": "OctoLong: Mid-Training On Cross-Repository Code Contexts Enhances Long-Context Modeling",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Context lengths of language models (LMs) have dramatically increased, driven by the demands for in-context learning, self-improvement, and long-horizon agentic workflows. However, existing long-context corpora are dominated by books, academic articles, and code repositories, which are finite and often lack long-distance dependencies. In this work, we introduce OctoLong, a context-engineering pipeline that instruments an AST parser, a language server backend, and a package manager to recursively retrieve code references, enabling the curation of dependency-rich code contexts up to millions of tokens long. We then train OctoLong-Instruct, a suite of capable long-context open LMs, derived from base models ranging in size from 600M to 14B parameters, via context-extension mid-training on a approx 50B-token mixture containing approx 6.2B tokens of OctoLong code contexts, followed by approx 10B tokens of instruction tuning. Our ablations and experimental evaluations against 18 strong long-context open-weight LMs show that supplanting just 12% of conventional context-extension corpora with OctoLong data yields substantial gains in long-range retrieval, long-term state tracking, repository-level code understanding, and downstream agentic tasks, while also enhancing API usage in regular coding scenarios.",
+   "authors": [
+    "Indraneil Paul",
+    "Falko Helm",
+    "Goran Glava\u0161",
+    "Iryna Gurevych"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2609.20804",
+   "doi": null,
+   "title": "An Empirical Study of Harness Design for Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Coding harnesses shape how autonomous coding agents translate model capabilities into long-horizon software-engineering performance, yet existing work typically evaluates harnesses as monolithic systems, leaving the effectiveness of individual components unclear. To enable component-level comparisons, we study this question with a lightweight coding harness whose execution loop is fixed while three components are varied: planning, action space, and context management. Across four models evaluated on SWE-Bench Verified and Terminal-Bench 2.1, we evaluate 176 matched settings spanning five context-management strategies, four context-window budgets, and targeted ablations of planning and action space. We find that: (1) Context management becomes increasingly valuable as the context-window budget tightens, with most of its benefit coming from preventing context-overflow failures. (2) Staging rule-based elision before LLM-based summarization provides the strongest overall efficiency among the context-management strategies, whereas making elided content recoverable adds machinery that models rarely use and yields no accuracy gain. (3) Planning shifts from an accuracy scaffold for weaker models to a cost saver for stronger models, with little change in accuracy. (4) Predefined tools improve performance for models with weaker bash proficiency, whereas bash-capable models can operate effectively with a bash-only interface and achieve substantially lower cost, especially on command-line-centric tasks. Trajectory-level analysis explains these effects: context management extends execution trajectories without substantially altering agent behavior, planning changes where trajectories stop, and the action space changes the granularity at which code is written. These findings inform model- and budget-aware harness design and provide a modular framework for evaluating future harness components.",
+   "authors": [
+    "Run-Ze Fan",
+    "Zihao Zhang",
+    "Simin Ma",
+    "Yebowen Hu",
+    "Shouju Wang",
+    "Kaiqiang Song",
+    "Fei Liu",
+    "Hamed Zamani"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2608.23552",
+   "doi": null,
+   "title": "Prime Agent: A Self-Improving RLM Harness",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Language models are sequential processors, but long-horizon agency requires external information and computation beyond model weights and active context. Prime Agent is an open-source harness for long-horizon evaluation and coding-agent workflows. A persistent IPython REPL follows the Recursive Language Model abstraction for programmatic context processing and test-time compute, while Continual Harness preserves histories, memories, skills, prompts, and subagent specifications across trajectories. Recursive subagents coordinate through direct agent-to-agent communication, and the Agents View lets humans inspect and manage daemon-backed sessions. Prime Agent standardizes execution, recovery, verification, and resource accounting while leaving strategy construction to the model. This low-friction, expressive membrane prevents harness failures from becoming model failures and pushes measurement toward the model's true maximal underlying capability. Prime Agent raises ARC-AGI-3 RHAE Best@1 from 30% to 95.5% and matches or exceeds native and popular harnesses across long-context coding, GPU-kernel generation, emulator construction, and autonomous nanoGPT speedruns. On Factorio, we find refinement allows for continuous technology progression and dedicated subagents enable parallelized work. Code is available at https://github.com/PrimeIntellect-ai/prime-agent.",
+   "authors": [
+    "Seth Karten",
+    "Alex L. Zhang",
+    "Kevin Thomas",
+    "Sebastian M\u00fcller",
+    "Elie Bakouch",
+    "Daniel Auras",
+    "Mika Senghaas",
+    "Fares Obeid"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2608.10450",
+   "doi": null,
+   "title": "Persistent Recursive Worlds Enable Autonomous Software Evolution",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Complex software systems develop over timescales that exceed the lifespan of any individual coding agent. Most agentic software systems preserve continuity through persistent sessions, memories, managers or shared context. We introduce EvoX Genesis (hereafter, Genesis), which instead makes the software project persistent while allowing local agents to remain finite-lived. Genesis represents software as a persistent recursive world: each local world is situated by an accepted version and a repository path, finite-lived agents propose local changes, recursive delegation moves work across paths, and only accepted consequences advance the persistent version history. We evaluate this organization across formation, continuation and redevelopment. Starting from a repository with no compiler implementation, Genesis used DeepSeek V4 Flash to build a Rust-based C compiler with about 250k tracked lines; the run lasted over 120 hours, archived over 1,000 agent episodes and incurred only US\\$44 in model-token charges. The compiler passed the complete c-testsuite and most LLVM and Csmith tests. In a separate compiler world generated with GLM 5.2, development continued after repeated agent replacement while retaining full test performance. Genesis also reimplemented 13 MESA modules with over 100k Fortran lines as a Rust workspace with nearly 90k Rust lines; across six numerical workloads, it achieved median speedups of 1.55--6.87x. These results show that long-horizon software development can be organized around a persistent project rather than a persistent agent. Project Website: https://genesis.evox.group/",
+   "authors": [
+    "Beichen Huang",
+    "Zhenyu Liang",
+    "Bowen Zheng",
+    "Ran Cheng"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2606.25514",
+   "doi": null,
+   "title": "Unlocking Model Potentials Through Adaptive Multi-Agent Scaffolding for Efficient Issue Resolution",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Resolving issues with ambiguous and incomplete descriptions, particularly concerning complex bugs, requires a sophisticated, long-horizon workflow. Agents must navigate codebases to locate the root cause, reproduce the failure, implement a fix, and validate the resulting patch. Inefficient context management, thereby, can lead to rapid context degradation and context poisoning, preventing successful resolution. We propose icat-agent, a decentralized, multi-agent scaffolding that replaces shared context with synchronous, event-based message passing. Utilizing a rubric-based issue quality check, icat-agent strategically pivots its workflow: it initiates parallel patching and validation for well-defined issues, while deploying preliminary exploration for low-quality ones. A comprehensive evaluation of icat-agent on SWE-bench Verified and SWE-bench Pro demonstrates that it consistently outperforms prominent baselines across all difficulty levels, including SWE-agent, mini-SWE-agent, and Claude Code, while using the same underlying models, improving by 3.6-8.4% on SWE-bench Verified and 6.3-18.5% on SWE-bench Pro. icat-agent is also computationally efficient, reducing the average cost by $1.18 per instance compared with the multi-agent Claude Code baseline. Our findings reveal that a robust scaffold such as icat-agent unlocks substantial latent capability within a fixed model, with the same backbone resolving markedly more issues under icat-agent than under existing scaffolds. icat-agent +GPT-5.4-xhigh resolves 67.4% of SWE-bench Pro problems, outperforming the current best result on SWE-bench Pro (59.10%, mini-SWE-agent+GPT-5.4-xhigh) by 8.3 percentage points.",
+   "authors": [
+    "Yang Chen",
+    "Aliya Ahmad",
+    "Yiheng Zhou",
+    "Reyhaneh Jabbarvand"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2610.04868",
+   "doi": null,
+   "title": "From Memory to Guide: Spatio-Temporal Composer for Procedural Coding Memory",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "Memory-augmented agents typically integrate procedural knowledge by injecting retrieved skills directly into text prompts. This approach dangerously equates readable text with reliable execution. To bridge this gap, we introduce From Memory to Guide, a novel paradigm that transitions procedural memory from passive text delivery to active, inference-time policy adaptation. We instantiate this paradigm through the Spatio-Temporal Composer, an active policy compiler that explicitly manages exactly how and when retrieved knowledge should be applied. Rather than treating skills as plug-and-play modules, Composer dynamically aligns historical knowledge with current environmental constraints (spatial adaptation) and precisely dictates its applicable lifecycle (temporal orchestration). It actively transforms static memories into strictly bounded Runtime Guides---equipping the agent with localized objectives and behavioral guardrails without requiring a single parameter update. Extensive evaluations on 13 demanding, long-horizon software engineering tasks in EngramBench demonstrate the clear advantages of this architecture. Composer not only robustly prevents context mismatch but drives an absolute pass-rate increase of 7.2 percentage points on the most complex tasks, while simultaneously slashing the main agent's token usage by 32.2%.",
+   "authors": [
+    "Zhixuan Tan",
+    "Pengjie Gu",
+    "Zhao Li",
+    "Yihan Hu",
+    "Xu He",
+    "Dong Li",
+    "Jianye Hao"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  },
+  {
+   "src": "arxiv",
+   "arxiv": "2601.01569",
+   "doi": null,
+   "title": "CaveAgent: Transforming LLMs into Stateful Runtime Operators",
+   "year": 2026,
+   "venue": "arXiv (preprint)",
+   "abstract": "LLM-based agents are increasingly capable of complex task execution, yet current agentic systems remain constrained by text-centric paradigms that struggle with long-horizon tasks due to fragile multi-turn dependencies and context drift. We present CaveAgent, a framework that shifts tool use from ``LLM-as-Text-Generator'' to ``LLM-as-Runtime-Operator.'' CaveAgent introduces a dual-stream architecture that inverts the conventional paradigm: rather than treating the LLM's text context as the primary workspace with tools as auxiliary, CaveAgent elevates the persistent Python runtime as the central locus of state, with a lightweight semantic stream serving as its orchestrator. Beyond leveraging code generation to resolve interdependent sub-tasks (e.g., loops, conditionals) in a single step, CaveAgent introduces \\textit{Stateful Runtime Management}: it injects, manipulates, and retrieves complex Python objects (e.g., DataFrames, database connections) that persist across turns, unlike existing code-based approaches that remain text-bound. CaveAgent further provides a runtime-integrated skill management system that extends the Agent Skills open standard, enabling ecosystem interoperability through executable skill injections. This persistence mechanism serves as a high-fidelity external memory that reduces context drift in multi-turn interactions and preserves processed data for downstream applications without information loss. Evaluations show consistent improvement across challenging benchmarks, enabling CaveAgent to handle data scales that cause context overflow in both JSON-based and code-based agents. The accessible runtime state further provides programmatically verifiable feedback, enabling automated evaluation and reward signal generation without human annotation and establishing a structural foundation for future research in Reinforcement Learning with Verifiable Rewards (RLVR).",
+   "authors": [
+    "Maohao Ran",
+    "Zhenglin Wan",
+    "Cooper Lin",
+    "Yanting Zhang",
+    "Hongyu Xin",
+    "Hongwei Fan",
+    "Yibo Xu",
+    "Beier Luo"
+   ],
+   "facet": "F1_context",
+   "query": "context management coding agent long horizon software engineering"
+  }
+ ]
+}

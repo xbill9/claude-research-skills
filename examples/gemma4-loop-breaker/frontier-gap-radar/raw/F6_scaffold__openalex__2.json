@@ -1,0 +1,516 @@
+{
+ "url": "https://api.openalex.org/works?search=autonomous+program+improvement+agent+GitHub+issues&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4402442868",
+   "doi": "10.1145/3650212.3680384",
+   "title": "AutoCodeRover: Autonomous Program Improvement",
+   "year": 2024,
+   "venue": "ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)",
+   "type": "conference-paper",
+   "cited_by": 549,
+   "abstract": "Researchers have made significant progress in automating the software development process in the past decades. Automated techniques for issue summarization, bug reproduction, fault localization, and program repair have been built to ease the workload of developers. Recent progress in Large Language Models (LLMs) has significantly impacted the development process, where developers can use LLM-based programming assistants to achieve automated coding. Nevertheless, software engineering involves the process of program improvement apart from coding, specifically to enable software maintenance (e.g. program repair to fix bugs) and software evolution (e.g. feature additions). In this paper, we propose an automated approach for solving Github issues to autonomously achieve program improvement. In our approach called AutoCodeRover, LLMs are combined with sophisticated code search capabilities, ultimately leading to a program modification or patch. In contrast to recent LLM agent approaches from AI researchers and practitioners, our outlook is more software engineering oriented. We work on a program representation (abstract syntax tree) as opposed to viewing a software project as a mere collection of files. Our code search exploits the program structure in the form of classes/methods to enhance LLM\u2019s understanding of the issue\u2019s root cause, and effectively retrieve a context via iterative search. The use of spectrum-based fault localization using tests, further sharpens the context, as long as a test-suite is available. Experiments on the recently proposed SWE-bench-lite (300 real-life Github issues) show increased efficacy in solving Github issues (19% on SWE-bench-lite), which is higher than the efficacy of the recently reported Swe-agent. Interestingly, our approach resolved 57 GitHub issues in about 4 minutes each (pass@1), whereas developers spent more than 2.68 days on average. In addition, AutoCodeRover achieved this efficacy with significantly lower cost (on average, $0.43 USD), compared to other baselines. We posit that our workflow enables autonomous software engineering, where, in future, auto-generated code from LLMs can be autonomously improved.",
+   "authors": [
+    "Yuntong Zhang",
+    "Haifeng Ruan",
+    "Zhiyu Fan",
+    "Abhik Roychoudhury"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4387561453",
+   "doi": "10.48550/arxiv.2310.06770",
+   "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2109,
+   "abstract": "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous.",
+   "authors": [
+    "Jimenez, Carlos E.",
+    "Yang, John",
+    "Alexander Wettig",
+    "Shunyu Yao",
+    "Kexin Pei",
+    "Ofir Press",
+    "Karthik Narasimhan"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7166068405",
+   "doi": "10.1145/3822180",
+   "title": "Agentic Much? Adoption of Coding Agents on GitHub",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 59,
+   "abstract": "In the first half of 2025, coding agents have emerged as a category of development tools that have very quickly transitioned to the practice. Unlike \u201ctraditional\u201d code completion LLMs such as Copilot, agents like Cursor, Claude Code, or Codex operate with high degrees of autonomy, up to generating complete pull requests starting from a developer-provided task description. This new mode of operation is poised to change the landscape in an even larger way than code completion LLMs did, making the need to study their impact critical. Also, unlike traditional LLMs, coding agents tend to leave more explicit traces in software engineering artifacts, such as co-authoring commits or pull requests. We leverage these traces to present the first large-scale study (128,018 projects) of the adoption of coding agents on GitHub, finding an estimated adoption rate of 22.20\u201328.66% on February 21st, 2026, which is very high for a technology only a few months old\u2014and increasing. We carry out an in-depth study of the adopters we identified, finding that adoption is broad: it spans the entire spectrum of project maturity; it includes established organizations; and it concerns diverse programming languages or project topics. At the commit level, we find that commits assisted by coding agents are larger than commits only authored by human developers, and have a large proportion of features and bug fixes. These findings highlight the need for further investigation into the practical use of coding agents.",
+   "authors": [
+    "Romain Robbes",
+    "Th\u00e9o Matricon",
+    "Thomas Degueule",
+    "Andr\u00e9 Hora",
+    "Stefano Zacchiroli"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402427562",
+   "doi": "10.48550/arxiv.2408.07199",
+   "title": "Agent Q: Advanced Reasoning and Learning for Autonomous AI Agents",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 289,
+   "abstract": "Large Language Models (LLMs) have shown remarkable capabilities in natural language tasks requiring complex reasoning, yet their application in agentic, multi-step reasoning within interactive environments remains a difficult challenge. Traditional supervised pre-training on static datasets falls short in enabling autonomous agent capabilities needed to perform complex decision-making in dynamic settings like web navigation. Previous attempts to bridge this ga-through supervised fine-tuning on curated expert demonstrations-often suffer from compounding errors and limited exploration data, resulting in sub-optimal policy outcomes. To overcome these challenges, we propose a framework that combines guided Monte Carlo Tree Search (MCTS) search with a self-critique mechanism and iterative fine-tuning on agent interactions using an off-policy variant of the Direct Preference Optimization (DPO) algorithm. Our method allows LLM agents to learn effectively from both successful and unsuccessful trajectories, thereby improving their generalization in complex, multi-step reasoning tasks. We validate our approach in the WebShop environment-a simulated e-commerce platform where it consistently outperforms behavior cloning and reinforced fine-tuning baseline, and beats average human performance when equipped with the capability to do online search. In real-world booking scenarios, our methodology boosts Llama-3 70B model's zero-shot performance from 18.6% to 81.7% success rate (a 340% relative increase) after a single day of data collection and further to 95.4% with online search. We believe this represents a substantial leap forward in the capabilities of autonomous agents, paving the way for more sophisticated and reliable decision-making in real-world settings.",
+   "authors": [
+    "Pranav Putta",
+    "Edmund Mills",
+    "Garg, Naman",
+    "Sumeet Motwani",
+    "Chelsea Finn",
+    "Divyansh Garg",
+    "Rafael Rafailov"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7134077757",
+   "doi": "10.1145/3798166",
+   "title": "On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub",
+   "year": 2026,
+   "venue": "ACM Transactions on Software Engineering and Methodology",
+   "type": "article",
+   "cited_by": 116,
+   "abstract": "Large language models (LLMs) are increasingly being integrated into software development processes. The ability to generate code and submit pull requests with minimal human intervention, through the use of autonomous AI agents, is poised to become a standard practice. However, little is known about the practical usefulness of these pull requests and the extent to which their contributions are accepted in real-world projects. In this article, we empirically study 567 GitHub pull requests (PRs) generated using Claude Code, an agentic coding tool, across 157 diverse open source projects. Our analysis reveals that developers tend to rely on agents for tasks such as refactoring, documentation, and testing. The results indicate that 83.8% of these agent-assisted PRs are eventually accepted and merged by project maintainers, with 54.9% of the merged PRs being integrated without further modification. The remaining 45.1% require additional changes and benefit from human revisions, especially for bug fixes, documentation, and adherence to project-specific standards. These findings suggest that while agent-assisted PRs are largely acceptable, they still benefit from human oversight and refinement.",
+   "authors": [
+    "M Watanabe",
+    "Hao Li",
+    "Yutaro Kashiwa",
+    "Brittany Reid",
+    "Hajimu Iida",
+    "Ahmed E. Hassan"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7128614434",
+   "doi": "10.1145/3793302.3797249",
+   "title": "AIDev: Studying AI Coding Agents on GitHub",
+   "year": 2026,
+   "venue": "International Conference on Mining Software Repositories (MSR)",
+   "type": "conference-paper",
+   "cited_by": 48,
+   "abstract": "AI coding agents are rapidly transforming software engineering by performing tasks such as feature development, debugging, and testing. Despite their growing impact, the research community lacks a comprehensive dataset capturing how these agents are used in real-world projects. To address this gap, we introduce AIDev, a large-scale dataset focused on agent-authored pull requests (Agentic-PRs) in real-world GitHub repositories. AIDev aggregates 932,791 Agentic-PRs produced by five agents: OpenAI Codex, Devin, GitHub Copilot, Cursor, and Claude Code. These PRs span 116,211 repositories and involve 72,189 developers. In addition, AIDev includes a curated subset of 33,596 Agentic-PRs from 2,807 repositories with over 100 stars, providing further information such as comments, reviews, commits, and related issues. This dataset offers a foundation for future research on AI adoption, developer productivity, and human-AI collaboration in the new era of software engineering.",
+   "authors": [
+    "Hao Li",
+    "Haoxiang Zhang",
+    "Ahmed E. Hassan"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411552133",
+   "doi": "10.1109/icse55347.2025.00080",
+   "title": "SpecRover: Code Intent Extraction via LLMs",
+   "year": 2025,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 133,
+   "abstract": "Autonomous program improvement typically involves automatically producing bug fixes and feature additions. Such program improvement can be accomplished by a combination of large language model (LLM) and program analysis capabilities, in the form of an LLM agent. Since program repair or program improvement typically requires a specification of intended behavior - specification inference can be useful for producing high quality program patches. In this work, we examine efficient and low-cost workflows for iterative specification inference within an LLM agent. Given a GitHub issue to be resolved in a software project, our goal is to conduct iterative code search accompanied by specification inference - thereby inferring intent from both the project structure and behavior. The intent thus captured is examined by a reviewer agent with the goal of vetting the patches as well as providing a measure of confidence in the vetted patches. Our approach SpecRover is built on the open-source LLM agent AutoCodeRover. In an evaluation on the full SWE-Bench consisting of 2294 GitHub issues, it shows more than 50% improvement in efficacy over AutoCodeRover. Compared to the open-source agents available, our work shows modest cost ($0.65 per issue) in resolving an average GitHub issue in SWE-Bench lite. The production of explanation by SpecRover allows for a better \u201csignal\u201d to be given to the developer, on when the suggested patches can be accepted with confidence. SpecRover also seeks to demonstrate the continued importance of specification inference in automated program repair, even as program repair technologies enter the LLM era.",
+   "authors": [
+    "Haifeng Ruan",
+    "Yuntong Zhang",
+    "Abhik Roychoudhury"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4404350148",
+   "doi": "10.48550/arxiv.2411.00820",
+   "title": "AutoGLM: Autonomous Foundation Agents for GUIs",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 156,
+   "abstract": "We present AutoGLM, a new series in the ChatGLM family, designed to serve as foundation agents for autonomous control of digital devices through Graphical User Interfaces (GUIs). While foundation models excel at acquiring human knowledge, they often struggle with decision-making in dynamic real-world environments, limiting their progress toward artificial general intelligence. This limitation underscores the importance of developing foundation agents capable of learning through autonomous environmental interactions by reinforcing existing models. Focusing on Web Browser and Phone as representative GUI scenarios, we have developed AutoGLM as a practical foundation agent system for real-world GUI interactions. Our approach integrates a comprehensive suite of techniques and infrastructures to create deployable agent systems suitable for user delivery. Through this development, we have derived two key insights: First, the design of an appropriate \"intermediate interface\" for GUI control is crucial, enabling the separation of planning and grounding behaviors, which require distinct optimization for flexibility and accuracy respectively. Second, we have developed a novel progressive training framework that enables self-evolving online curriculum reinforcement learning for AutoGLM. Our evaluations demonstrate AutoGLM's effectiveness across multiple domains. For web browsing, AutoGLM achieves a 55.2% success rate on VAB-WebArena-Lite (improving to 59.1% with a second attempt) and 96.2% on OpenTable evaluation tasks. In Android device control, AutoGLM attains a 36.2% success rate on AndroidLab (VAB-Mobile) and 89.7% on common tasks in popular Chinese APPs.",
+   "authors": [
+    "Xiao Liu",
+    "Bo Qin",
+    "Liang, Dongzhu",
+    "Dong, Guang",
+    "Hanyu Lai",
+    "Hanchen Zhang",
+    "Han\u2010Lin Zhao",
+    "Iat Long Iong"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4410553253",
+   "doi": "10.1109/saner64311.2025.00068",
+   "title": "Evaluating Software Development Agents: Patch Patterns, Code Quality, and Issue Complexity in Real-World GitHub Scenarios",
+   "year": 2025,
+   "venue": "IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)",
+   "type": "conference-paper",
+   "cited_by": 23,
+   "abstract": "In recent years, AI-based software engineering has progressed from pre-trained models to advanced agentic workflows, with Software Development Agents representing the next major leap. These agents, capable of reasoning, planning, and interacting with external environments, offer promising solutions to complex software engineering tasks. However, while much research has evaluated code generated by large language models (LLMs), comprehensive studies on agent-generated patches, particularly in real-world settings, are lacking. This study addresses that gap by evaluating 4,892 patches from 10 top-ranked agents on 500 real-world GitHub issues from SWE-Bench Verified, focusing on their impact on code quality. Our analysis shows no single agent dominated, with 170 issues unresolved, indicating room for improvement. Even for patches that passed unit tests and resolved issues, agents made different file and function modifications compared to the gold patches from repository developers, revealing limitations in the benchmark's test case coverage. Most agents maintained code reliability and security, avoiding new bugs or vulnerabilities; while some agents increased code complexity, many reduced code duplication and minimized code smells. Finally, agents performed better on simpler codebases, suggesting that breaking complex tasks into smaller sub-tasks could improve effectiveness. This study provides the first comprehensive evaluation of agent-generated patches on real-world GitHub issues, offering insights to advance AI-driven software development.",
+   "authors": [
+    "Zhi Chen",
+    "Lingxiao Jiang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7117567841",
+   "doi": "10.48550/arxiv.2512.21426",
+   "title": "What Makes a GitHub Issue Ready for Copilot?",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "AI-agents help developers in different coding tasks, such as developing new features, fixing bugs, and reviewing code. Developers can write a Github issue and assign it to an AI-agent like Copilot for implementation. Based on the issue and its related discussion, the AI-agent performs a plan for the implementation, and executes it. However, the performance of AI-agents and LLMs heavily depends on the input they receive. For instance, a GitHub issue that is unclear or not well scoped might not lead to a successful implementation that will eventually be merged. GitHub Copilot provides a set of best practice recommendations that are limited and high-level. In this paper, we build a set of 32 detailed criteria that we leverage to measure the quality of GitHub issues to make them suitable for AI-agents. We compare the GitHub issues that lead to a merged pull request versus closed pull request. Then, we build an interpretable machine learning model to predict the likelihood of a GitHub issue resulting in a merged pull request. We observe that pull requests that end up being merged are those originating from issues that are shorter, well scoped, with clear guidance and hints about the relevant artifacts for an issue, and with guidance on how to perform the implementation. Issues with external references including configuration, context setup, dependencies or external APIs are associated with lower merge rates. We built an interpretable machine learning model to help users identify how to improve a GitHub issue to increase the chances of the issue resulting in a merged pull request by Copilot. Our model has a median AUC of 72\\%. Our results shed light on quality metrics relevant for writing GitHub issues and motivate future studies further investigate the writing of GitHub issues as a first-class software engineering activity in the era of AI-teammates.",
+   "authors": [
+    "Mohammed Sayagh"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417095009",
+   "doi": "10.52202/085713-3548",
+   "title": "RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 17,
+   "abstract": "The ultimate goal of code agents is to solve complex tasks autonomously. Although large language models (LLMs) have made substantial progress in code generation, real-world tasks typically demand full-fledged code repositories rather than simple scripts. Building such repositories from scratch remains a major challenge. Fortunately, GitHub hosts a vast, evolving collection of open-source repositories, which developers frequently reuse as modular components for complex tasks. Yet, existing frameworks like OpenHands and SWE-Agent still struggle to effectively leverage these valuable resources. Relying solely on README files provides insufficient guidance, and deeper exploration reveals two core obstacles: overwhelming information and tangled dependencies of repositories, both constrained by the limited context windows of current LLMs. To tackle these issues, we propose RepoMaster, an autonomous agent framework designed to explore and reuse GitHub repositories for solving complex tasks. For efficient understanding, RepoMaster constructs function-call graphs, module-dependency graphs, and hierarchical code trees to identify essential components, providing only identified core elements to the LLMs rather than the entire repository. During autonomous execution, it progressively explores related components using our exploration tools and prunes information to optimize context usage. Evaluated on the adjusted MLE-bench, RepoMaster achieves a 110% relative boost in valid submissions over the strongest baseline OpenHands. On our newly released GitTaskBench, RepoMaster lifts the task-pass rate from 40.7% to 62.9% while reducing token usage by 95%. Our code and demonstration materials are publicly available at https://github.com/QuantaAlpha/RepoMaster.",
+   "authors": [
+    "Huacan Wang",
+    "Ziyi Ni",
+    "Shuo Zhang",
+    "Shuo Lu",
+    "Sen Hu",
+    "Ziyang He",
+    "Chen Hu",
+    "Jiaye Lin"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7212191990",
+   "doi": "10.48550/arxiv.2609.09769",
+   "title": "XAgent: eXecution-guided Agentic AI for Effective Localization and Resolution of GitHub Issues",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Agentic AI has enabled capabilities in leveraging Large Language Models (LLMs) to autonomously resolve repository-level GitHub issues. However, due to the reliance on limited static description of issues, existing agentic approaches suffer from incorrect localization and incomplete validation. Solely relying on this information can bias LLM reasoning toward the narrow scope of the issue description, leading to incomplete patches that fail to address the underlying issue. In this paper, we present XAgent, an execution-guided agentic framework that analyzes dynamic behavior and additional program context to localize and validate issues. The experimental results on the SWE-bench-lite dataset demonstrate that XAgent outperforms other existing approaches, achieving a resolve rate of 62.0% and a function localization accuracy of 72.8%, while maintaining cost efficiency. Our analysis further shows that XAgent successfully resolves 7 additional issues that the top existing baselines fail to address. This work highlights a shift from static, description-oriented patch generation toward dynamic execution-guided issue resolution, opening new opportunities for LLM-based coding agents to achieve more robust and generalizable software maintenance.",
+   "authors": [
+    "Hieu Huynh",
+    "Thongtanunam",
+    "Michael Fu",
+    "Bach Le",
+    "Chakkrit Kla Tantithamthavorn"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7165362271",
+   "doi": "10.48550/arxiv.2606.20243",
+   "title": "Phoenix: Safe GitHub Issue Resolution via Multi-Agent LLMs",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "We present Phoenix, a multi-agent LLM system that resolves GitHub issues from triage through pull-request creation, combining seven layered safety controls with a baseline-aware test evaluation strategy. Phoenix decomposes the work across six specialized agents. Planner, reproducer, coder, tester, failure analyst and Pull Request (PR) agent, all coordinated by a label-based GitHub webhook state machine. Every change is checked against a baseline test run before a pull request is opened. On a 24-instance slice of SWE-bench Lite. run on the production webhook path, Phoenix oracle-resolves 75% of instances with no pass-to-pass regressions on successful runs; this curated slice is not directly comparable to full-split leaderboard results, and we discuss the limits of the comparison. A complementary pilot on 42 real issues across 14 repositories yields 100% correctness preservation (CP; mean 122s on the hard tier). Manual inspection shows that about half of the resulting pull requests are well-targeted fixes. The other half place code at incorrect paths, a planner localization limitation we are addressing with retrieval. We also report the deployment failure modes (WAF filtering, token expiry, permission boundaries, flaky CI) that motivated each safety mechanism.",
+   "authors": [
+    "Kipngeno Koech",
+    "Muhammad Adam",
+    "Baimam Boukar Jean Jacques",
+    "Joao Barros"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416982487",
+   "doi": "10.1109/access.2026.3698694",
+   "title": "From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review",
+   "year": 2026,
+   "venue": "IEEE Access",
+   "type": "article",
+   "cited_by": 284,
+   "abstract": "Large language models and autonomous AI agents have evolved rapidly, resulting in a diverse array of evaluation benchmarks, frameworks, and collaboration protocols. Driven by the growing need for standardized evaluation and integration, we systematically consolidate these fragmented efforts into a unified framework. However, the landscape remains fragmented and lacks a unified taxonomy or comprehensive survey. Therefore, we present a side-by-side comparison of benchmarks developed between 2019 and 2025 that evaluate these models and agents across multiple domains. In addition, we propose a taxonomy of approximately 60 benchmarks that cover general and academic knowledge reasoning, mathematical problem-solving, code generation and software engineering, factual grounding and retrieval, domain-specific evaluations, multimodal and embodied tasks, task orchestration, and interactive assessments. Furthermore, we review AI-agent frameworks introduced between 2023 and 2025 that integrate large language models with modular toolkits to enable autonomous decision-making and multi-step reasoning. Moreover, we present real-world applications of autonomous AI agents in materials science, biomedical research, academic ideation, software engineering, synthetic data generation, chemical reasoning, mathematical problem-solving, geographic information systems, multimedia, healthcare, and finance. We then survey key agent-to-agent collaboration protocols, namely the Agent Communication Protocol (ACP), the Model Context Protocol (MCP), and the Agent-to-Agent Protocol (A2A). Finally, we discuss recommendations for future research, focusing on advanced reasoning strategies, failure modes in multi-agent LLM systems, automated scientific discovery, dynamic tool integration via reinforcement learning, integrated search capabilities, and security vulnerabilities in agent protocols.",
+   "authors": [
+    "Mohamed Amine Ferrag",
+    "Norbert Tihanyi",
+    "Merouane Abdelkader Debbah"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7128610571",
+   "doi": "10.18653/2026.findings-emnlp.1695",
+   "title": "Immersion in the GitHub Universe: Scaling Coding Agents to Mastery",
+   "year": 2026,
+   "venue": "Findings of the Association for Computational Linguistics: EMNLP (Findings of EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 29,
+   "abstract": "Achieving mastery in real-world software engineering tasks is fundamentally bottlenecked by the scarcity of large-scale, high-quality training data.Scaling such data has been limited by the complexity of environment setup, unittest generation, and problem statement curation.In this paper, we propose Scale-SWE, an automated, sandboxed multi-agent workflow designed to construct high-quality SWE data at scale.The system coordinates three specialized agents-for environment setup, test creation, and problem description synthesis-to process 6 million pull requests across 5.2k repositories, producing Scale-SWE-Data: 100k verified SWE instances, the largest such dataset to date.It substantially surpasses existing real-world datasets in repository diversity and reflects realistic task complexity.We further demonstrate the dataset's utility for training by distilling 71,498 high-quality trajectories and fine-tuning Qwen-30B-A3B-Instruct to produce Scale-SWE-Agent.Our agent achieves a 64% resolve rate on SWE-Bench-Verified-a nearly three-fold improvement over the base model.Scale-SWE provides a scalable, reproducible approach for data construction to advance LLM-based software engineering.",
+   "authors": [
+    "Jiale Zhao",
+    "Guoxin Chen",
+    "Fanzhe Meng",
+    "Minghao Li",
+    "Jie Chen",
+    "Hui Xu",
+    "Yongshuai Sun",
+    "Xin Zhao"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402702510",
+   "doi": "10.48550/arxiv.2408.14354",
+   "title": "SWE-bench-java: A GitHub Issue Resolving Benchmark for Java",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 50,
+   "abstract": "GitHub issue resolving is a critical task in software engineering, recently gaining significant attention in both industry and academia. Within this task, SWE-bench has been released to evaluate issue resolving capabilities of large language models (LLMs), but has so far only focused on Python version. However, supporting more programming languages is also important, as there is a strong demand in industry. As a first step toward multilingual support, we have developed a Java version of SWE-bench, called SWE-bench-java. We have publicly released the dataset, along with the corresponding Docker-based evaluation environment and leaderboard, which will be continuously maintained and updated in the coming months. To verify the reliability of SWE-bench-java, we implement a classic method SWE-agent and test several powerful LLMs on it. As is well known, developing a high-quality multi-lingual benchmark is time-consuming and labor-intensive, so we welcome contributions through pull requests or collaboration to accelerate its iteration and refinement, paving the way for fully automated programming.",
+   "authors": [
+    "Daoguang Zan",
+    "Zhirong Huang",
+    "Ailun Yu",
+    "Shaoxin Lin",
+    "Yifan Shi",
+    "Wei Liu",
+    "Chen, Dong",
+    "Qi, Zongshuai"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4407208775",
+   "doi": "10.48550/arxiv.2502.02649",
+   "title": "Fully Autonomous AI Agents Should Not be Developed",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 99,
+   "abstract": "This paper argues that fully autonomous AI agents should not be developed. In support of this position, we build from prior scientific literature and current product marketing to delineate different AI agent levels and detail the ethical values at play in each, documenting trade-offs in potential benefits and risks. Our analysis reveals that risks to people increase with the autonomy of a system: The more control a user cedes to an AI agent, the more risks to people arise. Particularly concerning are safety risks, which affect human life and impact further values.",
+   "authors": [
+    "Margaret Mitchell",
+    "Avijit Ghosh",
+    "Alexandra Sasha Luccioni",
+    "Giada Pistilli"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414486110",
+   "doi": "10.1145/3808191",
+   "title": "LinkAnchor: An Autonomous LLM-Based Agent for Issue-to-Commit Link Recovery",
+   "year": 2026,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 7,
+   "abstract": "Issue-to-commit link recovery in software repositories is fundamental to software traceability and project management, yet it remains a challenging task. Prior studies show that only about 42.2% of issues on GitHub are correctly linked to their commits, highlighting the need for more effective solutions. Existing work has explored a range of ML/DL approaches, and more recently, large language models (LLMs) have been applied to this problem. However, these methods face two major limitations. First, LLMs are restricted by limited context windows and cannot simultaneously process all available data sources, such as long commit histories, extensive issue discussions, and large code repositories. Second, most approaches operate on individual issue-commit pairs, where a model independently scores the relevance of a single commit to an issue. This pairwise formulation fails to account for the complex associativity of software fixes, where an issue is often resolved by an aggregate chain of commits rather than a single atomic change. By ignoring these temporal and parental dependencies, existing methods often fail to incorporate the complete resolution logic and might misidentify intermediate commits as final fixes. Furthermore, this strategy is computationally inefficient in large repositories, as it requires exhaustively evaluating an enormous number of candidate pairs. To address these challenges, we present LinkAnchor, the first autonomous LLM-based agent designed specifically for issue-to-commit link recovery. LinkAnchor introduces a lazy-access architecture that allows the underlying LLM to dynamically retrieve only the most relevant contextual data, such as commits, issue comments, and code files, without exceeding token limits. Instead of isolated scoring, LinkAnchor treats link recovery as a dynamic search process, navigating the commit graph to identify the final resolving commit and effectively aggregating the entire chain of contributing changes. LinkAnchor is first to formalize ILR as dynamic heuristic search over commit chains (vs. prior pairwise scoring), enabling aggregate reasoning that recovers distributed fixes (46% of cases). Our evaluations show that LinkAnchor outperforms state-of-the-art baselines by 41\u2013714% in Hit@1 across six large-scale open-source projects, while costing only about 0.01 US dollars per issue. Finally, LinkAnchor is designed and tested for both GitHub and Jira, and its modular architecture makes it straightforward to extend to other platforms.",
+   "authors": [
+    "Arshia Akhavan",
+    "Alireza Hoseinpour",
+    "Abbas Heydarnoori",
+    "Hamid Bagheri",
+    "Mehdi Keshani"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4404782782",
+   "doi": "10.18653/v1/2024.emnlp-main.632",
+   "title": "CodeAgent: Autonomous Communicative Agents for Code Review",
+   "year": 2024,
+   "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 96,
+   "abstract": "Xunzhu Tang, Kisub Kim, Yewei Song, Cedric Lothritz, Bei Li, Saad Ezzini, Haoye Tian, Jacques Klein, Tegawend\u00e9 F. Bissyand\u00e9. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. 2024.",
+   "authors": [
+    "Xunzhu Tang",
+    "Kisub Kim",
+    "Yewei Song",
+    "C\u00e9dric Lothritz",
+    "Bei Li",
+    "Saad Ezzini",
+    "Haoye Tian",
+    "Jacques Klein"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4394838745",
+   "doi": "10.48550/arxiv.2404.08144",
+   "title": "LLM Agents can Autonomously Exploit One-day Vulnerabilities",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 275,
+   "abstract": "LLMs have becoming increasingly powerful, both in their benign and malicious uses. With the increase in capabilities, researchers have been increasingly interested in their ability to exploit cybersecurity vulnerabilities. In particular, recent work has conducted preliminary studies on the ability of LLM agents to autonomously hack websites. However, these studies are limited to simple vulnerabilities. In this work, we show that LLM agents can autonomously exploit one-day vulnerabilities in real-world systems. To show this, we collected a dataset of 15 one-day vulnerabilities that include ones categorized as critical severity in the CVE description. When given the CVE description, GPT-4 is capable of exploiting 87% of these vulnerabilities compared to 0% for every other model we test (GPT-3.5, open-source LLMs) and open-source vulnerability scanners (ZAP and Metasploit). Fortunately, our GPT-4 agent requires the CVE description for high performance: without the description, GPT-4 can exploit only 7% of the vulnerabilities. Our findings raise questions around the widespread deployment of highly capable LLM agents.",
+   "authors": [
+    "Richard Fang",
+    "Rohan Bindu",
+    "Akul Gupta",
+    "Daniel D. Kang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4390041563",
+   "doi": "10.48550/arxiv.2312.11671",
+   "title": "Evaluating Language-Model Agents on Realistic Autonomous Tasks",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 114,
+   "abstract": "In this report, we explore the ability of language model agents to acquire resources, create copies of themselves, and adapt to novel challenges they encounter in the wild. We refer to this cluster of capabilities as \"autonomous replication and adaptation\" or ARA. We believe that systems capable of ARA could have wide-reaching and hard-to-anticipate consequences, and that measuring and forecasting ARA may be useful for informing measures around security, monitoring, and alignment. Additionally, once a system is capable of ARA, placing bounds on a system's capabilities may become significantly more difficult. We construct four simple example agents that combine language models with tools that allow them to take actions in the world. We then evaluate these agents on 12 tasks relevant to ARA. We find that these language model agents can only complete the easiest tasks from this list, although they make some progress on the more challenging tasks. Unfortunately, these evaluations are not adequate to rule out the possibility that near-future agents will be capable of ARA. In particular, we do not think that these evaluations provide good assurance that the ``next generation'' of language models (e.g. 100x effective compute scaleup on existing models) will not yield agents capable of ARA, unless intermediate evaluations are performed during pretraining. Relatedly, we expect that fine-tuning of the existing models could produce substantially more competent agents, even if the fine-tuning is not directly targeted at ARA.",
+   "authors": [
+    "Megan Kinniment",
+    "Lucas Jun Koba Sato",
+    "Heheng Du",
+    "Brian Goodrich",
+    "Max Hasin",
+    "Lawrence Chan",
+    "Luke Harold Miles",
+    "Tao Lin"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402346179",
+   "doi": "10.48550/arxiv.2407.13032",
+   "title": "Agent-E: From Autonomous Web Navigation to Foundational Design Principles in Agentic Systems",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 97,
+   "abstract": "AI Agents are changing the way work gets done, both in consumer and enterprise domains. However, the design patterns and architectures to build highly capable agents or multi-agent systems are still developing, and the understanding of the implication of various design choices and algorithms is still evolving. In this paper, we present our work on building a novel web agent, Agent-E \\footnote{Our code is available at \\url{https://github.com/EmergenceAI/Agent-E}}. Agent-E introduces numerous architectural improvements over prior state-of-the-art web agents such as hierarchical architecture, flexible DOM distillation and denoising method, and the concept of \\textit{change observation} to guide the agent towards more accurate performance. We first present the results of an evaluation of Agent-E on WebVoyager benchmark dataset and show that Agent-E beats other SOTA text and multi-modal web agents on this benchmark in most categories by 10-30\\%. We then synthesize our learnings from the development of Agent-E into general design principles for developing agentic systems. These include the use of domain-specific primitive skills, the importance of distillation and de-noising of environmental observations, the advantages of a hierarchical architecture, and the role of agentic self-improvement to enhance agent efficiency and efficacy as the agent gathers experience.",
+   "authors": [
+    "Tamer Abuelsaad",
+    "Deepak Akkil",
+    "Prasenjit Dey",
+    "Ashish Jagmohan",
+    "Aditya Vempaty",
+    "Ravi Kokku"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411523013",
+   "doi": "10.1145/3728871",
+   "title": "OmniGIRL: A Multilingual and Multimodal Benchmark for GitHub Issue Resolution",
+   "year": 2025,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 15,
+   "abstract": "The GitHub issue resolution task aims to resolve issues reported in repositories automatically. With advances in large language models (LLMs), this task has gained increasing attention, and several benchmarks are proposed to evaluate the issue resolution ability of LLMs. However, existing benchmarks have three main limitations. First, current benchmarks focus on a single programming language, limiting the evaluation of issues from repositories across different languages. Second, they usually cover a narrow range of domains, which may fail to represent the diversity of real-world issues. Third, existing benchmarks rely solely on textual information in issue descriptions, overlooking multimodal information such as images in issues. In this paper, we propose OmniGIRL, a G itHub I ssue R eso L ution benchmark that is multilingual, multimodal, and multi-domain. OmniGIRL includes 959 task instances, which are collected from repositories across four programming languages (i.e., Python, JavaScript, TypeScript, and Java) and eight different domains. Our evaluation shows that current LLMs show limited performances on OmniGIRL. Notably, the best-performing model, GPT-4o, resolves only 8.6% of the issues. Besides, we find that current LLMs struggle to resolve issues requiring understanding images. The best performance is achieved by Claude-3.5-Sonnet, which resolves only 10.5% of the issues with image information. Finally, we analyze the reasons behind current LLMs\u2019 failure on OmniGIRL, providing insights for future improvements.",
+   "authors": [
+    "Lianghong Guo",
+    "Wei Tao",
+    "Runhan Jiang",
+    "Yanlin Wang",
+    "Jiachi Chen",
+    "Xilin Liu",
+    "Yuchi Ma",
+    "Mingzhi Mao"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7164998152",
+   "doi": "10.1038/s41586-026-10675-5",
+   "title": "Towards autonomous medical artificial intelligence agents",
+   "year": 2026,
+   "venue": "Nature",
+   "type": "article",
+   "cited_by": 64,
+   "abstract": ". However, building physician copilots will require models that operate within the electronic health record (EHR), with governed access to patient data and the ability to initiate permitted EHR actions within defined safety constraints. Yet it remains unproven whether such a system can manage patient cases with physician-level performance. Here we show that MIRA (Medical Intelligence for Reasoning and Action), an autonomous artificial intelligence agent operating in a sandboxed EHR environment, can navigate a large clinical action space to obtain patient histories; order and interpret laboratory, imaging and microbiology tests; generate differential diagnoses; and formulate treatment plans such as prescribing medications, scheduling surgical procedures and planning admissions. In simulations on real patient cases spanning multiple diagnoses, MIRA outperformed physicians in diagnostic accuracy and made guideline-concordant, medication-safe and appropriate admission decisions. Compared with previous LLM applications that addressed isolated subtasks or provided free-text advice, these results suggest that an EHR-integrated artificial intelligence agent can turn clinical intent into structured, actionable EHR operations, possibly making it a more effective decision-support partner for physicians. Further work is needed to establish generalization, safety and governance through prospective, real-world studies.",
+   "authors": [
+    "Dyke Ferber",
+    "Lars Hilgers",
+    "Christiane H\u00f6per",
+    "Benedict Kinny\u2010K\u00f6ster",
+    "Jan\u2010Niklas Eckardt",
+    "Katharina Egger\u2010Heidrich",
+    "Marius Bill",
+    "Martin M. K. Schneider"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415900202",
+   "doi": "10.1145/3744916.3773140",
+   "title": "Beyond Final Code: A Process-Oriented Error Analysis of Software Development Agents in Real-World GitHub Scenarios",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 28,
+   "abstract": "AI-driven software development has rapidly advanced with the emergence of software development agents that leverage large language models (LLMs) to tackle complex, repository-level software engineering tasks. These agents go beyond just generation of final code; they engage in multi-step reasoning, utilize various tools for code modification and debugging, and interact with execution environments to diagnose and iteratively resolve issues. However, most existing evaluations focus primarily on static analyses of final code outputs, yielding limited insights into the agents\u2019 dynamic problem-solving processes. To fill this gap, we conduct an in-depth empirical study on 3,977 solving-phase trajectories and 3,931 testing-phase logs from 8 top-ranked agents evaluated on 500 GitHub issues in the SWE-Bench benchmark. Our exploratory analysis shows that Python execution errors during the issue resolution phase correlate with lower resolution rates and increased reasoning overheads. We have identified the most prevalent errors\u2014such as ModuleNotFoundError and TypeError\u2014and highlighted particularly challenging errors like OSError and database-related issues (e.g., IntegrityError) that demand significantly more debugging effort. Furthermore, we have discovered 3 bugs in the SWE-Bench platform that affect benchmark fairness and accuracy; these issues have been reported to and confirmed by the maintainers. To promote transparency and foster future research, we publicly share our datasets and analysis scripts.",
+   "authors": [
+    "Zhi Chen",
+    "Wei Ma",
+    "Lingxiao Jiang"
+   ],
+   "facet": "F6_scaffold",
+   "query": "autonomous program improvement agent GitHub issues"
+  }
+ ]
+}

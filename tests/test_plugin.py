@@ -114,13 +114,14 @@ def test_mcp_protocol_and_stats() -> None:
             call(6, "leaderboard_noise_floor", {"num_tasks": 50, "baseline_rate": 0.25}),
             call(7, "verify_wilson_ci", {"successes": 5, "total": 0}),
             {"jsonrpc": "2.0", "id": 8, "method": "no/such"},
+            call(10, "leaderboard_noise_floor", {"num_tasks": 58, "baseline": 0.2}),
             {"jsonrpc": "2.0", "id": 9, "method": "ping"},
         ]
     )
-    check(len(replies) == 9, f"expected 9 replies (notification gets none), got {len(replies)}")
+    check(len(replies) == 10, f"expected 10 replies (notification gets none), got {len(replies)}")
     check(replies[0]["result"]["protocolVersion"] == "2025-06-18", "protocol negotiation")
     names = {t["name"] for t in replies[1]["result"]["tools"]}
-    check(len(names) == 6 and "verify_mcnemar_exact" in names, f"tool list: {names}")
+    check(len(names) == 7 and {"verify_mcnemar_exact", "search_openreview_by_title"} <= names, f"tool list: {names}")
     ci = tool(replies, 3)
     check(ci["rate_pct"] == 39.53 and ci["wilson_low_pct"] == 31.52 and ci["wilson_high_pct"] == 48.16, f"wilson {ci}")
     fe = tool(replies, 4)
@@ -133,6 +134,8 @@ def test_mcp_protocol_and_stats() -> None:
     check(bad["isError"] is True, "invalid input must be a tool error")
     check(next(x for x in replies if x["id"] == 8)["error"]["code"] == -32601, "unknown method")
     check(next(x for x in replies if x["id"] == 9)["result"] == {}, "ping")
+    typo = next(x for x in replies if x["id"] == 10)["result"]
+    check(typo["isError"] is True and "baseline_rate" in typo["content"][0]["text"], f"misspelled argument: {typo}")
 
 
 def test_against_scipy() -> None:
@@ -247,6 +250,10 @@ def test_crossref_live() -> None:
     rec = m.verify_doi("https://doi.org/10.1038/nature14539")  # LeCun, Bengio, Hinton, "Deep learning", 2015
     check(rec["verified"] and rec["year"] == 2015 and rec["first_author_family"] == "LeCun", f"doi {rec}")
     check(m.verify_doi("10.9999/definitely-not-a-real-doi-xyz")["verified"] is False, "missing DOI")
+    arx = m.verify_doi("10.48550/arXiv.2405.18512")  # arXiv DOIs live in DataCite, not Crossref
+    check(arx["verified"] and arx["registry"] == "datacite" and arx["first_author_family"] == "Sanford", f"arxiv {arx}")
+    orv = m.search_openreview("Talk like a graph: Encoding graphs for large language models")["candidates"]
+    check(any(c["title_similarity"] == 1.0 and c["venue"] == "ICLR 2024 poster" for c in orv), f"openreview {orv[:2]}")
     hit = m.search_title("Deep learning", author="LeCun", year=2015)
     check(
         hit["best_is_match"] and hit["candidates"][0]["doi"].lower() == "10.1038/nature14539",

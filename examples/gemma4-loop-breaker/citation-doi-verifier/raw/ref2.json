@@ -1,0 +1,419 @@
+{
+ "entry": {
+  "key": "ref2",
+  "n": 2,
+  "authors": "E. Markowitz, B. Perozzi, B. Rozemberczki, G. Cameron, H. Hemmati, Y. Li, M. Galkin, M. Farhadi, R. Holbrook, and A. Oldacre",
+  "first_author_surname": "Markowitz",
+  "title": "The Gemma 4 developer agent benchmark and evaluation suite",
+  "year": 2026,
+  "venue_claimed": null,
+  "arxiv": null,
+  "doi": null,
+  "title_in_pdf": true
+ },
+ "crossref_title_search": {
+  "query": "The Gemma 4 developer agent benchmark and evaluation suite",
+  "candidates": [
+   {
+    "doi": "10.1117/12.2663831",
+    "title": "Toward an adaptive deep reinforcement learning agent for maritime platform defense",
+    "authors": [
+     "Jared Markowitz",
+     "Edward W. Staley"
+    ],
+    "first_author_family": "Markowitz",
+    "author_count": 2,
+    "year": 2023,
+    "venue": "Artificial Intelligence and Machine Learning for Multi-Domain Operations Applications V",
+    "type": "proceedings-article",
+    "publisher": "SPIE",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.3857,
+    "first_author_matches": true,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1097/rti.0b013e3180317468",
+    "title": "Multislice CT Evaluation of Coronary Artery Bypass Graft Patients",
+    "authors": [
+     "Robert Chapman Gilkeson",
+     "Alan H. Markowitz"
+    ],
+    "first_author_family": "Gilkeson",
+    "author_count": 2,
+    "year": 2007,
+    "venue": "Journal of Thoracic Imaging",
+    "type": "journal-article",
+    "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.2927,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1016/j.evalprogplan.2015.04.005",
+    "title": "Can a workbook work? Examining whether a practitioner evaluation toolkit can promote instrumental use",
+    "authors": [
+     "Rebecca Campbell",
+     "Stephanie M. Townsend",
+     "Jessica Shaw",
+     "Nidal Karim",
+     "Jenifer Markowitz"
+    ],
+    "first_author_family": "Campbell",
+    "author_count": 5,
+    "year": 2015,
+    "venue": "Evaluation and Program Planning",
+    "type": "journal-article",
+    "publisher": "Elsevier BV",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.2911,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.1203/00006450-197011000-00004",
+    "title": "A Controlled Evaluation of the Effectiveness of Comprehensive Pediatric Care in Influencing Patient Compliance",
+    "authors": [
+     "Leon Gordis",
+     "Milton Markowitz"
+    ],
+    "first_author_family": "Gordis",
+    "author_count": 2,
+    "year": 1970,
+    "venue": "Pediatric Research",
+    "type": "journal-article",
+    "publisher": "Springer Science and Business Media LLC",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.2857,
+    "first_author_matches": false,
+    "year_matches": false
+   },
+   {
+    "doi": "10.2147/ndt.s24153",
+    "title": "An in vitro evaluation of guanfacine as a substrate for P-glycoprotein",
+    "authors": [
+     "John Markowitz",
+     "Zhu",
+     "John Markowitz"
+    ],
+    "first_author_family": "Markowitz",
+    "author_count": 3,
+    "year": 2011,
+    "venue": "Neuropsychiatric Disease and Treatment",
+    "type": "journal-article",
+    "publisher": "Informa UK Limited",
+    "is_preprint_of": [],
+    "has_preprint": [],
+    "title_similarity": 0.2812,
+    "first_author_matches": true,
+    "year_matches": false
+   }
+  ],
+  "best_title_similarity": 0.3857,
+  "best_is_match": false
+ },
+ "arxiv_title_search": {
+  "status": 200,
+  "entries": []
+ },
+ "openalex_title_search": {
+  "status": 200,
+  "results": [
+   {
+    "id": "https://openalex.org/W7167604932",
+    "doi": "https://doi.org/10.48550/arxiv.2607.02770",
+    "title": "Gemma 4 Technical Report",
+    "year": 2026,
+    "type": "preprint",
+    "authors": [
+     "Gemma Team",
+     "Sherif El Abd",
+     "Vaibhav Aggarwal",
+     "Robin Algayres",
+     "Alek Andreev",
+     "Olivier Bachem",
+     "Ian Ballantyne",
+     "Cormac Brick",
+     "Victor C\u0103rbune",
+     "Michelle Casbon",
+     "Mayank Chaturvedi",
+     "Aditya Chawla",
+     "Victor Cotruta",
+     "Alice Coucke",
+     "Phil Culliton",
+     "Robert Dadashi",
+     "Lucas Dixon",
+     "Mohamed Elhawaty",
+     "Utku Evci",
+     "Cl\u00e9ment Farabet",
+     "Johan Ferret",
+     "Filippo Galgani",
+     "Sertan Girgin",
+     "Jean-Bastien Grill",
+     "Maarten Ruben Grootendorst",
+     "J Y Guo",
+     "Cassidy Hardin",
+     "Steven M. Hernandez",
+     "Steven M. Hernandez",
+     "Omri Homburger",
+     "L\u00e9onard Hussenot",
+     "Juyeong Ji",
+     "Armand Joulin",
+     "Aishwarya Kamath",
+     "Parnian Kassraie",
+     "Olivier Lacombe",
+     "Preethi Lahoti",
+     "Ga\u00ebl Liu",
+     "Luciano Martins",
+     "Luciano Martins",
+     "Tatiana Matejovicova",
+     "Ramona Merhej",
+     "Nikola Momchev",
+     "Sneha Mondal",
+     "Ryan Mullins",
+     "Sindhu Raghuram Panyam",
+     "Shreya Pathak",
+     "Sarah Perrin",
+     "Andr\u00e9 Susano Pinto",
+     "Etienne Pot",
+     "Ang\u00e9line Pouget",
+     "Alexandre Ram\u00e9",
+     "Sabela Ramos",
+     "David Rim",
+     "David Rim",
+     "Morgane Rivi\u00e8re",
+     "K Roth",
+     "Louis Rouillard",
+     "Omar Sanseviero",
+     "Pier Giuseppe Sessa",
+     "Shane Settle",
+     "Danila Sinopalnikov",
+     "Sara Smoot",
+     "Piotr Sta\u0144czyk",
+     "A. Steiner",
+     "Lawrence Stewart",
+     "Ilya Tolstikhin",
+     "Michael Tschannen",
+     "Anton Tsitsulin",
+     "Nino Vieillard",
+     "Pingmei Xu",
+     "Pingmei Xu",
+     "Haichuan Yang",
+     "Edouard Yvinec",
+     "Biao Zhang",
+     "Li Zhang",
+     "Joe Zou",
+     "Nicolas Aagnes",
+     "Abdelrahman Abdelhamed",
+     "Jakub Adamek",
+     "Shivani Agrawal",
+     "S Agrawal",
+     "Ibrahim Alabdulmohsin",
+     "Jean-Baptiste Alayrac",
+     "Uri Alon",
+     "Chandramouli Amarnath",
+     "Ankesh Anand",
+     "Chrysovalantis Anastasiou",
+     "Setareh Ariafar",
+     "Fran\u00e7ois-Xavier Aubet",
+     "Kyriakos Axiotis",
+     "Federico Barbero",
+     "Joelle K. Barral",
+     "Alexei Bendebury",
+     "Urs Bergmann",
+     "Stanley Bileschi",
+     "Kat Black",
+     "Mathieu Blondel",
+     "Sebastian Borgeaud",
+     "Arthur Bra\u017einskas"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://arxiv.org/abs/2607.02770"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2607.02770"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4401306838",
+    "doi": "https://doi.org/10.48550/arxiv.2407.21772",
+    "title": "ShieldGemma: Generative AI Content Moderation Based on Gemma",
+    "year": 2024,
+    "type": "preprint",
+    "authors": [
+     "Wenjun Zeng",
+     "Yuchi Liu",
+     "Ryan S. Mullins",
+     "Ludovic Peran",
+     "J. M. M. Fernandez",
+     "Hamza Harkous",
+     "Karthik Narasimhan",
+     "Drew Proud",
+     "Piyush Kumar",
+     "Bhaktipriya Radharapu",
+     "Olivia Sturman",
+     "Oscar Wahltinez"
+    ],
+    "primary_location": "arXiv (Cornell University)",
+    "locations": [
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2407.21772"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2407.21772"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4415330314",
+    "doi": "https://doi.org/10.1007/978-3-032-37086-0_13",
+    "title": "FindingDory: A Benchmark to Evaluate Memory in Embodied Agents",
+    "year": 2026,
+    "type": "conference-paper",
+    "authors": [
+     "Karmesh Yadav",
+     "Yusuf Ali",
+     "Gunshi Gupta",
+     "Yarin Gal",
+     "Zsolt Kira"
+    ],
+    "primary_location": "Lecture notes in computer science",
+    "locations": [
+     {
+      "source": "Lecture notes in computer science",
+      "source_type": "book series",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1007/978-3-032-37086-0_13"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2506.15635"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2506.15635"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W7222701140",
+    "doi": "https://doi.org/10.18653/2026.aacl-long.198",
+    "title": "KBS: A Korean Benchmark Suite for Foundation Model Evaluation",
+    "year": 2026,
+    "type": "conference-paper",
+    "authors": [
+     "Yeonkyoung So",
+     "Jongmin Kim",
+     "Sungmok Jung",
+     "Gyuseong Lee",
+     "Sangho Kim",
+     "Jongyeon Park",
+     "Joonhak Lee",
+     "Seho Pyo",
+     "Gyeongje Cho",
+     "Seorin Kim",
+     "Jisoo Kim",
+     "Suyoung Park",
+     "Hyunji M. Park",
+     "Yelim Ahn",
+     "Yeongho Seo",
+     "Jaejin Lee"
+    ],
+    "primary_location": "International Joint Conference on Natural Language Processing and Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL)",
+    "locations": [
+     {
+      "source": "International Joint Conference on Natural Language Processing and Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL)",
+      "source_type": "conference",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.18653/2026.aacl-long.198"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "https://arxiv.org/abs/2610.21227"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2610.21227"
+     }
+    ]
+   },
+   {
+    "id": "https://openalex.org/W4413801638",
+    "doi": "https://doi.org/10.1056/aidbp2500144",
+    "title": "MedAgentBench: A Virtual EHR Environment to Benchmark Medical LLM Agents",
+    "year": 2025,
+    "type": "article",
+    "authors": [
+     "Yixing Jiang",
+     "Kameron Collin Black",
+     "Gloria Geng",
+     "Danny Park",
+     "James Zou",
+     "Andrew Y. Ng",
+     "Jonathan H. Chen"
+    ],
+    "primary_location": "NEJM AI",
+    "locations": [
+     {
+      "source": "NEJM AI",
+      "source_type": "journal",
+      "version": "publishedVersion",
+      "landing": "https://doi.org/10.1056/aidbp2500144"
+     },
+     {
+      "source": "Qeios",
+      "source_type": "journal",
+      "version": "submittedVersion",
+      "landing": "https://doi.org/10.32388/vn3yh7"
+     },
+     {
+      "source": "PubMed",
+      "source_type": "repository",
+      "version": "publishedVersion",
+      "landing": "https://pubmed.ncbi.nlm.nih.gov/42932685"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": "submittedVersion",
+      "landing": "http://arxiv.org/abs/2501.14654"
+     },
+     {
+      "source": "arXiv (Cornell University)",
+      "source_type": "repository",
+      "version": null,
+      "landing": "https://doi.org/10.48550/arxiv.2501.14654"
+     }
+    ]
+   }
+  ]
+ }
+}

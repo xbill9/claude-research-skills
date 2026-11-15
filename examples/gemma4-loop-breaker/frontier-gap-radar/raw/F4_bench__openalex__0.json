@@ -1,0 +1,513 @@
+{
+ "url": "https://api.openalex.org/works?search=SWE-bench+resolve+GitHub+issues+language+models+benchmark&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4387561453",
+   "doi": "10.48550/arxiv.2310.06770",
+   "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2109,
+   "abstract": "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous.",
+   "authors": [
+    "Jimenez, Carlos E.",
+    "Yang, John",
+    "Alexander Wettig",
+    "Shunyu Yao",
+    "Kexin Pei",
+    "Ofir Press",
+    "Karthik Narasimhan"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4402702510",
+   "doi": "10.48550/arxiv.2408.14354",
+   "title": "SWE-bench-java: A GitHub Issue Resolving Benchmark for Java",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 50,
+   "abstract": "GitHub issue resolving is a critical task in software engineering, recently gaining significant attention in both industry and academia. Within this task, SWE-bench has been released to evaluate issue resolving capabilities of large language models (LLMs), but has so far only focused on Python version. However, supporting more programming languages is also important, as there is a strong demand in industry. As a first step toward multilingual support, we have developed a Java version of SWE-bench, called SWE-bench-java. We have publicly released the dataset, along with the corresponding Docker-based evaluation environment and leaderboard, which will be continuously maintained and updated in the coming months. To verify the reliability of SWE-bench-java, we implement a classic method SWE-agent and test several powerful LLMs on it. As is well known, developing a high-quality multi-lingual benchmark is time-consuming and labor-intensive, so we welcome contributions through pull requests or collaboration to accelerate its iteration and refinement, paving the way for fully automated programming.",
+   "authors": [
+    "Daoguang Zan",
+    "Zhirong Huang",
+    "Ailun Yu",
+    "Shaoxin Lin",
+    "Yifan Shi",
+    "Wei Liu",
+    "Chen, Dong",
+    "Qi, Zongshuai"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4410313682",
+   "doi": "10.52202/085713-2111",
+   "title": "Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 215,
+   "abstract": "The task of issue resolving is to modify a codebase to generate a patch that addresses a given issue. However, existing benchmarks, such as SWE-bench, focus almost exclusively on Python, making them insufficient for evaluating Large Language Models (LLMs) across diverse software ecosystems. To address this, we introduce a multilingual issue-resolving benchmark, called Multi-SWE-bench, covering Java, TypeScript, JavaScript, Go, Rust, C, and C++. It includes a total of 1,632 high-quality instances, which were carefully annotated from 2,456 candidates by 68 expert annotators, ensuring that the benchmark can provide an accurate and reliable evaluation. Based on Multi-SWE-bench, we evaluate a series of state-of-the-art models using three representative methods (Agentless, SWE-agent, and OpenHands) and present a comprehensive analysis with key empirical insights. In addition, we launch a Multi-SWE-RL open-source community, aimed at building large-scale reinforcement learning (RL) training datasets for issue-resolving tasks. As an initial contribution, we release a set of 4,723 well-structured instances spanning seven programming languages, laying a solid foundation for RL research in this domain. More importantly, we open-source our entire data production pipeline, along with detailed tutorials, encouraging the open-source community to continuously contribute and expand the dataset. We envision our Multi-SWE-bench and the ever-growing Multi-SWE-RL community as catalysts for advancing RL toward its full potential, bringing us one step closer to the dawn of AGI.",
+   "authors": [
+    "Daoguang Zan",
+    "Zhirong Huang",
+    "Wei Liu",
+    "Hanwu Chen",
+    "Shulin Xin",
+    "Linhao Zhang",
+    "Qi Liu",
+    "Qi Liu"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414887410",
+   "doi": "10.52202/085713-4923",
+   "title": "SWE-bench Goes Live!",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 151,
+   "abstract": "The issue-resolving task, where a model generates patches to fix real-world bugs, has emerged as a critical benchmark for evaluating the capabilities of large language models (LLMs). While SWE-bench and its variants have become standard in this domain, they suffer from key limitations: they have not been updated since their initial releases, cover a narrow set of repositories, and depend heavily on manual effort for instance construction and environment setup. These factors hinder scalability and introduce risks of overfitting and data contamination. In this work, we present SWE-bench-Live, a live-updatable benchmark designed to overcome these challenges. Our initial release consists of 1,319 tasks derived from real GitHub issues created since 2024, spanning 93 repositories. Each task is accompanied by a dedicated Docker image to ensure reproducible execution. Central to our benchmark is \\method, an automated curation pipeline that streamlines the entire process from instance creation to environment setup, removing manual bottlenecks and enabling scalability and continuous updates. We evaluate a range of state-of-the-art agent frameworks and LLMs on SWE-bench-Live, revealing a substantial performance gap compared to static benchmarks like SWE-bench, even under controlled evaluation conditions. To better understand this discrepancy, we perform detailed analyses across repository origin, issue recency, and task difficulty. By providing a fresh, diverse, and executable benchmark grounded in live repository activity, SWE-bench-Live facilitates rigorous, contamination-resistant evaluation of LLMs and agents in dynamic, real-world software development settings.",
+   "authors": [
+    "Linghao Zhang",
+    "Shilin He",
+    "Chaoyun Zhang",
+    "Yu KANG",
+    "Bowen Li",
+    "Chengxing Xie",
+    "Junhao Wang",
+    "Maoquan Wang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403363594",
+   "doi": "10.48550/arxiv.2410.06992",
+   "title": "SWE-Bench+: Enhanced Coding Benchmark for LLMs",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 141,
+   "abstract": "Large Language Models (LLMs) in Software Engineering (SE) can offer assistance for coding. To facilitate a rigorous evaluation of LLMs in practical coding contexts, Carlos et al. introduced the SWE-bench dataset, which comprises 2,294 real-world GitHub issues and their corresponding pull requests, collected from 12 widely used Python repositories. Several impressive LLM-based toolkits recently are developed and evaluated on this dataset. However, a systematic evaluation of the quality of SWE-bench remains missing. In this paper, we addressed this gap by presenting an empirical analysis of the SWE-bench dataset. We conducted a manual screening of instances where SWEAgent + GPT-4 successfully resolved issues by comparing the model-generated patches with the actual pull requests. SWE-Agent+GPT-4 was at the top of SWE-bench leaderboard during the time of our study. Our analysis reveals some critical issues with the SWE-bench dataset: 1) 32.67% of the successful patches involve cheating as the solutions were directly provided in the issue report or the comments. We refer to as solution leakage problem. 2) 31.08% of the passed patches are suspicious patches due to weak test cases, i.e., the tests were not adequate to verify the correctness of a patch. When we filtered out these problematic issues, the resolution rate of SWE-Agent+GPT-4 dropped from 12.47% to 3.97%. We also observed that the same data quality issues also exist in the two variants of SWE-bench, i.e., SWE-bench Lite and SWE-Bench Verified. In addition, over 94% of the issues were created before LLM's knowledge cutoff dates, posing potential data leakage issues.",
+   "authors": [
+    "Reem Aleithan",
+    "Xue, Haoran",
+    "Mohammad Mahdi Mohajer",
+    "Elijah Nnorom",
+    "Gias Uddin",
+    "Song Wang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7167406813",
+   "doi": "10.1145/3805760.3814924",
+   "title": "SWE-Bench+: Enhanced LLM Coding Benchmark",
+   "year": 2026,
+   "venue": "ACM International Conference on AI-Powered Software (AIware)",
+   "type": "conference-paper",
+   "cited_by": 3,
+   "abstract": "SWE-Bench is widely used to evaluate whether large language models can resolve real-world GitHub issues, yet the quality of its benchmark instances remains underexplored. We present SWE-Bench+, an enhanced benchmark framework that improves evaluation reliability by addressing two risks: solution leakage in issue descriptions and weak tests that allow plausible but incorrect patches to pass. We analyze 217 commonly resolved issues from SWE-Bench Lite and SWE-Bench Verified across three top-performing agents, yielding 651 model-generated patches. Our analysis identifies five recurring quality-problem patterns under solution leakage and weak tests. We further develop SoluLeakDetector, which detects solution-leaking content, and TestEnhancer, which strengthens validation tests. We find that 60.83% of commonly resolved issues contain solution leakage and 77.88% are problematic overall. SoluLeakDetector achieves 80.45% accuracy, while TestEnhancer identifies plausible patches for 97.11% of weak-test issues and reduces average resolution rates by 27.00 percentage points on Lite and 36.27 percentage points on Verified.",
+   "authors": [
+    "Haoran Xue",
+    "Reem Aleithan",
+    "Nafid Enan",
+    "Gias Uddin",
+    "Song Wang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4412888888",
+   "doi": "10.18653/v1/2025.findings-acl.62",
+   "title": "SWE-Fixer: Training Open-Source LLMs for Effective and Efficient GitHub Issue Resolution",
+   "year": 2025,
+   "venue": "Findings of the Association for Computational Linguistics: ACL (Findings of ACL)",
+   "type": "conference-paper",
+   "cited_by": 95,
+   "abstract": "Large Language Models (LLMs) have demonstrated remarkable proficiency across a variety of complex tasks.One significant application of LLMs is in tackling software engineering challenges, particularly in resolving real-world tasks on GitHub by fixing code based on the issues reported by the users.However, many current approaches rely on proprietary LLMs, which limits reproducibility, accessibility, and transparency.The critical components of LLMs for addressing software engineering issues and how their capabilities can be effectively enhanced remain unclear.To address these challenges, we introduce SWE-Fixer, a novel opensource framework designed to effectively and efficiently resolve GitHub issues.SWE-Fixer comprises two essential modules: a code file retrieval module and a code editing module.The retrieval module employs BM25 along with a lightweight model to achieve coarse-to-fine file retrieval.Subsequently, the code editing module utilizes the other model to generate patches for the identified files.To mitigate the lack of publicly available datasets, we compile an extensive dataset that includes 110K GitHub issues along with their corresponding patches and train the two models of SWE-Fixer separately.We assess our approach on the SWE-Bench Lite and Verified benchmarks, achieving competitive performance among open-source models with scores of 22.0% and 30.2%.Furthermore, SWE-Fixer reaches state-of-the-art performance (24.7% on Lite and 32.8% on Verified) with PASS_TO_PASS (P2P) filtering.Additionally, our approach requires only two model calls per instance, making it significantly more efficient than existing methods.These results highlight the effectiveness of SWE-Fixer in real-world code-fixing scenarios.We will make our model, dataset, and code publicly available at https://github.com/InternLM/ SWE-Fixer.",
+   "authors": [
+    "Chengxing Xie",
+    "Bowen Li",
+    "Chang Gao",
+    "He Du",
+    "Wai Lam",
+    "Difan Zou",
+    "Kai Chen"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4412886699",
+   "doi": "10.18653/v1/2025.acl-long.189",
+   "title": "UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench",
+   "year": 2025,
+   "venue": "Proceedings of the conference - Association for Computational Linguistics. Meeting",
+   "type": "conference-paper",
+   "cited_by": 60,
+   "abstract": "The advent of Large Language Models (LLMs) has spurred the development of coding agents for real-world code generation.As a widely used benchmark for evaluating the code generation capabilities of these agents, SWE-Bench uses real-world problems based on GitHub issues and their corresponding pull requests.However, the manually written test cases included in these pull requests are often insufficient, allowing generated patches to pass the tests without resolving the underlying issue.To address this challenge, we introduce UTGenerator, an LLM-driven test case generator that automatically analyzes codebases and dependencies to generate test cases for real-world Python projects.Building on UTGenerator, we propose UTBoost, a comprehensive framework for test case augmentation.In our evaluation, we identified 36 task instances with insufficient test cases and uncovered 345 erroneous patches incorrectly labeled as passed in the original SWE Bench.These corrections, impacting 40.9% of SWE-Bench Lite and 24.4% of SWE-Bench Verified leaderboard entries, yield 18 and 11 ranking changes, respectively.",
+   "authors": [
+    "Bin Yu",
+    "Yuxuan Zhu",
+    "Pinjia He",
+    "Daniel D. Kang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417295250",
+   "doi": "10.48550/arxiv.2512.10218",
+   "title": "Does SWE-Bench-Verified Test Agent Ability or Model Memory?",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 20,
+   "abstract": "SWE-Bench-Verified, a dataset comprising 500 issues, serves as a de facto benchmark for evaluating various large language models (LLMs) on their ability to resolve GitHub issues. But this benchmark may overlap with model training data. If that is true, scores may reflect training recall, not issue-solving skill. To study this, we test two Claude models that frequently appear in top-performing agents submitted to the benchmark. We ask them to find relevant files using only issue text, and then issue text plus file paths. We then run the same setup on BeetleBox and SWE-rebench. Despite both benchmarks involving popular open-source Python projects, models performed 3 times better on SWE-Bench-Verified. They were also 6 times better at finding edited files, without any additional context about the projects themselves. This gap suggests the models may have seen many SWE-Bench-Verified tasks during training. As a result, scores on this benchmark may not reflect an agent's ability to handle real software issues, yet it continues to be used in ways that can misrepresent progress and lead to choices that favour agents that use certain models over strong agent design. Our setup tests the localization step with minimal context to the extent that the task should be logically impossible to solve. Our results show the risk of relying on older popular benchmarks and support the shift toward newer datasets built with contamination in mind.",
+   "authors": [
+    "Thanosan Prathifkumar",
+    "Noble Saji Mathews",
+    "Meiyappan Nagappan"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411523044",
+   "doi": "10.1145/3728981",
+   "title": "SWE-GPT: A Process-Centric Language Model for Automated Software Improvement",
+   "year": 2025,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 83,
+   "abstract": "Large language models (LLMs) have demonstrated remarkable performance in code generation, significantly enhancing the coding efficiency of developers. Recent advancements in LLM-based agents have led to significant progress in end-to-end automatic software engineering (ASE), particularly in software maintenance (e.g., fixing software issues) and evolution (e.g., adding new features). Despite these encouraging advances, current research faces two major challenges. First, state-of-the-art performance primarily depends on closed-source models like GPT-4, which significantly limits the technology\u2019s accessibility, and potential for customization in diverse software engineering tasks. This dependence also raises concerns about data privacy, particularly when handling sensitive codebases. Second, these models are predominantly trained on static code data, lacking a deep understanding of the dynamic interactions, iterative problem-solving processes, and evolutionary characteristics inherent in software development. Consequently, they may face challenges in navigating complex project structures and generating contextually relevant solutions, which can affect their practical utility in real-world scenarios. To address these challenges, our study adopts a software engineering perspective. We recognize that real-world software maintenance and evolution processes encompass not only static code data but also developers\u2019 thought processes, utilization of external tools, and the interaction between different functional personnel. Our objective is to develop an open-source large language model specifically optimized for software improvement, aiming to match the performance of closed-source alternatives while offering greater accessibility and customization potential. Consequently, we introduce the Lingma SWE-GPT series, comprising Lingma SWE-GPT 7B and Lingma SWE-GPT 72B. By learning from and simulating real-world code submission activities, Lingma SWE-GPT systematically incorporates the dynamic interactions and iterative problemsolving inherent in software development process\u2014such as repository understanding, fault localization, and patch generation\u2014thereby achieving a more comprehensive understanding of software improvement processes. We conducted experimental evaluations using SWE-bench-Verified benchmark (comprising 500 real GitHub issues), recently proposed by OpenAI. The results demonstrate that Lingma SWE-GPT 72B successfully resolves 30.20% of the GitHub issues , marking a significant improvement in automatic issue resolution (22.76% relative improvement compared to Llama 3.1 405B), approaching the performance of closed-source models (31.80% issues of GPT-4o resolved). Notably, Lingma SWE-GPT 7B resolves 18.20% of the issues, surpassing the 17.20% resolution rate of Llama 3.1 70B, highlighting the potential for applying smaller models to ASE tasks.",
+   "authors": [
+    "Yingwei Ma",
+    "Rongyu Cao",
+    "Yongchang Cao",
+    "Yue Zhang",
+    "Jue Chen",
+    "Yibo Liu",
+    "Yuchen Liu",
+    "Binhua Li"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7164437655",
+   "doi": "10.48550/arxiv.2606.12344",
+   "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 10,
+   "abstract": "The software engineering capabilities of general-purpose agent harnesses remain underexplored, and existing benchmarks offer limited support for comparing these harnesses under consistent conditions. To address this gap, we introduce Claw-SWE-Bench, a unified benchmark that enables researchers to systematically assess the capabilities and efficiency of general-purpose harnesses on software engineering tasks. The benchmark contains 350 real-world GitHub issue-resolution instances across eight programming languages and 43 repositories and provides a shared adapter protocol to align task inputs, outputs, and execution environments across harnesses. Experiments show that general-purpose harnesses can effectively resolve real-world software issues and that their success rates and resource consumption vary substantially even when the underlying model is held fixed. To lower evaluation costs and support faster debugging and iteration, we also provide Claw-SWE-Bench Lite, an 80-instance subset designed to preserve the key evaluation properties of the full benchmark. We hope this benchmark will help researchers better evaluate and understand the performance of general-purpose harnesses on software engineering tasks and guide the development of more capable and efficient harnesses. The data is available at https://github.com/opensquilla/claw-swe-bench and https://huggingface.co/datasets/TokenRhythm/Claw-SWE-Bench.",
+   "authors": [
+    "Mengyu Zheng",
+    "Kai Han",
+    "Boxun Li",
+    "Haiyang Xu",
+    "Yuchuan Tian",
+    "Wei He",
+    "Hang Zhou",
+    "Jianyuan Guo"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415111330",
+   "doi": "10.1145/3786583.3786882",
+   "title": "The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)",
+   "type": "conference-paper",
+   "cited_by": 68,
+   "abstract": "As large language models (LLMs) become increasingly capable and widely adopted, benchmarks play a central role in assessing their practical utility. For example, SWE-Bench Verified has emerged as a critical benchmark for evaluating LLMs\u2019 software engineering abilities, particularly their aptitude for resolving real-world GitHub issues. Recent LLMs show impressive performance on SWE-Bench Verified, leading to optimism about their capacity for complex coding tasks. However, current evaluation protocols may overstate these models\u2019 true capabilities. It is crucial to distinguish LLMs\u2019 generalizable problem-solving ability from memorized patterns and other learned artifacts. In this work, we introduce two new diagnostic tasks: file path identification from issue descriptions alone and ground truth function reproduction with only the current file context and issue description to probe models\u2019 underlying knowledge. We present empirical evidence that performance gains on SWE-Bench Verified may be partially driven by memorization rather than genuine problem-solving. We show that state-of-the-art (SoTA) models achieve up to 76% accuracy in identifying buggy file paths using only issue descriptions, without access to repository structure. This performance is merely up to 53% on tasks from repositories not included in SWE-Bench, pointing to possible data contamination or memorization. Similar patterns are also observed for the function reproduction task, where the verbatim similarity is much higher on SWE-Bench Verified than on other similar coding benchmarks (up to 35% consecutive 5-gram overlap ratio on SWE-Bench Verified and Full, but only up to 18% for tasks in other benchmarks). These findings raise concerns about the validity of existing results and underscore the need for more robust, contamination-resistant benchmarks to reliably evaluate LLMs\u2019 coding abilities.",
+   "authors": [
+    "Shanchao Liang",
+    "Spandan Garg",
+    "Roshanak Zilouchian Moghaddam"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7128534029",
+   "doi": "10.48550/arxiv.2602.08316",
+   "title": "SWE Context Bench: A Benchmark for Context Learning in Coding",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 23,
+   "abstract": "Large language models are increasingly used as coding agents for software engineering tasks. Current benchmarks mainly evaluate whether the agent can correctly solve the request or fix the bugs. They largely treat tasks as independent and do not assess whether agents can reuse previous experience across related problems. As a result, the efficiency gains from reusing the previous experience remains difficult to measure. We introduce SWE-ContextBench, a benchmark designed to explicitly evaluate context understanding and retrieval in coding agents. SWE-ContextBench consists of 1,100 base tasks with another 376 related tasks derived from real dependency and reference relationships among GitHub issues and pull requests. SWE-ContextBench groups base tasks and related tasks with shared context across 51 unique repositories and 9 programming languages. The benchmark evaluates how accurately and efficiently agents solve related issues when prior cases are available in context. Using SWE-ContextBench, we study the behavior of multiple coding agents across varying context reuse settings and retrieval strategies. Our results show that accurately summarized and retrieved previous experience can significantly improve resolution accuracy and reduce runtime and token cost, particularly on harder tasks. In contrast, unfiltered or incorrectly selected context provides limited or negative benefits. These findings highlight the importance of context management and retrieval accuracy, and position SWE-ContextBench as a principled benchmark for studying context learning in coding agents.",
+   "authors": [
+    "Jiayuan Zhu",
+    "Junde Wu",
+    "Minhao Hu",
+    "Shengda Zhu",
+    "Jiazhen Pan",
+    "Weixiang Shen",
+    "Yijun Yang",
+    "Fenglin Liu"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415273522",
+   "doi": "10.1145/3793653.3793762",
+   "title": "Saving SWE-Bench: A Benchmark Mutation Approach for Realistic Agent Evaluation",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on AI Engineering \u2013 Software Engineering for AI (CAIN)",
+   "type": "conference-paper",
+   "cited_by": 18,
+   "abstract": "Current benchmarks for evaluating software engineering agents, such as SWE-Bench Verified, are predominantly derived from GitHub issues and fail to accurately reflect how developers interact with chat-based coding assistants in integrated development environments (IDEs). We posit that this mismatch leads to a systematic overestimation of agent\u2019s capabilities in real-world scenarios, especially bug fixing. We introduce a novel benchmarking framework that transforms existing formal benchmarks into realistic user queries through systematic analysis of developer interaction patterns with chat-based agents. Our methodology is flexible and can be easily extended to existing benchmarks. In this paper, we apply our testing framework to SWE-Bench Verified, the TypeScript subset of Multi-SWE-Bench and a private benchmark, SWE-Bench C# and transform formal GitHub issue descriptions into realistic user-style queries based on telemetry analysis of a popular chat-based agent interactions. Our findings reveal that existing benchmarks significantly overestimate agent capabilities for some models by > 50% over baseline performance for public benchmarks and \u223c 10-16% for our internal benchmark. This work establishes a new paradigm for evaluating interactive chat-based software engineering agents through benchmark mutation techniques. Our code is available at: https://github.com/microsoft/SWE-Bench-Mutated-CAIN26",
+   "authors": [
+    "Spandan Garg",
+    "Benjamin Jeremiah Steenhoek",
+    "Yufan Huang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414903096",
+   "doi": "10.1145/3744916.3764576",
+   "title": "Are \u201cSolved Issues\u201d in SWE-bench Really Solved Correctly? An Empirical Study",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 82,
+   "abstract": "Automated issue solving aims to resolve real-world issues in software repositories. The most popular benchmarks for automated issue solving are SWE-bench and its human-filtered subset SWE-bench Verified, which are widely used to evaluate foundation models and software engineering agents. These benchmarks leverage testing to validate generated patches. However, because testing is rarely exhaustive, a patch may pass the tests but nevertheless fail to match the developers\u2019 expectations. Unfortunately, it is currently unclear to what extent evaluations performed with SWE-bench suffer from such plausible but incorrect patches. This paper presents an in-depth empirical study of the correctness of plausible patches generated by three state-of-the-art issue-solving tools (CodeStory, LearnByInteract, and OpenHands) evaluated on SWE-bench Verified. We extensively test and inspect generated patches, and compare them against human-written ground truth patches. The core of our methodology is a novel technique for differential patch testing, called PatchDiff, which automatically exposes behavioral discrepancies between two patches. Our findings reveal critical weaknesses in SWE-bench\u2019s patch validation mechanism, which causes 7.8% of all patches to count as \u201ccorrect\u201d while failing the developer-written test suite. Moreover, our novel automated technique reveals that even more (29.6%) plausible patches induce different behavior than the ground truth patches. These behavioral differences are often due to similar, but divergent implementations (46.8%) and due to generated patches that adapt more behavior than the ground truth patches (27.3%). Our manual inspection shows that 28.6% of behaviorally divergent patches are certainly incorrect. Combined, the different weaknesses lead to an inflation of reported resolution rates by 6.4 absolute percent points. Our findings are a call to arms for more robust and reliable evaluation of issue-solving tools. We envision our automated differential patch testing technique to be useful for this purpose.",
+   "authors": [
+    "You Wang",
+    "Michael Pradel",
+    "Zhongxin Liu"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7164858004",
+   "doi": "10.48550/arxiv.2606.13995",
+   "title": "Dialogue SWE-Bench: A Benchmark for Dialogue-Driven Coding Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 11,
+   "abstract": "AI coding agents have rapidly transformed software engineering, powering widely used interactive coding assistants. Despite their interactive real-world use, existing benchmarks evaluate them as fully-autonomous systems. In this work, we introduce Dialogue SWE-Bench, an automatic benchmark dataset for evaluating the ability of coding agents to resolve real-world software engineering problems through dialogue with a user. We design a novel, persona-grounded user simulator to support our task evaluation, and augment our task evaluation with automatic evaluations of dialogue quality. We also propose a new schema-guided agent, aimed at improving the dialogue capabilities of off-the-shelf coding agents, which improves over strong baselines by 3-14%. Our results indicate that better coding models do not always correspond to better dialogue models, suggesting that dialogue capability is a distinct and currently understudied dimension of coding agent performance.",
+   "authors": [
+    "King, Brendan",
+    "Jeffrey Flanigan"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7128015339",
+   "doi": "10.1145/3786583.3786904",
+   "title": "What\u2019s in a Benchmark? The Case of SWE-Bench in Automated Program Repair",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)",
+   "type": "conference-paper",
+   "cited_by": 7,
+   "abstract": "The rapid progress in Automated Program Repair (APR) has been fueled by advances in AI, particularly large language models (LLMs) and agent-based systems. SWE-Bench is a benchmark designed to evaluate repair systems using real issues mined from popular open-source Python repositories. Its public leaderboards\u2014SWE-Bench Lite and Verified\u2014have become central platforms for tracking progress and comparing solutions. In this paper, we present the first comprehensive study of these two leaderboards, examining who is submitting solutions, the products behind the submissions, the LLMs employed, and the openness of the approaches. We analyze 79 entries submitted to Lite leaderboard and 133 to Verified. Our results show that most entries on both leaderboards originate from industry, particularly small companies and large publicly traded companies. These submissions often achieve top results, although academic contributions\u2014typically open source\u2014also remain competitive. We also find a clear dominance of proprietary LLMs, especially Claude family, with state-of-the-art results on both leaderboards currently achieved by Claude 4 Sonnet. These findings offer insights into the SWE-Bench ecosystem that can guide greater transparency and diversity in future benchmark-driven research.",
+   "authors": [
+    "Mat\u00edas Mart\u00ednez",
+    "Xavier Franch"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7171950379",
+   "doi": "10.1145/3832783.3837557",
+   "title": "PAIChecker: Uncovering and Checking PR-Issue Misalignment in SWE-Bench-Like Benchmarks",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+   "type": "conference-paper",
+   "cited_by": 3,
+   "abstract": "SWE-bench-like benchmarks are widely used for evaluating LLM's issue resolution capability. They typically follow a common construction pipeline: each PR (Pull Request) is paired with its linked issue by extracting issue references from the PR description; the issue description is used as the problem statement, and the PR patch serves as the test oracle. However, due to the inherent complexity of developing and maintaining large repositories, such PR-Issue pairings are often misaligned in practice. In this work, we systematically study SWE-bench Verified instances, finding that 13.6% exhibit misalignment across five patterns in eleven fine-grained scenarios. To enable reliable and scalable construction of those benchmarks in the future, we propose PAIChecker, a multi-agent system for checking PR-Issue misalignment in SWE-bench-like benchmarks. Specifically, PAIChecker adopts a three-phase design that combines specific pattern identification, cross-agent label synthesis, and code-level validation, thereby enabling more accurate, generalizable, and progressively verified detection. Experiments on SWE-Gym and SWE-bench Multilingual show that PAIchecker achieves the best performance across all four LLM backbones, reaching up to 92.12% and 91.67% binary accuracy, respectively.",
+   "authors": [
+    "Manyi Wang",
+    "Xu Junjielong",
+    "Pinjia He"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7124884812",
+   "doi": "10.1109/aiware69974.2025.00039",
+   "title": "SWE-Sharp-Bench: A Reproducible Benchmark for C# Software Engineering Tasks",
+   "year": 2025,
+   "venue": "ACM International Conference on AI-Powered Software (AIware)",
+   "type": "conference-paper",
+   "cited_by": 8,
+   "abstract": "AI coding agents have shown great progress on Python software engineering benchmarks like SWE-Bench, and for other languages like Java and C in benchmarks like Multi-SWE-Bench. However, C# \u2013 a prominent enterprise language ranking #5 in the TIOBE index \u2013 remains absent from such benchmarks. We introduce SWE-Sharp-Bench, a reproducible software engineering benchmark for C# featuring 150 instances from 17 repositories. Evaluating identical model-agent configurations across languages reveals a significant performance gap: while 70% of Python tasks in SWE-Bench Verified are solved, only 40% of our C# tasks are resolved. We open-source SWE-Sharp-Bench and our entire curation pipeline.",
+   "authors": [
+    "Sanket Mhatre",
+    "Yasharth Bajpai",
+    "Sumit Gulwani",
+    "Emerson R. Murphy-Hill",
+    "Gustavo Soares"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7116905337",
+   "doi": "10.48550/arxiv.2512.17419",
+   "title": "SWE-Bench++: A Framework for the Scalable Generation of Software Engineering Benchmarks from Open-Source Repositories",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 30,
+   "abstract": "Benchmarks like SWE-bench have standardized the evaluation of Large Language Models (LLMs) on repository-level software engineering tasks. However, these efforts remain limited by manual curation, static datasets, and a focus on Python-based bug fixes. We introduce SWE-Bench++, an automated framework that generates repository-level coding tasks from open-source GitHub projects. Unlike synthetic approaches, our pipeline harvests live pull requests to cover both bug fixes and feature requests across 11 languages. SWE-Bench++ turns GitHub pull requests (PRs) into reproducible, execution-based tasks via four stages: programmatic sourcing, environment synthesis, test oracle extraction, and quality assurance. A final hint-guided trajectory synthesis step converts instances that strong models fail on into training trajectories. Our initial benchmark consists of 11,133 instances from 3,971 repositories across 11 languages. On a subset of 1,782 instances of this benchmark, today's strongest models perform as follows: claude-sonnet-4.5 achieves 36.20% pass@10, gpt-5-2025-08-07 34.57%, gemini/gemini-2.5-pro 24.92%, and gpt-4o 16.89%. We further demonstrate the utility of our dataset by showing that fine-tuning on SWE-Bench++ instances yields measurable improvements on the SWE-bench Multilingual benchmark. SWE-Bench++ provides a scalable, multilingual benchmark for evaluating and improving repository-level code generation.",
+   "authors": [
+    "Lilin Wang",
+    "Lucas Ramalho",
+    "Alan Celestino",
+    "Phuc Anthony Pham",
+    "Yu Liu",
+    "Umang Kumar Sinha",
+    "Andres Portillo",
+    "Onassis Osunwa"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7202186081",
+   "doi": "10.48550/arxiv.2608.09802",
+   "title": "SWE-Bench ProMax: Benchmarking Agents on Large-Scale Multilingual Code Refactoring",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 16,
+   "abstract": "As AI coding agents take on increasingly complex, long-horizon software engineering tasks, existing benchmarks are rapidly saturating and their evaluation quality has come under serious scrutiny: a recent audit found that nearly 60% of unsolved SWE-bench Verified instances contain flawed tests -- either overly narrow tests that reject correct solutions or overly broad tests that check unstated requirements -- and that frontier models can verbatim reproduce gold patches from training data. Code refactoring, which requires coordinated, behavior-preserving changes across many files, offers a substantially harder and more realistic test of agent capability, yet remains underserved by current benchmarks. We introduce SWE-Bench ProMax, an expert-curated, multilingual code refactoring benchmark of 170 instances drawn from real commits across seven programming languages (Python, Java, TypeScript, Go, C, C++, and Rust). Every instance undergoes rigorous, multi-stage curation that directly addresses the quality problems identified in prior benchmarks: issue descriptions are rewritten from scratch to provide precise, unambiguous specifications, and test suites are manually reviewed to remove overly narrow and overly broad tests. Tasks with insufficient complexity or limited cross-file scope are filtered out, yielding a benchmark of challenging, large-scale refactoring tasks that average 11.5 modified files and 261.6 lines of code per instance, substantially exceeding the scale of existing benchmarks. Experiments with frontier models under two agent scaffolds show that the best model achieves only 41.2% resolve rate, confirming that SWE-Bench ProMax presents a meaningful and unsaturated challenge for current AI coding agents. Our benchmark is available at https://huggingface.co/datasets/swe-bench-promax/SWE-Bench-ProMax.",
+   "authors": [
+    "Yuling Shi",
+    "Jinghan Xu",
+    "Kelin Fu",
+    "Wenhao Zeng",
+    "Shilin He",
+    "Lei Zhang",
+    "Yue Liu",
+    "Zelin Zhao"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7124298233",
+   "doi": "10.34726/hss.2025.131462",
+   "title": "A11y-Bench: Can Language Models Resolve Accessibility Issues?",
+   "year": 2025,
+   "venue": "reposiTUm (TU Wien)",
+   "type": "dissertation",
+   "cited_by": 2,
+   "abstract": "Gerne, hier ist der Text ohne die LaTeX-spezifischen Befehle und Formatierungen:Die Barrierefreiheit des Webs bleibt eine Herausforderung: \u00dcber 94% aller Startseiten versto\u00dfen weiterhin gegen Standards wie WCAG 2.2 (Web Content Accessibility Guidelines), wodurch Millionen von Nutzerinnen und Nutzern benachteiligt werden. Diese Diplomarbeit untersucht, ob Large Language Models (LLMs) solche Barrierefreiheitsprobleme in komplexen Webprojekten autonom beheben k\u00f6nnen. Wir stellen A11y-Bench vor, ein neuartiges Benchmark-Datenset mit 51 realen F\u00e4llen von Barrierefreiheitsfehlern und deren Behebungen (extrahiert aus drei popul\u00e4ren Open-Source-Repositorien), das vielf\u00e4ltige Probleme abdeckt, etwa fehlende ARIA-Labels, UI-Elemente mit zu geringem Kontrast und andere WCAG-Verst\u00f6\u00dfe. Jede Instanz enth\u00e4lt den urspr\u00fcnglichen fehlerhaften Code sowie die zugeh\u00f6rige Korrektur und erm\u00f6glicht so eine systematische Evaluation.Wir entwickeln eine vollst\u00e4ndig automatisierte End-to-End-Evaluationspipeline auf Basis von Multi-SWE-Bench, die von LLMs generierte Patches in containerisierten Umgebungen einsetzt und ihre G\u00fcltigkeit \u00fcber projektspezifische Test-Suiten \u00fcberpr\u00fcft. Mit diesem Framework evaluieren wir drei moderne, offene LLMs auf A11y-Bench mithilfe des MagentLess-Tools. Nur 1 von 51 F\u00e4llen (~2%) wurde von einem der Modelle vollst\u00e4ndig behoben. Daher konzentriert sich die Analyse auf die Patch-Generierung selbst. Die Modelle erzeugten h\u00e4ufig nur Teilkorrekturen oder f\u00fchrten Regressionen ein und hatten insbesondere Schwierigkeiten mit kontext\u00fcbergreifenden Frontend-Dateien. Unsere Analyse identifiziert typische Fehlermuster von LLMs (z. B. das Einf\u00fcgen irrelevanter \u00c4nderungen oder das \u00dcbersehen einzelner Probleminstanzen).Die Diplomarbeit leistet einen Beitrag durch (1) das A11y-Bench-Datenset und eine offene Evaluationspipeline, (2) Basis-Ergebnisse zur LLM-Leistung bei der Behebung von Barrierefreiheitsproblemen und (3) Erkenntnisse, die zuk\u00fcnftige Forschung im Bereich der Web-Barrierefreiheit anleiten sollen.",
+   "authors": [
+    "Maximilian Tschoner"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403580613",
+   "doi": "10.48550/arxiv.2410.09997",
+   "title": "Collu-Bench: A Benchmark for Predicting Language Model Hallucinations in Code",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 18,
+   "abstract": "Despite their success, large language models (LLMs) face the critical challenge of hallucinations, generating plausible but incorrect content. While much research has focused on hallucinations in multiple modalities including images and natural language text, less attention has been given to hallucinations in source code, which leads to incorrect and vulnerable code that causes significant financial loss. To pave the way for research in LLMs' hallucinations in code, we introduce Collu-Bench, a benchmark for predicting code hallucinations of LLMs across code generation (CG) and automated program repair (APR) tasks. Collu-Bench includes 13,234 code hallucination instances collected from five datasets and 11 diverse LLMs, ranging from open-source models to commercial ones. To better understand and predict code hallucinations, Collu-Bench provides detailed features such as the per-step log probabilities of LLMs' output, token types, and the execution feedback of LLMs' generated code for in-depth analysis. In addition, we conduct experiments to predict hallucination on Collu-Bench, using both traditional machine learning techniques and neural networks, which achieves 22.03 -- 33.15% accuracy. Our experiments draw insightful findings of code hallucination patterns, reveal the challenge of accurately localizing LLMs' hallucinations, and highlight the need for more sophisticated techniques.",
+   "authors": [
+    "Jiang, Nan",
+    "Qi Li",
+    "Tan, Lin",
+    "Tianyi Zhang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4411523013",
+   "doi": "10.1145/3728871",
+   "title": "OmniGIRL: A Multilingual and Multimodal Benchmark for GitHub Issue Resolution",
+   "year": 2025,
+   "venue": "Proceedings of the ACM on software engineering.",
+   "type": "article",
+   "cited_by": 15,
+   "abstract": "The GitHub issue resolution task aims to resolve issues reported in repositories automatically. With advances in large language models (LLMs), this task has gained increasing attention, and several benchmarks are proposed to evaluate the issue resolution ability of LLMs. However, existing benchmarks have three main limitations. First, current benchmarks focus on a single programming language, limiting the evaluation of issues from repositories across different languages. Second, they usually cover a narrow range of domains, which may fail to represent the diversity of real-world issues. Third, existing benchmarks rely solely on textual information in issue descriptions, overlooking multimodal information such as images in issues. In this paper, we propose OmniGIRL, a G itHub I ssue R eso L ution benchmark that is multilingual, multimodal, and multi-domain. OmniGIRL includes 959 task instances, which are collected from repositories across four programming languages (i.e., Python, JavaScript, TypeScript, and Java) and eight different domains. Our evaluation shows that current LLMs show limited performances on OmniGIRL. Notably, the best-performing model, GPT-4o, resolves only 8.6% of the issues. Besides, we find that current LLMs struggle to resolve issues requiring understanding images. The best performance is achieved by Claude-3.5-Sonnet, which resolves only 10.5% of the issues with image information. Finally, we analyze the reasons behind current LLMs\u2019 failure on OmniGIRL, providing insights for future improvements.",
+   "authors": [
+    "Lianghong Guo",
+    "Wei Tao",
+    "Runhan Jiang",
+    "Yanlin Wang",
+    "Jiachi Chen",
+    "Xilin Liu",
+    "Yuchi Ma",
+    "Mingzhi Mao"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416843709",
+   "doi": "10.48550/arxiv.2507.00014",
+   "title": "SWE-Bench-CL: Continual Learning for Coding Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 25,
+   "abstract": "Large Language Models (LLMs) have achieved impressive results on static code-generation benchmarks, but real-world software development unfolds as a continuous stream of evolving issues, fixes, and feature requests. We introduce SWE-Bench-CL, a novel continual learning benchmark built on the human-verified SWE-Bench Verified dataset introduced by OpenAI and Princeton-NLP in 2024. By organizing GitHub issues into chronologically ordered sequences that reflect natural repository evolution, SWE-Bench-CL enables direct evaluation of an agent's ability to accumulate experience, transfer knowledge across tasks, and resist catastrophic forgetting. We complement the dataset with (i) a preliminary analysis of inter-task structural similarity and contextual sensitivity, (ii) an interactive LangGraph-based evaluation framework augmented with a FAISS-backed semantic memory module, and (iii) a suite of specialized continual learning metrics -- including average accuracy, forgetting, forward/backward transfer, tool-use efficiency, and a generalized Composite Continual Learning Score and CL-F-beta score -- to capture the stability-plasticity trade-off. We outline a rigorous experimental protocol comparing memory-enabled and memory-disabled agents across diverse Python repositories. All code and data are publicly available at https://github.com/thomasjoshi/agents-never-forget, providing the community with a reproducible platform for developing more adaptive and robust AI agents in software engineering.",
+   "authors": [
+    "Thomas Joshi",
+    "Chowdhury, Shayan",
+    "Fatih Uysal"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench resolve GitHub issues language models benchmark"
+  }
+ ]
+}

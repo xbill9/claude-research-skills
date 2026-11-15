@@ -37,6 +37,8 @@ SERVER_NAME = "research-audit"
 SERVER_VERSION = "1.0.0"
 SUPPORTED_PROTOCOLS = ("2025-06-18", "2025-03-26", "2024-11-05")
 CROSSREF = "https://api.crossref.org/works"
+DATACITE = "https://api.datacite.org/dois"
+OPENREVIEW = "https://api2.openreview.net/notes/search"
 HTTP_TIMEOUT = 10
 
 TOOLS = [
@@ -100,7 +102,8 @@ TOOLS = [
     },
     {
         "name": "verify_doi_metadata",
-        "description": "Look up one DOI in Crossref. Returns verified=false when Crossref has no record. "
+        "description": "Look up one DOI in Crossref, falling back to DataCite (which registers arXiv "
+        "10.48550 DOIs, Zenodo and others). Returns verified=false when neither has a record. "
         "Includes preprint relations (is-preprint-of / has-preprint) for upgrade checks.",
         "inputSchema": {
             "type": "object",
@@ -126,6 +129,20 @@ TOOLS = [
                     "maximum": 20,
                     "description": "Candidates returned (20 are fetched and re-ranked)",
                 },
+            },
+            "required": ["title"],
+        },
+    },
+    {
+        "name": "search_openreview_by_title",
+        "description": "Search OpenReview for a paper by title and return each note's venue label (e.g. "
+        "'ICLR 2024 poster', 'Submitted to ICLR 2025', a workshop). Use to confirm ICLR/NeurIPS/TMLR venues "
+        "that Crossref does not index. title_similarity is computed on normalised titles.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "title": {"type": "string"},
+                "rows": {"type": "integer", "default": 5, "minimum": 1, "maximum": 20},
             },
             "required": ["title"],
         },
@@ -272,17 +289,45 @@ def _summarise(item: dict) -> dict:
     }
 
 
+def _datacite(doi: str) -> dict:
+    a = _http_json(f"{DATACITE}/{urllib.parse.quote(doi, safe='/')}")["data"]["attributes"]
+    creators = a.get("creators") or []
+    return {
+        "doi": a.get("doi"),
+        "title": ((a.get("titles") or [{}])[0]).get("title", ""),
+        "authors": [
+            c.get("name") or " ".join(x for x in (c.get("givenName"), c.get("familyName")) if x) for c in creators
+        ][:10],
+        "first_author_family": (creators[0].get("familyName") if creators else None),
+        "author_count": len(creators),
+        "year": a.get("publicationYear"),
+        "venue": a.get("publisher", ""),
+        "type": (a.get("types") or {}).get("resourceTypeGeneral", ""),
+        "publisher": a.get("publisher", ""),
+        "is_preprint_of": [],
+        "has_preprint": [],
+    }
+
+
 def verify_doi(doi: str) -> dict:
     doi = re.sub(r"^(https?://(dx\.)?doi\.org/|doi:)", "", (doi or "").strip(), flags=re.I)
     if not doi.startswith("10."):
         raise ToolError(f"not a DOI: {doi!r}")
+    errors = []
     try:
         data = _http_json(f"{CROSSREF}/{urllib.parse.quote(doi, safe='/')}")["message"]
+        return {"verified": True, "registry": "crossref", **_summarise(data)}
     except urllib.error.HTTPError as exc:
-        return {"verified": False, "doi": doi, "error": f"Crossref HTTP {exc.code}"}
+        errors.append(f"Crossref HTTP {exc.code}")
     except Exception as exc:  # network failure: say so, never guess
-        return {"verified": False, "doi": doi, "error": f"lookup failed: {exc}"}
-    return {"verified": True, **_summarise(data)}
+        errors.append(f"Crossref lookup failed: {exc}")
+    try:
+        return {"verified": True, "registry": "datacite", **_datacite(doi)}
+    except urllib.error.HTTPError as exc:
+        errors.append(f"DataCite HTTP {exc.code}")
+    except Exception as exc:
+        errors.append(f"DataCite lookup failed: {exc}")
+    return {"verified": False, "doi": doi, "error": "; ".join(errors)}
 
 
 def search_title(title: str, author: str | None = None, year: int | None = None, rows: int = 5) -> dict:
@@ -327,10 +372,55 @@ def search_title(title: str, author: str | None = None, year: int | None = None,
     }
 
 
+def _or_value(content: dict, key: str):
+    """OpenReview API v2 wraps each field as {"value": ...}; v1 stores it bare."""
+    v = content.get(key)
+    return v.get("value") if isinstance(v, dict) else v
+
+
+def search_openreview(title: str, rows: int = 5) -> dict:
+    if not (title or "").strip():
+        raise ToolError("title is required")
+    rows = max(1, min(20, int(rows)))
+    q = urllib.parse.urlencode({"term": title, "type": "terms", "limit": 25})
+    try:
+        notes = _http_json(f"{OPENREVIEW}?{q}").get("notes", [])
+    except Exception as exc:
+        return {"query": title, "error": f"lookup failed: {exc}", "candidates": []}
+    want = _norm_title(title)
+    out = []
+    for n in notes:
+        c = n.get("content") or {}
+        t = _or_value(c, "title")
+        if not t:
+            continue
+        out.append(
+            {
+                "id": n.get("id"),
+                "url": f"https://openreview.net/forum?id={n.get('forum') or n.get('id')}",
+                "title": t,
+                "venue": _or_value(c, "venue"),
+                "venueid": _or_value(c, "venueid"),
+                "authors": (_or_value(c, "authors") or [])[:10],
+                "title_similarity": round(difflib.SequenceMatcher(None, want, _norm_title(t)).ratio(), 4),
+            }
+        )
+    out.sort(key=lambda c: c["title_similarity"], reverse=True)
+    return {"query": title, "candidates": out[:rows]}
+
+
 # ---------------------------------------------------------------- dispatch
 
 
 def call_tool(name: str, args: dict) -> dict:
+    # A misspelled optional argument would otherwise fall back to its default and return a
+    # confident number for the wrong question. Reject anything the schema does not name.
+    schema = next((t["inputSchema"] for t in TOOLS if t["name"] == name), None)
+    if schema is None:
+        raise ToolError(f"unknown tool: {name}")
+    unknown = sorted(set(args) - set(schema["properties"]))
+    if unknown:
+        raise ToolError(f"unknown argument(s) {unknown}; {name} accepts {sorted(schema['properties'])}")
     try:
         if name == "verify_wilson_ci":
             return wilson_ci(int(args["successes"]), int(args["total"]), float(args.get("confidence", 0.95)))
@@ -349,6 +439,8 @@ def call_tool(name: str, args: dict) -> dict:
             )
         if name == "verify_doi_metadata":
             return verify_doi(str(args["doi"]))
+        if name == "search_openreview_by_title":
+            return search_openreview(str(args["title"]), args.get("rows", 5))
         if name == "search_crossref_by_title":
             year = args.get("year")
             return search_title(

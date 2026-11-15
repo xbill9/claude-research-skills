@@ -1,0 +1,158 @@
+{
+ "dimensions": {
+  "D1": "Active context management: the system compacts, prunes or reduces the agent's trajectory or KV cache during a run",
+  "D2": "In-run loop/stall/failure detection with intervention while the episode is still running",
+  "D3": "Search, backtracking or restart across trajectories (tree search, reranked rollouts, fresh restart)",
+  "D4": "Graph- or structure-guided repository retrieval/localization (code graph, call graph, AST, CPG)",
+  "D5": "Open-weight policy model evaluated on a repository task, named in the abstract",
+  "D6": "Reduced-precision (8-bit or lower) inference evaluated",
+  "D7": "Results reported at two or more explicit resource budgets (context window, turns, tokens, time, compute)"
+ },
+ "short": {
+  "D1": "Context mgmt",
+  "D2": "In-run loop/stall recovery",
+  "D3": "Search / restart",
+  "D4": "Graph retrieval",
+  "D5": "Open-weight policy",
+  "D6": "Quantized inference",
+  "D7": "Multi-budget eval"
+ },
+ "papers": {
+  "W7117557793": {
+   "short": "CAT / SWE-Compressor",
+   "D1": "proactively compress historical trajectories into actionable summaries"
+  },
+  "W7125680675": {
+   "short": "SWE-Pruner",
+   "D1": "23-54% token reduction on agent tasks like SWE-Bench Verified"
+  },
+  "W7215726049": {
+   "short": "AutoCompact",
+   "D1": "trains a coding agent to make these decisions as part of its policy",
+   "D7": "with a 256K context window that never overflows and with a 16K window whose overflow triggers fallback compaction"
+  },
+  "W4415332588": {
+   "short": "AgentDiet",
+   "D1": "AgentDiet can reduce input tokens by 39.9%-59.7%"
+  },
+  "W7154351780": {
+   "short": "CodeComp",
+   "D1": "a training-free KV cache compression framework",
+   "D4": "Code Property Graph priors extracted by Joern"
+  },
+  "W7167425954": {
+   "short": "Wink",
+   "D2": "a system for automatically recovering from agentic misbehaviors at scale"
+  },
+  "W7172523833": {
+   "short": "FailFast-RestartSmart",
+   "D2": "predict failure from observable prefixes",
+   "D3": "RestartSmart launches a fresh same-policy rollout without prior prompt history",
+   "D5": "RestartSmart raises Qwen3.6-27B resolution from 66.6% to 71.8%"
+  },
+  "W4416711632": {
+   "short": "SWE-PRM",
+   "D2": "intervenes during execution to detect and course-correct trajectory-level errors"
+  },
+  "W4404342086": {
+   "short": "SWE-Search",
+   "D3": "integrates Monte Carlo Tree Search (MCTS)",
+   "D7": "performance scales with increased inference-time compute through deeper search"
+  },
+  "W4415935825": {
+   "short": "Trajectory study"
+  },
+  "W7160926458": {
+   "short": "PROBE",
+   "D3": "bounded recovery guidance for a subsequent attempt"
+  },
+  "W4415101712": {
+   "short": "LocAgent",
+   "D4": "parsing codebases into directed heterogeneous graphs",
+   "D5": "fine-tuned Qwen-2.5-Coder-Instruct-32B model"
+  },
+  "W4404087993": {
+   "short": "RepoGraph",
+   "D4": "a plug-in module that manages a repository-level structure"
+  },
+  "W4416453608": {
+   "short": "CGM",
+   "D4": "integrate repository code graph structures into the LLM's attention mechanism",
+   "D5": "using the open-source Qwen2.5-72B model"
+  },
+  "W7125926949": {
+   "short": "CoSIL",
+   "D1": "a pruner to filter unrelated directions and irrelevant contexts",
+   "D4": "two-phase code graph search strategy",
+   "D5": "with Qwen2.5-Coder-32B"
+  },
+  "W7223971351": {
+   "short": "Small agents + graphs",
+   "D4": "+graph tools",
+   "D5": "six Qwen3 sizes from 0.6B to 32B",
+   "D6": "an FP8 control"
+  },
+  "W4387561453": {
+   "short": "SWE-bench",
+   "D5": "our fine-tuned model SWE-Llama"
+  },
+  "W4405957747": {
+   "short": "SWE-Gym",
+   "D3": "inference-time scaling through verifiers trained on agent trajectories",
+   "D5": "state-of-the-art for open-weight SWE agents"
+  },
+  "W4417525566": {
+   "short": "SWE-smith",
+   "D5": "We train SWE-agent-LM-32B"
+  },
+  "W7131676563": {
+   "short": "SWE-Protégé",
+   "D2": "recognize stalled states",
+   "D5": "Qwen2.5-Coder-7B-Instruct"
+  },
+  "W7171740466": {
+   "short": "PTQ for code gen",
+   "D6": "pushing the compression to the extreme quantization level of 2 bits per model parameter"
+  },
+  "W7225790577": {
+   "short": "SteerDistill",
+   "D6": "under W4A16 and stays within one point of BF16"
+  },
+  "W7223657872": {
+   "short": "Quantized-agent energy",
+   "D5": "two open-weight models",
+   "D6": "4-bit and 8-bit versions of two open-weight models",
+   "D7": "the execution budget (i.e., limits on turns, tokens, and time)"
+  },
+  "W4411449940": {
+   "short": "Agentless"
+  },
+  "W4402442868": {
+   "short": "AutoCodeRover",
+   "D4": "We work on a program representation (abstract syntax tree)"
+  }
+ },
+ "repo_repair_task": {
+  "note": "1 if the abstract names a repository-repair / issue-resolution evaluation (SWE-bench family or repository bug fixing)",
+  "W7117557793": "SWE-Bench-Verified",
+  "W7125680675": "SWE-Bench Verified",
+  "W7215726049": "SWE-bench Verified",
+  "W7154351780": "bug localization",
+  "W7172523833": "SWE-bench Verified",
+  "W4416711632": "SWE-bench Verified",
+  "W4404342086": "SWE-bench",
+  "W4415935825": "SWE-Bench",
+  "W4415101712": "GitHub issue resolution",
+  "W4404087993": "SWE-bench",
+  "W4416453608": "SWE-bench Lite",
+  "W7125926949": "SWE-bench Verified",
+  "W7223971351": "SWE-bench Verified",
+  "W4387561453": "SWE-bench",
+  "W4405957747": "SWE-Bench Verified",
+  "W4417525566": "SWE-bench Verified",
+  "W7131676563": "SWE-bench Verified",
+  "W7223657872": "multi-step repository bug fixing",
+  "W4411449940": "SWE-bench Lite",
+  "W4402442868": "SWE-bench-lite"
+ }
+}

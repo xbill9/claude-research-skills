@@ -1,0 +1,525 @@
+{
+ "url": "https://api.openalex.org/works?search=SWE-bench+verified+contamination+evaluation+agents&filter=from_publication_date%3A2023-01-01&per-page=25",
+ "records": [
+  {
+   "src": "openalex",
+   "openalex": "W4417295250",
+   "doi": "10.48550/arxiv.2512.10218",
+   "title": "Does SWE-Bench-Verified Test Agent Ability or Model Memory?",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 20,
+   "abstract": "SWE-Bench-Verified, a dataset comprising 500 issues, serves as a de facto benchmark for evaluating various large language models (LLMs) on their ability to resolve GitHub issues. But this benchmark may overlap with model training data. If that is true, scores may reflect training recall, not issue-solving skill. To study this, we test two Claude models that frequently appear in top-performing agents submitted to the benchmark. We ask them to find relevant files using only issue text, and then issue text plus file paths. We then run the same setup on BeetleBox and SWE-rebench. Despite both benchmarks involving popular open-source Python projects, models performed 3 times better on SWE-Bench-Verified. They were also 6 times better at finding edited files, without any additional context about the projects themselves. This gap suggests the models may have seen many SWE-Bench-Verified tasks during training. As a result, scores on this benchmark may not reflect an agent's ability to handle real software issues, yet it continues to be used in ways that can misrepresent progress and lead to choices that favour agents that use certain models over strong agent design. Our setup tests the localization step with minimal context to the extent that the task should be logically impossible to solve. Our results show the risk of relying on older popular benchmarks and support the shift toward newer datasets built with contamination in mind.",
+   "authors": [
+    "Thanosan Prathifkumar",
+    "Noble Saji Mathews",
+    "Meiyappan Nagappan"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415035813",
+   "doi": "10.52202/085713-0788",
+   "title": "SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 153,
+   "abstract": "LLM-based agents have shown promising capabilities in a growing range of software engineering (SWE) tasks. However, advancing this field faces two critical challenges. First, high-quality training data is scarce, especially data that reflects real-world SWE scenarios, where agents must interact with development environments, execute code and adapt behavior based on the outcomes of their actions. Existing datasets are either limited to one-shot code generation or comprise small, manually curated collections of interactive tasks, lacking both scale and diversity. Second, the lack of fresh interactive SWE tasks affects evaluation of rapidly improving models, as static benchmarks quickly become outdated due to contamination issues. To address these limitations, we introduce a novel, automated, and scalable pipeline to continuously extract real-world interactive SWE tasks from diverse GitHub repositories. Using this pipeline, we construct SWE-rebench, a public dataset comprising over 21,000 interactive Python-based SWE tasks, suitable for reinforcement learning of SWE agents at scale. Additionally, we use continuous supply of fresh tasks collected using SWE-rebench methodology to build a contamination-free benchmark for agentic software engineering. We compare results of various LLMs on this benchmark to results on SWE-bench Verified and show that performance of some language models might be inflated due to contamination issues.",
+   "authors": [
+    "Ibragim Badertdinov",
+    "Alexander Golubev",
+    "Maksim Nekrashevich",
+    "Anton Shevtsov",
+    "Simon Karasik",
+    "Andrei Andriushchenko",
+    "Maria Trofimova",
+    "Daria Litvintseva"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414887410",
+   "doi": "10.52202/085713-4923",
+   "title": "SWE-bench Goes Live!",
+   "year": 2025,
+   "venue": "neural information processing systems",
+   "type": "conference-paper",
+   "cited_by": 151,
+   "abstract": "The issue-resolving task, where a model generates patches to fix real-world bugs, has emerged as a critical benchmark for evaluating the capabilities of large language models (LLMs). While SWE-bench and its variants have become standard in this domain, they suffer from key limitations: they have not been updated since their initial releases, cover a narrow set of repositories, and depend heavily on manual effort for instance construction and environment setup. These factors hinder scalability and introduce risks of overfitting and data contamination. In this work, we present SWE-bench-Live, a live-updatable benchmark designed to overcome these challenges. Our initial release consists of 1,319 tasks derived from real GitHub issues created since 2024, spanning 93 repositories. Each task is accompanied by a dedicated Docker image to ensure reproducible execution. Central to our benchmark is \\method, an automated curation pipeline that streamlines the entire process from instance creation to environment setup, removing manual bottlenecks and enabling scalability and continuous updates. We evaluate a range of state-of-the-art agent frameworks and LLMs on SWE-bench-Live, revealing a substantial performance gap compared to static benchmarks like SWE-bench, even under controlled evaluation conditions. To better understand this discrepancy, we perform detailed analyses across repository origin, issue recency, and task difficulty. By providing a fresh, diverse, and executable benchmark grounded in live repository activity, SWE-bench-Live facilitates rigorous, contamination-resistant evaluation of LLMs and agents in dynamic, real-world software development settings.",
+   "authors": [
+    "Linghao Zhang",
+    "Shilin He",
+    "Chaoyun Zhang",
+    "Yu KANG",
+    "Bowen Li",
+    "Chengxing Xie",
+    "Junhao Wang",
+    "Maoquan Wang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415273522",
+   "doi": "10.1145/3793653.3793762",
+   "title": "Saving SWE-Bench: A Benchmark Mutation Approach for Realistic Agent Evaluation",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on AI Engineering \u2013 Software Engineering for AI (CAIN)",
+   "type": "conference-paper",
+   "cited_by": 18,
+   "abstract": "Current benchmarks for evaluating software engineering agents, such as SWE-Bench Verified, are predominantly derived from GitHub issues and fail to accurately reflect how developers interact with chat-based coding assistants in integrated development environments (IDEs). We posit that this mismatch leads to a systematic overestimation of agent\u2019s capabilities in real-world scenarios, especially bug fixing. We introduce a novel benchmarking framework that transforms existing formal benchmarks into realistic user queries through systematic analysis of developer interaction patterns with chat-based agents. Our methodology is flexible and can be easily extended to existing benchmarks. In this paper, we apply our testing framework to SWE-Bench Verified, the TypeScript subset of Multi-SWE-Bench and a private benchmark, SWE-Bench C# and transform formal GitHub issue descriptions into realistic user-style queries based on telemetry analysis of a popular chat-based agent interactions. Our findings reveal that existing benchmarks significantly overestimate agent capabilities for some models by > 50% over baseline performance for public benchmarks and \u223c 10-16% for our internal benchmark. This work establishes a new paradigm for evaluating interactive chat-based software engineering agents through benchmark mutation techniques. Our code is available at: https://github.com/microsoft/SWE-Bench-Mutated-CAIN26",
+   "authors": [
+    "Spandan Garg",
+    "Benjamin Jeremiah Steenhoek",
+    "Yufan Huang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161613657",
+   "doi": null,
+   "title": "Agentic multi-hunk repair on SWE-bench verified",
+   "year": 2026,
+   "venue": "cIRcle (University of British Columbia)",
+   "type": "dissertation",
+   "cited_by": 0,
+   "abstract": "Most research on automated program repair (APR) addresses defects whose fix occupies a single contiguous code region. However, a substantial proportion of real-world bugs require coordinated edits at multiple disjoint locations. These multi-hunk defects pose a distinct challenge: the unit of correctness is the complete patch, so an edit that is locally correct but globally inconsistent invalidates the repair. This thesis investigates how contemporary tool-using coding agents perform in this setting on real-world Python code. The empirical study introduces Hunk-SWE, a curated multi-hunk subset of SWE-bench Verified comprising thirty-two human-validated GitHub issues from twelve established Python projects. Each instance is accompanied by the buggy commit, the developer\u2019s gold patch, and an executable test suite. Four production agents\u2014Claude Code, Codex, Gemini-cli, and Qwen Code\u2014are evaluated end-to-end on Hunk-SWE using a per-instance Docker pipeline that pins both the agent CLI and the SWE-bench evaluation image. Final pass/fail judgment is delegated to the official swebench.harness grader, ensuring verdicts identical to the public leaderboard. The thesis additionally reports two further families of metrics: file-level localization and operational efficiency, measured in tokens and runtime. The BIRCH structural metrics of hunk divergence and spatial proximity are generalized from a Java-only formulation to a multi-language formulation and applied to every instance of Hunk-SWE. Repair accuracy varies substantially across agents on Hunk-SWE. Codex resolves 29 of 32 instances (90.62%), Claude Code 28 of 32 (87.50%), Gemini-cli 19 of 32 (59.38%), and Qwen Code 13 of 32 (40.62%). The two lower-tier agents are strictly nested into the upper tier: every bug resolved by Qwen Code is also resolved by Gemini-cli, and every bug resolved by Gemini-cli is also resolved by both Codex and Claude Code. Codex and Claude Code are not strictly nested with respect to one another, however; the two agents differ on three bugs, and their union covers the same 30 instances as the union of all four agents. Codex and Gemini-cli attain comparable file-level localization rates (78.12% and 81.25% respectively), indicating that the 31-percentage-point gap in repair accuracy between them arises from synthesis rather than from navigation. Claude Code attains the highest localization rate at 90.62% and the smallest localization\u2013repair gap. Repair success declines as edits become more divergent and more dispersed, consistent with prior findings on Java multi-hunk repair. Operational behavior also differs across agents: Gemini-cli\u2019s failed attempts are approximately 5.2\u00d7 longer than its successful ones (950s vs. 182s), Qwen Code\u2019s failures are 1.5\u00d7 longer (422s vs. 284s), Claude Code\u2019s failures are 1.3\u00d7 longer (457s vs. 348s), and Codex\u2019s failures are slightly shorter than its successes (224s vs. 264s). These results indicate that accuracy and cost-of-failure are largely indepen",
+   "authors": [
+    "Daniel Ding"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415252687",
+   "doi": "10.48550/arxiv.2509.16941",
+   "title": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 442,
+   "abstract": "We introduce SWE-Bench Pro, a substantially more challenging benchmark that builds upon the best practices of SWE-BENCH [25], but is explicitly designed to capture realistic, complex, enterprise-level problems beyond the scope of SWE-BENCH. SWE-BENCH PRO contains 1,865 problems sourced from a diverse set of 41 actively maintained repositories spanning business applications, B2B services, and developer tools. The benchmark is partitioned into a public set with open access to problems sourced from 11 repositories, a held-out set of 12 repositories and a commercial set of 18 proprietary repositories where we have formal partnership agreements with early-stage startups. Problems in the held-out and the commercial set are not publicly accessible, but we release results on the commercial set. Our benchmark features long-horizon tasks that may require hours to days for a professional software engineer to complete, often involving patches across multiple files and substantial code modifications. All tasks are human-verified and augmented with sufficient context to ensure resolvability. To better understand these limitations, we cluster the failure modes observed in the collected agent trajectories for a clearer characterization of the error patterns exhibited by current models. Overall, SWE-BENCH PRO provides a contamination-resistant testbed that more faithfully captures the complexity and diversity of real-world software development, advancing the pursuit of truly autonomous software engineering agents at a professional level.",
+   "authors": [
+    "Xiang Bo Deng",
+    "Jeff Da",
+    "Edwin Pan",
+    "Yun He",
+    "Charles Ide",
+    "Garg, Kanak",
+    "Niklas T. Lauffer",
+    "Park, Andrew"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4387561453",
+   "doi": "10.48550/arxiv.2310.06770",
+   "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+   "year": 2023,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2109,
+   "abstract": "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous.",
+   "authors": [
+    "Jimenez, Carlos E.",
+    "Yang, John",
+    "Alexander Wettig",
+    "Shunyu Yao",
+    "Kexin Pei",
+    "Ofir Press",
+    "Karthik Narasimhan"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7212059813",
+   "doi": "10.48550/arxiv.2609.08149",
+   "title": "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 10,
+   "abstract": "SWE-Bench Pro has emerged as a standard benchmark for evaluating software engineering agents on challenging repository-level tasks. However, our analysis work show that its evaluation is undermined by two sources of unreliability: reward hacking, enabled by leakage of gold solutions or hidden evaluation information, and task quality issues, including misleading problem statements and improperly scoped tests. These issues can inflate benchmark performance and obscure agents' true coding ability. We present SWE-Bench Pro Verified, a verified version of SWE-Bench Pro that addresses both problems. Our approach combines anti-hacking safeguards that eliminate major leakage channels without disrupting normal agent functionality, with task refinement that minimally corrects inconsistencies within flawed instances. Evaluations on SWE-Bench Pro Verified reveal that some models perform substantially worse than previously evaluated, suggesting that existing results on SWE-Bench Pro may overestimate real software engineering capability. SWE-Bench Pro Verified offers a more trustworthy benchmark for assessing software engineering agents.",
+   "authors": [
+    "Pujun Zheng",
+    "Zixin Shang",
+    "Shufan Jiang",
+    "Wenhui Tian",
+    "Dongsheng Zhu",
+    "Zerun Ma",
+    "Dingbo Yuan",
+    "Qi Zhang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7202186081",
+   "doi": "10.48550/arxiv.2608.09802",
+   "title": "SWE-Bench ProMax: Benchmarking Agents on Large-Scale Multilingual Code Refactoring",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 16,
+   "abstract": "As AI coding agents take on increasingly complex, long-horizon software engineering tasks, existing benchmarks are rapidly saturating and their evaluation quality has come under serious scrutiny: a recent audit found that nearly 60% of unsolved SWE-bench Verified instances contain flawed tests -- either overly narrow tests that reject correct solutions or overly broad tests that check unstated requirements -- and that frontier models can verbatim reproduce gold patches from training data. Code refactoring, which requires coordinated, behavior-preserving changes across many files, offers a substantially harder and more realistic test of agent capability, yet remains underserved by current benchmarks. We introduce SWE-Bench ProMax, an expert-curated, multilingual code refactoring benchmark of 170 instances drawn from real commits across seven programming languages (Python, Java, TypeScript, Go, C, C++, and Rust). Every instance undergoes rigorous, multi-stage curation that directly addresses the quality problems identified in prior benchmarks: issue descriptions are rewritten from scratch to provide precise, unambiguous specifications, and test suites are manually reviewed to remove overly narrow and overly broad tests. Tasks with insufficient complexity or limited cross-file scope are filtered out, yielding a benchmark of challenging, large-scale refactoring tasks that average 11.5 modified files and 261.6 lines of code per instance, substantially exceeding the scale of existing benchmarks. Experiments with frontier models under two agent scaffolds show that the best model achieves only 41.2% resolve rate, confirming that SWE-Bench ProMax presents a meaningful and unsaturated challenge for current AI coding agents. Our benchmark is available at https://huggingface.co/datasets/swe-bench-promax/SWE-Bench-ProMax.",
+   "authors": [
+    "Yuling Shi",
+    "Jinghan Xu",
+    "Kelin Fu",
+    "Wenhao Zeng",
+    "Shilin He",
+    "Lei Zhang",
+    "Yue Liu",
+    "Zelin Zhao"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7221943589",
+   "doi": "10.48550/arxiv.2610.19368",
+   "title": "OS-Bench: Evaluating SWE Agents on Cross-OS Code Migration",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Language-model (LM) agents are increasingly evaluated on repository-level software engineering (SWE) benchmarks derived from GitHub issues and pull requests. Although these benchmarks cover a broad range of development tasks, they provide limited insight into a common yet technically distinct challenge: migrating an existing implementation from one operating system (OS) to another while preserving behavior on both. We introduce OS-Bench, an executable benchmark for cross-OS code migration between Linux and Windows. Motivated by case studies showing that cross-platform features are frequently implemented on one OS before support is added for another, OS-Bench identifies migration opportunities by comparing execution coverage collected from the same repository on both systems. Platform-specific regions are then verified, organized into five migration scenarios, and transformed into repository-level tasks with target-platform tests and source-platform regression tests. The resulting benchmark contains 140 validated tasks from 111 repositories across C, C++, C#, Go, and Rust, comprising 91 Windows-to-Linux and 49 Linux-to-Windows migrations. We evaluate six models with SWE-agent, Claude Code, OpenHands, and Win-agent. The best configurations achieve only 26.4% success on Linux-target tasks and 20.4% on Windows-target tasks while preserving correctness across both systems. These results indicate that cross-OS migration is a challenging and underexplored capability, and OS-Bench is a testbed for improving platform-aware SWE agents.",
+   "authors": [
+    "Qirui Jin",
+    "Kenan Li",
+    "Liao Zhu",
+    "Lingching Tung",
+    "Yikai Zhang",
+    "Yijia Wu",
+    "Zijian Jin",
+    "Pengfei Gao"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7161152719",
+   "doi": "10.48550/arxiv.2605.12925",
+   "title": "AgentLens: Revealing The Lucky Pass Problem in SWE-Agent Evaluation",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 21,
+   "abstract": "Evaluation of software engineering (SWE) agents is dominated by a binary signal: whether the final patch passes the tests. This outcome-only view treats a principled solution and a chaotic trial-and-error process as equivalent. We show that this equivalence is empirically false. We evaluate 2,614 OpenHands trajectories from eight model backends on 60 SWE-bench Verified tasks. Of these, 47 have enough passing trajectories to construct task-level process references, yielding a 1,815-trajectory evaluation subset. Among passing trajectories in this subset, 10.7% exhibit behavior we call a Lucky Pass: regression cycles, blind retries, missing verification, or temporally disordered exploration, implementation, and verification. We introduce AgentLens, a framework for process-level assessment of SWE-agent trajectories, and define AgentLens-Bench, a dataset of 1,815 trajectories annotated with quality scores, waste signals, divergence points, and 47 task-level Prefix Tree Acceptor (PTA) references. AgentLens builds PTA references by merging multiple passing solutions for the same task, and uses a context-sensitive intent labeler to assign actions to Exploration, Implementation, Verification, or Orchestration based on trajectory history rather than tool identity alone. On AgentLens-Bench, the quality score separates passing trajectories into Lucky, Solid, and Ideal tiers and further decomposes Lucky Passes into five recurring mechanisms. Across the eight model backends, Lucky rates range from 0.5% to 23.2%, and some models move by as many as five rank positions when ranked by quality score instead of pass rate. We plan to release the project repository soon, including AgentLens-Bench artifacts, the AgentLens SDK, and the analysis tooling.",
+   "authors": [
+    "Priyam Sahoo",
+    "Gaurav Mittal",
+    "Xiaomin Li",
+    "Shengjie Ma",
+    "Benjamin Jeremiah Steenhoek",
+    "Pingping Lin",
+    "Yu Hu"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4416665753",
+   "doi": "10.1145/3803437.3805574",
+   "title": "Investigating Test Overfitting on SWE-bench",
+   "year": 2026,
+   "venue": "ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)",
+   "type": "conference-paper",
+   "cited_by": 11,
+   "abstract": "Tests can be useful towards resolving issues on code repositories. However, relying too much on tests for issue resolution can lead to code that technically passes observed tests but actually misses important cases or even breaks functionality. This problem, called test overfitting, is exacerbated by the fact that issues usually lack readily executable tests. Instead, several issue resolution systems use tests auto-generated from issues, which may be imperfect. Some systems even iteratively refine code and tests jointly. This paper presents the first empirical study of test overfitting in this setting.",
+   "authors": [
+    "Toufique Ahmed",
+    "Jatin Ganhotra",
+    "Avraham Shinnar",
+    "Martin J. Hirzel"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4417095644",
+   "doi": "10.48550/arxiv.2506.17208",
+   "title": "Dissecting the SWE-Bench Leaderboards: Profiling Submitters and Architectures of LLM- and Agent-Based Repair Systems",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 18,
+   "abstract": "The rapid progress in Automated Program Repair (APR) has been driven by advances in AI, particularly large language models (LLMs) and agent-based systems. SWE-Bench is a recent benchmark designed to evaluate LLM-based repair systems using real issues and pull requests mined from 12 popular open-source Python repositories. Its public leaderboards -- SWE-Bench Lite and SWE-Bench Verified -- have become central platforms for tracking progress and comparing solutions. However, because the submission process does not require detailed documentation, the architectural design and origin of many solutions remain unclear. In this paper, we present the first comprehensive study of all submissions to the SWE-Bench Lite (79 entries) and Verified (99 entries) leaderboards, analyzing 80 unique approaches across dimensions such as submitter type, product availability, LLM usage, and system architecture. Our findings reveal the dominance of proprietary LLMs (especially Claude 3.5), the presence of both agentic and non-agentic designs, and a contributor base spanning from individual developers to large tech companies.",
+   "authors": [
+    "Mat\u00edas Mart\u00ednez",
+    "Xavier Franch"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4403322180",
+   "doi": "10.48550/arxiv.2410.03859",
+   "title": "SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?",
+   "year": 2024,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 164,
+   "abstract": "Autonomous systems for software engineering are now capable of fixing bugs and developing features. These systems are commonly evaluated on SWE-bench (Jimenez et al., 2024a), which assesses their ability to solve software issues from GitHub repositories. However, SWE-bench uses only Python repositories, with problem statements presented predominantly as text and lacking visual elements such as images. This limited coverage motivates our inquiry into how existing systems might perform on unrepresented software engineering domains (e.g., front-end, game development, DevOps), which use different programming languages and paradigms. Therefore, we propose SWE-bench Multimodal (SWE-bench M), to evaluate systems on their ability to fix bugs in visual, user-facing JavaScript software. SWE-bench M features 617 task instances collected from 17 JavaScript libraries used for web interface design, diagramming, data visualization, syntax highlighting, and interactive mapping. Each SWE-bench M task instance contains at least one image in its problem statement or unit tests. Our analysis finds that top-performing SWE-bench systems struggle with SWE-bench M, revealing limitations in visual problem-solving and cross-language generalization. Lastly, we show that SWE-agent's flexible language-agnostic features enable it to substantially outperform alternatives on SWE-bench M, resolving 12% of task instances compared to 6% for the next best system.",
+   "authors": [
+    "John Jeongseok Yang",
+    "Jimenez, Carlos E.",
+    "Alex Zhang",
+    "K. Lieret",
+    "Joyce Yang",
+    "Xindi Wu",
+    "Ori Press",
+    "Niklas Muennighoff"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415111330",
+   "doi": "10.1145/3786583.3786882",
+   "title": "The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)",
+   "type": "conference-paper",
+   "cited_by": 68,
+   "abstract": "As large language models (LLMs) become increasingly capable and widely adopted, benchmarks play a central role in assessing their practical utility. For example, SWE-Bench Verified has emerged as a critical benchmark for evaluating LLMs\u2019 software engineering abilities, particularly their aptitude for resolving real-world GitHub issues. Recent LLMs show impressive performance on SWE-Bench Verified, leading to optimism about their capacity for complex coding tasks. However, current evaluation protocols may overstate these models\u2019 true capabilities. It is crucial to distinguish LLMs\u2019 generalizable problem-solving ability from memorized patterns and other learned artifacts. In this work, we introduce two new diagnostic tasks: file path identification from issue descriptions alone and ground truth function reproduction with only the current file context and issue description to probe models\u2019 underlying knowledge. We present empirical evidence that performance gains on SWE-Bench Verified may be partially driven by memorization rather than genuine problem-solving. We show that state-of-the-art (SoTA) models achieve up to 76% accuracy in identifying buggy file paths using only issue descriptions, without access to repository structure. This performance is merely up to 53% on tasks from repositories not included in SWE-Bench, pointing to possible data contamination or memorization. Similar patterns are also observed for the function reproduction task, where the verbatim similarity is much higher on SWE-Bench Verified than on other similar coding benchmarks (up to 35% consecutive 5-gram overlap ratio on SWE-Bench Verified and Full, but only up to 18% for tasks in other benchmarks). These findings raise concerns about the validity of existing results and underscore the need for more robust, contamination-resistant benchmarks to reliably evaluate LLMs\u2019 coding abilities.",
+   "authors": [
+    "Shanchao Liang",
+    "Spandan Garg",
+    "Roshanak Zilouchian Moghaddam"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7158716289",
+   "doi": "10.18653/2026.findings-emnlp.485",
+   "title": "SWE-Edit: Rethinking Code Editing for Efficient SWE-Agent",
+   "year": 2026,
+   "venue": "Findings of the Association for Computational Linguistics: EMNLP (Findings of EMNLP)",
+   "type": "conference-paper",
+   "cited_by": 7,
+   "abstract": "Large language model agents have made strong progress on software engineering, yet current systems suffer from a context coupling problem: the standard code editing interface conflates code inspection, modification planning, and edit execution within a single context window, forcing agents to interleave exploratory viewing with strictly formatted edit generation.Irrelevant context accumulates and edit reliability degrades.We propose SWE-Edit, which decomposes the editing interface into two specialized subagents: a Viewer that extracts taskrelevant code on demand, and an Editor that executes modifications from high-level natural language plans-letting the main agent focus on reasoning while delegating context-intensive operations to clean context windows.We further show that effective edit-format selection can be trained into a small model rather than requiring frontier-scale capacity: GRPO training on Qwen3-8B improves edit success by 12.5 pp and brings an 8B open-source editor to parity with GPT-5-nano on downstream SWE-Bench resolve rate, with the learned adaptive findreplace/whole-file-rewrite policy contributing primarily on the cost axis (-11.8%agent cost).To enable rapid editor iteration, we release PR-Edit, a lightweight editor-level evaluation that rank-orders the editor models we test consistently with their downstream SWE-Bench resolve rate.We release our code at https:// github.com/microsoft/SWE-Edit.",
+   "authors": [
+    "Yikai Zhang",
+    "Jiaxin Pei",
+    "Kenan Li",
+    "Qirui Jin",
+    "Maoquan Wang",
+    "Jin Pan",
+    "Yu Kang",
+    "Shengyu Fu"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7153766819",
+   "doi": "10.5281/zenodo.19541869",
+   "title": "The Agent Evaluation Trap",
+   "year": 2026,
+   "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+   "type": "other",
+   "cited_by": 0,
+   "abstract": "Episode summary: Measuring whether your AI agent actually improved is harder than it looks. The field has built impressive benchmarks\u2014SWE-bench, GAIA, AgentBench, WebArena\u2014but each one can mislead you in different ways. Learn what the major agent evaluation frameworks actually test, why the same model scores wildly differently across them, and the gotchas that can make you optimize for the wrong thing. A practical guide to understanding agent benchmarks before you trust their numbers. Show Notes # Understanding Agent Evaluation: Why the Same Model Scores 80% and 45% Agent evaluation looks straightforward until you try it. With a language model, you get one output and check it. With an agent, you're evaluating dozens or hundreds of tool calls, branching decisions, state management, and a final outcome that could be right for the wrong reasons\u2014or wrong despite a reasonable path. The benchmarks that measure this have matured enormously, but so have the ways to be misled by them. ## The Contamination Problem: SWE-bench's Reckoning SWE-bench was the canonical starting point for agent evaluation. Princeton and CMU released it in 2023 with an elegant setup: take real GitHub issues from popular Python repositories like Django, Flask, and scikit-learn, ask an agent to fix them, and run the existing test suite. Pass the tests, get credit. No partial credit. No ambiguity. Then OpenAI audited it. They found that frontier models\u2014GPT-5.2, Claude Opus 4.5, Gemini 3 Flash\u2014could reproduce verbatim gold patches for certain tasks. The models had seen the test data during training. Worse, 59% of the hardest unsolved problems had flawed test cases. Claude Opus 4.5 scored 80.9% on SWE-bench Verified but only 45.9% on its replacement, SWE-bench Pro. Same model. Thirty-five points of difference. That gap is almost entirely contamination and inflated task difficulty. The field moved on. OpenAI stopped reporting Verified scores entirely. SWE-bench Pro, built by Scale AI's SEAL lab, replaced it with 1,865 tasks across 41 repositories in Python, Go, TypeScript, and JavaScript. The average task requires 107 lines of changes across 4.1 files\u2014compare that to the median of 4 lines in Verified. Pro uses GPL-licensed and proprietary codebases specifically to resist contamination. The leaderboard looks completely different. On Pro, Claude Opus 4.5 sits at 45.9%, Claude Sonnet 4.5 at 43.6%, Gemini 3 Pro at 43.3%, GPT-5 High at 41.8%. Models are tightly clustered because the benchmark is actually hard and clean. Microsoft's SWE-bench Live takes the contamination-prevention approach further: 1,565 tasks as of mid-2025, continuously refreshed monthly, supporting 8 languages including Rust and C#. The top score is SWE-agent with Claude 3.7 Sonnet at 17.67%. Dramatically lower than Verified. That's what genuine difficulty on unseen code looks like. ## The Scaffolding Trap Here's where most leaderboard comparisons fall apart. On SWE-bench Pro, Claude Opus 4.5 scores 45.9% with SEAL's sta",
+   "authors": [
+    "Daniel Rosehill",
+    "Gemini 3.1 (Flash)",
+    "Chatterbox TTS"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7128015339",
+   "doi": "10.1145/3786583.3786904",
+   "title": "What\u2019s in a Benchmark? The Case of SWE-Bench in Automated Program Repair",
+   "year": 2026,
+   "venue": "IEEE/ACM International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)",
+   "type": "conference-paper",
+   "cited_by": 7,
+   "abstract": "The rapid progress in Automated Program Repair (APR) has been fueled by advances in AI, particularly large language models (LLMs) and agent-based systems. SWE-Bench is a benchmark designed to evaluate repair systems using real issues mined from popular open-source Python repositories. Its public leaderboards\u2014SWE-Bench Lite and Verified\u2014have become central platforms for tracking progress and comparing solutions. In this paper, we present the first comprehensive study of these two leaderboards, examining who is submitting solutions, the products behind the submissions, the LLMs employed, and the openness of the approaches. We analyze 79 entries submitted to Lite leaderboard and 133 to Verified. Our results show that most entries on both leaderboards originate from industry, particularly small companies and large publicly traded companies. These submissions often achieve top results, although academic contributions\u2014typically open source\u2014also remain competitive. We also find a clear dominance of proprietary LLMs, especially Claude family, with state-of-the-art results on both leaderboards currently achieved by Claude 4 Sonnet. These findings offer insights into the SWE-Bench ecosystem that can guide greater transparency and diversity in future benchmark-driven research.",
+   "authors": [
+    "Mat\u00edas Mart\u00ednez",
+    "Xavier Franch"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7224778510",
+   "doi": "10.48550/arxiv.2610.39417",
+   "title": "Well-Specified and Well-Tested? Assessing SWE-bench-Style Datasets with a Self-Evolving Agent",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 0,
+   "abstract": "Large language models (LLMs) have shown strong performance on software engineering (SE) tasks, driving the need for high-quality datasets for reliable training and evaluation. SWE-bench-style datasets (SWE datasets) are widely used to evaluate LLM-based coding agents on real-world software issues, where task clarity and test coverage directly affect whether instances are solvable and verifiable. However, quality issues persist in existing SWE datasets, and manual annotation is costly and labor-intensive, motivating LLM-based annotation. Existing approaches typically rely on static, overly general rubrics, limiting their ability to handle diverse and nuanced scenarios and often yielding high false positive rates. In contrast, human annotators draw on accumulated experience to make context-aware judgments. Inspired by this, we propose ExLabel, an LLM-based, self-evolving, experience-guided assistant for task clarity and test coverage assessment in SWE datasets. ExLabel maintains an evolving experience bank that distills cross-instance knowledge into stable yet adaptive judgment criteria and reuses relevant experience to guide the assessment of new instances. For systematic evaluation, we construct SWE-TQ, a new benchmark spanning eight programming languages, by cleaning human annotations from SWE-bench and Multi-SWE-bench. Experiments with three backbone LLMs show that ExLabel achieves the best F1 across all settings, with relative improvements of 44.2%/49.9% and 24.0%/18.4% over the best baseline for task clarity and test coverage assessment on the Python/Multilingual subsets, respectively. Moreover, a coding model fine-tuned on SWE-rebench data filtered by ExLabel resolves 66.2% of issues on SWE-bench Verified, outperforming the model trained on data filtered by the best baseline by 14.5%.",
+   "authors": [
+    "Zhonghao Jiang",
+    "Xuyang Zheng",
+    "Yanfu Yan",
+    "Zhongxin Liu",
+    "Lingfeng Bao",
+    "Shuiguang Deng"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7203880176",
+   "doi": "10.48550/arxiv.2608.19799",
+   "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 8,
+   "abstract": "Software increasingly functions as part of the scientific instrument itself, making failures in scientific code capable of compromising not only program behavior but also the evidence underlying scientific conclusions. Yet existing evaluations of coding agents largely emphasize aggregate task success, providing limited insight into why agents fail when repairing scientific software. We introduce \\textbf{SWE-bench Science}, a repository-level benchmark for scientific software engineering comprising 119 tasks from 98 GitHub repositories across 20 scientific domains. Each task is organized into one of three paradigms: Issue-driven, Expert-exploratory, and Engineering-integration. Even the best-performing agent, \\textbf{Claude Code with Opus-5 (max), achieves a pass@1 below 50\\%}, highlighting the substantial challenges posed by scientific software engineering. We identify four recurring failure mechanisms: deficits in scientific knowledge or abstraction, misguided exploration or surface-level repair, incomplete repair coverage or system integration, and failures to generalize scientific knowledge beyond observed cases in our analysis. We further conduct a paired ablation that removes explicit scientific guidance while preserving the repository and executable engineering context. The results show that scientific knowledge is not uniformly beneficial: well-grounded information can constrain repair and improve average performance and token efficiency, whereas poorly aligned guidance can induce anchoring and does not necessarily improve exact repair success. Together, SWE-bench Science provides a broad testbed for studying both the capabilities and failure mechanisms of coding agents in scientific software engineering.",
+   "authors": [
+    "Zhipeng Xu",
+    "Jiahao Lu",
+    "Yining Zheng",
+    "Yuxin Wang",
+    "Xipeng Qiu"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4415332089",
+   "doi": "10.48550/arxiv.2509.23045",
+   "title": "Kimi-Dev: Agentless Training as Skill Prior for SWE-Agents",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 41,
+   "abstract": "Large Language Models (LLMs) are increasingly applied to software engineering (SWE), with SWE-bench as a key benchmark. Solutions are split into SWE-Agent frameworks with multi-turn interactions and workflow-based Agentless methods with single-turn verifiable steps. We argue these paradigms are not mutually exclusive: reasoning-intensive Agentless training induces skill priors, including localization, code edit, and self-reflection that enable efficient and effective SWE-Agent adaptation. In this work, we first curate the Agentless training recipe and present Kimi-Dev, an open-source SWE LLM achieving 60.4\\% on SWE-bench Verified, the best among workflow approaches. With additional SFT adaptation on 5k publicly-available trajectories, Kimi-Dev powers SWE-Agents to 48.6\\% pass@1, on par with that of Claude 3.5 Sonnet (241022 version). These results show that structured skill priors from Agentless training can bridge workflow and agentic frameworks for transferable coding agents.",
+   "authors": [
+    "Zonghan Yang",
+    "Wang, Shengjie",
+    "Kelin Fu",
+    "Wenyang He",
+    "Xiong, Weimin",
+    "Liu, Yibo",
+    "Miao, Yibo",
+    "Bofei Gao"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7214195747",
+   "doi": "10.48550/arxiv.2609.27891",
+   "title": "Schr\u00f6dinger's Code Repository: Have LLMs Learned SWE-bench or Memorized It?",
+   "year": 2026,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 2,
+   "abstract": "Repository-level coding benchmarks have become the standard for evaluating coding agents, yet they inherently suffer from data leakage because they are built upon popular open-source repositories repeatedly used for training. Consequently, strong performance may reflect memorization of canonical repository cues rather than robust repository reasoning. We propose SchrodingerRepo (Schr\u00f6dinger's Repository), an evaluation framework for testing coding agents under dynamically instantiated repository representations. Instead of repeatedly using a static representation of the test repository, SchrodingerRepo treats the test repository as an evaluation-time latent variable that is dynamically instantiated only when the agent enters the evaluation environment. The instantiated repository preserves the original executable behavior while eroding familiar cues such as naming conventions, file layouts, and implementation patterns through four transformation levels: problem statement reconstruction, namespace remapping, intra-file layout reordering, and functionality-preserving code rewriting. We evaluate popular LLMs on SWE-bench Verified and SWE-QA. Results show that removing familiar repository cues consistently degrades agent performance and substantially increases interaction costs across models. Further analysis reveals that the additional cost is primarily caused by increased difficulty in repository exploration and localization. These findings suggest that current coding agents may partially rely on memorized repository-side cues, highlighting the need for evaluation under dynamically instantiated repository representations.",
+   "authors": [
+    "Silin Chen",
+    "Yufei Yang",
+    "Xiaodong Gu",
+    "Yuling Shi",
+    "Chengcheng Wan",
+    "Haibing Guan"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7117153355",
+   "doi": "10.48550/arxiv.2512.18470",
+   "title": "SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios",
+   "year": 2025,
+   "venue": "arXiv (Cornell University)",
+   "type": "preprint",
+   "cited_by": 82,
+   "abstract": "Existing benchmarks for AI coding agents focus on isolated, single-issue tasks such as fixing a bug or adding a small feature. However, real-world software engineering is a long-horizon endeavor: developers interpret high-level requirements, coordinate changes across many files, and evolve codebases over multiple iterations while preserving functionality. We introduce SWE-EVO, a benchmark for this long-horizon software evolution challenge. Constructed from release notes of seven mature open-source Python projects, SWE-EVO comprises 48 tasks requiring multi-step modifications spanning an average of 21 files, validated against test suites averaging 874 tests per instance. Experiments reveal a striking capability gap: GPT-5.4 with OpenHands achieves only 25% on SWE-EVO versus 72.80% achieved by GPT-5.2 on SWE-Bench Verified, showing that current agents struggle with sustained, multi-file reasoning. We also propose Fix Rate, a metric capturing partial progress on these complex, long-horizon tasks.",
+   "authors": [
+    "Tue Le",
+    "Minh V. T. Thai",
+    "Dung Nguyen Manh",
+    "Huy Phan Nhat",
+    "Nghi D. Q. Bui"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W4414920507",
+   "doi": "10.1145/3744916.3787810",
+   "title": "SWE-Debate: Competitive Multi-Agent Debate for Software Issue Resolution",
+   "year": 2026,
+   "venue": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+   "type": "conference-paper",
+   "cited_by": 76,
+   "abstract": "Issue resolution has made remarkable progress thanks to the advanced reasoning capabilities of large language models (LLMs). Recently, agent-based frameworks such as SWE-agent have further advanced this progress by enabling autonomous, tool-using agents to tackle complex software engineering tasks. While existing agent-based issue resolution approaches are primarily based on agents' independent explorations, they often get stuck in local solutions and fail to identify issue patterns that span across different parts of the codebase. To address this limitation, we propose SWE-Debate, a competitive multi-agent debate framework that encourages diverse reasoning paths and achieves more consolidated issue localization. SWE-Debate first creates multiple fault propagation traces as localization proposals by traversing a code dependency graph. Then, it organizes a three-round debate among specialized agents, each embodying distinct reasoning perspectives along the fault propagation trace. This structured competition enables agents to collaboratively converge on a consolidated fix plan. Finally, this consolidated fix plan is integrated into an MCTS-based code modification agent for patch generation. Experiments on the SWE-bench benchmark show that SWE-Debate achieves new state-of-the-art results in open-source agent frameworks and outperforms baselines by a large margin.",
+   "authors": [
+    "H. Li",
+    "Yanan Shi",
+    "Shaoxin Lin",
+    "Xiaodong Gu",
+    "Heng Lian",
+    "Xin Wang",
+    "Yantao Jia",
+    "Tao Huang"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  },
+  {
+   "src": "openalex",
+   "openalex": "W7196930851",
+   "doi": "10.1145/3770855.3818488",
+   "title": "SWE-Bench Mobile: Can Large Language Model Agents Develop Industry-Level Mobile Applications?",
+   "year": 2026,
+   "venue": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)",
+   "type": "conference-paper",
+   "cited_by": 16,
+   "abstract": "Can large language model agents develop industry-level mobile applications? We introduce SWE-Bench Mobile, a benchmark for evaluating coding agents on realistic software engineering tasks derived from a production iOS codebase. Unlike existing benchmarks that focus on isolated problems or bug fixes, SWE-Bench Mobile captures the full complexity of industrial development: multi-modal inputs (PRDs and Figma designs), a large-scale mixed Swift/Objective-C codebase, and comprehensive test suites. We evaluate 22 agent-model configurations across four coding agents: three commercial (Cursor, Codex, Claude Code) and one open-source (OpenCode), and find that even the best configurations achieve only 12% task success rate. Our analysis reveals that (1) agent design matters as much as model capability: the same model shows up to 6x performance gap across agents, (2) commercial agents consistently outperform open-source alternatives, and (3) simple ''Defensive Programming'' prompts raise the test pass rate by 7.4 points over the baseline, while overly complex prompts hurt task success. These findings highlight a significant gap between current agent capabilities and industrial requirements, while providing actionable insights for practitioners and researchers. We release SWE-Bench Mobile as a hosted benchmark challenge to prevent data contamination and ensure fair evaluation. The public leaderboard is available at https://swebenchmobile.com.",
+   "authors": [
+    "Muxin Tian",
+    "Zhe Wang",
+    "Zhenwei Tang",
+    "Blair Yang",
+    "Kunlun Zhu",
+    "Honghua Dong",
+    "Hanchen Li",
+    "Xinni Xie"
+   ],
+   "facet": "F4_bench",
+   "query": "SWE-bench verified contamination evaluation agents"
+  }
+ ]
+}

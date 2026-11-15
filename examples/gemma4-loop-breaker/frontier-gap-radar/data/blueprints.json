@@ -1,0 +1,134 @@
+[
+ {
+  "id": "B1",
+  "gaps": [
+   "G1",
+   "G7"
+  ],
+  "status": "revised",
+  "title": "Precision as an experimental variable for repository-repair agents",
+  "design": "Run one open-weight policy at BF16, FP8 and W4A16 on SWE-bench Verified under identical scaffold, turn and context limits; paired per-task comparison (exact McNemar), plus loop incidence (repeated identical edits / test runs), compaction events and tokens per resolved task.",
+  "prior_art_queries": [
+   "quantization coding agent SWE-bench resolve rate precision",
+   "4-bit quantized model software engineering agent repository repair",
+   "quantized LLM agent looping repeated actions"
+  ],
+  "closest": [
+   "W7223657872",
+   "W7225097464",
+   "W7225790577"
+  ],
+  "verdict": "Closest hits measure energy per completed task across 4/8-bit precision (W7223657872: 29 tasks, includes repository bug fixing; W7225097464: shared GPUs, '49%' more energy per verified completion at 4-bit) and quantization-aware distillation on non-repair agent benchmarks (W7225790577). None reports resolve rate and failure-mode mix on a SWE-bench split by precision. Revised: energy angle dropped; focus on failure attribution.",
+  "impact": 4,
+  "compute": 3
+ },
+ {
+  "id": "B2",
+  "gaps": [
+   "G5",
+   "G7"
+  ],
+  "status": "revised",
+  "title": "Recovery-action factorial: continue vs prune vs reset vs restart at equal token budget",
+  "design": "On trajectories that a fixed trigger flags as stalled, branch the same state into four recovery actions (continue, prune stale observations, rebuild context from issue + localized code + current diff, fresh restart) and compare resolution at equal remaining token budget, crossed with BF16 vs W4A16.",
+  "prior_art_queries": [
+   "context reset recovery coding agent loop",
+   "counterfactual context rebuild agent stuck repeated failure",
+   "context pruning loop avoidance backtracking coding agent"
+  ],
+  "closest": [
+   "W7225137459",
+   "W7224565369",
+   "W7224136922"
+  ],
+  "verdict": "CAPYBALA (W7225137459, preprint) already couples loop detection with context pruning on 200 replayed SWE-bench runs; SCOR (W7224565369) shows context reset helps GUI agents; W7224136922 finds within-task early failure prediction near chance (AUC 0.50). Original 'context reset as loop breaker' is covered; revised to a branch-from-same-state factorial that separates the recovery action from the trigger, and adds precision as a factor.",
+  "impact": 4,
+  "compute": 4
+ },
+ {
+  "id": "B3",
+  "gaps": [
+   "G3"
+  ],
+  "status": "kept",
+  "title": "Graph-coverage stall signals",
+  "design": "Detect stalls from the code graph rather than from text: no new graph node visited in k steps, repeated edits to the same node, or edits outside the localized k-hop neighbourhood; intervene by proposing the nearest unvisited neighbour. Evaluate detection precision/recall against labelled loop episodes and end-to-end resolve rate.",
+  "prior_art_queries": [
+   "code graph loop detection coding agent",
+   "repository graph coverage agent exploration stall",
+   "graph-guided recovery issue resolution agent"
+  ],
+  "closest": [
+   "W7133343802",
+   "W7172416829"
+  ],
+  "verdict": "SWE-Adept (W7133343802) traverses code dependencies by agent-directed DFS and keeps code-state checkpoints, but does not use the graph as a stall detector; LoopsBench (W7172416829) uses task-dependency DAGs for evaluation, not code graphs for recovery. No hit found that uses graph coverage to detect loops. Kept.",
+  "impact": 3,
+  "compute": 2
+ },
+ {
+  "id": "B4",
+  "gaps": [
+   "G4"
+  ],
+  "status": "dropped",
+  "title": "Tree search over graph localization hypotheses",
+  "design": "MCTS where branches are alternative graph-localized edit sites.",
+  "prior_art_queries": [
+   "Monte Carlo tree search repository knowledge graph issue resolution",
+   "backtracking over code graph localization hypotheses agent",
+   "tree search localization candidates SWE-bench"
+  ],
+  "closest": [
+   "W4413267850",
+   "W7127409208"
+  ],
+  "verdict": "Covered: LingmaAgent (W4413267850, DOI 10.1145/3696630.3728549) condenses the repository into a knowledge graph and explores it with MCTS on SWE-bench Lite; CodePilot (W7127409208) combines hierarchical localization with MCTS over patch trajectories. Dropped.",
+  "impact": 3,
+  "compute": 5
+ },
+ {
+  "id": "B5",
+  "gaps": [
+   "G6"
+  ],
+  "status": "dropped",
+  "title": "Restart seeded with a compacted summary of the failed attempt",
+  "design": "On failure, restart a fresh rollout seeded with a compacted record of the failed attempt.",
+  "prior_art_queries": [
+   "restart with summary of failed attempt coding agent",
+   "compaction restart software engineering agent trajectory",
+   "learning from failed attempt memory SWE agent retry"
+  ],
+  "closest": [
+   "W7172523833",
+   "W7224136922"
+  ],
+  "verdict": "Covered: FailFast-RestartSmart (W7172523833) restarts a same-policy rollout with the interrupted diff as an optional overlay (66.6% -> 71.8% on SWE-bench Verified with Qwen3.6-27B); W7224136922 studies continue-vs-restart decisions on 147,002 traces. Dropped.",
+  "impact": 2,
+  "compute": 3
+ },
+ {
+  "id": "B6",
+  "gaps": [
+   "G2",
+   "G7"
+  ],
+  "status": "revised",
+  "title": "Compaction policy x precision x window for small open-weight agents",
+  "design": "Factorial over compaction policy (none / fixed-threshold / model-invoked), weight precision (BF16 / W4A16) and context window (16K / 32K) for <=32B open-weight policies on SWE-bench Verified; report resolve rate, information loss (issue and file-path recall after compaction) and tokens per resolved task.",
+  "prior_art_queries": [
+   "context compaction small language model coding agent",
+   "context management 7B open-weight SWE agent small context window",
+   "context window size ablation SWE-bench small model"
+  ],
+  "closest": [
+   "W7223050698",
+   "W7165634532",
+   "W7215726049"
+  ],
+  "verdict": "Compaction for small models and constrained windows is covered: Bud ContextCompact 2.0 (W7223050698: 1.2B/9B/27B, 16K budget, SWE-bench Verified 41% -> 53% on long sessions), SelfCompact (W7165634532), AutoCompact (W7215726049: 256K and 16K windows). None crosses compaction with weight precision. Revised to the precision factor.",
+  "impact": 3,
+  "compute": 4
+ }
+]

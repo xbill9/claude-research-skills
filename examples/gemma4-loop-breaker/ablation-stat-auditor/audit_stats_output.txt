@@ -1,0 +1,105 @@
+== Wilson
+T1.1 Non-thinking baseline (Stage-1)        23/129 17.8% (95% Wilson CI [12.2%, 25.3%])     paper=(12.2, 25.3) match=True
+T1.2 Low-temp thinking hidden (Stage-1)     35/129 27.1% (95% Wilson CI [20.2%, 35.4%])     paper=(20.2, 35.4) match=True
+T1.3 Calibrated thinking (Stage-1)          51/129 39.5% (95% Wilson CI [31.5%, 48.2%])     paper=(31.5, 48.1) match=False
+T2.M0 Default starter                       15/129 11.6% (95% Wilson CI [7.2%, 18.3%])      paper=(7.2, 18.3) match=True
+T2.M1 Lean-6                                18/129 14.0% (95% Wilson CI [9.0%, 21.0%])      paper=(9.0, 21.0) match=True
+T2.M2 Calibrated sampling                   22/129 17.1% (95% Wilson CI [11.5%, 24.5%])     paper=(11.5, 24.5) match=True
+T2.M3 Contract parser                       25/129 19.4% (95% Wilson CI [13.5%, 27.0%])     paper=(13.5, 27.0) match=False
+T2.M4 Call-12 deadline                      27/129 20.9% (95% Wilson CI [14.8%, 28.7%])     paper=(14.8, 28.7) match=True
+T2.M5 Co-change                             29/129 22.5% (95% Wilson CI [16.1%, 30.4%])     paper=(16.1, 30.4) match=True
+T2.M6 Backtrack (end-to-end method)         31/129 24.0% (95% Wilson CI [17.5%, 32.1%])     paper=(17.5, 32.1) match=True
+T3 baseline_static                           4/25  16.0% (95% Wilson CI [6.4%, 34.7%])      paper=(6.4, 34.7) match=False
+T3 naive_subagent                            5/25  20.0% (95% Wilson CI [8.9%, 39.1%])      paper=(8.9, 39.1) match=True
+T3 ccr_only                                 18/25  72.0% (95% Wilson CI [52.4%, 85.7%])     paper=(52.4, 85.7) match=True
+T3 ccr_adaptive (method)                    24/25  96.0% (95% Wilson CI [80.5%, 99.3%])     paper=(80.5, 99.3) match=True
+sci-trap G-CCR                               5/5   100.0% (95% Wilson CI [56.6%, 100.0%])   paper=None match=None
+sci-trap baseline                            1/5   20.0% (95% Wilson CI [3.6%, 62.4%])      paper=None match=None
+repo fastapi M0 (recovered)                  7/67  10.4% (95% Wilson CI [5.2%, 20.0%])      paper=None match=None
+repo fastapi M6 (recovered)                 15/67  22.4% (95% Wilson CI [14.1%, 33.7%])     paper=None match=None
+repo rich M0 (recovered)                     6/48  12.5% (95% Wilson CI [5.9%, 24.7%])      paper=None match=None
+repo rich M6 (recovered)                    12/48  25.0% (95% Wilson CI [14.9%, 38.8%])     paper=None match=None
+repo requests M0 (recovered)                 2/13  15.4% (95% Wilson CI [4.3%, 42.2%])      paper=None match=None
+repo requests M6 (recovered)                 3/13  23.1% (95% Wilson CI [8.2%, 50.3%])      paper=None match=None
+repo httpx M0 (recovered)                    0/1   0.0% (95% Wilson CI [0.0%, 79.3%])       paper=None match=None
+repo httpx M6 (recovered)                    1/1   100.0% (95% Wilson CI [20.7%, 100.0%])   paper=None match=None
+== per-repo recovered [15, 31, 51] {'fastapi': [7, 15, 25], 'rich': [6, 12, 20], 'requests': [2, 3, 5], 'httpx': [0, 1, 1]} {'fastapi': True, 'rich': True, 'requests': True, 'httpx': True}
+== Fisher (two-sided, unpaired)
+T1 calibrated vs baseline                                  diff= 21.71 p=0.000179
+T1 hidden-thinking vs baseline                             diff=   9.3 p=0.1
+T1 calibrated vs hidden-thinking                           diff=  12.4 p=0.0473
+T2 M6 vs M0                                                diff=  12.4 p=0.0141
+T2 M1 vs M0                                                diff=  2.33 p=0.71
+T2 M2 vs M1                                                diff=   3.1 p=0.606
+T2 M3 vs M2                                                diff=  2.33 p=0.747
+T2 M4 vs M3                                                diff=  1.55 p=0.877
+T2 M5 vs M4                                                diff=  1.55 p=0.88
+T2 M6 vs M5                                                diff=  1.55 p=0.883
+T2 M6 vs M2 (same sampling)                                diff=  6.98 p=0.217
+T3 ccr_adaptive vs baseline_static                         diff=  80.0 p=7.18e-09
+T3 ccr_only vs baseline_static                             diff=  56.0 p=0.000147
+T3 ccr_adaptive vs ccr_only                                diff=  24.0 p=0.0488
+T3 naive_subagent vs baseline_static                       diff=   4.0 p=1
+sci-trap 5/5 vs 1/5                                        diff=  80.0 p=0.0476
+Trap-25 as 100 episodes? 96/100 vs 16/100 (hypothesis)     diff=  80.0 p=4.94e-34
+== Trap-25 p trace {"paper_p": "4.2e-09", "fisher_two_sided_scipy": "7.18e-09", "fisher_one_sided_greater_scipy": "3.59e-09", "chi2_yates": "6.19e-08", "chi2_no_yates": "1.21e-08"}
+== McNemar feasibility
+T1 calibrated vs baseline c in [0, 23] p_min=7.45e-09 p_cmax=0.00152 paper 1.8e-06 closest {'b': 32, 'c': 4, 'p': 1.941574737429619e-06}
+T2 M6 vs M0 c in [0, 15] p_min=3.05e-05 p_cmax=0.0259 paper 4.6e-05 closest {'b': 16, 'c': 0, 'p': 3.0517578125e-05}
+T3 ccr_adaptive vs baseline_static (paired by trap) c in [0, 1] p_min=1.91e-06 p_cmax=1.1e-05 paper 4.2e-09 closest {'b': 20, 'c': 0, 'p': 1.9073486328125e-06}
+== Noise floor
+{'num_tasks': 129, 'baseline_rate_pct': 17.8, 'std_error_pct': 3.37, 'ci_95_half_width_pct': 6.6, 'multiplier_z_alpha_plus_z_power': 2.8016, 'min_detectable_lift_vs_fixed_baseline_pts': 9.44, 'min_detectable_lift_two_runs_pts': 13.34}
+{'num_tasks': 129, 'baseline_rate_pct': 11.6, 'std_error_pct': 2.82, 'ci_95_half_width_pct': 5.53, 'multiplier_z_alpha_plus_z_power': 2.8016, 'min_detectable_lift_vs_fixed_baseline_pts': 7.9, 'min_detectable_lift_two_runs_pts': 11.17}
+{'num_tasks': 129, 'baseline_rate_pct': 17.1, 'std_error_pct': 3.31, 'ci_95_half_width_pct': 6.5, 'multiplier_z_alpha_plus_z_power': 2.8016, 'min_detectable_lift_vs_fixed_baseline_pts': 9.29, 'min_detectable_lift_two_runs_pts': 13.13}
+{'num_tasks': 129, 'baseline_rate_pct': 20.9, 'std_error_pct': 3.58, 'ci_95_half_width_pct': 7.02, 'multiplier_z_alpha_plus_z_power': 2.8016, 'min_detectable_lift_vs_fixed_baseline_pts': 10.03, 'min_detectable_lift_two_runs_pts': 14.18}
+{'num_tasks': 25, 'baseline_rate_pct': 16.0, 'std_error_pct': 7.33, 'ci_95_half_width_pct': 14.37, 'multiplier_z_alpha_plus_z_power': 2.8016, 'min_detectable_lift_vs_fixed_baseline_pts': 20.54, 'min_detectable_lift_two_runs_pts': 29.05}
+{'num_tasks': 25, 'baseline_rate_pct': 72.0, 'std_error_pct': 8.98, 'ci_95_half_width_pct': 17.6, 'multiplier_z_alpha_plus_z_power': 2.8016, 'min_detectable_lift_vs_fixed_baseline_pts': 25.16, 'min_detectable_lift_two_runs_pts': 35.58}
+{'num_tasks': 58, 'baseline_rate_pct': 20.0, 'std_error_pct': 5.25, 'ci_95_half_width_pct': 10.29, 'multiplier_z_alpha_plus_z_power': 2.8016, 'min_detectable_lift_vs_fixed_baseline_pts': 14.71, 'min_detectable_lift_two_runs_pts': 20.81}
+== 58-task {"paper": "SE = 5.25%, 95% Wilson CI width +/-9.8 pts (PDF p1, item 2)", "se_pct": 5.252257314388903, "wald_half_width_pct": 10.29442433620225, "k_recovered": 12, "wilson": {"successes": 12, "total": 58, "rate_pct": 20.69, "wilson_low_pct": 12.25, "wilson_high_pct": 32.77, "z": 1.959964, "formatted": "20.7% (95% Wilson CI [12.3%, 32.8%])"}, "wilson_half_widths_pts": [8.44, 12.08], "pts_per_task": 1.7241379310344827, "wilson_half_width_at_p0.20_pts": 10.142057703758368}
+== Wilcoxon [{"n_pairs": 25, "exact_min_two_sided_p": 5.960464477539063e-08, "normal_approx_max_z": 4.372373160976031, "normal_approx_min_p": 1.2290322210248409e-05}, {"n_pairs": 100, "exact_min_two_sided_p": 1.5777218104420236e-30, "normal_approx_max_z": 8.681770230106196, "normal_approx_min_p": 3.896559845095909e-18}]
+== Wilson full precision {'51/129': (np.float64(31.51773752801282), np.float64(48.157282424573005)), '25/129': (np.float64(13.485549675617492), np.float64(27.04506425972622)), '4/25': (np.float64(6.40345145667644), np.float64(34.653621607178856))}
+== 58-task Wilson half-width at p=.2 10.142057703758368
+== McNemar best case per step
+   {'comparison': 'M1 vs M0', 'b': 3, 'c': 0, 'best_case_p': 0.25}
+   {'comparison': 'M2 vs M1', 'b': 4, 'c': 0, 'best_case_p': 0.125}
+   {'comparison': 'M3 vs M2', 'b': 3, 'c': 0, 'best_case_p': 0.25}
+   {'comparison': 'M4 vs M3', 'b': 2, 'c': 0, 'best_case_p': 0.5}
+   {'comparison': 'M5 vs M4', 'b': 2, 'c': 0, 'best_case_p': 0.5}
+   {'comparison': 'M6 vs M5', 'b': 2, 'c': 0, 'best_case_p': 0.5}
+   {'comparison': 'M6 vs M2 (tooling modules only)', 'b': 9, 'c': 0, 'best_case_p': 0.00390625}
+   {'comparison': 'sci-trap 5/5 vs 1/5 paired', 'b': 4, 'c': 0, 'best_case_p': 0.125}
+   {'comparison': 'T3 ccr_adaptive vs ccr_only paired', 'b': 6, 'c': 0, 'best_case_p': 0.03125}
+   {'comparison': 'T1 calibrated vs hidden-thinking paired', 'b': 16, 'c': 0, 'best_case_p': 3.0517578125e-05}
+== McNemar variants
+   T2 M6 vs M0 (paper 4.6e-5)
+      {'b': 16, 'c': 0, 'exact': '3.05e-05', 'mid_p': '1.53e-05', 'chi2': '6.33e-05', 'chi2_cc': '0.000177'}
+      {'b': 17, 'c': 1, 'exact': '0.000145', 'mid_p': '7.63e-05', 'chi2': '0.000162', 'chi2_cc': '0.000407'}
+      {'b': 18, 'c': 2, 'exact': '0.000402', 'mid_p': '0.000221', 'chi2': '0.000347', 'chi2_cc': '0.000796'}
+      {'b': 19, 'c': 3, 'exact': '0.000855', 'mid_p': '0.000488', 'chi2': '0.000647', 'chi2_cc': '0.00138'}
+   T1 calibrated vs baseline (paper 1.8e-6)
+      {'b': 30, 'c': 2, 'exact': '2.46e-07', 'mid_p': '1.31e-07', 'chi2': '7.43e-07', 'chi2_cc': '1.82e-06'}
+      {'b': 31, 'c': 3, 'exact': '7.66e-07', 'mid_p': '4.18e-07', 'chi2': '1.57e-06', 'chi2_cc': '3.65e-06'}
+      {'b': 32, 'c': 4, 'exact': '1.94e-06', 'mid_p': '1.08e-06', 'chi2': '3.06e-06', 'chi2_cc': '6.8e-06'}
+      {'b': 33, 'c': 5, 'exact': '4.26e-06', 'mid_p': '2.43e-06', 'chi2': '5.57e-06', 'chi2_cc': '1.19e-05'}
+      {'b': 34, 'c': 6, 'exact': '8.36e-06', 'mid_p': '4.87e-06', 'chi2': '9.55e-06', 'chi2_cc': '1.96e-05'}
+== Arithmetic
+  PAPER.md abstract 24.1% vs 31/129: 24.03
+  2.1x gain = 31/15: 2.067
+  'double' 11.6->24.x ratio of rates: 2.067
+  -93% compaction = 1 - 4.7/68.2: 93.1
+  -24.2 pts compaction M0->M1: 24.2
+  +21.7 pts Stage-1: 21.7
+  +80 pts Trap-25: 80.0
+  22.4-pt tax = 39.5-17.1 (k): 22.5
+  29 solvable tasks lost = 51-22: 29
+  'recovers half that 29-task gap': M6-M2 tasks: 9
+  fraction of 29-task gap recovered (M6-M2)/29: 0.31
+  fraction of M0->Stage1 gap recovered (31-15)/(51-15): 0.444
+  Table 3 think-token rel %: {'baseline_static': 0.0, 'naive_subagent': 13.0, 'ccr_only': -20.7, 'ccr_adaptive': -45.1}
+  Table 3 post-reset KV rel %: {'baseline_static': 0.0, 'naive_subagent': 19.1, 'ccr_only': -46.7, 'ccr_adaptive': -70.8}
+  937 turns = 25 * sum(avg turns): 937.0
+  100 episodes = 4 configs * 25 traps: 100
+  87.5% = 1 - 512/4096: 87.5
+  -66.3% VRAM = 1 - 18.4/54.6: 66.3
+  4.51 bits? log2(0.72/0.06): 3.585
+  1-of-3 adapters pass = 0.33?: 0.33

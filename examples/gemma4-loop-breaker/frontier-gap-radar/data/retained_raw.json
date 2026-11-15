@@ -1,0 +1,622 @@
+[
+ {
+  "src": "openalex",
+  "openalex": "W7117557793",
+  "doi": "10.48550/arxiv.2512.22087",
+  "title": "Context as a Tool: Context Management for Long-Horizon SWE-Agents",
+  "year": 2025,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 35,
+  "abstract": "Agents based on large language models have recently shown strong potential on real-world software engineering (SWE) tasks that require long-horizon interaction with repository-scale codebases. However, most existing agents rely on append-only context maintenance or passively triggered compression heuristics, which often lead to context explosion, semantic drift, and degraded reasoning in long-running interactions. We propose CAT, a new context management paradigm that elevates context maintenance to a callable tool integrated into the decision-making process of agents. CAT formalizes a structured context workspace consisting of stable task semantics, condensed long-term memory, and high-fidelity short-term interactions, and enables agents to proactively compress historical trajectories into actionable summaries at appropriate milestones. To support context management for SWE-agents, we propose a trajectory-level supervision framework, CAT-GENERATOR, based on an offline data construction pipeline that injects context-management actions into complete interaction trajectories. Using this framework, we train a context-aware model, SWE-Compressor. Experiments on SWE-Bench-Verified demonstrate that SWE-Compressor reaches a 57.6% solved rate and significantly outperforms ReAct-based agents and static compression baselines, while maintaining stable and scalable long-horizon reasoning under a bounded context budget.",
+  "authors": [
+   "Shukai Liu",
+   "Jian Yang",
+   "Bo Jiang",
+   "Yizhi Li",
+   "Jinyang Guo",
+   "Xianglong Liu",
+   "Bryan Dai"
+  ],
+  "facet": "F1_context",
+  "query": "context management coding agent long horizon software engineering",
+  "facets": [
+   "F1_context"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7125680675",
+  "doi": "10.48550/arxiv.2601.16746",
+  "title": "SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents",
+  "year": 2026,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 68,
+  "abstract": "LLM agents have demonstrated remarkable capabilities in software development, but their performance is hampered by long interaction contexts, which incur high API costs and latency. While various context compression approaches such as LongLLMLingua have emerged to tackle this challenge, they typically rely on fixed metrics such as PPL, ignoring the task-specific nature of code understanding. As a result, they frequently disrupt syntactic and logical structure and fail to retain critical implementation details. In this paper, we propose SWE-Pruner, a self-adaptive context pruning framework tailored for coding agents. Drawing inspiration from how human programmers \"selectively skim\" source code during development and debugging, SWE-Pruner performs task-aware adaptive pruning for long contexts. Given the current task, the agent formulates an explicit goal (e.g., \"focus on error handling\") as a hint to guide the pruning targets. A lightweight neural skimmer (0.6B parameters) is trained to dynamically select relevant lines from the surrounding context given the goal. Evaluations across four benchmarks and multiple models validate SWE-Pruner's effectiveness in various scenarios, achieving 23-54% token reduction on agent tasks like SWE-Bench Verified while even improving success rates, and up to 14.84x compression on single-turn tasks like LongCodeQA with minimal performance impact.",
+  "authors": [
+   "Yuhang Wang",
+   "Yanan Shi",
+   "Mo Yang",
+   "Rongrui Zhang",
+   "Shilin He",
+   "Heng Lian",
+   "Yuting Chen",
+   "Siyu Ye"
+  ],
+  "facet": "F1_context",
+  "query": "context compression LLM agent observation pruning SWE-bench",
+  "facets": [
+   "F1_context",
+   "F2_recovery",
+   "F3_graph"
+  ]
+ },
+ {
+  "src": "arxiv",
+  "arxiv": "2610.02163",
+  "doi": "10.48550/arxiv.2610.02163",
+  "title": "AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents",
+  "year": 2026,
+  "venue": "arXiv (Cornell University)",
+  "abstract": "Coding agents solve repository-level software engineering tasks through long trajectories of code inspection, search, editing, and testing. As a task progresses, earlier exploration becomes stale, so managing context is more than avoiding overflow: an agent must decide when to compact, what working state to preserve, and how to continue from it. We introduce AutoCompact, which trains a coding agent to make these decisions as part of its policy. To collect training data, we run the base agent on coding tasks and use a judge to review its compaction decisions, summaries, and actions after compaction. Flawed outputs are replaced with corrected ones before being executed in the environment, so each trajectory continues from the corrected decisions. We use these trajectories for supervised fine-tuning, then jointly optimize coding and compaction through reinforcement learning with task-success rewards. Experiments on SWE-bench Verified and SWE-PolyBench Verified show that AutoCompact improves pass rates over the base model by an absolute 9.2\\% and 5.0\\%, respectively. The improvements hold across all evaluated inference budgets, with a 256K context window that never overflows and with a 16K window whose overflow triggers fallback compaction.",
+  "authors": [
+   "Xuan Zhang",
+   "Longtao Zheng",
+   "Cunxiao Du",
+   "Bo An",
+   "Xin Dong"
+  ],
+  "facet": "F1_context",
+  "query": "context management coding agent long horizon software engineering",
+  "facets": [
+   "F1_context"
+  ],
+  "openalex": "W7215726049",
+  "type": "preprint",
+  "cited_by": 4
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4415332588",
+  "doi": "10.1145/3797084",
+  "title": "Reducing Cost of LLM Agents with Trajectory Reduction",
+  "year": 2026,
+  "venue": "Proceedings of the ACM on software engineering.",
+  "type": "article",
+  "cited_by": 76,
+  "abstract": "Multi-turn agent systems based on Large Language Models (LLMs) have become increasingly popular for software engineering tasks. While LLM agents demonstrate promising effectiveness, the high computational cost of input tokens due to ever-growing trajectories remains a significant efficiency concern. Efficiency has been largely overlooked in existing studies and agent products, and this paper addresses this gap by introducing an inference-time trajectory reduction approach that reduces computational costs. By analyzing existing agent trajectories, we demonstrate that useless, redundant, and expired information is widespread across trajectories. Such waste can be identified and reduced without compromising the agent's performance. We propose a simple yet effective trajectory reduction approach, AgentDiet, which automatically removes such waste during agent execution. We implement AgentDiet on a top-performing coding agent, and our evaluation on two LLMs and two benchmarks shows that AgentDiet can reduce input tokens by 39.9%-59.7% and the total computational cost by 21.1%-35.9%, while maintaining the same agent performance. These results indicate that inference-time trajectory reduction is a promising direction for agent systems.",
+  "authors": [
+   "Yuan-an Xiao",
+   "Pengfei Gao",
+   "Chao Peng",
+   "Yingfei Xiong"
+  ],
+  "facet": "F1_context",
+  "query": "context compression LLM agent observation pruning SWE-bench",
+  "facets": [
+   "F1_context",
+   "F5_small"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7154351780",
+  "doi": "10.48550/arxiv.2604.10235",
+  "title": "CodeComp: Structural KV Cache Compression for Agentic Coding",
+  "year": 2026,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 1,
+  "abstract": "Agentic code tasks such as fault localization and patch generation require processing long codebases under tight memory constraints, where the Key-Value (KV) cache becomes the primary inference bottleneck. Existing compression methods rely exclusively on attention signals to estimate token importance, systematically discarding structurally critical tokens such as call sites, branch conditions, and assignments that are essential for code understanding. We present CodeComp, a training-free KV cache compression framework that incorporates static program analysis into LLM inference via Code Property Graph priors extracted by Joern. Across bug localization and code generation benchmarks, CodeComp consistently outperforms attention-only compression baselines under equal memory budgets, recovering the majority of full-context accuracy under aggressive KV cache compression, while matching the patch generation quality of uncompressed full-context inference and integrating seamlessly into SGLang-based agentic coding pipelines without model modification.",
+  "authors": [
+   "Qiujiang Chen",
+   "Jing Xiong",
+   "Chenyang Zhao",
+   "Sidi Yang",
+   "Ngai Wong"
+  ],
+  "facet": "F1_context",
+  "query": "KV cache compression long context agent",
+  "facets": [
+   "F1_context"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7167425954",
+  "doi": "10.1145/3805760.3814911",
+  "title": "Wink: Recovering from Misbehaviors in Coding Agents",
+  "year": 2026,
+  "venue": "ACM International Conference on AI-Powered Software (AIware)",
+  "type": "conference-paper",
+  "cited_by": 25,
+  "abstract": "Autonomous coding agents, powered by large language models (LLMs), are increasingly being adopted in the software industry to automate complex engineering tasks. However, these agents are prone to a wide range of misbehaviors, such as deviating from the user's instructions, getting stuck in repetitive loops, or failing to use tools correctly. These failures disrupt the development workflow and often require resource-intensive manual intervention. In this paper, we present a system for automatically recovering from agentic misbehaviors at scale. We first introduce a taxonomy of misbehaviors grounded in an analysis of production traffic, identifying three primary categories: Specification Drift, Reasoning Problems, and Tool Call Failures, which we find occur in about 30% of all agent trajectories.",
+  "authors": [
+   "Rahul Nanda",
+   "Chandra Maddila",
+   "Smriti Jha",
+   "Euna Mehnaz Khan",
+   "Matteo Paltenghi",
+   "Satish Chandra"
+  ],
+  "facet": "F2_recovery",
+  "query": "coding agent stuck repeated edits loop detection",
+  "facets": [
+   "F2_recovery"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7172523833",
+  "doi": "10.48550/arxiv.2608.03222",
+  "title": "Fail-Fast, Restart-Smart: Early Failure Prediction and Restart for SWE Agentic Tasks",
+  "year": 2026,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 9,
+  "abstract": "Software engineering (SWE) agents resolve repository-level issues through long trajectories that grow increasingly expensive as context accumulates. Failed runs tend to be longer and exhibit redundant exploration or looping, suggesting that some failures may be detectable before completion. Early termination, however, risks interrupting trajectories that would otherwise succeed; conversely, an unsuccessful trajectory may still contain useful repository edits. We present FailFast-RestartSmart, a two-stage controller for a single active trajectory. FailFast is a lightweight 0.6B monitor trained with terminal and dense fail-to-pass supervision to predict failure from observable prefixes without policy logits or hidden states. Upon an alarm, RestartSmart launches a fresh same-policy rollout without prior prompt history and offers the interrupted repository diff as an optional overlay that the agent may inspect, apply, or discard. On SWE-bench Verified, a monitor trained solely on Qwen3.6-27B trajectories transfers to three other policies, including a closed-API model, and saves 14.6%-20.4% of execution tokens at a target 5% false-positive rate; on Qwen3.6-27B, its 20.4% saving exceeds the 12.5% achieved by our per-step AgentStop adaptation. At a target 25% false-positive rate, RestartSmart raises Qwen3.6-27B resolution from 66.6% to 71.8%, whereas cold restart reaches only 66.8%. Together, these results support early termination with sequential same-policy recovery.",
+  "authors": [
+   "Chenyu Wang",
+   "Yunbo Lyu",
+   "Junda He",
+   "Zhou Yang",
+   "Chenxing Zhong",
+   "Yaniv Harel",
+   "David Lo"
+  ],
+  "facet": "F2_recovery",
+  "query": "agent trajectory failure analysis SWE-bench why agents fail",
+  "facets": [
+   "F2_recovery"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4416711632",
+  "doi": "10.48550/arxiv.2509.02360",
+  "title": "When Agents go Astray: Course-Correcting SWE Agents with PRMs",
+  "year": 2025,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 30,
+  "abstract": "Large Language Model (LLM) agents are increasingly deployed for complex, multi-step software engineering (SWE) tasks. However, their trajectories often contain costly inefficiencies, such as redundant exploration, looping, and failure to terminate once a solution is reached. Prior work has largely treated these errors in a post-hoc manner, diagnosing failures only after execution. In this paper, we introduce SWE-PRM, an inference-time Process Reward Model (PRM) that intervenes during execution to detect and course-correct trajectory-level errors. Our PRM design leverages a taxonomy of common inefficiencies and delivers lightweight, interpretable feedback without modifying the underlying policy. On SWE-bench Verified, closed-source PRMs improve resolution from 40.0% to 50.6% (+10.6 p.p.), with the largest gains on medium and hard tasks. Among feedback strategies, taxonomy-guided PRMs outperform unguided or explicit action-prescriptive variants, increasing success rate while reducing trajectory length. These benefits come at an acceptable added inference cost of as low as $0.2, making PRMs a practical and scalable mechanism for improving SWE agents' reliability and efficiency.",
+  "authors": [
+   "Gandhi, Shubham",
+   "Jason Tsay",
+   "Jatin Ganhotra",
+   "Kiran Kate",
+   "Yara Rizk"
+  ],
+  "facet": "F2_recovery",
+  "query": "agent trajectory failure analysis SWE-bench why agents fail",
+  "facets": [
+   "F2_recovery"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4404342086",
+  "doi": "10.48550/arxiv.2410.20285",
+  "title": "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+  "year": 2024,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 111,
+  "abstract": "Software engineers operating in complex and dynamic environments must continuously adapt to evolving requirements, learn iteratively from experience, and reconsider their approaches based on new insights. However, current large language model (LLM)-based software agents often follow linear, sequential processes that prevent backtracking and exploration of alternative solutions, limiting their ability to rethink their strategies when initial approaches prove ineffective. To address these challenges, we propose SWE-Search, a multi-agent framework that integrates Monte Carlo Tree Search (MCTS) with a self-improvement mechanism to enhance software agents' performance on repository-level software tasks. SWE-Search extends traditional MCTS by incorporating a hybrid value function that leverages LLMs for both numerical value estimation and qualitative evaluation. This enables self-feedback loops where agents iteratively refine their strategies based on both quantitative numerical evaluations and qualitative natural language assessments of pursued trajectories. The framework includes a SWE-Agent for adaptive exploration, a Value Agent for iterative feedback, and a Discriminator Agent that facilitates multi-agent debate for collaborative decision-making. Applied to the SWE-bench benchmark, our approach demonstrates a 23% relative improvement in performance across five models compared to standard open-source agents without MCTS. Our analysis reveals how performance scales with increased inference-time compute through deeper search, providing a pathway to improve software agents without requiring larger models or additional training data. This highlights the potential of self-evaluation driven search techniques in complex software engineering environments.",
+  "authors": [
+   "Antonis Antoniades",
+   "Albert \u00d6rwall",
+   "Kexun Zhang",
+   "Yuxi Xie",
+   "Anirudh Goyal",
+   "William Yang Wang"
+  ],
+  "facet": "F2_recovery",
+  "query": "agent trajectory failure analysis SWE-bench why agents fail",
+  "facets": [
+   "F2_recovery",
+   "F3_graph",
+   "F6_scaffold"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4415935825",
+  "doi": "10.48550/arxiv.2511.00197",
+  "title": "Understanding Code Agent Behaviour: An Empirical Study of Success and Failure Trajectories",
+  "year": 2025,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 38,
+  "abstract": "The increasing deployment of Large Language Model (LLM) agents for complex software engineering tasks has created a need to understand their problem-solving behaviours beyond simple success metrics. While these agents demonstrate impressive capabilities in automated issue resolution, their decision-making processes remain largely opaque. This paper presents an empirical study of agent trajectories, namely the execution traces capturing the steps agents take when attempting to resolve software issues. We analyse trajectories from three state-of-the-art code agents (OpenHands, SWE-agent, and Prometheus) on the SWE-Bench benchmark, examining both successful and failed attempts. Our investigation reveals several key insights into agent behaviour. First, we identify how distinct problem-solving strategies, such as defensive programming and context gathering, enable success in different scenarios. Second, we find that failed trajectories are consistently longer and exhibit higher variance than successful ones, with failure patterns differing significantly between agents. Third, our fault localisation analysis shows that while most trajectories correctly identify problematic files (72-81\\% even in failures), success depends more on achieving approximate rather than exact code modifications. These and other findings unveiled by our study, provide a foundation for understanding agent behaviour through trajectory analysis, contributing to the development of more robust and interpretable autonomous software engineering systems.",
+  "authors": [
+   "Oorja Majgaonkar",
+   "Zhiwei Fei",
+   "Xiang Li",
+   "Federica Sarro",
+   "He Ye"
+  ],
+  "facet": "F2_recovery",
+  "query": "agent trajectory failure analysis SWE-bench why agents fail",
+  "facets": [
+   "F2_recovery"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7160926458",
+  "doi": "10.1145/3832783.3834492",
+  "title": "Debugging the Debuggers: Failure-Anchored Structured Recovery for Software Engineering Agents",
+  "year": 2026,
+  "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+  "type": "conference-paper",
+  "cited_by": 5,
+  "abstract": "Software engineering agents are increasingly deployed in evaluable engineering environments, yet post-failure recovery remains costly, manual, and largely ad hoc. Existing systems expose traces for inspection or generate follow-up feedback, but they do not turn heterogeneous runtime evidence into grounded, bounded recovery guidance for a subsequent attempt. We present PROBE, a failure-anchored framework for structured recovery in software engineering agents. PROBE organizes failed-run telemetry into structured evidence, structured diagnosis, and bounded recovery guidance, realized by a Telemetry Layer, a Diagnosis Layer, and a Guidance Gate. The Telemetry Layer preserves fine-grained runtime signals, the Diagnosis Layer fuses cross-signal evidence into a grounded diagnosis, and the Guidance Gate constructs diagnosis-derived recovery guidance only when it is evidence-grounded, actionable, and within the scope of agent-side behavior.",
+  "authors": [
+   "Chenyu Zhao",
+   "Shenglin Zhang",
+   "Yihang Lin",
+   "Wenwei Gu",
+   "Zhimin Chen",
+   "Yongqian Sun",
+   "Dan Pei",
+   "Chetan Bansal"
+  ],
+  "facet": "F2_recovery",
+  "query": "LLM agent loop repetitive actions failure recovery software engineering",
+  "facets": [
+   "F2_recovery"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4415101712",
+  "doi": "10.48550/arxiv.2503.09089",
+  "title": "LocAgent: Graph-Guided LLM Agents for Code Localization",
+  "year": 2025,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 49,
+  "abstract": "Code localization--identifying precisely where in a codebase changes need to be made--is a fundamental yet challenging task in software maintenance. Existing approaches struggle to efficiently navigate complex codebases when identifying relevant code sections. The challenge lies in bridging natural language problem descriptions with the appropriate code elements, often requiring reasoning across hierarchical structures and multiple dependencies. We introduce LocAgent, a framework that addresses code localization through graph-based representation. By parsing codebases into directed heterogeneous graphs, LocAgent creates a lightweight representation that captures code structures (files, classes, functions) and their dependencies (imports, invocations, inheritance), enabling LLM agents to effectively search and locate relevant entities through powerful multi-hop reasoning. Experimental results on real-world benchmarks demonstrate that our approach significantly enhances accuracy in code localization. Notably, our method with the fine-tuned Qwen-2.5-Coder-Instruct-32B model achieves comparable results to SOTA proprietary models at greatly reduced cost (approximately 86% reduction), reaching up to 92.7% accuracy on file-level localization while improving downstream GitHub issue resolution success rates by 12% for multiple attempts (Pass@10). Our code is available at https://github.com/gersteinlab/LocAgent.",
+  "authors": [
+   "Zhaoling Chen",
+   "Xiangru Tang",
+   "Gangda Deng",
+   "Fang Wu",
+   "Jialong Wu",
+   "Zhiwei Jiang",
+   "Viktor K. Prasanna",
+   "Arman Cohan"
+  ],
+  "facet": "F3_graph",
+  "query": "code graph retrieval repository level issue localization LLM",
+  "facets": [
+   "F3_graph",
+   "F6_scaffold"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4404087993",
+  "doi": "10.48550/arxiv.2410.14684",
+  "title": "RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph",
+  "year": 2024,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 74,
+  "abstract": "Large Language Models (LLMs) excel in code generation yet struggle with modern AI software engineering tasks. Unlike traditional function-level or file-level coding tasks, AI software engineering requires not only basic coding proficiency but also advanced skills in managing and interacting with code repositories. However, existing methods often overlook the need for repository-level code understanding, which is crucial for accurately grasping the broader context and developing effective solutions. On this basis, we present RepoGraph, a plug-in module that manages a repository-level structure for modern AI software engineering solutions. RepoGraph offers the desired guidance and serves as a repository-wide navigation for AI software engineers. We evaluate RepoGraph on the SWE-bench by plugging it into four different methods of two lines of approaches, where RepoGraph substantially boosts the performance of all systems, leading to a new state-of-the-art among open-source frameworks. Our analyses also demonstrate the extensibility and flexibility of RepoGraph by testing on another repo-level coding benchmark, CrossCodeEval. Our code is available at https://github.com/ozyyshr/RepoGraph.",
+  "authors": [
+   "Siru Ouyang",
+   "Wenhao Yu",
+   "Kaixin Ma",
+   "Zilin Xiao",
+   "Zhihan Zhang",
+   "Mengzhao Jia",
+   "Jiawei Han",
+   "Hongming Zhang"
+  ],
+  "facet": "F3_graph",
+  "query": "code graph retrieval repository level issue localization LLM",
+  "facets": [
+   "F3_graph"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4416453608",
+  "doi": "10.52202/085713-0537",
+  "title": "Code Graph Model (CGM): A Graph-Integrated Large Language Model for Repository-Level Software Engineering Tasks",
+  "year": 2025,
+  "venue": "neural information processing systems",
+  "type": "conference-paper",
+  "cited_by": 39,
+  "abstract": "Recent advances in Large Language Models (LLMs) have shown promise in function-level code generation, yet repository-level software engineering tasks remain challenging. Current solutions predominantly rely on proprietary LLM agents, which introduce unpredictability and limit accessibility, raising concerns about data privacy and model customization. This paper investigates whether open-source LLMs can effectively address repository-level tasks without requiring agent-based approaches. We demonstrate this is possible by enabling LLMs to comprehend functions and files within codebases through their semantic information and structural dependencies. To this end, we introduce Code Graph Models (CGMs), which integrate repository code graph structures into the LLM's attention mechanism and map node attributes to the LLM's input space using a specialized adapter. When combined with an agentless graph RAG framework, our approach achieves a 43.00% resolution rate on the SWE-bench Lite benchmark using the open-source Qwen2.5-72B model. This performance ranks first among open weight models, second among methods with open-source systems, and eighth overall, surpassing the previous best open-source model-based method by 12.33%.",
+  "authors": [
+   "Hongyuan Tao",
+   "Ying Zhang",
+   "Zhenhao Tang",
+   "Hongen Peng",
+   "Xukun Zhu",
+   "Bingchang Liu",
+   "Yingguang Yang",
+   "Ziyin Zhang"
+  ],
+  "facet": "F3_graph",
+  "query": "code graph retrieval repository level issue localization LLM",
+  "facets": [
+   "F3_graph"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7125926949",
+  "doi": "10.1109/ase63991.2025.00249",
+  "title": "Issue Localization via LLM-Driven Iterative Code Graph Searching",
+  "year": 2025,
+  "venue": "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+  "type": "conference-paper",
+  "cited_by": 53,
+  "abstract": "Issue solving aims to generate patches to fix re-ported issues in real-world code repositories according to issue descriptions. Issue localization forms the basis for accurate issue solving. Recently, large language model (LLM) based issue localization methods have demonstrated state-of-the-art performance. However, these methods either search from files mentioned in issue descriptions or in the whole repository and struggle to balance the breadth and depth of the search space to converge on the target efficiently. Moreover, they allow LLM to explore whole repositories freely, making it challenging to control the search direction to prevent the LLM from searching for incorrect targets. Meanwhile, because LLMs may not correctly produce the required interaction formats with the environment, they suffer from search failures.This paper introduces COSIL, an LLM-driven, powerful function-level issue localization method without training or indexing. To balance search breadth and depth, COSIL employs a two-phase code graph search strategy. It first conducts broad exploration at the file level using dynamically constructed module call graphs, and then performs in-depth analysis at the function level by expanding the module call graph into a function call graph and executing iterative searches. To precisely control the search direction, COSIL designs a pruner to filter unrelated directions and irrelevant contexts. To avoid incorrect interaction formats in long contexts, COSIL introduces a reflection mechanism that uses additional independent queries in short contexts to enhance formatted abilities. Experiment results demonstrate that COSIL achieves a Top-1 localization accuracy of 43.3% and 44.6% on SWE-bench Lite and SWE-bench Verified, respectively, with Qwen2.5-Coder-32B, average outperforming the state-of-the-art methods by 96.04%. When COSIL is integrated into an issue-solving method, Agentless, the issue resolution rate improves by 2.98%\u201330.5%.",
+  "authors": [
+   "Zhonghao Jiang",
+   "Xiaoxue Ren",
+   "Meng Ling Yan",
+   "Wei Jiang",
+   "Yong Li",
+   "Zhongxin Liu"
+  ],
+  "facet": "F3_graph",
+  "query": "code graph retrieval repository level issue localization LLM",
+  "facets": [
+   "F3_graph",
+   "F6_scaffold"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7223971351",
+  "doi": "10.66977/xsci.2610.0030",
+  "title": "How Do Small Coding Agents Use Code Graphs and Embeddings?",
+  "year": 2026,
+  "venue": null,
+  "type": "preprint",
+  "cited_by": 0,
+  "abstract": "Coding agents are given embedding search and code-graph tools on the premise that a repository's structure is something the model lacks and the tool supplies. We test that premise on SWE-bench Verified with small open-weight models, stratifying tasks by a deterministic hop depth (the shortest code-graph path from code the issue mentions to code the gold patch changes) that a companion paper defines and validates. First, we ablate a localization agent's tool set (grep only; +embedding search; +graph tools; all) on a depth-balanced 160-task split and on all 500 tasks for ten models (six Qwen3 sizes from 0.6B to 32B with five decodings each, an FP8 control, three Gemma 4 sizes; 79k episodes). Structured tools double grep-only accuracy for Qwen3-8B and Gemma 4 E4B; their gain peaks at 17-21 points at 1.7-4B and falls to 4-5 points at 32B (odds ratio 0.77-0.82 per doubling of parameters). From 8B up, about half of that gain is the form of the submission rather than finding the target; the fall from 14B to 32B is a fall in tool uptake at equal grep-only accuracy; and the same 4B size gains or does not gain from a tool depending on the checkpoint. Each extra hop multiplies the odds of correct localization by 0.50-0.67 at every size, and no tool set flattens that gradient: traces show the graph tools' gain is name lookup at hop 0 and one expansion at hop 1, and agents chain expansions in only 12-14% of episodes. A fixed repair model resolves 6-13 of 160 tasks from these localizations (oracle 26). Second, linear probes find direct call edges decodable under a within-anchor, degree-stratified protocol (AUC 0.74; 0.61-0.66 inside agent conversations), but below a lexical baseline (0.99), with two-hop edges at 0.57. Small agents carry a one-hop, largely lexical picture of their repository, in weights and in use. We release the agent, probes, logs and traces.",
+  "authors": [
+   "Saurav Bellam"
+  ],
+  "facet": "F3_graph",
+  "query": "graph-guided code search agent SWE-bench localization",
+  "facets": [
+   "F3_graph"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4387561453",
+  "doi": "10.48550/arxiv.2310.06770",
+  "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+  "year": 2023,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 2109,
+  "abstract": "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous.",
+  "authors": [
+   "Jimenez, Carlos E.",
+   "Yang, John",
+   "Alexander Wettig",
+   "Shunyu Yao",
+   "Kexin Pei",
+   "Ofir Press",
+   "Karthik Narasimhan"
+  ],
+  "facet": "F3_graph",
+  "query": "graph-guided code search agent SWE-bench localization",
+  "facets": [
+   "F3_graph",
+   "F4_bench",
+   "F5_small",
+   "F6_scaffold"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4405957747",
+  "doi": "10.48550/arxiv.2412.21139",
+  "title": "Training Software Engineering Agents and Verifiers with SWE-Gym",
+  "year": 2024,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 267,
+  "abstract": "We present SWE-Gym, the first environment for training real-world software engineering (SWE) agents. SWE-Gym contains 2,438 real-world Python task instances, each comprising a codebase with an executable runtime environment, unit tests, and a task specified in natural language. We use SWE-Gym to train language model based SWE agents, achieving up to 19% absolute gains in resolve rate on the popular SWE-Bench Verified and Lite test sets. We also experiment with inference-time scaling through verifiers trained on agent trajectories sampled from SWE-Gym. When combined with our fine-tuned SWE agents, we achieve 32.0% and 26.0% on SWE-Bench Verified and Lite, respectively, reflecting a new state-of-the-art for open-weight SWE agents. To facilitate further research, we publicly release SWE-Gym, models, and agent trajectories.",
+  "authors": [
+   "Jiayi Pan",
+   "Xingyao Wang",
+   "Graham Neubig",
+   "Navdeep Jaitly",
+   "Heng Ji",
+   "Alane Suhr",
+   "Yizhe Zhang"
+  ],
+  "facet": "F3_graph",
+  "query": "graph-guided code search agent SWE-bench localization",
+  "facets": [
+   "F3_graph",
+   "F5_small",
+   "F6_scaffold"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4417525566",
+  "doi": "10.52202/085713-3239",
+  "title": "SWE-smith: Scaling Data for Software Engineering Agents",
+  "year": 2025,
+  "venue": "neural information processing systems",
+  "type": "conference-paper",
+  "cited_by": 314,
+  "abstract": "Despite recent progress in Language Models (LMs) for software engineering, collecting training data remains a significant pain point. Existing datasets are small, with at most 1,000s of training instances from 11 or fewer GitHub repositories. The procedures to curate such datasets are often complex, necessitating hundreds of hours of human labor; companion execution environments also take up several terabytes of storage, severely limiting their scalability and usability. To address this pain point, we introduce SWE-smith, a novel pipeline for generating software engineering training data at scale. Given any Python codebase, SWE-smith constructs a corresponding execution environment, then automatically synthesizes 100s to 1,000s of task instances that break existing test(s) in the codebase. Using SWE-smith, we create a dataset of 50k instances sourced from 128 GitHub repositories, an order of magnitude larger than all previous works. We train SWE-agent-LM-32B, achieving 40.2% Pass@1 resolve rate on the SWE-bench Verified benchmark, state of the art among open source models. We open source SWE-smith (collection procedure, task instances, trajectories, models) to lower the barrier of entry for research in LM systems for automated software engineering. All assets available at https://swesmith.com.",
+  "authors": [
+   "John Yang",
+   "K. Lieret",
+   "Carlos Jimenez",
+   "Alexander Wettig",
+   "Kabir Khandpur",
+   "Yanzhe Zhang",
+   "Binyuan Hui",
+   "Ofir Press"
+  ],
+  "facet": "F2_recovery",
+  "query": "agent trajectory failure analysis SWE-bench why agents fail",
+  "facets": [
+   "F2_recovery",
+   "F3_graph",
+   "F5_small",
+   "F6_scaffold"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7131676563",
+  "doi": "10.48550/arxiv.2602.22124",
+  "title": "SWE-Prot\u00e9g\u00e9: Learning to Selectively Collaborate With an Expert Unlocks Small Language Models as Software Engineering Agents",
+  "year": 2026,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 8,
+  "abstract": "Small language models (SLMs) offer compelling advantages in cost, latency, and adaptability, but have so far lagged behind larger models on long-horizon software engineering tasks such as SWE-bench, where they suffer from pervasive action looping and low resolution rates. We introduce SWE-Prot\u00e9g\u00e9, a post-training framework that reframes software repair as an expert-prot\u00e9g\u00e9 collaboration problem. In SWE-Prot\u00e9g\u00e9, an SLM remains the sole decision-maker while learning to selectively seek guidance from a strong expert model, recognize stalled states, and follow through on expert feedback. Our approach combines supervised fine-tuning on expert-augmented trajectories with agentic reinforcement learning that explicitly discourages degenerative looping and unproductive expert collaboration. We lightly post-train Qwen2.5-Coder-7B-Instruct to achieve 42.4% Pass@1 on SWE-bench Verified, a +25.4% improvement over the prior SLM state of the art, while using expert assistance sparsely (~4 calls per task and 11% of total tokens).",
+  "authors": [
+   "Patrick Tser Jern Kon",
+   "Archana Pradeep",
+   "Ang Chen",
+   "Alexander P. Ellis",
+   "Warren A. Hunt",
+   "Zijian Wang",
+   "John Jeongseok Yang",
+   "Samuel Thompson"
+  ],
+  "facet": "F5_small",
+  "query": "small language models SWE-bench agent",
+  "facets": [
+   "F5_small"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7171740466",
+  "doi": "10.1145/3794763.3794810",
+  "title": "Evaluating the Impact of Post-Training Quantization on Large Language Models for Code Generation",
+  "year": 2026,
+  "venue": "IEEE International Conference on Program Comprehension (ICPC)",
+  "type": "conference-paper",
+  "cited_by": 11,
+  "abstract": "Large Language Models (LLMs) have shown an impressive capability in code generation. The LLM effectiveness generally increases with its size: The higher the number of LLM's trainable parameters the better its ability to implement code. However, when it comes to deploying LLM-based code generators, larger LLMs pose significant challenges related to their memory (and, consequently, carbon) footprint. A previous work by Wei et al. proposed to leverage quantization techniques to reduce the memory footprint of LLM-based code generators without substantially degrading their effectiveness. In short, they studied LLMs featuring up to 16B parameters, quantizing their precision from floating point 32 bits down to int 8 bits and showing their limited impact on code generation performance. Given the fast pace at which LLM capabilities and quantization techniques are evolving, in this work we present a differentiated replication of the work by Wei et al. in which we consider (i) on the one side, more recent and larger code-related LLMs, of up to 34B parameters; (ii) the latest advancements in model quantization techniques, which allow pushing the compression to the extreme quantization level of 2 bits per model parameter and; (iii) different types of calibration datasets to guide the quantization process, including code-specific ones. Our empirical evaluation reveals that the new frontier for LLM quantization is 4-bit precision, resulting in an average memory footprint reduction of 70% compared to the original model without observing any significant decrease in performance. Additionally, when the quantization becomes even more extreme (3 and 2 bits), a code-specific calibration dataset helps to limit the loss of performance.",
+  "authors": [
+   "Alessandro Giagnorio",
+   "Antonio Mastropaolo",
+   "Saima Afrin",
+   "Massimiliano Di Penta",
+   "Gabriele Bavota"
+  ],
+  "facet": "F5_small",
+  "query": "quantization large language model code generation accuracy",
+  "facets": [
+   "F5_small"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7225790577",
+  "doi": "10.48550/arxiv.2611.13410",
+  "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+  "year": 2026,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 0,
+  "abstract": "Low-bit quantization reduces the inference cost of LLM agents but can compromise task success. Examining failed rollouts, we find that quantized agents overlook task requirements or environmental conditions, producing environment transitions that diverge from successful full-precision references. Correcting these behavioral divergences remains difficult: offline data may miss the student's failure contexts, while its own rollouts may provide few correct responses in those contexts. We introduce SteerDistill, a quantization-aware distillation method in which a full-precision teacher guides the student to revise failed responses and iteratively refines its guidance using feedback from student execution. This closed-loop teacher steering produces locally verified behavioral corrections. We internalize these corrections by training the student without guidance to match the steered student's predictions at corrected turns and the full-precision teacher's at other turns, enabling unassisted inference. Across five agentic benchmarks and three models, SteerDistill exceeds the strongest quantized baseline by 1.67--2.18 points in average score under W4A16 and stays within one point of BF16. On $\u03c4^2$-Bench, it outperforms QeRL by 1.84 percentage points in success rate using 67% fewer training GPU hours and produces shorter successful trajectories than the quantized baselines.",
+  "authors": [
+   "Genming Cui",
+   "Xiangyu Li",
+   "Zixu Hao",
+   "Xin Ding",
+   "Yunxin Liu",
+   "Ting Cao"
+  ],
+  "facet": "F5_small",
+  "query": "low-bit quantization agentic capabilities benchmark",
+  "facets": [
+   "F5_small"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W7223657872",
+  "doi": "10.48550/arxiv.2610.32417",
+  "title": "Measuring the Energy Cost of Completing Tasks with Quantized Language-Model Agents",
+  "year": 2026,
+  "venue": "arXiv (Cornell University)",
+  "type": "preprint",
+  "cited_by": 0,
+  "abstract": "Quantization reduces the memory and energy needed to serve large language models (LLMs) and AI agents for coding and data analysis can now run on locally hosted LLMs. In practice, this benefit is commonly benchmarked per output token. Yet an agent calls its model repeatedly, runs tools, and revises its work, and quantization can change both how much the agent generates and whether it succeeds. Existing energy studies either compare quantized models on single requests or measure agents at one fixed precision, overlooking how a change in precision plays out across a complete agent task. To address this gap, this paper presents the first characterization of the task-level energy trade-offs of model quantization in locally hosted agents. We develop 29 agent tasks with automatic pass/fail checks in six families, ranging from single-answer SQL analytics to multi-step repository bug fixing, and measure CPU and GPU energy per output token and per completed task for 4-bit and 8-bit versions of two open-weight models on bare-metal NVIDIA A100 nodes with llama$.$cpp. Our findings reveal that 4-bit precision generally saves energy per token, though whether it saves energy per completed task is task dependent and changes with the model and the execution budget (i.e., limits on turns, tokens, and time). We trace this discrepancy to the extra tokens needed to complete a task in full, which translates into using up to 3.5 times as much energy per completed task. These findings offer actionable guidance for developers and operators choosing model precision for agents, showing how tokens per completed task, set against the per-token saving, reveal whether lower precision completes the work with less energy.",
+  "authors": [
+   "Stephen Abkin",
+   "Aldric Yang",
+   "Alex Flesher",
+   "Nitheesh Kodarapu",
+   "Deepak Panigrahy",
+   "Aakash Tyagi",
+   "David Kebo Houngninou"
+  ],
+  "facet": "F5_small",
+  "query": "quantized language model agent tool use multi-turn",
+  "facets": [
+   "F5_small"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4411449940",
+  "doi": "10.1145/3715754",
+  "title": "Demystifying LLM-Based Software Engineering Agents",
+  "year": 2025,
+  "venue": "Proceedings of the ACM on software engineering.",
+  "type": "article",
+  "cited_by": 876,
+  "abstract": "Recent advancements in large language models (LLMs) have significantly advanced the automation of software development tasks, including code synthesis, program repair, and test generation. More recently, researchers and industry practitioners have developed various autonomous LLM agents to perform end-to-end software development tasks. These agents are equipped with the ability to use tools, run commands, observe feedback from the environment, and plan for future actions. However, the complexity of these agent-based approaches, together with the limited abilities of current LLMs, raises the following question: Do we really have to employ complex autonomous software agents? To attempt to answer this question, we build Agentless \u2013 an agentless approach to automatically resolve software development issues. Compared to the verbose and complex setup of agent-based approaches, Agentless employs a simplistic three-phase process of localization, repair, and patch validation, without letting the LLM decide future actions or operate with complex tools. Our results on the popular SWE-bench Lite benchmark show that surprisingly the simplistic Agentless is able to achieve both the highest performance (32.00%, 96 correct fixes) and low cost ($0.70) compared with all existing open-source software agents at the time of paper submission! Agentless also achieves more than 50% solve rate when using Claude 3.5 Sonnet on the new SWE-bench Verified benchmark. In fact, Agentless has already been adopted by OpenAI as the go-to approach to showcase the real-world coding performance of both GPT-4o and the new o1 models; more recently, Agentless has also been used by DeepSeek to evaluate their newest DeepSeek V3 and R1 models . Furthermore, we manually classified the problems in SWE-bench Lite and found problems with exact ground truth patches or insufficient/misleading issue descriptions. As such, we construct SWE-bench Lite- S by excluding such problematic issues to perform more rigorous evaluation and comparison. Our work highlights the currently overlooked potential of a simplistic, cost-effective technique in autonomous software development. We hope Agentless will help reset the baseline, starting point, and horizon for autonomous software agents, and inspire future work along this crucial direction. We have open-sourced Agentless at: https://github.com/OpenAutoCoder/Agentless",
+  "authors": [
+   "Chunqiu Steven Xia",
+   "Yinlin Deng",
+   "Soren Dunn",
+   "Lingming Zhang"
+  ],
+  "facet": "F3_graph",
+  "query": "repository knowledge graph LLM agent code repair",
+  "facets": [
+   "F3_graph",
+   "F6_scaffold"
+  ]
+ },
+ {
+  "src": "openalex",
+  "openalex": "W4402442868",
+  "doi": "10.1145/3650212.3680384",
+  "title": "AutoCodeRover: Autonomous Program Improvement",
+  "year": 2024,
+  "venue": "ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)",
+  "type": "conference-paper",
+  "cited_by": 549,
+  "abstract": "Researchers have made significant progress in automating the software development process in the past decades. Automated techniques for issue summarization, bug reproduction, fault localization, and program repair have been built to ease the workload of developers. Recent progress in Large Language Models (LLMs) has significantly impacted the development process, where developers can use LLM-based programming assistants to achieve automated coding. Nevertheless, software engineering involves the process of program improvement apart from coding, specifically to enable software maintenance (e.g. program repair to fix bugs) and software evolution (e.g. feature additions). In this paper, we propose an automated approach for solving Github issues to autonomously achieve program improvement. In our approach called AutoCodeRover, LLMs are combined with sophisticated code search capabilities, ultimately leading to a program modification or patch. In contrast to recent LLM agent approaches from AI researchers and practitioners, our outlook is more software engineering oriented. We work on a program representation (abstract syntax tree) as opposed to viewing a software project as a mere collection of files. Our code search exploits the program structure in the form of classes/methods to enhance LLM\u2019s understanding of the issue\u2019s root cause, and effectively retrieve a context via iterative search. The use of spectrum-based fault localization using tests, further sharpens the context, as long as a test-suite is available. Experiments on the recently proposed SWE-bench-lite (300 real-life Github issues) show increased efficacy in solving Github issues (19% on SWE-bench-lite), which is higher than the efficacy of the recently reported Swe-agent. Interestingly, our approach resolved 57 GitHub issues in about 4 minutes each (pass@1), whereas developers spent more than 2.68 days on average. In addition, AutoCodeRover achieved this efficacy with significantly lower cost (on average, $0.43 USD), compared to other baselines. We posit that our workflow enables autonomous software engineering, where, in future, auto-generated code from LLMs can be autonomously improved.",
+  "authors": [
+   "Yuntong Zhang",
+   "Haifeng Ruan",
+   "Zhiyu Fan",
+   "Abhik Roychoudhury"
+  ],
+  "facet": "F6_scaffold",
+  "query": "autonomous program improvement agent GitHub issues",
+  "facets": [
+   "F6_scaffold"
+  ]
+ }
+]

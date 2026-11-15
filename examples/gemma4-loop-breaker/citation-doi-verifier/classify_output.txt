@@ -1,0 +1,19 @@
+VERIFIED (peer-reviewed): 3
+UPGRADE AVAILABLE (preprint → venue): 0
+VERIFIED (preprint only): 5
+UNVERIFIED / MISMATCH: 4
+peer-reviewed citation ratio: 3/12 = 0.250
+peer-reviewed among verified: 3/8 = 0.375
+ref2 author surnames also authoring other refs here: 5/10 ['Markowitz', 'Perozzi', 'Rozemberczki', 'Hemmati', 'Galkin']
+ref1 UNVERIFIED / MISMATCH 0.4 ['title (sim 0.4)', "first author (entry 'Google DeepMind', registry 'Gemma Team')"] ['add arXiv id 2607.02770']
+ref2 UNVERIFIED / MISMATCH None ['not found'] None
+ref3 VERIFIED (peer-reviewed) 1.0 [] []
+ref4 VERIFIED (peer-reviewed) 1.0 [] []
+ref5 VERIFIED (preprint only) 1.0 [] ['year entry 2024 vs registry 2023', 'claimed venue ICLR not found in Crossref/OpenAlex (only preprint record)']
+ref6 VERIFIED (preprint only) 1.0 [] []
+ref7 VERIFIED (preprint only) 0.9483 [] ['year entry 2024 vs registry 2023', 'claimed venue ICLR not found in Crossref/OpenAlex (only preprint record)']
+ref8 VERIFIED (peer-reviewed) 1.0 [] []
+ref9 UNVERIFIED / MISMATCH 1.0 ["first author (entry 'Taherkhani', registry 'Melika Sepidband')", 'author count (entry 3, registry 4)'] []
+ref10 VERIFIED (preprint only) 1.0 [] ['year entry 2025 vs registry 2024', 'claimed venue ICLR not found in Crossref/OpenAlex (only preprint record)', 'add arXiv id 2410.14684']
+ref11 VERIFIED (preprint only) 1.0 [] ['year entry 2024 vs registry 2023', 'claimed venue ICLR not found in Crossref/OpenAlex (only preprint record)', 'add arXiv id 2310.06770']
+ref12 UNVERIFIED / MISMATCH None ['not found'] None

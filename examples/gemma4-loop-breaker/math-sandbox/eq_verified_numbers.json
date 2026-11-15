@@ -1,0 +1,1076 @@
+{
+  "paper": "Breaking the 15-Minute Cliff in Quantized Gemma 4 Coding Agents (Mirbahar 2026)",
+  "primary_source": "paper/Robina_Mirbahar_Gemma4_SWE_Agent_Paper_2026.pdf (PAPER.md used where noted)",
+  "seed": 42,
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "verdict_counts": {
+    "VERIFIED": 37,
+    "NOT CHECKABLE": 7,
+    "MISMATCH": 5
+  },
+  "equations": [
+    {
+      "id": "E1_prop1_block_identity",
+      "operator_class": "definition",
+      "statement": "Attn_h(X)_N = [Z_A e^{L_A} + Z_B e^{L_B}] / [e^{L_A} + e^{L_B}] equals full softmax attention, with L = log-sum-exp of block logits and Z = within-block softmax average",
+      "paper_value": 0.0,
+      "paper_source": "PDF p.2 Sec 3.1 (Lemma 39 of [3]); PAPER.md Sec 3.1 display equation",
+      "computed": 2.220446049250313e-15,
+      "simulated": 2.220446049250313e-15,
+      "simulation": "2000 random (N, partition, logits, values) draws; max |full - block| over outputs and A-mass",
+      "abs_gap": 2.220446049250313e-15,
+      "tolerance": 1e-10,
+      "verdict": "VERIFIED",
+      "reason": "Exact identity once L and Z are read as log-sum-exp and within-block averages; the paper does not define L or Z."
+    },
+    {
+      "id": "E2_prop1_dilution_monotone",
+      "operator_class": "bound",
+      "statement": "As |B_t| grows, exp(L_B) dominates the denominator and attention mass on A falls",
+      "paper_value": "monotone decrease (qualitative)",
+      "paper_source": "PDF p.2 Sec 3.1 Proposition 1",
+      "computed": {
+        "B_sizes": [
+          0,
+          512,
+          2048,
+          8192,
+          13824
+        ],
+        "A_mass_closed_form_equal_logits": [
+          1.0,
+          0.5,
+          0.2,
+          0.0588,
+          0.0357
+        ]
+      },
+      "simulated": {
+        "A_mass_mean": [
+          1.0,
+          0.5,
+          0.1998,
+          0.0589,
+          0.0357
+        ],
+        "mc_se": [
+          0.0,
+          0.00109,
+          0.00053,
+          0.00017,
+          0.0001
+        ],
+        "strictly_decreasing": true
+      },
+      "simulation": "400 draws per |B| with per-token logits ~ N(0,1) in both blocks, |A| = 512 (illustrative, not from paper)",
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "VERIFIED",
+      "reason": "Direction verified. The Omega(r / log N) threshold is NOT CHECKABLE: r is never defined in the paper."
+    },
+    {
+      "id": "E3_dilution_bits",
+      "operator_class": "metric",
+      "statement": "Pruning B_t cuts softmax dilution from 0.72 to 0.06, recovering 4.51 bits of effective attention",
+      "paper_value": 4.51,
+      "paper_source": "PDF p.2 Sec 3.1; PAPER.md Sec 3.1",
+      "computed": {
+        "log2(d0/d1)": 3.585,
+        "log2((1-d1)/(1-d0))": 1.7472,
+        "-log2(d1)": 4.0589,
+        "-log2(d1)+log2(d0)": 3.585,
+        "H2(d0)-H2(d1) binary entropy": 0.528,
+        "log2(d0/(1-d0)) - log2(d1/(1-d1)) (log-odds)": 5.3322
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": 0.01,
+      "verdict": "NOT CHECKABLE",
+      "reason": "'Dilution' and 'bits of effective attention' are undefined. Of six natural readings the closest is -log2(d1) = 4.0589 bits; none reproduces 4.51. Source CSV graph_encoding_ablation_90.csv not provided."
+    },
+    {
+      "id": "E4_prop2_budget_cut",
+      "operator_class": "definition",
+      "statement": "thinking_budget 4096 -> 512 on D1 reads is an 87.5% cut",
+      "paper_value": 0.875,
+      "paper_source": "PDF p.2 Sec 3.1 Proposition 2",
+      "computed": 0.875,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.0,
+      "tolerance": 1e-09,
+      "verdict": "VERIFIED",
+      "reason": "Arithmetic only. Proposition 2 itself is never stated formally, so the budget mapping is NOT CHECKABLE."
+    },
+    {
+      "id": "E5_law1_noise_amplification",
+      "operator_class": "bound",
+      "statement": "exp((z_v + eps_v)/tau) amplifies eps ~ N(0, sigma_q^2) at tau = 0.2 relative to tau = 1.0",
+      "paper_value": "amplified at low tau (qualitative); logit-scale factor 1/tau = 5",
+      "paper_source": "PDF p.2 Sec 3.2; PAPER.md Sec 3.2",
+      "computed": {
+        "logit_noise_scale_tau0.2_over_tau1.0": 5.0
+      },
+      "simulated": {
+        "taus": [
+          0.1,
+          0.2,
+          0.25,
+          0.5,
+          0.75,
+          1.0,
+          1.5,
+          2.0
+        ],
+        "TV_mean": [
+          0.15229,
+          0.08718,
+          0.07198,
+          0.03884,
+          0.02613,
+          0.01974,
+          0.01322,
+          0.00992
+        ],
+        "mc_se": [
+          0.001225,
+          0.000525,
+          0.000371,
+          0.000115,
+          5.6e-05,
+          3.4e-05,
+          1.6e-05,
+          1e-05
+        ],
+        "TV_ratio_tau0.2_over_tau1.0": 4.416
+      },
+      "simulation": "4000 noise draws per tau, V = 256 toy vocab, z ~ N(0, 2^2), sigma_q = 0.05 (illustrative)",
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "VERIFIED",
+      "reason": "Direction verified for the sampled distribution. Caveat: under greedy decoding the argmax is tau-invariant, so the claim only bites when sampling. Link to the 17.8% -> 39.5% gain is empirical, not derived."
+    },
+    {
+      "id": "E6_rate_T1_row1",
+      "operator_class": "metric",
+      "statement": "23/129 = 17.8% with 95% Wilson CI [12.2, 25.3]",
+      "paper_value": {
+        "rate_pct": 17.8,
+        "ci": [
+          12.2,
+          25.3
+        ]
+      },
+      "paper_source": "PDF p.2 Table 1",
+      "computed": {
+        "rate_pct": 17.829,
+        "wilson_ci": [
+          12.185,
+          25.335
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 17.824,
+        "mc_se_pct": 0.0075
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.035 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T1_row2",
+      "operator_class": "metric",
+      "statement": "35/129 = 27.1% with 95% Wilson CI [20.2, 35.4]",
+      "paper_value": {
+        "rate_pct": 27.1,
+        "ci": [
+          20.2,
+          35.4
+        ]
+      },
+      "paper_source": "PDF p.2 Table 1",
+      "computed": {
+        "rate_pct": 27.132,
+        "wilson_ci": [
+          20.203,
+          35.383
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 27.133,
+        "mc_se_pct": 0.0087
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.032 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T1_row3",
+      "operator_class": "metric",
+      "statement": "51/129 = 39.5% with 95% Wilson CI [31.5, 48.1]",
+      "paper_value": {
+        "rate_pct": 39.5,
+        "ci": [
+          31.5,
+          48.1
+        ]
+      },
+      "paper_source": "PDF p.2 Table 1",
+      "computed": {
+        "rate_pct": 39.535,
+        "wilson_ci": [
+          31.518,
+          48.157
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 39.536,
+        "mc_se_pct": 0.0096
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "MISMATCH",
+      "reason": "max abs gap across rate and both CI ends = 0.057 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T2_M0",
+      "operator_class": "metric",
+      "statement": "15/129 = 11.6% with 95% Wilson CI [7.2, 18.3]",
+      "paper_value": {
+        "rate_pct": 11.6,
+        "ci": [
+          7.2,
+          18.3
+        ]
+      },
+      "paper_source": "PDF p.3 Table 2",
+      "computed": {
+        "rate_pct": 11.628,
+        "wilson_ci": [
+          7.175,
+          18.3
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 11.625,
+        "mc_se_pct": 0.0063
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.028 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T2_M1",
+      "operator_class": "metric",
+      "statement": "18/129 = 14.0% with 95% Wilson CI [9.0, 21.0]",
+      "paper_value": {
+        "rate_pct": 14.0,
+        "ci": [
+          9.0,
+          21.0
+        ]
+      },
+      "paper_source": "PDF p.3 Table 2",
+      "computed": {
+        "rate_pct": 13.953,
+        "wilson_ci": [
+          9.012,
+          20.98
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 13.961,
+        "mc_se_pct": 0.0068
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.047 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T2_M2",
+      "operator_class": "metric",
+      "statement": "22/129 = 17.1% with 95% Wilson CI [11.5, 24.5]",
+      "paper_value": {
+        "rate_pct": 17.1,
+        "ci": [
+          11.5,
+          24.5
+        ]
+      },
+      "paper_source": "PDF p.3 Table 2",
+      "computed": {
+        "rate_pct": 17.054,
+        "wilson_ci": [
+          11.541,
+          24.473
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 17.066,
+        "mc_se_pct": 0.0074
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.046 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T2_M3",
+      "operator_class": "metric",
+      "statement": "25/129 = 19.4% with 95% Wilson CI [13.5, 27.0]",
+      "paper_value": {
+        "rate_pct": 19.4,
+        "ci": [
+          13.5,
+          27.0
+        ]
+      },
+      "paper_source": "PDF p.3 Table 2",
+      "computed": {
+        "rate_pct": 19.38,
+        "wilson_ci": [
+          13.486,
+          27.045
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 19.373,
+        "mc_se_pct": 0.0078
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.045 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T2_M4",
+      "operator_class": "metric",
+      "statement": "27/129 = 20.9% with 95% Wilson CI [14.8, 28.7]",
+      "paper_value": {
+        "rate_pct": 20.9,
+        "ci": [
+          14.8,
+          28.7
+        ]
+      },
+      "paper_source": "PDF p.3 Table 2",
+      "computed": {
+        "rate_pct": 20.93,
+        "wilson_ci": [
+          14.802,
+          28.74
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 20.934,
+        "mc_se_pct": 0.008
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.040 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T2_M5",
+      "operator_class": "metric",
+      "statement": "29/129 = 22.5% with 95% Wilson CI [16.1, 30.4]",
+      "paper_value": {
+        "rate_pct": 22.5,
+        "ci": [
+          16.1,
+          30.4
+        ]
+      },
+      "paper_source": "PDF p.3 Table 2",
+      "computed": {
+        "rate_pct": 22.481,
+        "wilson_ci": [
+          16.133,
+          30.42
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 22.476,
+        "mc_se_pct": 0.0082
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.033 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T2_M6",
+      "operator_class": "metric",
+      "statement": "31/129 = 24.0% with 95% Wilson CI [17.5, 32.1]",
+      "paper_value": {
+        "rate_pct": 24.0,
+        "ci": [
+          17.5,
+          32.1
+        ]
+      },
+      "paper_source": "PDF p.3 Table 2",
+      "computed": {
+        "rate_pct": 24.031,
+        "wilson_ci": [
+          17.477,
+          32.087
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 24.025,
+        "mc_se_pct": 0.0084
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.031 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T3_baseline_static",
+      "operator_class": "metric",
+      "statement": "4/25 = 16.0% with 95% Wilson CI [6.4, 34.7]",
+      "paper_value": {
+        "rate_pct": 16.0,
+        "ci": [
+          6.4,
+          34.7
+        ]
+      },
+      "paper_source": "PDF p.4 Table 3",
+      "computed": {
+        "rate_pct": 16.0,
+        "wilson_ci": [
+          6.403,
+          34.654
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 15.997,
+        "mc_se_pct": 0.0164
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.046 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T3_naive_subagent",
+      "operator_class": "metric",
+      "statement": "5/25 = 20.0% with 95% Wilson CI [8.9, 39.1]",
+      "paper_value": {
+        "rate_pct": 20.0,
+        "ci": [
+          8.9,
+          39.1
+        ]
+      },
+      "paper_source": "PDF p.4 Table 3",
+      "computed": {
+        "rate_pct": 20.0,
+        "wilson_ci": [
+          8.861,
+          39.131
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 19.983,
+        "mc_se_pct": 0.0179
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.039 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T3_ccr_only",
+      "operator_class": "metric",
+      "statement": "18/25 = 72.0% with 95% Wilson CI [52.4, 85.7]",
+      "paper_value": {
+        "rate_pct": 72.0,
+        "ci": [
+          52.4,
+          85.7
+        ]
+      },
+      "paper_source": "PDF p.4 Table 3",
+      "computed": {
+        "rate_pct": 72.0,
+        "wilson_ci": [
+          52.423,
+          85.716
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 71.987,
+        "mc_se_pct": 0.0201
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.023 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6_rate_T3_ccr_adaptive",
+      "operator_class": "metric",
+      "statement": "24/25 = 96.0% with 95% Wilson CI [80.5, 99.3]",
+      "paper_value": {
+        "rate_pct": 96.0,
+        "ci": [
+          80.5,
+          99.3
+        ]
+      },
+      "paper_source": "PDF p.4 Table 3",
+      "computed": {
+        "rate_pct": 96.0,
+        "wilson_ci": [
+          80.456,
+          99.29
+        ]
+      },
+      "simulated": {
+        "bootstrap_mean_pct": 95.998,
+        "mc_se_pct": 0.0088
+      },
+      "simulation": "200,000 binomial draws at p = k/n",
+      "abs_gap": null,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": "max abs gap across rate and both CI ends = 0.044 pts (rounding tolerance 0.05 pts)"
+    },
+    {
+      "id": "E6b_md_M6_24.1",
+      "operator_class": "metric",
+      "statement": "PAPER.md abstract: multi-module repair rises to 24.1%",
+      "paper_value": 24.1,
+      "paper_source": "PAPER.md Abstract item 2",
+      "computed": 24.031,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.06900000000000261,
+      "tolerance": 0.05,
+      "verdict": "MISMATCH",
+      "reason": "PAPER.md Table 2 and the PDF both give 31/129 = 24.0%; abstract figure 24.1% is a rounding error."
+    },
+    {
+      "id": "E7_mcnemar_T1",
+      "operator_class": "estimator",
+      "statement": "McNemar paired p = 1.8e-06 (net 28 more tasks solved)",
+      "paper_value": 1.8e-06,
+      "paper_source": "PDF p.2 Table 1 caption",
+      "computed": {
+        "min_possible_exact_p(c=0)": 7.450580596923828e-09,
+        "exact_p(c=1)": 5.774199962615967e-08,
+        "reproducing_(b,c)_to_2_sig_figs": [
+          {
+            "test": "chi2_cc",
+            "b": 30,
+            "c": 2,
+            "p": 1.8152814274403543e-06
+          }
+        ]
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "NOT CHECKABLE",
+      "reason": "b - c must equal 28. Discordant counts are not reported, but the value is reproducible: chi2_cc with b=30, c=2 gives 1.82e-06. The paper does not say which McNemar variant it used."
+    },
+    {
+      "id": "E7_mcnemar_T2",
+      "operator_class": "estimator",
+      "statement": "McNemar paired p = 4.6e-05 (net 16 more tasks solved)",
+      "paper_value": 4.6e-05,
+      "paper_source": "PDF p.3 Table 2 caption",
+      "computed": {
+        "min_possible_exact_p(c=0)": 3.0517578125e-05,
+        "exact_p(c=1)": 0.00014495849609375,
+        "reproducing_(b,c)_to_2_sig_figs": []
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "MISMATCH",
+      "reason": "b - c must equal 16 (net tasks). Searched every (b, c) with b - c = 16, b + c <= 129 under two-sided exact, mid-p, chi-square and continuity-corrected chi-square McNemar: none gives 4.6e-05 to two significant figures. Exact p jumps from 3.05e-05 (c=0) to 0.000145 (c=1)."
+    },
+    {
+      "id": "E8_fisher_trap25",
+      "operator_class": "estimator",
+      "statement": "Fisher's exact two-sided p for 24/25 vs 4/25",
+      "paper_value": 4.2e-09,
+      "paper_source": "PDF p.1 Abstract, p.4 Sec 3.4, p.4 Sec 5 log",
+      "computed": 7.178606491749204e-09,
+      "simulated": 0.0,
+      "simulation": "2,000,000 random 25/25 splits of 28 successes; hits = 0; MC SE = 5.00e-07 (p is far below MC resolution, so the MC only bounds it)",
+      "abs_gap": 2.9786064917492035e-09,
+      "tolerance": 5e-11,
+      "verdict": "MISMATCH",
+      "reason": "scipy fisher_exact two-sided = 7.179e-09. Paper value differs by a factor of 1.71. One-sided p = 3.59e-09, also not 4.2e-9. Note: test treats 25 tasks per arm as independent although both arms run the same 25 traps (a paired McNemar test would be the matched design)."
+    },
+    {
+      "id": "E8b_paired_alternative",
+      "operator_class": "estimator",
+      "statement": "Paired exact McNemar on the same 25 traps (best case b=20, c=0)",
+      "paper_value": "not reported",
+      "paper_source": "derived (design check)",
+      "computed": 1.9073486328125e-06,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "NOT CHECKABLE",
+      "reason": "Same 25 traps in both arms; with b=20, c=0 the paired exact p is 1.91e-06, 2.7 orders of magnitude weaker than the reported unpaired p. Per-trap pairing not reported."
+    },
+    {
+      "id": "E9_delta_T3_think_naive",
+      "operator_class": "metric",
+      "statement": "(51118 / 45220 - 1) = 13.0%",
+      "paper_value": 13.0,
+      "paper_source": "PDF p.4 Table 3",
+      "computed": 13.0429,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.042899999999999494,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_delta_T3_think_ccr_only",
+      "operator_class": "metric",
+      "statement": "(35881 / 45220 - 1) = -20.7%",
+      "paper_value": -20.7,
+      "paper_source": "PDF p.4 Table 3",
+      "computed": -20.6524,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.0475999999999992,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_delta_T3_think_adaptive",
+      "operator_class": "metric",
+      "statement": "(24842 / 45220 - 1) = -45.1%",
+      "paper_value": -45.1,
+      "paper_source": "PDF p.4 Table 3",
+      "computed": -45.0641,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.035899999999998045,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_delta_T3_kv_naive",
+      "operator_class": "metric",
+      "statement": "(190410 / 159816 - 1) = 19.1%",
+      "paper_value": 19.1,
+      "paper_source": "PDF p.4 Table 3",
+      "computed": 19.1433,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.04329999999999856,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_delta_T3_kv_ccr_only",
+      "operator_class": "metric",
+      "statement": "(85148 / 159816 - 1) = -46.7%",
+      "paper_value": -46.7,
+      "paper_source": "PDF p.4 Table 3",
+      "computed": -46.7212,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.02120000000000033,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_delta_T3_kv_adaptive",
+      "operator_class": "metric",
+      "statement": "(46689 / 159816 - 1) = -70.8%",
+      "paper_value": -70.8,
+      "paper_source": "PDF p.4 Table 3",
+      "computed": -70.7858,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.014200000000002433,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_delta_S4_vram_cut",
+      "operator_class": "metric",
+      "statement": "(18.4 / 54.6 - 1) = -66.3%",
+      "paper_value": -66.3,
+      "paper_source": "PDF p.4 Sec 4; PAPER.md Sec 4",
+      "computed": -66.3004,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.00039999999999906777,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_compaction_cut",
+      "operator_class": "metric",
+      "statement": "Compaction 68.2% -> 4.7% is a -93% cut",
+      "paper_value": 93.0,
+      "paper_source": "PDF p.1 Abstract; Table 2",
+      "computed": 93.1085,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.10850000000000648,
+      "tolerance": 0.5,
+      "verdict": "VERIFIED",
+      "reason": "Paper rounds to integer percent."
+    },
+    {
+      "id": "E9_graph_tool_pts",
+      "operator_class": "metric",
+      "statement": "Deleting unindexed graph tools: -24.2 pts compaction (M0 -> M1)",
+      "paper_value": 24.2,
+      "paper_source": "PDF p.4 Sec 4",
+      "computed": 24.2,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.0,
+      "tolerance": 0.01,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_twofold",
+      "operator_class": "metric",
+      "statement": "M0 -> M6 is a 2.1x gain",
+      "paper_value": 2.1,
+      "paper_source": "PAPER.md Sec 3.3",
+      "computed": 2.0667,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.03330000000000011,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_stage1_gain_pts",
+      "operator_class": "metric",
+      "statement": "+21.7 pts Stage-1 synthesis",
+      "paper_value": 21.7,
+      "paper_source": "PDF p.4 Sec 4",
+      "computed": 21.7054,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.005400000000001626,
+      "tolerance": 0.05,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_trap_gain_pts",
+      "operator_class": "metric",
+      "statement": "+80.0 pts Trap-25 escape",
+      "paper_value": 80.0,
+      "paper_source": "PDF p.4 Sec 4",
+      "computed": 80.0,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.0,
+      "tolerance": 0.01,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_tax_pts",
+      "operator_class": "metric",
+      "statement": "22.4-point Localization-Trajectory Tax (39.5% - 17.1%)",
+      "paper_value": 22.4,
+      "paper_source": "PDF p.3 Sec 3.3",
+      "computed": 22.4,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.0,
+      "tolerance": 1e-09,
+      "verdict": "VERIFIED",
+      "reason": "Matches as a difference of the two rounded rates (39.5 - 17.1). From counts the gap is 22.4806 pts, which rounds to 22.5."
+    },
+    {
+      "id": "E9_tax_tasks",
+      "operator_class": "metric",
+      "statement": "29 solvable tasks lost (51 - 22)",
+      "paper_value": 29,
+      "paper_source": "PDF p.3 Sec 3.3",
+      "computed": 29,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.0,
+      "tolerance": 0,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E9_half_gap",
+      "operator_class": "metric",
+      "statement": "M3..M6 'recovers half that 29-task gap'",
+      "paper_value": 0.5,
+      "paper_source": "PDF p.3 Sec 3.3",
+      "computed": {
+        "(M6-M2)/29": 0.3103,
+        "(M6-M0)/29": 0.5517
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "NOT CHECKABLE",
+      "reason": "Ambiguous baseline. From M2 (the row defining the gap) M6 recovers 9/29 = 0.310, not half; from M0 it is 16/29 = 0.552, but the 29-task gap is defined against M2."
+    },
+    {
+      "id": "E10_repo_breakdown",
+      "operator_class": "metric",
+      "statement": "Per-repo M0/M6 rates and shares sum to 15/129 and 31/129",
+      "paper_value": {
+        "M0_total": 15,
+        "M6_total": 31,
+        "N": 129
+      },
+      "paper_source": "PDF p.3 Sec 3.3",
+      "computed": {
+        "per_repo": {
+          "fastapi": {
+            "n": 67,
+            "share_pct": 51.938,
+            "M0_k": [
+              7
+            ],
+            "M6_k": [
+              15
+            ]
+          },
+          "rich": {
+            "n": 48,
+            "share_pct": 37.209,
+            "M0_k": [
+              6
+            ],
+            "M6_k": [
+              12
+            ]
+          },
+          "requests": {
+            "n": 13,
+            "share_pct": 10.078,
+            "M0_k": [
+              2
+            ],
+            "M6_k": [
+              3
+            ]
+          },
+          "httpx": {
+            "n": 1,
+            "share_pct": 0.775,
+            "M0_k": [
+              0
+            ],
+            "M6_k": [
+              1
+            ]
+          }
+        },
+        "N": 129,
+        "M0_total": 15,
+        "M6_total": 31
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "VERIFIED",
+      "reason": "Each reported repo rate maps to exactly one integer count; counts sum to the table totals."
+    },
+    {
+      "id": "E11_turn_total",
+      "operator_class": "metric",
+      "statement": "Table 3 covers 100 trajectories and 937 turns",
+      "paper_value": 937,
+      "paper_source": "PDF p.4 Table 3 caption; PAPER.md Abstract",
+      "computed": 937.0,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.0,
+      "tolerance": 0.5,
+      "verdict": "VERIFIED",
+      "reason": "25 tasks x 4 configurations = 100 trajectories; sum of Avg Turns x 25. Note the abstract also attributes the 937 turns to the 129-task swegemma telemetry (PDF p.1 Sec 1), which this identity contradicts."
+    },
+    {
+      "id": "E12_kv_vs_context",
+      "operator_class": "bound",
+      "statement": "Active Post-Reset KV 159,816 / 190,410 tokens vs max_model_len 32,768",
+      "paper_value": 32768,
+      "paper_source": "PDF p.4 Table 3; p.1 Sec 1",
+      "computed": {
+        "baseline_over_ctx": 4.877,
+        "naive_over_ctx": 5.811
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "NOT CHECKABLE",
+      "reason": "Values exceed one context window by ~4.9x and ~5.8x, so the column must be cumulative over turns; the paper calls it 'active' and does not define the aggregation."
+    },
+    {
+      "id": "E13_leaderboard_SE",
+      "operator_class": "estimator",
+      "statement": "58-task leaderboard at p = 0.20: SE = 5.25%",
+      "paper_value": 5.25,
+      "paper_source": "PDF p.1 Sec 1 item 2",
+      "computed": 5.2523,
+      "simulated": 5.2511,
+      "simulation": "1,000,000 binomial(58, 0.2) draws; SE of the SD estimate ~ SD/sqrt(2n) = 0.0037 pts",
+      "abs_gap": 0.0022999999999999687,
+      "tolerance": 0.01,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E13_leaderboard_wilson_halfwidth",
+      "operator_class": "estimator",
+      "statement": "95% Wilson CI width +/-9.8 pts at p = 0.20, n = 58",
+      "paper_value": 9.8,
+      "paper_source": "PDF p.1 Sec 1 item 2",
+      "computed": 10.1421,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.3420999999999985,
+      "tolerance": 0.05,
+      "verdict": "MISMATCH",
+      "reason": "Wilson interval at p=0.20 exactly: [11.72, 32.01]; half-width computed. Normal-approx half-width 1.96*SE = 10.29."
+    },
+    {
+      "id": "E13_pts_per_task",
+      "operator_class": "metric",
+      "statement": "1.72 pts/task on a 58-task board",
+      "paper_value": 1.72,
+      "paper_source": "PDF p.1 Sec 1 item 2",
+      "computed": 1.7241,
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": 0.0040999999999999925,
+      "tolerance": 0.005,
+      "verdict": "VERIFIED",
+      "reason": ""
+    },
+    {
+      "id": "E13_swing",
+      "operator_class": "estimator",
+      "statement": "Two T=1.0 runs 'routinely swing by 5 to 7 points'",
+      "paper_value": "routine (qualitative)",
+      "paper_source": "PDF p.1 Sec 1 item 2",
+      "computed": null,
+      "simulated": {
+        "P(|run1-run2| >= 5 pts)": 0.5606
+      },
+      "simulation": "1,000,000 pairs of independent binomial(58, 0.2) runs",
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "VERIFIED",
+      "reason": "Under pure binomial noise, a gap of 5 or more points between two independent runs has the simulated probability shown."
+    },
+    {
+      "id": "E14_entropy_detector",
+      "operator_class": "estimator",
+      "statement": "H_W(t) < 0.55 bits with W = 4 flags low action entropy",
+      "paper_value": 0.55,
+      "paper_source": "PDF p.3 Sec 3.4; PAPER.md Sec 3.4",
+      "computed": {
+        "achievable_H_values_bits": [
+          0.0,
+          0.8113,
+          1.0,
+          1.5,
+          2.0
+        ],
+        "values_below_0.55": [
+          0.0
+        ],
+        "equivalent_threshold_range": [
+          0.0,
+          0.8113
+        ]
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "VERIFIED",
+      "reason": "With W = 4 the only achievable entropy below 0.55 is 0 (all 4 actions identical); the next level is 0.8113 bits. The detector is therefore 'four identical actions in a row', and any threshold in (0, 0.8113] behaves identically. Formula well-defined; 0.55 is not a calibrated value."
+    },
+    {
+      "id": "E15_context_budget",
+      "operator_class": "definition",
+      "statement": "Compaction at 14,336 tokens 'reserving 8,192 output tokens' within 32,768",
+      "paper_value": 32768,
+      "paper_source": "PDF p.1 Sec 1 item 1",
+      "computed": {
+        "14336+8192": 22528,
+        "32768-14336": 18432
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "NOT CHECKABLE",
+      "reason": "14,336 + 8,192 = 22,528, which leaves 10,240 of the 32,768 window unexplained; the paper does not say how the remaining budget is used."
+    },
+    {
+      "id": "E16_wilcoxon",
+      "operator_class": "estimator",
+      "statement": "Wilcoxon p = 8.91e-07 (< 1e-6) on post-reset KV",
+      "paper_value": 8.91e-07,
+      "paper_source": "PDF p.1 Abstract; PAPER.md Sec 5 log",
+      "computed": {
+        "min_exact_two_sided_p_n25": 5.960464477539063e-08,
+        "min_exact_two_sided_p_n100": 1.5777218104420236e-30
+      },
+      "simulated": null,
+      "simulation": null,
+      "abs_gap": null,
+      "tolerance": null,
+      "verdict": "NOT CHECKABLE",
+      "reason": "Per-episode KV values not released; the value lies within the attainable range for n = 25 (minimum exact p = 5.96e-08) and n = 100. Unclear whether n = 25 tasks or 100 trajectories."
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+
+===== PAGE 1 =====
+1
+Breaking the 15-Minute Cliff in Quantized Gemma 4 Coding Agents:
+Thinking-Mode Calibration, Structural Co-Change Graphs, and Counterfactual
+Context Reset
+Robina Mirbahar
+Google Developer Expert (GDE) in AI & Cloud • NeurIPS 2026 WiML Program Committee Reviewer
+Open-Source Code & Benchmarks: https://www.kaggle.com/robinamirbahar
+Abstract
+Why does a 4-bit quantized coding model write accurate patches when given a localized file slice, yet stall in repetitive loops
+at Minute 15 of an unassisted multi-turn repair session? Across the 129-task two-container swegemma benchmark (fastapi
+[67], rich [48], requests [13], httpx [1]) and a controlled 25-task fault-injection suite (Trap-25), I isolate this
+Localization-Trajectory Tax on gemma-4-31b-it-qat-w4a16-ct (alongside 26b-a4b, e4b, and e2b) running on four
+NVIDIA L4 GPUs (max_model_len = 32,768). When the target module is Stage-1 file-isolated, calibrating native thinking
+sampling (T = 1.0, top-p = 0.95, top-k = 64, thinking_budget = 4096) lifts single-module synthesis from 17.8% (23/129) to
+39.5% (51/129, McNemar p = 1.8×10-6). Yet in unassisted end-to-end discovery under the 28-call and 14,336-token
+compaction harness, the exact same calibrated checkpoint drops to 17.1% (22/129): accumulated pytest tracebacks and
+rejected diffs dominate the self-attention softmax denominator and starve the initial issue contract. To recover this lost
+capacity over repository code graphs Grepo = (V, E, R, X), I introduce LoopBreakerEngine: (1) Lean-6 Tooling, Turn-1
+6-Relation Contract Parsing & Co-Change Coupling lift unassisted end-to-end resolution from 11.6% (15/129) to 24.0%
+(31/129; 0.241 held-out) while cutting context compaction from 68.2% to 4.7% (-93%); and (2) Graph-Guided
+Counterfactual Context Reset (G-CCR) raises Trap-25 loop escape from 16.0% (4/25) to 96.0% (24/25, Fisher's Exact p =
+4.2×10-9) while cutting active post-reset KV cache tokens by 70.8% (Wilcoxon p < 10-6).
+1. Introduction & Harness Bottlenecks
+Deploying an open-weights coding agent inside an air-gapped evaluation harness [2, 11] exposes systems bottlenecks that cloud API
+benchmarks hide. In the swegemma runtime, gemma-4-31b-it-qat-w4a16-ct [1] runs on four NVIDIA L4 GPUs (96 GB total VRAM)
+via vLLM (max_model_len = 32,768), configured strictly through a declarative Google ADK bundle (agent.yaml,
+eval_config.yaml, configs/sampling.yaml, prompts/system.md, sub_agents/, PEFT adapters, and skills/). Auditing 937 turns of
+live trajectory telemetry across the 129 development tasks (fastapi/fastapi: 67, Textualize/rich: 48, psf/requests: 13,
+encode/httpx: 1) revealed three failure cliffs:
+1. The 14,336-Token Compaction Cliff: The ADK runner triggers EventsCompactionConfig once dialogue history exceeds 14,336
+tokens (reserving 8,192 output tokens). Two unwindowed file reads trip lossy summarization, erasing exact line numbers and symbol
+signatures.
+2. Statistical Noise on Small Binary Splits vs. Hard Call Caps: Each episode is capped at 28 tool calls and 240 to 480 seconds
+under a 12-hour global wall-clock budget. Moreover, on a 58-task binary public leaderboard (1.72 pts/task), a true p = 0.20 agent has
+binomial standard error SE = 5.25% (95% Wilson CI width ±9.8 pts), meaning stochastic T = 1.0 runs routinely swing by 5 to 7
+points via sampling luck alone (Winner's Curse). Rigorous agent engineering therefore requires paired 129-task ablations and
+controlled fault-injection benchmarks.
+3. Two-Container Grading Asymmetry (Container A vs. Container B): The agent edits /workspace inside Container A, but
+submit_patch applies git add -N . && git diff HEAD inside a clean Container B after running strip_protected_files_from_patch
+in Phase 2 Verification (verify_task against eval_baseline), stripping test and runner edits (tests/, test_*.py, conftest.py,
+pytest.ini, pyproject.toml) prior to grading FAIL_TO_PASS and PASS_TO_PASS.
+
+===== PAGE 2 =====
+Breaking the 15-Minute Cliff in Quantized Gemma 4 Coding Agents
+R. Mirbahar
+2
+Figure 1. Overview of LoopBreakerEngine across quantized Gemma 4 checkpoints (31B, 26B-A4B, E4B, E2B), isolating the Localization-Trajectory
+Tax between Stage-1 file-isolated synthesis (39.5%) and unassisted two-container discovery (11.6% to 24.0%).
+Summary of Contributions: (i) I formalize multi-turn trajectory stagnation via bounded-transformer softmax dilution [3] and match
+phase thinking budgets to graph depth (§3.1); (ii) I separate and quantify the gap between Stage-1 Isolated Thinking Calibration
+(39.5% vs. 17.8%, §3.2) and End-to-End Unassisted Discovery (11.6% to 24.0% via Lean-6 tooling, ULTRA 6-relation contract
+parsing [7], and co-change coupling, §3.3); and (iii) I build Counterfactual Context Reset (G-CCR), lifting Trap-25 recovery from
+16.0% to 96.0% (p = 4.2×10-9, §3.4) alongside open benchmarks and Cloud Run L4 Multi-LoRA serving (§4).
+2. Related Work
+Graph algorithms in bounded-capacity transformers. Sanford et al. [3] model transformers as Massively Parallel Computation
+(MPC) protocols, separating 1-hop retrieval (Depth1 / D1) from logarithmic-depth reachability (LogDepthPause / LDP) and global
+search (LogDepthWide / LDW). Empirically, Talk Like a Graph [5] and GraphToken [6] prove that local 1-hop incidence encodings
+outperform raw graph dumps, ULTRA [7] extracts transferable relational invariants across edge types, and Tree-of-Traversals [4]
+augments LLMs with explicit Expand and Backtrack actions. Unlike prior SWE-bench [11] or RepoGraph [10] pipelines built for
+frontier cloud models [9], I target 4-bit QAT open-weights models operating under strict 14,336-token compaction and 28-call limits
+[2].
+3. Theoretical Framework and the Four Empirical Laws
+3.1 Repository Code-Graph Model and Softmax Attention-Dilution Bounds
+I model each repository as a directed, edge-typed code graph Grepo = (V, E, R, X) over six structural relations R = {CALLS, CALLED_BY,
+IMPORTS, INHERITS, PARALLEL_SYNC_ASYNC, DOCS_EXAMPLE}. At turn t, active context tokens of length N partition into the initial
+issue contract plus 1-hop code slice A in [N] and the growing buffer of failed pytest tracebacks and rejected diffs Bt in [N]. By Lemma
+39 of [3], head h's output at query token xN is Attnh(X)N = [Zh,A exp(Lh,A) + Zh,Bt exp(Lh,Bt)] / [exp(Lh,A) + exp(Lh,Bt)]. As |Bt| swells
+across failed test runs, exp(Lh,Bt) dominates the denominator and drives attention on Zh,A below the Ω(r / log N) threshold required for
+multi-hop reachability (Proposition 1). Across 90 controlled serializations (graph_encoding_ablation_90.csv), pruning Bt via
+G-CCR while retaining a 120-line 1-hop incidence window [5, 6] cuts softmax dilution from 0.72 to 0.06 (+4.51 bits effective
+attention). Matching thinking_budget to [3]'s D1 / LDP / LDW hierarchy (Proposition 2) cuts D1 file-read budgets by 87.5% (4096
+to 512), reserves 2048 to 4096 tokens for LDP co-change edits, and allocates a 6144-token LDW burst after context reset.
+3.2 Law 1: Quantized Thinking Calibration Under Stage-1 Localization (Protocol A)
+To test whether 4-bit quantization degrades patch synthesis itself, Protocol A (Stage-1 Isolated Patch Synthesis) supplies the exact
+target file slice (eliminating multi-turn search noise). In gemma-4-31b-it-qat-w4a16-ct, INT4 weight rounding introduces per-logit
+perturbations εv ~ N(0, σq
+2). Under greedy/low-temperature decoding (τ = 0.2), exp((zv + εv)/τ) amplifies static rounding bias during
+long thought chains. Calibrating τ = 1.0, top-p = 0.95, top-k = 64 with thinking_budget = 4096 and include_thoughts = true raises
+Stage-1 file-isolated resolution from 17.8% to 39.5% (51/129; McNemar paired p = 1.8×10-6) (Table 1).
+Table 1 (Stage-1 Isolated Patch Synthesis). Single-module patch synthesis on gemma-4-31b-it-qat-w4a16-ct across all 129 swegemma tasks
+(McNemar paired p = 1.8×10-6 vs. baseline).
+Stage-1 Isolated Patch Synthesis (31B Dense
+W4A16)
+Think
+Budget
+Thoughts
+Temp /
+top-k
+Solved (129)
+Solve Rate (95% Wilson CI)
+1. Non-Thinking Low-Temp Baseline
+0 (Off)
+false
+0.20 / 40
+23 / 129
+17.8% [12.2%, 25.3%]
+2. Low-Temp Thinking (Hidden Thoughts)
+4096
+false
+0.25 / 40
+35 / 129
+27.1% [20.2%, 35.4%]
+3. Calibrated Thinking Mode (My Method)
+4096
+true
+1.00 / 64
+51 / 129
+39.5% [31.5%, 48.1%]
+
+===== PAGE 3 =====
+Breaking the 15-Minute Cliff in Quantized Gemma 4 Coding Agents
+R. Mirbahar
+3
+3.3 Law 2 & Law 3: End-to-End Autonomous Multi-Turn Discovery (M0 to M6)
+Comparing Table 1 (39.5% Stage-1 Isolated Patch Synthesis) against Table 2 row M2 (17.1% End-to-End Autonomous Multi-Turn
+Discovery using the exact same calibrated checkpoint) exposes a 22.4-point Localization-Trajectory Tax: 29 solvable tasks are lost
+to multi-turn softmax dilution and schema bloat! Specifically, listing unindexed graph tools (get_code_neighbors,
+search_similar_code, get_code_subgraph) injects verbose schema noise in build_agent_prompt (Turn 1-4 Recall@3 = 0.448),
+tripping the 14,336-token compaction cliff on 68.2% of episodes. Restricting agent.yaml to the Lean-6 Workspace Tools (M1),
+running my Turn-1 6-Relation Contract Parser (M3, Recall@3 = 0.931 [7]) with 120-line reads [5, 6], enforcing a Call-12 edit deadline
+(M4), checking co-change twins (M5: Client/AsyncClient, @overload, __all__, docs_src/), and adding Graph Backtrack +
+Red-Test verification (M6) recovers half that 29-task gap, lifting end-to-end discovery from 11.6% (95% CI [7.2%, 18.3%]) to 24.0%
+(31/129; 95% CI [17.5%, 32.1%]; McNemar paired p = 4.6×10-5) across all four tasks.jsonl repositories (fastapi/fastapi [67,
+51.9%]: 10.4% to 22.4%; Textualize/rich [48, 37.2%]: 12.5% to 25.0%; psf/requests [13, 10.1%]: 15.4% to 23.1%; encode/httpx
+[1, 0.8%]: 0.0% to 100.0%; Table 2, Figure 2).
+Table 2 (End-to-End Autonomous Multi-Turn Discovery). Cumulative 28-call, 14.3k-compaction harness results across all 129 swegemma tasks
+with 95% Wilson CIs (McNemar paired p = 4.6×10-5, M6 vs. M0).
+End-to-End Autonomous Multi-Turn Discovery (28 Calls
+/ 14.3k Cliff)
+Calls
+Peak KV
+Compacted
+Solved (95% CI)
+Held-Out
+M0: Default Starter Template (T=0.2, 9 tools w/ schema
+noise)
+24.6
+28,400
+68.2%
+15/129 (11.6% [7.2,18.3])
+0.121
++ M1: Lean-6 Workspace Toolset (Suppresses unindexed
+graph noise)
+21.2
+22,100
+44.0%
+18/129 (14.0% [9.0,21.0])
+0.138
++ M2: Calibrated Thinking Sampling (T=1.0, top-p=0.95,
+top-k=64)
+18.9
+18,600
+31.0%
+22/129 (17.1% [11.5,24.5])
+0.172
++ M3: Turn-1 6-Relation Contract Parser + 120-Line Reads
+15.4
+11,200
+8.5%
+25/129 (19.4% [13.5,27.0])
+0.190
++ M4: Mandatory Call-12 Source Edit Deadline (28 calls, 8
+min)
+13.8
+10,400
+6.2%
+27/129 (20.9% [14.8,28.7])
+0.207
++ M5: Structural Co-Change Coupling (Client/AsyncClient,
+docs_src/)
+13.1
+9,850
+5.4%
+29/129 (22.5% [16.1,30.4])
+0.224
++ M6: Graph Backtrack + Red-Test (My End-to-End
+Agent)
+12.4
+9,420
+4.7%
+31/129 (24.0% [17.5,32.1])
+0.241
+Figure 2. (a) Bridging the gap from unassisted M0 (11.6%) to M6 (24.0%) toward the Stage-1 file-isolated ceiling (39.5%). (b) Multi-turn KV-cache
+sawtooth pruning across 937 turns, keeping active context (peak 10.6k) strictly below the 14,336-token compaction cliff.
+3.4 Law 4: Runtime KV-Cache Pruning (LoopBreakerEngine) on Trap-25
+To isolate loop recovery without leaderboard sampling variance, I built Trap-25: 25 deterministic 3-state Python bug traps (75 verified
+exec() sandbox states across async/HTTP, terminal layout, ORM/query, and scientific coordinate edge cases) seeded with plausible
+wrong first-hop hypotheses, paired with live vllm-openai / hf-transformers drivers and a deterministic CPU AST/exec() replay
+verifier (gemma-4-qat-ast-verified) for 5-second judge verification. Over active window T(t_reset, t], LoopBreakerEngine monitors
+three O(1) detectors: (1) Repeated Error Signature Cerr(t) ≥ 2; (2) Oscillating Diff LCS Similarity Sdiff(t) ≥ 0.82 on the same AST
+symbol; and (3) Low Action Entropy HW(t) < 0.55 bits (W = 4). Firing any detector executes a graph Backtrack step [4]: it prunes
+polluted turns Bt, injects a 150-token <NEGATIVE_CONSTRAINT_LEDGER> recording the falsified invariant on vtrap, and triggers a
+6144-token LDW burst (τ = 0.75) to inspect 1-hop neighbors. Across 100 AST-verified episodes, G-CCR + Phase-Adaptive Thinking
+
+===== PAGE 4 =====
+Breaking the 15-Minute Cliff in Quantized Gemma 4 Coding Agents
+R. Mirbahar
+4
+solves 24 / 25 (96.0%) traps vs. 4 / 25 (16.0%) unpruned baseline (Fisher's Exact p = 4.2×10-9; -70.8% post-reset KV, Table 3, Figure
+3).
+Table 3. Controlled loop-recovery evaluation across 100 AST-verified sandbox trajectories on Trap-25 (937 turns).
+Agent Configuration (Trap-25
+Suite)
+Solved
+Escape Rate (95%
+CI)
+Avg
+Turns
+Avg Think Tok
+Post-Reset KV
+Peak KV
+baseline_static (Unpruned)
+4 / 25
+16.0% [6.4, 34.7]
+11.04
+45,220 (0.0%)
+159,816 (0.0%)
+24,821
+naive_subagent (Full Handoff)
+5 / 25
+20.0% [8.9, 39.1]
+10.72
+51,118 (+13.0%)
+190,410 (+19.1%)
+31,067
+ccr_only (Pruning + Ledger)
+18 / 25
+72.0% [52.4, 85.7]
+8.76
+35,881 (-20.7%)
+85,148 (-46.7%)
+14,488
+ccr_adaptive (My Method)
+24 / 25
+96.0% [80.5, 99.3]
+6.96
+24,842 (-45.1%)
+46,689 (-70.8%)
+10,563
+Figure 3. (a) Per-repository solve rates across all 129 tasks.jsonl instances (fastapi, rich, requests + httpx). (b) Trap-25 escape rate vs.
+active post-reset KV footprint.
+4. Practical Practitioner Takeaways, Open Suite & Deployment
+What Worked vs. What Hurt (Practitioner Summary). (1) What worked best: Calibrating W4A16 thinking temperature to T = 1.0,
+top-k = 64 (+21.7 pts Stage-1 synthesis), deleting unindexed graph tools from agent.yaml (-24.2 pts compaction), enforcing 120-line
+reads + Call-12 first-edit deadlines, checking sync/async co-change twins, and pruning polluted tracebacks via G-CCR (+80.0 pts
+Trap-25 escape). (2) What hurt performance: Greedy decoding (τ = 0.2) with thinking enabled (amplifies INT4 rounding loops), naive
+sub-agent delegation with full conversation history (+19.1% KV bloat, peak 31.1k tokens), and tuning prompts against noisy
+single-seed 58-task leaderboard draws instead of paired local evaluation.
+Out-of-distribution scientific repair & Cloud Run L4 Multi-LoRA serving. On Trap-25's 5 scientific computing tasks
+(sci-trap-21 to 25: 0-based half-open BED deletions, IUPAC reverse complements, AlphaFold pLDDT NaN sentinels, PDB
+insertion-code sorting, and Log-Sum-Exp posteriors), G-CCR achieves 100% recovery (5/5 vs. 1/5 baseline). For production CI/CD
+gating [12], pairing adk eval with a single frozen Gemma 4 base checkpoint (gemma-4-31b-it-qat-w4a16-ct or e4b) in vLLM
+hot-swapping 3 rank-16 QLoRA adapters (+64.5 MB VRAM, 1.42 ms swap latency) cuts GPU memory by 66.3% while raising gated
+task pass rates from 0.33 to 1.00.
+5. Limitations & 15-Second Offline Verification
+Failure Analysis (requests-trap-10). The sole Trap-25 timeout bundles three distinct proxy invariants (rsplit(":", 1) IPv6/port
+stripping, universal * bypass, and leading-dot domain matching) behind a bare AssertionError; running pytest -vv --tb=short on
+Turn 1 decomposes compound assertions cleanly. Furthermore, G-CCR requires an executable reproduction command; for the rare
+issue lacking a deterministic test trigger, my fallback enforces a static AST import/signature check before submit_patch. Running
+pytest across my attached open-source artifact verifies all 12 CSV/JSONL tables, 75 Trap-25 sandbox states, and exact p-values
+offline in under 15 seconds:
+pytest tests/test_loop_breaker_and_trap25.py tests/test_multilora_adk_eval.py -v
+============================= 20 passed in 4.82s =============================
+Stage-1 Synthesis (Table 1): 51/129 (39.5%) vs. 23/129 (17.8%), McNemar p = 1.80e-06
+End-to-End Discovery (Table 2): 31/129 (24.0%) vs. 15/129 (11.6%) | Trap-25: 24/25 (96.0%, p = 4.20e-09)
+References
+[1] Google DeepMind. Gemma 4 technical report: Open-weights reasoning, function calling, and quantization-aware training, 2026.
+
+===== PAGE 5 =====
+Breaking the 15-Minute Cliff in Quantized Gemma 4 Coding Agents
+R. Mirbahar
+5
+[2] E. Markowitz, B. Perozzi, B. Rozemberczki, G. Cameron, H. Hemmati, Y. Li, M. Galkin, M. Farhadi, R. Holbrook, and A. Oldacre. The Gemma 4
+developer agent benchmark and evaluation suite, 2026.
+[3] C. Sanford, B. Fatemi, E. Hall, A. Tsitsulin, M. Kazemi, J. Halcrow, B. Perozzi, and V. Mirrokni. Understanding transformer reasoning capabilities
+via graph algorithms. In NeurIPS, 2024. arXiv:2405.18512.
+[4] E. Markowitz et al. Tree-of-Traversals: A zero-shot reasoning algorithm for augmenting black-box language models with knowledge graphs. In ACL,
+2024. arXiv:2407.21358.
+[5] B. Fatemi, J. Halcrow, and B. Perozzi. Talk like a graph: Encoding graphs for large language models. In ICLR, 2024. arXiv:2310.04560.
+[6] B. Perozzi et al. Let your graph do the talking: Encoding structured data for LLMs. arXiv:2402.05862, 2024.
+[7] M. Galkin, X. Yuan, H. Mostafa, J. Tang, and Z. Zhu. Towards foundation models for knowledge graph reasoning (ULTRA). In ICLR, 2024.
+arXiv:2310.04562.
+[8] B. Rozemberczki, O. Kiss, and R. Sarkar. Karate Club: An API oriented open-source Python framework for unsupervised learning on graphs. In
+CIKM, 2020.
+[9] H. Taherkhani, M. Sepidband, and H. Hemmati. RGFL: Reasoning guided fault localization for automated program repair using large language
+models. arXiv:2601.18044, 2026.
+[10] S. Ouyang et al. RepoGraph: Enhancing AI software engineering with repository-level code graph. In ICLR, 2025.
+[11] C. E. Jimenez et al. SWE-bench: Can language models resolve real-world GitHub issues? In ICLR, 2024.
+[12] Google Developers Blog. Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon (google.adk case study), 2026.
