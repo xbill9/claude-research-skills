@@ -1,0 +1,13 @@
+{
+  "name": "research-kit",
+  "description": "Research-paper engineering for Claude Code: exact statistical audits, Crossref citation checks, annotated figure and math PDFs, interactive paper simulators, explainer videos, graphic stories and literature gap maps. Claude Code port of Robina Mirbahar's agy-research-kit.",
+  "version": "1.0.0",
+  "author": {
+    "name": "xbill9",
+    "url": "https://github.com/xbill9"
+  },
+  "homepage": "https://github.com/xbill9/claude-research-skills",
+  "repository": "https://github.com/xbill9/claude-research-skills",
+  "license": "MIT",
+  "keywords": ["research", "papers", "statistics", "wilson-ci", "fisher-exact", "mcnemar", "crossref", "doi", "citations", "pdf", "mcp"]
+}

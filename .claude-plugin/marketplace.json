@@ -1,0 +1,18 @@
+{
+  "name": "claude-research-skills",
+  "owner": {
+    "name": "xbill9",
+    "url": "https://github.com/xbill9"
+  },
+  "metadata": {
+    "description": "Research-paper engineering skills, a statistics and citation MCP server, and a safety hook for Claude Code.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "research-kit",
+      "source": "./plugin",
+      "description": "Eight research skills (stat audit, citation check, figure anatomy, math verification, interactive paper studio, explainer video, graphic story, gap radar), a stdlib-only stats/Crossref MCP server and a stdlib-shadowing guard hook."
+    }
+  ]
+}

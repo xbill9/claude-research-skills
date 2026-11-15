@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "research-audit": {
+      "command": "python3",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp/research_audit_mcp.py"]
+    }
+  }
+}

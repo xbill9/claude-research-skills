@@ -1,0 +1,17 @@
+{
+  "description": "research-kit: block creating numbers.py, statistics.py and other stdlib-shadowing scripts",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/stdlib_shadow_guard.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
