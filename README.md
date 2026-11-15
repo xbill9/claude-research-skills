@@ -1,6 +1,6 @@
 # claude-research-skills
 
-`research-kit` is a Claude Code plugin for research-paper engineering. It has eight skills, a statistics and citation MCP server that uses only the Python standard library, and a hook that stops scripts from being given names that shadow stdlib modules.
+`research-kit` is a Claude Code plugin for research-paper engineering. It has nine skills, a statistics and citation MCP server that uses only the Python standard library, and a hook that stops scripts from being given names that shadow stdlib modules.
 
 It is a Claude Code port of Robina Mirbahar's [My-antigravity-research-skills](https://github.com/RobinaMirbahar/My-antigravity-research-skills) (`agy-research-kit` for Google Antigravity), MIT licensed. The original repository has the worked example outputs (PDFs, video, interactive studio).
 
@@ -24,7 +24,7 @@ Requirements: `python3` (3.10+). The skills that render PDFs or screenshots also
 
 ---
 
-#### The eight skills
+#### The nine skills
 
 Skills load on demand. Inside the plugin each is namespaced, for example `/research-kit:ablation-stat-auditor`.
 
@@ -38,6 +38,7 @@ Skills load on demand. Inside the plugin each is namespaced, for example `/resea
 | `trajectory-cinematics` | Animates the system state and a 2×2 grid of live plots. | 1920×1080 H.264 `.mp4` + generator + narration |
 | `graphic-story` | Draws a comic of the paper in SVG with code. Every number in it comes from the paper. | A4 graphic-novel PDF |
 | `frontier-gap-radar` | Retrieves 18–25 papers in parallel, builds a capability matrix, and turns its blind spots into research designs checked for novelty. | A4 Gap Radar & Blueprint PDF + matrix CSV |
+| `paper-number-check` | Runs the publishing kit's `check-facts.py` over every story, narration, studio page and article built from a paper, and fails on any number the audit marked `MISMATCH` or `NOT CHECKABLE`. | Disputed / traced counts per output |
 
 Every skill follows the same ground rules:
 
@@ -85,7 +86,7 @@ Fisher's exact test uses exact rational arithmetic. It matches `scipy.stats.fish
 check-facts.py Gemma4_LoopBreaker_Narration.md --evidence eq_verified_numbers.json stat_audit.json
 ```
 
-On the worked example the explainer narration fails on 2 claims (the paper's p = 4.2e-9, stated twice) and the comic on 5. `graphic-story`, `trajectory-cinematics` and `interactive-paper-studio` now look up each number in the audit before using it.
+On the worked example the explainer narration fails on 2 claims (the paper's p = 4.2e-9, stated twice) and the comic on 6. The `paper-number-check` skill runs this over every output at once: `scripts/check_outputs.py --audit <audit dir> -- <outputs>`. It first proves the `check-facts.py` it found flags a known disputed number, and stops when it does not. `graphic-story`, `trajectory-cinematics` and `interactive-paper-studio` now look up each number in the audit before using it.
 
 ---
 
@@ -107,8 +108,8 @@ On the worked example the explainer narration fails on 2 claims (the paper's p =
 #### Tests
 
 ```bash
-python3 tests/test_plugin.py                         # 137 offline checks
-RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py  # + live Crossref, DataCite and OpenReview checks (142)
+python3 tests/test_plugin.py                         # 147 offline checks
+RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py  # + live Crossref, DataCite and OpenReview checks (152)
 claude plugin validate ./plugin
 ```
 

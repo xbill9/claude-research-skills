@@ -29,6 +29,7 @@ SKILLS = {
     "graphic-story": True,
     "interactive-paper-studio": True,
     "math-sandbox": True,
+    "paper-number-check": False,
     "trajectory-cinematics": False,
 }  # value: skill bundles scripts/pdf_tools.py
 
