@@ -16,6 +16,10 @@ SVG/HTML — no image-generation API — and faithful to the paper's exact numbe
 
 - Every number in a speech bubble, chart or scoreboard is quoted from the paper, with its page/table
   source, in `story_numbers.json`. Charts and scoreboards are drawn from that file, not retyped.
+- If an audit of this paper exists (`eq_verified_numbers.json` from math-sandbox, `stat_audit.json` from
+  ablation-stat-auditor), look up every number in it first. A paper value whose verdict is `MISMATCH` or
+  `NOT CHECKABLE` never appears alone: show the recomputed value, or the paper's with its caveat
+  ("the paper reports 4.2 × 10⁻⁹; it recomputes to 7.18 × 10⁻⁹").
 - Use the active `python3`; install missing packages into it.
 
 ## Workflow

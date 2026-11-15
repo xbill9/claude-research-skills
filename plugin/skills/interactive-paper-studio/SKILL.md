@@ -18,6 +18,10 @@ threshold cut-offs, …) and watch the curves, phase boundaries and KPIs respond
 - The JavaScript formulas are the paper's formulas. Verify them in Python first and check the JS output
   against the Python output at the preset points — a script compares them, to at least 4 decimal places.
 - Every preset and every number in the grounding table cites the paper's table/equation.
+- If an audit of this paper exists (`eq_verified_numbers.json` from math-sandbox, `stat_audit.json` from
+  ablation-stat-auditor), look up every number in it first. A paper value whose verdict is `MISMATCH` or
+  `NOT CHECKABLE` never appears alone: show the recomputed value, or the paper's with its caveat
+  ("the paper reports 4.2 × 10⁻⁹; it recomputes to 7.18 × 10⁻⁹").
 - Use the active `python3`; install missing packages into it.
 
 ## Layout

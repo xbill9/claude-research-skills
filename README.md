@@ -77,6 +77,16 @@ Fisher's exact test uses exact rational arithmetic. It matches `scipy.stats.fish
 
 [`examples/gemma4-loop-breaker/`](examples/gemma4-loop-breaker/) holds all eight skills run on one paper, with each run's outputs and notes.
 
+#### With the publishing kit
+
+`math-sandbox` and `ablation-stat-auditor` write each reported number as an audit record: `paper_value`, `computed` and a `verdict` of `VERIFIED`, `MISMATCH` or `NOT CHECKABLE`. The publishing kit's `check-facts.py` (0.36.0 or later) reads them. Pass the audit JSON as evidence, and any article, narration or story page that repeats a disputed paper value fails as `DISPUTED`:
+
+```bash
+check-facts.py Gemma4_LoopBreaker_Narration.md --evidence eq_verified_numbers.json stat_audit.json
+```
+
+On the worked example the explainer narration fails on 2 claims (the paper's p = 4.2e-9, stated twice) and the comic on 5. `graphic-story`, `trajectory-cinematics` and `interactive-paper-studio` now look up each number in the audit before using it.
+
 ---
 
 #### Mapping from the Antigravity kit
@@ -97,8 +107,8 @@ Fisher's exact test uses exact rational arithmetic. It matches `scipy.stats.fish
 #### Tests
 
 ```bash
-python3 tests/test_plugin.py                         # 130 offline checks
-RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py  # + live Crossref, DataCite and OpenReview checks (135)
+python3 tests/test_plugin.py                         # 137 offline checks
+RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py  # + live Crossref, DataCite and OpenReview checks (142)
 claude plugin validate ./plugin
 ```
 

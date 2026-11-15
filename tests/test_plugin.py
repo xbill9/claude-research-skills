@@ -83,6 +83,18 @@ def test_skills() -> None:
         if bundles_pdf:
             check(copy.exists() and filecmp.cmp(copy, PDF_TOOLS, shallow=False), f"{name}: pdf_tools.py out of sync")
             check("scripts/pdf_tools.py" in text, f"{name}: references its pdf_tools.py")
+    # The audit-record contract the publishing kit's check-facts.py reads.
+    fields = ("`paper_value`", "`computed`", "`verdict`", "`MISMATCH`", "`NOT CHECKABLE`")
+    for name in ("math-sandbox", "ablation-stat-auditor"):
+        text = (PLUGIN / "skills" / name / "SKILL.md").read_text()
+        check(all(f in text for f in fields), f"{name}: states the audit-record fields")
+    for name in ("graphic-story", "trajectory-cinematics", "interactive-paper-studio"):
+        text = (PLUGIN / "skills" / name / "SKILL.md").read_text()
+        check("eq_verified_numbers.json" in text and "`MISMATCH`" in text, f"{name}: reads the audit verdicts")
+    example = ROOT / "examples" / "gemma4-loop-breaker" / "math-sandbox" / "eq_verified_numbers.json"
+    records = json.loads(example.read_text())["equations"]
+    check(all({"paper_value", "computed", "verdict"} <= r.keys() for r in records), "example audit records")
+    check({r["verdict"] for r in records} == {"VERIFIED", "MISMATCH", "NOT CHECKABLE"}, "example verdict set")
 
 
 def mcp_session(messages: list[dict]) -> list[dict]:

@@ -55,3 +55,13 @@ being over-read and gives every claim an exact interval or paired test.
    `OVERSTATED` (paper wording stronger than the test supports), `CANNOT CHECK` (inputs missing — say which).
 4. Add publication-ready Markdown and LaTeX rows, e.g. `39.5\% \,[31.5, 48.2]`, and save the raw tool output
    as `stat_audit.json` next to the report.
+5. Also write a `claims` list in `stat_audit.json`, one audit record per reported number. The record's
+   `verdict` says whether the paper's printed number reproduces; the table's verdict above says whether
+   the conclusion survives, and goes in the record as `conclusion`. They differ: the Trap-25 p-value
+   prints as 4.2e-9 and recomputes to 7.18e-9 (`MISMATCH`), and the gain is still significant (`HOLDS`).
+   Each record is one JSON object: `id`, `statement`, `paper_value`, `paper_source`, `computed`,
+   `verdict` (`VERIFIED` / `MISMATCH` / `NOT CHECKABLE`) and `reason`. `paper_value` holds only the
+   number(s) the verdict is about, and `computed` has the same shape when the two are comparable
+   (`{"rate_pct": 39.5, "ci": [31.5, 48.1]}` against `{"rate_pct": 39.535, "ci": [31.518, 48.157]}`), so a
+   checker can tell which number failed. The publishing kit's `check-facts.py` reads these records: a
+   later article, story or video that repeats a `MISMATCH` or `NOT CHECKABLE` paper value fails its build.

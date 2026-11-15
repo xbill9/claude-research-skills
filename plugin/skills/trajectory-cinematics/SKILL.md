@@ -17,6 +17,10 @@ evolving live.
 
 - Curves are computed from the paper's equations or data in the script; captions and milestone banners
   quote numbers from the paper with a source. The narration quotes the same numbers.
+- If an audit of this paper exists (`eq_verified_numbers.json` from math-sandbox, `stat_audit.json` from
+  ablation-stat-auditor), look up every number in it first. A paper value whose verdict is `MISMATCH` or
+  `NOT CHECKABLE` never appears alone: show the recomputed value, or the paper's with its caveat
+  ("the paper reports 4.2 × 10⁻⁹; it recomputes to 7.18 × 10⁻⁹").
 - Use the active `python3`; install missing packages into it: `imageio`, `imageio-ffmpeg` (bundles an
   ffmpeg binary, so no system ffmpeg is needed), `matplotlib`, `numpy`, `pillow`.
 

@@ -31,6 +31,13 @@ evaluation and sensitivity plots, in one A4 PDF.
    - check each closed-form claim by simulation (Monte Carlo with a stated sample count and its standard error);
    - write `eq_verified_numbers.json`: per equation — `id`, `paper_value` (with source), `computed`,
      `simulated`, `abs_gap`, `tolerance`, `verdict` (`VERIFIED` / `MISMATCH` / `NOT CHECKABLE`, with reason).
+     Each record is one JSON object: `id`, `statement`, `paper_value`, `paper_source`, `computed`,
+     `verdict` (`VERIFIED` / `MISMATCH` / `NOT CHECKABLE`) and `reason`. `paper_value` holds only the
+     number(s) the verdict is about, and `computed` has the same shape when the two are comparable
+     (`{"rate_pct": 39.5, "ci": [31.5, 48.1]}` against `{"rate_pct": 39.535, "ci": [31.518, 48.157]}`), so a
+     checker can tell which number failed. The publishing kit's `check-facts.py` reads these records: a
+     later article, story or video that repeats a `MISMATCH` or `NOT CHECKABLE` paper value fails its build.
+     A constant the claim only uses (a 32,768-token context limit) is not its `paper_value`.
 3. **Sensitivity plots** (`matplotlib`, 300 DPI): sweep each key formula across its critical parameter,
    marking the failure regime and the calibrated operating point.
 4. **Render and inspect.** Write `MathGuide.html` (KaTeX inlined or pre-rendered for offline use), then run
