@@ -77,8 +77,12 @@ def _run_browser(args: list[str], out: Path) -> None:
 def html_to_pdf(html_path: Path, pdf_path: Path, wait_ms: int = 1800) -> Path:
     pdf_path = pdf_path.resolve()
     _run_browser(
-        ["--no-pdf-header-footer", f"--virtual-time-budget={wait_ms}", f"--print-to-pdf={pdf_path}",
-         html_path.resolve().as_uri()],
+        [
+            "--no-pdf-header-footer",
+            f"--virtual-time-budget={wait_ms}",
+            f"--print-to-pdf={pdf_path}",
+            html_path.resolve().as_uri(),
+        ],
         pdf_path,
     )
     return pdf_path
@@ -87,8 +91,13 @@ def html_to_pdf(html_path: Path, pdf_path: Path, wait_ms: int = 1800) -> Path:
 def html_to_png(html_path: Path, png_path: Path, width: int, height: int, wait_ms: int = 1800) -> Path:
     png_path = png_path.resolve()
     _run_browser(
-        ["--hide-scrollbars", f"--window-size={width},{height}", f"--virtual-time-budget={wait_ms}",
-         f"--screenshot={png_path}", html_path.resolve().as_uri()],
+        [
+            "--hide-scrollbars",
+            f"--window-size={width},{height}",
+            f"--virtual-time-budget={wait_ms}",
+            f"--screenshot={png_path}",
+            html_path.resolve().as_uri(),
+        ],
         png_path,
     )
     return png_path

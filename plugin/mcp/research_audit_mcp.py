@@ -119,7 +119,13 @@ TOOLS = [
                 "title": {"type": "string"},
                 "author": {"type": "string", "description": "First author surname (optional)"},
                 "year": {"type": "integer", "description": "Publication year (optional)"},
-                "rows": {"type": "integer", "default": 5, "minimum": 1, "maximum": 20, "description": "Candidates returned (20 are fetched and re-ranked)"},
+                "rows": {
+                    "type": "integer",
+                    "default": 5,
+                    "minimum": 1,
+                    "maximum": 20,
+                    "description": "Candidates returned (20 are fetched and re-ranked)",
+                },
             },
             "required": ["title"],
         },
@@ -247,8 +253,7 @@ def _norm_title(s: str) -> str:
 
 def _summarise(item: dict) -> dict:
     authors = [
-        " ".join(x for x in (a.get("given"), a.get("family")) if x) or a.get("name", "")
-        for a in item.get("author", [])
+        " ".join(x for x in (a.get("given"), a.get("family")) if x) or a.get("name", "") for a in item.get("author", [])
     ]
     issued = (item.get("issued") or {}).get("date-parts") or [[None]]
     rel = item.get("relation") or {}
@@ -303,7 +308,10 @@ def search_title(title: str, author: str | None = None, year: int | None = None,
         if year is not None:
             c["year_matches"] = c["year"] == year
         out.append(c)
-    out.sort(key=lambda c: (c["title_similarity"], c.get("first_author_matches", False), c.get("year_matches", False)), reverse=True)
+    out.sort(
+        key=lambda c: (c["title_similarity"], c.get("first_author_matches", False), c.get("year_matches", False)),
+        reverse=True,
+    )
     out = out[:rows]
     best = out[0] if out else None
     return {

@@ -37,7 +37,13 @@ def main() -> int:
         f"numpy/scipy imports in that directory. Use a different name, e.g. verify_math.py or audit_stats.py."
     )
     json.dump(
-        {"hookSpecificOutput": {"hookEventName": "PreToolUse", "permissionDecision": "deny", "permissionDecisionReason": reason}},
+        {
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "deny",
+                "permissionDecisionReason": reason,
+            }
+        },
         sys.stdout,
     )
     return 0

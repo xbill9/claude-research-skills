@@ -61,6 +61,7 @@ def test_manifests() -> None:
     check(entry["source"] == "./plugin", "marketplace source must be ./plugin")
     plugin = json.loads((PLUGIN / ".claude-plugin" / "plugin.json").read_text())
     check(plugin["name"] == entry["name"] == "research-kit", "plugin name mismatch")
+    check(plugin["version"] == market["metadata"]["version"], "plugin.json and marketplace.json versions differ")
     mcp = json.loads((PLUGIN / ".mcp.json").read_text())["mcpServers"]["research-audit"]
     check(mcp["command"] == "python3" and mcp["args"][0].endswith("mcp/research_audit_mcp.py"), ".mcp.json")
     hook = json.loads((PLUGIN / "hooks" / "hooks.json").read_text())["hooks"]["PreToolUse"][0]
@@ -97,20 +98,25 @@ def tool(replies: list[dict], mid: int) -> dict:
     return json.loads(r["content"][0]["text"])
 
 
+def call(i: int, name: str, args: dict) -> dict:
+    return {"jsonrpc": "2.0", "id": i, "method": "tools/call", "params": {"name": name, "arguments": args}}
+
+
 def test_mcp_protocol_and_stats() -> None:
-    call = lambda i, n, a: {"jsonrpc": "2.0", "id": i, "method": "tools/call", "params": {"name": n, "arguments": a}}
-    replies = mcp_session([
-        {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-06-18"}},
-        {"jsonrpc": "2.0", "method": "notifications/initialized"},
-        {"jsonrpc": "2.0", "id": 2, "method": "tools/list"},
-        call(3, "verify_wilson_ci", {"successes": 51, "total": 129}),
-        call(4, "verify_fisher_exact", {"k_method": 24, "n_method": 25, "k_baseline": 4, "n_baseline": 25}),
-        call(5, "verify_mcnemar_exact", {"b": 10, "c": 2}),
-        call(6, "leaderboard_noise_floor", {"num_tasks": 50, "baseline_rate": 0.25}),
-        call(7, "verify_wilson_ci", {"successes": 5, "total": 0}),
-        {"jsonrpc": "2.0", "id": 8, "method": "no/such"},
-        {"jsonrpc": "2.0", "id": 9, "method": "ping"},
-    ])
+    replies = mcp_session(
+        [
+            {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-06-18"}},
+            {"jsonrpc": "2.0", "method": "notifications/initialized"},
+            {"jsonrpc": "2.0", "id": 2, "method": "tools/list"},
+            call(3, "verify_wilson_ci", {"successes": 51, "total": 129}),
+            call(4, "verify_fisher_exact", {"k_method": 24, "n_method": 25, "k_baseline": 4, "n_baseline": 25}),
+            call(5, "verify_mcnemar_exact", {"b": 10, "c": 2}),
+            call(6, "leaderboard_noise_floor", {"num_tasks": 50, "baseline_rate": 0.25}),
+            call(7, "verify_wilson_ci", {"successes": 5, "total": 0}),
+            {"jsonrpc": "2.0", "id": 8, "method": "no/such"},
+            {"jsonrpc": "2.0", "id": 9, "method": "ping"},
+        ]
+    )
     check(len(replies) == 9, f"expected 9 replies (notification gets none), got {len(replies)}")
     check(replies[0]["result"]["protocolVersion"] == "2025-06-18", "protocol negotiation")
     names = {t["name"] for t in replies[1]["result"]["tools"]}
@@ -154,8 +160,15 @@ def test_against_scipy() -> None:
 
 
 def run_hook(path: str, cwd: str) -> str:
-    payload = {"hook_event_name": "PreToolUse", "tool_name": "Write", "cwd": cwd, "tool_input": {"file_path": path, "content": "x"}}
-    out = subprocess.run([sys.executable, "-I", str(HOOK)], input=json.dumps(payload), capture_output=True, text=True, timeout=10)
+    payload = {
+        "hook_event_name": "PreToolUse",
+        "tool_name": "Write",
+        "cwd": cwd,
+        "tool_input": {"file_path": path, "content": "x"},
+    }
+    out = subprocess.run(
+        [sys.executable, "-I", str(HOOK)], input=json.dumps(payload), capture_output=True, text=True, timeout=10
+    )
     check(out.returncode == 0, f"hook exit {out.returncode}")
     return out.stdout
 
@@ -164,7 +177,9 @@ def test_hook() -> None:
     with tempfile.TemporaryDirectory() as d:
         denied = json.loads(run_hook(f"{d}/numbers.py", d))["hookSpecificOutput"]
         check(denied["permissionDecision"] == "deny" and "verify_math.py" in denied["permissionDecisionReason"], "deny")
-        check(json.loads(run_hook("statistics.py", d))["hookSpecificOutput"]["permissionDecision"] == "deny", "relative")
+        check(
+            json.loads(run_hook("statistics.py", d))["hookSpecificOutput"]["permissionDecision"] == "deny", "relative"
+        )
         check(run_hook(f"{d}/verify_math.py", d) == "", "allowed name")
         check(run_hook(f"{d}/numbers.txt", d) == "", "non-.py")
         Path(d, "math.py").write_text("")
@@ -182,19 +197,43 @@ def test_pdf_tools() -> None:
             return
     with tempfile.TemporaryDirectory() as d:
         html = Path(d, "t.html")
-        html.write_text("<html><body><h1>Page one</h1><div style='page-break-after:always'></div><h1>Page two</h1></body></html>")
+        html.write_text(
+            "<html><body><h1>Page one</h1><div style='page-break-after:always'></div><h1>Page two</h1></body></html>"
+        )
         pdf = Path(d, "t.pdf")
-        r = subprocess.run([sys.executable, str(PDF_TOOLS), "render", "--html", str(html), "--pdf", str(pdf)],
-                           capture_output=True, text=True, timeout=240)
+        r = subprocess.run(
+            [sys.executable, str(PDF_TOOLS), "render", "--html", str(html), "--pdf", str(pdf)],
+            capture_output=True,
+            text=True,
+            timeout=240,
+        )
         if "No Chromium-based browser" in r.stderr:
             print("  skip: no Chromium browser")
             return
         check(r.returncode == 0, f"render failed: {r.stderr[-800:]}")
         prev = Path(d, "t_preview")
-        check(sorted(p.name for p in prev.iterdir()) == ["page_01.png", "page_02.png", "t_montage.png"], "montage files")
+        check(
+            sorted(p.name for p in prev.iterdir()) == ["page_01.png", "page_02.png", "t_montage.png"], "montage files"
+        )
         png = Path(d, "s.png")
-        r = subprocess.run([sys.executable, str(PDF_TOOLS), "shot", "--html", str(html), "--png", str(png), "--width", "390", "--height", "844"],
-                           capture_output=True, text=True, timeout=240)
+        r = subprocess.run(
+            [
+                sys.executable,
+                str(PDF_TOOLS),
+                "shot",
+                "--html",
+                str(html),
+                "--png",
+                str(png),
+                "--width",
+                "390",
+                "--height",
+                "844",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=240,
+        )
         check(r.returncode == 0 and png.stat().st_size > 0, f"shot failed: {r.stderr[-800:]}")
 
 
@@ -209,7 +248,10 @@ def test_crossref_live() -> None:
     check(rec["verified"] and rec["year"] == 2015 and rec["first_author_family"] == "LeCun", f"doi {rec}")
     check(m.verify_doi("10.9999/definitely-not-a-real-doi-xyz")["verified"] is False, "missing DOI")
     hit = m.search_title("Deep learning", author="LeCun", year=2015)
-    check(hit["best_is_match"] and hit["candidates"][0]["doi"].lower() == "10.1038/nature14539", f"title {hit['candidates'][:1]}")
+    check(
+        hit["best_is_match"] and hit["candidates"][0]["doi"].lower() == "10.1038/nature14539",
+        f"title {hit['candidates'][:1]}",
+    )
 
 
 if __name__ == "__main__":

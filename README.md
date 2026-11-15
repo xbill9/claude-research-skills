@@ -90,8 +90,8 @@ Fisher's exact test uses exact rational arithmetic. It matches `scipy.stats.fish
 #### Tests
 
 ```bash
-python3 tests/test_plugin.py                         # 128 offline checks
-RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py  # + live Crossref checks (131)
+python3 tests/test_plugin.py                         # 129 offline checks
+RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py  # + live Crossref checks (132)
 claude plugin validate ./plugin
 ```
 
