@@ -243,7 +243,7 @@ Each noted number has a row in a `CLAIMS.md` beside its output.
 
 Two of the five disputed claims in Step 8 are number collisions. `2.381:1` matched the digit 1 in a record of code-block line counts, and `95px` matched a record about a 95-column source wrap. The crop ratio itself is `VERIFIED` in another record.
 
-Open the record named after each `DISPUTED` line before changing the article. A record that stores a whole table in `paper_value` matches every small number it contains. On an HTML page the check also reads the stylesheet, so `1px` and `4px` can match.
+Open the record named after each `DISPUTED` line before changing the article. In publishing-kit 0.36.0 one shared number was enough for a match, and on an HTML page the stylesheet was read too. From 0.36.1 a claim's numbers must match a record's as a sequence, a number with a unit must carry that unit in the record's statement, and `<style>` is skipped. Over the five outputs in this run that took the flags from 34 to 12, and the 12 are the Medium counts and the 320px card width.
 
 ---
 

@@ -1,0 +1,11 @@
+# DISPUTED flags per output: check-facts 0.36.0 (check_facts_old_tmp) vs 0.36.1 (check-facts), empty ledger, 2026-11-16. Count claims are shown by their first number (0 = "0 of 4", 4 = "4 of 4", 10 = "10 of 11"). Totals: 34 flags in 0.36.0, 12 in 0.36.1, 22 removed.
+walkthrough-as-published     check_facts_old_tmp  0 2.381:1 320px 4 95px 
+walkthrough-as-published     check-facts          0 320px 4 
+walkthrough-corrected        check_facts_old_tmp  0 2.381:1 320px 4 95px 
+walkthrough-corrected        check-facts          0 320px 4 
+studio-index.html            check_facts_old_tmp  0 15px 1px 2.381:1 320 320px 4 4px 6px 95 95px 
+studio-index.html            check-facts          0 320 320px 4 
+comic-Story.html             check_facts_old_tmp  0 1px 2.381:1 2px 4 4px 6px 7px 95px 
+comic-Story.html             check-facts          0 4 
+research-kit-article         check_facts_old_tmp  0 10 1px 2.381:1 
+research-kit-article         check-facts          

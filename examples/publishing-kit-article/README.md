@@ -42,6 +42,6 @@ This article has no equations, no bibliography and no benchmark table. The examp
 
 - `pdf_tools.py render` deletes old `page_*.png` files before writing a preview. A PDF that went from 8 pages to 7 had left `page_08.png` behind beside the new pages. Version 1.3.1.
 
-#### Found, not yet fixed
+#### Fixed in the publishing kit as a result of this run
 
-- `paper-number-check` flagged 11 numbers on the interactive page; 3 are real disputes and 8 are number collisions. `check-facts.py` matches every number inside a record's `paper_value`, including small integers in a table of counts, and it reads CSS, so `1px`, `4px`, `6px` and `15px` matched. Each is recorded with its reason in [`interactive-paper-studio/CLAIMS.md`](interactive-paper-studio/CLAIMS.md).
+- `paper-number-check` flagged 11 numbers on the interactive page; 3 were real disputes and 8 number collisions. `check-facts.py` matched any one number of a claim to any one number in a disputed record, and read the page's stylesheet. From publishing-kit 0.36.1 a claim's numbers must match a record's as a sequence, a single number with a unit must carry that unit in the record's statement, and `<style>` is skipped. Over five audited outputs that took the flags from 34 to 12, all real. The rows in [`interactive-paper-studio/CLAIMS.md`](interactive-paper-studio/CLAIMS.md) record the 0.36.0 run.
