@@ -8,6 +8,14 @@ It is a Claude Code port of Robina Mirbahar's [My-antigravity-research-skills](h
 
 #### Install
 
+Inside Claude Code, one step (Claude Code 2.1.275 or later):
+
+```shell
+/plugin install research-kit --marketplace xbill9/claude-research-skills
+```
+
+From a terminal:
+
 ```bash
 claude plugin marketplace add xbill9/claude-research-skills
 claude plugin install research-kit@claude-research-skills
