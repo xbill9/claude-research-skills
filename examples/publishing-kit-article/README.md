@@ -17,8 +17,9 @@ This article has no equations, no bibliography and no benchmark table. The examp
 | [`citation-doi-verifier`](citation-doi-verifier/) | `REPORT.md`, `verified_references.bib`, every response in `raw/` |
 | [`figure-forensics`](figure-forensics/) | 6-page `PublishingKit_Figure_Anatomy_v1.pdf`, five annotated figures |
 | [`interactive-paper-studio`](interactive-paper-studio/) | Offline `index.html`: cover crop, feed-card legibility and hard-wrap explorer; 130 values agree exactly with the Python reference model; `CLAIMS.md` from `paper-number-check` |
+| [`graphic-story`](graphic-story/) | 5-page `PublishingKit_Comic_v1.pdf`, `story_numbers.json`; `paper-number-check`: 0 disputed, 9 noted (`CLAIMS.md`). Pages not reviewed after the last render |
 
-`trajectory-cinematics` was not run: the article has no system state that changes across turns or time. `frontier-gap-radar` was not run: it surveys a research literature, and a publishing toolkit has none to survey. `graphic-story` was started and stopped before its page review, so it is not included.
+`trajectory-cinematics` was not run: the article has no system state that changes across turns or time. `frontier-gap-radar` was not run: it surveys a research literature, and a publishing toolkit has none to survey. `graphic-story` is included unfinished: the run was stopped before its final page-by-page review, and its `RUN_NOTES.md` predates the last render.
 
 ---
 

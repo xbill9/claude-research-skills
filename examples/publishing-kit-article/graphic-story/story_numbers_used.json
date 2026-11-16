@@ -1,0 +1,168 @@
+{
+ "checklinks_block": {
+  "display": "devto-publishing-kit.md (branch URLs)",
+  "source": "devto-publishing-kit.md (Debugging, check-links.py output)"
+ },
+ "checklinks_cover": {
+  "display": "cover.77acc7c4.jpg: HTTP 200, bytes match disk",
+  "source": "devto-publishing-kit.md (Debugging, check-links.py output)"
+ },
+ "checklinks_imgcover": {
+  "display": "img/cover.77acc7c4.jpg: HTTP 200, bytes match disk",
+  "source": "devto-publishing-kit.md (Debugging, check-links.py output)"
+ },
+ "checklinks_table": {
+  "display": "img/devto-publishing-kit-table-1.png: HTTP 200, bytes match disk",
+  "source": "devto-publishing-kit.md (Debugging, check-links.py output)"
+ },
+ "cover_dims": {
+  "display": "1376x768",
+  "source": "devto-publishing-kit.md (What it does)"
+ },
+ "crop_display": {
+  "display": "1000x420",
+  "source": "evidence/devto-cover-crop.txt (MEASURED)"
+ },
+ "crop_fixed": {
+  "display": "1376x578",
+  "source": "evidence/devto-cover-crop.txt (MEASURED)"
+ },
+ "crop_px": {
+  "display": "95px",
+  "source": "devto-publishing-kit.md (What it does)"
+ },
+ "crop_ratio": {
+  "display": "2.381:1",
+  "source": "devto-publishing-kit.md (What it does)"
+ },
+ "dest_count": {
+  "display": "four",
+  "source": "devto-publishing-kit.md (opening)"
+ },
+ "faults": {
+  "display": "five",
+  "source": "devto-publishing-kit.md (Dogfooding)"
+ },
+ "fences_bare": {
+  "display": "0",
+  "source": "evidence/devto-roundtrip.txt (fence labelling)"
+ },
+ "fences_open": {
+  "display": "23",
+  "source": "evidence/devto-roundtrip.txt (fence labelling)"
+ },
+ "http_ok": {
+  "display": "HTTP 200",
+  "source": "devto-publishing-kit.md (Debugging)"
+ },
+ "hw_blocks": {
+  "display": "47",
+  "source": "devto-publishing-kit.md (Dogfooding table)"
+ },
+ "hw_br": {
+  "display": "88",
+  "source": "evidence/devto-hardwrap.txt (MEASURED)"
+ },
+ "hw_date": {
+  "display": "2026-09-16",
+  "source": "evidence/devto-hardwrap.txt (header)"
+ },
+ "hw_li": {
+  "display": "4",
+  "source": "evidence/devto-hardwrap.txt (MEASURED)"
+ },
+ "hw_p": {
+  "display": "58",
+  "source": "evidence/devto-hardwrap.txt (MEASURED)"
+ },
+ "hw_pct": {
+  "display": "76%",
+  "source": "computed in story_numbers_build.py from hw_blocks, hw_total"
+ },
+ "hw_total": {
+  "display": "62",
+  "source": "devto-publishing-kit.md (Dogfooding table)"
+ },
+ "hw_twospace": {
+  "display": "0",
+  "source": "evidence/devto-hardwrap.txt (CONTROL)"
+ },
+ "li_fold": {
+  "display": "140",
+  "source": "evidence/linkedin-run.txt (default template)",
+  "caveat": "CLAIMS.md: the fold is third-party, and moves with screen and font size"
+ },
+ "li_hook": {
+  "display": "80",
+  "source": "evidence/linkedin-run.txt (default template)"
+ },
+ "li_limit": {
+  "display": "3000",
+  "source": "evidence/linkedin-run.txt (default template)",
+  "caveat": "CLAIMS.md: 3,000 is third-party consensus; LinkedIn documents only FIELD_LENGTH_TOO_LONG"
+ },
+ "li_pending": {
+  "display": "4",
+  "source": "evidence/linkedin-run.txt (default template)"
+ },
+ "li_post": {
+  "display": "1269",
+  "source": "evidence/linkedin-run.txt (default template)"
+ },
+ "localhost": {
+  "display": "127.0.0.1",
+  "source": "devto-publishing-kit.md (Dogfooding)"
+ },
+ "measured_on": {
+  "display": "2026-08-31",
+  "source": "devto-publishing-kit.md (closing note)",
+  "caveat": "The audit dates the headline counts differently: 47 of 62 was measured 2026-09-16, the Medium count is a kit-log entry from 2026-08-30"
+ },
+ "med_embed_n": {
+  "display": "4",
+  "source": "devto-publishing-kit.md (Dogfooding table)",
+  "caveat": "Kit log, 2026-08-30, not re-measured: no artifact is archived (audit: NOT CHECKABLE), and this article's own Medium builds hold different images"
+ },
+ "med_embed_ok": {
+  "display": "0",
+  "source": "devto-publishing-kit.md (Dogfooding table)",
+  "caveat": "Kit log, 2026-08-30, not re-measured: no artifact is archived (audit: NOT CHECKABLE), and this article's own Medium builds hold different images"
+ },
+ "med_hosted_ok": {
+  "display": "4",
+  "source": "devto-publishing-kit.md (Dogfooding table)",
+  "caveat": "Kit log, 2026-08-30, not re-measured: no artifact is archived (audit: NOT CHECKABLE), and this article's own Medium builds hold different images"
+ },
+ "payload_chars": {
+  "display": "23,234",
+  "source": "evidence/builder-payload.txt (serve-body.py payload)"
+ },
+ "payload_lines_after": {
+  "display": "411",
+  "source": "evidence/builder-payload.txt (serve-body.py payload)"
+ },
+ "payload_lines_before": {
+  "display": "531",
+  "source": "evidence/builder-payload.txt (serve-body.py payload)"
+ },
+ "snap_version": {
+  "display": "0.6.0",
+  "source": "evidence/install-is-a-snapshot.txt (header)"
+ },
+ "tldr_lines": {
+  "display": "five",
+  "source": "devto-publishing-kit.md (Dogfooding)"
+ },
+ "two_spaces": {
+  "display": "two",
+  "source": "evidence/devto-hardwrap.txt (CONTROL)"
+ },
+ "untraced_kinds": {
+  "display": "three",
+  "source": "devto-publishing-kit.md (Debugging)"
+ },
+ "unwrap_removed": {
+  "display": "120",
+  "source": "computed in story_numbers_build.py from payload_lines_before, payload_lines_after"
+ }
+}

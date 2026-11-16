@@ -1,0 +1,833 @@
+{
+ "_about": "Every number the comic may show. Quoted entries carry file, section and a verbatim fragment checked against that file; derived entries carry formula and inputs. Built by story_numbers_build.py. Entries with `caveat` have no archived measurement in evidence/.",
+ "_checks": [
+  {
+   "check": "hard-wrap: <p> + <li> == total",
+   "computed": 62,
+   "paper": 62,
+   "ok": true
+  },
+  {
+   "check": "hard-wrap: article 47 of 62 == evidence",
+   "computed": [
+    47,
+    62
+   ],
+   "paper": [
+    47,
+    62
+   ],
+   "ok": true
+  },
+  {
+   "check": "hw_pct == round(47/62*100)",
+   "computed": 76,
+   "paper": 76,
+   "ok": true
+  },
+  {
+   "check": "crop ratio 1000/420 == 2.381",
+   "computed": 2.381,
+   "paper": 2.381,
+   "ok": true
+  },
+  {
+   "check": "rows kept round(1376/2.381) == 578",
+   "computed": 578,
+   "paper": 578,
+   "ok": true
+  },
+  {
+   "check": "(768 - 578) / 2 == 95",
+   "computed": 95.0,
+   "paper": 95,
+   "ok": true
+  },
+  {
+   "check": "fixed cover 1376x578 has ratio 2.381",
+   "computed": 2.381,
+   "paper": 2.381,
+   "ok": true
+  },
+  {
+   "check": "orgs gde + aws-builders + none == listed",
+   "computed": 40,
+   "paper": 40,
+   "ok": true
+  },
+  {
+   "check": "LinkedIn post under limit",
+   "computed": 1269,
+   "paper": 3000,
+   "ok": true
+  },
+  {
+   "check": "LinkedIn hook under fold",
+   "computed": 80,
+   "paper": 140,
+   "ok": true
+  },
+  {
+   "check": "five faults: semicolon-separated items in the article's list",
+   "computed": 5,
+   "paper": 5,
+   "ok": true
+  },
+  {
+   "check": "article measured date equals evidence/devto-orgs.txt capture date",
+   "computed": true,
+   "paper": "2026-08-31",
+   "ok": true
+  }
+ ],
+ "_ledger_vs_evidence": [
+  {
+   "claims_row": "Builder payload 22,542 chars / 22.0 KB, 521 lines before unwrap, 408 after",
+   "row_found_in_CLAIMS.md": true,
+   "claims_value": [
+    22542,
+    521,
+    408
+   ],
+   "evidence_file": "evidence/builder-payload.txt",
+   "evidence_value": [
+    23234,
+    531,
+    411
+   ],
+   "agree": false
+  },
+  {
+   "claims_row": "Builder payload 23,214 chars / 22.7 KB, 531 lines before unwrap, 411 after",
+   "row_found_in_CLAIMS.md": true,
+   "claims_value": [
+    23214,
+    531,
+    411
+   ],
+   "evidence_file": "evidence/builder-payload.txt",
+   "evidence_value": [
+    23234,
+    531,
+    411
+   ],
+   "agree": false
+  },
+  {
+   "claims_row": "~187 tokens always-on, ~8k on-invoke, at 0.2.0",
+   "row_found_in_CLAIMS.md": true,
+   "claims_value": [
+    "~187",
+    "~8k",
+    "0.2.0"
+   ],
+   "evidence_file": "evidence/skill-footprint.txt",
+   "evidence_value": [
+    "~190",
+    "~11.8k",
+    "0.18.0"
+   ],
+   "agree": false
+  },
+  {
+   "claims_row": "description 528 chars; SKILL.md 446 lines, 22,602 chars",
+   "row_found_in_CLAIMS.md": true,
+   "claims_value": 446,
+   "evidence_file": "evidence/skill-footprint.txt",
+   "evidence_value": 649,
+   "agree": false
+  },
+  {
+   "claims_row": "install pinned at commit f7eaac2, equal to HEAD",
+   "row_found_in_CLAIMS.md": true,
+   "claims_value": "f7eaac2",
+   "evidence_file": "evidence/install-is-a-snapshot.txt",
+   "evidence_value": "920fe6c",
+   "agree": false
+  },
+  {
+   "claims_row": "references 226 / 148 / 86 / 66 lines; six scripts 1,389 lines; 2,370 total",
+   "row_found_in_CLAIMS.md": true,
+   "claims_value": 2370,
+   "evidence_file": "evidence/skill-footprint.txt",
+   "evidence_value": 4580,
+   "agree": false
+  }
+ ],
+ "_audit_phrases": [
+  {
+   "phrase": "every paragraph",
+   "record": "E2_break_in_every_paragraph / hardwrap-every-paragraph (MISMATCH)",
+   "why": "15 of 62 blocks carried no break"
+  },
+  {
+   "phrase": "numbers on the cover",
+   "record": "../README.md, 'What the runs found' (no audit record)",
+   "why": "neither number is on any cover; they appear in the table image"
+  }
+ ],
+ "dest_count": {
+  "value": 4,
+  "display": "four",
+  "source": "devto-publishing-kit.md (opening)",
+  "quote": "Publishing one technical article to four places",
+  "derived": false
+ },
+ "artifact_count": {
+  "value": 4,
+  "display": "four",
+  "source": "devto-publishing-kit.md (TL;DR)",
+  "quote": "all four of its artifacts",
+  "derived": false
+ },
+ "wrap_cols": {
+  "value": 95,
+  "display": "95",
+  "source": "devto-publishing-kit.md (What it does)",
+  "quote": "a source wrapped at 95 columns",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "M1_own_source_95_columns",
+    "verdict": "NOT CHECKABLE",
+    "reason": "The sentence describes the kit's behaviour, not a width limit on this file. For reference, this file's own source has 20 prose lines longer than 95 characters, so it is wrapped near 95, not at it."
+   }
+  ],
+  "caveat": "Audit: NOT CHECKABLE; the article's own source has prose lines longer than this",
+  "disputed": true
+ },
+ "card_px": {
+  "value": 320,
+  "display": "320px",
+  "source": "devto-publishing-kit.md (What it does)",
+  "quote": "which type sizes survive a 320px feed card",
+  "derived": false,
+  "caveat": "Audit: NOT CHECKABLE; the only source is the kit's own constant",
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "D3_card_width_is_devto",
+    "verdict": "NOT CHECKABLE",
+    "reason": "No archived measurement of dev.to's feed card. CLAIMS.md files it as LOG, and the only source is the kit's own constant, which records the author's choice, not dev.to's layout."
+   }
+  ],
+  "disputed": true
+ },
+ "crop_ratio": {
+  "value": 2.381,
+  "display": "2.381:1",
+  "source": "devto-publishing-kit.md (What it does)",
+  "quote": "proxies it at 2.381:1",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "D1_proxy_ratio",
+    "verdict": "VERIFIED",
+    "reason": "1000/420 = 2.380952, prints as 2.381."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "devto-crop-ratio",
+    "verdict": "VERIFIED",
+    "reason": "width=1000,height=420 in the proxied URL (devto-cover-crop.txt:7); a single fetch."
+   }
+  ]
+ },
+ "cover_dims": {
+  "value": "1376x768",
+  "display": "1376x768",
+  "source": "devto-publishing-kit.md (What it does)",
+  "quote": "a 1376x768 cover loses 95px off the top and bottom",
+  "derived": false
+ },
+ "crop_px": {
+  "value": 95,
+  "display": "95px",
+  "source": "devto-publishing-kit.md (What it does)",
+  "quote": "loses 95px off the top and bottom",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "B2_crop_loss_95px",
+    "verdict": "VERIFIED",
+    "reason": "768 - 577.92 = 190.08 rows, 95.04 a side under a centre crop. Pillow's fit=cover crop on a row-encoded image agrees within 1 row. The proxy URL says gravity=auto, so the 95/95 split assumes centring; the 190-row total does not depend on it."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "devto-crop-95px",
+    "verdict": "VERIFIED",
+    "reason": "Arithmetic from one measured display size; assumes a centre crop, which the URL's gravity=auto does not guarantee."
+   }
+  ]
+ },
+ "untraced_kinds": {
+  "value": 3,
+  "display": "three",
+  "source": "devto-publishing-kit.md (Debugging)",
+  "quote": "untraced claim is one of three things",
+  "derived": false
+ },
+ "http_ok": {
+  "value": 200,
+  "display": "HTTP 200",
+  "source": "devto-publishing-kit.md (Debugging)",
+  "quote": "HTTP 200, bytes match disk",
+  "derived": false
+ },
+ "checklinks_block": {
+  "value": "devto-publishing-kit.md (branch URLs)",
+  "display": "devto-publishing-kit.md (branch URLs)",
+  "source": "devto-publishing-kit.md (Debugging, check-links.py output)",
+  "quote": "devto-publishing-kit.md (branch URLs)",
+  "derived": false
+ },
+ "checklinks_cover": {
+  "value": "cover.77acc7c4.jpg",
+  "display": "cover.77acc7c4.jpg: HTTP 200, bytes match disk",
+  "source": "devto-publishing-kit.md (Debugging, check-links.py output)",
+  "quote": "ok cover.77acc7c4.jpg: HTTP 200, bytes match disk",
+  "derived": false
+ },
+ "checklinks_imgcover": {
+  "value": "img/cover.77acc7c4.jpg",
+  "display": "img/cover.77acc7c4.jpg: HTTP 200, bytes match disk",
+  "source": "devto-publishing-kit.md (Debugging, check-links.py output)",
+  "quote": "ok img/cover.77acc7c4.jpg: HTTP 200, bytes match disk",
+  "derived": false
+ },
+ "checklinks_table": {
+  "value": "img/devto-publishing-kit-table-1.png",
+  "display": "img/devto-publishing-kit-table-1.png: HTTP 200, bytes match disk",
+  "source": "devto-publishing-kit.md (Debugging, check-links.py output)",
+  "quote": "ok img/devto-publishing-kit-table-1.png: HTTP 200, bytes match disk",
+  "derived": false
+ },
+ "cover_numbers": {
+  "value": 2,
+  "display": "two",
+  "source": "devto-publishing-kit.md (Dogfooding)",
+  "quote": "The two numbers on the cover are real",
+  "derived": false
+ },
+ "hw_blocks": {
+  "value": 47,
+  "display": "47",
+  "source": "devto-publishing-kit.md (Dogfooding table)",
+  "quote": "**47 of 62** in a published article carried a stray break",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "E1_hardwrap_47_of_62",
+    "verdict": "VERIFIED",
+    "reason": "58 + 4 = 62 = the stated total; 47 <= 88 total <br>, consistent with blocks that wrap more than once. MCP verify_wilson_ci gives 63.85-84.75%, same as scipy here. One article was measured, so the interval describes that article's blocks, not dev.to in general."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "hardwrap-47-of-62",
+    "verdict": "VERIFIED",
+    "reason": "Matches devto-hardwrap.txt lines 12-13 (58 <p> + 4 <li>). One article; the interval is over blocks of that article and does not generalise to other articles."
+   }
+  ]
+ },
+ "hw_total": {
+  "value": 62,
+  "display": "62",
+  "source": "devto-publishing-kit.md (Dogfooding table)",
+  "quote": "**47 of 62** in a published article carried a stray break",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "E1_hardwrap_47_of_62",
+    "verdict": "VERIFIED",
+    "reason": "58 + 4 = 62 = the stated total; 47 <= 88 total <br>, consistent with blocks that wrap more than once. MCP verify_wilson_ci gives 63.85-84.75%, same as scipy here. One article was measured, so the interval describes that article's blocks, not dev.to in general."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "hardwrap-47-of-62",
+    "verdict": "VERIFIED",
+    "reason": "Matches devto-hardwrap.txt lines 12-13 (58 <p> + 4 <li>). One article; the interval is over blocks of that article and does not generalise to other articles."
+   }
+  ]
+ },
+ "med_embed_ok": {
+  "value": 0,
+  "display": "0",
+  "source": "devto-publishing-kit.md (Dogfooding table)",
+  "quote": "**0 of 4** survived; from real URLs, 4 of 4",
+  "derived": false,
+  "caveat": "Kit log, 2026-08-30, not re-measured: no artifact is archived (audit: NOT CHECKABLE), and this article's own Medium builds hold different images",
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "E3_medium_data_uri_0_of_4",
+    "verdict": "NOT CHECKABLE",
+    "reason": "No archived artifact: CLAIMS.md lists it as LOG from 2026-08-30. This article's own Medium builds carry 2 data-URI and 2 URL images, so the 4 images belong to an earlier article."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "medium-0-of-4",
+    "verdict": "NOT CHECKABLE",
+    "reason": "No evidence file in the archive. CLAIMS.md files it as LOG dated 2026-08-30, not re-measured."
+   }
+  ],
+  "disputed": true
+ },
+ "med_embed_n": {
+  "value": 4,
+  "display": "4",
+  "source": "devto-publishing-kit.md (Dogfooding table)",
+  "quote": "**0 of 4** survived; from real URLs, 4 of 4",
+  "derived": false,
+  "caveat": "Kit log, 2026-08-30, not re-measured: no artifact is archived (audit: NOT CHECKABLE), and this article's own Medium builds hold different images",
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "E3_medium_data_uri_0_of_4",
+    "verdict": "NOT CHECKABLE",
+    "reason": "No archived artifact: CLAIMS.md lists it as LOG from 2026-08-30. This article's own Medium builds carry 2 data-URI and 2 URL images, so the 4 images belong to an earlier article."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "medium-0-of-4",
+    "verdict": "NOT CHECKABLE",
+    "reason": "No evidence file in the archive. CLAIMS.md files it as LOG dated 2026-08-30, not re-measured."
+   }
+  ],
+  "disputed": true
+ },
+ "med_hosted_ok": {
+  "value": 4,
+  "display": "4",
+  "source": "devto-publishing-kit.md (Dogfooding table)",
+  "quote": "from real URLs, 4 of 4",
+  "derived": false,
+  "caveat": "Kit log, 2026-08-30, not re-measured: no artifact is archived (audit: NOT CHECKABLE), and this article's own Medium builds hold different images",
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "E3_medium_data_uri_0_of_4",
+    "verdict": "NOT CHECKABLE",
+    "reason": "No archived artifact: CLAIMS.md lists it as LOG from 2026-08-30. This article's own Medium builds carry 2 data-URI and 2 URL images, so the 4 images belong to an earlier article."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "medium-4-of-4",
+    "verdict": "NOT CHECKABLE",
+    "reason": "Same as medium-0-of-4: LOG entry only, no archived artifact."
+   }
+  ],
+  "disputed": true
+ },
+ "faults": {
+  "value": 5,
+  "display": "five",
+  "source": "devto-publishing-kit.md (Dogfooding)",
+  "quote": "The run also found five faults in the kit itself",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "M3_five_faults",
+    "verdict": "VERIFIED",
+    "reason": "Splitting the list after the colon on '; ' gives the count ('TL;DR' contains a bare ';')."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "five-faults",
+    "verdict": "VERIFIED",
+    "reason": "Count of semicolon-separated items listed in the same paragraph; the faults themselves have no archived artifact apart from toolchain-run.txt evidence for some (CLAIMS.md)."
+   }
+  ]
+ },
+ "localhost": {
+  "value": "127.0.0.1",
+  "display": "127.0.0.1",
+  "source": "devto-publishing-kit.md (Dogfooding)",
+  "quote": "`check-facts.py` read `127.0.0.1` as a version number",
+  "derived": false
+ },
+ "tldr_lines": {
+  "value": 5,
+  "display": "five",
+  "source": "devto-publishing-kit.md (Dogfooding)",
+  "quote": "this article's own TL;DR posted as five separate lines",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "M2_tldr_five_lines",
+    "verdict": "VERIFIED",
+    "reason": "The TL;DR block quote is 5 source lines; an unwrap that skips block quotes posts each as its own line."
+   }
+  ]
+ },
+ "measured_on": {
+  "value": "2026-08-31",
+  "display": "2026-08-31",
+  "source": "devto-publishing-kit.md (closing note)",
+  "quote": "measured on 2026-08-31",
+  "derived": false,
+  "audit": [
+   {
+    "file": "stat_audit.json",
+    "id": "measured-date",
+    "verdict": "MISMATCH",
+    "reason": "The 47-of-62 figure was measured 16 days later (2026-09-16); the 0-of-4 figure is a log entry dated 2026-08-30. Neither of the article's two headline numbers was measured on the date the footer gives."
+   }
+  ],
+  "caveat": "The audit dates the headline counts differently: 47 of 62 was measured 2026-09-16, the Medium count is a kit-log entry from 2026-08-30",
+  "disputed": true
+ },
+ "hw_p": {
+  "value": 58,
+  "display": "58",
+  "source": "evidence/devto-hardwrap.txt (MEASURED)",
+  "quote": "paragraph-level blocks in body_html: 58 <p> + 4 <li> = 62",
+  "derived": false
+ },
+ "hw_li": {
+  "value": 4,
+  "display": "4",
+  "source": "evidence/devto-hardwrap.txt (MEASURED)",
+  "quote": "paragraph-level blocks in body_html: 58 <p> + 4 <li> = 62",
+  "derived": false
+ },
+ "hw_total_ev": {
+  "value": 62,
+  "display": "62",
+  "source": "evidence/devto-hardwrap.txt (MEASURED)",
+  "quote": "58 <p> + 4 <li> = 62",
+  "derived": false
+ },
+ "hw_blocks_ev": {
+  "value": 47,
+  "display": "47",
+  "source": "evidence/devto-hardwrap.txt (MEASURED)",
+  "quote": "blocks containing <br>: 47",
+  "derived": false
+ },
+ "hw_br": {
+  "value": 88,
+  "display": "88",
+  "source": "evidence/devto-hardwrap.txt (MEASURED)",
+  "quote": "total <br> in body_html: 88",
+  "derived": false
+ },
+ "hw_twospace": {
+  "value": 0,
+  "display": "0",
+  "source": "evidence/devto-hardwrap.txt (CONTROL)",
+  "quote": "source lines ending in two spaces (an explicit markdown break): 0",
+  "derived": false
+ },
+ "two_spaces": {
+  "value": 2,
+  "display": "two",
+  "source": "evidence/devto-hardwrap.txt (CONTROL)",
+  "quote": "source lines ending in two spaces",
+  "derived": false
+ },
+ "hw_bodytext": {
+  "value": 43,
+  "display": "43",
+  "source": "evidence/devto-hardwrap.txt (CONTROL)",
+  "quote": "reports 43 multi-line",
+  "derived": false
+ },
+ "hw_date": {
+  "value": "2026-09-16",
+  "display": "2026-09-16",
+  "source": "evidence/devto-hardwrap.txt (header)",
+  "quote": "re-measured 2026-09-16",
+  "derived": false
+ },
+ "crop_display": {
+  "value": "1000x420",
+  "display": "1000x420",
+  "source": "evidence/devto-cover-crop.txt (MEASURED)",
+  "quote": "dev.to displays the cover at 1000x420, fit=cover",
+  "derived": false
+ },
+ "crop_rows": {
+  "value": 578,
+  "display": "578",
+  "source": "evidence/devto-cover-crop.txt (ARITH)",
+  "quote": "1376/2.381 = 577.9 -> 578 rows",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "B1_crop_rows_kept",
+    "verdict": "VERIFIED",
+    "reason": "1376 * 420 / 1000 = 577.92, rounds to 578."
+   }
+  ]
+ },
+ "crop_fixed": {
+  "value": "1376x578",
+  "display": "1376x578",
+  "source": "evidence/devto-cover-crop.txt (MEASURED)",
+  "quote": "cover.77acc7c4.jpg is 1376x578, ratio 2.381:1 -- nothing cropped",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "B3_shipped_cover_uncropped",
+    "verdict": "VERIFIED",
+    "reason": "Both cover files on disk measure 1376x578. 1376/578 = 2.3806, wider than 2.38095 by 0.0003, so a fit=cover crop removes 0.08 source columns and 0 rows."
+   }
+  ]
+ },
+ "payload_chars": {
+  "value": 23234,
+  "display": "23,234",
+  "source": "evidence/builder-payload.txt (serve-body.py payload)",
+  "quote": "chars : 23234",
+  "derived": false,
+  "quote_display_note": "file prints 23234; shown with a thousands separator"
+ },
+ "payload_lines_before": {
+  "value": 531,
+  "display": "531",
+  "source": "evidence/builder-payload.txt (serve-body.py payload)",
+  "quote": "lines : 531 before unwrap, 411 after",
+  "derived": false
+ },
+ "payload_lines_after": {
+  "value": 411,
+  "display": "411",
+  "source": "evidence/builder-payload.txt (serve-body.py payload)",
+  "quote": "lines : 531 before unwrap, 411 after",
+  "derived": false
+ },
+ "li_post": {
+  "value": 1269,
+  "display": "1269",
+  "source": "evidence/linkedin-run.txt (default template)",
+  "quote": "ok post is 1269 chars of 3000",
+  "derived": false,
+  "audit": [
+   {
+    "file": "stat_audit.json",
+    "id": "linkedin-1269",
+    "verdict": "VERIFIED",
+    "reason": "Read from linkedin-run.txt."
+   }
+  ]
+ },
+ "li_limit": {
+  "value": 3000,
+  "display": "3000",
+  "source": "evidence/linkedin-run.txt (default template)",
+  "quote": "ok post is 1269 chars of 3000",
+  "derived": false,
+  "caveat": "CLAIMS.md: 3,000 is third-party consensus; LinkedIn documents only FIELD_LENGTH_TOO_LONG"
+ },
+ "li_hook": {
+  "value": 80,
+  "display": "80",
+  "source": "evidence/linkedin-run.txt (default template)",
+  "quote": "ok hook fits the fold: 80 chars",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "M15_linkedin_hook_80",
+    "verdict": "VERIFIED",
+    "reason": "len() of the first line above the fold: 'Getting 22 KB of Markdown Into AWS Builder Center Without Touching the Clipboard'."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "linkedin-1269",
+    "verdict": "VERIFIED",
+    "reason": "Read from linkedin-run.txt."
+   }
+  ]
+ },
+ "li_fold": {
+  "value": 140,
+  "display": "140",
+  "source": "evidence/linkedin-run.txt (default template)",
+  "quote": "--- above the fold (140 chars) ---",
+  "derived": false,
+  "caveat": "CLAIMS.md: the fold is third-party, and moves with screen and font size"
+ },
+ "li_pending": {
+  "value": 4,
+  "display": "4",
+  "source": "evidence/linkedin-run.txt (default template)",
+  "quote": "FAIL 4 link(s) still PENDING",
+  "derived": false
+ },
+ "orgs_listed": {
+  "value": 40,
+  "display": "40",
+  "source": "evidence/devto-orgs.txt (orgs seen)",
+  "quote": "articles listed: 40",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "M6_org_split_sums",
+    "verdict": "VERIFIED",
+    "reason": "24 + 13 + 3 summed in code."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "orgs-40",
+    "verdict": "VERIFIED",
+    "reason": "Parts sum to total; per_page=40 means the listing may be truncated at 40."
+   }
+  ]
+ },
+ "orgs_gde": {
+  "value": 24,
+  "display": "24",
+  "source": "evidence/devto-orgs.txt (orgs seen)",
+  "quote": "gde: 24",
+  "derived": false
+ },
+ "orgs_aws": {
+  "value": 13,
+  "display": "13",
+  "source": "evidence/devto-orgs.txt (orgs seen)",
+  "quote": "aws-builders: 13",
+  "derived": false
+ },
+ "orgs_none": {
+  "value": 3,
+  "display": "3",
+  "source": "evidence/devto-orgs.txt (orgs seen)",
+  "quote": "None: 3",
+  "derived": false
+ },
+ "fences_open": {
+  "value": 23,
+  "display": "23",
+  "source": "evidence/devto-roundtrip.txt (fence labelling)",
+  "quote": "opening fences: 23",
+  "derived": false,
+  "audit": [
+   {
+    "file": "eq_verified_numbers.json",
+    "id": "M7_fences_23_of_23",
+    "verdict": "VERIFIED",
+    "reason": "6 + 14 + 1 + 1 + 1 summed in code, equals the opener count with 0 bare."
+   },
+   {
+    "file": "stat_audit.json",
+    "id": "fences-23-of-23",
+    "verdict": "VERIFIED",
+    "reason": "Per-label counts sum to the opening-fence count; one article."
+   }
+  ]
+ },
+ "fences_bare": {
+  "value": 0,
+  "display": "0",
+  "source": "evidence/devto-roundtrip.txt (fence labelling)",
+  "quote": "bare (unlabelled) opening fences: 0",
+  "derived": false
+ },
+ "med_tables": {
+  "value": 5,
+  "display": "5",
+  "source": "evidence/toolchain-run.txt (make-medium)",
+  "quote": "devto-publishing-kit-gde.md: 5 tables, 1 diagrams",
+  "derived": false
+ },
+ "med_h4": {
+  "value": 19,
+  "display": "19",
+  "source": "evidence/toolchain-run.txt (make-medium)",
+  "quote": "19 <h4",
+  "derived": false
+ },
+ "med_embed_kb": {
+  "value": 497,
+  "display": "497 KB",
+  "source": "evidence/toolchain-run.txt (make-medium)",
+  "quote": "embed: 497 KB",
+  "derived": false
+ },
+ "fp_version": {
+  "value": "0.18.0",
+  "display": "0.18.0",
+  "source": "evidence/skill-footprint.txt (header)",
+  "quote": "publishing 0.18.0",
+  "derived": false
+ },
+ "fp_scripts": {
+  "value": 14,
+  "display": "14",
+  "source": "evidence/skill-footprint.txt (scripts)",
+  "quote": "scripts (14):",
+  "derived": false
+ },
+ "fp_lines": {
+  "value": 4580,
+  "display": "4,580",
+  "source": "evidence/skill-footprint.txt (total)",
+  "quote": "total: 4,580 lines",
+  "derived": false
+ },
+ "fp_always": {
+  "value": 190,
+  "display": "~190",
+  "source": "evidence/skill-footprint.txt (installed snapshot)",
+  "quote": "~190 always-on",
+  "derived": false
+ },
+ "fp_invoke": {
+  "value": "11.8k",
+  "display": "~11.8k",
+  "source": "evidence/skill-footprint.txt (installed snapshot)",
+  "quote": "~11.8k on-invoke",
+  "derived": false
+ },
+ "snap_version": {
+  "value": "0.6.0",
+  "display": "0.6.0",
+  "source": "evidence/install-is-a-snapshot.txt (header)",
+  "quote": "re-captured 2026-08-31T16:46:33-04:00 at 0.6.0",
+  "derived": false
+ },
+ "hw_pct": {
+  "value": 76,
+  "display": "76%",
+  "formula": "round(100 * hw_blocks / hw_total)",
+  "inputs": [
+   "hw_blocks",
+   "hw_total"
+  ],
+  "derived": true,
+  "source": "computed in story_numbers_build.py from hw_blocks, hw_total"
+ },
+ "unwrap_removed": {
+  "value": 120,
+  "display": "120",
+  "formula": "payload_lines_before - payload_lines_after",
+  "inputs": [
+   "payload_lines_before",
+   "payload_lines_after"
+  ],
+  "derived": true,
+  "source": "computed in story_numbers_build.py from payload_lines_before, payload_lines_after"
+ },
+ "li_room": {
+  "value": 1731,
+  "display": "1731",
+  "formula": "li_limit - li_post",
+  "inputs": [
+   "li_post",
+   "li_limit"
+  ],
+  "derived": true,
+  "source": "computed in story_numbers_build.py from li_post, li_limit"
+ }
+}
