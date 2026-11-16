@@ -3,7 +3,7 @@ title: "Auditing a Technical Article with Claude Code Research Skills"
 published: false
 description: "Run the research-kit Claude Code plugin on a published article, then hand its audit to the publishing kit so any number the audit disputes fails the build until it is fixed or explained."
 tags: claudecode, ai, writing, devtools
-cover_image: https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/devto-cover.79ffb8a1.jpg
+cover_image: https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/devto-cover.4d3470a8.jpg
 ---
 
 This article provides a step by step guide to running the research-kit Claude Code plugin on a published technical article, and to handing its audit to the publishing kit. The research skills recompute the numbers the article states and mark the ones they cannot check. The publishing kit then fails the build on any number the audit disputes, until the article fixes it or the ledger explains it.
