@@ -1,0 +1,3 @@
+# exit status of the two check-facts runs in check-facts-before.txt and check-facts-after.txt
+check-facts before (paper/devto-publishing-kit.md): exit 1
+check-facts after (corrected article): exit 0

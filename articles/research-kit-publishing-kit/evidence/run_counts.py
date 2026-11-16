@@ -59,3 +59,4 @@ import pymupdf
 for pdf in sorted(E.glob("*/*.pdf")):
     print("pdf", pdf.relative_to(E), pymupdf.open(pdf).page_count, "pages")
 print("studio check:", (E / "interactive-paper-studio/check_js_output.txt").read_text().strip().splitlines()[-1])
+print("fisher unpaired, as printed: p = %.4f" % s["tests"]["medium_hosted_vs_embed_fisher_unpaired"]["p_value"])

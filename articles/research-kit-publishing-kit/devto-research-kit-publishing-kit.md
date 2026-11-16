@@ -6,7 +6,7 @@ tags: claudecode, ai, writing, devtools
 cover_image: https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/devto-cover.79ffb8a1.jpg
 ---
 
-This article provides a step by step guide to running the research-kit Claude Code plugin on a published technical article, and to handing its audit to the publishing kit. The research skills recompute every number the article states. The publishing kit then fails the build on any number the audit disputes, until the article fixes it or the ledger explains it.
+This article provides a step by step guide to running the research-kit Claude Code plugin on a published technical article, and to handing its audit to the publishing kit. The research skills recompute the numbers the article states and mark the ones they cannot check. The publishing kit then fails the build on any number the audit disputes, until the article fixes it or the ledger explains it.
 
 Repository: https://github.com/xbill9/claude-research-skills
 
@@ -20,7 +20,7 @@ research-kit is a Claude Code plugin with nine skills for research-paper enginee
 
 | Skill | What it does |
 | --- | --- |
-| `math-sandbox` | Recomputes each quantitative claim in code and records a verdict |
+| `math-sandbox` | Recomputes quantitative claims in code and records a verdict on each |
 | `ablation-stat-auditor` | Recomputes rates, intervals and significance tests |
 | `citation-doi-verifier` | Checks every reference against Crossref, OpenAlex and arXiv |
 | `figure-forensics` | Annotates the figures and checks what they show |
@@ -108,7 +108,7 @@ tests: {'medium_hosted_vs_embed_fisher_unpaired': (0.02857142857142857, None, No
 
 The article's headline figure, 47 of 62 paragraphs with a stray break on dev.to, matches its evidence file: 75.8%, with a 95% interval of 63.8% to 84.8%. The same sentence in the article said "a stray break in every paragraph", and 15 of the 62 had none.
 
-The Medium figure, 0 of 4 images surviving a paste against 4 of 4, is a paired comparison of the same four images. The paired test gives p = 0.125. With all-or-none results it first drops below 0.05 at six images. The claim describes fixed editor behaviour, so what supports it is one archived paste, and the ledger carries it from a log dated 2026-08-30 with no artifact.
+The Medium figure, 0 of 4 images surviving a paste against 4 of 4, compares two pastes. If the same four images went into both, the paired test gives p = 0.125, and with all-or-none results it first drops below 0.05 at six images; treated as two separate samples, Fisher's test gives p = 0.0286. No file records which images were pasted. The claim describes fixed editor behaviour, so one archived paste would support it, and the ledger carries it from a log dated 2026-08-30 with no artifact.
 
 ---
 
@@ -123,7 +123,7 @@ image advocu-devto-publishing-kit-cover.webp 1376x578
 image cover-builder.cabd79f3.jpg 1200x675
 ```
 
-Every dev.to cover the kit made is 1376x578, which the 2.381:1 crop leaves whole. The article's 1376x768 example describes a size the kit does not ship.
+Every dev.to cover in the article's directory is 1376x578, which the 2.381:1 crop leaves whole. The kit made 1376x768 covers before `--mode devto` changed, so the article's example describes those older covers, and its sentence now says so.
 
 The article also said "the two numbers on the cover are real". Both covers carry no numbers, and the current one has no text at all and five destination shapes, while the article describes four destinations.
 
@@ -138,7 +138,7 @@ citation dois/arxiv in paper text: 0
 citation links: 10 of 11 resolving and identified
 ```
 
-Each of the 11 links was fetched instead and matched to a second source: the GitHub API for the repository, the dev.to API for the article copies, and a byte comparison for the cover. Medium answers scripts with HTTP 403, so its copy needs a check in a browser.
+All 11 links were fetched, and 10 were matched to a second source: the GitHub API for the repository, the dev.to API for the article copies, and a byte comparison for the cover. Medium answers scripts with HTTP 403, so its copy needs a check in a browser.
 
 ---
 
@@ -210,6 +210,7 @@ The same run against the corrected article:
   NOTED count        0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
   ok    dimensions   1376x578                     <- eq_verified_numbers.json
   ok    count        47 of 62                     <- eq_verified_numbers.json
+  ...
 
 3 traced, 0 cited from the log, 0 untraced, 0 disputed, 5 disputed with a caveat
 ```
@@ -257,8 +258,8 @@ The publishing kit writes a reversal as a **Correction** paragraph that keeps th
 | Skill | Fit for a technical article | What it found here |
 | --- | --- | --- |
 | `math-sandbox` | 🥇 every quantitative claim | 6 mismatches, 5 not checkable |
-| `ablation-stat-auditor` | 🥇 any count or rate | an overstatement and an unsupported comparison |
-| `figure-forensics` | 🥈 covers and diagrams | a cover size the kit does not ship |
+| `ablation-stat-auditor` | 🥇 any count or rate | 6 mismatches, 3 not checkable |
+| `figure-forensics` | 🥈 covers and diagrams | a cover sentence with no number on the cover |
 | `paper-number-check` | 🥈 anything built from the article | 0 disputed after the ledger rows |
 | `citation-doi-verifier` | 🥉 links only | 10 of 11 links confirmed |
 | `interactive-paper-studio` | 🥉 when the article has a model | a threshold its own comment misstates |
@@ -275,13 +276,13 @@ Start with `math-sandbox` and `ablation-stat-auditor`. They write the audit reco
 
 The goal of this article was to check every number in a published technical article and stop the disputed ones from shipping again. The key to the solution was a verdict beside every recomputed number, read by the publishing kit's `check-facts.py`. The results on the publishing kit's walk-through were:
 
-- 🟢 26 claims recomputed: 15 verified, 6 mismatches, 5 not checkable
+- 🟢 26 claims checked: 15 verified, 6 mismatches, 5 not checkable
 - 🟢 47 of 62 matches its evidence: 75.8%, 95% interval 63.8% to 84.8%
 - ❌ "every paragraph", "on the cover" and the footer date overstated their evidence; all three fixed
 - ⚠️ 0 of 4 against 4 of 4 on Medium has no archived artifact; kept with its caveat
 - 🟢 check-facts went from 5 disputed to 0, with 5 explained in the ledger
 
-Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and the publishing kit's `check-facts.py` from 0.36.0. Each skill ran once, as a separate agent. The comic run stopped before its final page review. Live pages were fetched only by the link check.
+Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and the publishing kit's `check-facts.py` from 0.36.0. Each skill ran once, as a separate agent, as the example's README records. The comic run stopped before its final page review. Live pages were fetched only by the link check.
 
 The strategy for auditing a technical article with Claude Code research skills was validated with an incremental step by step approach.
 

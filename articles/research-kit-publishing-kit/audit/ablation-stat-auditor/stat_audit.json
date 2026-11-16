@@ -1,0 +1,1178 @@
+{
+ "paper": "articles/research-kit-publishing-kit/devto-research-kit-publishing-kit.md",
+ "verdict_counts": {
+  "VERIFIED": 36,
+  "NOT CHECKABLE": 4,
+  "MISMATCH": 3
+ },
+ "claims": [
+  {
+   "id": "skill-count-9",
+   "statement": "research-kit is a Claude Code plugin with nine skills",
+   "paper_value": {
+    "skills": 9
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:19",
+   "computed": {
+    "skills": 9
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "plugin/skills/*/SKILL.md: ['ablation-stat-auditor', 'citation-doi-verifier', 'figure-forensics', 'frontier-gap-radar', 'graphic-story', 'interactive-paper-studio', 'math-sandbox', 'paper-number-check', 'trajectory-cinematics']",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "plugin-version",
+   "statement": "    Version: 1.3.1",
+   "paper_value": {
+    "version": "1.3.1"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:63",
+   "computed": {
+    "version_plugin_json": "1.3.1",
+    "in_evidence": true
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "plugin.json and evidence/plugin-install.txt",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "math-sandbox-26",
+   "statement": "math-sandbox claims: 26 {'VERIFIED': 15, 'NOT CHECKABLE': 5, 'MISMATCH': 6}",
+   "paper_value": {
+    "total": 26,
+    "VERIFIED": 15,
+    "NOT CHECKABLE": 5,
+    "MISMATCH": 6
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:90",
+   "computed": {
+    "total": 26,
+    "VERIFIED": 15,
+    "NOT CHECKABLE": 5,
+    "MISMATCH": 6
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "recounted from math-sandbox/eq_verified_numbers.json equations[]. A census of audit records, not a sample.",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "math-sandbox-26-sum",
+   "statement": "\ud83d\udfe2 26 claims recomputed: 15 verified, 6 mismatches, 5 not checkable",
+   "paper_value": {
+    "total": 26,
+    "VERIFIED": 15,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:278",
+   "computed": {
+    "total": 26,
+    "VERIFIED": 15,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "same recount",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "math-sandbox-26-cc",
+   "statement": "| `math-sandbox` | \ud83e\udd47 every quantitative claim | 6 mismatches, 5 not checkable |",
+   "paper_value": {
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:259",
+   "computed": {
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "same recount",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "crop-arith",
+   "statement": "crop: ratio 1000/420 = 2.380952 ; rows kept at width 1376 = 577.92 ; lost per side from 768 = 95.04",
+   "paper_value": {
+    "ratio": 2.380952,
+    "kept": 577.92,
+    "lost_per_side": 95.04
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:91",
+   "computed": {
+    "ratio": 2.380952,
+    "kept": 577.92,
+    "lost_per_side": 95.04
+   },
+   "verdict": "VERIFIED",
+   "test": "arithmetic",
+   "reason": "arithmetic; the 1000x420 box comes from the dev.to proxy URL in paper/evidence/devto-cover-crop.txt",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "crop-95px",
+   "statement": "a 1376x768 cover loses 95px off the top and bottom",
+   "paper_value": {
+    "ratio": 2.381,
+    "px_each_side": 95
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:94",
+   "computed": {
+    "ratio": 2.381,
+    "px_each_side": 95
+   },
+   "verdict": "VERIFIED",
+   "test": "arithmetic",
+   "reason": "arithmetic holds; the even split assumes a centre crop, which line 96 says is unmeasured (gravity=auto)",
+   "conclusion": "HOLDS (arithmetic only)"
+  },
+  {
+   "id": "crop-578-whole",
+   "statement": "Every dev.to cover the kit made is 1376x578, which the 2.381:1 crop leaves whole",
+   "paper_value": {
+    "w": 1376,
+    "h": 578
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:126",
+   "computed": {
+    "ratio_1376x578": 2.3806,
+    "rows_lost_per_side": 0.04
+   },
+   "verdict": "VERIFIED",
+   "test": "arithmetic",
+   "reason": "578 vs 577.92 rows kept: 0.04 px per side",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "stat-audit-16",
+   "statement": "ablation-stat-auditor claim records: 16 {'VERIFIED': 7, 'MISMATCH': 6, 'NOT CHECKABLE': 3}",
+   "paper_value": {
+    "total": 16,
+    "VERIFIED": 7,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 3
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:105",
+   "computed": {
+    "total": 16,
+    "VERIFIED": 7,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 3
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "recounted from examples/.../ablation-stat-auditor/stat_audit.json claims[]",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "tests-line",
+   "statement": "tests: {'medium_hosted_vs_embed_fisher_unpaired': (0.02857142857142857, None, None), 'medium_hosted_vs_embed_mcnemar_paired': (0.125, 4, 0), ...}",
+   "paper_value": {
+    "fisher_p": 0.02857142857142857,
+    "mcnemar_p": 0.125,
+    "b": 4,
+    "c": 0
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:106",
+   "computed": {
+    "fisher_p": 0.02857142857142857,
+    "mcnemar_p": 0.125,
+    "b": 4,
+    "c": 0
+   },
+   "verdict": "VERIFIED",
+   "test": "Fisher exact + exact McNemar",
+   "reason": "MCP verify_fisher_exact(4/4 vs 0/4) and verify_mcnemar_exact(4,0)",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "hardwrap-47-62",
+   "statement": "The article's headline figure, 47 of 62 paragraphs with a stray break on dev.to, matches its evidence file: 75.8%, with a 95% interval of 63.8% to 84.8%",
+   "paper_value": {
+    "k": 47,
+    "n": 62,
+    "rate_pct": 75.8,
+    "ci": [
+     63.8,
+     84.8
+    ]
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:109",
+   "computed": {
+    "k_evidence": 47,
+    "n_evidence": 62,
+    "rate_pct": 75.80645161290323,
+    "ci": [
+     63.84749248397259,
+     84.75410379466626
+    ]
+   },
+   "verdict": "VERIFIED",
+   "test": "Wilson score",
+   "reason": "k and n parsed from paper/evidence/devto-hardwrap.txt:12-13; Wilson via MCP. One article measured: the interval covers paragraphs of that article, and says nothing about dev.to articles in general.",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "hardwrap-15-none",
+   "statement": "15 of the 62 had none",
+   "paper_value": {
+    "k": 15,
+    "n": 62
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:109",
+   "computed": {
+    "k": 15,
+    "n": 62
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "62 - 47 from the evidence file",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "summary-47-62",
+   "statement": "\ud83d\udfe2 47 of 62 matches its evidence: 75.8%, 95% interval 63.8% to 84.8%",
+   "paper_value": {
+    "k": 47,
+    "n": 62,
+    "rate_pct": 75.8,
+    "ci": [
+     63.8,
+     84.8
+    ]
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:279",
+   "computed": {
+    "k": 47,
+    "n": 62,
+    "rate_pct": 75.80645161290323,
+    "ci": [
+     63.84749248397259,
+     84.75410379466626
+    ]
+   },
+   "verdict": "VERIFIED",
+   "test": "Wilson score",
+   "reason": "same MCP call",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "medium-mcnemar-0125",
+   "statement": "The paired test gives p = 0.125",
+   "paper_value": {
+    "p": 0.125
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:111",
+   "computed": {
+    "p": 0.125,
+    "b": 4,
+    "c": 0,
+    "wilson_0_of_4": [
+     0.0,
+     48.99
+    ],
+    "wilson_4_of_4": [
+     51.01,
+     100.0
+    ]
+   },
+   "verdict": "VERIFIED",
+   "test": "exact McNemar",
+   "reason": "exact McNemar with b=4 (hosted only), c=0. Inputs are the article's totals; the pairing they assume is record medium-paired-design.",
+   "conclusion": "p >= 0.05 if paired; see medium-paired-design"
+  },
+  {
+   "id": "medium-paired-design",
+   "statement": "is a paired comparison of the same four images",
+   "paper_value": {
+    "design": "paired, same four images"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:111",
+   "computed": {
+    "design": "unknown",
+    "per_image_outcomes_archived": false,
+    "fisher_unpaired_p": 0.02857142857142857,
+    "ledger_rows": [
+     "paper/CLAIMS.md:96"
+    ]
+   },
+   "verdict": "NOT CHECKABLE",
+   "test": "design",
+   "reason": "No file records which images were pasted either way; the only source is a CLAIMS.md log row with totals. The design decides the answer: paired McNemar p = 0.125, unpaired Fisher p = 0.0286 (below 0.05).",
+   "conclusion": "OVERSTATED: the article states the pairing as fact; it is an assumption"
+  },
+  {
+   "id": "medium-six-images",
+   "statement": "With all-or-none results it first drops below 0.05 at six images",
+   "paper_value": {
+    "n_images": 6
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:111",
+   "computed": {
+    "n_images_paired": 6,
+    "p_at_n_minus_1": 0.0625,
+    "p_at_n": 0.03125,
+    "n_images_unpaired_fisher": 4
+   },
+   "verdict": "VERIFIED",
+   "test": "exact McNemar sweep",
+   "reason": "MCP verify_mcnemar_exact(n, 0) for n = 1..: p first < 0.05 at n = 6. Under the unpaired design it is n = 4.",
+   "conclusion": "HOLDS if paired"
+  },
+  {
+   "id": "medium-archived-paste",
+   "statement": "what supports it is one archived paste",
+   "paper_value": {
+    "archived_pastes": 1
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:111",
+   "computed": {
+    "archived_pastes": 0,
+    "evidence_files_on_medium_data_uris": [],
+    "ledger": "paper/CLAIMS.md:96"
+   },
+   "verdict": "MISMATCH",
+   "test": "provenance",
+   "reason": "paper/evidence holds no file about Medium data-URI pastes; the same sentence goes on to say 'with no artifact'. Probably meant 'what would support it'.",
+   "conclusion": "OVERSTATED"
+  },
+  {
+   "id": "medium-log-date",
+   "statement": "the ledger carries it from a log dated 2026-08-30 with no artifact",
+   "paper_value": {
+    "date": "2026-08-30"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:111",
+   "computed": {
+    "date_in_ledger": true,
+    "row": "| Medium strips `data:` URIs on paste; 0 of 4 embed, 4 of 4 hosted | 2026-08-30 |"
+   },
+   "verdict": "VERIFIED",
+   "test": "provenance",
+   "reason": "paper/CLAIMS.md log row",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "image-cover.77acc7c4.jpg",
+   "statement": "image cover.77acc7c4.jpg 1376x578",
+   "paper_value": {
+    "dims": "1376x578"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:120",
+   "computed": {
+    "dims": "1376x578"
+   },
+   "verdict": "VERIFIED",
+   "test": "measurement",
+   "reason": "PIL on paper/cover.77acc7c4.jpg",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "image-cover.ae4d639e.jpg",
+   "statement": "image cover.ae4d639e.jpg 1376x578",
+   "paper_value": {
+    "dims": "1376x578"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:121",
+   "computed": {
+    "dims": "1376x578"
+   },
+   "verdict": "VERIFIED",
+   "test": "measurement",
+   "reason": "PIL on paper/cover.ae4d639e.jpg",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "image-advocu-devto-publishing-kit-cover.webp",
+   "statement": "image advocu-devto-publishing-kit-cover.webp 1376x578",
+   "paper_value": {
+    "dims": "1376x578"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:122",
+   "computed": {
+    "dims": "1376x578"
+   },
+   "verdict": "VERIFIED",
+   "test": "measurement",
+   "reason": "PIL on paper/advocu-devto-publishing-kit-cover.webp",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "image-cover-builder.cabd79f3.jpg",
+   "statement": "image cover-builder.cabd79f3.jpg 1200x675",
+   "paper_value": {
+    "dims": "1200x675"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:123",
+   "computed": {
+    "dims": "1200x675"
+   },
+   "verdict": "VERIFIED",
+   "test": "measurement",
+   "reason": "PIL on paper/cover-builder.cabd79f3.jpg",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "every-devto-cover-578",
+   "statement": "Every dev.to cover the kit made is 1376x578",
+   "paper_value": {
+    "all": "1376x578"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:126",
+   "computed": {
+    "covers": {
+     "advocu-devto-publishing-kit-cover.webp": "1376x578",
+     "cover.77acc7c4.jpg": "1376x578",
+     "cover.ae4d639e.jpg": "1376x578"
+    }
+   },
+   "verdict": "VERIFIED",
+   "test": "measurement",
+   "reason": "3 dev.to covers in the article's folder; covers the kit made for other articles were not measured",
+   "conclusion": "HOLDS for this article's folder; wider generalisation untested"
+  },
+  {
+   "id": "five-destinations",
+   "statement": "five destination shapes, while the article describes four destinations",
+   "paper_value": {
+    "markers": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:128",
+   "computed": {
+    "endpoint_markers_per_cover": {
+     "cover.ae4d639e.jpg": 5,
+     "cover-builder.cabd79f3.jpg": 5,
+     "linkedin-devto-publishing-kit-cover.jpg": 5,
+     "advocu-devto-publishing-kit-cover.webp": 5
+    }
+   },
+   "verdict": "VERIFIED",
+   "test": "measurement",
+   "reason": "figure-forensics/work/measurements.json endpoints[]. That each marker is a destination is an inference; no file maps them.",
+   "conclusion": "HOLDS (count); 'destination' is a reading of the art"
+  },
+  {
+   "id": "links-10-11-out",
+   "statement": "citation links: 10 of 11 resolving and identified",
+   "paper_value": {
+    "k": 10,
+    "n": 11
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:138",
+   "computed": {
+    "k": 10,
+    "n": 11,
+    "wilson_ci_pct": [
+     62.26,
+     98.38
+    ]
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "rows of citation-doi-verifier/REPORT.md. A census of the article's links: the interval is printed for completeness and has no population to describe.",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "links-10-11-cc",
+   "statement": "| `citation-doi-verifier` | \ud83e\udd49 links only | 10 of 11 links confirmed |",
+   "paper_value": {
+    "k": 10,
+    "n": 11
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:263",
+   "computed": {
+    "k": 10,
+    "n": 11,
+    "wilson_ci_pct": [
+     62.26,
+     98.38
+    ]
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "rows of citation-doi-verifier/REPORT.md. A census of the article's links: the interval is printed for completeness and has no population to describe.",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "links-each-11-matched",
+   "statement": "Each of the 11 links was fetched instead and matched to a second source",
+   "paper_value": {
+    "matched": 11,
+    "n": 11
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:141",
+   "computed": {
+    "matched": 10,
+    "n": 11,
+    "not_matched": [
+     "L9"
+    ]
+   },
+   "verdict": "MISMATCH",
+   "test": "count",
+   "reason": "['L9'] was blocked (HTTP 403) and its RSS fallback did not contain it; the next sentence says so, but this one counts 11.",
+   "conclusion": "OVERSTATED (corrected by the following sentence)"
+  },
+  {
+   "id": "dois-0",
+   "statement": "citation dois/arxiv in paper text: 0",
+   "paper_value": {
+    "count": 0
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:137",
+   "computed": {
+    "count": 0
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "regex over paper/**/*.md and *.txt",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "studio-130",
+   "statement": "studio check: 130 values, 0 mismatches, worst abs error 0.00e+0",
+   "paper_value": {
+    "values": 130,
+    "mismatches": 0
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:150",
+   "computed": {
+    "values": 130,
+    "mismatches": 0,
+    "table_rows": 64,
+    "sweep_values": 66
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "rows of interactive-paper-studio/check_js_output.txt plus its sweep line",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "legibility",
+   "statement": "legibility: LEGIBLE_PX*1376/CARD_W = 43.0 ; 40pt at 320/1376 = 9.3 px",
+   "paper_value": {
+    "pt": 43.0,
+    "px_at_40pt": 9.3
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:156",
+   "computed": {
+    "pt": 43.0,
+    "px_at_40pt": 9.3,
+    "CARD_W": 320,
+    "LEGIBLE_PX": 10
+   },
+   "verdict": "VERIFIED",
+   "test": "arithmetic",
+   "reason": "constants parsed from evidence/make-cover-constants.txt",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "comic-5-pages",
+   "statement": "`graphic-story` draws a 5-page comic of the article",
+   "paper_value": {
+    "pages": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:159",
+   "computed": {
+    "pages": 5
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "pymupdf page count",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "cf-before",
+   "statement": "2 traced, 0 cited from the log, 0 untraced, 5 disputed",
+   "paper_value": {
+    "traced": 2,
+    "disputed": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:181",
+   "computed": {
+    "ok_lines": 2,
+    "disputed_lines": 5,
+    "article_block_matches_evidence": true
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "evidence/check-facts-before.txt",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "cf-exit-1",
+   "statement": "It exits 1.",
+   "paper_value": {
+    "exit": 1
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:184",
+   "computed": {
+    "exit": null
+   },
+   "verdict": "NOT CHECKABLE",
+   "test": "provenance",
+   "reason": "neither check-facts evidence file records the exit status",
+   "conclusion": "CANNOT CHECK"
+  },
+  {
+   "id": "cf-exit-0",
+   "statement": "It exits 0.",
+   "paper_value": {
+    "exit": 0
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:217",
+   "computed": {
+    "exit": null
+   },
+   "verdict": "NOT CHECKABLE",
+   "test": "provenance",
+   "reason": "neither check-facts evidence file records the exit status",
+   "conclusion": "CANNOT CHECK"
+  },
+  {
+   "id": "cf-after",
+   "statement": "3 traced, 0 cited from the log, 0 untraced, 0 disputed, 5 disputed with a caveat",
+   "paper_value": {
+    "traced": 3,
+    "disputed": 0,
+    "caveat": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:214",
+   "computed": {
+    "ok_lines": 3,
+    "disputed_lines": 0,
+    "noted_lines": 5,
+    "lines_in_evidence": 8,
+    "lines_shown_in_article": 3
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "evidence/check-facts-after.txt; the article shows 3 of its 8 claim lines without marking the cut",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "cf-5-to-0",
+   "statement": "\ud83d\udfe2 check-facts went from 5 disputed to 0, with 5 explained in the ledger",
+   "paper_value": {
+    "before": 5,
+    "after": 0,
+    "explained": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:282",
+   "computed": {
+    "before": 5,
+    "after": 0,
+    "explained": 5
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "both evidence files",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "pnc-outputs",
+   "statement": "interactive-paper-studio/index.html: 0 disputed, 11 noted, 5 traced, 30 untraced",
+   "paper_value": {
+    "interactive-paper-studio/index.html": [
+     0,
+     11,
+     5,
+     30
+    ],
+    "graphic-story/Story.html": [
+     0,
+     9,
+     7,
+     20
+    ]
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:231",
+   "computed": {
+    "interactive-paper-studio/index.html": [
+     0,
+     11,
+     5,
+     30
+    ],
+    "graphic-story/Story.html": [
+     0,
+     9,
+     7,
+     20
+    ]
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "evidence/paper-number-check.txt (also covers line 232)",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "kit-0360",
+   "statement": "The publishing kit at 0.36.0 or later",
+   "paper_value": {
+    "version": "0.36.0"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:47",
+   "computed": {
+    "path_has_0.36.0": true
+   },
+   "verdict": "VERIFIED",
+   "test": "provenance",
+   "reason": "check-facts path in evidence/paper-number-check.txt",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "collisions-2-of-5",
+   "statement": "Two of the five disputed claims in Step 8 are number collisions",
+   "paper_value": {
+    "collisions": 2,
+    "disputed": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:243",
+   "computed": {
+    "collisions": 2,
+    "disputed": 5,
+    "checks": {
+     "2.381:1 -> M5": true,
+     "95px -> M1": true
+    },
+    "D1_proxy_ratio": "VERIFIED"
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "M5 stores pre_lines [2,2,1,4] (the 1 matched); M1 is the 95-column record while B2 (95px crop) is VERIFIED; D1 (2.381) is VERIFIED",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "css-1px-4px",
+   "statement": "so `1px` and `4px` can match",
+   "paper_value": {
+    "lengths": [
+     "1px",
+     "4px"
+    ]
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:245",
+   "computed": {
+    "1px": 6,
+    "4px": 3
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "evidence/studio-css-lengths.txt occurrence counts",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "cc-ablation-found",
+   "statement": "| `ablation-stat-auditor` | \ud83e\udd47 any count or rate | an overstatement and an unsupported comparison |",
+   "paper_value": {
+    "overstated": 1,
+    "unsupported_comparisons": 1
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:260",
+   "computed": {
+    "overstated": 2,
+    "overstated_rows": [
+     "\"a stray break in every paragraph\"",
+     "behaviours \"measured on 2026-08-31\""
+    ]
+   },
+   "verdict": "MISMATCH",
+   "test": "count",
+   "reason": "conclusion column of examples/.../ablation-stat-auditor/STAT_AUDIT_REPORT.md",
+   "conclusion": "HOLDS in kind; the count is 2"
+  },
+  {
+   "id": "three-fixed",
+   "statement": "\u274c \"every paragraph\", \"on the cover\" and the footer date overstated their evidence; all three fixed",
+   "paper_value": {
+    "fixed": 3
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:280",
+   "computed": {
+    "fixed": 3,
+    "fix_table_rows": 5
+   },
+   "verdict": "VERIFIED",
+   "test": "count",
+   "reason": "Step 9 table rows; fixes live in the publishing-kit repo, not re-read here",
+   "conclusion": "HOLDS"
+  },
+  {
+   "id": "ran-once",
+   "statement": "Each skill ran once, as a separate agent.",
+   "paper_value": {
+    "runs_per_skill": 1
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:284",
+   "computed": {
+    "runs_per_skill": null
+   },
+   "verdict": "NOT CHECKABLE",
+   "test": "provenance",
+   "reason": "no session log in the example records how many runs each skill had",
+   "conclusion": "CANNOT CHECK"
+  }
+ ],
+ "noise_floor": {
+  "n62_at_0.758": {
+   "num_tasks": 62,
+   "baseline_rate_pct": 75.81,
+   "std_error_pct": 5.44,
+   "ci_95_half_width_pct": 10.66,
+   "multiplier_z_alpha_plus_z_power": 2.8016,
+   "min_detectable_lift_vs_fixed_baseline_pts": 15.24,
+   "min_detectable_lift_two_runs_pts": 21.55
+  },
+  "n4_at_0.5": {
+   "num_tasks": 4,
+   "baseline_rate_pct": 50.0,
+   "std_error_pct": 25.0,
+   "ci_95_half_width_pct": 49.0,
+   "multiplier_z_alpha_plus_z_power": 2.8016,
+   "min_detectable_lift_vs_fixed_baseline_pts": 70.04,
+   "min_detectable_lift_two_runs_pts": 99.05
+  },
+  "note": "context only: the article compares no two runs on a benchmark"
+ },
+ "wilcoxon": "not run: the article reports no paired resource metric",
+ "raw_mcp_calls": [
+  {
+   "tool": "verify_fisher_exact",
+   "arguments": {
+    "k_method": 4,
+    "n_method": 4,
+    "k_baseline": 0,
+    "n_baseline": 4
+   },
+   "result": {
+    "method": "4/4",
+    "baseline": "0/4",
+    "method_rate_pct": 100.0,
+    "baseline_rate_pct": 0.0,
+    "difference_pts": 100.0,
+    "odds_ratio": "inf",
+    "p_value": 0.02857142857142857,
+    "significant_at_0_05": true,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 4,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 4,
+    "c_baseline_only": 0,
+    "discordant": 4,
+    "p_value": 0.125,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_wilson_ci",
+   "arguments": {
+    "successes": 47,
+    "total": 62
+   },
+   "result": {
+    "successes": 47,
+    "total": 62,
+    "rate_pct": 75.81,
+    "wilson_low_pct": 63.85,
+    "wilson_high_pct": 84.75,
+    "z": 1.959964,
+    "formatted": "75.8% (95% Wilson CI [63.8%, 84.8%])"
+   }
+  },
+  {
+   "tool": "verify_wilson_ci",
+   "arguments": {
+    "successes": 0,
+    "total": 4
+   },
+   "result": {
+    "successes": 0,
+    "total": 4,
+    "rate_pct": 0.0,
+    "wilson_low_pct": 0.0,
+    "wilson_high_pct": 48.99,
+    "z": 1.959964,
+    "formatted": "0.0% (95% Wilson CI [0.0%, 49.0%])"
+   }
+  },
+  {
+   "tool": "verify_wilson_ci",
+   "arguments": {
+    "successes": 4,
+    "total": 4
+   },
+   "result": {
+    "successes": 4,
+    "total": 4,
+    "rate_pct": 100.0,
+    "wilson_low_pct": 51.01,
+    "wilson_high_pct": 100.0,
+    "z": 1.959964,
+    "formatted": "100.0% (95% Wilson CI [51.0%, 100.0%])"
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 1,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 1,
+    "c_baseline_only": 0,
+    "discordant": 1,
+    "p_value": 1.0,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 2,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 2,
+    "c_baseline_only": 0,
+    "discordant": 2,
+    "p_value": 0.5,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 3,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 3,
+    "c_baseline_only": 0,
+    "discordant": 3,
+    "p_value": 0.25,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 4,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 4,
+    "c_baseline_only": 0,
+    "discordant": 4,
+    "p_value": 0.125,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 5,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 5,
+    "c_baseline_only": 0,
+    "discordant": 5,
+    "p_value": 0.0625,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 6,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 6,
+    "c_baseline_only": 0,
+    "discordant": 6,
+    "p_value": 0.03125,
+    "significant_at_0_05": true,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 5,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 5,
+    "c_baseline_only": 0,
+    "discordant": 5,
+    "p_value": 0.0625,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_mcnemar_exact",
+   "arguments": {
+    "b": 6,
+    "c": 0
+   },
+   "result": {
+    "b_method_only": 6,
+    "c_baseline_only": 0,
+    "discordant": 6,
+    "p_value": 0.03125,
+    "significant_at_0_05": true,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_fisher_exact",
+   "arguments": {
+    "k_method": 1,
+    "n_method": 1,
+    "k_baseline": 0,
+    "n_baseline": 1
+   },
+   "result": {
+    "method": "1/1",
+    "baseline": "0/1",
+    "method_rate_pct": 100.0,
+    "baseline_rate_pct": 0.0,
+    "difference_pts": 100.0,
+    "odds_ratio": "inf",
+    "p_value": 1.0,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_fisher_exact",
+   "arguments": {
+    "k_method": 2,
+    "n_method": 2,
+    "k_baseline": 0,
+    "n_baseline": 2
+   },
+   "result": {
+    "method": "2/2",
+    "baseline": "0/2",
+    "method_rate_pct": 100.0,
+    "baseline_rate_pct": 0.0,
+    "difference_pts": 100.0,
+    "odds_ratio": "inf",
+    "p_value": 0.3333333333333333,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_fisher_exact",
+   "arguments": {
+    "k_method": 3,
+    "n_method": 3,
+    "k_baseline": 0,
+    "n_baseline": 3
+   },
+   "result": {
+    "method": "3/3",
+    "baseline": "0/3",
+    "method_rate_pct": 100.0,
+    "baseline_rate_pct": 0.0,
+    "difference_pts": 100.0,
+    "odds_ratio": "inf",
+    "p_value": 0.1,
+    "significant_at_0_05": false,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_fisher_exact",
+   "arguments": {
+    "k_method": 4,
+    "n_method": 4,
+    "k_baseline": 0,
+    "n_baseline": 4
+   },
+   "result": {
+    "method": "4/4",
+    "baseline": "0/4",
+    "method_rate_pct": 100.0,
+    "baseline_rate_pct": 0.0,
+    "difference_pts": 100.0,
+    "odds_ratio": "inf",
+    "p_value": 0.02857142857142857,
+    "significant_at_0_05": true,
+    "significant_at_0_01": false
+   }
+  },
+  {
+   "tool": "verify_wilson_ci",
+   "arguments": {
+    "successes": 10,
+    "total": 11
+   },
+   "result": {
+    "successes": 10,
+    "total": 11,
+    "rate_pct": 90.91,
+    "wilson_low_pct": 62.26,
+    "wilson_high_pct": 98.38,
+    "z": 1.959964,
+    "formatted": "90.9% (95% Wilson CI [62.3%, 98.4%])"
+   }
+  },
+  {
+   "tool": "leaderboard_noise_floor",
+   "arguments": {
+    "num_tasks": 62,
+    "baseline_rate": 0.7580645161290323
+   },
+   "result": {
+    "num_tasks": 62,
+    "baseline_rate_pct": 75.81,
+    "std_error_pct": 5.44,
+    "ci_95_half_width_pct": 10.66,
+    "multiplier_z_alpha_plus_z_power": 2.8016,
+    "min_detectable_lift_vs_fixed_baseline_pts": 15.24,
+    "min_detectable_lift_two_runs_pts": 21.55
+   }
+  },
+  {
+   "tool": "leaderboard_noise_floor",
+   "arguments": {
+    "num_tasks": 4,
+    "baseline_rate": 0.5
+   },
+   "result": {
+    "num_tasks": 4,
+    "baseline_rate_pct": 50.0,
+    "std_error_pct": 25.0,
+    "ci_95_half_width_pct": 49.0,
+    "multiplier_z_alpha_plus_z_power": 2.8016,
+    "min_detectable_lift_vs_fixed_baseline_pts": 70.04,
+    "min_detectable_lift_two_runs_pts": 99.05
+   }
+  }
+ ]
+}

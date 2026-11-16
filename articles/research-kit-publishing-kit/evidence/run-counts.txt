@@ -20,3 +20,4 @@ pdf figure-forensics/PublishingKit_Figure_Anatomy_v1.pdf 6 pages
 pdf graphic-story/PublishingKit_Comic_v1.pdf 5 pages
 pdf math-sandbox/PublishingKit_Equation_Guide_v1.pdf 7 pages
 studio check: 130 values, 0 mismatches, worst abs error 0.00e+0
+fisher unpaired, as printed: p = 0.0286

@@ -1,0 +1,24 @@
+claim records: 43 {'VERIFIED': 36, 'NOT CHECKABLE': 4, 'MISMATCH': 3}
+NOT CHECKABLE  devto-research-kit-publishing-kit.md:111   'is a paired comparison of the same four images'
+    paper={"design": "paired, same four images"}
+    computed={"design": "unknown", "per_image_outcomes_archived": false, "fisher_unpaired_p": 0.02857142857142857, "ledger_rows": ["paper/CLAIMS.md:96"]}
+MISMATCH       devto-research-kit-publishing-kit.md:111   'what supports it is one archived paste'
+    paper={"archived_pastes": 1}
+    computed={"archived_pastes": 0, "evidence_files_on_medium_data_uris": [], "ledger": "paper/CLAIMS.md:96"}
+MISMATCH       devto-research-kit-publishing-kit.md:141   'Each of the 11 links was fetched instead and matched to a second source'
+    paper={"matched": 11, "n": 11}
+    computed={"matched": 10, "n": 11, "not_matched": ["L9"]}
+NOT CHECKABLE  devto-research-kit-publishing-kit.md:184   'It exits 1.'
+    paper={"exit": 1}
+    computed={"exit": null}
+NOT CHECKABLE  devto-research-kit-publishing-kit.md:217   'It exits 0.'
+    paper={"exit": 0}
+    computed={"exit": null}
+MISMATCH       devto-research-kit-publishing-kit.md:260   '| `ablation-stat-auditor` | 🥇 any count or rate | an overstatement and an unsupported comparison |'
+    paper={"overstated": 1, "unsupported_comparisons": 1}
+    computed={"overstated": 2, "overstated_rows": ["\"a stray break in every paragraph\"", "behaviours \"measured on 2026-08-31\""]}
+NOT CHECKABLE  devto-research-kit-publishing-kit.md:284   'Each skill ran once, as a separate agent.'
+    paper={"runs_per_skill": 1}
+    computed={"runs_per_skill": null}
+noise floor n=62: {"num_tasks": 62, "baseline_rate_pct": 75.81, "std_error_pct": 5.44, "ci_95_half_width_pct": 10.66, "multiplier_z_alpha_plus_z_power": 2.8016, "min_detectable_lift_vs_fixed_baseline_pts": 15.24, "min_detectable_lift_two_runs_pts": 21.55}
+noise floor n=4: {"num_tasks": 4, "baseline_rate_pct": 50.0, "std_error_pct": 25.0, "ci_95_half_width_pct": 49.0, "multiplier_z_alpha_plus_z_power": 2.8016, "min_detectable_lift_vs_fixed_baseline_pts": 70.04, "min_detectable_lift_two_runs_pts": 99.05}

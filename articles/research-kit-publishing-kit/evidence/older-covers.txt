@@ -1,0 +1,3 @@
+# dev.to covers the kit made before --mode devto emitted 1376x578 (gemma4-dev/docs, listed in the audited paper CLAIMS.md line 30)
+devto-cover-aws.jpg 1376x768
+devto-cover-gde.jpg 1376x768

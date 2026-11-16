@@ -1,0 +1,23 @@
+devto-research-kit-publishing-kit.md: 18 claim(s) against 12 evidence file(s)
+
+  NOTED count        0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    version      0.36.0                       <- paper-number-check.txt
+  ok    version      1.3.1                        <- plugin-install.txt
+  NOTED count        10 of 11                     <- MISMATCH in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    dimensions   1376x578                     <- check-facts-after.txt
+  ok    dimensions   1376x768                     <- check-facts-after.txt
+  NOTED pixels       1px                          <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  NOTED ratio        2.381:1                      <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    pixels       320px                        <- check-facts-after.txt
+  ok    count        4 of 4                       <- check-facts-after.txt
+  ok    count        47 of 62                     <- check-facts-after.txt
+  ok    pixels       4px                          <- studio-css-lengths.txt
+  ok    measurement  63.8%                        <- run-counts.txt
+  ok    measurement  75.8%                        <- run-counts.txt
+  ok    measurement  84.8%                        <- run-counts.txt
+  ok    pixels       95px                         <- check-facts-after.txt
+  ok    p-value      p = 0.0286                   <- stat_audit.json
+  ok    p-value      p = 0.125                    <- run-counts.txt
+
+14 traced, 0 cited from the log, 0 untraced, 0 disputed, 4 disputed with a caveat
+exit 0
