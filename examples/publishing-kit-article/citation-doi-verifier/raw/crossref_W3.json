@@ -1,0 +1,87 @@
+{
+  "query": "Streamline Publishing with a Claude Code Skill",
+  "candidates": [
+    {
+      "doi": "10.59350/kp0qm-eba30",
+      "title": "Sessionmaxxing Claude Code",
+      "authors": [
+        "Stephen Turner"
+      ],
+      "first_author_family": "Turner",
+      "author_count": 1,
+      "year": 2026,
+      "venue": "",
+      "type": "posted-content",
+      "publisher": "Front Matter",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.5
+    },
+    {
+      "doi": "10.59350/tetv4-ynb16",
+      "title": "Sessionmaxxing Claude Code",
+      "authors": [
+        "Stephen Turner"
+      ],
+      "first_author_family": "Turner",
+      "author_count": 1,
+      "year": 2026,
+      "venue": "",
+      "type": "posted-content",
+      "publisher": "Front Matter",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.5
+    },
+    {
+      "doi": "10.1007/978-1-4842-0097-1_10",
+      "title": "Streamline Your Process with Publisher Actions",
+      "authors": [
+        "Philip Weinmeister"
+      ],
+      "first_author_family": "Weinmeister",
+      "author_count": 1,
+      "year": 2014,
+      "venue": "Practical Salesforce.com Development Without Code",
+      "type": "book-chapter",
+      "publisher": "Apress",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.5
+    },
+    {
+      "doi": "10.59350/5a7zn-n5374",
+      "title": "Underutilized Claude Code Features",
+      "authors": [
+        "Stephen Turner"
+      ],
+      "first_author_family": "Turner",
+      "author_count": 1,
+      "year": 2026,
+      "venue": "",
+      "type": "posted-content",
+      "publisher": "Front Matter",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.45
+    },
+    {
+      "doi": "10.59350/9cv16-8kx57",
+      "title": "Underutilized Claude Code Features",
+      "authors": [
+        "Stephen Turner"
+      ],
+      "first_author_family": "Turner",
+      "author_count": 1,
+      "year": 2026,
+      "venue": "",
+      "type": "posted-content",
+      "publisher": "Front Matter",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.45
+    }
+  ],
+  "best_title_similarity": 0.5,
+  "best_is_match": false
+}

@@ -1,0 +1,35 @@
+L1   HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L2   HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L3   HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L4   HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L5   HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L6   HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L7   HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L8   HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L9   HTTP 403  BLOCKED              registry: UNVERIFIED / MISMATCH
+L10  HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+L11  HTTP 200  RESOLVES+IDENTIFIED  registry: UNVERIFIED / MISMATCH
+{
+  "entries": 11,
+  "entries_in_manuscript": 5,
+  "entries_only_in_links_txt": 6,
+  "registry_identifiers_found": 0,
+  "verify_doi_metadata_calls": 0,
+  "registry_status": {
+    "VERIFIED (peer-reviewed)": 0,
+    "UPGRADE AVAILABLE (preprint → venue)": 0,
+    "VERIFIED (preprint only)": 0,
+    "UNVERIFIED / MISMATCH": 11
+  },
+  "web_status": {
+    "RESOLVES+IDENTIFIED": 10,
+    "RESOLVES": 0,
+    "BLOCKED": 1
+  },
+  "web_status_manuscript_only": {
+    "RESOLVES+IDENTIFIED": 5
+  },
+  "http_200": 10,
+  "peer_reviewed_ratio": "0/11 = 0.000",
+  "registry_best_similarity_max": 0.5946
+}

@@ -1,0 +1,36 @@
+{
+  "key": "L8",
+  "url": "https://builder.aws.com/content/3IhAZMOLRPqp4a5USEUtdq6s2d2/streamline-publishing-with-a-claude-code-skill",
+  "status": 200,
+  "final_url": "https://builder.aws.com/content/3IhAZMOLRPqp4a5USEUtdq6s2d2/streamline-publishing-with-a-claude-code-skill",
+  "headers": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Content-Length": "170932",
+    "Connection": "close",
+    "Date": "Mon, 16 Nov 2026 15:18:43 GMT",
+    "X-Amzn-Trace-Id": "Root=1-6afb1ed2-226b99fc3c5b8dbf38c806ca;Parent=2c1f234b77184bf1;Sampled=0;Lineage=1:3cca83b7:0",
+    "x-amzn-RequestId": "a6b38f57-6c16-42bd-94da-be4660c11473",
+    "content-security-policy": "frame-ancestors 'none'",
+    "x-powered-by": "Express",
+    "X-Cache": "Miss from cloudfront",
+    "Via": "1.1 6bdbd1b405b41ff98cdd6072470496f8.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Pop": "JFK50-P12",
+    "Alt-Svc": "h3=\":443\"; ma=86400",
+    "X-Amz-Cf-Id": "TZ61uKfsoA-S1GwrV8LD5rXTvTL1wpSMs3G-9YGU381vk_jVRPAslw==",
+    "X-XSS-Protection": "1; mode=block",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Content-Type-Options": "nosniff",
+    "Strict-Transport-Security": "max-age=47304000; includeSubDomains; preload"
+  },
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 170932,
+  "sha256": "1357b23dcddd5feaaba188f5f634f83fa1eb3384230d3465c19689bf6ee2f227",
+  "elapsed_s": 0.685,
+  "html_title": "Streamline Publishing with a Claude Code Skill | AWS Builder Center",
+  "og_title": "Streamline Publishing with a Claude Code Skill | AWS Builder Center",
+  "title_similarity_to_manuscript": {
+    "html_title": 0.8288,
+    "og_title": 0.8288
+  }
+}

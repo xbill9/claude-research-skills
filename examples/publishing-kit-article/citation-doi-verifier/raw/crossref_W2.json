@@ -1,0 +1,87 @@
+{
+  "query": "Claude Code",
+  "candidates": [
+    {
+      "doi": "10.59350/kp0qm-eba30",
+      "title": "Sessionmaxxing Claude Code",
+      "authors": [
+        "Stephen Turner"
+      ],
+      "first_author_family": "Turner",
+      "author_count": 1,
+      "year": 2026,
+      "venue": "",
+      "type": "posted-content",
+      "publisher": "Front Matter",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.5946
+    },
+    {
+      "doi": "10.59350/tetv4-ynb16",
+      "title": "Sessionmaxxing Claude Code",
+      "authors": [
+        "Stephen Turner"
+      ],
+      "first_author_family": "Turner",
+      "author_count": 1,
+      "year": 2026,
+      "venue": "",
+      "type": "posted-content",
+      "publisher": "Front Matter",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.5946
+    },
+    {
+      "doi": "10.5744/florida/9780813030494.001.0001",
+      "title": "Claude McKay, Code Name Sasha",
+      "authors": [
+        "Gary Edward Holcomb"
+      ],
+      "first_author_family": "Holcomb",
+      "author_count": 1,
+      "year": 2007,
+      "venue": "",
+      "type": "monograph",
+      "publisher": "University Press of Florida",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.5641
+    },
+    {
+      "doi": "10.59350/gdjkj-hw164",
+      "title": "My First Look at Claude Code",
+      "authors": [
+        "Stephen Turner"
+      ],
+      "first_author_family": "Turner",
+      "author_count": 1,
+      "year": 2026,
+      "venue": "",
+      "type": "posted-content",
+      "publisher": "Front Matter",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.5641
+    },
+    {
+      "doi": "10.59350/ww8hz-jz952",
+      "title": "My First Look at Claude Code",
+      "authors": [
+        "Stephen Turner"
+      ],
+      "first_author_family": "Turner",
+      "author_count": 1,
+      "year": 2026,
+      "venue": "",
+      "type": "posted-content",
+      "publisher": "Front Matter",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.5641
+    }
+  ],
+  "best_title_similarity": 0.5946,
+  "best_is_match": false
+}

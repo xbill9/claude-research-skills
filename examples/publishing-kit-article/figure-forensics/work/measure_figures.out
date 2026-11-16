@@ -1,0 +1,37 @@
+== geometry and content hashes
+cover.ae4d639e.jpg                            1376x578 ratio 2.3806   44650 B sha256[:8]=ae4d639e name-hash-match=True
+cover.77acc7c4.jpg                            1376x578 ratio 2.3806   73455 B sha256[:8]=77acc7c4 name-hash-match=True
+cover-builder.cabd79f3.jpg                    1200x675 ratio 1.7778   41487 B sha256[:8]=cabd79f3 name-hash-match=True
+cover-builder.80aa6ca5.jpg                    1200x675 ratio 1.7778   62751 B sha256[:8]=80aa6ca5 name-hash-match=True
+linkedin-devto-publishing-kit-cover.jpg       1200x627 ratio 1.9139   39139 B sha256[:8]=5c48dc8e name-hash-match=None
+advocu-devto-publishing-kit-cover.webp        1376x578 ratio 2.3806   20776 B sha256[:8]=baf98373 name-hash-match=None
+medium/img/cover.ae4d639e.jpg                 1376x578 ratio 2.3806   44650 B sha256[:8]=ae4d639e name-hash-match=True
+medium/img/cover.77acc7c4.jpg                 1376x578 ratio 2.3806   73455 B sha256[:8]=77acc7c4 name-hash-match=True
+medium/img/devto-publishing-kit-table-1.png   1281x166 ratio 7.7169   23083 B sha256[:8]=11967dac name-hash-match=None
+== byte identity and mean abs pixel difference (0-255 scale)
+cover.ae4d639e.jpg vs medium/img/cover.ae4d639e.jpg: bytes identical=True, mean abs diff=0.000
+cover.77acc7c4.jpg vs medium/img/cover.77acc7c4.jpg: bytes identical=True, mean abs diff=0.000
+cover.ae4d639e.jpg vs advocu-devto-publishing-kit-cover.webp: bytes identical=False, mean abs diff=0.441
+cover.ae4d639e.jpg vs cover.77acc7c4.jpg: bytes identical=False, mean abs diff=18.775
+cover-builder.cabd79f3.jpg vs cover-builder.80aa6ca5.jpg: bytes identical=False, mean abs diff=14.671
+== endpoint markers on the flow covers (right 30% of frame, components taller than 30px)
+cover.ae4d639e.jpg: 5 markers, colours top->bottom ['blue', 'orange', 'orange', 'orange', 'grey'], centres [(1100, 110), (1101, 199), (1101, 289), (1101, 379), (1101, 468)], sizes [(53, 52), (52, 53), (56, 50), (62, 62), (52, 52)]
+cover-builder.cabd79f3.jpg: 5 markers, colours top->bottom ['blue', 'orange', 'orange', 'orange', 'grey'], centres [(960, 128), (960, 233), (960, 337), (960, 442), (960, 547)], sizes [(62, 61), (61, 62), (66, 57), (72, 72), (60, 60)]
+linkedin-devto-publishing-kit-cover.jpg: 5 markers, colours top->bottom ['blue', 'orange', 'orange', 'orange', 'grey'], centres [(960, 157), (960, 235), (960, 313), (960, 391), (960, 469)], sizes [(46, 46), (46, 46), (48, 44), (54, 54), (46, 44)]
+advocu-devto-publishing-kit-cover.webp: 5 markers, colours top->bottom ['blue', 'orange', 'orange', 'orange', 'grey'], centres [(1100, 110), (1101, 199), (1101, 289), (1101, 379), (1101, 468)], sizes [(53, 52), (52, 53), (56, 50), (62, 62), (52, 52)]
+== ink height of each text line on cover.77acc7c4.jpg, native and at a 320px-wide feed card
+kicker 'PUBLISHING-KIT - A CLAUDE CODE SKILL'    ink  12px native ->  2.8px at 320px wide (scale 0.2326)
+title 'One source. Four destinations.'           ink  35px native ->  8.1px at 320px wide (scale 0.2326)
+subtitle 'Write once. ...'                       ink  22px native ->  5.1px at 320px wide (scale 0.2326)
+card title 'dev.to'                              ink  30px native ->  7.0px at 320px wide (scale 0.2326)
+card label 'REST API'                            ink  14px native ->  3.3px at 320px wide (scale 0.2326)
+footer 'publishing-kit - one markdown file in ...' ink  16px native ->  3.7px at 320px wide (scale 0.2326)
+== dev.to header crop: displayed 1000x420, fit=cover (devto-cover-crop.txt)
+1376x768 (article's example)   keeps 577.9 of 768 rows; 95.0 rows off top and bottom
+1376x578 (cover.ae4d639e)      keeps 577.9 of 578 rows; 0.0 rows off top and bottom
+1200x675 (builder covers)      keeps 504.0 of 675 rows; 85.5 rows off top and bottom
+1200x627 (linkedin cover)      keeps 504.0 of 627 rows; 61.5 rows off top and bottom
+ratio 1000/420 = 2.3810; cover.ae4d639e ratio 1376/578 = 2.3806
+== table figure numbers
+47/62 = 0.7581; 58 <p> + 4 <li> = 62; 88 <br> / 47 blocks = 1.872
+wrote work/measurements.json

@@ -1,0 +1,203 @@
+{
+  "manuscript": "devto-publishing-kit.md",
+  "entries": [
+    {
+      "url": "https://raw.githubusercontent.com/xbill9/publishing-kit/main/articles/publishing-kit-skill/cover.ae4d639e.jpg",
+      "link_texts": [],
+      "occurrences": [
+        {
+          "source": "devto-publishing-kit.md",
+          "line": 6,
+          "context": "front matter"
+        }
+      ],
+      "key": "L1",
+      "host": "raw.githubusercontent.com"
+    },
+    {
+      "url": "https://github.com/xbill9/publishing-kit",
+      "link_texts": [
+        "publishing-kit",
+        "github.com/xbill9/publishing-kit",
+        "repo"
+      ],
+      "occurrences": [
+        {
+          "source": "devto-publishing-kit.md",
+          "line": 9,
+          "context": "prose"
+        },
+        {
+          "source": "devto-publishing-kit.md",
+          "line": 22,
+          "context": "prose"
+        },
+        {
+          "source": "devto-publishing-kit.md",
+          "line": 70,
+          "context": "code block"
+        },
+        {
+          "source": "devto-publishing-kit.md",
+          "line": 176,
+          "context": "prose"
+        },
+        {
+          "source": "links.txt",
+          "line": 16,
+          "context": "links.txt key repo"
+        }
+      ],
+      "key": "L2",
+      "host": "github.com"
+    },
+    {
+      "url": "https://github.com/xbill9/publishing-kit/blob/main/skills/publishing/SKILL.md",
+      "link_texts": [
+        "`skills/publishing/SKILL.md`"
+      ],
+      "occurrences": [
+        {
+          "source": "devto-publishing-kit.md",
+          "line": 177,
+          "context": "prose"
+        }
+      ],
+      "key": "L3",
+      "host": "github.com"
+    },
+    {
+      "url": "https://github.com/xbill9/publishing-kit/tree/main/articles/publishing-kit-skill",
+      "link_texts": [
+        "`articles/publishing-kit-skill/`"
+      ],
+      "occurrences": [
+        {
+          "source": "devto-publishing-kit.md",
+          "line": 179,
+          "context": "prose"
+        }
+      ],
+      "key": "L4",
+      "host": "github.com"
+    },
+    {
+      "url": "https://claude.com/claude-code",
+      "link_texts": [
+        "claude.com/claude-code"
+      ],
+      "occurrences": [
+        {
+          "source": "devto-publishing-kit.md",
+          "line": 180,
+          "context": "prose"
+        }
+      ],
+      "key": "L5",
+      "host": "claude.com"
+    },
+    {
+      "url": "https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn",
+      "link_texts": [
+        "devto-gde"
+      ],
+      "occurrences": [
+        {
+          "source": "links.txt",
+          "line": 11,
+          "context": "links.txt key devto-gde"
+        }
+      ],
+      "key": "L6",
+      "host": "dev.to"
+    },
+    {
+      "url": "https://dev.to/aws-builders/streamline-publishing-with-a-claude-code-skill-an4",
+      "link_texts": [
+        "devto-aws"
+      ],
+      "occurrences": [
+        {
+          "source": "links.txt",
+          "line": 12,
+          "context": "links.txt key devto-aws"
+        }
+      ],
+      "key": "L7",
+      "host": "dev.to"
+    },
+    {
+      "url": "https://builder.aws.com/content/3IhAZMOLRPqp4a5USEUtdq6s2d2/streamline-publishing-with-a-claude-code-skill",
+      "link_texts": [
+        "builder"
+      ],
+      "occurrences": [
+        {
+          "source": "links.txt",
+          "line": 13,
+          "context": "links.txt key builder"
+        }
+      ],
+      "key": "L8",
+      "host": "builder.aws.com"
+    },
+    {
+      "url": "https://xbill999.medium.com/streamline-publishing-with-a-claude-code-skill-af03e6658c0b",
+      "link_texts": [
+        "medium"
+      ],
+      "occurrences": [
+        {
+          "source": "links.txt",
+          "line": 14,
+          "context": "links.txt key medium"
+        }
+      ],
+      "key": "L9",
+      "host": "xbill999.medium.com"
+    },
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7500566496419397632/",
+      "link_texts": [
+        "linkedin"
+      ],
+      "occurrences": [
+        {
+          "source": "links.txt",
+          "line": 15,
+          "context": "links.txt key linkedin"
+        }
+      ],
+      "key": "L10",
+      "host": "www.linkedin.com"
+    },
+    {
+      "url": "https://xbill9.substack.com/p/streamline-publishing-with-a-claude",
+      "link_texts": [
+        "substack"
+      ],
+      "occurrences": [
+        {
+          "source": "links.txt",
+          "line": 17,
+          "context": "links.txt key substack"
+        }
+      ],
+      "key": "L11",
+      "host": "xbill9.substack.com"
+    }
+  ],
+  "registry_identifiers": [],
+  "files_scanned_for_identifiers": 25,
+  "install_identifiers": [
+    {
+      "line": 63,
+      "text": "/plugin marketplace add xbill9/publishing-kit"
+    },
+    {
+      "line": 64,
+      "text": "/plugin install publishing@publishing-kit"
+    }
+  ],
+  "has_reference_section": false
+}

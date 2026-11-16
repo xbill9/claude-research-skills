@@ -217,6 +217,9 @@ def test_pdf_tools() -> None:
             "<html><body><h1>Page one</h1><div style='page-break-after:always'></div><h1>Page two</h1></body></html>"
         )
         pdf = Path(d, "t.pdf")
+        # A page left over from a longer earlier render must be removed, not shown as current.
+        Path(d, "t_preview").mkdir()
+        Path(d, "t_preview", "page_03.png").write_bytes(b"stale")
         r = subprocess.run(
             [sys.executable, str(PDF_TOOLS), "render", "--html", str(html), "--pdf", str(pdf)],
             capture_output=True,

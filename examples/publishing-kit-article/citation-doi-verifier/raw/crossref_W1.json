@@ -1,0 +1,85 @@
+{
+  "query": "publishing-kit",
+  "candidates": [
+    {
+      "doi": "10.5325/scriblerian.51.1.0075",
+      "title": "Publishing Business in Eighteenth-Century England",
+      "authors": [
+        "James E. May"
+      ],
+      "first_author_family": "May",
+      "author_count": 1,
+      "year": 2018,
+      "venue": "The Scriblerian and the Kit-Cats",
+      "type": "journal-article",
+      "publisher": "The Pennsylvania State University Press",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.4127
+    },
+    {
+      "doi": "10.1093/gmo/9781561592630.article.15075",
+      "title": "Kit",
+      "authors": [
+        "Mary Remnant"
+      ],
+      "first_author_family": "Remnant",
+      "author_count": 1,
+      "year": 2001,
+      "venue": "Oxford Music Online",
+      "type": "reference-entry",
+      "publisher": "Oxford University Press",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.3529
+    },
+    {
+      "doi": "10.61608/9783775760799-12",
+      "title": "Kapitel 9 \u2014 Das KIT (2009-2025)",
+      "authors": [],
+      "first_author_family": null,
+      "author_count": 0,
+      "year": 2026,
+      "venue": "200 Jahre KIT",
+      "type": "book-chapter",
+      "publisher": "Hatje Cantz Verlag GmbH",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.3415
+    },
+    {
+      "doi": "10.1353/scb.2018.0018",
+      "title": "Publishing Business in Eighteenth-Century England by James Raven",
+      "authors": [
+        "James E. May"
+      ],
+      "first_author_family": "May",
+      "author_count": 1,
+      "year": 2018,
+      "venue": "The Scriblerian and the Kit-Cats",
+      "type": "journal-article",
+      "publisher": "The Pennsylvania State University Press",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.3333
+    },
+    {
+      "doi": "10.4016/40471.01",
+      "title": "1680 The Endophthalmitis Kit (E-KIT)",
+      "authors": [
+        "Taraprasad Das"
+      ],
+      "first_author_family": "Das",
+      "author_count": 1,
+      "year": 2012,
+      "venue": "SciVee",
+      "type": "dataset",
+      "publisher": "SciVee, Inc",
+      "is_preprint_of": [],
+      "has_preprint": [],
+      "title_similarity": 0.3333
+    }
+  ],
+  "best_title_similarity": 0.4127,
+  "best_is_match": false
+}

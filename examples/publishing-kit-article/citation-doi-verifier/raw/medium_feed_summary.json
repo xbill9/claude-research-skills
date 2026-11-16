@@ -1,0 +1,14 @@
+{
+  "feed_user": {
+    "url": "https://xbill999.medium.com/feed",
+    "status": 200,
+    "items": 10,
+    "target_found": false
+  },
+  "feed_at": {
+    "url": "https://medium.com/feed/@xbill999",
+    "status": 200,
+    "items": 10,
+    "target_found": false
+  }
+}

@@ -134,6 +134,9 @@ def pdf_to_montage(pdf_path: Path, out_dir: Path, dpi: int = 110, cols: int = 3)
 
     out_dir = out_dir.resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
+    # A PDF that shrank would otherwise leave its old last pages behind as if fresh.
+    for stale in out_dir.glob("page_*.png"):
+        stale.unlink()
     zoom = dpi / 72.0
     pages: list[Path] = []
     imgs = []

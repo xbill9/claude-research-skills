@@ -1,0 +1,43 @@
+{
+  "key": "L1",
+  "url": "https://raw.githubusercontent.com/xbill9/publishing-kit/main/articles/publishing-kit-skill/cover.ae4d639e.jpg",
+  "status": 200,
+  "final_url": "https://raw.githubusercontent.com/xbill9/publishing-kit/main/articles/publishing-kit-skill/cover.ae4d639e.jpg",
+  "headers": {
+    "Connection": "close",
+    "Content-Length": "44650",
+    "Cache-Control": "max-age=300",
+    "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+    "Content-Type": "image/jpeg",
+    "ETag": "\"1b3c352531aaa257ea393b3762995d5caf17efb392a683012c55b1e84d9414f8\"",
+    "Strict-Transport-Security": "max-age=31536000",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "deny",
+    "X-XSS-Protection": "1; mode=block",
+    "X-GitHub-Request-Id": "5F02:3E201B:20E83:2D9BB:6AFB1ECA",
+    "x-github-edge-region": "iad",
+    "Accept-Ranges": "bytes",
+    "Date": "Mon, 16 Nov 2026 15:18:34 GMT",
+    "Via": "1.1 varnish",
+    "X-Served-By": "cache-ewr-kewr1740025-EWR",
+    "X-Cache": "MISS",
+    "X-Cache-Hits": "0",
+    "X-Timer": "S1794842315.546849,VS0,VE122",
+    "Vary": "Authorization,Accept-Encoding",
+    "Access-Control-Allow-Origin": "*",
+    "Cross-Origin-Resource-Policy": "cross-origin",
+    "X-Fastly-Request-ID": "591fa5496dc9a350fb1bb14ea5b5cb9454b962eb",
+    "Expires": "Mon, 16 Nov 2026 15:23:34 GMT",
+    "Source-Age": "0"
+  },
+  "content_type": "image/jpeg",
+  "bytes": 44650,
+  "sha256": "ae4d639e436158b8464623be5d1b1af277331e16869e849c10ec3267b8825b5b",
+  "elapsed_s": 0.243,
+  "html_title": null,
+  "og_title": null,
+  "title_similarity_to_manuscript": {
+    "html_title": null,
+    "og_title": null
+  }
+}

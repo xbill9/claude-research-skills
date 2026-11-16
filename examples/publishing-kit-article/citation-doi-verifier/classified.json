@@ -1,0 +1,161 @@
+{
+  "rows": [
+    {
+      "key": "L1",
+      "url": "https://raw.githubusercontent.com/xbill9/publishing-kit/main/articles/publishing-kit-skill/cover.ae4d639e.jpg",
+      "where": [
+        "devto-publishing-kit.md"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "served bytes == paper/cover.ae4d639e.jpg: True (44650 B); name hash = sha256 prefix: True",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W1 'publishing-kit': Crossref best sim 0.4127 ('Publishing Business in Eighteenth-Century England'), OpenAlex best sim 0.4912"
+    },
+    {
+      "key": "L2",
+      "url": "https://github.com/xbill9/publishing-kit",
+      "where": [
+        "devto-publishing-kit.md",
+        "links.txt"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "GitHub API: xbill9/publishing-kit, private=False, archived=False, license Apache-2.0 (article says Apache-2.0); marketplace.json name 'publishing-kit', plugins ['publishing'] (article installs publishing@publishing-kit)",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W1 'publishing-kit': Crossref best sim 0.4127 ('Publishing Business in Eighteenth-Century England'), OpenAlex best sim 0.4912"
+    },
+    {
+      "key": "L3",
+      "url": "https://github.com/xbill9/publishing-kit/blob/main/skills/publishing/SKILL.md",
+      "where": [
+        "devto-publishing-kit.md"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "GitHub API contents skills/publishing/SKILL.md exists: True (blob 34badb408839)",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W1 'publishing-kit': Crossref best sim 0.4127 ('Publishing Business in Eighteenth-Century England'), OpenAlex best sim 0.4912"
+    },
+    {
+      "key": "L4",
+      "url": "https://github.com/xbill9/publishing-kit/tree/main/articles/publishing-kit-skill",
+      "where": [
+        "devto-publishing-kit.md"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "GitHub API: directory has 19 entries; devto-publishing-kit.md present: True; cover.ae4d639e.jpg present: True",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W1 'publishing-kit': Crossref best sim 0.4127 ('Publishing Business in Eighteenth-Century England'), OpenAlex best sim 0.4912"
+    },
+    {
+      "key": "L5",
+      "url": "https://claude.com/claude-code",
+      "where": [
+        "devto-publishing-kit.md"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "page title 'Claude Code by Anthropic | AI coding agent and assistant'",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W2 'Claude Code': Crossref best sim 0.5946 ('Sessionmaxxing Claude Code'), OpenAlex best sim 0.5946"
+    },
+    {
+      "key": "L6",
+      "url": "https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn",
+      "where": [
+        "links.txt"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "dev.to API: title sim 1.0, org 'gde', published_at 2026-09-01T14:37:08Z, canonical https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W3 'Streamline Publishing with a Claude Code Skill': Crossref best sim 0.5 ('Sessionmaxxing Claude Code'), OpenAlex best sim 0.416"
+    },
+    {
+      "key": "L7",
+      "url": "https://dev.to/aws-builders/streamline-publishing-with-a-claude-code-skill-an4",
+      "where": [
+        "links.txt"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "dev.to API: title sim 1.0, org 'aws-builders', published_at 2026-09-01T14:37:19Z, canonical https://dev.to/aws-builders/streamline-publishing-with-a-claude-code-skill-an4",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W3 'Streamline Publishing with a Claude Code Skill': Crossref best sim 0.5 ('Sessionmaxxing Claude Code'), OpenAlex best sim 0.416"
+    },
+    {
+      "key": "L8",
+      "url": "https://builder.aws.com/content/3IhAZMOLRPqp4a5USEUtdq6s2d2/streamline-publishing-with-a-claude-code-skill",
+      "where": [
+        "links.txt"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "og:title 'Streamline Publishing with a Claude Code Skill | AWS Builder Center' (title part sim 1.0)",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W3 'Streamline Publishing with a Claude Code Skill': Crossref best sim 0.5 ('Sessionmaxxing Claude Code'), OpenAlex best sim 0.416"
+    },
+    {
+      "key": "L9",
+      "url": "https://xbill999.medium.com/streamline-publishing-with-a-claude-code-skill-af03e6658c0b",
+      "where": [
+        "links.txt"
+      ],
+      "http_status": 403,
+      "web_status": "BLOCKED",
+      "web_evidence": "HTTP 403, page title 'Just a moment...' (Cloudflare challenge); WebFetch also 403; author RSS feed: 10 items, article present: False",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W3 'Streamline Publishing with a Claude Code Skill': Crossref best sim 0.5 ('Sessionmaxxing Claude Code'), OpenAlex best sim 0.416"
+    },
+    {
+      "key": "L10",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7500566496419397632/",
+      "where": [
+        "links.txt"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "page title 'GitHub - xbill9/publishing-kit: Claude Code skill + toolchai...' (the post's link card is the repo); activity id in body: True; 'xbill9/publishing-kit' occurrences: 6; article title occurrences: 6",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W3 'Streamline Publishing with a Claude Code Skill': Crossref best sim 0.5 ('Sessionmaxxing Claude Code'), OpenAlex best sim 0.416"
+    },
+    {
+      "key": "L11",
+      "url": "https://xbill9.substack.com/p/streamline-publishing-with-a-claude",
+      "where": [
+        "links.txt"
+      ],
+      "http_status": 200,
+      "web_status": "RESOLVES+IDENTIFIED",
+      "web_evidence": "og:title sim 1.0",
+      "registry_status": "UNVERIFIED / MISMATCH",
+      "registry_evidence": "W3 'Streamline Publishing with a Claude Code Skill': Crossref best sim 0.5 ('Sessionmaxxing Claude Code'), OpenAlex best sim 0.416"
+    }
+  ],
+  "counts": {
+    "entries": 11,
+    "entries_in_manuscript": 5,
+    "entries_only_in_links_txt": 6,
+    "registry_identifiers_found": 0,
+    "verify_doi_metadata_calls": 0,
+    "registry_status": {
+      "VERIFIED (peer-reviewed)": 0,
+      "UPGRADE AVAILABLE (preprint → venue)": 0,
+      "VERIFIED (preprint only)": 0,
+      "UNVERIFIED / MISMATCH": 11
+    },
+    "web_status": {
+      "RESOLVES+IDENTIFIED": 10,
+      "RESOLVES": 0,
+      "BLOCKED": 1
+    },
+    "web_status_manuscript_only": {
+      "RESOLVES+IDENTIFIED": 5
+    },
+    "http_200": 10,
+    "peer_reviewed_ratio": "0/11 = 0.000",
+    "registry_best_similarity_max": 0.5946
+  }
+}

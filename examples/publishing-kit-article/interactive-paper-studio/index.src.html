@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publishing Geometry Explorer</title>
+<style>
+:root{--bg:#f7f6f2;--panel:#fff;--ink:#1d1d1b;--ink2:#55544e;--rule:#dddbd2;--accent:#2f6fc0;--gain:#1f8a4c;--cliff:#c0394f;--band:rgba(192,57,79,.28);--keep:rgba(47,111,192,.10);--cover:#1a1a19;--coverInk:#fff;--coverInk2:#c3c2b7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--panel:#1e1e1c;--ink:#ecebe4;--ink2:#a9a89f;--rule:#3a3a37;--accent:#6ea6ef;--gain:#4cc283;--cliff:#ef6b80;--band:rgba(239,107,128,.32);--keep:rgba(110,166,239,.12)}}
+:root[data-theme="dark"]{--bg:#141413;--panel:#1e1e1c;--ink:#ecebe4;--ink2:#a9a89f;--rule:#3a3a37;--accent:#6ea6ef;--gain:#4cc283;--cliff:#ef6b80;--band:rgba(239,107,128,.32);--keep:rgba(110,166,239,.12)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:18px 24px 0;border-bottom:1px solid var(--rule);background:var(--panel)}
+h1{font-size:22px;margin:0 0 4px}
+.sub{color:var(--ink2);margin:0 0 6px;font-size:14px}
+.core{margin:6px 0 12px;max-width:980px}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav button{border:0;background:none;color:var(--ink2);padding:8px 12px;font:inherit;cursor:pointer;border-bottom:3px solid transparent}
+nav button.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+main{padding:18px 24px;max-width:1440px;margin:0 auto}
+section.tab{display:none}section.tab.on{display:block}
+.sim{display:grid;grid-template-columns:32% 1fr;gap:18px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:14px}
+.ctl{margin-bottom:12px}
+.ctl label{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2)}
+.ctl label b{color:var(--ink);font-variant-numeric:tabular-nums}
+.ctl input[type=range]{width:100%}
+.ctl small{color:var(--ink2);font-size:12px}
+.presets{display:grid;gap:6px;margin-top:10px}
+.presets button{text-align:left;font:inherit;font-size:13px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--bg);color:var(--ink);cursor:pointer}
+.presets button.on{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.presets small{display:block;color:var(--ink2);font-size:11px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
+.kpi .l{font-size:12px;color:var(--ink2)}
+.kpi .v{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.kpi .d{font-size:12px;font-variant-numeric:tabular-nums}
+.gain{color:var(--gain)}.cliff{color:var(--cliff)}.flat{color:var(--ink2)}
+canvas{width:100%;display:block;border-radius:6px}
+.views{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}
+h2{font-size:17px;margin:0 0 8px}h3{font-size:14px;margin:0 0 6px;color:var(--ink2);font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{color:var(--ink2);font-weight:600}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tw{overflow-x:auto}
+.v-MATCH{color:var(--gain);font-weight:600}.v-MISMATCH{color:var(--cliff);font-weight:600}
+.v-NOT{color:var(--ink2);font-weight:600}
+code{font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--bg);padding:1px 4px;border-radius:3px}
+pre{font:12.5px ui-monospace,Menlo,monospace;background:var(--bg);padding:10px;border-radius:6px;overflow-x:auto;white-space:pre-wrap}
+.note{font-size:13px;color:var(--ink2)}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.flow .card h3{color:var(--ink)}
+#selfcheck{font-weight:600}
+@media (max-width:760px){
+ header,main{padding-left:16px;padding-right:16px}
+ .sim,.views{grid-template-columns:1fr}
+ .kpi .v{font-size:19px}
+}
+</style>
+</head>
+<body>
+<header>
+ <h1>Streamline Publishing with a Claude Code Skill: the geometry behind it</h1>
+ <p class="sub">Interactive companion to the dev.to article by xbill (publishing-kit), with the article's evidence files</p>
+ <p class="core"><b>Core finding modelled here:</b> dev.to shows a cover through a 1000x420 <code>fit=cover</code> proxy (2.381:1), so a 1376x768 cover loses 95 px off the top and the bottom; a cover is met at a 320 px feed card; and dev.to turns every newline inside a paragraph into a visible break.</p>
+ <nav id="tabs">
+  <button data-t="sim" class="on">Live Simulator</button>
+  <button data-t="arch">Architecture</button>
+  <button data-t="abl">Ablation Matrix</button>
+  <button data-t="repro">Reproducibility</button>
+ </nav>
+</header>
+<main>
+<section class="tab on" id="sim">
+ <div class="sim">
+  <div class="card" id="deck">
+   <h2>Control deck</h2>
+   <div class="ctl"><label>Cover width W <b id="o-w"></b></label><input type="range" id="w" min="600" max="2400" step="1"><small>source pixels</small></div>
+   <div class="ctl"><label>Cover height H <b id="o-h"></b></label><input type="range" id="h" min="250" max="1400" step="1"><small>source pixels</small></div>
+   <div class="ctl"><label>Type size on the cover <b id="o-type"></b></label><input type="range" id="type" min="8" max="120" step="1"><small>pt as drawn on a W-wide cover (make-cover.py treats pt as source px)</small></div>
+   <div class="ctl"><label>Feed card width <b id="o-card"></b></label><input type="range" id="card" min="200" max="1000" step="1"><small>article: 320 px</small></div>
+   <div class="ctl"><label>Source wrap column <b id="o-col"></b></label><input type="range" id="col" min="40" max="200" step="1"><small>re-wraps this article's own paragraphs; article: 95</small></div>
+   <h3 style="margin-top:14px">Presets</h3>
+   <div class="presets" id="presets"></div>
+   <p class="note">Legibility threshold 10 px is <code>LEGIBLE_PX</code> in the kit's <code>make-cover.py</code>; the article does not state one. The 1000x420 box is measured (<code>evidence/devto-cover-crop.txt</code>). Builder and LinkedIn presets show what dev.to's proxy would do to those files; nobody measured that.</p>
+  </div>
+  <div>
+   <div class="kpis" id="kpis"></div>
+   <div class="views">
+    <div class="card"><h3>Cover as uploaded, with dev.to's 1000x420 crop</h3><canvas id="cv-crop" height="300"></canvas></div>
+    <div class="card"><h3>What a feed card shows</h3><canvas id="cv-card" height="300"></canvas></div>
+   </div>
+   <div class="card" style="margin-top:14px"><h3>Stray &lt;br&gt; when this article's source is wrapped at column C and posted to dev.to as is</h3><canvas id="cv-wrap" height="260"></canvas>
+   <p class="note">Solid: total &lt;br&gt;. Dashed: blocks with at least one. Dotted horizontal lines: the source as stored. <code>publish-devto.py</code> unwraps before posting, which takes both to 0.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="tab" id="arch">
+ <h2>One source, four destinations</h2>
+ <div class="flow">
+  <div class="card"><h3>dev.to</h3><p>Markdown via API. Cover proxied, not hosted: <code>width=1000,height=420,fit=cover,gravity=auto</code>. Hard breaks on. Kit authors covers at 1376x578.</p></div>
+  <div class="card"><h3>AWS Builder Center</h3><p>Chrome-driven paste. Hero cover 1200x675 (measured on the refreshed hero). Payload unwrapped before paste.</p></div>
+  <div class="card"><h3>Medium</h3><p>Hosted HTML; tables as PNG. <code>data:</code> URI images: 0 of 4 survive the paste, real URLs 4 of 4 (kit log, 2026-08-30).</p></div>
+  <div class="card"><h3>LinkedIn</h3><p>Posts API, <code>PUBLISHED</code> only. Cover file in the paper folder is 1200x627.</p></div>
+ </div>
+ <h2 style="margin-top:18px">The three models</h2>
+ <div class="card">
+  <p><b>1. Crop (fit=cover, centred).</b> Display box D<sub>w</sub>xD<sub>h</sub> = 1000x420. Scale s = max(D<sub>w</sub>/W, D<sub>h</sub>/H). Source kept: D<sub>w</sub>/s by D<sub>h</sub>/s. Lost per side: (H - D<sub>h</sub>/s)/2 vertically, (W - D<sub>w</sub>/s)/2 horizontally. For 1376x768: s = 1000/1376, kept 1376 x 577.92, lost 95.04 top and bottom.</p>
+  <p><b>2. Feed card.</b> Apparent size = type x card / W (the kit's <code>legibility_report</code>, which scales by cover width and ignores the crop). Legible when it reaches 10 px. In the article header it is type x s.</p>
+  <p><b>3. Hard wrap.</b> Each paragraph-level block (paragraph, list item, quoted paragraph; headings, tables and code excluded) with n source lines shows n-1 <code>&lt;br&gt;</code> on dev.to. Re-wrap: greedy word wrap at C minus the 2-column prefix of <code>- </code> and <code>&gt; </code>.</p>
+  <p class="note">Assumption flagged: the proxy URL says <code>gravity=auto</code>; the evidence and the kit call it a centre crop. A saliency-based crop would move the cut lines; the 95/95 split holds only for a centred crop.</p>
+ </div>
+</section>
+
+<section class="tab" id="abl">
+ <h2>Every cover file in the paper folder through dev.to's 1000x420 proxy</h2>
+ <div class="card tw"><table id="t-geo"></table></div>
+ <h2 style="margin-top:18px">Wrap column sweep over this article's 39 blocks</h2>
+ <div class="card tw"><table id="t-sweep"></table></div>
+</section>
+
+<section class="tab" id="repro">
+ <h2>Grounding table</h2>
+ <p class="note">Published value beside the model's readout. "NOT REPRODUCIBLE" means the evidence does not contain the input the number was measured on.</p>
+ <div class="card tw"><table id="t-ground"></table></div>
+ <h2 style="margin-top:18px">Preset readouts (Python reference vs this page)</h2>
+ <p id="selfcheck"></p>
+ <div class="card tw"><table id="t-check"></table></div>
+ <h2 style="margin-top:18px">Commands</h2>
+<pre>python3 verify_model.py          # reference model, writes preset_values.json
+python3 build_page.py            # embeds the JSON into index.html
+node check_js.mjs                # runs this page's model script, compares every preset value
+node phone_check.mjs             # 390 px emulation, horizontal-scroll check, console self-check</pre>
+</section>
+</main>
+
+<script id="presets-data" type="application/json">__DATA__</script>
+<script id="model">
+"use strict";
+const DISPLAY = [1000, 420];
+function crop(w, h, dw = DISPLAY[0], dh = DISPLAY[1]) {
+  const scale = Math.max(dw / w, dh / h);
+  const kept_w = dw / scale, kept_h = dh / scale;
+  return { box_ratio: dw / dh, src_ratio: w / h, scale, kept_w, kept_h,
+    lost_tb: (h - kept_h) / 2, lost_lr: (w - kept_w) / 2, lost_frac: 1 - (kept_w * kept_h) / (w * h) };
+}
+function card(w, h, type_px, card_w = 320, legible = 10, dw = DISPLAY[0], dh = DISPLAY[1]) {
+  const c = crop(w, h, dw, dh);
+  const card_px = type_px * card_w / w;
+  return { card_scale: card_w / w, card_px, header_px: type_px * c.scale,
+    min_legible_type: legible * w / card_w, legible: card_px >= legible ? 1 : 0 };
+}
+function wrapCount(words, width) {
+  width = Math.max(1, width);
+  let n = 0, cur = -1;
+  for (const w of words) {
+    const L = [...w].length;
+    if (cur < 0) { cur = L; n = 1; }
+    else if (cur + 1 + L <= width) cur += 1 + L;
+    else { cur = L; n += 1; }
+  }
+  return n;
+}
+function wrapStats(blocks, col) {
+  let broken = 0, br = 0;
+  for (const b of blocks) { const k = wrapCount(b.words, col - b.prefix) - 1; if (k > 0) broken++; br += k; }
+  return { blocks: blocks.length, blocks_broken: broken, br_total: br };
+}
+function evaluate(p, blocks) {
+  const o = Object.assign({}, crop(p.w, p.h), card(p.w, p.h, p.type, p.card));
+  const s = wrapStats(blocks, p.col);
+  for (const k in s) o["wrap_" + k] = s[k];
+  return o;
+}
+function selfCheck(data) {
+  const rows = []; let worst = 0;
+  for (const [id, pr] of Object.entries(data.presets)) {
+    const js = evaluate(pr.inputs, data.blocks);
+    for (const [k, py] of Object.entries(pr.out)) {
+      const abs = Math.abs(js[k] - py);
+      const ok = abs < 5e-5; worst = Math.max(worst, abs);
+      rows.push({ preset: id, key: k, py, js: js[k], abs, ok });
+    }
+  }
+  for (const s of data.sweep) {
+    const js = wrapStats(data.blocks, s.col);
+    for (const k of ["blocks_broken", "br_total"]) {
+      const abs = Math.abs(js[k] - s[k]); worst = Math.max(worst, abs);
+      rows.push({ preset: "sweep@" + s.col, key: k, py: s[k], js: js[k], abs, ok: abs < 5e-5 });
+    }
+  }
+  return { rows, worst };
+}
+if (typeof module !== "undefined") module.exports = { crop, card, wrapCount, wrapStats, evaluate, selfCheck };
+</script>
+<script>
+"use strict";
+const D = JSON.parse(document.getElementById("presets-data").textContent);
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const KEYS = ["w", "h", "type", "card", "col"];
+const state = Object.assign({}, D.presets.shipped.inputs);
+const base = evaluate(D.presets.shipped.inputs, D.blocks);
+let shown = { lost_tb: base.lost_tb, lost_lr: base.lost_lr }, activePreset = "shipped";
+const fmt = (x, d = 2) => Number(x).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+
+// tabs with hash routing
+function showTab(t) {
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("on", s.id === t));
+  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.t === t));
+  if (t === "sim") draw();
+}
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { location.hash = b.dataset.t; });
+window.addEventListener("hashchange", () => showTab(location.hash.slice(1) || "sim"));
+
+// controls
+for (const k of KEYS) {
+  $(k).value = state[k];
+  $(k).addEventListener("input", () => { state[k] = +$(k).value; activePreset = null; update(); });
+}
+const pbox = $("presets");
+for (const [id, p] of Object.entries(D.presets)) {
+  const b = document.createElement("button");
+  b.dataset.id = id;
+  b.innerHTML = `${p.inputs.name}<small>${p.inputs.cite}</small>`;
+  b.onclick = () => { Object.assign(state, p.inputs); KEYS.forEach(k => $(k).value = state[k]); activePreset = id; update(); };
+  pbox.appendChild(b);
+}
+
+function kpi(label, val, delta, better) {
+  let cls = "flat", txt = "baseline";
+  if (delta !== null && Math.abs(delta) > 1e-9) { const good = better === "lower" ? delta < 0 : delta > 0; cls = good ? "gain" : "cliff"; txt = (delta > 0 ? "+" : "") + fmt(delta) + " vs first-shipped"; }
+  else if (delta !== null) txt = "same as first-shipped";
+  return `<div class="kpi"><div class="l">${label}</div><div class="v">${val}</div><div class="d ${cls}">${txt}</div></div>`;
+}
+
+function update() {
+  $("o-w").textContent = state.w + " px"; $("o-h").textContent = state.h + " px";
+  $("o-type").textContent = state.type + " pt"; $("o-card").textContent = state.card + " px"; $("o-col").textContent = state.col;
+  document.querySelectorAll("#presets button").forEach(b => b.classList.toggle("on", b.dataset.id === activePreset));
+  const o = evaluate(state, D.blocks);
+  const lost = Math.max(o.lost_tb, o.lost_lr), side = o.lost_tb >= o.lost_lr ? "top & bottom" : "left & right";
+  $("kpis").innerHTML =
+    kpi(`Lost per side (${side})`, fmt(lost) + " px", lost - base.lost_tb, "lower") +
+    kpi("Cover area cropped", fmt(o.lost_frac * 100, 1) + "%", (o.lost_frac - base.lost_frac) * 100, "lower") +
+    kpi(`Type at ${state.card}px card`, fmt(o.card_px) + " px " + (o.legible ? "ok" : "LOST"), o.card_px - base.card_px, "higher") +
+    kpi("Smallest legible type", fmt(o.min_legible_type, 1) + " pt", o.min_legible_type - base.min_legible_type, "lower") +
+    kpi(`Blocks broken at col ${state.col}`, `${o.wrap_blocks_broken} of ${o.wrap_blocks}`, o.wrap_blocks_broken - base.wrap_blocks_broken, "lower") +
+    kpi("Stray &lt;br&gt; total", String(o.wrap_br_total), o.wrap_br_total - base.wrap_br_total, "lower");
+  target = o;
+}
+let target = null;
+
+function fitCanvas(c) {
+  const r = c.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  let h = +c.getAttribute("height");
+  if (c.id !== "cv-wrap") h = Math.min(h, Math.round(r.width * 0.6) + 70);
+  if (c.width !== Math.round(r.width * dpr)) { c.width = Math.round(r.width * dpr); c.height = Math.round(h * dpr); c.style.height = h + "px"; }
+  const x = c.getContext("2d"); x.setTransform(dpr, 0, 0, dpr, 0, 0); return [x, r.width, h];
+}
+
+function drawCover(x, ox, oy, s, w, h, type) {
+  // a mock cover: eyebrow near the top, headline in the middle, footer near the bottom
+  x.fillStyle = css("--cover"); x.fillRect(ox, oy, w * s, h * s);
+  x.fillStyle = css("--coverInk2"); x.font = `${Math.max(1, 22 * s)}px system-ui`; x.textBaseline = "top";
+  x.fillText("EYEBROW LABEL", ox + 40 * s, oy + 40 * s);
+  x.fillStyle = css("--coverInk"); x.font = `600 ${Math.max(1, type * s)}px system-ui`; x.textBaseline = "middle";
+  x.fillText("Headline", ox + 40 * s, oy + h * s / 2);
+  x.fillStyle = css("--coverInk2"); x.font = `${Math.max(1, 20 * s)}px system-ui`; x.textBaseline = "bottom";
+  x.fillText("footer: measured 2026-08-31", ox + 40 * s, oy + (h - 30) * s);
+}
+
+function draw() {
+  if (!target) return;
+  // ease the crop bands toward the target
+  shown.lost_tb += (target.lost_tb - shown.lost_tb) * 0.25;
+  shown.lost_lr += (target.lost_lr - shown.lost_lr) * 0.25;
+  const { w, h, type } = state;
+  // crop view
+  let [x, W, H] = fitCanvas($("cv-crop"));
+  x.clearRect(0, 0, W, H);
+  const s = Math.min((W - 20) / w, (H - 50) / h), ox = (W - w * s) / 2, oy = 10;
+  drawCover(x, ox, oy, s, w, h, type);
+  x.fillStyle = css("--band");
+  const t = shown.lost_tb * s, l = shown.lost_lr * s;
+  if (t > 0.05) { x.fillRect(ox, oy, w * s, t); x.fillRect(ox, oy + h * s - t, w * s, t); }
+  if (l > 0.05) { x.fillRect(ox, oy, l, h * s); x.fillRect(ox + w * s - l, oy, l, h * s); }
+  x.strokeStyle = css("--accent"); x.lineWidth = 2; x.strokeRect(ox + l, oy + t, w * s - 2 * l, h * s - 2 * t);
+  x.fillStyle = css("--ink"); x.font = "12px system-ui"; x.textBaseline = "top";
+  x.fillText(`${w}x${h} (${fmt(w / h, 3)}:1), kept ${fmt(target.kept_w, 1)}x${fmt(target.kept_h, 1)}`, 6, oy + h * s + 8);
+  x.fillText(`lost ${fmt(Math.max(target.lost_tb, target.lost_lr), 2)} px per side`, 6, oy + h * s + 24);
+  // card view: the cropped cover at card width
+  [x, W, H] = fitCanvas($("cv-card"));
+  x.clearRect(0, 0, W, H);
+  const cw = Math.min(state.card, W - 20), cs = cw / target.kept_w, ch = target.kept_h * cs, cx = (W - cw) / 2, cy = 10;
+  x.save(); x.beginPath(); x.rect(cx, cy, cw, ch); x.clip();
+  drawCover(x, cx - target.lost_lr * cs, cy - target.lost_tb * cs, cs, w, h, type);
+  x.restore();
+  x.strokeStyle = css("--rule"); x.strokeRect(cx, cy, cw, ch);
+  x.fillStyle = target.legible ? css("--gain") : css("--cliff"); x.font = "600 13px system-ui"; x.textBaseline = "top";
+  x.fillText(`headline ${fmt(target.card_px)} px: ${target.legible ? "legible" : "below 10 px, lost"}`, cx, cy + ch + 10);
+  x.fillStyle = css("--ink2"); x.font = "12px system-ui";
+  x.fillText(`22 pt eyebrow ${fmt(22 * state.card / w)} px, 20 pt footer ${fmt(20 * state.card / w)} px`, cx, cy + ch + 30);
+  if (state.card > W - 20) x.fillText(`(drawn at ${Math.round(cw)} px to fit)`, cx, cy + ch + 48);
+  // wrap chart
+  [x, W, H] = fitCanvas($("cv-wrap"));
+  x.clearRect(0, 0, W, H);
+  const L = 44, R = 12, T = 10, B = 30, cols = [], tot = [], brk = [];
+  for (let c = 40; c <= 200; c++) { const st = wrapStats(D.blocks, c); cols.push(c); tot.push(st.br_total); brk.push(st.blocks_broken); }
+  const ymax = Math.max(...tot) * 1.05, X = c => L + (c - 40) / 160 * (W - L - R), Y = v => T + (1 - v / ymax) * (H - T - B);
+  x.strokeStyle = css("--rule"); x.lineWidth = 1; x.fillStyle = css("--ink2"); x.font = "11px system-ui";
+  for (let v = 0; v <= ymax; v += 50) { x.beginPath(); x.moveTo(L, Y(v)); x.lineTo(W - R, Y(v)); x.stroke(); x.textBaseline = "middle"; x.fillText(v, 8, Y(v)); }
+  x.textBaseline = "top"; for (let c = 40; c <= 200; c += 20) x.fillText(c, X(c) - 8, H - B + 6);
+  const line = (arr, dash, col) => { x.setLineDash(dash); x.strokeStyle = col; x.lineWidth = 2; x.beginPath(); arr.forEach((v, i) => i ? x.lineTo(X(cols[i]), Y(v)) : x.moveTo(X(cols[i]), Y(v))); x.stroke(); x.setLineDash([]); };
+  line(tot, [], css("--accent")); line(brk, [6, 4], css("--cliff"));
+  x.setLineDash([2, 3]); x.strokeStyle = css("--ink2"); x.lineWidth = 1;
+  for (const v of [D.stored.br_total, D.stored.blocks_broken]) { x.beginPath(); x.moveTo(L, Y(v)); x.lineTo(W - R, Y(v)); x.stroke(); }
+  x.setLineDash([]);
+  x.strokeStyle = css("--ink"); x.beginPath(); x.moveTo(X(state.col), T); x.lineTo(X(state.col), H - B); x.stroke();
+  x.fillStyle = css("--ink"); x.font = "12px system-ui";
+  const lab = `C=${state.col}: ${target.wrap_br_total} <br> in ${target.wrap_blocks_broken}/${target.wrap_blocks} blocks; as stored ${D.stored.br_total} in ${D.stored.blocks_broken}`;
+  x.fillText(lab, Math.min(X(state.col) + 6, W - R - x.measureText(lab).width), T + 2);
+}
+function loop() { if ($("sim").classList.contains("on")) draw(); requestAnimationFrame(loop); }
+
+// tables
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+$("t-geo").innerHTML = "<tr><th>file</th><th>size</th><th>ratio</th><th>kept (source px)</th><th>lost per side</th><th>area lost</th></tr>" +
+  Object.entries(D.geometry).map(([n, g]) => `<tr><td><code>${n}</code></td><td class="num">${D.images[n].join("x")}</td><td class="num">${fmt(g.src_ratio, 4)}</td><td class="num">${fmt(g.kept_w, 2)} x ${fmt(g.kept_h, 2)}</td><td class="num">${fmt(Math.max(g.lost_tb, g.lost_lr), 2)} px ${g.lost_tb >= g.lost_lr ? "top/bottom" : "left/right"}</td><td class="num">${fmt(g.lost_frac * 100, 2)}%</td></tr>`).join("") +
+  `<tr><td>article's 1376x768 example</td><td class="num">1376x768</td><td class="num">${fmt(1376 / 768, 4)}</td><td class="num">${fmt(base.kept_w, 2)} x ${fmt(base.kept_h, 2)}</td><td class="num">${fmt(base.lost_tb, 2)} px top/bottom</td><td class="num">${fmt(base.lost_frac * 100, 2)}%</td></tr>`;
+$("t-sweep").innerHTML = "<tr><th>wrap column</th><th>blocks with a stray &lt;br&gt;</th><th>total &lt;br&gt;</th></tr>" +
+  `<tr><td>as stored</td><td class="num">${D.stored.blocks_broken} of ${D.stored.blocks}</td><td class="num">${D.stored.br_total}</td></tr>` +
+  D.sweep.filter(s => s.col % 10 === 0 || s.col === 95).map(s => `<tr${s.col === 95 ? ' style="font-weight:600"' : ""}><td>${s.col}</td><td class="num">${s.blocks_broken} of ${s.blocks}</td><td class="num">${s.br_total}</td></tr>`).join("") +
+  `<tr><td>unwrapped (publish-devto.py)</td><td class="num">0 of ${D.stored.blocks}</td><td class="num">0</td></tr>`;
+$("t-ground").innerHTML = "<tr><th>claim</th><th>published</th><th>model / measured here</th><th>verdict</th><th>source</th></tr>" +
+  D.grounding.map(g => `<tr><td>${esc(g.claim)}${g.note ? `<br><span class="note">${esc(g.note)}</span>` : ""}</td><td>${esc(g.published)}</td><td class="num" style="white-space:normal">${esc(g.model)}</td><td class="v-${g.verdict.split(" ")[0]}">${g.verdict}</td><td class="note">${esc(g.src)}</td></tr>`).join("");
+
+// in-page self-check
+const chk = selfCheck(D), bad = chk.rows.filter(r => !r.ok).length;
+const msg = `[self-check] ${chk.rows.length} preset values compared, ${bad} mismatches, worst abs error ${chk.worst.toExponential(2)}`;
+(bad ? console.error : console.log)(msg);
+chk.rows.filter(r => !r.ok).forEach(r => console.error("[self-check] MISMATCH", r));
+$("selfcheck").textContent = msg; $("selfcheck").className = bad ? "cliff" : "gain";
+$("t-check").innerHTML = "<tr><th>preset</th><th>key</th><th>python</th><th>javascript</th><th>abs diff</th></tr>" +
+  chk.rows.filter(r => !r.preset.startsWith("sweep")).map(r => `<tr><td>${r.preset}</td><td><code>${r.key}</code></td><td class="num">${r.py.toPrecision(10)}</td><td class="num">${Number(r.js).toPrecision(10)}</td><td class="num ${r.ok ? "gain" : "cliff"}">${r.abs.toExponential(1)}</td></tr>`).join("");
+
+update();
+showTab(location.hash.slice(1) || "sim");
+shown = { lost_tb: target.lost_tb, lost_lr: target.lost_lr };
+requestAnimationFrame(loop);
+window.addEventListener("resize", draw);
+</script>
+</body>
+</html>

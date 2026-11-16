@@ -1,0 +1,28 @@
+source: devto-publishing-kit.md, 39 paragraph-level blocks (26 p, 10 li, 3 quote)
+as stored: {'blocks': 39, 'blocks_broken': 29, 'br_total': 67, 'max_prose_line': 126, 'prose_lines_over_95': 20, 'prose_lines_over_100': 4, 'prose_lines': 106}
+preset shipped   1376x768: kept 1376.00x577.92 lost_tb 95.0400 lost_lr 0.0000 lost 24.75% | card 9.3023px legible=0 min type 43.00 | wrap@95: 31/39 br 70
+preset devto     1376x578: kept 1376.00x577.92 lost_tb 0.0400 lost_lr 0.0000 lost 0.01% | card 9.3023px legible=0 min type 43.00 | wrap@95: 31/39 br 70
+preset builder   1200x675: kept 1200.00x504.00 lost_tb 85.5000 lost_lr 0.0000 lost 25.33% | card 10.6667px legible=1 min type 37.50 | wrap@95: 31/39 br 70
+preset linkedin  1200x627: kept 1200.00x504.00 lost_tb 61.5000 lost_lr 0.0000 lost 19.62% | card 10.6667px legible=1 min type 37.50 | wrap@95: 31/39 br 70
+images: {'advocu-devto-publishing-kit-cover.webp': [1376, 578], 'cover-builder.80aa6ca5.jpg': [1200, 675], 'cover-builder.cabd79f3.jpg': [1200, 675], 'cover.77acc7c4.jpg': [1376, 578], 'cover.ae4d639e.jpg': [1376, 578], 'linkedin-devto-publishing-kit-cover.jpg': [1200, 627]}
+  advocu-devto-publishing-kit-cover.webp     ratio 2.3806 lost_tb 0.040 lost_lr 0.000
+  cover-builder.80aa6ca5.jpg                 ratio 1.7778 lost_tb 85.500 lost_lr 0.000
+  cover-builder.cabd79f3.jpg                 ratio 1.7778 lost_tb 85.500 lost_lr 0.000
+  cover.77acc7c4.jpg                         ratio 2.3806 lost_tb 0.040 lost_lr 0.000
+  cover.ae4d639e.jpg                         ratio 2.3806 lost_tb 0.040 lost_lr 0.000
+  linkedin-devto-publishing-kit-cover.jpg    ratio 1.9139 lost_tb 61.500 lost_lr 0.000
+sweep (col: broken/blocks br): 40:39/39/208 60:35/39/134 80:33/39/94 95:31/39/70 100:31/39/66 120:29/39/55 140:27/39/42 160:26/39/35 180:25/39/34 200:22/39/27
+  [MATCH] dev.to proxy ratio: paper 2.381:1 | model 2.380952
+  [MATCH] 1376x768 cover: rows kept: paper 577.9 -> 578 | model 577.9200
+  [MATCH] 1376x768 cover: lost top and bottom: paper 95 px each | model 95.0400
+  [MATCH] 1376x578 cover: nothing cropped: paper nothing cropped | model 0.0400 px per side
+  [INPUT] feed card width: paper 320 px | model input
+  [NOT IN PAPER] type size that survives the card (1376 wide): paper not stated in the paper | model 43.00 pt at 10 px
+  [MATCH] TL;DR posted as five separate lines: paper 5 lines | model 5 lines (block at l.9)
+  [MISMATCH] repo copy readable at 95 columns: paper 95 columns | model longest prose line 126; 20 of 106 prose lines over 95
+  [NOT REPRODUCIBLE] hard-wrapped blocks on dev.to: paper 47 of 62 | model 47/62 = 0.7581; this article as stored: 29 of 39
+  [NOT REPRODUCIBLE] <br> per broken block: paper 88 <br> over 47 blocks | model 1.8723; this article as stored: 2.3103
+  [NOT REPRODUCIBLE] Builder payload lines: paper 531 before unwrap, 411 after | model builder-publishing-kit.md in paper/ has 180 lines, 10110 chars
+  [NOT MODELLED] Medium data: URI images: paper 0 of 4; hosted 4 of 4 | model not modelled
+  [MATCH] Builder Center hero geometry: paper 1200x675 | model 1200x675
+  [MATCH] dev.to cover file geometry: paper 1376x578 | model 1376x578

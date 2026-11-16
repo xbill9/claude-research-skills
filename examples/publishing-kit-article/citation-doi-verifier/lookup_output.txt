@@ -1,0 +1,22 @@
+L1 200 image/jpeg                        44650B title=None og=None
+L2 200 text/html; charset=utf-8         265851B title='GitHub - xbill9/publishing-kit: Claude Code skill + toolchain for pub og='GitHub - xbill9/publishing-kit: Claude Code skill + toolcha
+L3 200 text/html; charset=utf-8         555066B title='publishing-kit/skills/publishing/SKILL.md at main · xbill9/publishing og='publishing-kit/skills/publishing/SKILL.md at main · xbill9/
+L4 200 text/html; charset=utf-8         211589B title='publishing-kit/articles/publishing-kit-skill at main · xbill9/publish og='publishing-kit/articles/publishing-kit-skill at main · xbil
+L5 200 text/html; charset=utf-8        1197894B title='Claude Code by Anthropic | AI coding agent and assistant' og='Claude Code by Anthropic | AI coding agent and assistant'
+L6 200 text/html; charset=utf-8         136427B title='Streamline Publishing with a Claude Code Skill - DEV Community' og='Streamline Publishing with a Claude Code Skill'
+L7 200 text/html; charset=utf-8         109156B title='Streamline Publishing with a Claude Code Skill - DEV Community' og='Streamline Publishing with a Claude Code Skill'
+L8 200 text/html; charset=utf-8         170932B title='Streamline Publishing with a Claude Code Skill | AWS Builder Center' og='Streamline Publishing with a Claude Code Skill | AWS Builde
+L9 403 text/html; charset=UTF-8           5746B title='Just a moment...' og=None
+L10 200 text/html; charset=utf-8         319231B title='GitHub - xbill9/publishing-kit: Claude Code skill + toolchain for pub og='GitHub - xbill9/publishing-kit: Claude Code skill + toolcha
+L11 200 text/html; charset=utf-8         148844B title='Streamline Publishing with a Claude Code Skill' og='Streamline Publishing with a Claude Code Skill'
+cover: {"local_bytes": 44650, "served_bytes": 44650, "served_equals_local": true, "local_digests": {"md5": "d1b6093eca7227ccf13a61a2d18ff744", "sha1": "c834161263bbe29eba5a9e640bb14072c1a0d5b8", "sha256": "ae4d639e436158b8464623be5d1b1af277331e16869e849c10ec3267b8825b5b"}, "name_hash_is_prefix_of": ["sha256"]}
+gh repo: rc=0
+gh skill_md: rc=0
+gh article_dir: rc=0
+gh marketplace: rc=0
+github: {"repo_full_name": "xbill9/publishing-kit", "private": false, "archived": false, "license_spdx": "Apache-2.0", "default_branch": "main", "pushed_at": "2026-11-16T14:57:44Z", "skill_md_exists": true, "skill_md_sha": "34badb408839ae407c8fd9c126f85d5552e0e62a", "article_dir_exists": true, "article_dir_file_count": 19, "article_dir_has_cover_ae4d639e": true, "article_dir_has_devto_md": true, "marketplace_name": "publishing-kit", "marketplace_plugins": ["publishing"]}
+devto api L6: {"status": 200, "title": "Streamline Publishing with a Claude Code Skill", "title_similarity_to_manuscript": 1.0, "published_at": "2026-09-01T14:37:08Z", "organization": "gde", "canonical_url": "https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn", "url": "https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn"}
+devto api L7: {"status": 200, "title": "Streamline Publishing with a Claude Code Skill", "title_similarity_to_manuscript": 1.0, "published_at": "2026-09-01T14:37:19Z", "organization": "aws-builders", "canonical_url": "https://dev.to/aws-builders/streamline-publishing-with-a-claude-code-skill-an4", "url": "https://dev.to/aws-builders/streamline-publishing-with-a-claude-code-skill-an4"}
+W1 'publishing-kit': crossref best 0.4127 match=False ('Publishing Business in Eighteenth-Century England'); openalex count 328669 best 0.4912 ('The Ultimate Desktop Publishing Starter Kit')
+W2 'Claude Code': crossref best 0.5946 match=False ('Sessionmaxxing Claude Code'); openalex count 231109 best 0.5946 ('Sessionmaxxing Claude Code')
+W3 'Streamline Publishing with a Claude Code Skill': crossref best 0.5 match=False ('Sessionmaxxing Claude Code'); openalex count 1372 best 0.416 ('Streamlining evidence based clinical recommendations with l)

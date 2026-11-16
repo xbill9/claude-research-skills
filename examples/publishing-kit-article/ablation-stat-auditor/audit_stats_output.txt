@@ -1,0 +1,101 @@
+== inputs
+{
+ "article_hardwrap": {
+  "k": 47,
+  "n": 62,
+  "src": "devto-publishing-kit.md:161"
+ },
+ "evidence_hardwrap": {
+  "p": 58,
+  "li": 4,
+  "blocks": 62,
+  "br_blocks": 47,
+  "br_total": 88,
+  "bodytext_multiline": 43,
+  "src": [
+   "evidence/devto-hardwrap.txt:12",
+   "evidence/devto-hardwrap.txt:13",
+   "evidence/devto-hardwrap.txt:14",
+   "evidence/devto-hardwrap.txt:20"
+  ]
+ },
+ "article_medium": {
+  "embed": [
+   0,
+   4
+  ],
+  "hosted": [
+   4,
+   4
+  ],
+  "src": "devto-publishing-kit.md:162"
+ },
+ "fences": {
+  "open": 23,
+  "close": 23,
+  "bare": 0,
+  "by_label": {
+   "```shell": 6,
+   "```plaintext": 14,
+   "```markdown": 1,
+   "```yaml": 1,
+   "```diff": 1
+  },
+  "src": "evidence/devto-roundtrip.txt:14"
+ }
+}
+== Wilson (MCP)
+  hardwrap_47_62                   75.8% (95% Wilson CI [63.8%, 84.8%])
+  medium_embed_0_4                 0.0% (95% Wilson CI [0.0%, 49.0%])
+  medium_hosted_4_4                100.0% (95% Wilson CI [51.0%, 100.0%])
+  fences_labelled_23_23            100.0% (95% Wilson CI [85.7%, 100.0%])
+  substack_links_first_paste       50.0% (95% Wilson CI [15.0%, 85.0%])
+  substack_links_after_prepare     100.0% (95% Wilson CI [51.0%, 100.0%])
+  substack_images                  100.0% (95% Wilson CI [34.2%, 100.0%])
+== tests (MCP)
+  medium_hosted_vs_embed_fisher_unpaired: {'method': '4/4', 'baseline': '0/4', 'method_rate_pct': 100.0, 'baseline_rate_pct': 0.0, 'difference_pts': 100.0, 'odds_ratio': 'inf', 'p_value': 0.02857142857142857, 'significant_at_0_05': True, 'significant_at_0_01': False}
+  medium_hosted_vs_embed_mcnemar_paired: {'b': 4, 'c': 0, 'b_method_only': 4, 'c_baseline_only': 0, 'discordant': 4, 'p_value': 0.125, 'significant_at_0_05': False, 'significant_at_0_01': False}
+  substack_links_prepare_vs_first_mcnemar_paired: {'b': 2, 'c': 0, 'b_method_only': 2, 'c_baseline_only': 0, 'discordant': 2, 'p_value': 0.5, 'significant_at_0_05': False, 'significant_at_0_01': False}
+  substack_links_prepare_vs_first_fisher_unpaired: {'method': '4/4', 'baseline': '2/4', 'method_rate_pct': 100.0, 'baseline_rate_pct': 50.0, 'difference_pts': 50.0, 'odds_ratio': 'inf', 'p_value': 0.42857142857142855, 'significant_at_0_05': False, 'significant_at_0_01': False}
+  wilcoxon: not run: the paper and evidence contain no paired resource metric (no per-run latency, token or size series); every size figure is a single measurement
+  mcnemar_min_discordant_for_p_lt_0.05: 6
+== noise floor (MCP)
+  {'num_tasks': 62, 'baseline_rate_pct': 75.81, 'std_error_pct': 5.44, 'ci_95_half_width_pct': 10.66, 'multiplier_z_alpha_plus_z_power': 2.8016, 'min_detectable_lift_vs_fixed_baseline_pts': 15.24, 'min_detectable_lift_two_runs_pts': 21.55}
+== arithmetic
+  hardwrap_blocks_sum: {'p_plus_li': 62, 'stated': 62, 'ok': True}
+  hardwrap_blocks_without_br: 15
+  hardwrap_pct: 75.806
+  br_per_affected_block: 1.872
+  article_matches_evidence_hardwrap: True
+  published_minus_bodytext: 4
+  fence_labels_sum: {'sum': 23, 'opening': 23, 'ok': True}
+  orgs_sum: {'parts': {'gde': 24, 'aws-builders': 13, 'None': 3}, 'sum': 40, 'stated': 40, 'ok': True}
+  crop: {'ratio_exact': 2.380952380952381, 'ratio_3dp': 2.381, 'article_ratio': 2.381, 'ratio_matches_article': True, 'kept_rows_exact': 577.92, 'kept_rows_from_rounded_ratio': 577.9084418311634, 'lost_each_side_exact': 95.04000000000002, 'lost_each_side_rounded_rows': 95.0, 'article_loss': 95, 'this_cover_ratio': 2.3806228373702423}
+  cover_kb: {'builder-cover.2b7f0305.jpg': {'bytes': 15470, 'KiB': 15.11, 'kB': 15.47}, 'devto-cover-aws.44aee846.jpg': {'bytes': 106890, 'KiB': 104.38, 'kB': 106.89}, 'devto-cover-gde.0d021e90.jpg': {'bytes': 106731, 'KiB': 104.23, 'kB': 106.73}}
+  builder_payload: {'chars': 23234, 'KiB': 22.689, 'kB': 23.234, 'lines_before_after': (531, 411), 'lines_removed': 120}
+  skill_footprint: {'version_in_file': '0.18.0', 'skill_md_lines': 649, 'description_chars': 528, 'file_count_by_section': {'references': 6, 'templates': 2, 'scripts': 14}, 'files_listed': 22, 'sum_listed_files': 3931, 'sum_plus_skill_md': 4580, 'stated_total': 4580, 'total_ok': True, 'listed_matches_section_counts': True}
+  linkedin: {'post': 1269, 'limit': 3000, 'post_share_of_limit': 0.423, 'hook': 80, 'fold_chars': 140, 'hook_within_fold': True, 'distinct_FAIL_lines': 5, 'distinct_WARN_lines': 1, 'distinct_fail_plus_warn': 6}
+  substack_code_lines_preserved: True
+  five_faults_listed: 5
+  ledger_vs_evidence: {'skill_md_lines': {'ledger': 446, 'evidence': 649}, 'footprint_total': {'ledger': 2370, 'evidence': 4580}, 'builder_payload_rows': [{'ledger_chars': 22542, 'ledger_kb': 22.0, 'ledger_lines': (521, 408), 'evidence_chars': 23234, 'evidence_lines': (531, 411), 'match': False}, {'ledger_chars': 23214, 'ledger_kb': 22.7, 'ledger_lines': (531, 411), 'evidence_chars': 23234, 'evidence_lines': (531, 411), 'match': False}], 'cover_kb': {'ledger': [105, 104, 15], 'evidence_KiB_rounded': [104, 104, 15], 'evidence_kB_rounded': [107, 107, 15], 'evidence_order': ['devto-cover-aws.44aee846.jpg', 'devto-cover-gde.0d021e90.jpg', 'builder-cover.2b7f0305.jpg']}}
+== dates
+  {'article_says_measured': '2026-08-31', 'hardwrap_measured': '2026-09-16', 'hardwrap_days_after_article_date': 16, 'medium_0_of_4_log_date': '2026-08-30'}
+== claim verdicts
+  hardwrap-47-of-62            VERIFIED       HOLDS
+  hardwrap-every-paragraph     MISMATCH       OVERSTATED
+  medium-0-of-4                NOT CHECKABLE  CANNOT CHECK
+  medium-4-of-4                NOT CHECKABLE  CANNOT CHECK
+  medium-comparison            NOT CHECKABLE  CANNOT CHECK
+  devto-crop-ratio             VERIFIED       HOLDS
+  devto-crop-95px              VERIFIED       HOLDS
+  five-faults                  VERIFIED       HOLDS
+  measured-date                MISMATCH       OVERSTATED
+  fences-23-of-23              VERIFIED       HOLDS
+  orgs-40                      VERIFIED       HOLDS
+  ledger-footprint             MISMATCH       CANNOT CHECK
+  ledger-builder-payload-0     MISMATCH       CANNOT CHECK
+  ledger-builder-payload-1     MISMATCH       CANNOT CHECK
+  ledger-cover-kb              MISMATCH       HOLDS
+  linkedin-1269                VERIFIED       HOLDS
+  verdict counts: {'VERIFIED': 7, 'MISMATCH': 6, 'NOT CHECKABLE': 3}
+  conclusion counts: {'HOLDS': 8, 'OVERSTATED': 2, 'CANNOT CHECK': 6}

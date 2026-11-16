@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Publishing Kit Figure Anatomy</title>
+<style>
+  @page { size: A4; margin: 13mm 13mm 13mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 9.3pt; line-height: 1.36; color: #111827; margin: 0; background: #fff; }
+  h1 { font-size: 17pt; margin: 0 0 2mm; }
+  h2 { font-size: 13pt; margin: 0 0 1.5mm; border-bottom: 2px solid #1e3a8a; padding-bottom: 1mm; }
+  h3 { font-size: 10.3pt; margin: 0 0 1.4mm; }
+  .sub { color: #4b5563; margin: 0 0 3mm; }
+  .page { page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .arc { display: inline-block; font-size: 7.8pt; font-weight: 700; letter-spacing: .04em; padding: .5mm 2mm; border-radius: 2mm; color: #fff; margin-right: 2mm; }
+  .arc.a { background: #374151; } .arc.m { background: #b45309; } .arc.e { background: #047857; }
+  img.fig { width: 100%; border: 1px solid #d1d5db; border-radius: 1.5mm; margin: 1mm 0 2mm; display: block; }
+  img.fig.narrow { width: 74%; margin-left: auto; margin-right: auto; }
+  .card { border: 1px solid #d1d5db; border-radius: 2mm; padding: 2.2mm 3mm; margin: 0 0 2.3mm; page-break-inside: avoid; break-inside: avoid; }
+  .decode { background: #f8fafc; }
+  .take { background: #ecfdf5; border-color: #10b981; }
+  .flag { background: #fff1f2; border-color: #fb7185; }
+  ol.steps { margin: 0; padding-left: 0; list-style: none; }
+  ol.steps li { margin: 0 0 1.3mm; padding-left: 7mm; position: relative; }
+  ol.steps li b.n { position: absolute; left: 0; top: 0; width: 5mm; height: 5mm; border-radius: 50%; background: #111827; color: #fff; font-size: 7.5pt; text-align: center; line-height: 5mm; }
+  b.n.rose { background: #e11d48 !important; } b.n.blue { background: #3b82f6 !important; } b.n.orange { background: #ea580c !important; }
+  b.n.grey { background: #6b7280 !important; } b.n.green { background: #16a34a !important; } b.n.navy { background: #1e3a8a !important; }
+  ul { margin: 0; padding-left: 4.5mm; } li { margin-bottom: .7mm; }
+  table { border-collapse: collapse; width: 100%; font-size: 8.1pt; page-break-inside: avoid; break-inside: avoid; }
+  th, td { border: 1px solid #d1d5db; padding: .7mm 1.3mm; text-align: left; vertical-align: top; }
+  th { background: #eef2ff; }
+  .src { font-size: 7.8pt; color: #4b5563; margin-top: 1mm; }
+  .calc { font-style: italic; color: #1e40af; }
+  .inf { font-style: italic; color: #92400e; }
+  code { font-family: "DejaVu Sans Mono", monospace; font-size: 7.8pt; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>Visual Anatomy Dossier</h1>
+  <p class="sub"><b>Streamline Publishing with a Claude Code Skill</b> (dev.to article, <code>paper/devto-publishing-kit.md</code>, front matter <code>published: false</code>). The article's figures are its cover in five files and one table rendered to PNG. Each is decoded badge by badge, and every claim the article makes about a figure is checked against the image and the files in <code>paper/evidence/</code>.</p>
+
+  <div class="card decode">
+    <h3>How to read the labels</h3>
+    <ul>
+      <li><span class="calc">computed</span>: produced by <code>scripts/measure_figures.py</code> (output in <code>work/measure_figures.out</code>).</li>
+      <li>Plain quotes come from the article, <code>CLAIMS.md</code> or an evidence file, cited by file and line.</li>
+      <li><span class="inf">inference</span>: a reading that no file states. Treat it as unverified.</li>
+    </ul>
+  </div>
+
+  <h3>Figure inventory (computed)</h3>
+  <table>
+    <tr><th>File</th><th>Pixels</th><th>Ratio</th><th>Bytes</th><th>sha256[:8] = name?</th><th>Where it is used</th></tr>
+    <tr><td><code>cover.ae4d639e.jpg</code></td><td>1376x578</td><td>2.3806</td><td>44,650</td><td>yes</td><td>dev.to <code>cover_image</code> (article line 6); Medium hosted HTML line 191</td></tr>
+    <tr><td><code>cover.77acc7c4.jpg</code></td><td>1376x578</td><td>2.3806</td><td>73,455</td><td>yes</td><td>previous dev.to cover; in the article's quoted check-links output (lines 116-117); Medium story per <code>cover-refresh.txt</code></td></tr>
+    <tr><td><code>cover-builder.cabd79f3.jpg</code></td><td>1200x675</td><td>1.7778</td><td>41,487</td><td>yes</td><td>Builder Center hero since 2026-10-05 (<code>cover-refresh.txt</code>)</td></tr>
+    <tr><td><code>cover-builder.80aa6ca5.jpg</code></td><td>1200x675</td><td>1.7778</td><td>62,751</td><td>yes</td><td>previous Builder Center hero</td></tr>
+    <tr><td><code>linkedin-devto-publishing-kit-cover.jpg</code></td><td>1200x627</td><td>1.9139</td><td>39,139</td><td>not hash-named</td><td>no file in <code>paper/</code> references it</td></tr>
+    <tr><td><code>advocu-devto-publishing-kit-cover.webp</code></td><td>1376x578</td><td>2.3806</td><td>20,776</td><td>not hash-named</td><td><code>advocu-devto-publishing-kit.md</code> line 29</td></tr>
+    <tr><td><code>medium/img/devto-publishing-kit-table-1.png</code></td><td>1281x166</td><td>7.7169</td><td>23,083</td><td>not hash-named</td><td>Medium HTML line 351; Markdown table at article lines 159-162</td></tr>
+  </table>
+  <p class="src"><code>medium/img/cover.ae4d639e.jpg</code> and <code>medium/img/cover.77acc7c4.jpg</code> are byte-identical to the root copies (computed). Every hash-named file's name equals the first 8 hex digits of its sha256 (6 of 6, computed).</p>
+
+  <div class="card flag">
+    <h3>Forensic flags</h3>
+    <ol>
+      <li><b>"The two numbers on the cover are real"</b> (article line 157). Neither dev.to cover carries a number: <code>cover.ae4d639e.jpg</code> has no text, and <code>cover.77acc7c4.jpg</code> shows a title, labels and a footer without either figure (all six cover files inspected). The two numbers appear only in the table image (Fig. 5).</li>
+      <li><b>Five endpoints, four destinations.</b> The current cover draws 5 endpoint markers (<span class="calc">computed</span>), while the article says "four places" (line 15) and "all four of its artifacts" (line 12), and the previous cover reads "Four destinations."</li>
+      <li><b>"a 1376x768 cover loses 95px off the top and bottom"</b> (line 54). The arithmetic reproduces (95.0 rows, <span class="calc">computed</span>), but every dev.to cover in the folder is 1376x578 and loses 0.0 rows. <code>CLAIMS.md</code> line 30 traces "1376x768" to <code>toolchain-run.txt</code>, which records byte counts for those covers but no dimensions.</li>
+      <li><b>Table row 2 sits under the header "measured"</b>, but <code>CLAIMS.md</code> files "0 of 4 embed, 4 of 4 hosted" under LOG (2026-08-30, "NOT re-measured here"), and no evidence file contains it (grep).</li>
+      <li><b>Medium cover drift.</b> The hosted Medium HTML opens with <code>cover.ae4d639e.jpg</code>, but <code>cover-refresh.txt</code> says the Medium story "still shows cover.77acc7c4.jpg".</li>
+    </ol>
+  </div>
+
+  <div class="card take">
+    <h3>Narrative arc</h3>
+    <p><span class="arc a">ARCHITECTURE</span> Figs. 1-2: one source fanned out to destinations. <span class="arc m">MECHANISM</span> Figs. 3-4: one artwork rendered at each destination's geometry. <span class="arc e">EMPIRICAL GAIN</span> Fig. 5: the two measured defects the kit now checks for.</p>
+  </div>
+</section>
+
+<section class="page">
+  <h2><span class="arc a">ARCHITECTURE</span>Fig. 1: current dev.to cover, <code>cover.ae4d639e.jpg</code></h2>
+  <img class="fig" src="annotated/fig1_cover_current_annotated.png" alt="Current dev.to cover annotated with six badges">
+  <div class="card decode">
+    <h3>Visual Anatomy</h3>
+    <ol class="steps">
+      <li><b class="n">1</b><b>Source file.</b> A document icon with six text lines. Every curve starts from it, which matches the article's "Write one markdown file" (line 10).</li>
+      <li><b class="n blue">2</b><b>Blue endpoint</b> (centre 1100,110, <span class="calc">computed</span>). The image has no labels. On the previous cover blue marks "dev.to / REST API", so this is <span class="inf">probably dev.to (inference)</span>.</li>
+      <li><b class="n orange">3</b><b>Three orange endpoints</b>: square, hexagon and diamond at y = 199, 289 and 379 (<span class="calc">computed</span>). On the previous cover orange marks "Chrome" (Builder Center, Medium). A third browser-driven destination would fit Substack, which <code>substack-paste.txt</code> records as pasted in a browser tab. <span class="inf">Inference: no file maps markers to destinations.</span></li>
+      <li><b class="n grey">4</b><b>Grey endpoint.</b> Grey marks "LinkedIn / no draft API" on the previous cover. <span class="inf">Inference.</span></li>
+      <li><b class="n rose">5</b><b>Count: 5 endpoints</b> (<span class="calc">computed</span>: connected components taller than 30 px in the right 30% of the frame, colours 1 blue, 3 orange, 1 grey). The article never mentions Substack (grep) and speaks of four destinations.</li>
+      <li><b class="n">6</b><b>No text in the frame.</b> The cover has nothing to shrink at a 320px feed card (line 36) and cannot carry "the two numbers on the cover" (line 157). It is 1376x578, ratio 2.3806, against dev.to's 1000x420 = 2.3810, so the dev.to crop removes 0.0 rows (<span class="calc">computed</span>; <code>devto-cover-crop.txt</code> "nothing cropped").</li>
+    </ol>
+  </div>
+  <div class="card take">
+    <h3>Engineering Takeaway</h3>
+    <p>A text-free cover drawn at the destination's exact ratio survives both the crop and the feed card. In exchange it loses its legend: the reader cannot tell which marker is which destination. That is also why its endpoint count can drift from the prose without any check noticing. Here it is five against four.</p>
+  </div>
+  <p class="src">Sources: <code>paper/cover.ae4d639e.jpg</code>; article lines 6, 10, 12, 15, 36, 157; <code>evidence/devto-cover-crop.txt</code>; <code>evidence/cover-refresh.txt</code> lines 2-4; <code>evidence/substack-paste.txt</code>.</p>
+</section>
+
+<section class="page">
+  <h2><span class="arc a">ARCHITECTURE</span>Fig. 2: previous dev.to cover, <code>cover.77acc7c4.jpg</code></h2>
+  <img class="fig" src="annotated/fig2_cover_previous_annotated.png" alt="Previous dev.to cover annotated with six badges">
+  <div class="card decode">
+    <h3>Visual Anatomy</h3>
+    <ol class="steps">
+      <li><b class="n">1</b><b>Kicker</b> "PUBLISHING-KIT - A CLAUDE CODE SKILL": 12 px of ink, which becomes <b>2.8 px</b> on a 320px-wide card (scale 0.2326, <span class="calc">computed</span>).</li>
+      <li><b class="n rose">2</b><b>"One source. Four destinations."</b> (35 px of ink, 8.1 px at 320). This is the four that Fig. 1 replaces with five markers.</li>
+      <li><b class="n">3</b><b><code>article.md</code></b>, the single source, joined by connectors to four cards.</li>
+      <li><b class="n blue">4</b><b>Colour key</b> in the card top bars: blue "dev.to / REST API", orange "Builder Center / Chrome" and "Medium / Chrome", grey "LinkedIn / no draft API". These match the article's account: dev.to through <code>publish-devto.py</code>, Builder Center and Medium as "Chrome work", and LinkedIn's Posts API that "cannot create a draft".</li>
+      <li><b class="n">5</b><b>Sub-labels</b> such as "REST API": 14 px of ink, <b>3.3 px</b> at 320 (<span class="calc">computed</span>).</li>
+      <li><b class="n">6</b><b>Footer</b> "publishing-kit - one markdown file in, four publishable artifacts out": 16 px, <b>3.7 px</b> at 320 (<span class="calc">computed</span>).</li>
+    </ol>
+  </div>
+  <div class="two">
+    <div class="card take">
+      <h3>Engineering Takeaway</h3>
+      <p>The article says <code>make-cover.py</code> reports "which type sizes survive a 320px feed card" (line 36). At that size three of this cover's six text lines have 2.8 to 3.7 px of ink. The cover that replaced it has no text at all.</p>
+    </div>
+    <div class="card flag">
+      <h3>Flag</h3>
+      <p>This cover has no "47 of 62" or "0 of 4" on it, so "The two numbers on the cover are real" (line 157) holds for neither dev.to cover. The article's quoted <code>check-links.py</code> output (lines 116-117) still names this file, while the front matter names <code>cover.ae4d639e.jpg</code>.</p>
+    </div>
+  </div>
+  <p class="src">Ink height counts rows with luma more than 40 above the background median, inside a hand-placed box around each line. It includes ascenders and descenders, so it is larger than cap height. The 320 px width comes from article line 36 and <code>CLAIMS.md</code> (LOG, <code>CARD_W</code>). No legibility threshold is given in any file.</p>
+</section>
+
+<section class="page">
+  <h2><span class="arc m">MECHANISM</span>Fig. 3: Builder Center covers, previous and current</h2>
+  <img class="fig" src="annotated/fig3_builder_covers_annotated.png" alt="The two Builder Center covers side by side, with the dev.to crop bands shaded">
+  <div class="card decode">
+    <h3>Visual Anatomy</h3>
+    <ol class="steps">
+      <li><b class="n rose">1</b><b>Text in the image.</b> <code>80aa6ca5</code> repeats the text cover at 1200x675. <code>CLAIMS.md</code> records Builder Center's guidance, "text in images is not recommended" (LOG, 2026-08-30), and that <code>--mode builder</code> defaults to text-free.</li>
+      <li><b class="n rose">2</b><b>Rose bands: what dev.to's crop would remove.</b> A 1200x675 image shown at 1000x420 with <code>fit=cover</code> keeps 504.0 of 675 rows and drops <b>85.5 rows</b> at the top and at the bottom (<span class="calc">computed</span> from the URL in <code>devto-cover-crop.txt</code>). This is why the kit renders "at every geometry the destinations demand" (line 35) instead of reusing one file.</li>
+      <li><b class="n">3</b><b>Text-free replacement</b> <code>cabd79f3</code>, the same artwork as Fig. 1 laid out at 16:9 (ratio 1.7778, <span class="calc">computed</span>).</li>
+      <li><b class="n blue">4</b><b>Same five markers</b>, 1 blue, 3 orange, 1 grey, at x = 960 (<span class="calc">computed</span>).</li>
+    </ol>
+  </div>
+  <div class="two">
+    <div class="card take">
+      <h3>Engineering Takeaway</h3>
+      <p>The swap is recorded. <code>cover-refresh.txt</code> gives the live hero a mean absolute pixel difference of 0.56 against <code>cabd79f3</code> and 14.66 against <code>80aa6ca5</code>. The two local files differ from each other by 14.671 (<span class="calc">computed</span>), which is consistent with the live hero being the new cover.</p>
+    </div>
+    <div class="card decode">
+      <h3>Cross-check, dev.to pair</h3>
+      <p><code>cover-refresh.txt</code>: the Substack re-host differs from <code>cover.77acc7c4.jpg</code> by 18.71. The two local dev.to covers differ from each other by 18.775 (<span class="calc">computed</span>). The figures agree to within 0.07.</p>
+    </div>
+  </div>
+  <p class="src">Sources: <code>paper/cover-builder.*.jpg</code>; <code>evidence/cover-refresh.txt</code> lines 2, 7-9; <code>evidence/devto-cover-crop.txt</code>; <code>CLAIMS.md</code> "Read from the source" and LOG tables; article line 35.</p>
+</section>
+
+<section class="page">
+  <h2><span class="arc m">MECHANISM</span>Fig. 4: LinkedIn and Advocu variants</h2>
+  <img class="fig narrow" src="annotated/fig4_variants_annotated.png" alt="LinkedIn cover above the Advocu WebP cover, annotated">
+  <div class="card decode">
+    <h3>Visual Anatomy</h3>
+    <ol class="steps">
+      <li><b class="n rose">1</b><b>LinkedIn geometry 1200x627, ratio 1.9139</b> (<span class="calc">computed</span>). No file in <code>paper/</code> references this image or states LinkedIn's image size. <code>linkedin-run.txt</code> covers only the post text. Its geometry is <b>untraced</b>.</li>
+      <li><b class="n">2</b><b>Smaller markers.</b> The circle markers measure 46 px across against 52-53 px on the 1376x578 cover, spaced 78 px apart against 89-90 px (<span class="calc">computed</span>). The same five-marker fan is fitted into a shorter frame.</li>
+      <li><b class="n green">3</b><b>Advocu WebP.</b> <code>advocu-devto-publishing-kit.md</code> line 29 says "1376x578 WebP, 20 KB, from cover.ae4d639e.jpg". Measured: 1376x578, 20,776 bytes, mean absolute pixel difference <b>0.441</b> against <code>cover.ae4d639e.jpg</code> (<span class="calc">computed</span>). The claim holds.</li>
+    </ol>
+  </div>
+  <div class="card take">
+    <h3>Engineering Takeaway</h3>
+    <p>Two artworks, the text cover and the flow cover, span six cover files. The hash-named files can be checked mechanically: 6 of 6 names match their sha256, counting the two Medium copies. The two that are not hash-named can be checked only by pixel comparison, and the LinkedIn one has no record of where it went.</p>
+  </div>
+  <p class="src">Sources: <code>paper/linkedin-devto-publishing-kit-cover.jpg</code>, <code>paper/advocu-devto-publishing-kit-cover.webp</code>, <code>paper/advocu-devto-publishing-kit.md</code>, <code>evidence/linkedin-run.txt</code>, <code>work/measurements.json</code>.</p>
+</section>
+
+<section class="page">
+  <h2><span class="arc e">EMPIRICAL GAIN</span>Fig. 5: the measured table, <code>devto-publishing-kit-table-1.png</code></h2>
+  <img class="fig" src="annotated/fig5_table_annotated.png" alt="Rendered table with row 1 shaded green and row 2 shaded rose">
+  <div class="card decode">
+    <h3>Visual Anatomy</h3>
+    <ol class="steps">
+      <li><b class="n navy">1</b><b>What the table is.</b> The Markdown table at article lines 159-162, rendered to a 1281x166 PNG (<span class="calc">computed</span>) because "Medium's importer eats them" (lines 16-17). The prose introduces it as "The two numbers on the cover" (line 157).</li>
+      <li><b class="n rose">2</b><b>Header "measured"</b> applies one status to both rows. <code>CLAIMS.md</code> gives them different statuses (badges 3 and 4).</li>
+      <li><b class="n green">3</b><b>"47 of 62 in a published article carried a stray break."</b> Traced: <code>devto-hardwrap.txt</code> records "58 &lt;p&gt; + 4 &lt;li&gt; = 62", "blocks containing &lt;br&gt;: 47", re-measured 2026-09-16 on article 4531800, with 0 source lines ending in two spaces. 47/62 = 75.8%, and the 88 &lt;br&gt; average 1.87 per affected block (<span class="calc">computed</span>).</li>
+      <li><b class="n rose">4</b><b>"0 of 4 survived; from real URLs, 4 of 4."</b> <code>CLAIMS.md</code>: LOG, 2026-08-30, "carried from the kit's own measurement log … NOT re-measured here". A grep of <code>paper/</code> finds the figure only in the two article versions and <code>CLAIMS.md</code>, and in no evidence file.</li>
+    </ol>
+  </div>
+  <div class="two">
+    <div class="card take">
+      <h3>Engineering Takeaway</h3>
+      <p>Row 1 is the stronger result. It has a dated artifact, a stated denominator and a check that rules out the author asking for the breaks. Row 2 may well be true, but in this folder it is a log entry, and the table's header should say so.</p>
+    </div>
+    <div class="card flag">
+      <h3>Flag</h3>
+      <p>The table is the only figure that carries these numbers. The article's sentence placing them "on the cover" fails against both dev.to covers (Figs. 1-2) and against the Builder, LinkedIn and Advocu variants.</p>
+    </div>
+  </div>
+  <p class="src">Sources: <code>paper/medium/img/devto-publishing-kit-table-1.png</code>; article lines 16-17, 157-162; <code>evidence/devto-hardwrap.txt</code>; <code>CLAIMS.md</code> "MEASURED 2026-09-16" and LOG tables.</p>
+</section>
+
+</body>
+</html>

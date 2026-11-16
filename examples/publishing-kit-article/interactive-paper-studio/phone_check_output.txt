@@ -1,0 +1,5 @@
+sim: innerWidth=390 scrollWidth=390 height=2795 -> no horizontal scroll
+arch: innerWidth=390 scrollWidth=390 height=1665 -> no horizontal scroll
+abl: innerWidth=390 scrollWidth=390 height=1734 -> no horizontal scroll
+repro: innerWidth=390 scrollWidth=390 height=5001 -> no horizontal scroll
+console: log: [self-check] 130 preset values compared, 0 mismatches, worst abs error 0.00e+0

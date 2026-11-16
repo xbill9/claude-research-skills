@@ -1,0 +1,398 @@
+{
+ "files": {
+  "cover.ae4d639e.jpg": {
+   "w": 1376,
+   "h": 578,
+   "ratio": 2.3806,
+   "bytes": 44650,
+   "sha256_8": "ae4d639e",
+   "name_hash_matches": true
+  },
+  "cover.77acc7c4.jpg": {
+   "w": 1376,
+   "h": 578,
+   "ratio": 2.3806,
+   "bytes": 73455,
+   "sha256_8": "77acc7c4",
+   "name_hash_matches": true
+  },
+  "cover-builder.cabd79f3.jpg": {
+   "w": 1200,
+   "h": 675,
+   "ratio": 1.7778,
+   "bytes": 41487,
+   "sha256_8": "cabd79f3",
+   "name_hash_matches": true
+  },
+  "cover-builder.80aa6ca5.jpg": {
+   "w": 1200,
+   "h": 675,
+   "ratio": 1.7778,
+   "bytes": 62751,
+   "sha256_8": "80aa6ca5",
+   "name_hash_matches": true
+  },
+  "linkedin-devto-publishing-kit-cover.jpg": {
+   "w": 1200,
+   "h": 627,
+   "ratio": 1.9139,
+   "bytes": 39139,
+   "sha256_8": "5c48dc8e",
+   "name_hash_matches": null
+  },
+  "advocu-devto-publishing-kit-cover.webp": {
+   "w": 1376,
+   "h": 578,
+   "ratio": 2.3806,
+   "bytes": 20776,
+   "sha256_8": "baf98373",
+   "name_hash_matches": null
+  },
+  "medium/img/cover.ae4d639e.jpg": {
+   "w": 1376,
+   "h": 578,
+   "ratio": 2.3806,
+   "bytes": 44650,
+   "sha256_8": "ae4d639e",
+   "name_hash_matches": true
+  },
+  "medium/img/cover.77acc7c4.jpg": {
+   "w": 1376,
+   "h": 578,
+   "ratio": 2.3806,
+   "bytes": 73455,
+   "sha256_8": "77acc7c4",
+   "name_hash_matches": true
+  },
+  "medium/img/devto-publishing-kit-table-1.png": {
+   "w": 1281,
+   "h": 166,
+   "ratio": 7.7169,
+   "bytes": 23083,
+   "sha256_8": "11967dac",
+   "name_hash_matches": null
+  }
+ },
+ "diffs": {
+  "cover.ae4d639e.jpg | medium/img/cover.ae4d639e.jpg": {
+   "bytes_identical": true,
+   "mean_abs_diff": 0.0
+  },
+  "cover.77acc7c4.jpg | medium/img/cover.77acc7c4.jpg": {
+   "bytes_identical": true,
+   "mean_abs_diff": 0.0
+  },
+  "cover.ae4d639e.jpg | advocu-devto-publishing-kit-cover.webp": {
+   "bytes_identical": false,
+   "mean_abs_diff": 0.441
+  },
+  "cover.ae4d639e.jpg | cover.77acc7c4.jpg": {
+   "bytes_identical": false,
+   "mean_abs_diff": 18.775
+  },
+  "cover-builder.cabd79f3.jpg | cover-builder.80aa6ca5.jpg": {
+   "bytes_identical": false,
+   "mean_abs_diff": 14.671
+  }
+ },
+ "endpoints": {
+  "cover.ae4d639e.jpg": [
+   {
+    "cx": 1100,
+    "cy": 110,
+    "w": 53,
+    "h": 52,
+    "mean_rgb": [
+     62,
+     123,
+     197
+    ],
+    "colour": "blue"
+   },
+   {
+    "cx": 1101,
+    "cy": 199,
+    "w": 52,
+    "h": 53,
+    "mean_rgb": [
+     184,
+     87,
+     49
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 1101,
+    "cy": 289,
+    "w": 56,
+    "h": 50,
+    "mean_rgb": [
+     185,
+     85,
+     47
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 1101,
+    "cy": 379,
+    "w": 62,
+    "h": 62,
+    "mean_rgb": [
+     191,
+     89,
+     49
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 1101,
+    "cy": 468,
+    "w": 52,
+    "h": 52,
+    "mean_rgb": [
+     128,
+     128,
+     122
+    ],
+    "colour": "grey"
+   }
+  ],
+  "cover-builder.cabd79f3.jpg": [
+   {
+    "cx": 960,
+    "cy": 128,
+    "w": 62,
+    "h": 61,
+    "mean_rgb": [
+     63,
+     119,
+     186
+    ],
+    "colour": "blue"
+   },
+   {
+    "cx": 960,
+    "cy": 233,
+    "w": 61,
+    "h": 62,
+    "mean_rgb": [
+     174,
+     83,
+     47
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 960,
+    "cy": 337,
+    "w": 66,
+    "h": 57,
+    "mean_rgb": [
+     184,
+     89,
+     52
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 960,
+    "cy": 442,
+    "w": 72,
+    "h": 72,
+    "mean_rgb": [
+     184,
+     88,
+     50
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 960,
+    "cy": 547,
+    "w": 60,
+    "h": 60,
+    "mean_rgb": [
+     128,
+     128,
+     123
+    ],
+    "colour": "grey"
+   }
+  ],
+  "linkedin-devto-publishing-kit-cover.jpg": [
+   {
+    "cx": 960,
+    "cy": 157,
+    "w": 46,
+    "h": 46,
+    "mean_rgb": [
+     67,
+     120,
+     185
+    ],
+    "colour": "blue"
+   },
+   {
+    "cx": 960,
+    "cy": 235,
+    "w": 46,
+    "h": 46,
+    "mean_rgb": [
+     176,
+     89,
+     54
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 960,
+    "cy": 313,
+    "w": 48,
+    "h": 44,
+    "mean_rgb": [
+     177,
+     88,
+     54
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 960,
+    "cy": 391,
+    "w": 54,
+    "h": 54,
+    "mean_rgb": [
+     179,
+     91,
+     56
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 960,
+    "cy": 469,
+    "w": 46,
+    "h": 44,
+    "mean_rgb": [
+     127,
+     128,
+     122
+    ],
+    "colour": "grey"
+   }
+  ],
+  "advocu-devto-publishing-kit-cover.webp": [
+   {
+    "cx": 1100,
+    "cy": 110,
+    "w": 53,
+    "h": 52,
+    "mean_rgb": [
+     67,
+     122,
+     188
+    ],
+    "colour": "blue"
+   },
+   {
+    "cx": 1101,
+    "cy": 199,
+    "w": 52,
+    "h": 53,
+    "mean_rgb": [
+     178,
+     89,
+     53
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 1101,
+    "cy": 289,
+    "w": 56,
+    "h": 50,
+    "mean_rgb": [
+     178,
+     88,
+     51
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 1101,
+    "cy": 379,
+    "w": 62,
+    "h": 62,
+    "mean_rgb": [
+     182,
+     91,
+     54
+    ],
+    "colour": "orange"
+   },
+   {
+    "cx": 1101,
+    "cy": 468,
+    "w": 52,
+    "h": 52,
+    "mean_rgb": [
+     127,
+     128,
+     123
+    ],
+    "colour": "grey"
+   }
+  ]
+ },
+ "ink_320": {
+  "kicker 'PUBLISHING-KIT - A CLAUDE CODE SKILL'": {
+   "native_px": 12,
+   "at_320_px": 2.8
+  },
+  "title 'One source. Four destinations.'": {
+   "native_px": 35,
+   "at_320_px": 8.1
+  },
+  "subtitle 'Write once. ...'": {
+   "native_px": 22,
+   "at_320_px": 5.1
+  },
+  "card title 'dev.to'": {
+   "native_px": 30,
+   "at_320_px": 7.0
+  },
+  "card label 'REST API'": {
+   "native_px": 14,
+   "at_320_px": 3.3
+  },
+  "footer 'publishing-kit - one markdown file in ...'": {
+   "native_px": 16,
+   "at_320_px": 3.7
+  },
+  "background_luma": 27.333333333333332
+ },
+ "devto_crop": {
+  "1376x768 (article's example)": {
+   "kept_rows": 577.9,
+   "lost_each_edge_rows": 95.0
+  },
+  "1376x578 (cover.ae4d639e)": {
+   "kept_rows": 577.9,
+   "lost_each_edge_rows": 0.0
+  },
+  "1200x675 (builder covers)": {
+   "kept_rows": 504.0,
+   "lost_each_edge_rows": 85.5
+  },
+  "1200x627 (linkedin cover)": {
+   "kept_rows": 504.0,
+   "lost_each_edge_rows": 61.5
+  }
+ },
+ "table": {
+  "hardwrap_share": 0.7581,
+  "p_plus_li": 62,
+  "br_per_affected_block": 1.872
+ }
+}

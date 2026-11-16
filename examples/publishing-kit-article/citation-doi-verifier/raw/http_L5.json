@@ -1,0 +1,39 @@
+{
+  "key": "L5",
+  "url": "https://claude.com/claude-code",
+  "status": 200,
+  "final_url": "https://claude.com/product/claude-code",
+  "headers": {
+    "Date": "Mon, 16 Nov 2026 15:18:40 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close",
+    "Cache-Control": "private, max-age=0, must-revalidate",
+    "Link": "</_next/static/media/AnthropicMono_Italic_Web-s.p.39343088.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"vscZtNkxckWwaAlqhncetg==\"; type=\"font/woff2\", </_next/static/media/AnthropicMono_Roman_Web-s.p.80d4607c.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"vscZtNkxckWwaAlqhncetg==\"; type=\"font/woff2\", </_next/static/media/AnthropicSans_Italic_Web-s.p.6550bf15.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"vscZtNkxckWwaAlqhncetg==\"; type=\"font/woff2\", </_next/static/media/AnthropicSans_Roman_Web-s.p.050e7498.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"vscZtNkxckWwaAlqhncetg==\"; type=\"font/woff2\", </_next/static/media/AnthropicSerif_Italic_Web-s.p.43888cc6.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"vscZtNkxckWwaAlqhncetg==\"; type=\"font/woff2\", </_next/static/media/AnthropicSerif_Roman_Web-s.p.c28786b4.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; nonce=\"vscZtNkxckWwaAlqhncetg==\"; type=\"font/woff2\", </_next/static/chunks/65b05d6cc5f2efee.css>; rel=preload; as=\"style\"; nonce=\"vscZtNkxckWwaAlqhncetg==\", </_next/static/chunks/ad8332eae199ca5c.css>; rel=preload; as=\"style\"; nonce=\"vscZtNkxckWwaAlqhncetg==\", </_next/static/chunks/a5acebdb5f45c480.css>; rel=preload; as=\"style\"; nonce=\"vscZtNkxckWwaAlqhncetg==\", </_next/static/chunks/80bdb299f9a59635.css>; rel=preload; as=\"style\"; nonce=\"vscZtNkxckWwaAlqhncetg==\", </_next/static/chunks/a3635ce499757b05.css>; rel=preload; as=\"style\"; nonce=\"vscZtNkxckWwaAlqhncetg==\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "content-security-policy-report-only": "default-src 'self'; script-src 'nonce-vscZtNkxckWwaAlqhncetg==' 'strict-dynamic' 'self' 'wasm-unsafe-eval' https://assets.claude.ai https://www.googletagmanager.com https://js.hsforms.net https://js.hs-scripts.com https://js.hs-analytics.net https://js.hsadspixel.net https://js.hs-banner.com https://embed.typeform.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https://cdn.sanity.io https://assets.claude.com https://assets-staging.claude.com https://i.ytimg.com https://assets.claude.ai https://forms.hsforms.com https://forms-na1.hsforms.com https://track.hubspot.com; font-src 'self' https://fonts.gstatic.com; media-src 'self' https://cdn.sanity.io https://assets.claude.com https://assets-staging.claude.com https://assets.claude.ai; frame-src https://www.youtube-nocookie.com https://form.typeform.com https://*.hsforms.com https://*.hubspot.com https://a.claude.com https://assets.claude.ai https://eulerapp.com; connect-src 'self' https://api.anthropic.com https://cdn.sanity.io https://assets.claude.com https://assets-staging.claude.com https://links.iterable.com https://claude.ai/api/billing/subscription_pricing https://forms.hsforms.com https://forms-na1.hsforms.com https://api.hubapi.com/hs-script-loader-public/ https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self' https://*.hsforms.com https://links.iterable.com; report-uri /api/csp-report; report-to csp",
+    "cross-origin-opener-policy": "same-origin-allow-popups",
+    "cross-origin-resource-policy": "same-site",
+    "permissions-policy": "camera=(self), microphone=(self), geolocation=(self), payment=(self)",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "reporting-endpoints": "csp=\"/api/csp-report\"",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "0",
+    "set-cookie": "__cf_bm=tmgvZdqNdjXPAcAs2Vk.LtqAYyWsuniFjOIOiGNm_.U-1794842319.987375-1.0.1.1-4pAndmnr3qshmTAcxTndWrYsN1TqOnm4EUzERrlnbZB7f_OVx8hyEPo85eys70RNTuaWuP2K.vIcj2IKP0u13DnIH7Ey_9bWgFDzQ09rXMl4qjnXkcgxdMyo28_6dF7d; HttpOnly; SameSite=None; Partitioned; Secure; Path=/; Domain=claude.com; Expires=Mon, 16 Nov 2026 15:48:40 GMT",
+    "Server": "cloudflare",
+    "CF-RAY": "a5b77833ed9df704-EWR",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 1197894,
+  "sha256": "aa8794646b20da9ce8d5ff3e7c60c932b6ea67e43f3629934f75a4d6d6079555",
+  "elapsed_s": 0.318,
+  "html_title": "Claude Code by Anthropic | AI coding agent and assistant",
+  "og_title": "Claude Code by Anthropic | AI coding agent and assistant",
+  "title_similarity_to_manuscript": {
+    "html_title": 0.26,
+    "og_title": 0.26
+  }
+}

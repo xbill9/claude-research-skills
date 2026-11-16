@@ -1,0 +1,2 @@
+{"jsonrpc": "2.0", "id": 1, "result": {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "research-audit", "version": "1.0.0"}}}
+{"jsonrpc": "2.0", "id": 2, "result": {"content": [{"type": "text", "text": "{\n  \"successes\": 47,\n  \"total\": 62,\n  \"rate_pct\": 75.81,\n  \"wilson_low_pct\": 63.85,\n  \"wilson_high_pct\": 84.75,\n  \"z\": 1.959964,\n  \"formatted\": \"75.8% (95% Wilson CI [63.8%, 84.8%])\"\n}"}], "isError": false}}
