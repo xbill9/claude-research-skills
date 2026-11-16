@@ -1,0 +1,5 @@
+# KIT path from claude plugin list --json installPath -- 2026-11-16T16:31:33Z
+/home/xbill/.claude/plugins/cache/publishing-kit/publishing/0.36.1/skills/publishing
+cached version: 0.34.0
+cached version: 0.36.0
+cached version: 0.36.1

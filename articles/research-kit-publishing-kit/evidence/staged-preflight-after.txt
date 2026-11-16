@@ -1,0 +1,111 @@
+# preflight.py --live on the corrected walk-through, publishing-kit/articles/publishing-kit-skill, audits staged in its evidence/, ## DISPUTED rows in CLAIMS.md -- publishing-kit 0.36.1, 2026-11-16T16:30:06Z
+article:   publishing-kit/articles/publishing-kit-skill/devto-publishing-kit.md
+repo-root: publishing-kit
+evidence:  publishing-kit/articles/publishing-kit-skill/evidence
+
+==============================================================
+check-facts.py — every number traces to an artifact
+==============================================================
+devto-publishing-kit.md: 8 claim(s) against 15 evidence file(s), 15 dated log row(s)
+
+  NOTED count        0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    dimensions   1376x578                     <- devto-cover-crop.txt
+  ok    dimensions   1376x768                     <- devto-cover-crop.txt
+  ok    ratio        2.381:1                      <- devto-cover-crop.txt
+  NOTED pixels       320px                        <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  NOTED count        4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    count        47 of 62                     <- devto-hardwrap.txt
+  ok    pixels       95px                         <- devto-cover-crop.txt
+
+5 traced, 0 cited from the log, 0 untraced, 0 disputed, 3 disputed with a caveat
+
+==============================================================
+check-prose.py — banned phrasing, from references/house-style.md
+==============================================================
+  WARN  contrast   line 80: 'rather than'  -> usually a foil; check it is needed
+  WARN  contrast   line 108: 'rather than'  -> usually a foil; check it is needed
+
+devto-publishing-kit.md: 29 rule(s), 0 fail, 2 warn
+
+==============================================================
+check-article.py — cover, crop, committed, wraps, links
+==============================================================
+
+devto-publishing-kit.md
+  ok    cover present: cover.ae4d639e.jpg
+  ok    cover.ae4d639e.jpg is committed and matches HEAD
+  ok    cover.ae4d639e.jpg hash matches its bytes
+  ok    geometry 1376x578 is dev.to's displayed 2.381:1; nothing is cropped
+  ok    published: false
+  ok    title present
+  ok    description present
+  ok    tags present
+  ok    devto-publishing-kit-hosted.html image URLs resolve to publishing-kit-skill
+  ok    3 medium/img image(s) committed and matching HEAD
+  ok    devto-publishing-kit-hosted.html matches a fresh build of devto-publishing-kit.md
+  WARN  22 hard-wrapped paragraph(s) render with a line break at every wrap; publish-devto.py unwraps, a manual paste does not (first at line 9)
+  ok    no stale counts of the kit's own parts
+  ok    no empty link targets
+
+0 fail, 1 warn
+
+==============================================================
+check-links.py — what the destination actually fetches
+==============================================================
+
+devto-publishing-kit.md  (branch URLs)
+  ok    cover.ae4d639e.jpg: HTTP 200, bytes match disk
+  ok    img/cover.ae4d639e.jpg: HTTP 200, bytes match disk
+  ok    img/devto-publishing-kit-table-1.png: HTTP 200, bytes match disk
+
+article links (gate profile: rendered anchors, browser UA, no cookies)
+  ok    https://github.com/xbill9/publishing-kit: HTTP 200
+  ok    https://github.com/xbill9/publishing-kit/blob/main/skills/publishing/SKILL.md: HTTP 200
+  ok    https://github.com/xbill9/publishing-kit/tree/main/articles/publishing-kit-skill: HTTP 200
+  ok    https://claude.com/claude-code: HTTP 200 -> https://claude.com/product/claude-code
+
+filenames in the prose
+  WARN  `SKILL.md` in the prose resolves as a real domain (not seen flagged by a gate; unconfirmed risk)
+  ok    links.txt devto-gde: HTTP 200
+  ok    links.txt devto-aws: HTTP 200
+  ok    links.txt builder: HTTP 200
+  ok    links.txt medium: HTTP 200
+  ok    links.txt linkedin: HTTP 200
+  ok    links.txt repo: HTTP 200
+  ok    links.txt substack: HTTP 200
+
+0 fail, 1 warn
+
+==============================================================
+make-linkedin.py — the announcement's links resolve
+==============================================================
+
+devto-publishing-kit.md -> linkedin-devto-publishing-kit.txt
+  ok    6 link(s) resolved
+  ok    no draft URLs; every slug is settled
+  ok    hook fits the fold: 46 chars
+  ok    post is 1985 chars of 3000
+  ok    no markdown left; LinkedIn renders none of it
+  ok    no template scaffolding left
+  ok    no Unicode pseudo-bold
+  ok    cover found: cover.ae4d639e.jpg (linkedin-devto-publishing-kit-cover.jpg not written)
+  ok    checked without writing (linkedin-devto-publishing-kit.txt left alone)
+
+--- above the fold (140 chars) ---
+Streamline Publishing with a Claude Code Skill
+
+A Claude Code skill that turns one markdown file into dev.to, AWS Builder Center, Medium and
+
+0 fail, 0 warn
+
+==============================================================
+SUMMARY
+==============================================================
+  PASS  facts
+  PASS  prose
+  PASS  article
+  PASS  links
+  PASS  linkedin
+
+all checks passed
+exit 0

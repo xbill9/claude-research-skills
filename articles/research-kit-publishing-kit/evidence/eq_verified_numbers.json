@@ -1,0 +1,802 @@
+{
+ "paper": "articles/research-kit-publishing-kit/devto-research-kit-publishing-kit.md",
+ "seed": 42,
+ "verdict_counts": {
+  "VERIFIED": 38,
+  "MISMATCH": 3,
+  "NOT CHECKABLE": 4
+ },
+ "equations": [
+  {
+   "id": "C01_nine_skills",
+   "statement": "research-kit has nine skills; table lists 7, two more named",
+   "paper_value": {
+    "skills": 9,
+    "table_rows": 7
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:19",
+   "computed": {
+    "skills": 9,
+    "table_rows": 7,
+    "names": [
+     "ablation-stat-auditor",
+     "citation-doi-verifier",
+     "figure-forensics",
+     "frontier-gap-radar",
+     "graphic-story",
+     "interactive-paper-studio",
+     "math-sandbox",
+     "paper-number-check",
+     "trajectory-cinematics"
+    ]
+   },
+   "verdict": "VERIFIED",
+   "reason": "counted SKILL.md files under plugin/skills",
+   "evidence": "plugin/skills/*/SKILL.md"
+  },
+  {
+   "id": "C02_version_1_3_1",
+   "statement": "research-kit version 1.3.1 (install output, Scope line)",
+   "paper_value": "1.3.1",
+   "paper_source": "devto-research-kit-publishing-kit.md:63",
+   "computed": {
+    "plugin.json": "1.3.1",
+    "marketplace.json": "1.3.1",
+    "evidence": "1.3.1"
+   },
+   "verdict": "VERIFIED",
+   "reason": "plugin.json, marketplace.json and plugin-install.txt agree",
+   "evidence": "plugin.json; marketplace.json; evidence/plugin-install.txt"
+  },
+  {
+   "id": "C03_publishing_kit_0_36_0",
+   "statement": "check-facts.py from publishing kit 0.36.0",
+   "paper_value": "0.36.0",
+   "paper_source": "devto-research-kit-publishing-kit.md:284",
+   "computed": "0.36.0",
+   "verdict": "VERIFIED",
+   "reason": "version in the check-facts.py path recorded by paper-number-check.txt; check-facts-before/after.txt do not name a version",
+   "evidence": "evidence/paper-number-check.txt"
+  },
+  {
+   "id": "C04a_math_sandbox_tally",
+   "statement": "math-sandbox: 26 claims, 15 VERIFIED, 6 MISMATCH, 5 NOT CHECKABLE",
+   "paper_value": {
+    "total": 26,
+    "VERIFIED": 15,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:90",
+   "computed": {
+    "total": 26,
+    "VERIFIED": 15,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "verdict": "VERIFIED",
+   "reason": "recounted verdicts in eq_verified_numbers.json",
+   "evidence": "examples/.../math-sandbox/eq_verified_numbers.json"
+  },
+  {
+   "id": "C04b_math_sandbox_tally",
+   "statement": "math-sandbox: 26 claims, 15 VERIFIED, 6 MISMATCH, 5 NOT CHECKABLE",
+   "paper_value": {
+    "total": 26,
+    "VERIFIED": 15,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:259",
+   "computed": {
+    "total": 26,
+    "VERIFIED": 15,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "verdict": "VERIFIED",
+   "reason": "recounted verdicts in eq_verified_numbers.json",
+   "evidence": "examples/.../math-sandbox/eq_verified_numbers.json"
+  },
+  {
+   "id": "C04c_math_sandbox_tally",
+   "statement": "math-sandbox: 26 claims, 15 VERIFIED, 6 MISMATCH, 5 NOT CHECKABLE",
+   "paper_value": {
+    "total": 26,
+    "VERIFIED": 15,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:278",
+   "computed": {
+    "total": 26,
+    "VERIFIED": 15,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 5
+   },
+   "verdict": "VERIFIED",
+   "reason": "recounted verdicts in eq_verified_numbers.json",
+   "evidence": "examples/.../math-sandbox/eq_verified_numbers.json"
+  },
+  {
+   "id": "C05_crop_arithmetic",
+   "statement": "ratio 1000/420 = 2.380952; rows kept 577.92; lost per side 95.04",
+   "paper_value": {
+    "ratio": 2.380952,
+    "kept": 577.92,
+    "lost_side": 95.04
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:91",
+   "computed": {
+    "ratio": 2.380952,
+    "kept": 577.92,
+    "lost_side": 95.04
+   },
+   "verdict": "VERIFIED",
+   "reason": "recomputed from the 1000x420 proxy size",
+   "evidence": "paper/evidence/devto-cover-crop.txt (width=1000,height=420)"
+  },
+  {
+   "id": "C06_crop_95px",
+   "statement": "2.381:1 crop; 1376x768 loses 95px top and bottom",
+   "paper_value": {
+    "ratio": 2.381,
+    "px_each_side": 95
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:94",
+   "computed": {
+    "ratio": 2.381,
+    "px_each_side": 95
+   },
+   "verdict": "VERIFIED",
+   "reason": "95.04 px a side under a centre crop",
+   "evidence": "computed"
+  },
+  {
+   "id": "C07_gravity_auto",
+   "statement": "the proxy URL in the evidence says gravity=auto",
+   "paper_value": "gravity=auto",
+   "paper_source": "devto-research-kit-publishing-kit.md:96",
+   "computed": [
+    "devto-cover-crop.txt",
+    "toolchain-run.txt"
+   ],
+   "verdict": "VERIFIED",
+   "reason": "found in the paper's evidence files",
+   "evidence": "paper/evidence/"
+  },
+  {
+   "id": "C08_ablation_tally",
+   "statement": "16 claim records: 7/6/3",
+   "paper_value": {
+    "total": 16,
+    "VERIFIED": 7,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 3
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:105",
+   "computed": {
+    "total": 16,
+    "VERIFIED": 7,
+    "MISMATCH": 6,
+    "NOT CHECKABLE": 3
+   },
+   "verdict": "VERIFIED",
+   "reason": "recounted verdicts in stat_audit.json",
+   "evidence": "examples/.../ablation-stat-auditor/stat_audit.json"
+  },
+  {
+   "id": "C09_tests_line",
+   "statement": "Fisher 4/4 vs 0/4 p=0.02857; McNemar b=4 c=0 p=0.125",
+   "paper_value": {
+    "fisher_p": 0.02857142857142857,
+    "mcnemar_p": 0.125,
+    "b": 4,
+    "c": 0
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:106",
+   "computed": {
+    "fisher_p": 0.02857142857142857,
+    "mcnemar_p": 0.125,
+    "b": 4,
+    "c": 0
+   },
+   "verdict": "VERIFIED",
+   "reason": "recomputed through the MCP server",
+   "evidence": "MCP verify_fisher_exact, verify_mcnemar_exact"
+  },
+  {
+   "id": "C10a_wilson_47_62",
+   "statement": "47 of 62 = 75.8%, 95% Wilson 63.8% to 84.8%",
+   "paper_value": {
+    "k": 47,
+    "n": 62,
+    "rate_pct": 75.8,
+    "ci": [
+     63.8,
+     84.8
+    ]
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:109",
+   "computed": {
+    "k": 47,
+    "n": 62,
+    "rate_pct": 75.8,
+    "ci": [
+     63.8,
+     84.8
+    ],
+    "full_precision": [
+     75.8065,
+     63.8475,
+     84.7541
+    ],
+    "mcp": [
+     75.81,
+     63.85,
+     84.75
+    ]
+   },
+   "verdict": "VERIFIED",
+   "reason": "MCP verify_wilson_ci",
+   "evidence": "examples/.../paper/evidence/devto-hardwrap.txt via stat_audit.json"
+  },
+  {
+   "id": "C10b_wilson_47_62",
+   "statement": "47 of 62 = 75.8%, 95% Wilson 63.8% to 84.8%",
+   "paper_value": {
+    "k": 47,
+    "n": 62,
+    "rate_pct": 75.8,
+    "ci": [
+     63.8,
+     84.8
+    ]
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:279",
+   "computed": {
+    "k": 47,
+    "n": 62,
+    "rate_pct": 75.8,
+    "ci": [
+     63.8,
+     84.8
+    ],
+    "full_precision": [
+     75.8065,
+     63.8475,
+     84.7541
+    ],
+    "mcp": [
+     75.81,
+     63.85,
+     84.75
+    ]
+   },
+   "verdict": "VERIFIED",
+   "reason": "MCP verify_wilson_ci",
+   "evidence": "examples/.../paper/evidence/devto-hardwrap.txt via stat_audit.json"
+  },
+  {
+   "id": "C11_15_of_62_none",
+   "statement": "15 of the 62 paragraphs had no stray break",
+   "paper_value": 15,
+   "paper_source": "devto-research-kit-publishing-kit.md:109",
+   "computed": 15,
+   "verdict": "VERIFIED",
+   "reason": "62 - 47 from the E1 record",
+   "evidence": "eq_verified_numbers.json E1"
+  },
+  {
+   "id": "C12_mcnemar_0_125",
+   "statement": "paired test on 0/4 vs 4/4 gives p = 0.125",
+   "paper_value": 0.125,
+   "paper_source": "devto-research-kit-publishing-kit.md:111",
+   "computed": 0.125,
+   "verdict": "VERIFIED",
+   "reason": "exact McNemar, b=4 c=0",
+   "evidence": "MCP verify_mcnemar_exact"
+  },
+  {
+   "id": "C13_first_sig_at_six",
+   "statement": "all-or-none McNemar first below 0.05 at n=6",
+   "paper_value": 6,
+   "paper_source": "devto-research-kit-publishing-kit.md:111",
+   "computed": {
+    "first_n": 6,
+    "p_by_n": {
+     "1": 1.0,
+     "2": 0.5,
+     "3": 0.25,
+     "4": 0.125,
+     "5": 0.0625,
+     "6": 0.03125,
+     "7": 0.015625,
+     "8": 0.007812,
+     "9": 0.003906,
+     "10": 0.001953
+    }
+   },
+   "verdict": "VERIFIED",
+   "reason": "smallest n with exact McNemar p<0.05 for b=n, c=0",
+   "evidence": "MCP verify_mcnemar_exact n=1..10"
+  },
+  {
+   "id": "C14_log_2026_08_30",
+   "statement": "the ledger carries 0 of 4 from a log dated 2026-08-30",
+   "paper_value": "2026-08-30",
+   "paper_source": "devto-research-kit-publishing-kit.md:111",
+   "computed": "2026-08-30",
+   "verdict": "VERIFIED",
+   "reason": "paper/CLAIMS.md LOG row",
+   "evidence": "paper/CLAIMS.md"
+  },
+  {
+   "id": "C15_image_sizes",
+   "statement": "four measured image sizes",
+   "paper_value": {
+    "cover.77acc7c4.jpg": "1376x578",
+    "cover.ae4d639e.jpg": "1376x578",
+    "advocu-devto-publishing-kit-cover.webp": "1376x578",
+    "cover-builder.cabd79f3.jpg": "1200x675"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:120",
+   "computed": {
+    "cover.77acc7c4.jpg": "1376x578",
+    "cover.ae4d639e.jpg": "1376x578",
+    "advocu-devto-publishing-kit-cover.webp": "1376x578",
+    "cover-builder.cabd79f3.jpg": "1200x675"
+   },
+   "verdict": "VERIFIED",
+   "reason": "PIL",
+   "evidence": "paper/*.jpg, *.webp"
+  },
+  {
+   "id": "C16_1376x578_left_whole",
+   "statement": "a 1376x578 cover survives the 2.381:1 crop whole",
+   "paper_value": {
+    "rows_lost": 0
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:126",
+   "computed": {
+    "rows_lost_total": 0.08
+   },
+   "verdict": "VERIFIED",
+   "reason": "under one source row lost",
+   "evidence": "computed"
+  },
+  {
+   "id": "C17_every_devto_cover_1376x578",
+   "statement": "every dev.to cover the kit made is 1376x578; 1376x768 is a size the kit does not ship",
+   "paper_value": {
+    "size": "1376x578",
+    "scope": "every"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:126",
+   "computed": {
+    "kit_toolchain_devto_covers": [
+     "devto-cover-aws.44aee846.jpg",
+     "devto-cover-gde.0d021e90.jpg"
+    ],
+    "ledger_row": "| covers: 1376x768 105 KB / 1376x768 104 KB / 1200x675 15 KB | `toolchain-run.txt` |",
+    "gemma4-dev/docs sizes": {
+     "devto-cover-aws.jpg": "1376x768",
+     "devto-cover-gde.jpg": "1376x768"
+    }
+   },
+   "verdict": "MISMATCH",
+   "reason": "the paper's own toolchain-run.txt (2026-08-31) records the kit writing devto-cover-aws/gde, which CLAIMS.md line 30 lists as 1376x768 and which measure 1376x768 in ~/gemma4-dev/docs; only the covers in paper/ are 1376x578",
+   "evidence": "paper/evidence/toolchain-run.txt; paper/CLAIMS.md:30; ~/gemma4-dev/docs",
+   "overstatement": true
+  },
+  {
+   "id": "C18a_five_shapes_four_destinations",
+   "statement": "current cover: five destination shapes; article describes four",
+   "paper_value": {
+    "shapes": 5,
+    "article_destinations": 4
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:128",
+   "computed": {
+    "shapes": 5,
+    "article_lines_saying_four": [
+     12,
+     15
+    ]
+   },
+   "verdict": "VERIFIED",
+   "reason": "endpoint markers counted by figure-forensics measure_figures.py; 'four' at paper lines listed",
+   "evidence": "figure-forensics/work/measurements.json; paper/devto-publishing-kit.md"
+  },
+  {
+   "id": "C18b_covers_no_numbers",
+   "statement": "both covers carry no numbers; current one has no text",
+   "paper_value": {
+    "numbers_on_covers": 0
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:128",
+   "computed": null,
+   "verdict": "NOT CHECKABLE",
+   "reason": "figure-forensics read the images visually (RUN_NOTES finding 1); no OCR or computed text measure exists to recompute",
+   "evidence": "figure-forensics/RUN_NOTES.md"
+  },
+  {
+   "id": "C19_links_10_of_11",
+   "statement": "10 of 11 links resolving and identified",
+   "paper_value": {
+    "k": 10,
+    "n": 11
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:138",
+   "computed": {
+    "k": 10,
+    "n": 11
+   },
+   "verdict": "VERIFIED",
+   "reason": "REPORT.md rows",
+   "evidence": "citation-doi-verifier/REPORT.md"
+  },
+  {
+   "id": "C19b_links_compare_table",
+   "statement": "Compare table: 10 of 11 links confirmed",
+   "paper_value": {
+    "k": 10,
+    "n": 11
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:263",
+   "computed": {
+    "k": 10,
+    "n": 11
+   },
+   "verdict": "VERIFIED",
+   "reason": "REPORT.md rows",
+   "evidence": "citation-doi-verifier/REPORT.md"
+  },
+  {
+   "id": "C20_each_of_11_matched",
+   "statement": "each of the 11 links was fetched and matched to a second source",
+   "paper_value": {
+    "matched": 11,
+    "n": 11
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:141",
+   "computed": {
+    "matched": 10,
+    "n": 11,
+    "blocked": [
+     "L9"
+    ]
+   },
+   "verdict": "MISMATCH",
+   "reason": "L9 (Medium) returned HTTP 403 and was not matched; the next sentence of the article says so",
+   "evidence": "citation-doi-verifier/REPORT.md",
+   "overstatement": true
+  },
+  {
+   "id": "C21_zero_dois",
+   "statement": "0 DOIs or arXiv ids in the paper",
+   "paper_value": 0,
+   "paper_source": "devto-research-kit-publishing-kit.md:137",
+   "computed": 0,
+   "verdict": "VERIFIED",
+   "reason": "regex over paper/",
+   "evidence": "paper/**/*.md, *.txt"
+  },
+  {
+   "id": "C21b_medium_403",
+   "statement": "Medium answers scripts with HTTP 403",
+   "paper_value": 403,
+   "paper_source": "devto-research-kit-publishing-kit.md:141",
+   "computed": {
+    "rows_with_403": [
+     "L9"
+    ]
+   },
+   "verdict": "VERIFIED",
+   "reason": "REPORT.md L9",
+   "evidence": "citation-doi-verifier/REPORT.md"
+  },
+  {
+   "id": "C22_studio_check",
+   "statement": "130 values, 0 mismatches, worst error 0",
+   "paper_value": {
+    "values": 130,
+    "mismatches": 0,
+    "worst": 0.0
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:150",
+   "computed": {
+    "values": 130,
+    "mismatches": 0,
+    "worst": 0.0
+   },
+   "verdict": "VERIFIED",
+   "reason": "last line of check_js_output.txt",
+   "evidence": "interactive-paper-studio/check_js_output.txt"
+  },
+  {
+   "id": "C23_legibility_43pt",
+   "statement": "LEGIBLE_PX=10 at a 320px card is 43pt on 1376; 40pt is 9.3px; comment now says 43pt",
+   "paper_value": {
+    "LEGIBLE_PX": 10,
+    "pt": 43.0,
+    "px_40pt": 9.3,
+    "card": 320,
+    "comment_says_43pt": true,
+    "comment_still_40pt": false
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:153",
+   "computed": {
+    "LEGIBLE_PX": 10,
+    "pt": 43.0,
+    "px_40pt": 9.3,
+    "card": 320,
+    "comment_says_43pt": true,
+    "comment_still_40pt": false
+   },
+   "verdict": "VERIFIED",
+   "reason": "constants and comment read from the current make-cover.py",
+   "evidence": "~/publishing-kit/skills/publishing/scripts/make-cover.py"
+  },
+  {
+   "id": "C24_comic_5_pages",
+   "statement": "5-page comic",
+   "paper_value": 5,
+   "paper_source": "devto-research-kit-publishing-kit.md:159",
+   "computed": 5,
+   "verdict": "VERIFIED",
+   "reason": "PyMuPDF page count",
+   "evidence": "graphic-story/PublishingKit_Comic_v1.pdf"
+  },
+  {
+   "id": "C25_check_facts_before",
+   "statement": "check-facts on the published article: 7 lines, 2 traced, 5 disputed",
+   "paper_value": {
+    "lines": 8,
+    "summary": "2 traced, 0 cited from the log, 0 untraced, 5 disputed"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:181",
+   "computed": {
+    "lines": 8,
+    "summary": "2 traced, 0 cited from the log, 0 untraced, 5 disputed",
+    "identical": true
+   },
+   "verdict": "VERIFIED",
+   "reason": "article block compared line by line with the evidence file",
+   "evidence": "evidence/check-facts-before.txt"
+  },
+  {
+   "id": "C26_check_facts_after",
+   "statement": "check-facts on the corrected article: 3 traced, 0 disputed, 5 with a caveat",
+   "paper_value": {
+    "summary": "3 traced, 0 cited from the log, 0 untraced, 0 disputed, 5 disputed with a caveat"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:214",
+   "computed": {
+    "summary": "3 traced, 0 cited from the log, 0 untraced, 0 disputed, 5 disputed with a caveat",
+    "article_lines_in_evidence": true,
+    "evidence_lines_omitted_from_article": [
+     "  ok    dimensions   1376x768                     <- eq_verified_numbers.json",
+     "  NOTED ratio        2.381:1                      <- MISMATCH in eq_verified_numbers.json, caveat in CLAIMS.md",
+     "  NOTED pixels       320px                        <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md",
+     "  NOTED count        4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md",
+     "  NOTED pixels       95px                         <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md"
+    ]
+   },
+   "verdict": "VERIFIED",
+   "reason": "every line shown is in the evidence; the article shows 3 of 8 claim lines without marking the cut, so it reads as if only 3 numbers were checked",
+   "evidence": "evidence/check-facts-after.txt"
+  },
+  {
+   "id": "C27a_exit_code",
+   "statement": "check-facts it exits 1.",
+   "paper_value": 1,
+   "paper_source": "devto-research-kit-publishing-kit.md:184",
+   "computed": null,
+   "verdict": "NOT CHECKABLE",
+   "reason": "the evidence files capture output only, no exit status",
+   "evidence": "evidence/check-facts-*.txt"
+  },
+  {
+   "id": "C27b_exit_code",
+   "statement": "check-facts it exits 0.",
+   "paper_value": 0,
+   "paper_source": "devto-research-kit-publishing-kit.md:217",
+   "computed": null,
+   "verdict": "NOT CHECKABLE",
+   "reason": "the evidence files capture output only, no exit status",
+   "evidence": "evidence/check-facts-*.txt"
+  },
+  {
+   "id": "C28_paper_number_check",
+   "statement": "studio 0/11/5/30, comic 0/9/7/20, 0 disputed across 2",
+   "paper_value": [
+    "interactive-paper-studio/index.html: 0 disputed, 11 noted, 5 traced, 30 untraced",
+    "graphic-story/Story.html: 0 disputed, 9 noted, 7 traced, 20 untraced",
+    "0 disputed claim(s) across 2 output(s)"
+   ],
+   "paper_source": "devto-research-kit-publishing-kit.md:234",
+   "computed": [
+    "interactive-paper-studio/index.html: 0 disputed, 11 noted, 5 traced, 30 untraced",
+    "graphic-story/Story.html: 0 disputed, 9 noted, 7 traced, 20 untraced",
+    "0 disputed claim(s) across 2 output(s)"
+   ],
+   "verdict": "VERIFIED",
+   "reason": "line by line",
+   "evidence": "evidence/paper-number-check.txt"
+  },
+  {
+   "id": "C28b_control",
+   "statement": "check_outputs proves its check-facts copy first",
+   "paper_value": "control passed",
+   "paper_source": "devto-research-kit-publishing-kit.md:223",
+   "computed": "(control passed)",
+   "verdict": "VERIFIED",
+   "reason": "evidence line",
+   "evidence": "evidence/paper-number-check.txt"
+  },
+  {
+   "id": "C29_ledger_rows",
+   "statement": "5 disputed numbers explained in the ledger; shown rows are verbatim",
+   "paper_value": {
+    "rows": 5,
+    "shown_rows_verbatim": true
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:282",
+   "computed": {
+    "rows": 5,
+    "shown_rows_verbatim": true
+   },
+   "verdict": "VERIFIED",
+   "reason": "rows under ## DISPUTED in the publishing kit's CLAIMS.md",
+   "evidence": "~/publishing-kit/articles/publishing-kit-skill/CLAIMS.md"
+  },
+  {
+   "id": "C30_five_fixes_all_three",
+   "statement": "the five Was/Now fixes are in the corrected article; all three overstatements fixed",
+   "paper_value": {
+    "every paragraph gone": true,
+    "most paragraphs": true,
+    "would lose 95px": true,
+    "These two numbers": true,
+    "cover claim gone": true,
+    "date range": true,
+    "2026-08-31 gone": true,
+    "line wrapping": true,
+    "95 columns gone": true
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:280",
+   "computed": {
+    "every paragraph gone": true,
+    "most paragraphs": true,
+    "would lose 95px": true,
+    "These two numbers": true,
+    "cover claim gone": true,
+    "date range": true,
+    "2026-08-31 gone": true,
+    "line wrapping": true,
+    "95 columns gone": true
+   },
+   "verdict": "VERIFIED",
+   "reason": "string search in the publishing-kit working tree",
+   "evidence": "~/publishing-kit/articles/publishing-kit-skill/devto-publishing-kit.md"
+  },
+  {
+   "id": "C31_5_to_0",
+   "statement": "check-facts went from 5 disputed to 0, with 5 explained",
+   "paper_value": {
+    "before": 5,
+    "after": 0,
+    "noted": 5
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:282",
+   "computed": {
+    "before": 5,
+    "after": 0,
+    "noted": 5
+   },
+   "verdict": "VERIFIED",
+   "reason": "counted line labels in both evidence files",
+   "evidence": "evidence/check-facts-before.txt, -after.txt"
+  },
+  {
+   "id": "C32_collisions",
+   "statement": "2.381:1 matched a 1 in M5 code-block line counts; 95px matched M1",
+   "paper_value": {
+    "M5_contains_1": true,
+    "M1_value": 95,
+    "D1_verdict": "VERIFIED",
+    "M1_about_columns": true
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:243",
+   "computed": {
+    "M5_contains_1": true,
+    "M1_value": 95,
+    "D1_verdict": "VERIFIED",
+    "M1_about_columns": true
+   },
+   "verdict": "VERIFIED",
+   "reason": "audit records read directly",
+   "evidence": "math-sandbox/eq_verified_numbers.json"
+  },
+  {
+   "id": "C33_css_1px_4px",
+   "statement": "1px and 4px occur in the studio stylesheet",
+   "paper_value": {
+    "1px": ">0",
+    "4px": ">0"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:245",
+   "computed": {
+    "counts": {
+     "1px": 6,
+     "4px": 3
+    },
+    "evidence": "1px: 6, 4px: 3"
+   },
+   "verdict": "VERIFIED",
+   "reason": "regex inside <style>",
+   "evidence": "interactive-paper-studio/index.html; evidence/studio-css-lengths.txt"
+  },
+  {
+   "id": "C34_audit_date",
+   "statement": "audited on 2026-11-16",
+   "paper_value": "2026-11-16",
+   "paper_source": "devto-research-kit-publishing-kit.md:284",
+   "computed": [
+    "2026-11-16"
+   ],
+   "verdict": "VERIFIED",
+   "reason": "timestamps in the evidence headers",
+   "evidence": "evidence/*.txt"
+  },
+  {
+   "id": "C35_comic_unfinished",
+   "statement": "the comic run stopped before its final page review",
+   "paper_value": true,
+   "paper_source": "devto-research-kit-publishing-kit.md:284",
+   "computed": true,
+   "verdict": "VERIFIED",
+   "reason": "README states it",
+   "evidence": "examples/publishing-kit-article/README.md"
+  },
+  {
+   "id": "C36_each_skill_once_separate_agent",
+   "statement": "each skill ran once, as a separate agent given only its SKILL.md",
+   "paper_value": {
+    "runs_per_skill": 1
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:284",
+   "computed": {
+    "run_notes": [
+     "ablation-stat-auditor",
+     "citation-doi-verifier",
+     "figure-forensics",
+     "graphic-story",
+     "interactive-paper-studio",
+     "math-sandbox"
+    ]
+   },
+   "verdict": "NOT CHECKABLE",
+   "reason": "one RUN_NOTES.md per skill folder; no session record shows agent separation or run count",
+   "evidence": "examples/publishing-kit-article/*/RUN_NOTES.md"
+  },
+  {
+   "id": "C37_recompute_every_number",
+   "statement": "the research skills recompute every number the article states",
+   "paper_value": {
+    "recomputed": "every"
+   },
+   "paper_source": "devto-research-kit-publishing-kit.md:9",
+   "computed": {
+    "claims": 26,
+    "not_checkable": 5,
+    "recomputed_to_value": 21
+   },
+   "verdict": "MISMATCH",
+   "reason": "5 of 26 math-sandbox records are NOT CHECKABLE, i.e. not recomputed; the same wording recurs at lines 23 and 278",
+   "evidence": "math-sandbox/eq_verified_numbers.json",
+   "overstatement": true
+  }
+ ]
+}

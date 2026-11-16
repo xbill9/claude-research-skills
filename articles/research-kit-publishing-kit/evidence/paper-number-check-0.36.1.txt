@@ -1,0 +1,8 @@
+# paper-number-check with publishing-kit 0.36.1 installed -- 2026-11-16T16:30:06Z
+check-facts: ~/.claude/plugins/cache/publishing-kit/publishing/0.36.1/skills/publishing/scripts/check-facts.py (control passed)
+audit: 2 file(s), 20 disputed record(s)
+
+interactive-paper-studio/index.html: 0 disputed, 4 noted, 7 traced, 15 untraced
+graphic-story/Story.html: 0 disputed, 2 noted, 8 traced, 4 untraced
+
+0 disputed claim(s) across 2 output(s)

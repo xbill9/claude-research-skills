@@ -12,6 +12,8 @@ Repository: https://github.com/xbill9/claude-research-skills
 
 Worked example: https://github.com/xbill9/claude-research-skills/tree/main/examples/publishing-kit-article
 
+Publishing kit: https://github.com/xbill9/publishing-kit
+
 ---
 
 #### What Is research-kit?
@@ -32,6 +34,29 @@ The plugin also has `trajectory-cinematics` and `frontier-gap-radar`. They need 
 
 ---
 
+#### What Is the Publishing Kit?
+
+The publishing kit is a Claude Code skill that turns one markdown article into dev.to, AWS Builder Center, Medium, Substack and LinkedIn versions. Before anything ships, `preflight.py` runs every check and exits non-zero on a failure. One of those checks is `check-facts.py`, which pulls each number out of the article and looks for it in the article's `evidence/` folder.
+
+---
+
+#### How the Two Kits Work Together
+
+research-kit produces the verdicts and the publishing kit enforces them. The hand-off is two JSON files and one folder:
+
+| Stage | Kit | What happens |
+| --- | --- | --- |
+| Audit | research-kit | `math-sandbox` and `ablation-stat-auditor` write `eq_verified_numbers.json` and `stat_audit.json` |
+| Stage | you | copy both files into the article's `evidence/` folder |
+| Check | publishing kit | `preflight.py` runs `check-facts.py`, which reads every record with `paper_value`, `computed` and `verdict` |
+| Fix | you | reword the article, or keep the number with a row under `## DISPUTED` in `CLAIMS.md` |
+| Publish | publishing kit | `publish-devto.py --create` posts the draft |
+| Re-check | research-kit | `paper-number-check` runs the publishing kit's `check-facts.py` over every other output |
+
+A number that appears in the evidence normally passes. An audit record holds the article's own number next to the recomputed one, so the verdict decides: `MISMATCH` or `NOT CHECKABLE` fails as `DISPUTED`.
+
+---
+
 #### Why Run It on an Article?
 
 A paper and a technical article make the same kind of promise: every number came from somewhere. The research skills test that promise by recomputing each number in code and writing a verdict beside it: `VERIFIED`, `MISMATCH` or `NOT CHECKABLE`.
@@ -44,34 +69,65 @@ The article audited here is the publishing kit's own walk-through, *Streamline P
 
 - Claude Code
 - `python3` with `pymupdf` and `pillow`, and Chrome, Edge or Chromium for the PDF skills
-- The publishing kit at 0.36.0 or later, for `check-facts.py`
-- An article with its evidence files beside it
+- An article in a git repository, with an `evidence/` folder beside it
 
 ---
 
-#### Step 1 — Install research-kit
+#### Step 1 — Install Both Plugins
 
-The repository is a plugin marketplace. Add it, then install the plugin:
+Both repositories are plugin marketplaces. Add each one, then install its plugin:
 
 ```bash
 claude plugin marketplace add xbill9/claude-research-skills
 claude plugin install research-kit@claude-research-skills
+claude plugin marketplace add xbill9/publishing-kit
+claude plugin install publishing@publishing-kit
 ```
 
 ```plaintext
+  ❯ publishing@publishing-kit
+    Version: 0.36.1
+    Scope: user
+    Status: ✔ enabled
+--
   ❯ research-kit@claude-research-skills
     Version: 1.3.1
     Scope: user
     Status: ✔ enabled
 ```
 
-Inside a session, each skill is namespaced, for example `/research-kit:math-sandbox`.
+The publishing kit needs 0.36.0 or later to read audit records, and 0.36.1 to stop a single shared number from counting as a match. Its scripts live under a version-numbered path, and older versions stay in the cache, so take the path from the installed plugin:
+
+```bash
+KIT=$(claude plugin list --json | python3 -c "import json,sys; print(next(p['installPath'] for p in json.load(sys.stdin) if p['id']=='publishing@publishing-kit'))")/skills/publishing
+echo $KIT
+```
+
+```plaintext
+/home/xbill/.claude/plugins/cache/publishing-kit/publishing/0.36.1/skills/publishing
+```
+
+From a clone it is `publishing-kit/skills/publishing`.
 
 ---
 
-#### Step 2 — Hand It the Article
+#### Step 2 — Lay Out the Article Folder
 
-Copy the article and its evidence into a folder of its own, so every skill reads the same files and writes beside them:
+The publishing kit reads everything relative to the article. The audit records go in `evidence/`, and the ledger sits beside the article, outside it:
+
+```plaintext
+articles/publishing-kit-skill/
+├── devto-publishing-kit.md        the article
+├── CLAIMS.md                      the ledger: ## DISPUTED rows live here
+└── evidence/                      preflight.py reads this folder
+    ├── devto-hardwrap.txt         run output the article cites
+    ├── eq_verified_numbers.json   staged from math-sandbox
+    └── stat_audit.json            staged from ablation-stat-auditor
+```
+
+`check-facts.py` refuses a ledger inside `evidence/`, because a ledger restates every number and would trace them all to itself.
+
+For the audits, copy the article folder somewhere the skills can write beside it:
 
 ```bash
 mkdir -p examples/publishing-kit-article
@@ -160,34 +216,54 @@ legibility: LEGIBLE_PX*1376/CARD_W = 43.0 ; 40pt at 320/1376 = 9.3 px
 
 ---
 
-#### Step 8 — Feed the Audit to check-facts
+#### Step 8 — Stage the Audit Records
 
-This is where the two kits meet. The publishing kit's `check-facts.py` reads any JSON object with `paper_value`, `computed` and `verdict` as an audit record. Pass the two audit files as evidence:
+Copy the two audit files into the article's `evidence/` folder. Nothing else needs configuring: `preflight.py` defaults its evidence to `<article folder>/evidence`.
 
 ```bash
-check-facts.py paper/devto-publishing-kit.md \
-  --evidence math-sandbox/eq_verified_numbers.json ablation-stat-auditor/stat_audit.json
+cp math-sandbox/eq_verified_numbers.json ablation-stat-auditor/stat_audit.json \
+   ~/publishing-kit/articles/publishing-kit-skill/evidence/
 ```
-
-```plaintext
-  DISPUTED count     0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
-  ok    dimensions   1376x768                     <- eq_verified_numbers.json
-  DISPUTED ratio     2.381:1                      <- MISMATCH in eq_verified_numbers.json (M5_substack_source_shape)
-  DISPUTED pixels    320px                        <- NOT CHECKABLE in eq_verified_numbers.json (D3_card_width_is_devto)
-  DISPUTED count     4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
-  ok    count        47 of 62                     <- eq_verified_numbers.json
-  DISPUTED pixels    95px                         <- NOT CHECKABLE in eq_verified_numbers.json (M1_own_source_95_columns)
-
-2 traced, 0 cited from the log, 0 untraced, 5 disputed
-```
-
-It exits 1. Both `ok` lines and all five `DISPUTED` lines match a number in the same audit files; the verdict on each record decides which is which.
 
 ---
 
-#### Step 9 — Fix the Article, Then Explain What Stays
+#### Step 9 — Run the Pre-flight
 
-Each disputed number is either fixed in the article or kept with its reason. The fixes, all in the publishing kit's walk-through:
+```bash
+cd ~/publishing-kit/articles/publishing-kit-skill
+python3 $KIT/scripts/preflight.py devto-publishing-kit.md
+```
+
+On the article as it was published:
+
+```plaintext
+check-facts.py — every number traces to an artifact
+==============================================================
+devto-publishing-kit.md: 7 claim(s) against 15 evidence file(s), 15 dated log row(s)
+
+  DISPUTED count     0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  ok    dimensions   1376x768                     <- devto-cover-crop.txt
+  ok    ratio        2.381:1                      <- devto-cover-crop.txt
+  DISPUTED pixels    320px                        <- NOT CHECKABLE in eq_verified_numbers.json (D3_card_width_is_devto)
+  DISPUTED count     4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  ok    count        47 of 62                     <- devto-hardwrap.txt
+  ok    pixels       95px                         <- devto-cover-crop.txt
+
+4 traced, 0 cited from the log, 0 untraced, 3 disputed
+...
+  FAIL  facts
+1 check(s) failed: facts
+```
+
+It exits 1. The 15 evidence files are the 13 the article already had plus the two audit records.
+
+The wording problems the audits found do not show up here, because they carry no number for `check-facts.py` to match: "every paragraph", "on the cover", the footer date. Those come from reading the audit reports.
+
+---
+
+#### Step 10 — Fix the Article, Then Explain What Stays
+
+Each finding is either fixed in the article or kept with its reason. The fixes, all in the publishing kit's walk-through:
 
 | Was | Now |
 | --- | --- |
@@ -197,31 +273,62 @@ Each disputed number is either fixed in the article or kept with its reason. The
 | measured on 2026-08-31 | measured between 2026-08-30 and 2026-09-16 |
 | readable at 95 columns | keeps its line wrapping |
 
-What stays goes under `## DISPUTED` in the article's `CLAIMS.md`, one row per claim with the reason:
+What stays goes under `## DISPUTED` in `CLAIMS.md`, one row per claim with the reason:
 
 ```plaintext
 | 0 of 4 | E3_medium_data_uri_0_of_4, NOT CHECKABLE | no archived artifact; the article labels it "kit log, 2026-08-30" |
+| 4 of 4 | E3_medium_data_uri_0_of_4, NOT CHECKABLE | same row as 0 of 4 |
 | 320px | D3_card_width_is_devto, NOT CHECKABLE | `CARD_W` in make-cover.py; no archived measurement of dev.to's card width |
 ```
 
-The same run against the corrected article:
+The pre-flight again, with live link checks:
 
 ```plaintext
   NOTED count        0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
-  ok    dimensions   1376x578                     <- eq_verified_numbers.json
-  ok    count        47 of 62                     <- eq_verified_numbers.json
-  ...
+  ok    dimensions   1376x578                     <- devto-cover-crop.txt
+  ok    dimensions   1376x768                     <- devto-cover-crop.txt
+  ok    ratio        2.381:1                      <- devto-cover-crop.txt
+  NOTED pixels       320px                        <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  NOTED count        4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    count        47 of 62                     <- devto-hardwrap.txt
+  ok    pixels       95px                         <- devto-cover-crop.txt
 
-3 traced, 0 cited from the log, 0 untraced, 0 disputed, 5 disputed with a caveat
+5 traced, 0 cited from the log, 0 untraced, 0 disputed, 3 disputed with a caveat
+...
+  PASS  facts
+  PASS  prose
+  PASS  article
+  PASS  links
+  PASS  linkedin
+all checks passed
 ```
 
-It exits 0.
+It exits 0. The audit records stay in `evidence/`, so every later pre-flight checks the article against them.
 
 ---
 
-#### Step 10 — Check Everything Built From the Article
+#### Step 11 — Publish the Draft
 
-The studio page and the comic repeat numbers too. `paper-number-check` runs `check-facts.py` over every output at once, after first proving the copy it found flags a known disputed number:
+`publish-devto.py` runs the cover, front matter and link checks itself, and refuses to post on a failure. The number check runs in `preflight.py`, so run that first:
+
+```bash
+python3 $KIT/scripts/preflight.py devto-research-kit-publishing-kit.md --live
+python3 $KIT/scripts/publish-devto.py --create devto-research-kit-publishing-kit.md
+python3 $KIT/scripts/publish-devto.py --list
+```
+
+```plaintext
+   5049183  draft      org=-               Auditing a Technical Article with Claude Code Resear
+            https://dev.to/xbill/auditing-a-technical-article-with-claude-code-research-skills-118b-temp-slug-6830794
+```
+
+The front matter carries the title, tags and cover, and `published: false` keeps it a draft.
+
+---
+
+#### Step 12 — Check Everything Built From the Article
+
+The studio page and the comic repeat numbers too. `paper-number-check` finds the installed publishing kit's `check-facts.py`, proves it flags a known disputed number, then runs it over every output at once:
 
 ```bash
 python3 check_outputs.py --audit math-sandbox/eq_verified_numbers.json ablation-stat-auditor/stat_audit.json \
@@ -229,8 +336,10 @@ python3 check_outputs.py --audit math-sandbox/eq_verified_numbers.json ablation-
 ```
 
 ```plaintext
-interactive-paper-studio/index.html: 0 disputed, 11 noted, 5 traced, 30 untraced
-graphic-story/Story.html: 0 disputed, 9 noted, 7 traced, 20 untraced
+check-facts: ~/.claude/plugins/cache/publishing-kit/publishing/0.36.1/skills/publishing/scripts/check-facts.py (control passed)
+audit: 2 file(s), 20 disputed record(s)
+interactive-paper-studio/index.html: 0 disputed, 4 noted, 7 traced, 15 untraced
+graphic-story/Story.html: 0 disputed, 2 noted, 8 traced, 4 untraced
 
 0 disputed claim(s) across 2 output(s)
 ```
@@ -241,15 +350,13 @@ Each noted number has a row in a `CLAIMS.md` beside its output.
 
 #### 🔎 Tip: Read the Record Behind Each Disputed Number
 
-Two of the five disputed claims in Step 8 are number collisions. `2.381:1` matched the digit 1 in a record of code-block line counts, and `95px` matched a record about a 95-column source wrap. The crop ratio itself is `VERIFIED` in another record.
-
 Open the record named after each `DISPUTED` line before changing the article. In publishing-kit 0.36.0 one shared number was enough for a match, and on an HTML page the stylesheet was read too. From 0.36.1 a claim's numbers must match a record's as a sequence, a number with a unit must carry that unit in the record's statement, and `<style>` is skipped. Over the five outputs in this run that took the flags from 34 to 12, and the 12 are the Medium counts and the 320px card width.
 
 ---
 
 #### 🔎 Tip: Keep the Old Claim Visible
 
-The publishing kit writes a reversal as a **Correction** paragraph that keeps the retracted claim in view. The fixes in Step 9 went into the ledger as a table of was, now and evidence, so a reader of the repository can see what changed and why.
+The publishing kit writes a reversal as a **Correction** paragraph that keeps the retracted claim in view. The fixes in Step 10 went into the ledger as a table of was, now and evidence, so a reader of the repository can see what changed and why.
 
 ---
 
@@ -268,21 +375,21 @@ The publishing kit writes a reversal as a **Correction** paragraph that keeps th
 
 #### So, Which One?
 
-Start with `math-sandbox` and `ablation-stat-auditor`. They write the audit records, and every other step reads them. Then run `check-facts.py` with those records as evidence before every publish, and `paper-number-check` over anything else built from the article.
+Start with `math-sandbox` and `ablation-stat-auditor`. They write the audit records, and every other step reads them. Stage the records in the article's `evidence/` folder once, and every `preflight.py` run after that holds the article to them. Run `paper-number-check` over anything else built from the article.
 
 ---
 
 #### Summary
 
-The goal of this article was to check every number in a published technical article and stop the disputed ones from shipping again. The key to the solution was a verdict beside every recomputed number, read by the publishing kit's `check-facts.py`. The results on the publishing kit's walk-through were:
+The goal of this article was to check every number in a published technical article and stop the disputed ones from shipping again. The key to the solution was a verdict beside every recomputed number, staged in the article's `evidence/` folder and enforced by the publishing kit's pre-flight. The results on the publishing kit's walk-through were:
 
 - 🟢 26 claims checked: 15 verified, 6 mismatches, 5 not checkable
 - 🟢 47 of 62 matches its evidence: 75.8%, 95% interval 63.8% to 84.8%
 - ❌ "every paragraph", "on the cover" and the footer date overstated their evidence; all three fixed
 - ⚠️ 0 of 4 against 4 of 4 on Medium has no archived artifact; kept with its caveat
-- 🟢 check-facts went from 5 disputed to 0, with 5 explained in the ledger
+- 🟢 pre-flight went from 3 disputed numbers to 0, with all 3 explained in the ledger
 
-Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and the publishing kit's `check-facts.py` from 0.36.0. Each skill ran once, as a separate agent, as the example's README records. The comic run stopped before its final page review. Live pages were fetched only by the link check.
+Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and publishing kit 0.36.1. Each skill ran once, as a separate agent, as the example's README records. The comic run stopped before its final page review. Live pages were fetched only by the link check.
 
 The strategy for auditing a technical article with Claude Code research skills was validated with an incremental step by step approach.
 
