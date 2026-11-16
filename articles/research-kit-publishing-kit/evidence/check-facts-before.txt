@@ -1,0 +1,15 @@
+# check-facts on the article as published (paper/ copy, publishing-kit dec86c0), audits as evidence -- 2026-11-16T15:50:37Z
+$ check-facts.py paper/devto-publishing-kit.md --evidence math-sandbox/eq_verified_numbers.json ablation-stat-auditor/stat_audit.json
+devto-publishing-kit.md: 7 claim(s) against 2 evidence file(s), 15 dated log row(s)
+
+  DISPUTED count     0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  ok    dimensions   1376x768                     <- eq_verified_numbers.json
+  DISPUTED ratio     2.381:1                      <- MISMATCH in eq_verified_numbers.json (M5_substack_source_shape)
+  DISPUTED pixels    320px                        <- NOT CHECKABLE in eq_verified_numbers.json (D3_card_width_is_devto)
+  DISPUTED count     4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  ok    count        47 of 62                     <- eq_verified_numbers.json
+  DISPUTED pixels    95px                         <- NOT CHECKABLE in eq_verified_numbers.json (M1_own_source_95_columns)
+
+2 traced, 0 cited from the log, 0 untraced, 5 disputed
+
+A disputed claim is the paper's number where an audit recomputed a different one, or could not check it. State the recomputed value, or keep the paper's with its caveat and add a row containing the claim under `## DISPUTED` in the ledger.

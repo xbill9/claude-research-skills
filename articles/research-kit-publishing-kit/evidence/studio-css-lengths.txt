@@ -1,0 +1,5 @@
+# CSS lengths on the studio page that match audit records (counted inside <style> only)
+1px: 6 occurrences in the stylesheet
+4px: 3 occurrences in the stylesheet
+6px: 8 occurrences in the stylesheet
+15px: 1 occurrences in the stylesheet

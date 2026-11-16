@@ -1,0 +1,14 @@
+# check-facts on the corrected article (publishing-kit working tree, with ## DISPUTED ledger rows) -- 2026-11-16T15:50:38Z
+$ check-facts.py devto-publishing-kit.md --evidence eq_verified_numbers.json stat_audit.json
+devto-publishing-kit.md: 8 claim(s) against 2 evidence file(s), 15 dated log row(s)
+
+  NOTED count        0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    dimensions   1376x578                     <- eq_verified_numbers.json
+  ok    dimensions   1376x768                     <- eq_verified_numbers.json
+  NOTED ratio        2.381:1                      <- MISMATCH in eq_verified_numbers.json, caveat in CLAIMS.md
+  NOTED pixels       320px                        <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  NOTED count        4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    count        47 of 62                     <- eq_verified_numbers.json
+  NOTED pixels       95px                         <- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+
+3 traced, 0 cited from the log, 0 untraced, 0 disputed, 5 disputed with a caveat

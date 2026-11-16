@@ -1,0 +1,5 @@
+# make-cover.py constants, publishing-kit ff55eee
+89:CARD_W = 320
+90:LEGIBLE_PX = 10
+264:    LEGIBLE_PX * 1376 / CARD_W = 43pt falls under LEGIBLE_PX there.
+263:    is met at roughly 320px wide and type below about 40pt disappears there.

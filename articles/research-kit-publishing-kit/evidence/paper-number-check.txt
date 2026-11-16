@@ -1,0 +1,9 @@
+# paper-number-check on the studio page and the comic -- 2026-11-16T15:50:38Z
+$ check_outputs.py --audit math-sandbox/eq_verified_numbers.json ablation-stat-auditor/stat_audit.json -- interactive-paper-studio/index.html graphic-story/Story.html
+check-facts: /home/xbill/.claude/plugins/cache/publishing-kit/publishing/0.36.0/skills/publishing/scripts/check-facts.py (control passed)
+audit: 2 file(s), 20 disputed record(s)
+
+interactive-paper-studio/index.html: 0 disputed, 11 noted, 5 traced, 30 untraced
+graphic-story/Story.html: 0 disputed, 9 noted, 7 traced, 20 untraced
+
+0 disputed claim(s) across 2 output(s)

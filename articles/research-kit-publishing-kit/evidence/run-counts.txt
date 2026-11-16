@@ -1,0 +1,22 @@
+# counts from examples/publishing-kit-article, computed by run_counts.py
+math-sandbox claims: 26 {'VERIFIED': 15, 'NOT CHECKABLE': 5, 'MISMATCH': 6}
+ablation-stat-auditor claim records: 16 {'VERIFIED': 7, 'MISMATCH': 6, 'NOT CHECKABLE': 3}
+wilson: {"hardwrap_47_62": {"k": 47, "n": 62, "source": "devto-publishing-kit.md:161; evidence/devto-hardwrap.txt:13", "successes": 47, "total": 62, "rate_pct": 75.81, "wilson_low_pct": 63.85, "wilson_high_pct": 84.75, "z": 1.959964, "formatted": "75.8% (95% Wilson CI [63.8%, 84.8%])"}, "medium_embed_0_4": 
+tests: {'medium_hosted_vs_embed_fisher_unpaired': (0.02857142857142857, None, None), 'medium_hosted_vs_embed_mcnemar_paired': (0.125, 4, 0), 'substack_links_prepare_vs_first_mcnemar_paired': (0.5, 2, 0), 'substack_links_prepare_vs_first_fisher_unpaired': (0.42857142857142855, None, None)}
+citation links: 10 of 11 resolving and identified
+citation dois/arxiv in paper text: 0
+image cover-builder.80aa6ca5.jpg 1200x675
+image cover-builder.cabd79f3.jpg 1200x675
+image cover.77acc7c4.jpg 1376x578
+image cover.ae4d639e.jpg 1376x578
+image linkedin-devto-publishing-kit-cover.jpg 1200x627
+image advocu-devto-publishing-kit-cover.webp 1376x578
+hardwrap blocks without a break: 62 - 47 = 15
+source prose lines: 106 over 95 chars: 20 longest: 126
+crop: ratio 1000/420 = 2.380952 ; rows kept at width 1376 = 577.92 ; lost per side from 768 = 95.04
+legibility: LEGIBLE_PX*1376/CARD_W = 43.0 ; 40pt at 320/1376 = 9.3 px
+shortfall items per skill: {'ablation-stat-auditor': 15, 'citation-doi-verifier': 10, 'figure-forensics': 12, 'graphic-story': 14, 'interactive-paper-studio': 13, 'math-sandbox': 16} total: 80
+pdf figure-forensics/PublishingKit_Figure_Anatomy_v1.pdf 6 pages
+pdf graphic-story/PublishingKit_Comic_v1.pdf 5 pages
+pdf math-sandbox/PublishingKit_Equation_Guide_v1.pdf 7 pages
+studio check: 130 values, 0 mismatches, worst abs error 0.00e+0
