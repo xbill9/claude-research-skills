@@ -1,0 +1,17 @@
+# Destination URLs for the LinkedIn, Slack and Advocu posts. PENDING fails the
+# run on purpose: a post whose links do not resolve is worse than no post.
+#
+#   dev.to    drafts carry a -temp-slug-N replaced on publish
+#   Medium    a draft has NO public URL: medium.com/p/<id> is 404 to everyone
+#             but the author (measured 2026-08-31)
+#   Builder   the /create/content/<id> URL is the authenticated editor; the
+#             public one is /content/<id>/<slug> and exists only once published
+#
+# Draft locations, for editing rather than sharing:
+devto-gde  = https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn
+devto-aws  = https://dev.to/aws-builders/streamline-publishing-with-a-claude-code-skill-an4
+builder    = https://builder.aws.com/content/3IhAZMOLRPqp4a5USEUtdq6s2d2/streamline-publishing-with-a-claude-code-skill
+medium     = https://xbill999.medium.com/streamline-publishing-with-a-claude-code-skill-af03e6658c0b
+linkedin   = https://www.linkedin.com/feed/update/urn:li:activity:7500566496419397632/
+repo       = https://github.com/xbill9/publishing-kit
+substack   = https://xbill9.substack.com/p/streamline-publishing-with-a-claude

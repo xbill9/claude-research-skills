@@ -1,0 +1,15 @@
+# toolchain run, re-captured 2026-08-31T13:17:59-04:00 with content-addressed covers
+## covers
+builder-cover.2b7f0305.jpg 15470 bytes
+devto-cover-aws.44aee846.jpg 106890 bytes
+devto-cover-gde.0d021e90.jpg 106731 bytes
+## --content-address is idempotent (same bytes -> same name)
+wrote builder-cover.2b7f0305.jpg  1200x675  15 KB
+## make-medium
+devto-publishing-kit-gde.md: 5 tables, 1 diagrams
+      1 <h1
+     19 <h4
+embed: 497 KB
+## dev.to proxies covers rather than re-hosting
+cover_image : https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fraw.githubusercontent.com%2Fxbill9%2Fgemma4-dev%2Fmain%2Fdocs%2Fdevto-cover-aws.jpg
+  (GET /api/articles/me, 2026-08-31; three of three published articles)
