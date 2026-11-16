@@ -6,6 +6,8 @@ Claude Code plugin `research-kit`, ported from Robina Mirbahar's Antigravity kit
 
 ## Commands
 
+`make test`, `make lint`, `make validate`, `make check` (all three) and `make format` wrap the commands below; `make help` lists every target.
+
 - `python3 tests/test_plugin.py` — offline checks. `RESEARCH_KIT_NETWORK=1 python3 tests/test_plugin.py` adds live Crossref checks. The PDF checks skip themselves when pymupdf or Chrome is missing, so a pass with a skip has not exercised rendering.
 - `claude plugin validate ./plugin` and `claude plugin validate .` (marketplace).
 - `ruff check . && ruff format --check .` (config in `ruff.toml`, line length 120). After `ruff format` via Bash, re-copy `scripts/pdf_tools.py` into the skills: the sync hook only fires on Write/Edit.
