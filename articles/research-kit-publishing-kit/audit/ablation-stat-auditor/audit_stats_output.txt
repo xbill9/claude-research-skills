@@ -1,24 +1,7 @@
-claim records: 43 {'VERIFIED': 36, 'NOT CHECKABLE': 4, 'MISMATCH': 3}
-NOT CHECKABLE  devto-research-kit-publishing-kit.md:111   'is a paired comparison of the same four images'
-    paper={"design": "paired, same four images"}
-    computed={"design": "unknown", "per_image_outcomes_archived": false, "fisher_unpaired_p": 0.02857142857142857, "ledger_rows": ["paper/CLAIMS.md:96"]}
-MISMATCH       devto-research-kit-publishing-kit.md:111   'what supports it is one archived paste'
-    paper={"archived_pastes": 1}
-    computed={"archived_pastes": 0, "evidence_files_on_medium_data_uris": [], "ledger": "paper/CLAIMS.md:96"}
-MISMATCH       devto-research-kit-publishing-kit.md:141   'Each of the 11 links was fetched instead and matched to a second source'
-    paper={"matched": 11, "n": 11}
-    computed={"matched": 10, "n": 11, "not_matched": ["L9"]}
-NOT CHECKABLE  devto-research-kit-publishing-kit.md:184   'It exits 1.'
-    paper={"exit": 1}
-    computed={"exit": null}
-NOT CHECKABLE  devto-research-kit-publishing-kit.md:217   'It exits 0.'
-    paper={"exit": 0}
-    computed={"exit": null}
-MISMATCH       devto-research-kit-publishing-kit.md:260   '| `ablation-stat-auditor` | 🥇 any count or rate | an overstatement and an unsupported comparison |'
-    paper={"overstated": 1, "unsupported_comparisons": 1}
-    computed={"overstated": 2, "overstated_rows": ["\"a stray break in every paragraph\"", "behaviours \"measured on 2026-08-31\""]}
-NOT CHECKABLE  devto-research-kit-publishing-kit.md:284   'Each skill ran once, as a separate agent.'
-    paper={"runs_per_skill": 1}
-    computed={"runs_per_skill": null}
-noise floor n=62: {"num_tasks": 62, "baseline_rate_pct": 75.81, "std_error_pct": 5.44, "ci_95_half_width_pct": 10.66, "multiplier_z_alpha_plus_z_power": 2.8016, "min_detectable_lift_vs_fixed_baseline_pts": 15.24, "min_detectable_lift_two_runs_pts": 21.55}
-noise floor n=4: {"num_tasks": 4, "baseline_rate_pct": 50.0, "std_error_pct": 25.0, "ci_95_half_width_pct": 49.0, "multiplier_z_alpha_plus_z_power": 2.8016, "min_detectable_lift_vs_fixed_baseline_pts": 70.04, "min_detectable_lift_two_runs_pts": 99.05}
+records: 39 {'VERIFIED': 37, 'NOT CHECKABLE': 2}
+NOT CHECKABLE devto-research-kit-publishing-kit.md:167 'The claim describes fixed editor behaviour, so one archived paste would support it' -> None | a premise about the editor being deterministic; no test applies, and no archived paste exists to try it
+NOT CHECKABLE devto-research-kit-publishing-kit.md:403 "Each skill ran once, as a separate agent, as the example's README records." -> {'readme_mentions_once': False} | the README records one separate agent per skill but no run count; nothing in the repo shows a skill was not rerun
+wilson 47/62: {'k': 47, 'n': 62, 'rate_pct': 75.806, 'ci': [63.847, 84.754]} mcp: 75.8% (95% Wilson CI [63.8%, 84.8%])
+mcnemar b=4 c=0: 0.125 fisher: 0.02857142857142857 first m with p<0.05: 6 p5/p6: 0.0625 0.03125
+flags: 34 -> 12 {'medium count': 8, 'card width': 4} | pnc 0.36.0: {'interactive-paper-studio/index.html': {'disputed': 0, 'noted': 11, 'traced': 5, 'untraced': 30}, 'graphic-story/Story.html': {'disputed': 0, 'noted': 9, 'traced': 7, 'untraced': 20}} | 0.36.2: {'interactive-paper-studio/index.html': {'disputed': 0, 'noted': 4, 'traced': 7, 'untraced': 15}, 'graphic-story/Story.html': {'disputed': 0, 'noted': 2, 'traced': 8, 'untraced': 4}}
+before: {'disputed': 3, 'noted': 0, 'traced': 4, 'evidence_files': 15, 'log_rows': 15, 'exit': 1} after: {'disputed': 0, 'noted': 3, 'traced': 5, 'evidence_files': 15, 'log_rows': 15, 'exit': 0} refuse: {'disputed': 3, 'noted': 0, 'traced': 0, 'evidence_files': None, 'log_rows': None, 'exit': 1} | evidence had: 13 | dated log rows: 15

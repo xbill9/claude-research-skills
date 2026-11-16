@@ -1,79 +1,87 @@
-# Statistical Audit Report
+# Statistical Audit Report: the research-kit walk-through
 
-Paper: `articles/research-kit-publishing-kit/devto-research-kit-publishing-kit.md` (295 lines), audited 2026-11-16 with the `ablation-stat-auditor` skill from research-kit 1.3.1. Every value below comes from `audit_stats.py` (output in `audit_stats_output.txt`, records in `stat_audit.json`). Intervals and tests were computed by the `research-audit` MCP server over stdio; the 47 of 62 interval was also computed at full precision in the script, because the server rounds to two decimals and the article rounds to one.
+Paper of record: `articles/research-kit-publishing-kit/devto-research-kit-publishing-kit.md` (414 lines). Sources: the article's `evidence/` folder, `examples/publishing-kit-article/` and its `paper/` copy of the publishing kit's walk-through. Every value below comes from `audit_stats.py`; tests and the Wilson interval come from the `research-audit` MCP server over stdio, and the Wilson bounds are also recomputed at full precision.
 
-## Result
+#### Result
 
-43 claim records: 36 VERIFIED, 3 MISMATCH, 4 NOT CHECKABLE.
+39 claim records: 37 VERIFIED, 0 MISMATCH, 2 NOT CHECKABLE. Every count, rate, interval, test and before/after figure the article prints reproduces from its files.
 
-Every count, rate, interval and test the article prints reproduces from its files. The three mismatches are sentences that describe those numbers more strongly than the files support. The four NOT CHECKABLE records are one design assumption and three statements no file records.
+NOT CHECKABLE:
 
-## Where the skill's methods apply
+- Line 167, "The claim describes fixed editor behaviour, so one archived paste would support it". This is a premise that Medium's paste handling is deterministic. No statistical method tests it, and no archived paste exists to try it.
+- Line 403, "Each skill ran once, as a separate agent, as the example's README records." The README (`examples/publishing-kit-article/README.md:5`) records one separate agent per skill; it states no run count, and the word "once" does not appear in it.
 
-The skill is built for benchmark tables: k of n tasks, a baseline, a method, and a test between them. This article has one sampled rate and one two-way comparison.
+#### Which numbers are samples
 
-- **47 of 62 paragraphs** is a rate from one measured article. Wilson applies: 75.8% [63.8, 84.8]. It describes paragraphs of that one article. It cannot be read as a rate for dev.to articles in general, and the article does not read it that way.
-- **0 of 4 against 4 of 4 on Medium** is the one comparison. Fisher and McNemar both apply, and they disagree at 0.05: McNemar p = 0.125, Fisher p = 0.0286. Which one is right depends on whether the same four images were pasted both ways, and no file says.
-- Everything else the article counts is a census of files, not a sample: 26 and 16 audit records, 10 of 11 links, 130 studio values, 5 comic pages, check-facts lines. Wilson intervals on these (10 of 11 gives [62.3, 98.4]) have no population to describe. They are checked as counts only.
-- Wilcoxon does not apply: the article reports no paired resource metric.
-- The noise floor has no comparison to judge. For context: at n = 62 and 75.8%, the 95% half-width is 10.66 points and the minimum detectable lift between two runs is 21.55 points. At n = 4 the half-width is 49.0 points.
+Only two figures in the article are inferential, and the methods of this skill apply to those two only.
 
-## Audit table
+- **47 of 62** (lines 165, 398) is every paragraph-level block of one dev.to article (58 `<p>` + 4 `<li>`, `devto-hardwrap.txt`). As a description of that article it is a full count and needs no interval. The Wilson interval, 75.806% [63.847%, 84.754%], describes dev.to's behaviour only if those 62 blocks are read as a sample of the paragraphs it renders; the article prints it without saying which reading it means.
+- **0 of 4 against 4 of 4** on Medium (line 167). Paired (same four images in both pastes): exact McNemar p = 0.125 at b = 4, c = 0; with all-or-none results p is 0.0625 at five images and 0.03125 at six, so six is the first size below 0.05. Unpaired: two-sided Fisher p = 0.028571. The article states both readings, says no file records which images were pasted (no file in `paper/evidence` covers it), and dates the row 2026-08-30 (`paper/CLAIMS.md:96`). All four statements reproduce. The design choice decides the verdict: paired, the comparison is WITHIN NOISE; unpaired, it is significant.
 
-| Claim | Line | Paper value | Recomputed | Test | Verdict | Conclusion |
+Everything else is a full count of files or records: audit verdicts (26 = 15/6/5, 16 = 7/6/3, 20 disputed records), links (10 of 11), studio values (130, 0 mismatches), pre-flight status lines (4 traced and 3 disputed before; 5 traced, 0 disputed and 3 noted after; exits 1 and 0), evidence files (15 = 13 + 2), flags (34 to 12 over five outputs), and the `paper-number-check` tallies. Intervals and significance tests describe nothing for these, so none were run; each was recounted from its file.
+
+#### Before/after comparisons
+
+- **3 disputed to 0** (lines 252, 296, 401). Both runs are kit 0.36.1. Before is a copy of the article as published, after is the corrected article with three `## DISPUTED` rows; the 3 disputed numbers before are the same 3 noted after (0 of 4, 320px, 4 of 4).
+- **34 flags to 12** (line 364), from `check-facts-0.36.0-vs-0.36.1.txt`: same five outputs, empty ledger, only the kit version changes. The 12 left split into 8 Medium counts (0 and 4) and 4 card-width numbers (320, 320px), which is what the article says.
+- **11 to 4 and 9 to 2 noted** (lines 352, 353). The article prints only the 0.36.2 figures (4 and 2), and they match `paper-number-check-0.36.2.txt`. The 0.36.0 run in `paper-number-check.txt` noted 11 and 9, equal to the 0.36.0 flag counts for the same two outputs. Each noted number has a `## DISPUTED` row in the `CLAIMS.md` beside its output; the studio's bare `320` relies on the `320 px` row.
+
+#### Generalisations
+
+- The Compare and Contrast ranking (lines 376 to 383) and "Start with `math-sandbox` and `ablation-stat-auditor`" (line 389) rest on one article and one run per skill. No test can rank skills on n = 1. The Scope paragraph (line 403) states the one-article limit.
+- Line 56, "A number that appears in the evidence normally passes", is a description of `check-facts.py` behaviour, outside these methods.
+
+#### Observations outside the verdicts
+
+- Step 1 shows 0.36.2 installed and `$KIT` resolving to 0.36.2, while the Step 9 and Step 10 pre-flight outputs were recorded on kit 0.36.1 (headers of `staged-preflight-before.txt` and `staged-preflight-after.txt`). The Step 11 refusal and the Step 12 run are 0.36.2.
+- `examples/publishing-kit-article/README.md` line 20 still gives graphic-story "9 noted", the 0.36.0 figure; the article gives the 0.36.2 figure, 2.
+
+#### All records
+
+| Line | Article text | Paper value | Computed | Method | Verdict | Conclusion |
 |---|---|---|---|---|---|---|
-| nine skills | 19 | 9 | 9 skill folders | count | VERIFIED | HOLDS |
-| plugin version | 63 | 1.3.1 | 1.3.1 (plugin.json, evidence) | file | VERIFIED | HOLDS |
-| math-sandbox records | 90, 259, 278 | 26: 15 / 6 / 5 | 26: 15 / 6 / 5 | count | VERIFIED | HOLDS |
-| crop arithmetic | 91, 94 | 2.380952, 577.92, 95.04; 95px | same; 95 | arithmetic | VERIFIED | HOLDS; the even top/bottom split assumes a centre crop (line 96) |
-| 1376x578 left whole | 126 | whole | 0.04 px lost per side | arithmetic | VERIFIED | HOLDS |
-| stat-auditor records | 105 | 16: 7 / 6 / 3 | 16: 7 / 6 / 3 | count | VERIFIED | HOLDS |
-| tests line | 106 | Fisher 0.02857, McNemar 0.125 (b=4, c=0) | 0.028571, 0.125 | Fisher, McNemar | VERIFIED | HOLDS |
-| 47 of 62 | 109, 279 | 75.8% [63.8, 84.8] | 75.806% [63.847, 84.754]; k, n from devto-hardwrap.txt:12-13 | Wilson | VERIFIED | HOLDS |
-| 15 of 62 had none | 109 | 15 | 15 | count | VERIFIED | HOLDS |
-| paired p | 111 | 0.125 | 0.125 | exact McNemar | VERIFIED | above 0.05 if paired |
-| "a paired comparison of the same four images" | 111 | paired | unknown; unpaired Fisher p = 0.0286 | design | NOT CHECKABLE | OVERSTATED: an assumption stated as fact |
-| "first drops below 0.05 at six images" | 111 | 6 | 6 (p = 0.0625 at 5, 0.03125 at 6); 4 if unpaired | McNemar sweep | VERIFIED | HOLDS if paired |
-| "what supports it is one archived paste" | 111 | 1 archived paste | 0 evidence files on it; only CLAIMS.md:96 | provenance | MISMATCH | OVERSTATED |
-| log dated 2026-08-30 | 111 | 2026-08-30 | CLAIMS.md:96 | provenance | VERIFIED | HOLDS |
-| four image sizes | 120-123 | as printed | same (PIL) | measurement | VERIFIED | HOLDS |
-| every dev.to cover is 1376x578 | 126 | all | 3 of 3 in the folder | measurement | VERIFIED | HOLDS for this folder; covers for other articles not measured |
-| five destination shapes | 128 | 5 | 5 endpoint markers on each of 4 covers | measurement | VERIFIED | count holds; reading markers as destinations is an inference |
-| DOIs / arXiv ids | 137 | 0 | 0 | count | VERIFIED | HOLDS |
-| 10 of 11 links | 138, 263 | 10 / 11 | 10 / 11 | count (census) | VERIFIED | HOLDS |
-| "Each of the 11 links ... matched to a second source" | 141 | 11 | 10; L9 (Medium) blocked | count | MISMATCH | OVERSTATED; the next sentence corrects it |
-| studio check | 150 | 130 values, 0 mismatches | 64 rows + 66 sweep = 130, 0 | count | VERIFIED | HOLDS |
-| legibility | 153, 156 | 43.0pt; 9.3 px | 43.0; 9.3 (CARD_W 320, LEGIBLE_PX 10) | arithmetic | VERIFIED | HOLDS |
-| 5-page comic | 159 | 5 | 5 | count | VERIFIED | HOLDS |
-| check-facts before | 173-181 | 2 traced, 5 disputed | 2 ok, 5 DISPUTED; block equals evidence | count | VERIFIED | HOLDS |
-| "It exits 1." | 184 | 1 | not recorded | provenance | NOT CHECKABLE | CANNOT CHECK |
-| check-facts after | 214 | 3 / 0 / 5 | 3 ok, 0 DISPUTED, 5 NOTED | count | VERIFIED | HOLDS; article shows 3 of 8 lines unmarked |
-| "It exits 0." | 217 | 0 | not recorded | provenance | NOT CHECKABLE | CANNOT CHECK |
-| paper-number-check | 231-232 | 0/11/5/30; 0/9/7/20 | same | count | VERIFIED | HOLDS |
-| kit 0.36.0 | 47 | 0.36.0 | path in evidence | file | VERIFIED | HOLDS |
-| two collisions of five | 243 | 2 of 5 | 2 of 5; D1 (2.381) VERIFIED | count | VERIFIED | HOLDS |
-| 1px and 4px match | 245 | both | 6 and 3 occurrences | count | VERIFIED | HOLDS |
-| stat-auditor found "an overstatement" | 260 | 1 | 2 OVERSTATED rows | count | MISMATCH | HOLDS in kind; the count is 2 |
-| three overstatements fixed | 280 | 3 | 3 in the Step 9 table | count | VERIFIED | HOLDS |
-| "Each skill ran once" | 284 | 1 run each | not recorded | provenance | NOT CHECKABLE | CANNOT CHECK |
+| 146 | math-sandbox claims: 26 {'VERIFIED': 15, 'NOT CHECKABLE': 5, 'MISMATCH': 6} | `{"total": 26, "VERIFIED": 15, "MISMATCH": 6, "NOT CHECKABLE": 5}` | `{"total": 26, "VERIFIED": 15, "MISMATCH": 6, "NOT CHECKABLE": 5}` | full count | VERIFIED | HOLDS |
+| 397 | 26 claims checked: 15 verified, 6 mismatches, 5 not checkable | `{"total": 26, "VERIFIED": 15, "MISMATCH": 6, "NOT CHECKABLE": 5}` | `{"total": 26, "VERIFIED": 15, "MISMATCH": 6, "NOT CHECKABLE": 5}` | full count | VERIFIED | HOLDS |
+| 378 | 6 mismatches, 5 not checkable | `{"MISMATCH": 6, "NOT CHECKABLE": 5}` | `{"MISMATCH": 6, "NOT CHECKABLE": 5}` | full count | VERIFIED | HOLDS |
+| 161 | ablation-stat-auditor claim records: 16 {'VERIFIED': 7, 'MISMATCH': 6, 'NOT CHECKABLE': 3} | `{"total": 16, "VERIFIED": 7, "MISMATCH": 6, "NOT CHECKABLE": 3}` | `{"total": 16, "VERIFIED": 7, "MISMATCH": 6, "NOT CHECKABLE": 3}` | full count | VERIFIED | HOLDS |
+| 379 | 6 mismatches, 3 not checkable | `{"MISMATCH": 6, "NOT CHECKABLE": 3}` | `{"MISMATCH": 6, "NOT CHECKABLE": 3}` | full count | VERIFIED | HOLDS |
+| 351 | audit: 2 file(s), 20 disputed record(s) | `{"disputed_records": 20}` | `{"disputed_records": 20}` | full count | VERIFIED | HOLDS |
+| 165 | 75.8%, with a 95% interval of 63.8% to 84.8% | `{"k": 47, "n": 62, "rate_pct": 75.8, "ci": [63.8, 84.8]}` | `{"k": 47, "n": 62, "rate_pct": 75.806, "ci": [63.847, 84.754]}` | Wilson 95% score interval | VERIFIED | HOLDS |
+| 398 | 47 of 62 matches its evidence: 75.8%, 95% interval 63.8% to 84.8% | `{"k": 47, "n": 62, "rate_pct": 75.8, "ci": [63.8, 84.8]}` | `{"k": 47, "n": 62, "rate_pct": 75.806, "ci": [63.847, 84.754]}` | Wilson 95% score interval | VERIFIED | HOLDS |
+| 165 | 15 of the 62 had none | `{"k": 15, "n": 62}` | `{"k": 15, "n": 62}` | full count | VERIFIED | HOLDS |
+| 167 | If the same four images went into both, the paired test gives p = 0.125 | `{"p": 0.125, "b": 4, "c": 0}` | `{"p": 0.125, "b": 4, "c": 0}` | exact McNemar (paired) | VERIFIED | WITHIN NOISE |
+| 167 | first drops below 0.05 at six images | `{"images": 6}` | `{"images": 6, "p_at_5": 0.0625, "p_at_6": 0.03125}` | exact McNemar (paired) | VERIFIED | HOLDS |
+| 167 | Fisher's test gives p = 0.0286 | `{"p": 0.0286}` | `{"p": 0.02857142857142857}` | two-sided Fisher (unpaired) | VERIFIED | HOLDS |
+| 167 | No file records which images were pasted. | `{"files_recording_images": 0}` | `{"files_recording_images": 0, "matched": []}` | full count | VERIFIED | HOLDS |
+| 167 | the ledger carries it from a log dated 2026-08-30 with no artifact | `{"date": "2026-08-30"}` | `{"date": "2026-08-30", "row": "paper/CLAIMS.md:96"}` | full count | VERIFIED | HOLDS |
+| 167 | The claim describes fixed editor behaviour, so one archived paste would support it | `{"pastes_needed": 1}` | `null` | none applies | NOT CHECKABLE | CANNOT CHECK |
+| 194 | citation links: 10 of 11 resolving and identified | `{"identified": 10, "links": 11}` | `{"identified": 10, "links": 11}` | full count | VERIFIED | HOLDS |
+| 382 | 10 of 11 links confirmed | `{"identified": 10, "links": 11}` | `{"identified": 10, "links": 11}` | full count | VERIFIED | HOLDS |
+| 197 | All 11 links were fetched, and 10 were matched to a second source | `{"fetched": 11, "matched": 10}` | `{"fetched": 11, "matched": 10, "http_403": ["L9"]}` | full count | VERIFIED | HOLDS |
+| 193 | citation dois/arxiv in paper text: 0 | `{"count": 0}` | `{"count": 0}` | full count | VERIFIED | HOLDS |
+| 206 | studio check: 130 values, 0 mismatches | `{"values": 130, "mismatches": 0}` | `{"values": 130, "mismatches": 0}` | full count | VERIFIED | HOLDS |
+| 215 | draws a 5-page comic | `{"pages": 5}` | `{"pages": 5}` | full count | VERIFIED | HOLDS |
+| 21 | nine skills | `{"skills": 9}` | `{"skills": 9}` | full count | VERIFIED | HOLDS |
+| 182 | Every dev.to cover in the article's directory is 1376x578 | `{"size": "1376x578"}` | `{"advocu-devto-publishing-kit-cover.webp": "1376x578", "cover.77acc7c4.jpg": "1376x578", "cover.ae4d639e.jp...` | full count | VERIFIED | HOLDS |
+| 252 | 4 traced, 0 cited from the log, 0 untraced, 3 disputed | `{"traced": 4, "disputed": 3}` | `{"traced": 4, "disputed": 3}` | full count | VERIFIED | HOLDS |
+| 258 | It exits 1. | `{"exit": 1}` | `{"exit": 1}` | full count | VERIFIED | HOLDS |
+| 296 | 5 traced, 0 cited from the log, 0 untraced, 0 disputed, 3 disputed with a caveat | `{"traced": 5, "disputed": 0, "noted": 3}` | `{"traced": 5, "disputed": 0, "noted": 3}` | full count | VERIFIED | HOLDS |
+| 306 | It exits 0. | `{"exit": 0}` | `{"exit": 0}` | full count | VERIFIED | HOLDS |
+| 401 | pre-flight went from 3 disputed numbers to 0, with all 3 explained in the ledger | `{"before": 3, "after": 0, "noted": 3}` | `{"before": 3, "after": 0, "noted": 3}` | full count | VERIFIED | HOLDS |
+| 318 | 4 traced, 0 cited from the log, 0 untraced, 3 disputed | `{"disputed": 3}` | `{"disputed": 3, "exit": 1}` | full count | VERIFIED | HOLDS |
+| 258 | The 15 evidence files are the 13 the article already had plus the two audit records | `{"total": 15, "had": 13, "added": 2}` | `{"total_in_preflight": 15, "had_in_paper_copy": 13, "had_recorded": 13, "added": 2}` | full count | VERIFIED | HOLDS |
+| 242 | 7 claim(s) against 15 evidence file(s), 15 dated log row(s) | `{"claims": 7, "evidence_files": 15, "log_rows": 15}` | `{"claims_listed": 7, "evidence_files": 15, "log_rows_preflight": 15, "log_rows_with_a_date_in_paper_CLAIMS"...` | full count | VERIFIED | HOLDS |
+| 364 | Over the five outputs in this run that took the flags from 34 to 12 | `{"outputs": 5, "before": 34, "after": 12}` | `{"outputs": 5, "before": 34, "after": 12}` | full count | VERIFIED | HOLDS |
+| 364 | the 12 are the Medium counts and the 320px card width | `{"other": 0}` | `{"medium count": 8, "card width": 4}` | full count | VERIFIED | HOLDS |
+| 352 | 0 disputed, 4 noted, 7 traced, 15 untraced | `{"disputed": 0, "noted": 4, "traced": 7, "untraced": 15}` | `{"disputed": 0, "noted": 4, "traced": 7, "untraced": 15, "noted_with_0.36.0": 11, "flags_0.36.0": 11}` | full count | VERIFIED | HOLDS |
+| 353 | 0 disputed, 2 noted, 8 traced, 4 untraced | `{"disputed": 0, "noted": 2, "traced": 8, "untraced": 4}` | `{"disputed": 0, "noted": 2, "traced": 8, "untraced": 4, "noted_with_0.36.0": 9, "flags_0.36.0": 9}` | full count | VERIFIED | HOLDS |
+| 358 | Each noted number has a row in a `CLAIMS.md` beside its output. | `{"noted": {"interactive-paper-studio": 4, "graphic-story": 2}}` | `{"disputed_rows": {"interactive-paper-studio": ["0 of 4", "320 px", "320px", "4 of 4"], "graphic-story": ["...` | full count | VERIFIED | HOLDS |
+| 137 | each skill ran as a separate agent given only its `SKILL.md`, the paper and that folder | `{"agents_per_skill": 1}` | `{"readme": true}` | file lookup | VERIFIED | HOLDS |
+| 403 | Each skill ran once, as a separate agent, as the example's README records. | `{"runs_per_skill": 1}` | `{"readme_mentions_once": false}` | file lookup | NOT CHECKABLE | CANNOT CHECK |
+| 403 | The comic run stopped before its final page review. | `{"stopped": true}` | `{"readme": true}` | file lookup | VERIFIED | HOLDS |
 
-## Comparison and generalisation
+#### Publication-ready rows
 
-- **Medium, 0 of 4 against 4 of 4 (line 111).** The article picks the paired test and states the pairing as fact. If paired: p = 0.125, and six all-or-none images are the smallest set that clears 0.05. If unpaired: p = 0.0286, and four already clear it. Either way the claim rests on a ledger row with no artifact. The article's own conclusion, that the claim describes fixed editor behaviour and needs one archived paste, is the right reading; the sentence says that paste exists, and the files say it does not.
-- **"Every dev.to cover the kit made" (line 126)** generalises from the three covers in this article's folder. All three are 1376x578.
-- **"five destination shapes" (line 128)** counts endpoint markers on the art. Five is measured; that each marks a destination is figure-forensics' reading.
-- **"recomputes every count" (line 9 and Step 4)**: the article itself says each verdict is a recomputation. That holds for the numbers here; it does not hold for its three NOT CHECKABLE statements about runs and exit codes, which no file records.
+Markdown: `75.8% [63.8%, 84.8%]` (47 of 62, Wilson 95%); `p = 0.125` (exact McNemar, b = 4, c = 0); `p = 0.0286` (two-sided Fisher, 4/4 vs 0/4).
 
-## Publication-ready rows
-
-| Measure | Value |
-|---|---|
-| dev.to hard-wrapped blocks with a break | 47/62, 75.8% [63.8, 84.8] |
-| Medium data-URI images surviving | 0/4, 0.0% [0.0, 49.0] |
-| Medium hosted images surviving | 4/4, 100.0% [51.0, 100.0] |
-
-```latex
-Hard-wrapped blocks with a break & 47/62 & $75.8\% \,[63.8, 84.8]$ \\
-Medium data-URI images surviving & 0/4 & $0.0\% \,[0.0, 49.0]$ \\
-Medium hosted images surviving & 4/4 & $100.0\% \,[51.0, 100.0]$ \\
-```
+LaTeX: `75.8\% \,[63.8, 84.8]`; `p = 0.125`; `p = 0.0286`.
