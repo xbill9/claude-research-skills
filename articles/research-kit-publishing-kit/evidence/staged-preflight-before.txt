@@ -1,4 +1,4 @@
-# preflight.py on a copy of the walk-through as published, eq_verified_numbers.json and stat_audit.json staged in its evidence/ -- publishing-kit 0.36.1, 2026-11-16T16:30:06Z. Paths shortened: the copy lived in a scratch directory.
+# preflight.py on a copy of the walk-through as published, eq_verified_numbers.json and stat_audit.json staged in its evidence/ -- publishing-kit 0.36.2, 2026-11-16T16:46:38Z. Paths shortened: the copy lived in a scratch directory.
 article:   publishing-kit-skill/devto-publishing-kit.md
 repo-root: /tmp/claude-1000/-home-xbill-claude-research-skills/4231f7a8-1889-4cbb-91b7-8047bb39e8a7/scratchpad/stage
 evidence:  publishing-kit-skill/evidence

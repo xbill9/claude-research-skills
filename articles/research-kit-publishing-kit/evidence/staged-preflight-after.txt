@@ -1,4 +1,4 @@
-# preflight.py --live on the corrected walk-through, publishing-kit/articles/publishing-kit-skill, audits staged in its evidence/, ## DISPUTED rows in CLAIMS.md -- publishing-kit 0.36.1, 2026-11-16T16:30:06Z
+# preflight.py --live on the corrected walk-through, publishing-kit/articles/publishing-kit-skill, audits staged in its evidence/, ## DISPUTED rows in CLAIMS.md -- publishing-kit 0.36.2, 2026-11-16T16:46:39Z
 article:   publishing-kit/articles/publishing-kit-skill/devto-publishing-kit.md
 repo-root: publishing-kit
 evidence:  publishing-kit/articles/publishing-kit-skill/evidence

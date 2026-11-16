@@ -28,7 +28,7 @@ research-kit is a Claude Code plugin with nine skills for research-paper enginee
 | `figure-forensics` | Annotates the figures and checks what they show |
 | `interactive-paper-studio` | Builds an offline page with sliders over the paper's model |
 | `graphic-story` | Draws a comic of the paper; every number must come from it |
-| `paper-number-check` | Fails any output that repeats a number the audit disputes |
+| `paper-number-check` | Fails any output that repeats a number the audit disputes, unless the ledger explains it |
 
 The plugin also has `trajectory-cinematics` and `frontier-gap-radar`. They need a system that changes over time and a research literature to survey, so this run leaves them out.
 
@@ -36,7 +36,7 @@ The plugin also has `trajectory-cinematics` and `frontier-gap-radar`. They need 
 
 #### What Is the Publishing Kit?
 
-The publishing kit is a Claude Code skill that turns one markdown article into dev.to, AWS Builder Center, Medium, Substack and LinkedIn versions. Before anything ships, `preflight.py` runs every check and exits non-zero on a failure. One of those checks is `check-facts.py`, which pulls each number out of the article and looks for it in the article's `evidence/` folder.
+The publishing kit is a Claude Code skill that turns one markdown article into dev.to, AWS Builder Center, Medium, Substack and LinkedIn versions. Before anything ships, `preflight.py` runs its checks, the link check only with `--live`, and exits non-zero on a failure. One of those checks is `check-facts.py`, which pulls the numbers that look like claims (counts, sizes, ratios, versions, p-values) out of the article's prose and looks for each one in the article's `evidence/` folder.
 
 ---
 
@@ -144,6 +144,7 @@ Each skill then gets its own output folder next to `paper/`. In the worked examp
 
 ```plaintext
 math-sandbox claims: 26 {'VERIFIED': 15, 'NOT CHECKABLE': 5, 'MISMATCH': 6}
+...
 crop: ratio 1000/420 = 2.380952 ; rows kept at width 1376 = 577.92 ; lost per side from 768 = 95.04
 ```
 
@@ -159,12 +160,13 @@ The 95px loss assumes a centre crop. The proxy URL in the evidence says `gravity
 
 ```plaintext
 ablation-stat-auditor claim records: 16 {'VERIFIED': 7, 'MISMATCH': 6, 'NOT CHECKABLE': 3}
+...
 tests: {'medium_hosted_vs_embed_fisher_unpaired': (0.02857142857142857, None, None), 'medium_hosted_vs_embed_mcnemar_paired': (0.125, 4, 0), ...}
 ```
 
-The article's headline figure, 47 of 62 paragraphs with a stray break on dev.to, matches its evidence file: 75.8%, with a 95% interval of 63.8% to 84.8%. The same sentence in the article said "a stray break in every paragraph", and 15 of the 62 had none.
+The article's headline figure, 47 of 62 paragraphs with a stray break on dev.to, matches its evidence file: 75.8%, with a 95% interval of 63.8% to 84.8%. Elsewhere the article said "a stray break in every paragraph", and 15 of the 62 had none.
 
-The Medium figure, 0 of 4 images surviving a paste against 4 of 4, compares two pastes. If the same four images went into both, the paired test gives p = 0.125, and with all-or-none results it first drops below 0.05 at six images; treated as two separate samples, Fisher's test gives p = 0.0286. No file records which images were pasted. The claim describes fixed editor behaviour, so one archived paste would support it, and the ledger carries it from a log dated 2026-08-30 with no artifact.
+The Medium figure, 0 of 4 images surviving a paste against 4 of 4, compares two pastes. If the same four images went into both, the paired test gives p = 0.125, and with all-or-none results it first drops below 0.05 at six images; treated as two separate samples, Fisher's test gives p = 0.0286. The evidence does not record which images were pasted. If the editor behaves the same way every time, one archived paste would support the claim, and the ledger carries it from a log dated 2026-08-30 with no artifact.
 
 ---
 
@@ -173,15 +175,17 @@ The Medium figure, 0 of 4 images surviving a paste against 4 of 4, compares two 
 `figure-forensics` opens every image, measures it, and annotates it into a PDF. The measurements:
 
 ```plaintext
+image cover-builder.80aa6ca5.jpg 1200x675
+image cover-builder.cabd79f3.jpg 1200x675
 image cover.77acc7c4.jpg 1376x578
 image cover.ae4d639e.jpg 1376x578
+image linkedin-devto-publishing-kit-cover.jpg 1200x627
 image advocu-devto-publishing-kit-cover.webp 1376x578
-image cover-builder.cabd79f3.jpg 1200x675
 ```
 
 Every dev.to cover in the article's directory is 1376x578, which the 2.381:1 crop leaves whole. The kit made 1376x768 covers before `--mode devto` changed, so the article's example describes those older covers, and its sentence now says so.
 
-The article also said "the two numbers on the cover are real". Both covers carry no numbers, and the current one has no text at all and five destination shapes, while the article describes four destinations.
+The article also said "the two numbers on the cover are real". Both covers carry no numbers. On the current one figure-forensics counts five destination shapes and no text, while the article describes four destinations.
 
 ---
 
@@ -190,8 +194,8 @@ The article also said "the two numbers on the cover are real". Both covers carry
 `citation-doi-verifier` looks every reference up in Crossref, OpenAlex and arXiv. The article cites no scholarly work:
 
 ```plaintext
-citation dois/arxiv in paper text: 0
 citation links: 10 of 11 resolving and identified
+citation dois/arxiv in paper text: 0
 ```
 
 All 11 links were fetched, and 10 were matched to a second source: the GitHub API for the repository, the dev.to API for the article copies, and a byte comparison for the cover. Medium answers scripts with HTTP 403, so its copy needs a check in a browser.
@@ -252,6 +256,10 @@ devto-publishing-kit.md: 7 claim(s) against 15 evidence file(s), 15 dated log ro
 4 traced, 0 cited from the log, 0 untraced, 3 disputed
 ...
   FAIL  facts
+  PASS  prose
+  PASS  article
+  PASS  linkedin
+
 1 check(s) failed: facts
 ```
 
@@ -279,6 +287,7 @@ What stays goes under `## DISPUTED` in `CLAIMS.md`, one row per claim with the r
 | 0 of 4 | E3_medium_data_uri_0_of_4, NOT CHECKABLE | no archived artifact; the article labels it "kit log, 2026-08-30" |
 | 4 of 4 | E3_medium_data_uri_0_of_4, NOT CHECKABLE | same row as 0 of 4 |
 | 320px | D3_card_width_is_devto, NOT CHECKABLE | `CARD_W` in make-cover.py; no archived measurement of dev.to's card width |
+...
 ```
 
 The pre-flight again, with live link checks:
@@ -386,7 +395,7 @@ The publishing kit writes a reversal as a **Correction** paragraph that keeps th
 
 #### So, Which One?
 
-Start with `math-sandbox` and `ablation-stat-auditor`. They write the audit records, and every other step reads them. Stage the records in the article's `evidence/` folder once, and every `preflight.py` run after that holds the article to them. Run `paper-number-check` over anything else built from the article.
+Start with `math-sandbox` and `ablation-stat-auditor`. They write the audit records that the pre-flight and `paper-number-check` read. Stage the records in the article's `evidence/` folder once, and every `preflight.py` run after that holds the article to them. Run `paper-number-check` over anything else built from the article.
 
 ---
 
@@ -400,7 +409,7 @@ The goal of this article was to check every number in a published technical arti
 - ⚠️ 0 of 4 against 4 of 4 on Medium has no archived artifact; kept with its caveat
 - 🟢 pre-flight went from 3 disputed numbers to 0, with all 3 explained in the ledger
 
-Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and publishing kit 0.36.2. Each skill ran once, as a separate agent, as the example's README records. The comic run stopped before its final page review. Live pages were fetched only by the link check.
+Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and publishing kit 0.36.2. Each skill ran as a separate agent, as the example's README records. The comic run stopped before its final page review. Live pages were fetched by the link check, `preflight.py --live` and the dev.to API calls.
 
 The strategy for auditing a technical article with Claude Code research skills was validated with an incremental step by step approach.
 

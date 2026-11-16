@@ -1,4 +1,4 @@
-# make-cover.py constants, publishing-kit ff55eee
+# make-cover.py constants: lines 89, 90 and 264 from publishing-kit ff55eee; the last line is line 263 as it stood at dec86c0, before the comment was corrected
 89:CARD_W = 320
 90:LEGIBLE_PX = 10
 264:    LEGIBLE_PX * 1376 / CARD_W = 43pt falls under LEGIBLE_PX there.

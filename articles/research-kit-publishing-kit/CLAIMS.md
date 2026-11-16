@@ -20,6 +20,25 @@ reworded before publishing:
 The Compare and Contrast row for `ablation-stat-auditor` now states its tallies (6 mismatches, 3 not
 checkable), and the exit codes the article states are recorded in `evidence/check-facts-exit-codes.txt`.
 
+**Correction (2026-11-16), second audit round.** math-sandbox (101 records: 87 VERIFIED, 11 MISMATCH,
+3 NOT CHECKABLE) and ablation-stat-auditor (39 records: 37 VERIFIED, 0 MISMATCH, 2 NOT CHECKABLE) found no
+wrong number. Fixed before publishing:
+
+| Was | Now |
+| --- | --- |
+| five quoted output blocks cut or reordered with no marker | quoted in evidence order, cuts marked `...` |
+| `preflight.py` runs every check | runs its checks, the link check only with `--live` |
+| `check-facts.py` pulls each number out of the article | pulls the numbers that look like claims out of the prose |
+| paper-number-check fails any output that repeats a disputed number | unless the ledger explains it |
+| The same sentence in the article said "every paragraph" | Elsewhere the article said |
+| every other step reads the audit records | the pre-flight and paper-number-check read them |
+| Live pages were fetched only by the link check | by the link check, `preflight.py --live` and the dev.to API calls |
+| Each skill ran once | each skill ran as a separate agent |
+| No file records which images were pasted | the evidence does not record it |
+| the current cover has no text at all and five destination shapes | figure-forensics counts five shapes and no text |
+
+Steps 9 and 10 were re-captured on publishing kit 0.36.2.
+
 ## DISPUTED
 
 Numbers the article states that `check-facts.py` matches to a disputed audit record, kept with the reason.
