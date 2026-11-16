@@ -1,0 +1,8 @@
+# publish-devto.py --create on a copy of the walk-through as published, audits staged in its evidence/ -- publishing-kit 0.36.2, 2026-11-16T16:35:23Z. No draft created: newest unpublished id stayed 5049183.
+  DISPUTED count     0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  DISPUTED pixels    320px                        <- NOT CHECKABLE in eq_verified_numbers.json (D3_card_width_is_devto)
+  DISPUTED count     4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+4 traced, 0 cited from the log, 0 untraced, 3 disputed
+A disputed claim is the paper's number where an audit recomputed a different one, or could not check it. State the recomputed value, or keep the paper's with its caveat and add a row containing the claim under `## DISPUTED` in the ledger.
+refusing to publish: check-facts failed. --force overrides.
+exit 1

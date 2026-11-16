@@ -1,6 +1,6 @@
-# claude plugin list, both plugins -- 2026-11-16T16:30:07Z
+# claude plugin list, both plugins -- 2026-11-16T16:35:40Z
   ❯ publishing@publishing-kit
-    Version: 0.36.1
+    Version: 0.36.2
     Scope: user
     Status: ✔ enabled
 --

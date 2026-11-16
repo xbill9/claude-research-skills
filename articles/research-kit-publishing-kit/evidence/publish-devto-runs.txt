@@ -1,3 +1,5 @@
-# what publish-devto.py runs before --create/--update (grep, publishing-kit 0.36.1)
-13:THE PRE-FLIGHT GATES THE PUBLISH. --create and --update run check-article.py
-89:    checker = pathlib.Path(__file__).with_name("check-article.py")
+# what publish-devto.py runs before --create/--update (grep, publishing-kit 0.36.2)
+13:THE PRE-FLIGHT GATES THE PUBLISH. --create and --update run check-article.py and
+14:check-facts.py (over <article dir>/evidence) first and refuse on any FAIL, because
+96:    checker = pathlib.Path(__file__).with_name("check-facts.py")
+106:    checker = pathlib.Path(__file__).with_name("check-article.py")

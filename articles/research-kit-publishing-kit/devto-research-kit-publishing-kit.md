@@ -50,7 +50,7 @@ research-kit produces the verdicts and the publishing kit enforces them. The han
 | Stage | you | copy both files into the article's `evidence/` folder |
 | Check | publishing kit | `preflight.py` runs `check-facts.py`, which reads every record with `paper_value`, `computed` and `verdict` |
 | Fix | you | reword the article, or keep the number with a row under `## DISPUTED` in `CLAIMS.md` |
-| Publish | publishing kit | `publish-devto.py --create` posts the draft |
+| Publish | publishing kit | `publish-devto.py --create` runs the same number check again, then posts the draft |
 | Re-check | research-kit | `paper-number-check` runs the publishing kit's `check-facts.py` over every other output |
 
 A number that appears in the evidence normally passes. An audit record holds the article's own number next to the recomputed one, so the verdict decides: `MISMATCH` or `NOT CHECKABLE` fails as `DISPUTED`.
@@ -86,7 +86,7 @@ claude plugin install publishing@publishing-kit
 
 ```plaintext
   ❯ publishing@publishing-kit
-    Version: 0.36.1
+    Version: 0.36.2
     Scope: user
     Status: ✔ enabled
 --
@@ -96,7 +96,7 @@ claude plugin install publishing@publishing-kit
     Status: ✔ enabled
 ```
 
-The publishing kit needs 0.36.0 or later to read audit records, and 0.36.1 to stop a single shared number from counting as a match. Its scripts live under a version-numbered path, and older versions stay in the cache, so take the path from the installed plugin:
+The publishing kit needs 0.36.0 or later to read audit records, 0.36.1 to stop a single shared number from counting as a match, and 0.36.2 for `publish-devto.py` to run the number check. Its scripts live under a version-numbered path, and older versions stay in the cache, so take the path from the installed plugin:
 
 ```bash
 KIT=$(claude plugin list --json | python3 -c "import json,sys; print(next(p['installPath'] for p in json.load(sys.stdin) if p['id']=='publishing@publishing-kit'))")/skills/publishing
@@ -104,7 +104,7 @@ echo $KIT
 ```
 
 ```plaintext
-/home/xbill/.claude/plugins/cache/publishing-kit/publishing/0.36.1/skills/publishing
+/home/xbill/.claude/plugins/cache/publishing-kit/publishing/0.36.2/skills/publishing
 ```
 
 From a clone it is `publishing-kit/skills/publishing`.
@@ -309,7 +309,18 @@ It exits 0. The audit records stay in `evidence/`, so every later pre-flight che
 
 #### Step 11 — Publish the Draft
 
-`publish-devto.py` runs the cover, front matter and link checks itself, and refuses to post on a failure. The number check runs in `preflight.py`, so run that first:
+From publishing kit 0.36.2, `publish-devto.py` runs the cover and front matter checks and the number check itself, and refuses to post on a failure. On the article as published, with the audits staged:
+
+```plaintext
+  DISPUTED count     0 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  DISPUTED pixels    320px                        <- NOT CHECKABLE in eq_verified_numbers.json (D3_card_width_is_devto)
+  DISPUTED count     4 of 4                       <- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+4 traced, 0 cited from the log, 0 untraced, 3 disputed
+...
+refusing to publish: check-facts failed. --force overrides.
+```
+
+Nothing reaches dev.to. Once the pre-flight passes, create the draft and confirm it from the listing:
 
 ```bash
 python3 $KIT/scripts/preflight.py devto-research-kit-publishing-kit.md --live
@@ -336,7 +347,7 @@ python3 check_outputs.py --audit math-sandbox/eq_verified_numbers.json ablation-
 ```
 
 ```plaintext
-check-facts: ~/.claude/plugins/cache/publishing-kit/publishing/0.36.1/skills/publishing/scripts/check-facts.py (control passed)
+check-facts: ~/.claude/plugins/cache/publishing-kit/publishing/0.36.2/skills/publishing/scripts/check-facts.py (control passed)
 audit: 2 file(s), 20 disputed record(s)
 interactive-paper-studio/index.html: 0 disputed, 4 noted, 7 traced, 15 untraced
 graphic-story/Story.html: 0 disputed, 2 noted, 8 traced, 4 untraced
@@ -389,7 +400,7 @@ The goal of this article was to check every number in a published technical arti
 - ⚠️ 0 of 4 against 4 of 4 on Medium has no archived artifact; kept with its caveat
 - 🟢 pre-flight went from 3 disputed numbers to 0, with all 3 explained in the ledger
 
-Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and publishing kit 0.36.1. Each skill ran once, as a separate agent, as the example's README records. The comic run stopped before its final page review. Live pages were fetched only by the link check.
+Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and publishing kit 0.36.2. Each skill ran once, as a separate agent, as the example's README records. The comic run stopped before its final page review. Live pages were fetched only by the link check.
 
 The strategy for auditing a technical article with Claude Code research skills was validated with an incremental step by step approach.
 
