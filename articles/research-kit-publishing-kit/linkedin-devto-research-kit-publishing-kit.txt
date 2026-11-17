@@ -2,6 +2,8 @@ Auditing a Technical Article with Claude Code Research Skills
 
 Run the research-kit Claude Code plugin on a published article, then hand its audit to the publishing kit so any number the audit disputes fails the build until it is fixed or explained.
 
+research-kit is a Claude Code port of Robina Mirbahar's Antigravity research kit: https://github.com/RobinaMirbahar/My-antigravity-research-skills
+
 What is in it:
 
 - 🟢 26 claims checked: 15 verified, 6 mismatches, 5 not checkable
