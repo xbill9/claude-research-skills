@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Auditing a Technical Article with Claude Code Research Skills</title>
+  <meta name="description" content="Run the research-kit Claude Code plugin on a published article, then hand its audit to the publishing kit so any number the audit disputes fails the build until it is fixed or explained." />
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+    body{font-family:-apple-system,'Segoe UI',Roboto,'Liberation Sans',Arial,sans-serif;
+         font-size:18px;line-height:1.58;max-width:42em;color:#242424;}
+    h1,h2,h3,h4{font-weight:700;line-height:1.25;margin-top:1.8em;}
+    h4{font-size:1.25em;}
+    img{max-width:100%;height:auto;display:block;margin:1.6em 0;}
+    pre{background:#f7f7f7;border:1px solid #e6e6e6;border-radius:4px;
+        padding:12px 14px;overflow-x:auto;font-size:14px;line-height:1.45;}
+    code{font-family:'Liberation Mono',Menlo,Consolas,monospace;}
+    :not(pre)>code{background:#f2f2f2;padding:1px 5px;border-radius:3px;font-size:.9em;}
+    blockquote{border-left:3px solid #ddd;margin-left:0;padding-left:1em;color:#555;}
+    hr{border:0;border-top:1px solid #e6e6e6;margin:2.4em 0;}
+  </style>
+</head>
+<body>
+<p>This article provides a step by step guide to running the
+research-kit Claude Code plugin on a published technical article, and to
+handing its audit to the publishing kit. The research skills recompute
+the numbers the article states and mark the ones they cannot check. The
+publishing kit then fails the build on any number the audit disputes,
+until the article fixes it or the ledger explains it.</p>
+<figure><img src="https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/medium/img/devto-cover.4d3470a8.jpg" alt="Auditing a Technical Article with Claude Code Research Skills" /></figure>
+<p>Repository: <a
+href="https://github.com/xbill9/claude-research-skills">https://github.com/xbill9/claude-research-skills</a></p>
+<p>Worked example: <a
+href="https://github.com/xbill9/claude-research-skills/tree/main/examples/publishing-kit-article">https://github.com/xbill9/claude-research-skills/tree/main/examples/publishing-kit-article</a></p>
+<p>Publishing kit: <a
+href="https://github.com/xbill9/publishing-kit">https://github.com/xbill9/publishing-kit</a></p>
+<hr />
+<h4 id="what-is-research-kit">What Is research-kit?</h4>
+<p>research-kit is a Claude Code plugin with nine skills for
+research-paper engineering. It is a port of Robina Mirbahar's
+Antigravity research kit. Each skill reads a paper and either checks it
+or builds something from it.</p>
+<p><img src="https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/medium/img/devto-research-kit-publishing-kit-table-1.png"
+alt="Table: Skill, What it does" /></p>
+<p>The plugin also has <code>trajectory-cinematics</code> and
+<code>frontier-gap-radar</code>. They need a system that changes over
+time and a research literature to survey, so this run leaves them
+out.</p>
+<hr />
+<h4 id="what-is-the-publishing-kit">What Is the Publishing Kit?</h4>
+<p>The publishing kit is a Claude Code skill that turns one markdown
+article into dev.to, AWS Builder Center, Medium, Substack and LinkedIn
+versions. Before anything ships, <code>preflight.py</code> runs its
+checks, the link check only with <code>--live</code>, and exits non-zero
+on a failure. One of those checks is <code>check-facts.py</code>, which
+pulls the numbers that look like claims (counts, sizes, ratios,
+versions, p-values) out of the article's prose and looks for each one in
+the article's <code>evidence/</code> folder.</p>
+<hr />
+<h4 id="how-the-two-kits-work-together">How the Two Kits Work
+Together</h4>
+<p>research-kit produces the verdicts and the publishing kit enforces
+them. The hand-off is two JSON files and one folder:</p>
+<p><img src="https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/medium/img/devto-research-kit-publishing-kit-table-2.png"
+alt="Table: Stage, Kit, What happens" /></p>
+<p>A number that appears in the evidence normally passes. An audit
+record holds the article's own number next to the recomputed one, so the
+verdict decides: <code>MISMATCH</code> or <code>NOT CHECKABLE</code>
+fails as <code>DISPUTED</code>.</p>
+<hr />
+<h4 id="why-run-it-on-an-article">Why Run It on an Article?</h4>
+<p>A paper and a technical article make the same kind of promise: every
+number came from somewhere. The research skills test that promise by
+recomputing each number in code and writing a verdict beside it:
+<code>VERIFIED</code>, <code>MISMATCH</code> or
+<code>NOT CHECKABLE</code>.</p>
+<p>The article audited here is the publishing kit's own walk-through,
+<em>Streamline Publishing with a Claude Code Skill</em>. It ships with
+an <code>evidence/</code> directory and a <code>CLAIMS.md</code> ledger,
+so every skill has something to check against.</p>
+<hr />
+<h4 id="at-this-point-you-should-have">At This Point You Should
+Have</h4>
+<ul>
+<li>Claude Code</li>
+<li><code>python3</code> with <code>pymupdf</code> and
+<code>pillow</code>, and Chrome, Edge or Chromium for the PDF
+skills</li>
+<li>An article in a git repository, with an <code>evidence/</code>
+folder beside it</li>
+</ul>
+<hr />
+<h4 id="step-1--install-both-plugins">Step 1 — Install Both Plugins</h4>
+<p>Both repositories are plugin marketplaces. Add each one, then install
+its plugin:</p>
+<pre class="bash"><code>claude plugin marketplace add xbill9/claude-research-skills
+claude plugin install research-kit@claude-research-skills
+claude plugin marketplace add xbill9/publishing-kit
+claude plugin install publishing@publishing-kit
+  ❯ publishing@publishing-kit
+    Version: 0.36.2
+    Scope: user
+    Status: ✔ enabled
+--
+  ❯ research-kit@claude-research-skills
+    Version: 1.3.1
+    Scope: user
+    Status: ✔ enabled</code></pre>
+<p>The publishing kit needs 0.36.0 or later to read audit records,
+0.36.1 to stop a single shared number from counting as a match, and
+0.36.2 for <code>publish-devto.py</code> to run the number check. Its
+scripts live under a version-numbered path, and older versions stay in
+the cache, so take the path from the installed plugin:</p>
+<pre class="bash"><code>KIT=$(claude plugin list --json | python3 -c &quot;import json,sys; print(next(p[&#39;installPath&#39;] for p in json.load(sys.stdin) if p[&#39;id&#39;]==&#39;publishing@publishing-kit&#39;))&quot;)/skills/publishing
+echo $KIT
+/home/xbill/.claude/plugins/cache/publishing-kit/publishing/0.36.2/skills/publishing</code></pre>
+<p>From a clone it is <code>publishing-kit/skills/publishing</code>.</p>
+<hr />
+<h4 id="step-2--lay-out-the-article-folder">Step 2 — Lay Out the Article
+Folder</h4>
+<p>The publishing kit reads everything relative to the article. The
+audit records go in <code>evidence/</code>, and the ledger sits beside
+the article, outside it:</p>
+<p><img src="https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/medium/img/devto-research-kit-publishing-kit-diagram-1.png"
+alt="diagram" /></p>
+<p><code>check-facts.py</code> refuses a ledger inside
+<code>evidence/</code>, because a ledger restates every number and would
+trace them all to itself.</p>
+<p>For the audits, copy the article folder somewhere the skills can
+write beside it:</p>
+<pre class="bash"><code>mkdir -p examples/publishing-kit-article
+cp -r ~/publishing-kit/articles/publishing-kit-skill examples/publishing-kit-article/paper</code></pre>
+<p>Each skill then gets its own output folder next to
+<code>paper/</code>. In the worked example each skill ran as a separate
+agent given only its <code>SKILL.md</code>, the paper and that
+folder.</p>
+<hr />
+<h4 id="step-3--check-the-arithmetic">Step 3 — Check the Arithmetic</h4>
+<p><code>math-sandbox</code> pulls every quantitative claim out of the
+article and its evidence, recomputes it, and writes
+<code>eq_verified_numbers.json</code>:</p>
+<pre class="plaintext"><code>math-sandbox claims: 26 {&#39;VERIFIED&#39;: 15, &#39;NOT CHECKABLE&#39;: 5, &#39;MISMATCH&#39;: 6}
+...
+crop: ratio 1000/420 = 2.380952 ; rows kept at width 1376 = 577.92 ; lost per side from 768 = 95.04</code></pre>
+<p>The article says dev.to shows covers through a 2.381:1 crop, so a
+1376x768 cover loses 95px off the top and bottom. The arithmetic
+holds.</p>
+<p>The 95px loss assumes a centre crop. The proxy URL in the evidence
+says <code>gravity=auto</code>, so the split between top and bottom is
+unmeasured.</p>
+<hr />
+<h4 id="step-4--check-the-counts">Step 4 — Check the Counts</h4>
+<p><code>ablation-stat-auditor</code> recomputes every count as a rate
+with a 95% Wilson interval, and runs the matching significance test
+where two counts are compared:</p>
+<pre class="plaintext"><code>ablation-stat-auditor claim records: 16 {&#39;VERIFIED&#39;: 7, &#39;MISMATCH&#39;: 6, &#39;NOT CHECKABLE&#39;: 3}
+...
+tests: {&#39;medium_hosted_vs_embed_fisher_unpaired&#39;: (0.02857142857142857, None, None), &#39;medium_hosted_vs_embed_mcnemar_paired&#39;: (0.125, 4, 0), ...}</code></pre>
+<p>The article's headline figure, 47 of 62 paragraphs with a stray break
+on dev.to, matches its evidence file: 75.8%, with a 95% interval of
+63.8% to 84.8%. Elsewhere the article said "a stray break in every
+paragraph", and 15 of the 62 had none.</p>
+<p>The Medium figure, 0 of 4 images surviving a paste against 4 of 4,
+compares two pastes. If the same four images went into both, the paired
+test gives p = 0.125, and with all-or-none results it first drops below
+0.05 at six images; treated as two separate samples, Fisher's test gives
+p = 0.0286. The evidence does not record which images were pasted. If
+the editor behaves the same way every time, one archived paste would
+support the claim, and the ledger carries it from a log dated 2026-08-30
+with no artifact.</p>
+<hr />
+<h4 id="step-5--check-the-figures">Step 5 — Check the Figures</h4>
+<p><code>figure-forensics</code> opens every image, measures it, and
+annotates it into a PDF. The measurements:</p>
+<pre class="plaintext"><code>image cover-builder.80aa6ca5.jpg 1200x675
+image cover-builder.cabd79f3.jpg 1200x675
+image cover.77acc7c4.jpg 1376x578
+image cover.ae4d639e.jpg 1376x578
+image linkedin-devto-publishing-kit-cover.jpg 1200x627
+image advocu-devto-publishing-kit-cover.webp 1376x578</code></pre>
+<p>Every dev.to cover in the article's directory is 1376x578, which the
+2.381:1 crop leaves whole. The kit made 1376x768 covers before
+<code>--mode devto</code> changed, so the article's example describes
+those older covers, and its sentence now says so.</p>
+<p>The article also said "the two numbers on the cover are real". Both
+covers carry no numbers. On the current one figure-forensics counts five
+destination shapes and no text, while the article describes four
+destinations.</p>
+<hr />
+<h4 id="step-6--check-the-links">Step 6 — Check the Links</h4>
+<p><code>citation-doi-verifier</code> looks every reference up in
+Crossref, OpenAlex and arXiv. The article cites no scholarly work:</p>
+<pre class="plaintext"><code>citation links: 10 of 11 resolving and identified
+citation dois/arxiv in paper text: 0</code></pre>
+<p>All 11 links were fetched, and 10 were matched to a second source:
+the GitHub API for the repository, the dev.to API for the article
+copies, and a byte comparison for the cover. Medium answers scripts with
+HTTP 403, so its copy needs a check in a browser.</p>
+<hr />
+<h4 id="step-7--build-the-studio-and-the-comic">Step 7 — Build the
+Studio and the Comic</h4>
+<p><code>interactive-paper-studio</code> builds a single offline
+<code>index.html</code> with sliders for cover size, type size,
+feed-card width and wrap column. The page's JavaScript model is checked
+value by value against a Python model:</p>
+<pre class="plaintext"><code>studio check: 130 values, 0 mismatches, worst abs error 0.00e+0</code></pre>
+<p>The sliders show one more finding. A comment in the kit's
+<code>make-cover.py</code> said type below about 40pt disappears in a
+320px feed card. Its own threshold is <code>LEGIBLE_PX = 10</code>
+pixels, and on a 1376-wide cover that is 43pt, which the comment now
+says:</p>
+<pre class="plaintext"><code>legibility: LEGIBLE_PX*1376/CARD_W = 43.0 ; 40pt at 320/1376 = 9.3 px</code></pre>
+<p><code>graphic-story</code> draws a 5-page comic of the article. Its
+build fails on any number that is missing from its sourced numbers
+file.</p>
+<hr />
+<h4 id="step-8--stage-the-audit-records">Step 8 — Stage the Audit
+Records</h4>
+<p>Copy the two audit files into the article's <code>evidence/</code>
+folder. Nothing else needs configuring: <code>preflight.py</code>
+defaults its evidence to
+<code>&lt;article folder&gt;/evidence</code>.</p>
+<pre class="bash"><code>cp math-sandbox/eq_verified_numbers.json ablation-stat-auditor/stat_audit.json \
+   ~/publishing-kit/articles/publishing-kit-skill/evidence/</code></pre>
+<hr />
+<h4 id="step-9--run-the-pre-flight">Step 9 — Run the Pre-flight</h4>
+<pre class="bash"><code>cd ~/publishing-kit/articles/publishing-kit-skill
+python3 $KIT/scripts/preflight.py devto-publishing-kit.md</code></pre>
+<p>On the article as it was published:</p>
+<pre class="plaintext"><code>check-facts.py — every number traces to an artifact
+==============================================================
+devto-publishing-kit.md: 7 claim(s) against 15 evidence file(s), 15 dated log row(s)
+ 
+  DISPUTED count     0 of 4                       &lt;- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  ok    dimensions   1376x768                     &lt;- devto-cover-crop.txt
+  ok    ratio        2.381:1                      &lt;- devto-cover-crop.txt
+  DISPUTED pixels    320px                        &lt;- NOT CHECKABLE in eq_verified_numbers.json (D3_card_width_is_devto)
+  DISPUTED count     4 of 4                       &lt;- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  ok    count        47 of 62                     &lt;- devto-hardwrap.txt
+  ok    pixels       95px                         &lt;- devto-cover-crop.txt
+ 
+4 traced, 0 cited from the log, 0 untraced, 3 disputed
+...
+  FAIL  facts
+  PASS  prose
+  PASS  article
+  PASS  linkedin
+ 
+1 check(s) failed: facts</code></pre>
+<p>It exits 1. The 15 evidence files are the 13 the article already had
+plus the two audit records.</p>
+<p>The wording problems the audits found do not show up here, because
+they carry no number for <code>check-facts.py</code> to match: "every
+paragraph", "on the cover", the footer date. Those come from reading the
+audit reports.</p>
+<hr />
+<h4 id="step-10--fix-the-article-then-explain-what-stays">Step 10 — Fix
+the Article, Then Explain What Stays</h4>
+<p>Each finding is either fixed in the article or kept with its reason.
+The fixes, all in the publishing kit's walk-through:</p>
+<p><img src="https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/medium/img/devto-research-kit-publishing-kit-table-3.png"
+alt="Table: Was, Now" /></p>
+<p>What stays goes under <code>## DISPUTED</code> in
+<code>CLAIMS.md</code>, one row per claim with the reason:</p>
+<pre class="plaintext"><code>| 0 of 4 | E3_medium_data_uri_0_of_4, NOT CHECKABLE | no archived artifact; the article labels it &quot;kit log, 2026-08-30&quot; |
+| 4 of 4 | E3_medium_data_uri_0_of_4, NOT CHECKABLE | same row as 0 of 4 |
+| 320px | D3_card_width_is_devto, NOT CHECKABLE | `CARD_W` in make-cover.py; no archived measurement of dev.to&#39;s card width |
+...</code></pre>
+<p>The pre-flight again, with live link checks:</p>
+<pre class="plaintext"><code>  NOTED count        0 of 4                       &lt;- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    dimensions   1376x578                     &lt;- devto-cover-crop.txt
+  ok    dimensions   1376x768                     &lt;- devto-cover-crop.txt
+  ok    ratio        2.381:1                      &lt;- devto-cover-crop.txt
+  NOTED pixels       320px                        &lt;- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  NOTED count        4 of 4                       &lt;- NOT CHECKABLE in eq_verified_numbers.json, caveat in CLAIMS.md
+  ok    count        47 of 62                     &lt;- devto-hardwrap.txt
+  ok    pixels       95px                         &lt;- devto-cover-crop.txt
+ 
+5 traced, 0 cited from the log, 0 untraced, 0 disputed, 3 disputed with a caveat
+...
+  PASS  facts
+  PASS  prose
+  PASS  article
+  PASS  links
+  PASS  linkedin
+all checks passed</code></pre>
+<p>It exits 0. The audit records stay in <code>evidence/</code>, so
+every later pre-flight checks the article against them.</p>
+<hr />
+<h4 id="step-11--publish-the-draft">Step 11 — Publish the Draft</h4>
+<p>From publishing kit 0.36.2, <code>publish-devto.py</code> runs the
+cover and front matter checks and the number check itself, and refuses
+to post on a failure. On the article as published, with the audits
+staged:</p>
+<pre class="plaintext"><code>  DISPUTED count     0 of 4                       &lt;- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+  DISPUTED pixels    320px                        &lt;- NOT CHECKABLE in eq_verified_numbers.json (D3_card_width_is_devto)
+  DISPUTED count     4 of 4                       &lt;- NOT CHECKABLE in eq_verified_numbers.json (E3_medium_data_uri_0_of_4)
+4 traced, 0 cited from the log, 0 untraced, 3 disputed
+...
+refusing to publish: check-facts failed. --force overrides.</code></pre>
+<p>Nothing reaches dev.to. Once the pre-flight passes, create the draft
+and confirm it from the listing:</p>
+<pre class="bash"><code>python3 $KIT/scripts/preflight.py devto-research-kit-publishing-kit.md --live
+python3 $KIT/scripts/publish-devto.py --create devto-research-kit-publishing-kit.md
+python3 $KIT/scripts/publish-devto.py --list
+   5049183  draft      org=-               Auditing a Technical Article with Claude Code Resear
+            https://dev.to/xbill/auditing-a-technical-article-with-claude-code-research-skills-118b-temp-slug-6830794</code></pre>
+<p>The front matter carries the title, tags and cover, and
+<code>published: false</code> keeps it a draft.</p>
+<hr />
+<h4 id="step-12--check-everything-built-from-the-article">Step 12 —
+Check Everything Built From the Article</h4>
+<p>The studio page and the comic repeat numbers too.
+<code>paper-number-check</code> finds the installed publishing kit's
+<code>check-facts.py</code>, proves it flags a known disputed number,
+then runs it over every output at once:</p>
+<pre class="bash"><code>python3 check_outputs.py --audit math-sandbox/eq_verified_numbers.json ablation-stat-auditor/stat_audit.json \
+  -- interactive-paper-studio/index.html graphic-story/Story.html
+check-facts: ~/.claude/plugins/cache/publishing-kit/publishing/0.36.2/skills/publishing/scripts/check-facts.py (control passed)
+audit: 2 file(s), 20 disputed record(s)
+interactive-paper-studio/index.html: 0 disputed, 4 noted, 7 traced, 15 untraced
+graphic-story/Story.html: 0 disputed, 2 noted, 8 traced, 4 untraced
+ 
+0 disputed claim(s) across 2 output(s)</code></pre>
+<p>Each noted number has a row in a <code>CLAIMS.md</code> beside its
+output.</p>
+<hr />
+<h4 id="mag_right-tip-read-the-record-behind-each-disputed-number">🔎
+Tip: Read the Record Behind Each Disputed Number</h4>
+<p>Open the record named after each <code>DISPUTED</code> line before
+changing the article. In publishing-kit 0.36.0 one shared number was
+enough for a match, and on an HTML page the stylesheet was read too.
+From 0.36.1 a claim's numbers must match a record's as a sequence, a
+number with a unit must carry that unit in the record's statement, and
+<code>&lt;style&gt;</code> is skipped. Over the five outputs in this run
+that took the flags from 34 to 12, and the 12 are the Medium counts and
+the 320px card width.</p>
+<hr />
+<h4 id="mag_right-tip-keep-the-old-claim-visible">🔎 Tip: Keep the Old
+Claim Visible</h4>
+<p>The publishing kit writes a reversal as a <strong>Correction</strong>
+paragraph that keeps the retracted claim in view. The fixes in Step 10
+went into the ledger as a table of was, now and evidence, so a reader of
+the repository can see what changed and why.</p>
+<hr />
+<h4 id="compare-and-contrast">Compare and Contrast</h4>
+<p><img src="https://raw.githubusercontent.com/xbill9/claude-research-skills/main/articles/research-kit-publishing-kit/medium/img/devto-research-kit-publishing-kit-table-4.png"
+alt="Table: Skill, Fit for a technical article, What it found here" /></p>
+<hr />
+<h4 id="so-which-one">So, Which One?</h4>
+<p>Start with <code>math-sandbox</code> and
+<code>ablation-stat-auditor</code>. They write the audit records that
+the pre-flight and <code>paper-number-check</code> read. Stage the
+records in the article's <code>evidence/</code> folder once, and every
+<code>preflight.py</code> run after that holds the article to them. Run
+<code>paper-number-check</code> over anything else built from the
+article.</p>
+<hr />
+<h4 id="summary">Summary</h4>
+<p>The goal of this article was to check every number in a published
+technical article and stop the disputed ones from shipping again. The
+key to the solution was a verdict beside every recomputed number, staged
+in the article's <code>evidence/</code> folder and enforced by the
+publishing kit's pre-flight. The results on the publishing kit's
+walk-through were:</p>
+<ul>
+<li>🟢 26 claims checked: 15 verified, 6 mismatches, 5 not
+checkable</li>
+<li>🟢 47 of 62 matches its evidence: 75.8%, 95% interval 63.8% to
+84.8%</li>
+<li>❌ "every paragraph", "on the cover" and the footer date overstated
+their evidence; all three fixed</li>
+<li>⚠️ 0 of 4 against 4 of 4 on Medium has no archived artifact; kept
+with its caveat</li>
+<li>🟢 pre-flight went from 3 disputed numbers to 0, with all 3
+explained in the ledger</li>
+</ul>
+<p>Scope: one article, audited on 2026-11-16 with research-kit 1.3.1 and
+publishing kit 0.36.2. Each skill ran as a separate agent, as the
+example's README records. The comic run stopped before its final page
+review. Live pages were fetched by the link check,
+<code>preflight.py --live</code> and the dev.to API calls.</p>
+<p>The strategy for auditing a technical article with Claude Code
+research skills was validated with an incremental step by step
+approach.</p>
+<h4 id="references">References</h4>
+<ul>
+<li><a
+href="https://github.com/xbill9/claude-research-skills">research-kit on
+GitHub</a></li>
+<li><a
+href="https://github.com/xbill9/claude-research-skills/tree/main/examples/publishing-kit-article">The
+worked example</a></li>
+<li><a href="https://github.com/xbill9/publishing-kit">publishing-kit on
+GitHub</a></li>
+<li><a
+href="https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn">The
+audited article</a></li>
+<li><a
+href="https://github.com/RobinaMirbahar/My-antigravity-research-skills">Robina
+Mirbahar's Antigravity research kit</a></li>
+<li><a href="https://docs.claude.com/en/docs/claude-code/plugins">Claude
+Code plugins</a></li>
+</ul>
+</body>
+</html>

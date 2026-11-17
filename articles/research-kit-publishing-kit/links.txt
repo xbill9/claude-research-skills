@@ -1,0 +1,7 @@
+# Destination URLs for the LinkedIn, Slack and Google Chat posts. PENDING fails
+# the run on purpose until that destination is published.
+devto    = https://dev.to/xbill/auditing-a-technical-article-with-claude-code-research-skills-476h
+medium   = PENDING
+substack = PENDING
+builder  = PENDING
+repo     = https://github.com/xbill9/claude-research-skills
