@@ -4,4 +4,5 @@ devto    = https://dev.to/xbill/auditing-a-technical-article-with-claude-code-re
 medium   = https://medium.com/@xbill999/auditing-a-technical-article-with-claude-code-research-skills-d2c9702a978a
 substack = https://xbill9.substack.com/p/auditing-a-technical-article-with
 builder  = https://builder.aws.com/content/3MEpaP9jer9TSIagFdhZUWd19RI/auditing-a-technical-article-with-claude-code-research-skills
+linkedin = https://www.linkedin.com/feed/update/urn:li:activity:7528470133464518656/
 repo     = https://github.com/xbill9/claude-research-skills
