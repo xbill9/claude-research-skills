@@ -1,0 +1,16 @@
+Auditing a Technical Article with Claude Code Research Skills
+
+Run the research-kit Claude Code plugin on a published article, then hand its audit to the publishing kit so any number the audit disputes fails the build until it is fixed or explained.
+
+What is in it:
+
+- 🟢 26 claims checked: 15 verified, 6 mismatches, 5 not checkable
+- 🟢 47 of 62 matches its evidence: 75.8%, 95% interval 63.8% to 84.8%
+- ❌ "every paragraph", "on the cover" and the footer date overstated their evidence; all three fixed
+- ⚠️ 0 of 4 against 4 of 4 on Medium has no archived artifact; kept with its caveat
+
+dev.to: https://dev.to/xbill/auditing-a-technical-article-with-claude-code-research-skills-476h
+AWS Builder Center: https://builder.aws.com/content/3MEpaP9jer9TSIagFdhZUWd19RI/auditing-a-technical-article-with-claude-code-research-skills
+Medium: https://medium.com/@xbill999/auditing-a-technical-article-with-claude-code-research-skills-d2c9702a978a
+Substack: https://xbill9.substack.com/p/auditing-a-technical-article-with
+GitHub: https://github.com/xbill9/claude-research-skills
